@@ -138,11 +138,11 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
               { id: 'pps', icon: 'bi-building', color: 'text-dark' }
             ].map((shop) => (
               <div key={shop.id} className="col-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="#!" className="card h-100 border-0 shadow-sm rounded-4 text-decoration-none hover-lift text-center py-4 px-2">
+                <a href="#!" className="card h-100 border-0 bg-dark shadow-sm rounded-4 text-decoration-none hover-lift text-center py-4 px-2">
                   <div className={`mb-2 fs-3 ${shop.color}`}>
                     <i className={`bi ${shop.icon}`}></i>
                   </div>
-                  <h6 className="mb-0 text-dark small fw-bold">{(dict.retail.shops as any)[shop.id]}</h6>
+                  <h6 className="mb-0 text-white small fw-bold">{(dict.retail.shops as any)[shop.id]}</h6>
                 </a>
               </div>
             ))}
@@ -155,8 +155,8 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
         <div className="container position-relative z-1">
           <div className="row align-items-center justify-content-center text-center">
             <div className="col-xl-8 col-lg-9">
-              <h2 className="display-5 fw-bold mb-4">{dict.cta.title}</h2>
-              <p className="lead mb-5 opacity-75">{dict.cta.description}</p>
+              <h2 className="display-4 fw-bold mb-4">{dict.cta.title}</h2>
+              <p className="lead mb-5 text-white opacity-100 fw-medium">{dict.cta.description}</p>
               <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
                 <a href="tel:+821012345678" className="btn btn-dark btn-lg px-4 rounded-pill shadow-sm hover-lift">
                   <i className="bi bi-telephone-fill me-2"></i>{dict.cta.btn_phone}
