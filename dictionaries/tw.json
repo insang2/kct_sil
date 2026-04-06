@@ -45,7 +45,8 @@
   "cta": {
     "title": "B2B 大宗訂購與特別報價",
     "description": "我們以合理的價格迅速為您的專案提供所需的最優質建築材料。立即與專家諮詢。",
-    "btn_primary": "立即聯絡我們",
-    "btn_secondary": "下載公司簡介"
+    "btn_phone": "電話諮詢",
+    "btn_whatsapp": "WhatsApp",
+    "btn_email": "sales@korcta.com"
   }
 }

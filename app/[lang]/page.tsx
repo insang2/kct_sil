@@ -120,8 +120,15 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
               <h2 className="display-5 fw-bold mb-4">{dict.cta.title}</h2>
               <p className="lead mb-5 opacity-75">{dict.cta.description}</p>
               <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                <a href="#!" className="btn btn-dark btn-lg px-5 rounded-pill shadow-sm hover-lift">{dict.cta.btn_primary}</a>
-                <a href="#!" className="btn btn-outline-white btn-lg px-5 rounded-pill hover-lift">{dict.cta.btn_secondary}</a>
+                <a href="tel:+821012345678" className="btn btn-dark btn-lg px-4 rounded-pill shadow-sm hover-lift">
+                  <i className="bi bi-telephone-fill me-2"></i>{dict.cta.btn_phone}
+                </a>
+                <a href="https://wa.me/821012345678" target="_blank" rel="noreferrer" className="btn btn-outline-white btn-lg px-4 rounded-pill hover-lift">
+                  <i className="bi bi-whatsapp me-2"></i>{dict.cta.btn_whatsapp}
+                </a>
+                <a href="mailto:sales@korcta.com" className="btn btn-outline-white btn-lg px-4 rounded-pill hover-lift">
+                  <i className="bi bi-envelope-fill me-2"></i>{dict.cta.btn_email}
+                </a>
               </div>
             </div>
           </div>

@@ -45,7 +45,8 @@
   "cta": {
     "title": "B2B 대량 주문 및 특별 단가 문의",
     "description": "귀사의 프로젝트에 필요한 최고 품질의 건설 자재를 합리적인 가격으로 신속하게 공급해 드립니다. 지금 바로 전문가와 상담하세요.",
-    "btn_primary": "빠른 문의하기",
-    "btn_secondary": "회사소개서 다운로드"
+    "btn_phone": "전화 문의",
+    "btn_whatsapp": "WhatsApp 문의",
+    "btn_email": "sales@korcta.com"
   }
 }

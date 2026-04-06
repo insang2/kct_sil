@@ -45,7 +45,8 @@
   "cta": {
     "title": "B2B大量注文および特別単価について",
     "description": "お客様のプロジェクトに必要な最高品質の建設資材を適正価格で迅速に供給いたします。今すぐ専門家にご相談ください。",
-    "btn_primary": "今すぐお問い合わせ",
-    "btn_secondary": "会社紹介資料ダウンロード"
+    "btn_phone": "お電話でのお問い合わせ",
+    "btn_whatsapp": "WhatsApp",
+    "btn_email": "sales@korcta.com"
   }
 }
