@@ -104,8 +104,8 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
             <div className="col-md-6 col-lg-5">
               <div className="card h-100 border-0 shadow-lg rounded-4 hover-lift bg-light">
                 <div className="card-body p-5 text-center">
-                  <div className="mb-4 text-primary">
-                    <i className="icon-Paint-Brush display-4"></i>
+                  <div className="mb-4 text-primary" style={{ height: '64px' }}>
+                    <img src="/assets/img/logo/topseal-logo.svg" alt="Topseal Logo" style={{ height: '100%', width: 'auto' }} />
                   </div>
                   <h5 className="card-title text-black fw-bold mb-3">{dict.products.topseal_title}</h5>
                   <p className="card-text text-black mb-4">
