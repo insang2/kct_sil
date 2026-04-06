@@ -65,6 +65,10 @@
       "aliexpress": "AliExpress",
       "amazon": "Amazon",
       "ebay": "eBay"
+    },
+    "footer": {
+      "sales_manager": "營業負責人: 李俊煥 (Lee Joon-hwan)",
+      "rights": "保留所有權利。"
     }
   }
 }

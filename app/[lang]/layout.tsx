@@ -40,7 +40,7 @@ export default async function RootLayout({
           {children}
         </main>
 
-        <Footer />
+        <Footer lang={lang as 'ko' | 'en' | 'ja' | 'zh-TW'} />
 
         <Script src="/assets/js/theme.bundle.min.js" strategy="lazyOnload" />
       </body>

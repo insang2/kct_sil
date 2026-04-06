@@ -65,6 +65,10 @@
       "aliexpress": "AliExpress",
       "amazon": "Amazon",
       "ebay": "eBay"
+    },
+    "footer": {
+      "sales_manager": "Sales Manager: Lee Joon-hwan",
+      "rights": "All rights reserved."
     }
   }
 }
