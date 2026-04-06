@@ -68,13 +68,13 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
         </div>
       </section>
 
-      {/* Product Display Section - Light Theme Fixed */}
-      <section className="py-9 py-lg-11 bg-white text-dark">
+      {/* Product Display Section - Sharp Black Text Fixed */}
+      <section className="py-9 py-lg-11 bg-white text-black">
         <div className="container">
           <div className="row justify-content-center mb-9 text-center">
             <div className="col-lg-8">
               <span className="h6 text-primary fw-bold text-uppercase">{dict.products.label}</span>
-              <h2 className="display-4 mb-0 fw-bold text-dark">{dict.products.title}</h2>
+              <h2 className="display-4 mb-0 fw-bold text-black">{dict.products.title}</h2>
             </div>
           </div>
           
@@ -86,11 +86,11 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                   <div className="mb-4 text-primary">
                     <i className="icon-Building display-4"></i>
                   </div>
-                  <h5 className="card-title text-dark fw-bold mb-3">{dict.products.dow_title}</h5>
-                  <p className="card-text text-body-secondary mb-4">
+                  <h5 className="card-title text-black fw-bold mb-3">{dict.products.dow_title}</h5>
+                  <p className="card-text text-black mb-4">
                     {dict.products.dow_desc_1}<br />{dict.products.dow_desc_2}
                   </p>
-                  <ul className="list-unstyled text-start text-body-secondary mb-4 mx-auto" style={{maxWidth: '280px', fontSize: '0.9rem'}}>
+                  <ul className="list-unstyled text-start text-black mb-4 mx-auto" style={{maxWidth: '280px', fontSize: '0.9rem'}}>
                     {dict.products.dow_items.map((item: string, idx: number) => (
                       <li key={idx} className="mb-2"><i className="bi bi-check-circle-fill text-primary me-2"></i>{item}</li>
                     ))}
@@ -107,8 +107,8 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                   <div className="mb-4 text-primary">
                     <i className="icon-Paint-Brush display-4"></i>
                   </div>
-                  <h5 className="card-title text-dark fw-bold mb-3">{dict.products.topseal_title}</h5>
-                  <p className="card-text text-body-secondary mb-4">
+                  <h5 className="card-title text-black fw-bold mb-3">{dict.products.topseal_title}</h5>
+                  <p className="card-text text-black mb-4">
                     {dict.products.topseal_desc_1}<br />{dict.products.topseal_desc_2}
                   </p>
                   <a href="https://topseal.co.kr/product/all-product-page/" target="_blank" rel="noreferrer" className="btn btn-primary rounded-pill px-4">{dict.products.topseal_btn}</a>
