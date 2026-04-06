@@ -137,12 +137,12 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
               { id: 'coupang', icon: 'bi-lightning-fill', color: 'text-warning' },
               { id: 'pps', icon: 'bi-building', color: 'text-secondary' }
             ].map((shop) => (
-              <div key={shop.id} className="col-6 col-sm-4 col-md-3 col-lg-2">
+              <div key={shop.id} className="col-6 col-md-4 col-lg-2">
                 <a href="#!" className="card h-100 border-0 bg-white shadow rounded-4 text-decoration-none hover-lift text-center py-4 px-2">
-                  <div className={`mb-2 fs-3 ${shop.color}`}>
+                  <div className={`mb-3 display-4 ${shop.color}`}>
                     <i className={`bi ${shop.icon}`}></i>
                   </div>
-                  <h6 className="mb-0 text-dark small fw-bold">{(dict.retail.shops as any)[shop.id]}</h6>
+                  <h5 className="mb-0 text-black fw-bold">{(dict.retail.shops as any)[shop.id]}</h5>
                 </a>
               </div>
             ))}
