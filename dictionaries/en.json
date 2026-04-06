@@ -48,5 +48,17 @@
     "btn_phone": "Call Us",
     "btn_whatsapp": "WhatsApp",
     "btn_email": "sales@korcta.com"
+  },
+  "retail": {
+    "label": "Small Orders",
+    "title": "Official Retail Stores",
+    "description": "We are available on various open markets for general consumers and small quantity purchasers. Purchase conveniently through your favorite shop.",
+    "shops": {
+      "naver": "Naver Smart Store",
+      "11st": "11st",
+      "gmarket": "Gmarket",
+      "coupang": "Coupang",
+      "pps": "Public Procurement Service"
+    }
   }
 }

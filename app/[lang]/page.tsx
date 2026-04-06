@@ -112,6 +112,37 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
         </div>
       </section>
 
+      {/* Small Orders (Retail) Section */}
+      <section className="py-9 py-lg-11 border-top bg-white">
+        <div className="container">
+          <div className="row justify-content-center mb-8 text-center">
+            <div className="col-lg-8">
+              <span className="h6 text-body-secondary">{dict.retail.label}</span>
+              <h2 className="display-6 mb-3">{dict.retail.title}</h2>
+              <p className="text-muted">{dict.retail.description}</p>
+            </div>
+          </div>
+          <div className="row g-3 justify-content-center">
+            {[
+              { id: 'naver', icon: 'bi-shop', color: 'text-success' },
+              { id: '11st', icon: 'bi-handbag', color: 'text-danger' },
+              { id: 'gmarket', icon: 'bi-cart-check', color: 'text-primary' },
+              { id: 'coupang', icon: 'bi-lightning-fill', color: 'text-warning' },
+              { id: 'pps', icon: 'bi-building', color: 'text-dark' }
+            ].map((shop) => (
+              <div key={shop.id} className="col-6 col-sm-4 col-md-3 col-lg-2">
+                <a href="#!" className="card h-100 border-0 shadow-sm rounded-4 text-decoration-none hover-lift text-center py-4 px-2">
+                  <div className={`mb-2 fs-3 ${shop.color}`}>
+                    <i className={`bi ${shop.icon}`}></i>
+                  </div>
+                  <h6 className="mb-0 text-dark small fw-bold">{(dict.retail.shops as any)[shop.id]}</h6>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-9 py-lg-11 position-relative overflow-hidden bg-primary text-white">
         <div className="container position-relative z-1">

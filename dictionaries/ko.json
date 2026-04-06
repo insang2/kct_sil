@@ -48,5 +48,17 @@
     "btn_phone": "전화 문의",
     "btn_whatsapp": "WhatsApp 문의",
     "btn_email": "sales@korcta.com"
+  },
+  "retail": {
+    "label": "소량 주문",
+    "title": "공식 입점 몰 안내",
+    "description": "일반 소비자 및 소량 구매 고객을 위해 다양한 오픈마켓에 입점해 있습니다. 선호하시는 쇼핑몰을 통해 편리하게 구매하세요.",
+    "shops": {
+      "naver": "네이버 스마트스토어",
+      "11st": "11번가",
+      "gmarket": "지마켓",
+      "coupang": "쿠팡",
+      "pps": "조달청"
+    }
   }
 }

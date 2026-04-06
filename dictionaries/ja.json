@@ -48,5 +48,17 @@
     "btn_phone": "お電話でのお問い合わせ",
     "btn_whatsapp": "WhatsApp",
     "btn_email": "sales@korcta.com"
+  },
+  "retail": {
+    "label": "小口注文",
+    "title": "公式出店モールのご案内",
+    "description": "一般消費者および小口購入のお客様のために、多様なオープンマーケットに出店しております。お好みのモールから便利にご購入ください。",
+    "shops": {
+      "naver": "Naverスマートストア",
+      "11st": "11st",
+      "gmarket": "Gmarket",
+      "coupang": "Coupang",
+      "pps": "韓国調達庁"
+    }
   }
 }

@@ -48,5 +48,17 @@
     "btn_phone": "電話諮詢",
     "btn_whatsapp": "WhatsApp",
     "btn_email": "sales@korcta.com"
+  },
+  "retail": {
+    "label": "小量訂購",
+    "title": "官方進駐商城指南",
+    "description": "我們在多個開放市場設有官方商城，方便一般消費者及小量購買的客戶。請透過您喜好的商城輕鬆購買。",
+    "shops": {
+      "naver": "Naver商城",
+      "11st": "11st",
+      "gmarket": "Gmarket",
+      "coupang": "Coupang",
+      "pps": "韓國採購廳"
+    }
   }
 }
