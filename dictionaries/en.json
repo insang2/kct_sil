@@ -41,5 +41,11 @@
     "topseal_desc_1": "Sealants, Cartridges, Urethane Foam, etc.",
     "topseal_desc_2": "High-quality architectural materials optimized for construction sites.",
     "topseal_btn": "View All Topseal Products"
+  },
+  "cta": {
+    "title": "B2B Bulk Orders & Special Pricing",
+    "description": "We supply the highest quality construction materials required for your projects quickly and at reasonable prices. Consult with an expert today.",
+    "btn_primary": "Contact Us Now",
+    "btn_secondary": "Download Company Profile"
   }
 }

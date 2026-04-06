@@ -111,6 +111,26 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="py-9 py-lg-11 position-relative overflow-hidden bg-primary text-white">
+        <div className="container position-relative z-1">
+          <div className="row align-items-center justify-content-center text-center">
+            <div className="col-xl-8 col-lg-9">
+              <h2 className="display-5 fw-bold mb-4">{dict.cta.title}</h2>
+              <p className="lead mb-5 opacity-75">{dict.cta.description}</p>
+              <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="#!" className="btn btn-dark btn-lg px-5 rounded-pill shadow-sm hover-lift">{dict.cta.btn_primary}</a>
+                <a href="#!" className="btn btn-outline-white btn-lg px-5 rounded-pill hover-lift">{dict.cta.btn_secondary}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Background decorative elements */}
+        <div className="position-absolute top-0 end-0 mt-n5 me-n5 opacity-25">
+           <img src="/assets/img/vectors/pattern-dots.svg" alt="pattern" width="300" height="300" />
+        </div>
+      </section>
     </>
   );
 }
