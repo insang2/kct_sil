@@ -86,7 +86,13 @@ export default function Home() {
                   <p className="card-text text-muted mb-4">
                     건축용 접착제 및 실란트.<br />우수한 내후성과 접착력을 자랑하는 프리미엄 제품군입니다.
                   </p>
-                  <a href="https://www.dow.com/ko-kr/search.html#first=10&t=Products&sort=relevancy" target="_blank" rel="noreferrer" className="btn btn-primary rounded-pill px-4">다우실리콘 자재 보기</a>
+                  <ul className="list-unstyled text-start text-muted mb-4 mx-auto" style={{maxWidth: '280px', fontSize: '0.9rem'}}>
+                    <li className="mb-2"><i className="bi bi-check-circle-fill text-primary me-2"></i>DOWSIL™ 789 전천후 실리콘 실란트</li>
+                    <li className="mb-2"><i className="bi bi-check-circle-fill text-primary me-2"></i>DOWSIL™ 991 고성능 실리콘 실란트</li>
+                    <li className="mb-2"><i className="bi bi-check-circle-fill text-primary me-2"></i>DOWSIL™ 791 건축용 웨더실</li>
+                    <li className="mb-2"><i className="bi bi-check-circle-fill text-primary me-2"></i>DOWSIL™ 895 구조용 실리콘 실란트</li>
+                  </ul>
+                  <a href="https://www.dow.com/ko-kr/search.html#first=10&t=Products&sort=relevancy&f:@dow_producttechnology_hierarchy=[%EC%A0%91%EC%B0%A9%EC%A0%9C%20%EB%B0%8F%20%EC%8B%A4%EB%9E%80%ED%8A%B8,%EA%B1%B4%EC%B6%95%EC%9A%A9%20%EC%A0%91%EC%B0%A9%EC%A0%9C%20%EB%B0%8F%20%EC%8B%A4%EB%9E%80%ED%8A%B8]" target="_blank" rel="noreferrer" className="btn btn-primary rounded-pill px-4">다우실리콘 자재 보기</a>
                 </div>
               </div>
             </div>
