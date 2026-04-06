@@ -38,8 +38,8 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
         <div className="container">
           <div className="row justify-content-center mb-9 text-center">
             <div className="col-lg-8">
-              <span className="h6 text-body-secondary">{dict.features.label}</span>
-              <h2 className="display-5 mb-0">{dict.features.title}</h2>
+              <span className="h6 text-primary fw-bold text-uppercase">{dict.features.label}</span>
+              <h2 className="display-4 mb-0 fw-bold">{dict.features.title}</h2>
             </div>
           </div>
           <div className="row justify-content-around">
@@ -48,21 +48,21 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                 <i className="icon-Repeat-2 position-relative"></i>
               </div>
               <h5 className="mb-3">{dict.features.f1_title}</h5>
-              <p className="mb-3 px-lg-3 text-secondary">{dict.features.f1_desc}</p>
+              <p className="mb-3 px-lg-3 text-dark opacity-75 fw-normal">{dict.features.f1_desc}</p>
             </div>
             <div className="col-12 col-lg-4 mb-7 mb-lg-0 text-center">
               <div className="mb-4 position-relative display-5 fw-normal text-primary">
                 <i className="icon-Truck position-relative"></i>
               </div>
               <h5 className="mb-3">{dict.features.f2_title}</h5>
-              <p className="mb-3 px-lg-3 text-secondary">{dict.features.f2_desc}</p>
+              <p className="mb-3 px-lg-3 text-dark opacity-75 fw-normal">{dict.features.f2_desc}</p>
             </div>
             <div className="col-12 col-lg-4 text-center">
               <div className="mb-4 position-relative display-5 fw-normal text-primary">
                 <i className="icon-File-Edit position-relative"></i>
               </div>
               <h5 className="mb-3">{dict.features.f3_title}</h5>
-              <p className="mb-3 px-lg-3 text-secondary">{dict.features.f3_desc}</p>
+              <p className="mb-3 px-lg-3 text-dark opacity-75 fw-normal">{dict.features.f3_desc}</p>
             </div>
           </div>
         </div>
@@ -73,8 +73,8 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
         <div className="container">
           <div className="row justify-content-center mb-9 text-center">
             <div className="col-lg-8">
-              <span className="h6 text-primary">{dict.products.label}</span>
-              <h2 className="display-5 mb-0">{dict.products.title}</h2>
+              <span className="h6 text-primary fw-bold text-uppercase">{dict.products.label}</span>
+              <h2 className="display-4 mb-0 fw-bold">{dict.products.title}</h2>
             </div>
           </div>
           
@@ -87,10 +87,10 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                     <i className="icon-Building display-4"></i>
                   </div>
                   <h5 className="card-title text-dark fw-bold mb-3">{dict.products.dow_title}</h5>
-                  <p className="card-text text-secondary mb-4">
+                  <p className="card-text text-dark opacity-75 fw-normal mb-4">
                     {dict.products.dow_desc_1}<br />{dict.products.dow_desc_2}
                   </p>
-                  <ul className="list-unstyled text-start text-secondary mb-4 mx-auto" style={{maxWidth: '280px', fontSize: '0.9rem'}}>
+                  <ul className="list-unstyled text-start text-dark opacity-75 fw-normal mb-4 mx-auto" style={{maxWidth: '280px', fontSize: '0.9rem'}}>
                     {dict.products.dow_items.map((item: string, idx: number) => (
                       <li key={idx} className="mb-2"><i className="bi bi-check-circle-fill text-primary me-2"></i>{item}</li>
                     ))}
@@ -124,9 +124,9 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
         <div className="container">
           <div className="row justify-content-center mb-8 text-center">
             <div className="col-lg-8">
-              <span className="h6 text-body-secondary">{dict.retail.label}</span>
-              <h2 className="display-6 mb-3">{dict.retail.title}</h2>
-              <p className="text-secondary/80">{dict.retail.description}</p>
+              <span className="h6 text-primary fw-bold text-uppercase">{dict.retail.label}</span>
+              <h2 className="display-4 mb-3 fw-bold">{dict.retail.title}</h2>
+              <p className="lead text-dark font-weight-medium">{dict.retail.description}</p>
             </div>
           </div>
           <div className="row g-3 justify-content-center">
@@ -156,7 +156,7 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
           <div className="row align-items-center justify-content-center text-center">
             <div className="col-xl-8 col-lg-9">
               <h2 className="display-4 fw-bold mb-4">{dict.cta.title}</h2>
-              <p className="lead mb-5 text-white opacity-100 fw-medium">{dict.cta.description}</p>
+              <p className="lead mb-5 text-white fw-medium" style={{ opacity: 0.9 }}>{dict.cta.description}</p>
               <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
                 <a href="tel:+821012345678" className="btn btn-dark btn-lg px-4 rounded-pill shadow-sm hover-lift">
                   <i className="bi bi-telephone-fill me-2"></i>{dict.cta.btn_phone}

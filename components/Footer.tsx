@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-12 text-center">
-            <p className="mb-0 text-muted">© {new Date().getFullYear()} 한국건설트레이딩 (KCT). All rights reserved.</p>
+            <p className="mb-0 text-white-50">© {new Date().getFullYear()} 한국건설트레이딩 (KCT). All rights reserved.</p>
           </div>
         </div>
       </div>
