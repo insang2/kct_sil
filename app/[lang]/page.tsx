@@ -23,7 +23,14 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
             </div>
           </div>
         </div>
-        <div className="position-absolute top-0 start-0 w-100 h-100 bg-cover bg-center opacity-50" style={{ backgroundImage: "url('/assets/img/backgrounds/hero_construction.png')" }}></div>
+        {/* Background Image with darker overlay for readability */}
+        <div className="position-absolute top-0 start-0 w-100 h-100 bg-cover bg-center" 
+             style={{ 
+               backgroundImage: "url('/assets/img/backgrounds/hero_construction.png')",
+               backgroundBlendMode: 'overlay',
+               backgroundColor: 'rgba(0,0,0,0.6)' 
+             }}>
+        </div>
       </section>
 
       {/* Features section */}
@@ -41,21 +48,21 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                 <i className="icon-Repeat-2 position-relative"></i>
               </div>
               <h5 className="mb-3">{dict.features.f1_title}</h5>
-              <p className="mb-3 px-lg-3 text-muted">{dict.features.f1_desc}</p>
+              <p className="mb-3 px-lg-3 text-secondary">{dict.features.f1_desc}</p>
             </div>
             <div className="col-12 col-lg-4 mb-7 mb-lg-0 text-center">
               <div className="mb-4 position-relative display-5 fw-normal text-primary">
                 <i className="icon-Truck position-relative"></i>
               </div>
               <h5 className="mb-3">{dict.features.f2_title}</h5>
-              <p className="mb-3 px-lg-3 text-muted">{dict.features.f2_desc}</p>
+              <p className="mb-3 px-lg-3 text-secondary">{dict.features.f2_desc}</p>
             </div>
             <div className="col-12 col-lg-4 text-center">
               <div className="mb-4 position-relative display-5 fw-normal text-primary">
                 <i className="icon-File-Edit position-relative"></i>
               </div>
               <h5 className="mb-3">{dict.features.f3_title}</h5>
-              <p className="mb-3 px-lg-3 text-muted">{dict.features.f3_desc}</p>
+              <p className="mb-3 px-lg-3 text-secondary">{dict.features.f3_desc}</p>
             </div>
           </div>
         </div>
@@ -80,10 +87,10 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                     <i className="icon-Building display-4"></i>
                   </div>
                   <h5 className="card-title text-dark fw-bold mb-3">{dict.products.dow_title}</h5>
-                  <p className="card-text text-muted mb-4">
+                  <p className="card-text text-secondary mb-4">
                     {dict.products.dow_desc_1}<br />{dict.products.dow_desc_2}
                   </p>
-                  <ul className="list-unstyled text-start text-muted mb-4 mx-auto" style={{maxWidth: '280px', fontSize: '0.9rem'}}>
+                  <ul className="list-unstyled text-start text-secondary mb-4 mx-auto" style={{maxWidth: '280px', fontSize: '0.9rem'}}>
                     {dict.products.dow_items.map((item: string, idx: number) => (
                       <li key={idx} className="mb-2"><i className="bi bi-check-circle-fill text-primary me-2"></i>{item}</li>
                     ))}
@@ -101,7 +108,7 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                     <i className="icon-Paint-Brush display-4"></i>
                   </div>
                   <h5 className="card-title text-dark fw-bold mb-3">{dict.products.topseal_title}</h5>
-                  <p className="card-text text-muted mb-4">
+                  <p className="card-text text-secondary mb-4">
                     {dict.products.topseal_desc_1}<br />{dict.products.topseal_desc_2}
                   </p>
                   <a href="https://topseal.co.kr/product/all-product-page/" target="_blank" rel="noreferrer" className="btn btn-primary rounded-pill px-4">{dict.products.topseal_btn}</a>
@@ -119,7 +126,7 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
             <div className="col-lg-8">
               <span className="h6 text-body-secondary">{dict.retail.label}</span>
               <h2 className="display-6 mb-3">{dict.retail.title}</h2>
-              <p className="text-muted">{dict.retail.description}</p>
+              <p className="text-secondary/80">{dict.retail.description}</p>
             </div>
           </div>
           <div className="row g-3 justify-content-center">
