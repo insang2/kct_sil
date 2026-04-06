@@ -33,13 +33,13 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
         </div>
       </section>
 
-      {/* Features section */}
-      <section className="position-relative border-bottom py-9 py-lg-11">
+      {/* Features section - Dark Theme Fixed */}
+      <section className="position-relative border-bottom py-9 py-lg-11 bg-dark text-white">
         <div className="container">
           <div className="row justify-content-center mb-9 text-center">
             <div className="col-lg-8">
               <span className="h6 text-primary fw-bold text-uppercase">{dict.features.label}</span>
-              <h2 className="display-4 mb-0 fw-bold">{dict.features.title}</h2>
+              <h2 className="display-4 mb-0 fw-bold text-white">{dict.features.title}</h2>
             </div>
           </div>
           <div className="row justify-content-around">
@@ -47,50 +47,50 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
               <div className="mb-4 position-relative display-5 fw-normal text-primary">
                 <i className="icon-Repeat-2 position-relative"></i>
               </div>
-              <h5 className="mb-3">{dict.features.f1_title}</h5>
-              <p className="mb-3 px-lg-3 text-dark opacity-75 fw-normal">{dict.features.f1_desc}</p>
+              <h5 className="mb-3 text-white">{dict.features.f1_title}</h5>
+              <p className="mb-3 px-lg-3 text-white-50 fw-normal">{dict.features.f1_desc}</p>
             </div>
             <div className="col-12 col-lg-4 mb-7 mb-lg-0 text-center">
               <div className="mb-4 position-relative display-5 fw-normal text-primary">
                 <i className="icon-Truck position-relative"></i>
               </div>
-              <h5 className="mb-3">{dict.features.f2_title}</h5>
-              <p className="mb-3 px-lg-3 text-dark opacity-75 fw-normal">{dict.features.f2_desc}</p>
+              <h5 className="mb-3 text-white">{dict.features.f2_title}</h5>
+              <p className="mb-3 px-lg-3 text-white-50 fw-normal">{dict.features.f2_desc}</p>
             </div>
             <div className="col-12 col-lg-4 text-center">
               <div className="mb-4 position-relative display-5 fw-normal text-primary">
                 <i className="icon-File-Edit position-relative"></i>
               </div>
-              <h5 className="mb-3">{dict.features.f3_title}</h5>
-              <p className="mb-3 px-lg-3 text-dark opacity-75 fw-normal">{dict.features.f3_desc}</p>
+              <h5 className="mb-3 text-white">{dict.features.f3_title}</h5>
+              <p className="mb-3 px-lg-3 text-white-50 fw-normal">{dict.features.f3_desc}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Product Display Section */}
-      <section className="py-9 py-lg-11 bg-light">
+      {/* Product Display Section - Light Theme Fixed */}
+      <section className="py-9 py-lg-11 bg-white text-dark">
         <div className="container">
           <div className="row justify-content-center mb-9 text-center">
             <div className="col-lg-8">
               <span className="h6 text-primary fw-bold text-uppercase">{dict.products.label}</span>
-              <h2 className="display-4 mb-0 fw-bold">{dict.products.title}</h2>
+              <h2 className="display-4 mb-0 fw-bold text-dark">{dict.products.title}</h2>
             </div>
           </div>
           
           <div className="row g-4 justify-content-center">
             {/* Dow Silicones */}
             <div className="col-md-6 col-lg-5">
-              <div className="card h-100 border-0 shadow-sm rounded-4 hover-lift">
+              <div className="card h-100 border-0 shadow-lg rounded-4 hover-lift bg-light">
                 <div className="card-body p-5 text-center">
                   <div className="mb-4 text-primary">
                     <i className="icon-Building display-4"></i>
                   </div>
                   <h5 className="card-title text-dark fw-bold mb-3">{dict.products.dow_title}</h5>
-                  <p className="card-text text-dark opacity-75 fw-normal mb-4">
+                  <p className="card-text text-body-secondary mb-4">
                     {dict.products.dow_desc_1}<br />{dict.products.dow_desc_2}
                   </p>
-                  <ul className="list-unstyled text-start text-dark opacity-75 fw-normal mb-4 mx-auto" style={{maxWidth: '280px', fontSize: '0.9rem'}}>
+                  <ul className="list-unstyled text-start text-body-secondary mb-4 mx-auto" style={{maxWidth: '280px', fontSize: '0.9rem'}}>
                     {dict.products.dow_items.map((item: string, idx: number) => (
                       <li key={idx} className="mb-2"><i className="bi bi-check-circle-fill text-primary me-2"></i>{item}</li>
                     ))}
@@ -102,13 +102,13 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
 
             {/* Topseal Products */}
             <div className="col-md-6 col-lg-5">
-              <div className="card h-100 border-0 shadow-sm rounded-4 hover-lift">
+              <div className="card h-100 border-0 shadow-lg rounded-4 hover-lift bg-light">
                 <div className="card-body p-5 text-center">
                   <div className="mb-4 text-primary">
                     <i className="icon-Paint-Brush display-4"></i>
                   </div>
                   <h5 className="card-title text-dark fw-bold mb-3">{dict.products.topseal_title}</h5>
-                  <p className="card-text text-secondary mb-4">
+                  <p className="card-text text-body-secondary mb-4">
                     {dict.products.topseal_desc_1}<br />{dict.products.topseal_desc_2}
                   </p>
                   <a href="https://topseal.co.kr/product/all-product-page/" target="_blank" rel="noreferrer" className="btn btn-primary rounded-pill px-4">{dict.products.topseal_btn}</a>
@@ -119,14 +119,14 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
         </div>
       </section>
 
-      {/* Small Orders (Retail) Section */}
-      <section className="py-9 py-lg-11 border-top bg-white">
+      {/* Small Orders (Retail) Section - Forced Light Theme */}
+      <section className="py-9 py-lg-11 border-top bg-light text-dark">
         <div className="container">
           <div className="row justify-content-center mb-8 text-center">
             <div className="col-lg-8">
               <span className="h6 text-primary fw-bold text-uppercase">{dict.retail.label}</span>
-              <h2 className="display-4 mb-3 fw-bold">{dict.retail.title}</h2>
-              <p className="lead text-dark font-weight-medium">{dict.retail.description}</p>
+              <h2 className="display-4 mb-3 fw-bold text-dark">{dict.retail.title}</h2>
+              <p className="lead text-body-secondary">{dict.retail.description}</p>
             </div>
           </div>
           <div className="row g-3 justify-content-center">
@@ -135,14 +135,14 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
               { id: '11st', icon: 'bi-handbag', color: 'text-danger' },
               { id: 'gmarket', icon: 'bi-cart-check', color: 'text-primary' },
               { id: 'coupang', icon: 'bi-lightning-fill', color: 'text-warning' },
-              { id: 'pps', icon: 'bi-building', color: 'text-dark' }
+              { id: 'pps', icon: 'bi-building', color: 'text-secondary' }
             ].map((shop) => (
               <div key={shop.id} className="col-6 col-sm-4 col-md-3 col-lg-2">
-                <a href="#!" className="card h-100 border-0 bg-dark shadow-sm rounded-4 text-decoration-none hover-lift text-center py-4 px-2">
+                <a href="#!" className="card h-100 border-0 bg-white shadow rounded-4 text-decoration-none hover-lift text-center py-4 px-2">
                   <div className={`mb-2 fs-3 ${shop.color}`}>
                     <i className={`bi ${shop.icon}`}></i>
                   </div>
-                  <h6 className="mb-0 text-white small fw-bold">{(dict.retail.shops as any)[shop.id]}</h6>
+                  <h6 className="mb-0 text-dark small fw-bold">{(dict.retail.shops as any)[shop.id]}</h6>
                 </a>
               </div>
             ))}
