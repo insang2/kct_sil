@@ -58,7 +58,13 @@
       "11st": "11번가",
       "gmarket": "지마켓",
       "coupang": "쿠팡",
-      "pps": "조달청"
+      "pps": "조달청",
+      "toss": "토스쇼핑",
+      "homeshopping": "홈쇼핑(18)",
+      "welfare": "복지몰(55)",
+      "aliexpress": "알리익스프레스",
+      "amazon": "아마존",
+      "ebay": "eBay"
     }
   }
 }

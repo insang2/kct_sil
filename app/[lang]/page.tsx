@@ -135,6 +135,12 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
               { id: '11st', icon: 'bi-handbag', color: 'text-danger' },
               { id: 'gmarket', icon: 'bi-cart-check', color: 'text-primary' },
               { id: 'coupang', icon: 'bi-lightning-fill', color: 'text-warning' },
+              { id: 'toss', icon: 'bi-credit-card-2-front', color: 'text-primary' },
+              { id: 'aliexpress', icon: 'bi-box-seam', color: 'text-danger' },
+              { id: 'amazon', icon: 'bi-box', color: 'text-warning' },
+              { id: 'ebay', icon: 'bi-tag', color: 'text-primary' },
+              { id: 'homeshopping', icon: 'bi-tv', color: 'text-dark' },
+              { id: 'welfare', icon: 'bi-gift', color: 'text-info' },
               { id: 'pps', icon: 'bi-building', color: 'text-secondary' }
             ].map((shop) => (
               <div key={shop.id} className="col-6 col-md-4 col-lg-2">

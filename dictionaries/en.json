@@ -58,7 +58,13 @@
       "11st": "11st",
       "gmarket": "Gmarket",
       "coupang": "Coupang",
-      "pps": "Public Procurement Service"
+      "pps": "Public Procurement Service",
+      "toss": "Toss Shopping",
+      "homeshopping": "Home Shopping (18)",
+      "welfare": "Welfare Mall (55)",
+      "aliexpress": "AliExpress",
+      "amazon": "Amazon",
+      "ebay": "eBay"
     }
   }
 }

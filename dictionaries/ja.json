@@ -58,7 +58,13 @@
       "11st": "11st",
       "gmarket": "Gmarket",
       "coupang": "Coupang",
-      "pps": "韓国調達庁"
+      "pps": "韓国調達庁",
+      "toss": "Tossショッピング",
+      "homeshopping": "ホームショッピング(18)",
+      "welfare": "福祉モール(55)",
+      "aliexpress": "AliExpress",
+      "amazon": "Amazon",
+      "ebay": "eBay"
     }
   }
 }
