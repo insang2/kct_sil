@@ -26,10 +26,6 @@ export default function RootLayout({
         <link href="/assets/css/theme.min.css" rel="stylesheet" />
       </head>
       <body className="d-flex flex-column min-vh-100">
-        <div className="spinner-loader bg-primary text-white">
-          <div className="spinner-border" role="status"></div>
-        </div>
-        
         <Header />
         
         <main className="flex-grow-1">

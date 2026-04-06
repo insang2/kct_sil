@@ -20,7 +20,7 @@ export default function Home() {
           </div>
         </div>
         {/* Background Image Placeholder */}
-        <div className="position-absolute top-0 start-0 w-100 h-100 bg-cover bg-center opacity-50" style={{ backgroundImage: "url('/assets/img/backgrounds/bg3.jpg')" }}></div>
+        <div className="position-absolute top-0 start-0 w-100 h-100 bg-cover bg-center opacity-50" style={{ backgroundImage: "url('/assets/img/backgrounds/hero_construction.png')" }}></div>
       </section>
 
       {/* Features section */}
@@ -59,6 +59,52 @@ export default function Home() {
               <p className="mb-3 px-lg-3 text-muted">
                 기업 로그인 시 복잡한 세금 증빙 절차를 웹에서 쉽게 다운로드 및 신청 가능합니다.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Display Section */}
+      <section className="py-9 py-lg-11 bg-light">
+        <div className="container">
+          <div className="row justify-content-center mb-9 text-center">
+            <div className="col-lg-8">
+              <span className="h6 text-primary">상품 안내</span>
+              <h2 className="display-5 mb-0">주요 취급 브랜드 및 제품</h2>
+            </div>
+          </div>
+          
+          <div className="row g-4 justify-content-center">
+            {/* Dow Silicones */}
+            <div className="col-md-6 col-lg-5">
+              <div className="card h-100 border-0 shadow-sm rounded-4 hover-lift">
+                <div className="card-body p-5 text-center">
+                  <div className="mb-4 text-primary">
+                    <i className="icon-Building display-4"></i>
+                  </div>
+                  <h5 className="card-title text-dark fw-bold mb-3">다우실리콘 (DOWSIL)</h5>
+                  <p className="card-text text-muted mb-4">
+                    건축용 접착제 및 실란트.<br />우수한 내후성과 접착력을 자랑하는 프리미엄 제품군입니다.
+                  </p>
+                  <a href="https://www.dow.com/ko-kr/search.html#first=10&t=Products&sort=relevancy" target="_blank" rel="noreferrer" className="btn btn-primary rounded-pill px-4">다우실리콘 자재 보기</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Topseal Products */}
+            <div className="col-md-6 col-lg-5">
+              <div className="card h-100 border-0 shadow-sm rounded-4 hover-lift">
+                <div className="card-body p-5 text-center">
+                  <div className="mb-4 text-primary">
+                    <i className="icon-Paint-Brush display-4"></i>
+                  </div>
+                  <h5 className="card-title text-dark fw-bold mb-3">탑실 (Topseal)</h5>
+                  <p className="card-text text-muted mb-4">
+                    실란트, 카트리지, 우레탄 폼 등.<br />건설 현장에 최적화된 탑프라의 고품질 건축 자재입니다.
+                  </p>
+                  <a href="https://topseal.co.kr/product/all-product-page/" target="_blank" rel="noreferrer" className="btn btn-primary rounded-pill px-4">탑실 제품 전체보기</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
