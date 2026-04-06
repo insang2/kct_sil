@@ -10,8 +10,8 @@ export default async function Header({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
         <div className="navbar-fixed-bg position-absolute"></div>
         <div className="container position-relative z-1">
           <Link className="navbar-brand" href={`/${lang}`}>
-            <img src="/assets/img/logo/logo.svg" alt="logo" className="img-fluid navbar-brand-sticky" />
-            <img src="/assets/img/logo/logo-white.svg" alt="logo-white" className="img-fluid navbar-brand-transparent" />
+            <img src="/assets/img/logo/logo.svg" alt="logo" className="img-fluid navbar-brand-sticky" style={{ height: '45px', width: 'auto' }} />
+            <img src="/assets/img/logo/logo-white.svg" alt="logo-white" className="img-fluid navbar-brand-transparent" style={{ height: '45px', width: 'auto' }} />
           </Link>
           <button className="navbar-toggler order-last" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarTheme">
             <span className="navbar-toggler-icon"><i></i></span>
