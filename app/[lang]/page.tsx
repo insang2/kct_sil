@@ -12,7 +12,7 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
           <div className="row align-items-center">
             <div className="col-lg-8 mx-auto text-center text-white">
               <h1 className="display-4 mb-4 fw-bold">{dict.hero.title}</h1>
-              <p className="lead mb-5 opacity-75">
+              <p className="lead mb-5 text-white fw-medium">
                 {dict.hero.description_1}<br />
                 {dict.hero.description_2}
               </p>
