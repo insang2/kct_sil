@@ -1,41 +1,41 @@
 {
   "navigation": {
     "home": "Home",
-    "about": "About Us",
-    "b2b": "B2B Quotes",
-    "export": "Export Inquiry",
+    "about": "About",
+    "b2b": "B2B Quote",
+    "export": "Export Inquiries",
     "resources": "Resources",
     "language": "Language"
   },
   "hero": {
-    "title": "A New Standard in Construction Material Distribution",
-    "description_1": "Special B2B pricing and easy ordering systems for site managers.",
-    "description_2": "Fast and safe delivery for all consumers.",
-    "btn_products": "Explore Products",
-    "btn_b2b": "Get B2B Quote"
+    "title": "New Standard for Construction Material Trading",
+    "description_1": "B2B special pricing and simple ordering system for site managers.",
+    "description_2": "Fast and safe delivery for general consumers.",
+    "btn_products": "View Products",
+    "btn_b2b": "Free Quote"
   },
   "features": {
-    "label": "KCT Advantages",
+    "label": "KCT ADVANTAGES",
     "title": "Why Choose KCT?",
-    "f1_title": "Easy Reorder & Checkout",
-    "f1_desc": "Reorder the same materials from previous sites with a single click.",
-    "f2_title": "Multi-site Split Delivery",
-    "f2_desc": "Set different delivery addresses for multiple construction sites in one payment.",
-    "f3_title": "Automated Tax Invoices",
-    "f3_desc": "Easily download and apply for complex tax proofs securely on the web."
+    "f1_title": "Easy Reordering & Ordering",
+    "f1_desc": "One-click ordering from existing project material lists.",
+    "f2_title": "Split Delivery to Multiple Sites",
+    "f2_desc": "Manage different shipping addresses for multiple projects in one order.",
+    "f3_title": "Automated Documents",
+    "f3_desc": "Easily download quotes and tax invoices for corporate clients."
   },
   "products": {
-    "label": "Products Guide",
-    "title": "Major Brands & Products",
-    "dow_title": "DOWSIL",
-    "dow_desc_1": "Construction Adhesives & Sealants.",
-    "dow_desc_2": "Premium product line boasting excellent weather resistance and adhesion.",
-    "dow_btn": "View DOWSIL Materials",
+    "label": "SHOPPING GUIDE",
+    "title": "Featured Brands & Products",
+    "dow_title": "DOWSIL™ Silicones",
+    "dow_desc_1": "Architectural Adhesives and Sealants.",
+    "dow_desc_2": "Premium product line with excellent weatherability and adhesion.",
+    "dow_btn": "View DOWSIL Products",
     "dow_items": [
-      "DOWSIL™ 789 Weatherproofing Silicone",
-      "DOWSIL™ 991 High Performance Silicone",
-      "DOWSIL™ 791 Weatherproofing Sealant",
-      "DOWSIL™ 895 Structural Silicone"
+      "DOWSIL™ 789 Weatherproofing Silicone Sealant",
+      "DOWSIL™ 991 High Performance Silicone Sealant",
+      "DOWSIL™ 791 Silicone Weatherproofing Sealant",
+      "DOWSIL™ 895 Structural Silicone Sealant"
     ],
     "topseal_title": "Topseal",
     "topseal_desc_1": "Sealants, Cartridges, Urethane Foam, etc.",
@@ -50,7 +50,7 @@
     "btn_email": "sales@korcta.com"
   },
   "retail": {
-    "label": "Small Orders",
+    "label": "SMALL ORDERS",
     "title": "Official Retail Stores",
     "description": "We are available on various open markets for general consumers and small quantity purchasers. Purchase conveniently through your favorite shop.",
     "shops": {
@@ -65,10 +65,10 @@
       "aliexpress": "AliExpress",
       "amazon": "Amazon",
       "ebay": "eBay"
-    },
-    "footer": {
-      "sales_manager": "Sales Manager: Lee Joon-hwan",
-      "rights": "All rights reserved."
     }
+  },
+  "footer": {
+    "sales_manager": "Sales Manager: Lee Joon-hwan",
+    "rights": "All rights reserved."
   }
 }

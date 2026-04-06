@@ -65,10 +65,10 @@
       "aliexpress": "알리익스프레스",
       "amazon": "아마존",
       "ebay": "eBay"
-    },
-    "footer": {
-      "sales_manager": "영업담당자: 이준환 (Lee Joon-hwan)",
-      "rights": "모든 권리 보유."
     }
+  },
+  "footer": {
+    "sales_manager": "영업담당자: 이준환 (Lee Joon-hwan)",
+    "rights": "모든 권리 보유."
   }
 }

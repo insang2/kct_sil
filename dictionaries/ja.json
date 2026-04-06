@@ -1,74 +1,74 @@
 {
   "navigation": {
     "home": "ホーム",
-    "about": "会社概要",
-    "b2b": "B2B見積り",
+    "about": "会社紹介",
+    "b2b": "B2B 見積依頼",
     "export": "輸出のお問い合わせ",
     "resources": "資料室",
     "language": "言語"
   },
   "hero": {
-    "title": "建設資材流通の新しい基準",
-    "description_1": "現場監督のためのB2B特別単価および簡単な発注システム。",
-    "description_2": "一般消費者のための迅速で安全な配送。",
+    "title": "建設資재流通の新しい基準",
+    "description_1": "現場監督向けのB2B特別単価および簡易発注システム。",
+    "description_2": "一般消費者向けの迅速かつ安全な配送。",
     "btn_products": "製品を見る",
-    "btn_b2b": "B2B無料見積り"
+    "btn_b2b": "無料見積もり"
   },
   "features": {
-    "label": "KCTの強み",
-    "title": "なぜKCTが選ばれるのか？",
+    "label": "KCTの長所",
+    "title": "なぜKCTなのか？",
     "f1_title": "簡単な再注文と発注",
     "f1_desc": "以前の現場で購入した資材リストをワンクリックで再注文できます。",
     "f2_title": "複数現場への分割配送",
-    "f2_desc": "1回の決済で複数の建設現場に異なる配送先を指定できます。",
-    "f3_title": "見積書・税金計算書の自動化",
-    "f3_desc": "法人ログイン時、複雑な税務証明の手続きをWebから簡単にダウンロードおよび申請可能です。"
+    "f2_desc": "一度の決済で複数の現場へ配送先を分けて指定可能です。",
+    "f3_title": "見積書/領収書の自動化",
+    "f3_desc": "企業ログイン時、複雑な書類作成をウェブで簡単に申請・ダウンロードできます。"
   },
   "products": {
-    "label": "製品案内",
-    "title": "主要取扱ブランドおよび製品",
-    "dow_title": "ダウシリコーン (DOWSIL)",
+    "label": "商品の案内",
+    "title": "主要取り扱いブランドおよび製品",
+    "dow_title": "DOWSIL™ シリコーン",
     "dow_desc_1": "建築用接着剤およびシーラント。",
     "dow_desc_2": "優れた耐候性と接着力を誇るプレミアム製品群です。",
-    "dow_btn": "DOWSILの資材を見る",
+    "dow_btn": "DOWSIL製品を見る",
     "dow_items": [
       "DOWSIL™ 789 全天候型シリコーンシーラント",
       "DOWSIL™ 991 高性能シリコーンシーラント",
       "DOWSIL™ 791 建築用ウェザーシール",
       "DOWSIL™ 895 構造用シリコーンシーラント"
     ],
-    "topseal_title": "トップシール (Topseal)",
+    "topseal_title": "Topseal (トップシール)",
     "topseal_desc_1": "シーラント、カートリッジ、ウレタンフォームなど。",
-    "topseal_desc_2": "建設現場に最適化されたトッププラの高品質建築資材です。",
+    "topseal_desc_2": "建設現場に最適化された高品質な建築資材です。",
     "topseal_btn": "Topseal製品をすべて見る"
   },
   "cta": {
-    "title": "B2B大量注文および特別単価について",
-    "description": "お客様のプロジェクトに必要な最高品質の建設資材を適正価格で迅速に供給いたします。今すぐ専門家にご相談ください。",
+    "title": "B2B大量注文および特別単価のお問い合わせ",
+    "description": "貴社のプロジェクトに必要な最高品質の建設資材を適正価格で迅速に供給します。今すぐ専門家にご相談ください。",
     "btn_phone": "お電話でのお問い合わせ",
-    "btn_whatsapp": "WhatsApp",
+    "btn_whatsapp": "WhatsAppでのお問い合わせ",
     "btn_email": "sales@korcta.com"
   },
   "retail": {
     "label": "小口注文",
-    "title": "公式出店モールのご案内",
-    "description": "一般消費者および小口購入のお客様のために、多様なオープンマーケットに出店しております。お好みのモールから便利にご購入ください。",
+    "title": "公式ショップのご案内",
+    "description": "一般消費者および小口購入のお客様のために、各種オープンマーケットに出店しています。お好みのショップで便利にお買い求めください。",
     "shops": {
       "naver": "Naverスマートストア",
       "11st": "11st",
       "gmarket": "Gmarket",
       "coupang": "Coupang",
-      "pps": "韓国調達庁",
+      "pps": "Public Procurement Service",
       "toss": "Tossショッピング",
       "homeshopping": "ホームショッピング(18)",
       "welfare": "福祉モール(55)",
       "aliexpress": "AliExpress",
       "amazon": "Amazon",
       "ebay": "eBay"
-    },
-    "footer": {
-      "sales_manager": "営業担当者: 李俊煥 (Lee Joon-hwan)",
-      "rights": "全著作権保有。"
     }
+  },
+  "footer": {
+    "sales_manager": "営業担当者: 李俊煥 (Lee Joon-hwan)",
+    "rights": "全著作権保有。"
   }
 }

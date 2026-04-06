@@ -1,74 +1,74 @@
 {
   "navigation": {
-    "home": "首頁",
+    "home": "主頁",
     "about": "關於我們",
-    "b2b": "B2B 報價",
-    "export": "出口諮詢",
-    "resources": "資料室",
+    "b2b": "B2B 報價請求",
+    "export": "出口查詢",
+    "resources": "資料庫",
     "language": "語言"
   },
   "hero": {
-    "title": "建築材料分銷的新標準",
-    "description_1": "專為工地主管提供的 B2B 優惠價格與便捷訂購系統。",
-    "description_2": "為一般消費者提供快速且安全的配送服務。",
-    "btn_products": "探索產品",
-    "btn_b2b": "取得 B2B 報價"
+    "title": "建築材料流通的新標準",
+    "description_1": "專為現場工地主任提供的 B2B 特別報價及簡便訂購系統。",
+    "description_2": "針對一般消費者的快速安全配送。",
+    "btn_products": "瀏覽產品",
+    "btn_b2b": "免費報價"
   },
   "features": {
-    "label": "KCT 的優勢",
-    "title": "為什麼選擇 KCT？",
-    "f1_title": "輕鬆重新訂購",
-    "f1_desc": "只需一鍵，即可重新訂購之前工地購買過的材料清單。",
-    "f2_title": "多工地分批配送",
-    "f2_desc": "一次結帳，即可將貨物分別配送至多個不同的建築工地。",
-    "f3_title": "自動化報價單與稅務發票",
-    "f3_desc": "企業登入後，可輕鬆在網路上申請及下載複雜的稅務證明。"
+    "label": "KCT 優勢",
+    "title": "為什麼選擇韓國建設貿易？",
+    "f1_title": "簡便的再次訂購與發貨",
+    "f1_desc": "可一鍵重新訂購之前項目中購買過的材料清單。",
+    "f2_title": "多工地分期配送",
+    "f2_desc": "一次結帳便可將配送地址分別指定至多個不同的建築工地。",
+    "f3_title": "自動化報價單/發票系統",
+    "f3_desc": "企業登錄後可輕鬆在線上申請及下載各式稅務證明文件。"
   },
   "products": {
-    "label": "產品指南",
-    "title": "主要品牌與產品",
-    "dow_title": "陶熙 (DOWSIL)",
-    "dow_desc_1": "建築用密封膠及接著劑。",
-    "dow_desc_2": "擁有卓越耐候性與附著力的高階產品系列。",
-    "dow_btn": "查看 DOWSIL 材料",
+    "label": "商品指南",
+    "title": "主要經營品牌及產品",
+    "dow_title": "DOWSIL™ 陶氏矽利康",
+    "dow_desc_1": "建築用粘合劑及密封膠。",
+    "dow_desc_2": "具有優異耐候性和粘合力的頂級產品群。",
+    "dow_btn": "瀏覽 DOWSIL 產品",
     "dow_items": [
-      "DOWSIL™ 789 全候型矽酮密封膠",
-      "DOWSIL™ 991 高性能矽酮密封膠",
-      "DOWSIL™ 791 建築耐候密封膠",
-      "DOWSIL™ 895 結構用矽酮密封膠"
+      "DOWSIL™ 789 全天候矽利康密封膠",
+      "DOWSIL™ 991 高性能矽利康密封膠",
+      "DOWSIL™ 791 建築用耐候密封膠",
+      "DOWSIL™ 895 結構性矽利康密封膠"
     ],
-    "topseal_title": "拓普密封 (Topseal)",
+    "topseal_title": "Topseal (大普希爾)",
     "topseal_desc_1": "密封膠、膠管、聚氨酯發泡劑等。",
-    "topseal_desc_2": "專為建築工地優化的 Topseal 高品質建築材料。",
+    "topseal_desc_2": "專為建築工地優化的高品質建築材料。",
     "topseal_btn": "查看所有 Topseal 產品"
   },
   "cta": {
-    "title": "B2B 大宗訂購與特別報價",
-    "description": "我們以合理的價格迅速為您的專案提供所需的最優質建築材料。立即與專家諮詢。",
+    "title": "B2B 大量訂購及特別報價諮詢",
+    "description": "我們以合理的價格迅速供應您項目所需的高品質建築材料。立即諮詢專家。",
     "btn_phone": "電話諮詢",
-    "btn_whatsapp": "WhatsApp",
+    "btn_whatsapp": "WhatsApp 諮詢",
     "btn_email": "sales@korcta.com"
   },
   "retail": {
-    "label": "小量訂購",
-    "title": "官方進駐商城指南",
-    "description": "我們在多個開放市場設有官方商城，方便一般消費者及小量購買的客戶。請透過您喜好的商城輕鬆購買。",
+    "label": "少量訂購",
+    "title": "官方通路指南",
+    "description": "針對一般消費者及少量購買客戶，我們已進駐多個開放市場。請透過您偏好的商城進行選購。",
     "shops": {
-      "naver": "Naver商城",
+      "naver": "Naver Smart Store",
       "11st": "11st",
       "gmarket": "Gmarket",
       "coupang": "Coupang",
-      "pps": "韓國採購廳",
+      "pps": "Public Procurement Service",
       "toss": "Toss購物",
       "homeshopping": "電視購物(18)",
       "welfare": "福利商城(55)",
       "aliexpress": "AliExpress",
       "amazon": "Amazon",
       "ebay": "eBay"
-    },
-    "footer": {
-      "sales_manager": "營業負責人: 李俊煥 (Lee Joon-hwan)",
-      "rights": "保留所有權利。"
     }
+  },
+  "footer": {
+    "sales_manager": "營業負責人: 李俊煥 (Lee Joon-hwan)",
+    "rights": "保留所有權利。"
   }
 }
