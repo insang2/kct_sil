@@ -1,0 +1,45 @@
+{
+  "navigation": {
+    "home": "首頁",
+    "about": "關於我們",
+    "b2b": "B2B 報價",
+    "export": "出口諮詢",
+    "resources": "資料室",
+    "language": "語言"
+  },
+  "hero": {
+    "title": "建築材料分銷的新標準",
+    "description_1": "專為工地主管提供的 B2B 優惠價格與便捷訂購系統。",
+    "description_2": "為一般消費者提供快速且安全的配送服務。",
+    "btn_products": "探索產品",
+    "btn_b2b": "取得 B2B 報價"
+  },
+  "features": {
+    "label": "KCT 的優勢",
+    "title": "為什麼選擇 KCT？",
+    "f1_title": "輕鬆重新訂購",
+    "f1_desc": "只需一鍵，即可重新訂購之前工地購買過的材料清單。",
+    "f2_title": "多工地分批配送",
+    "f2_desc": "一次結帳，即可將貨物分別配送至多個不同的建築工地。",
+    "f3_title": "自動化報價單與稅務發票",
+    "f3_desc": "企業登入後，可輕鬆在網路上申請及下載複雜的稅務證明。"
+  },
+  "products": {
+    "label": "產品指南",
+    "title": "主要品牌與產品",
+    "dow_title": "陶熙 (DOWSIL)",
+    "dow_desc_1": "建築用密封膠及接著劑。",
+    "dow_desc_2": "擁有卓越耐候性與附著力的高階產品系列。",
+    "dow_btn": "查看 DOWSIL 材料",
+    "dow_items": [
+      "DOWSIL™ 789 全候型矽酮密封膠",
+      "DOWSIL™ 991 高性能矽酮密封膠",
+      "DOWSIL™ 791 建築耐候密封膠",
+      "DOWSIL™ 895 結構用矽酮密封膠"
+    ],
+    "topseal_title": "拓普密封 (Topseal)",
+    "topseal_desc_1": "密封膠、膠管、聚氨酯發泡劑等。",
+    "topseal_desc_2": "專為建築工地優化的 Topseal 高品質建築材料。",
+    "topseal_btn": "查看所有 Topseal 產品"
+  }
+}

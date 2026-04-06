@@ -1,0 +1,45 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "b2b": "B2B Quotes",
+    "export": "Export Inquiry",
+    "resources": "Resources",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "A New Standard in Construction Material Distribution",
+    "description_1": "Special B2B pricing and easy ordering systems for site managers.",
+    "description_2": "Fast and safe delivery for all consumers.",
+    "btn_products": "Explore Products",
+    "btn_b2b": "Get B2B Quote"
+  },
+  "features": {
+    "label": "KCT Advantages",
+    "title": "Why Choose KCT?",
+    "f1_title": "Easy Reorder & Checkout",
+    "f1_desc": "Reorder the same materials from previous sites with a single click.",
+    "f2_title": "Multi-site Split Delivery",
+    "f2_desc": "Set different delivery addresses for multiple construction sites in one payment.",
+    "f3_title": "Automated Tax Invoices",
+    "f3_desc": "Easily download and apply for complex tax proofs securely on the web."
+  },
+  "products": {
+    "label": "Products Guide",
+    "title": "Major Brands & Products",
+    "dow_title": "DOWSIL",
+    "dow_desc_1": "Construction Adhesives & Sealants.",
+    "dow_desc_2": "Premium product line boasting excellent weather resistance and adhesion.",
+    "dow_btn": "View DOWSIL Materials",
+    "dow_items": [
+      "DOWSIL™ 789 Weatherproofing Silicone",
+      "DOWSIL™ 991 High Performance Silicone",
+      "DOWSIL™ 791 Weatherproofing Sealant",
+      "DOWSIL™ 895 Structural Silicone"
+    ],
+    "topseal_title": "Topseal",
+    "topseal_desc_1": "Sealants, Cartridges, Urethane Foam, etc.",
+    "topseal_desc_2": "High-quality architectural materials optimized for construction sites.",
+    "topseal_btn": "View All Topseal Products"
+  }
+}

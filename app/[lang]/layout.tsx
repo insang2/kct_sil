@@ -1,21 +1,29 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import "./globals.css";
+import "../../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { locales } from "@/proxy";
 
 export const metadata: Metadata = {
   title: "한국건설트레이딩 (KCT) B2B/B2C Platform",
   description: "건설 자재 유통 및 판매 플랫폼",
 };
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }>) {
+  const { lang } = await params;
   return (
-    <html lang="ko" data-bs-theme="light">
+    <html lang={lang} data-bs-theme="light">
       <head>
         <link rel="icon" href="/assets/img/favicon.ico" type="image/ico" />
         <link rel="stylesheet" href="/assets/fonts/bootstrap-icons/bootstrap-icons.min.css" />
@@ -26,7 +34,7 @@ export default function RootLayout({
         <link href="/assets/css/theme.min.css" rel="stylesheet" />
       </head>
       <body className="d-flex flex-column min-vh-100">
-        <Header />
+        <Header lang={lang as 'ko' | 'en' | 'ja' | 'zh-TW'} />
         
         <main className="flex-grow-1">
           {children}
