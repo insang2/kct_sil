@@ -3,7 +3,7 @@ import Script from "next/script";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { locales } from "@/proxy";
+import { locales } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "한국건설트레이딩 (KCT) B2B/B2C Platform",

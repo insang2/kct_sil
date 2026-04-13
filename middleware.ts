@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { locales, defaultLocale } from "@/lib/i18n";
 
-export const locales = ["ko", "en", "ja", "zh-TW"];
-export const defaultLocale = "ko";
+export const runtime = "experimental-edge";
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
   // Exclude static files and Next.js internal requests
