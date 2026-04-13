@@ -32,10 +32,31 @@
     "dow_desc_2": "優れた耐候性と接着力を誇るプレミアム製品群です。",
     "dow_btn": "DOWSIL製品を見る",
     "dow_items": [
-      "DOWSIL™ 789 全天候型シリコーンシーラント",
-      "DOWSIL™ 991 高性能シリコーンシーラント",
-      "DOWSIL™ 791 建築用ウェザーシール",
-      "DOWSIL™ 895 構造用シリコーンシーラント"
+      {
+        "category": "🏗️ 耐候性シーラント (Weathersealing)",
+        "products": [
+          "DOWSIL™ 790 (低モジュラス, 拡張ジョイント用)",
+          "DOWSIL™ 791 (カーテンウォールおよびファサード用)",
+          "DOWSIL™ 756 SMS (防汚型, 石材・パネル用)"
+        ]
+      },
+      {
+        "category": "🏢 構造用シーラント (Structural Glazing)",
+        "products": [
+          "DOWSIL™ 995 (高引張強度, 耐衝撃高性能)",
+          "DOWSIL™ 795 (多目的 構造用・耐候性シーラント)",
+          "DOWSIL™ 983 (2液型, 工場向け速乾性)",
+          "DOWSIL™ 121 (2液型, 現場補修向け速乾性)"
+        ]
+      },
+      {
+        "category": "🏠 内部および特殊用途",
+        "products": [
+          "DOWSIL™ 786 (キッチン・バスルーム用防カビ型)",
+          "DOWSIL™ 732 (多目的接着・コー팅用)",
+          "DOWSIL™ 1199 (自動グレージングシステム用)"
+        ]
+      }
     ],
     "topseal_title": "Topseal (トップシール)",
     "topseal_desc_1": "シーラント、カートリッジ、ウレタンフォームなど。",

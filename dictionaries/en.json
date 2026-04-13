@@ -32,10 +32,31 @@
     "dow_desc_2": "Premium product line with excellent weatherability and adhesion.",
     "dow_btn": "View DOWSIL Products",
     "dow_items": [
-      "DOWSIL™ 789 Weatherproofing Silicone Sealant",
-      "DOWSIL™ 991 High Performance Silicone Sealant",
-      "DOWSIL™ 791 Silicone Weatherproofing Sealant",
-      "DOWSIL™ 895 Structural Silicone Sealant"
+      {
+        "category": "🏗️ Weatherproofing Sealants",
+        "products": [
+          "DOWSIL™ 790 (Low Modulus, for Expansion Joints)",
+          "DOWSIL™ 791 (Weathersealing for Curtain Walls & Facades)",
+          "DOWSIL™ 756 SMS (Non-staining, for Stone/Panels)"
+        ]
+      },
+      {
+        "category": "🏢 Structural Glazing Sealants",
+        "products": [
+          "DOWSIL™ 995 (High-tensile, Impact-resistant)",
+          "DOWSIL™ 795 (Multi-purpose Structural/Weathersealing)",
+          "DOWSIL™ 983 (Two-part, Fast-curing for Factory Use)",
+          "DOWSIL™ 121 (Two-part, Fast-curing for Field Repair)"
+        ]
+      },
+      {
+        "category": "🏠 Interior & Specialty Uses",
+        "products": [
+          "DOWSIL™ 786 (Mildew Resistant for Kitchen & Bath)",
+          "DOWSIL™ 732 (Multi-purpose Adhesive & Coating)",
+          "DOWSIL™ 1199 (For Automated Glazing Systems)"
+        ]
+      }
     ],
     "topseal_title": "Topseal",
     "topseal_desc_1": "Sealants, Cartridges, Urethane Foam, etc.",

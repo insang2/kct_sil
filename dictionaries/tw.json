@@ -32,10 +32,31 @@
     "dow_desc_2": "具有優異耐候性和粘合力的頂級產品群。",
     "dow_btn": "瀏覽 DOWSIL 產品",
     "dow_items": [
-      "DOWSIL™ 789 全天候矽利康密封膠",
-      "DOWSIL™ 991 高性能矽利康密封膠",
-      "DOWSIL™ 791 建築用耐候密封膠",
-      "DOWSIL™ 895 結構性矽利康密封膠"
+      {
+        "category": "🏗️ 耐候密封膠 (Weathersealing)",
+        "products": [
+          "DOWSIL™ 790 (低模數，適用於伸縮縫)",
+          "DOWSIL™ 791 (幕牆及建築外牆耐候密封)",
+          "DOWSIL™ 756 SMS (防污染型，適用於石材/面板)"
+        ]
+      },
+      {
+        "category": "🏢 結構性密封膠 (Structural Glazing)",
+        "products": [
+          "DOWSIL™ 995 (高張力、耐衝擊高性能密封膠)",
+          "DOWSIL™ 795 (多用途結構/耐候密封膠)",
+          "DOWSIL™ 983 (工廠用雙組份快速固化型)",
+          "DOWSIL™ 121 (現場維修用快速固化型)"
+        ]
+      },
+      {
+        "category": "🏠 內部及特殊用途",
+        "products": [
+          "DOWSIL™ 786 (衛浴、廚房用防霉型)",
+          "DOWSIL™ 732 (一般粘合、塗層等多用途)",
+          "DOWSIL™ 1199 (自動化裝配系統專用)"
+        ]
+      }
     ],
     "topseal_title": "Topseal (大普希爾)",
     "topseal_desc_1": "密封膠、膠管、聚氨酯發泡劑等。",

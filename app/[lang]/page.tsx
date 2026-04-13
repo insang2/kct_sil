@@ -80,7 +80,7 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
           
           <div className="row g-4 justify-content-center">
             {/* Dow Silicones */}
-            <div className="col-md-6 col-lg-5">
+            <div className="col-md-8 col-lg-6">
               <div className="card h-100 border-0 shadow-lg rounded-4 hover-lift bg-light">
                 <div className="card-body p-5 text-center">
                   <div className="mb-4 text-primary" style={{ height: '64px' }}>
@@ -90,28 +90,22 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                   <p className="card-text text-black mb-4">
                     {dict.products.dow_desc_1}<br />{dict.products.dow_desc_2}
                   </p>
-                  <ul className="list-unstyled text-start text-black mb-4 mx-auto" style={{maxWidth: '280px', fontSize: '0.9rem'}}>
-                    {dict.products.dow_items.map((item: string, idx: number) => (
-                      <li key={idx} className="mb-2"><i className="bi bi-check-circle-fill text-primary me-2"></i>{item}</li>
+                  <div className="text-start mx-auto" style={{maxWidth: '400px'}}>
+                    {dict.products.dow_items.map((group: any, idx: number) => (
+                      <div key={idx} className="mb-4">
+                        <h6 className="fw-bold text-primary mb-2" style={{ fontSize: '0.95rem' }}>{group.category}</h6>
+                        <ul className="list-unstyled mb-0" style={{ fontSize: '0.85rem' }}>
+                          {group.products.map((product: string, pIdx: number) => (
+                            <li key={pIdx} className="mb-1 d-flex align-items-start text-black">
+                              <i className="bi bi-check-circle-fill text-primary me-2 mt-1" style={{ fontSize: '0.75rem' }}></i>
+                              <span>{product}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
-                  <a href="https://www.dow.com/ko-kr/search.html#first=10&t=Products&sort=relevancy" target="_blank" rel="noreferrer" className="btn btn-primary rounded-pill px-4">{dict.products.dow_btn}</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Topseal Products */}
-            <div className="col-md-6 col-lg-5">
-              <div className="card h-100 border-0 shadow-lg rounded-4 hover-lift bg-light">
-                <div className="card-body p-5 text-center">
-                  <div className="mb-4 text-primary" style={{ height: '64px' }}>
-                    <img src="/assets/img/logo/topseal-logo.svg" alt="Topseal Logo" style={{ height: '100%', width: 'auto' }} />
                   </div>
-                  <h5 className="card-title text-black fw-bold mb-3">{dict.products.topseal_title}</h5>
-                  <p className="card-text text-black mb-4">
-                    {dict.products.topseal_desc_1}<br />{dict.products.topseal_desc_2}
-                  </p>
-                  <a href="https://topseal.co.kr/product/all-product-page/" target="_blank" rel="noreferrer" className="btn btn-primary rounded-pill px-4">{dict.products.topseal_btn}</a>
+                  <a href="https://www.dow.com/ko-kr/search.html#first=10&t=Products&sort=relevancy" target="_blank" rel="noreferrer" className="btn btn-primary rounded-pill px-4">{dict.products.dow_btn}</a>
                 </div>
               </div>
             </div>
