@@ -169,6 +169,19 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
           </div>
         </div>
 
+        {/* Maker credit */}
+        <div className="text-center mt-4">
+          <a
+            href="https://davhave.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-decoration-none"
+            style={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.7rem' }}
+          >
+            Powered by davhave.com
+          </a>
+        </div>
+
       </div>
     </footer>
   );
