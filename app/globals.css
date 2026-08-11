@@ -1,1 +1,329 @@
-/* All CSS handled by theme.min.css */
+/* ── Force Light Theme Globally — iOS dark mode / Smart Invert 차단 ── */
+:root {
+  color-scheme: light only;
+}
+
+/* iOS Safari Smart Invert & 다크모드 전역 차단 */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #ffffff !important;
+    color: #16142F !important;
+  }
+  body {
+    background-color: #ffffff !important;
+    color: #16142F !important;
+  }
+  .bg-white { background-color: #ffffff !important; }
+  .bg-light { background-color: #f8f9fa !important; }
+  .text-dark { color: #16142F !important; }
+  .text-body-secondary { color: #555370 !important; }
+  .card {
+    background-color: #ffffff !important;
+    color: #16142F !important;
+    border-color: rgba(0,0,0,0.1) !important;
+  }
+
+  /* ── Navbar 완전 보호 ── */
+  header,
+  .navbar,
+  nav.navbar {
+    background-color: #ffffff !important;
+    border-color: rgba(0,0,0,0.1) !important;
+  }
+  .navbar-collapse,
+  .navbar-collapse.show,
+  .navbar-collapse.collapsing {
+    background-color: #ffffff !important;
+    color: #16142F !important;
+  }
+  .navbar-nav .nav-item,
+  .navbar-nav .nav-link,
+  .navbar-nav a {
+    color: #16142F !important;
+    background-color: transparent !important;
+    border-color: #f1f5f9 !important;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #1558D6 !important;
+    background-color: #f8f9fa !important;
+  }
+  /* Toggler 버튼 */
+  .navbar-toggler {
+    color: #16142F !important;
+    border-color: rgba(0,0,0,0.2) !important;
+    background-color: transparent !important;
+  }
+  .navbar-toggler .bi {
+    color: #16142F !important;
+  }
+  /* Language switcher button */
+  .navbar-nav button {
+    color: #16142F !important;
+    border-color: #dee2e6 !important;
+    background-color: #ffffff !important;
+  }
+  /* Language dropdown panel */
+  .dropdown-menu {
+    background-color: #ffffff !important;
+    color: #16142F !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1) !important;
+  }
+  .dropdown-item {
+    color: #16142F !important;
+    background-color: transparent !important;
+  }
+  .dropdown-item:hover,
+  .dropdown-item.active {
+    color: #1558D6 !important;
+    background-color: #f0f4ff !important;
+  }
+  /* Login button stays primary blue */
+  .btn-primary {
+    background-color: #1558D6 !important;
+    border-color: #1558D6 !important;
+    color: #ffffff !important;
+  }
+  /* Form controls */
+  .form-control,
+  .form-select {
+    background-color: #ffffff !important;
+    color: #16142F !important;
+    border-color: #d1d5db !important;
+  }
+  .form-control::placeholder {
+    color: #9ca3af !important;
+  }
+  /* Sections */
+  section, div {
+    color: inherit;
+  }
+}
+
+/* ── Product card hover lift ── */
+.product-card-hover {
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.product-card-hover:hover {
+  box-shadow: 0 8px 32px rgba(21, 88, 214, 0.15) !important;
+  transform: translateY(-4px);
+}
+
+/* ── Smooth Scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Section Reveal Animations ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* ── Sticky navbar: btn-outline-white becomes dark on white background ── */
+header.is-sticky .btn-outline-white,
+header.scroll-up .btn-outline-white,
+header.is-fixed  .btn-outline-white {
+  --bs-btn-color:              #16142F;
+  --bs-btn-border-color:       #16142F;
+  --bs-btn-hover-color:        #fff;
+  --bs-btn-hover-bg:           #16142F;
+  --bs-btn-hover-border-color: #16142F;
+}
+
+/* ── Sticky navbar: login btn stays readable ── */
+header.is-sticky .btn-primary.nav-link,
+header.scroll-up .btn-primary.nav-link,
+header.is-fixed  .btn-primary.nav-link {
+  color: #fff !important;
+}
+
+/* ── Form controls: clearer border for better delineation ── */
+.form-control,
+.form-select {
+  border-color: #C8C6DC;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: #1558D6;
+  box-shadow: 0 0 0 0.2rem rgba(21, 88, 214, 0.2);
+}
+
+/* ── Ensure body text is always dark on light cards ── */
+.card .text-dark,
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6 {
+  color: #16142F !important;
+}
+
+/* ── Improve table row readability ── */
+.table tbody tr td {
+  color: #16142F;
+}
+
+/* ── Force light theme on form sections regardless of dark mode JS ── */
+[data-form-section] {
+  background-color: #f8f9fa !important;
+  color: #16142F !important;
+}
+[data-form-section] .card {
+  background-color: #ffffff !important;
+  color: #16142F !important;
+}
+[data-form-section] .card-body {
+  background-color: #ffffff !important;
+}
+[data-form-section] h1,
+[data-form-section] h2,
+[data-form-section] h3,
+[data-form-section] h4,
+[data-form-section] h5,
+[data-form-section] h6 {
+  color: #16142F !important;
+}
+[data-form-section] .form-label {
+  color: #374151 !important;
+  font-weight: 600;
+}
+[data-form-section] .form-control,
+[data-form-section] .form-select {
+  background-color: #ffffff !important;
+  color: #16142F !important;
+  border-color: #d1d5db !important;
+}
+[data-form-section] .form-control::placeholder,
+[data-form-section] .form-select::placeholder {
+  color: #9ca3af !important;
+}
+[data-form-section] .form-control:focus,
+[data-form-section] .form-select:focus {
+  border-color: #1558D6 !important;
+  box-shadow: 0 0 0 0.2rem rgba(21, 88, 214, 0.2) !important;
+}
+[data-form-section] .text-body-secondary {
+  color: #6b7280 !important;
+}
+[data-form-section] p {
+  color: #4b5563 !important;
+}
+
+/* ── Force white bg on form inputs inside cards (cleaner contrast) ── */
+.card .form-control,
+.card .form-select {
+  background-color: #fff;
+  color: #16142F;
+}
+.card .form-control::placeholder {
+  color: rgba(22, 20, 47, 0.45);
+}
+
+/* ── Mobile Navbar Styling ── */
+@media (max-width: 991.98px) {
+  /* Collapsed menu panel */
+  .navbar-collapse.show {
+    background-color: #ffffff;
+    padding: 0.75rem 1.25rem 1.25rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.12);
+    margin-top: 0;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  /* Each nav item row */
+  .navbar-nav .nav-item {
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .navbar-nav .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Nav links: large tap target */
+  .navbar-nav .nav-link {
+    padding: 0.875rem 0.25rem;
+    font-size: 1rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    color: #16142F !important;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:active {
+    color: #1558D6 !important;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  /* Language switcher button on mobile */
+  .navbar-nav .nav-item button.nav-link {
+    color: #16142F !important;
+    font-size: 0.95rem;
+  }
+
+  /* Login button on mobile */
+  .navbar-nav .btn-primary.nav-link {
+    margin-top: 0.75rem;
+    width: 100%;
+    justify-content: center;
+    border-radius: 2rem !important;
+    padding: 0.625rem 1rem !important;
+  }
+}
+
+/* ── Mobile hero heading scale-down ── */
+@media (max-width: 575.98px) {
+  .display-2 {
+    font-size: calc(1.3rem + 2.8vw) !important;
+    line-height: 1.25 !important;
+  }
+  .display-3 {
+    font-size: calc(1.2rem + 2.2vw) !important;
+  }
+  .display-4 {
+    font-size: calc(1.15rem + 2vw) !important;
+  }
+  .display-5 {
+    font-size: calc(1.1rem + 1.5vw) !important;
+  }
+  /* Reduce hero section padding */
+  .hero-section-mobile-padding {
+    padding-top: 6rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* ── Fixed navbar: ensure content starts below it ── */
+main {
+  padding-top: 0;
+}
+
+/* ── Prevent text from being too small on mobile cards ── */
+@media (max-width: 575.98px) {
+  .card .small, .card small {
+    font-size: 0.8rem !important;
+  }
+  /* Wider tap targets for buttons */
+  .btn {
+    min-height: 44px;
+  }
+}
+
+/* ── Low-contrast text fix: enforce minimum opacity for body text ── */
+.text-body-secondary {
+  color: rgba(22, 20, 47, 0.7) !important;
+}
+.opacity-45-text {
+  opacity: 0.65 !important;
+}
+

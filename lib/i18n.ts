@@ -1,2 +1,2 @@
-export const locales = ["ko", "en", "ja", "zh-TW"];
+export const locales = ["ko", "en", "ja"];
 export const defaultLocale = "ko";

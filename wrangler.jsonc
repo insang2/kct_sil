@@ -11,6 +11,10 @@
 		"directory": ".open-next/assets",
 		"binding": "ASSETS"
 	},
+	"routes": [
+		{ "pattern": "kconstrade.com", "custom_domain": true },
+		{ "pattern": "www.kconstrade.com", "custom_domain": true }
+	],
 	"services": [
 		{
 			// Self-reference service binding, the service name must match the worker name
@@ -23,5 +27,9 @@
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
+	},
+	"vars": {
+		"NEXT_PUBLIC_SUPABASE_URL": "https://bpqfudafnszicelycnbx.supabase.co",
+		"NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJwcWZ1ZGFmbnN6aWNlbHljbmJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc5ODc5ODcsImV4cCI6MjA5MzU2Mzk4N30.4XS4u1YvZPANF_xfmIvLUIGbpW_gCxxq7sYqi4tr-WU"
 	}
 }

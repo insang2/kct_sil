@@ -5,24 +5,155 @@
     "b2b": "B2B Quote",
     "export": "Export Inquiries",
     "resources": "Resources",
-    "language": "Language"
+    "language": "Language",
+    "products": "Products",
+    "quote": "Quotation",
+    "login": "Login",
+    "mypage": "My Page"
+  },
+  "about": {
+    "hero_label": "About Us",
+    "hero_title": "Korea Construction Trading",
+    "hero_subtitle": "Specialist in Dow Architectural & Structural Silicone Sales and Export",
+    "mission_label": "Mission",
+    "mission_title": "Trust Through Quality, Value Through Expertise",
+    "mission_desc": "Korea Construction Trading (KCT) supplies world-class Dow silicone products to domestic and international construction sites swiftly and reliably. Beyond simple distribution, we support our clients from product selection to application consulting, partnering in the success of every project.",
+    "business_label": "Business Areas",
+    "business_title": "Our Core Services",
+    "b1_title": "Architectural Silicone Wholesale",
+    "b1_desc": "We supply Dow Chemical architectural and structural silicones, offering the full premium product line — curtain wall, facade, weathersealing — to domestic contractors and construction companies.",
+    "b2_title": "B2B Bulk Purchase Support",
+    "b2_desc": "From site managers to large construction firms, we provide B2B special pricing, quotation issuance, and split delivery services tailored to your project scale.",
+    "b3_title": "Global Export",
+    "b3_desc": "We export architectural silicone products to overseas buyers in Japan, Taiwan, Southeast Asia and more. End-to-end export documentation, customs support, and local compliance handling.",
+    "b4_title": "Technical Advisory",
+    "b4_desc": "We go beyond sales by recommending the optimal product for your site conditions and application. We provide the best solution by sealant type — weathersealing, structural, specialty.",
+    "why_label": "Why KCT",
+    "why_title": "Why Choose KCT",
+    "w1_title": "Dow Silicone Supplier",
+    "w1_desc": "We supply silicone products from Dow, the world's leading chemical company. Backed by quality assurance and after-sales support.",
+    "w2_title": "Proven Track Record",
+    "w2_desc": "Established supply relationships with major domestic contractors, interior specialists, and international export partners.",
+    "w3_title": "Fast Delivery",
+    "w3_desc": "With domestic inventory always on hand, we respond swiftly to urgent orders. Nationwide split delivery and on-site direct delivery available.",
+    "w4_title": "Expert Consultation",
+    "w4_desc": "Our sales specialists analyze your site conditions and guide you to the optimal product and application method.",
+    "products_label": "Our Products",
+    "products_title": "Architectural Silicone Product Lines",
+    "cta_title": "Contact Us Today",
+    "cta_desc": "Our specialists will guide you on product selection, quotations, and delivery schedules for your project.",
+    "contact_label": "Contact",
+    "stat_founded": "Founded",
+    "stat_products": "Products",
+    "stat_export_countries": "Export Countries",
+    "quality_cert": "Quality Certified",
+    "quality_cert_desc": "Dow-manufactured products only",
+    "global_export_badge": "Global Export",
+    "global_export_badge_desc": "Japan · Taiwan · Southeast Asia",
+    "btn_detail": "Details",
+    "btn_quote_req": "Request Quote"
+  },
+  "auth": {
+    "login_title": "B2B Login",
+    "signup_title": "B2B Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "company_name": "Company Name",
+    "business_reg": "Business Registration Number",
+    "contact_person": "Contact Person",
+    "phone": "Phone",
+    "btn_login": "Log In",
+    "btn_signup": "Sign Up",
+    "btn_logout": "Log Out",
+    "no_account": "Don't have an account?",
+    "have_account": "Already have an account?",
+    "signup_link": "Sign Up",
+    "login_link": "Log In",
+    "signup_confirm": "A confirmation email has been sent. Please check your inbox.",
+    "error_invalid": "Invalid email or password.",
+    "error_generic": "An error occurred. Please try again."
+  },
+  "quote": {
+    "title": "Create Quotation",
+    "label": "B2B QUOTE",
+    "subtitle": "Select products and quantities to instantly download a PDF quotation.",
+    "customer_info": "Customer Information",
+    "product_select": "Select Products",
+    "quantity": "Qty",
+    "unit_price": "Unit Price",
+    "amount": "Amount",
+    "product_name": "Product",
+    "subtotal": "Subtotal",
+    "tax": "VAT (10%)",
+    "total": "Total",
+    "notes": "Notes",
+    "notes_placeholder": "Enter any additional requests here.",
+    "btn_generate": "Download PDF Quotation",
+    "btn_save": "Save Quotation",
+    "btn_new": "New Quotation",
+    "history_title": "Quote History",
+    "history_subtitle": "View and re-download saved quotations.",
+    "empty_history": "No saved quotations found.",
+    "quote_number": "Quote No.",
+    "quote_date": "Date",
+    "valid_days": "Valid for 30 days",
+    "supplier": "Supplier",
+    "buyer": "Buyer",
+    "login_required": "B2B login is required to use the quotation feature.",
+    "login_btn": "Go to Login"
   },
   "hero": {
-    "title": "New Standard for Construction Material Trading",
-    "description_1": "B2B special pricing and simple ordering system for site managers.",
-    "description_2": "Fast and safe delivery for general consumers.",
+    "title": "Your B2B Architectural Silicone Sourcing Partner",
+    "description_1": "Architectural & structural silicone specialist. Inquire to purchase.",
+    "description_2": "B2B special pricing · Quote within 24hrs · Nationwide fast delivery.",
     "btn_products": "View Products",
-    "btn_b2b": "Free Quote"
+    "btn_b2b": "Free B2B Quote"
+  },
+  "trust": {
+    "t2": "Business Reg. No. 371-07-03719",
+    "t3": "Est. 2018 · Architectural Silicone Specialist",
+    "t4": "Exporting to Japan · Taiwan · Southeast Asia"
   },
   "features": {
     "label": "KCT ADVANTAGES",
     "title": "Why Choose KCT?",
-    "f1_title": "Easy Reordering & Ordering",
-    "f1_desc": "One-click ordering from existing project material lists.",
-    "f2_title": "Split Delivery to Multiple Sites",
-    "f2_desc": "Manage different shipping addresses for multiple projects in one order.",
-    "f3_title": "Automated Documents",
-    "f3_desc": "Easily download quotes and tax invoices for corporate clients."
+    "f1_title": "Architectural Silicone Specialist",
+    "f1_desc": "A full lineup of architectural weathersealing, structural, and specialty silicone sealants. Contact us and purchase right after a quick consultation.",
+    "f2_title": "Fast Quote & Delivery",
+    "f2_desc": "Quote within 24 hours. Same/next-day delivery in Seoul metro area, 2–3 days nationwide. Multi-site split delivery available.",
+    "f3_title": "Transparent B2B Transactions",
+    "f3_desc": "Tax invoices, formal quotations, and registered business credentials. Trustworthy partner for your projects."
+  },
+  "process": {
+    "label": "HOW IT WORKS",
+    "title": "Simple 4-Step Process",
+    "steps": [
+      {
+        "title": "Submit Inquiry",
+        "desc": "Contact us by phone, email, or WhatsApp with the materials and quantities you need."
+      },
+      {
+        "title": "Custom Quote",
+        "desc": "We send a detailed quotation with pricing and delivery schedule within 24 hours."
+      },
+      {
+        "title": "Confirm Order",
+        "desc": "Agree on payment terms and confirm your order. Tax invoice available."
+      },
+      {
+        "title": "Fast Delivery",
+        "desc": "Same/next-day in Seoul metro area; 2–3 days nationwide. Multi-site split delivery."
+      }
+    ]
+  },
+  "b2b_form": {
+    "title": "Free B2B Quote Request",
+    "desc": "Get rapid pricing for the bulk architectural silicone needed for your project.",
+    "form_name": "Company / Contact Name",
+    "form_name_ph": "e.g. ABC Construction / John Doe",
+    "form_message": "Inquiry Details",
+    "form_message_ph": "Please include the materials, quantities, and site location for a more accurate quote.",
+    "btn_submit": "Submit Quote Request"
   },
   "products": {
     "label": "SHOPPING GUIDE",
@@ -52,27 +183,25 @@
       {
         "category": "🏠 Interior & Specialty Uses",
         "products": [
-          "DOWSIL™ 786 (Mildew Resistant for Kitchen & Bath)",
           "DOWSIL™ 732 (Multi-purpose Adhesive & Coating)",
           "DOWSIL™ 1199 (For Automated Glazing Systems)"
         ]
       }
     ],
-    "topseal_title": "Topseal",
-    "topseal_desc_1": "Sealants, Cartridges, Urethane Foam, etc.",
-    "topseal_desc_2": "High-quality architectural materials optimized for construction sites.",
-    "topseal_btn": "View All Topseal Products"
+    "btn_detail": "Details",
+    "btn_quote_req": "Request Quote"
   },
   "cta": {
-    "title": "B2B Bulk Orders & Special Pricing",
-    "description": "We supply the highest quality construction materials required for your projects quickly and at reasonable prices. Consult with an expert today.",
+    "title": "Need Architectural Silicone? Contact Us Now",
+    "description": "Quote within 24 hours, tax invoice available, fast nationwide delivery.",
     "btn_phone": "Call Us",
+    "btn_kakao": "KakaoTalk",
     "btn_whatsapp": "WhatsApp",
-    "btn_email": "sales@korcta.com"
+    "btn_email": "sales@kconstrade.com"
   },
   "retail": {
     "label": "SMALL ORDERS",
-    "title": "Official Retail Stores",
+    "title": "Retail Stores",
     "description": "We are available on various open markets for general consumers and small quantity purchasers. Purchase conveniently through your favorite shop.",
     "shops": {
       "naver": "Naver Smart Store",
@@ -88,8 +217,56 @@
       "ebay": "eBay"
     }
   },
+  "export_page": {
+    "hero_desc_1": "Supplying architectural and structural silicone to buyers worldwide.",
+    "hero_desc_2": "One-stop handling of export documents, customs clearance, and local compliance.",
+    "track_label": "TRACK RECORD",
+    "track_title": "Export Markets",
+    "c1_name": "UAE",
+    "c1_desc": "Middle East construction projects · Regular supply partner",
+    "c2_name": "Australia",
+    "c2_desc": "Architecture & infrastructure project sealant supply",
+    "c3_name": "Vietnam",
+    "c3_desc": "Construction boom demand · Sausage bulk supply",
+    "c4_name": "Singapore & Southeast Asia",
+    "c4_desc": "High-rise structural glazing specialist supply",
+    "cond_incoterms_desc": "FOB · CIF · EXW available",
+    "cond_docs": "Export Documents",
+    "cond_docs_desc": "CI · PL · CO · MSDS · TDS provided",
+    "cond_moq_desc": "1 box (6 pcs) ~ 1 pallet",
+    "cond_lead": "Lead Time",
+    "cond_lead_desc": "3–7 business days from stock",
+    "cond_payment": "Payment",
+    "cond_payment_desc": "T/T Wire Transfer · L/C negotiable",
+    "cond_language": "Language Support",
+    "cond_language_desc": "Korean · English · Japanese · Chinese",
+    "inquiry_title": "Send an Export Inquiry",
+    "inquiry_desc": "Tell us your target country, required products, and estimated quantity — we'll reply within 24 business hours.",
+    "form_company": "Company / Contact Name",
+    "form_phone": "Phone (with country code)",
+    "form_destination": "Destination Country",
+    "form_incoterms_pref": "Preferred Incoterms",
+    "form_message": "Inquiry Details",
+    "btn_select": "Select",
+    "btn_submit": "Submit Export Inquiry"
+  },
+  "profile": {
+    "company_info": "Company Info",
+    "membership_tier": "Membership Tier",
+    "quick_links": "Quick Links",
+    "btn_new_quote": "New Quotation"
+  },
   "footer": {
+    "tagline_2": "Architectural Silicone Wholesale & Export",
+    "tagline_3": "B2B Pricing · Quote within 24hrs",
+    "small_orders_hint": "Small orders available on open markets.",
+    "admin_link": "Admin",
     "sales_manager": "Sales Manager: Lee Joon-hwan",
     "rights": "All rights reserved."
+  },
+  "metadata": {
+    "title": "Korea Construction Trading (KCT) | Architectural Silicone Supplier & Exporter",
+    "description": "Korea Construction Trading (KCT) is a premier global B2B supplier and exporter of architectural and structural silicone sealants, direct from South Korea. Inquire for pricing and purchase.",
+    "keywords": "KOREA CONSTRUCTION TRADING, KCT, architectural silicone, structural silicone, silicone sealant supplier, silicone exporter, architectural sealants, South Korea B2B trade, wholesale silicone sealant, weatherproofing sealant"
   }
 }

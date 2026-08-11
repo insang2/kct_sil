@@ -1,52 +1,51 @@
 import { getDictionary } from '@/lib/dictionaries';
+import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
+import UserMenu from '@/components/UserMenu';
+import NavbarClient from '@/components/NavbarClient';
 
-export default async function Header({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja' | 'zh-TW' }) {
+export default async function Header({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja' }) {
   const dict = await getDictionary(lang);
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  const d = dict as any;
+
+  const userSlot = user ? (
+    <UserMenu
+      lang={lang}
+      userEmail={user.email ?? null}
+      logoutLabel={d.auth.btn_logout}
+      mypageLabel={d.navigation.mypage}
+      quoteLabel={d.navigation.quote}
+    />
+  ) : undefined;
 
   return (
-    <header className="header-transparent sticky-fixed">
-      <nav className="navbar navbar-expand-lg fixed-top navbar-light navbar-link-white">
-        <div className="navbar-fixed-bg position-absolute"></div>
-        <div className="container position-relative z-1">
+    <header>
+      <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-white border-bottom shadow-sm">
+        <div className="container position-relative">
           <Link className="navbar-brand" href={`/${lang}`}>
-            <img src="/assets/img/logo/logo.svg" alt="logo" className="img-fluid navbar-brand-sticky" style={{ height: '45px', width: 'auto' }} />
-            <img src="/assets/img/logo/logo-white.svg" alt="logo-white" className="img-fluid navbar-brand-transparent" style={{ height: '45px', width: 'auto' }} />
+            <img
+              src="/assets/img/logo/kct_logo.jpeg"
+              alt="KCT Logo"
+              className="img-fluid"
+              style={{ height: '45px', width: 'auto', mixBlendMode: 'multiply' }}
+            />
           </Link>
-          <button className="navbar-toggler order-last" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarTheme">
-            <span className="navbar-toggler-icon"><i></i></span>
-          </button>
-          <div className="collapse navbar-collapse" id="mainNavbarTheme">
-            <ul className="navbar-nav ms-auto align-items-center">
-              <li className="nav-item">
-                <Link className="nav-link" href={`/${lang}`}>{dict.navigation.home}</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href={`/${lang}#`}>{dict.navigation.about}</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href={`/${lang}#`}>{dict.navigation.b2b}</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href={`/${lang}#`}>{dict.navigation.export}</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href={`/${lang}#`}>{dict.navigation.resources}</Link>
-              </li>
-              {/* Language Switcher Dropdown */}
-              <li className="nav-item dropdown ms-lg-3">
-                <a className="nav-link dropdown-toggle btn btn-sm btn-outline-white rounded-pill px-3 py-1" href="#" id="navbarLang" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i className="bi bi-globe me-1"></i> {lang.toUpperCase()}
-                </a>
-                <ul className="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="navbarLang">
-                  <li><a className="dropdown-item" href="/ko">한국어 (KO)</a></li>
-                  <li><a className="dropdown-item" href="/en">English (EN)</a></li>
-                  <li><a className="dropdown-item" href="/ja">日本語 (JA)</a></li>
-                  <li><a className="dropdown-item" href="/zh-TW">繁體中文 (TW)</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+
+          <NavbarClient
+            lang={lang}
+            navLabels={{
+              home:     d.navigation.home,
+              about:    d.navigation.about,
+              products: d.navigation.products,
+              b2b:      d.navigation.b2b,
+              export:   d.navigation.export,
+              quote:    d.navigation.quote,
+              login:    d.navigation.login,
+            }}
+            userSlot={userSlot}
+          />
         </div>
       </nav>
     </header>
