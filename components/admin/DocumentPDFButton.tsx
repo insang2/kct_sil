@@ -1242,9 +1242,10 @@ export default function DocumentPDFButton({ doc, size = 'sm' }: { doc: AdminDocu
     setStep(0)
 
     try {
-      // PDF 다운로드 기능 비활성화
-      // const t1 = setTimeout(() => setStep(1), 400)
-      // const t2 = setTimeout(() => setStep(2), 900)
+      // PDF 다운로드 기능 비활성화 (버튼 애니메이션만 동작)
+      setTimeout(() => setStep(1), 400)
+      setTimeout(() => setStep(2), 900)
+      await new Promise((resolve) => setTimeout(resolve, 1400))
 
       // const isEN = doc.lang === 'en'
       // let element: React.ReactElement
