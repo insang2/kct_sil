@@ -119,6 +119,8 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next|api|assets|favicon.ico).*)",
+    // Exclude Next internals and static assets (served from CDN, X-Robots-Tag
+    // header covers them). /api stays in so the UA block applies to endpoints too.
+    "/((?!_next|assets|favicon.ico).*)",
   ],
 };
