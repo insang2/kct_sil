@@ -2,8 +2,3 @@
 # https://opennext.js.org/cloudflare/caching#static-assets-caching
 /_next/static/*
   Cache-Control: public,max-age=31536000,immutable
-
-# Block indexing of all static assets (images, PDFs, og-image) — the
-# next.config headers() rule doesn't reach files served by Workers Assets.
-/*
-  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet

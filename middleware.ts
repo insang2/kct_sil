@@ -8,64 +8,6 @@ export const runtime = "experimental-edge";
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // 1. Allow access to robots.txt so crawlers can read the rules
-  if (pathname === '/robots.txt') {
-    return NextResponse.next();
-  }
-
-  // 2. Detect and block Search Engines, AI Bots, and Scrapers
-  const userAgent = request.headers.get("user-agent")?.toLowerCase() || "";
-  const blockedAgents = [
-    // AI Bots
-    "gptbot",
-    "chatgpt-user",
-    "claudebot",
-    "google-extended",
-    "anthropic-ai",
-    "commoncrawl",
-    "cohere-ai",
-    "perplexitybot",
-    "youbot",
-    "imagesiftbot",
-    "diffbot",
-    // Search Engines
-    "googlebot",
-    "bingbot",
-    "yeti",
-    "naverbot",
-    "daumoa",
-    "baiduspider",
-    "yandexbot",
-    "sogou",
-    "exabot",
-    "slurp",
-    "duckduckbot",
-    // Scrapers & Libraries
-    "scrapy",
-    "python",
-    "axios",
-    "httpclient",
-    "curl",
-    "wget",
-    "selenium",
-    "playwright",
-    "headlesschrome",
-    "node-fetch",
-    "go-http-client",
-    "libwww-perl"
-  ];
-
-  const isBlocked = blockedAgents.some(agent => userAgent.includes(agent));
-  if (isBlocked) {
-    return new NextResponse(
-      JSON.stringify({ error: "Access Denied: Bots, AI crawlers, and scrapers are not allowed on this site." }),
-      {
-        status: 403,
-        headers: { "Content-Type": "application/json" }
-      }
-    );
-  }
-
   // Exclude static files, Next.js internals, and admin routes
   if (
     pathname.includes('.') ||
@@ -119,8 +61,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Exclude Next internals and static assets (served from CDN, X-Robots-Tag
-    // header covers them). /api stays in so the UA block applies to endpoints too.
     "/((?!_next|assets|favicon.ico).*)",
   ],
 };
