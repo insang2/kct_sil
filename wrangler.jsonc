@@ -9,7 +9,10 @@
 	],
 	"assets": {
 		"directory": ".open-next/assets",
-		"binding": "ASSETS"
+		"binding": "ASSETS",
+		// Default "auto-trailing-slash" 307-redirects /*.html to the extensionless
+		// URL, which breaks Google Search Console's HTML-file ownership check.
+		"html_handling": "none"
 	},
 	"routes": [
 		{ "pattern": "kconstrade.com", "custom_domain": true },
