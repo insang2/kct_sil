@@ -1,6 +1,13 @@
 import '@/app/globals.css'
+import type { Metadata } from 'next'
 
-export const metadata = { title: 'KCT 관리자' }
+export const metadata: Metadata = {
+  title: 'KCT 관리자',
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default function AdminRootLayout({ children }: { children: React.ReactNode }) {
   return (

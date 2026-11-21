@@ -1,10 +1,56 @@
 import { getDictionary } from '@/lib/dictionaries';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: '회사소개 | 한국건설트레이딩 (KCT) - Dow 실리콘 전문',
-  description: '한국건설트레이딩은 Dow(다우) 건축용·구조용 실리콘의 전문 판매 및 수출 기업입니다. 국내 도매 및 해외 수출을 전문으로 합니다.',
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: 'ko' | 'en' | 'ja' }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const isEn = lang === 'en';
+  const isJa = lang === 'ja';
+
+  const title = isEn
+    ? 'About Us | Korea Construction Trading (KCT) - Architectural Silicone Supplier'
+    : isJa
+    ? '会社紹介 | 韓国建設トレーディング (KCT) - 建築用シリコーン専門'
+    : '회사소개 | 한국건설트레이딩 (KCT) - Dow 건축용 실리콘 전문';
+
+  const description = isEn
+    ? 'Learn about Korea Construction Trading (KCT), a global supplier and exporter of Dow Chemical architectural and structural silicone sealants.'
+    : isJa
+    ? '韓国建設トレーディング (KCT) は、Dow(ダウ) 建築用・構造用シリコーンの卸売販売およびグローバル貿易輸出を専門とする企業です。'
+    : '한국건설트레이딩(KCT)은 Dow Chemical의 건축용·구조용 실리콘 전문 판매 및 글로벌 수출 기업입니다. 전국 신속 배송 및 현장 직납, 프로젝트 맞춤 견적을 제공합니다.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://kconstrade.com/${lang}/about`,
+      languages: {
+        'ko': 'https://kconstrade.com/ko/about',
+        'en': 'https://kconstrade.com/en/about',
+        'ja': 'https://kconstrade.com/ja/about',
+        'x-default': 'https://kconstrade.com/ko/about',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://kconstrade.com/${lang}/about`,
+      siteName: '한국건설트레이딩 (KCT)',
+      images: [
+        {
+          url: 'https://kconstrade.com/assets/img/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: 'website',
+    },
+  };
+}
 
 export default async function AboutPage({
   params,
@@ -15,24 +61,48 @@ export default async function AboutPage({
   const dict = await getDictionary(lang);
   const d = dict as any;
   const t = d.about;
+  const isEn = lang === 'en';
+  const isJa = lang === 'ja';
 
   const aboutSchema = {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": t.hero_title,
-    "description": t.hero_subtitle,
-    "publisher": {
-      "@type": "Organization",
-      "name": "한국건설트레이딩 (Korea Construction Trading)",
-      "alternateName": "KCT",
-      "url": "https://kconstrade.com"
-    },
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "한국건설트레이딩 (Korea Construction Trading)",
-      "foundingDate": "2018",
-      "description": t.mission_desc
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": isEn ? 'Home' : isJa ? 'ホーム' : '홈',
+            "item": `https://kconstrade.com/${lang}`,
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": isEn ? 'About Us' : isJa ? '会社紹介' : '회사소개',
+            "item": `https://kconstrade.com/${lang}/about`,
+          },
+        ],
+      },
+      {
+        "@type": "AboutPage",
+        "name": t.hero_title,
+        "description": t.hero_subtitle,
+        "publisher": {
+          "@type": "Organization",
+          "name": "한국건설트레이딩 (Korea Construction Trading)",
+          "alternateName": "KCT",
+          "url": "https://kconstrade.com",
+          "logo": "https://kconstrade.com/assets/img/logo/kct_logo.jpeg"
+        },
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "한국건설트레이딩 (Korea Construction Trading)",
+          "foundingDate": "2018",
+          "description": t.mission_desc
+        }
+      }
+    ]
   };
 
   return (

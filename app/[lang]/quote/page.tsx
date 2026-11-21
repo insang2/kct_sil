@@ -2,7 +2,59 @@ import { getDictionary } from '@/lib/dictionaries'
 import { createClient } from '@/lib/supabase/server'
 import QuoteBuilder from '@/components/QuoteBuilder'
 import type { PriceTier, Product } from '@/lib/pricing'
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: 'ko' | 'en' | 'ja' }>
+}): Promise<Metadata> {
+  const { lang } = await params
+  const isEn = lang === 'en'
+  const isJa = lang === 'ja'
+
+  const title = isEn
+    ? 'Request B2B Quote | Korea Construction Trading (KCT)'
+    : isJa
+    ? '見積もり依頼 (B2B) | 韓国建設トレーディング (KCT)'
+    : 'B2B 온라인 견적서 발급 | 한국건설트레이딩 (KCT)'
+
+  const description = isEn
+    ? 'Instant online quotation for architectural and structural silicone sealants. Transparent B2B pricing, volume discounts, and custom PDF quote generation.'
+    : isJa
+    ? '建築用・構造用シリコーンシーラントのオンライン即時見積。B2B特別単価、ボリュームディスカウント、PDF見積書発行対応。'
+    : '건축용·구조용 실리콘 B2B 온라인 즉시 견적. 사업자 회원 등급별 맞춤 단가, 대량 구매 할인, PDF 견적서 즉시 다운로드.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://kconstrade.com/${lang}/quote`,
+      languages: {
+        'ko': 'https://kconstrade.com/ko/quote',
+        'en': 'https://kconstrade.com/en/quote',
+        'ja': 'https://kconstrade.com/ja/quote',
+        'x-default': 'https://kconstrade.com/ko/quote',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://kconstrade.com/${lang}/quote`,
+      siteName: '한국건설트레이딩 (KCT)',
+      images: [
+        {
+          url: 'https://kconstrade.com/assets/img/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: 'website',
+    },
+  }
+}
 
 // Fallback products when Supabase isn't configured yet
 const FALLBACK_PRODUCTS: Product[] = [

@@ -327,3 +327,8 @@ main {
   opacity: 0.65 !important;
 }
 
+
+/* text-body-secondary가 테마 변수 문제로 거의 흰색으로 렌더링되는 문제 방지 */
+.text-body-secondary { color: #555370 !important; }
+.breadcrumb-item, .breadcrumb-item a, .breadcrumb-item.active { color: #555370 !important; }
+.breadcrumb-item + .breadcrumb-item::before { color: #8a88a3 !important; }

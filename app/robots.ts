@@ -6,8 +6,16 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-      }
+        disallow: [
+          '/admin/',
+          '/api/',
+          '/*/auth/',
+          '/*/profile',
+          '/*/quote/history',
+        ],
+      },
     ],
     sitemap: 'https://kconstrade.com/sitemap.xml',
+    host: 'https://kconstrade.com',
   };
 }

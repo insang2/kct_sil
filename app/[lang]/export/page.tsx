@@ -4,13 +4,47 @@ import type { Metadata } from 'next';
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const isEn = lang === 'en';
+  const isJa = lang === 'ja';
+
+  const title = isEn
+    ? 'Export Inquiry | Korea Construction Trading (KCT) - Architectural Silicone Export'
+    : isJa
+    ? '輸出・貿易のお問い合わせ | 韓国建設トレーディング (KCT) - 建築用シリコーン輸出'
+    : '수출 문의 | 한국건설트레이딩 (KCT) - 건축용 실리콘 수출 전문';
+
+  const description = isEn
+    ? 'KCT exports architectural and structural silicone to buyers in the UAE, Australia, Southeast Asia and beyond. FOB/CIF terms, full export documentation, and customs support.'
+    : isJa
+    ? 'KCTは日本、UAE、豪州、東南アジア等の海外バイヤーへ建築用・構造用シリコーンを輸出しています。FOB/CIF条件、輸出書類代行、通関サポートまでワンストップで対応。'
+    : 'KCT는 UAE, 호주, 동남아시아, 일본 등 해외 바이어에게 건축용·구조용 실리콘을 수출합니다. FOB/CIF 조건, 수출 서류 대행, 현지 통관 지원까지 원스톱으로 처리합니다.';
+
   return {
-    title: isEn
-      ? 'Export Inquiry | Korea Construction Trading (KCT) - Architectural Silicone Export'
-      : '수출 문의 | 한국건설트레이딩 (KCT) - 건축용 실리콘 수출',
-    description: isEn
-      ? 'KCT exports architectural and structural silicone to buyers in the UAE, Australia, Southeast Asia and beyond. FOB/CIF terms, full export documentation, and customs support.'
-      : 'KCT는 UAE, 호주, 동남아시아 등 해외 바이어에게 건축용·구조용 실리콘을 수출합니다. FOB/CIF 조건, 수출 서류 대행, 현지 통관 지원까지 원스톱으로 처리합니다.',
+    title,
+    description,
+    alternates: {
+      canonical: `https://kconstrade.com/${lang}/export`,
+      languages: {
+        'ko': 'https://kconstrade.com/ko/export',
+        'en': 'https://kconstrade.com/en/export',
+        'ja': 'https://kconstrade.com/ja/export',
+        'x-default': 'https://kconstrade.com/en/export',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://kconstrade.com/${lang}/export`,
+      siteName: '한국건설트레이딩 (KCT)',
+      images: [
+        {
+          url: 'https://kconstrade.com/assets/img/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: 'website',
+    },
   };
 }
 
@@ -36,8 +70,38 @@ export default async function ExportPage({ params }: { params: Promise<{ lang: '
     { icon: 'bi-translate',         title: ep.cond_language ?? 'Language Support',   desc: ep.cond_language_desc ?? 'Korean · English · Japanese · Chinese' },
   ];
 
+  const isEn = lang === 'en';
+  const isJa = lang === 'ja';
+
+  const exportSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": isEn ? 'Home' : isJa ? 'ホーム' : '홈',
+            "item": `https://kconstrade.com/${lang}`,
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": isEn ? 'Export Inquiry' : isJa ? '輸出問合せ' : '수출문의',
+            "item": `https://kconstrade.com/${lang}/export`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(exportSchema) }}
+      />
       {/* Hero */}
       <section className="position-relative overflow-hidden pt-11 pb-9 text-white" style={{ minHeight: '45vh', display: 'flex', alignItems: 'center' }}>
         <div

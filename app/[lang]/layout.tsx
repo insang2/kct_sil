@@ -14,24 +14,35 @@ export async function generateMetadata({
   const { lang } = await params;
   const dict = await getDictionary(lang as any);
   const m = dict.metadata;
+  const localeMap: Record<string, string> = {
+    ko: 'ko_KR',
+    en: 'en_US',
+    ja: 'ja_JP',
+  };
+  const currentLocale = localeMap[lang] || 'ko_KR';
+  const alternateLocales = Object.values(localeMap).filter(l => l !== currentLocale);
 
   return {
     metadataBase: new URL('https://kconstrade.com'),
-    title: m.title,
+    title: {
+      default: m.title,
+      template: `%s | 한국건설트레이딩 (KCT)`,
+    },
     description: m.description,
     keywords: m.keywords,
     alternates: {
-      canonical: "https://kconstrade.com",
+      canonical: `https://kconstrade.com/${lang}`,
       languages: {
-        'ko-KR': "https://kconstrade.com/ko",
-        'en-US': "https://kconstrade.com/en",
-        'ja-JP': "https://kconstrade.com/ja",
+        'ko': 'https://kconstrade.com/ko',
+        'en': 'https://kconstrade.com/en',
+        'ja': 'https://kconstrade.com/ja',
+        'x-default': 'https://kconstrade.com/ko',
       },
     },
     openGraph: {
       title: m.title,
       description: m.description,
-      url: "https://kconstrade.com",
+      url: `https://kconstrade.com/${lang}`,
       siteName: "한국건설트레이딩 (KCT)",
       images: [
         {
@@ -41,7 +52,8 @@ export async function generateMetadata({
           alt: m.title,
         },
       ],
-      locale: lang === 'en' ? 'en_US' : lang === 'ja' ? 'ja_JP' : 'ko_KR',
+      locale: currentLocale,
+      alternateLocale: alternateLocales,
       type: "website",
     },
     twitter: {
@@ -50,12 +62,22 @@ export async function generateMetadata({
       description: m.description,
       images: ["https://kconstrade.com/assets/img/og-image.png"],
     },
+    verification: {
+      google: "MDkLA39MDvqE2qFlhXtDGZ7CStYVHZmiRxySzzxD97U",
+      other: {
+        "naver-site-verification": "8cbbf2d9359c252fd97e2dc14cb0a35f29d98184",
+        "msvalidate.01": "ED4DEB0C324AB26280EFC4E027A2C73F",
+      },
+    },
     robots: {
       index: true,
       follow: true,
       googleBot: {
         index: true,
         follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
       },
     },
   };

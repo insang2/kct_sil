@@ -1,61 +1,156 @@
 import { MetadataRoute } from 'next';
+import { CATALOG } from '@/lib/products-catalog';
+import { PAGES as TECH_PAGES } from '@/lib/tech-manual';
 
 const LANGS = ['ko', 'en', 'ja'] as const;
 
-const PRODUCT_SLUGS = [
-  'dowsil-790',
-  'dowsil-791',
-  'dowsil-795',
-  'dowsil-995',
-  'dowsil-977',
-  'dowsil-991',
-] as const;
+const PRODUCT_SLUGS = CATALOG.map((p) => p.slug);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kconstrade.com';
+  const lastModified = new Date();
 
+  // Root redirect entry
+  const rootEntry = {
+    url: baseUrl,
+    lastModified,
+    changeFrequency: 'weekly' as const,
+    priority: 1.0,
+    alternates: {
+      languages: {
+        ko: `${baseUrl}/ko`,
+        en: `${baseUrl}/en`,
+        ja: `${baseUrl}/ja`,
+        'x-default': `${baseUrl}/ko`,
+      },
+    },
+  };
+
+  // Homepages
   const homepages = LANGS.map((lang) => ({
     url: `${baseUrl}/${lang}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: 'weekly' as const,
-    priority: lang === 'ko' || lang === 'en' ? 1.0 : 0.8,
+    priority: lang === 'ko' || lang === 'en' ? 1.0 : 0.85,
+    alternates: {
+      languages: {
+        ko: `${baseUrl}/ko`,
+        en: `${baseUrl}/en`,
+        ja: `${baseUrl}/ja`,
+        'x-default': `${baseUrl}/ko`,
+      },
+    },
   }));
 
+  // About pages
   const aboutPages = LANGS.map((lang) => ({
     url: `${baseUrl}/${lang}/about`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: 'monthly' as const,
     priority: lang === 'ko' || lang === 'en' ? 0.9 : 0.8,
+    alternates: {
+      languages: {
+        ko: `${baseUrl}/ko/about`,
+        en: `${baseUrl}/en/about`,
+        ja: `${baseUrl}/ja/about`,
+        'x-default': `${baseUrl}/ko/about`,
+      },
+    },
   }));
 
+  // Product list pages
   const productListPages = LANGS.map((lang) => ({
     url: `${baseUrl}/${lang}/products`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: 'weekly' as const,
-    priority: lang === 'ko' || lang === 'en' ? 0.9 : 0.8,
+    priority: lang === 'ko' || lang === 'en' ? 0.95 : 0.85,
+    alternates: {
+      languages: {
+        ko: `${baseUrl}/ko/products`,
+        en: `${baseUrl}/en/products`,
+        ja: `${baseUrl}/ja/products`,
+        'x-default': `${baseUrl}/ko/products`,
+      },
+    },
   }));
 
+  // Product detail pages
   const productDetailPages = LANGS.flatMap((lang) =>
     PRODUCT_SLUGS.map((slug) => ({
       url: `${baseUrl}/${lang}/products/${slug}`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: 'monthly' as const,
-      priority: lang === 'ko' || lang === 'en' ? 0.85 : 0.7,
+      priority: lang === 'ko' || lang === 'en' ? 0.85 : 0.75,
+      alternates: {
+        languages: {
+          ko: `${baseUrl}/ko/products/${slug}`,
+          en: `${baseUrl}/en/products/${slug}`,
+          ja: `${baseUrl}/ja/products/${slug}`,
+          'x-default': `${baseUrl}/ko/products/${slug}`,
+        },
+      },
     }))
   );
 
+  // Technical information (hub + pages)
+  const techPaths = ['technical', ...TECH_PAGES.map((p) => `technical/${p.slug}`)];
+  const technicalPages = LANGS.flatMap((lang) =>
+    techPaths.map((path) => ({
+      url: `${baseUrl}/${lang}/${path}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: path === 'technical' ? 0.9 : 0.8,
+      alternates: {
+        languages: {
+          ko: `${baseUrl}/ko/${path}`,
+          en: `${baseUrl}/en/${path}`,
+          ja: `${baseUrl}/ja/${path}`,
+          'x-default': `${baseUrl}/ko/${path}`,
+        },
+      },
+    }))
+  );
+
+  // Export inquiry pages
   const exportPages = LANGS.map((lang) => ({
     url: `${baseUrl}/${lang}/export`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: 'weekly' as const,
-    priority: lang === 'en' ? 1.0 : (lang === 'ko' ? 0.8 : 0.75), // Make English Export page top priority
+    priority: lang === 'en' ? 1.0 : (lang === 'ko' ? 0.85 : 0.8),
+    alternates: {
+      languages: {
+        ko: `${baseUrl}/ko/export`,
+        en: `${baseUrl}/en/export`,
+        ja: `${baseUrl}/ja/export`,
+        'x-default': `${baseUrl}/ko/export`,
+      },
+    },
+  }));
+
+  // Quote request pages
+  const quotePages = LANGS.map((lang) => ({
+    url: `${baseUrl}/${lang}/quote`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+    alternates: {
+      languages: {
+        ko: `${baseUrl}/ko/quote`,
+        en: `${baseUrl}/en/quote`,
+        ja: `${baseUrl}/ja/quote`,
+        'x-default': `${baseUrl}/ko/quote`,
+      },
+    },
   }));
 
   return [
+    rootEntry,
     ...homepages,
     ...aboutPages,
     ...productListPages,
     ...productDetailPages,
+    ...technicalPages,
     ...exportPages,
+    ...quotePages,
   ];
 }
