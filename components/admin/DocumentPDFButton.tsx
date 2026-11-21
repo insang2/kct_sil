@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { pdf, Document, Page, Text, View, StyleSheet, Font, Image } from '@react-pdf/renderer'
 import type {
   AdminDocument,
@@ -46,8 +46,8 @@ const S = StyleSheet.create({
   tableRowAlt: { backgroundColor: '#f8f9fa' },
   headerCell: { color: '#fff', fontWeight: 700, fontSize: 8 },
   colNo: { width: 22, textAlign: 'center' },
-  colName: { flex: 1 },
-  colSpec: { width: 70 },
+  colName: { flex: 1, paddingRight: 8 },
+  colSpec: { width: 70, paddingRight: 4 },
   colUnit: { width: 34, textAlign: 'center' },
   colQty: { width: 36, textAlign: 'right' },
   colPrice: { width: 68, textAlign: 'right' },
@@ -379,13 +379,32 @@ function ReceiptDoc({ c }: { c: ReceiptContent }) {
   )
 }
 
+function FreightRow({ c, n, w }: { c: { shippingType?: string; shippingCharge?: number }; n: number; w: number[] }) {
+  if (!c.shippingType) return null
+  const amt = (c.shippingCharge ?? 0).toLocaleString('en-US', { minimumFractionDigits: 2 })
+  const label = c.shippingType === 'air' ? 'Air Freight Charge' : 'Ocean Freight Charge'
+  const [no, marks, pkgs, unit, qty, price, amount] = w
+  return (
+    <View style={ES.tableRow}>
+      <Text style={{ width: no, textAlign: 'center', fontSize: 8 }}>{n}</Text>
+      <Text style={{ width: marks, fontSize: 8 }}>-</Text>
+      <Text style={{ width: pkgs, fontSize: 8 }}>-</Text>
+      <Text style={{ flex: 1, fontSize: 8 }}>{label}</Text>
+      <Text style={{ width: unit, textAlign: 'center', fontSize: 8 }}>-</Text>
+      <Text style={{ width: qty, textAlign: 'right', fontSize: 8 }}>-</Text>
+      <Text style={{ width: price, textAlign: 'right', fontSize: 8 }}>-</Text>
+      <Text style={{ width: amount, textAlign: 'right', fontSize: 8, fontFamily: NK, fontWeight: 700 }}>{amt}</Text>
+    </View>
+  )
+}
+
 function InvoiceHeaderEN({ c }: { c: InvoiceContent | InvoicePackingListContent }) {
   const consigneeRef = ((c as InvoiceContent).consignee as any)?.ref
   const consignee = (c as InvoiceContent).consignee ?? (c as InvoicePackingListContent).consignee
   return (
     <>
       <View style={ES.refGrid}>
-        <View style={ES.refCell}>
+        <View style={[ES.refCell, { flex: 2.2 }]}>
           <Text style={ES.refLabel}>INVOICE NO.</Text>
           <Text style={ES.refValue}>{c.docNumber}</Text>
         </View>
@@ -480,9 +499,10 @@ function InvoiceDoc({ c }: { c: InvoiceContent }) {
           </View>
         ))}
 
+        <FreightRow c={c} n={c.items.length + 1} w={[22, 60, 75, 30, 36, 55, 65]} />
         <View style={ES.totalArea}>
-          <View style={ES.totalFinalRow}>
-            <Text style={ES.totalFinalLabel}>TOTAL ({c.incoterms}) {c.currency}</Text>
+          <View style={[ES.totalFinalRow, { minWidth: 330 }]}>
+            <Text style={[ES.totalFinalLabel, { width: 210, fontSize: 9 }]}>TOTAL ({c.incoterms}) {c.currency}</Text>
             <Text style={ES.totalFinalValue}>{fmt2(c.total)}</Text>
           </View>
         </View>
@@ -545,9 +565,10 @@ function InvoicePackingListDoc({ c }: { c: InvoicePackingListContent }) {
           </View>
         ))}
 
+        <FreightRow c={c} n={c.items.length + 1} w={[22, 56, 72, 28, 36, 52, 62]} />
         <View style={ES.totalArea}>
-          <View style={ES.totalFinalRow}>
-            <Text style={ES.totalFinalLabel}>TOTAL ({c.incoterms}) {c.currency}</Text>
+          <View style={[ES.totalFinalRow, { minWidth: 330 }]}>
+            <Text style={[ES.totalFinalLabel, { width: 210, fontSize: 9 }]}>TOTAL ({c.incoterms}) {c.currency}</Text>
             <Text style={ES.totalFinalValue}>{fmt2(c.total)}</Text>
           </View>
         </View>
@@ -569,7 +590,7 @@ function InvoicePackingListDoc({ c }: { c: InvoicePackingListContent }) {
         <ENLetterhead docType="PACKING LIST" />
 
         <View style={ES.refGrid}>
-          <View style={ES.refCell}>
+          <View style={[ES.refCell, { flex: 2.2 }]}>
             <Text style={ES.refLabel}>REF. INVOICE NO.</Text>
             <Text style={ES.refValue}>{c.docNumber}</Text>
           </View>
@@ -587,22 +608,22 @@ function InvoicePackingListDoc({ c }: { c: InvoicePackingListContent }) {
           </View>
         </View>
 
-        <View style={[ES.termsBar, { flexDirection: 'row', gap: 0 }]}>
+        <View style={[ES.termsBar, { flexDirection: 'row', paddingVertical: 10 }]}>
           <View style={{ flex: 1, alignItems: 'center', borderRightWidth: 1, borderRightColor: '#aaa', paddingRight: 6 }}>
-            <Text style={[ES.termLabel, { textAlign: 'center' }]}>TOTAL PACKAGES</Text>
-            <Text style={[ES.termValue, { textAlign: 'center' }]}>{c.totalPackages || '—'}</Text>
+            <Text style={ES.sumLabel}>TOTAL PACKAGES</Text>
+            <Text style={ES.sumValue}>{c.totalPackages || '—'}</Text>
           </View>
           <View style={{ flex: 1, alignItems: 'center', borderRightWidth: 1, borderRightColor: '#aaa', paddingHorizontal: 6 }}>
-            <Text style={[ES.termLabel, { textAlign: 'center' }]}>NET WEIGHT (KGS)</Text>
-            <Text style={[ES.termValue, { textAlign: 'center' }]}>{c.totalNetWeight.toLocaleString()}</Text>
+            <Text style={ES.sumLabel}>NET WEIGHT (KGS)</Text>
+            <Text style={ES.sumValue}>{c.totalNetWeight.toLocaleString()}</Text>
           </View>
           <View style={{ flex: 1, alignItems: 'center', borderRightWidth: 1, borderRightColor: '#aaa', paddingHorizontal: 6 }}>
-            <Text style={[ES.termLabel, { textAlign: 'center' }]}>GROSS WEIGHT (KGS)</Text>
-            <Text style={[ES.termValue, { textAlign: 'center' }]}>{c.totalGrossWeight.toLocaleString()}</Text>
+            <Text style={ES.sumLabel}>GROSS WEIGHT (KGS)</Text>
+            <Text style={ES.sumValue}>{c.totalGrossWeight.toLocaleString()}</Text>
           </View>
           <View style={{ flex: 1, alignItems: 'center', paddingLeft: 6 }}>
-            <Text style={[ES.termLabel, { textAlign: 'center' }]}>TOTAL CBM</Text>
-            <Text style={[ES.termValue, { textAlign: 'center' }]}>{fmt3(c.totalCBM)}</Text>
+            <Text style={ES.sumLabel}>TOTAL CBM</Text>
+            <Text style={ES.sumValue}>{fmt3(c.totalCBM)}</Text>
           </View>
         </View>
 
@@ -732,13 +753,13 @@ function SalesContractDoc({ c }: { c: SalesContractContent }) {
         {c.totalInWords ? <Text style={{ fontFamily: CM, fontSize: 7.5, color: '#333', marginTop: 3, marginBottom: 8, letterSpacing: 0.3 }}>SAY: {c.totalInWords}</Text> : null}
 
         {c.qualityAndPacking ? (
-          <View style={[ES.termsBar, { marginTop: 6 }]}>
+          <View wrap={false} style={[ES.termsBar, { marginTop: 6 }]}>
             <Text style={{ fontFamily: CM, fontSize: 7.5, color: EN_COLOR, marginBottom: 5, letterSpacing: 1 }}>ARTICLE 2 — QUALITY &amp; PACKING</Text>
             <Text style={{ fontFamily: NK, fontSize: 7.5, lineHeight: 1.5 }}>{c.qualityAndPacking}</Text>
           </View>
         ) : null}
 
-        <View style={[ES.termsBar, !c.qualityAndPacking ? { marginTop: 6 } : {}]}>
+        <View wrap={false} style={[ES.termsBar, !c.qualityAndPacking ? { marginTop: 6 } : {}]}>
           <Text style={{ fontFamily: CM, fontSize: 7.5, color: EN_COLOR, marginBottom: 5, letterSpacing: 1 }}>ARTICLE 3 — SHIPPING TERMS</Text>
           <View style={ES.termItem}><Text style={ES.termLabel}>PORT OF LOADING:</Text><Text style={ES.termValue}>{c.portOfLoading}</Text></View>
           <View style={ES.termItem}><Text style={ES.termLabel}>PORT OF DESTINATION:</Text><Text style={ES.termValue}>{c.portOfDestination}</Text></View>
@@ -747,12 +768,12 @@ function SalesContractDoc({ c }: { c: SalesContractContent }) {
           <View style={ES.termItem}><Text style={ES.termLabel}>TRANSSHIPMENT:</Text><Text style={ES.termValue}>{c.transshipment}</Text></View>
         </View>
 
-        <View style={ES.termsBar}>
+        <View wrap={false} style={ES.termsBar}>
           <Text style={{ fontFamily: CM, fontSize: 7.5, color: EN_COLOR, marginBottom: 5, letterSpacing: 1 }}>ARTICLE 4 — PAYMENT TERMS</Text>
           <Text style={{ fontFamily: NK, fontSize: 8.5 }}>{c.paymentTerms}</Text>
         </View>
 
-        <View style={ES.termsBar}>
+        <View wrap={false} style={ES.termsBar}>
           <Text style={{ fontFamily: CM, fontSize: 7.5, color: EN_COLOR, marginBottom: 5, letterSpacing: 1 }}>ARTICLE 5 — DOCUMENTS</Text>
           {c.documents.map((doc, i) => (
             <Text key={i} style={{ fontFamily: NK, fontSize: 8, marginBottom: 2 }}>• {doc}</Text>
@@ -760,32 +781,32 @@ function SalesContractDoc({ c }: { c: SalesContractContent }) {
         </View>
 
         {c.insurance ? (
-          <View style={ES.termsBar}>
+          <View wrap={false} style={ES.termsBar}>
             <Text style={{ fontFamily: CM, fontSize: 7.5, color: EN_COLOR, marginBottom: 5, letterSpacing: 1 }}>ARTICLE 6 — INSURANCE</Text>
             <Text style={{ fontFamily: NK, fontSize: 7.5, lineHeight: 1.5 }}>{c.insurance}</Text>
           </View>
         ) : null}
 
         {c.inspectionClause ? (
-          <View style={ES.termsBar}>
+          <View wrap={false} style={ES.termsBar}>
             <Text style={{ fontFamily: CM, fontSize: 7.5, color: EN_COLOR, marginBottom: 5, letterSpacing: 1 }}>ARTICLE 7 — INSPECTION</Text>
             <Text style={{ fontFamily: NK, fontSize: 7.5, lineHeight: 1.5 }}>{c.inspectionClause}</Text>
           </View>
         ) : null}
 
         {c.forceMajeure ? (
-          <View style={ES.termsBar}>
+          <View wrap={false} style={ES.termsBar}>
             <Text style={{ fontFamily: CM, fontSize: 7.5, color: EN_COLOR, marginBottom: 5, letterSpacing: 1 }}>ARTICLE 8 — FORCE MAJEURE</Text>
             <Text style={{ fontFamily: NK, fontSize: 7.5, lineHeight: 1.5 }}>{c.forceMajeure}</Text>
           </View>
         ) : null}
 
-        <View style={ES.termsBar}>
+        <View wrap={false} style={ES.termsBar}>
           <Text style={{ fontFamily: CM, fontSize: 7.5, color: EN_COLOR, marginBottom: 5, letterSpacing: 1 }}>ARTICLE 9 — ARBITRATION</Text>
           <Text style={{ fontFamily: NK, fontSize: 7.5, lineHeight: 1.5 }}>{c.arbitration}</Text>
         </View>
 
-        <View style={ES.termsBar}>
+        <View wrap={false} style={ES.termsBar}>
           <Text style={{ fontFamily: CM, fontSize: 7.5, color: EN_COLOR, marginBottom: 5, letterSpacing: 1 }}>ARTICLE 10 — GENERAL CONDITIONS</Text>
           <Text style={{ fontFamily: NK, fontSize: 7.5, lineHeight: 1.5 }}>{c.generalConditions}</Text>
         </View>
@@ -824,11 +845,11 @@ const ES = StyleSheet.create({
   page: { fontFamily: NK, fontSize: 9, paddingTop: 38, paddingBottom: 58, paddingHorizontal: 46, color: '#111', backgroundColor: '#fafaf7' },
 
   // 레터헤드: 이중 구분선으로 타자기 공문서 느낌
-  lhRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', borderBottomWidth: 1, borderBottomColor: '#111', paddingBottom: 6, marginBottom: 3 },
+  lhRow: { flexDirection: 'column', borderBottomWidth: 1, borderBottomColor: '#111', paddingBottom: 8, marginBottom: 10 },
   lhUnderline: { borderBottomWidth: 3, borderBottomColor: EN_COLOR, marginBottom: 10 },
-  lhCompany: { fontFamily: CM, fontSize: 12, color: EN_COLOR, letterSpacing: 1.5 },
-  lhDetail: { fontFamily: CM, fontSize: 7.5, color: '#333', marginTop: 2, letterSpacing: 0.4 },
-  lhDocType: { fontFamily: CM, fontSize: 19, color: EN_COLOR, letterSpacing: 5 },
+  lhCompany: { fontFamily: CM, fontSize: 11, color: EN_COLOR, letterSpacing: 0.8 },
+  lhDetail: { fontFamily: CM, fontSize: 7, color: '#333', marginTop: 2, letterSpacing: 0.2 },
+  lhDocType: { fontFamily: CM, fontSize: 18, color: EN_COLOR, letterSpacing: 4, textAlign: 'right', marginTop: 8 },
 
   // 참조 그리드
   refGrid: { flexDirection: 'row', borderWidth: 1, borderColor: '#333', marginBottom: 9 },
@@ -848,14 +869,16 @@ const ES = StyleSheet.create({
   // 조건 바
   termsBar: { backgroundColor: '#f0f0ec', borderWidth: 1, borderColor: '#999', padding: 8, marginBottom: 10 },
   termItem: { flexDirection: 'row', marginBottom: 4 },
-  termLabel: { fontFamily: CM, fontSize: 7.5, color: '#444', width: 120, letterSpacing: 0.7 },
+  termLabel: { fontFamily: CM, fontSize: 7.5, color: '#444', width: 120, letterSpacing: 0.4 },
+  sumLabel: { fontFamily: CM, fontSize: 7, color: '#444', letterSpacing: 0.3, textAlign: 'center', marginBottom: 3 },
+  sumValue: { fontFamily: NK, fontSize: 10, fontWeight: 700, color: '#111', textAlign: 'center' },
   termValue: { fontFamily: NK, fontSize: 8.5, fontWeight: 700, flex: 1, color: '#111' },
 
   // 테이블 — 타자기 룰드 스타일 (솔리드 컬러 대신 상하 실선)
   tableHeader: { flexDirection: 'row', borderTopWidth: 1.5, borderTopColor: '#111', borderBottomWidth: 1.5, borderBottomColor: '#111', backgroundColor: '#eeeee9', paddingVertical: 6, paddingHorizontal: 3 },
   tableRow: { flexDirection: 'row', borderBottomWidth: 1, borderBottomColor: '#ccc', paddingVertical: 5, paddingHorizontal: 3 },
   tableRowAlt: { backgroundColor: '#f5f5f0' },
-  headerCell: { fontFamily: CM, color: '#111', fontSize: 8, letterSpacing: 0.8 },
+  headerCell: { fontFamily: CM, color: '#111', fontSize: 7.5, letterSpacing: 0.3 },
   colNo: { width: 22, textAlign: 'center' },
   colDesc: { fontFamily: NK, flex: 1 },
   colSpec: { fontFamily: NK, width: 68 },
@@ -884,7 +907,7 @@ const ES = StyleSheet.create({
   sigBlock: { width: 210 },
   sigLine: { borderTopWidth: 1, borderTopColor: '#333', marginTop: 4, marginBottom: 4 },
   sigLabel: { fontFamily: CM, fontSize: 7, color: '#666', marginBottom: 2, letterSpacing: 0.8 },
-  sigName: { fontFamily: CM, fontSize: 10, color: '#111', letterSpacing: 1 },
+  sigName: { fontFamily: NK, fontWeight: 700, fontSize: 9.5, color: '#111' },
   sigTitle: { fontFamily: CM, fontSize: 7.5, color: '#555', letterSpacing: 0.5 },
 
   // 푸터
@@ -899,12 +922,10 @@ const ES = StyleSheet.create({
 function ENLetterhead({ docType }: { docType: string }) {
   return (
     <View style={ES.lhRow}>
-      <View style={{ flex: 1, paddingRight: 12 }}>
-        <Text style={ES.lhCompany}>KOREA CONSTRUCTION TRADING CO., LTD.</Text>
-        <Text style={ES.lhDetail}>10 CHUNGMIN-RO, SONGPA-GU, SEOUL, REPUBLIC OF KOREA</Text>
-        <Text style={ES.lhDetail}>TEL: +82-10-8939-0284  |  EMAIL: SALES@KCONSTRADE.COM  |  KCONSTRADE.COM</Text>
-      </View>
-      <Text style={[ES.lhDocType, { flexShrink: 0 }]}>{docType}</Text>
+      <Text style={ES.lhCompany}>KOREA CONSTRUCTION TRADING CO., LTD.</Text>
+      <Text style={ES.lhDetail}>10 CHUNGMIN-RO, SONGPA-GU, SEOUL, REPUBLIC OF KOREA</Text>
+      <Text style={ES.lhDetail}>TEL: +82-10-8939-0284  |  EMAIL: SALES@KCONSTRADE.COM  |  KCONSTRADE.COM</Text>
+      <Text style={ES.lhDocType}>{docType}</Text>
     </View>
   )
 }
@@ -1232,105 +1253,138 @@ function ReceiptDocEN({ c }: { c: ReceiptContent }) {
 
 const STEPS = ['문서 구성 중...', '레이아웃 렌더링...', 'PDF 변환 중...']
 
+export function buildElement(doc: AdminDocument): React.ReactElement {
+  const isEN = doc.lang === 'en'
+  switch (doc.doc_type) {
+    case 'quotation':
+      return isEN ? <QuotationDocEN c={doc.content as QuotationContent} /> : <QuotationDoc c={doc.content as QuotationContent} />
+    case 'purchase_order':
+      return isEN ? <PurchaseOrderDocEN c={doc.content as PurchaseOrderContent} /> : <PurchaseOrderDoc c={doc.content as PurchaseOrderContent} />
+    case 'invoice':
+      return <InvoiceDoc c={doc.content as InvoiceContent} />
+    case 'invoice_packing_list':
+      return <InvoicePackingListDoc c={doc.content as InvoicePackingListContent} />
+    case 'sales_contract':
+      return <SalesContractDoc c={doc.content as SalesContractContent} />
+    default:
+      return isEN ? <ReceiptDocEN c={doc.content as ReceiptContent} /> : <ReceiptDoc c={doc.content as ReceiptContent} />
+  }
+}
+
+// 미리보기(모달) → 인쇄 / PDF 다운로드
 export default function DocumentPDFButton({ doc, size = 'sm' }: { doc: AdminDocument; size?: 'sm' | 'md' }) {
   const [loading, setLoading] = useState(false)
   const [step, setStep] = useState(0)
+  const [url, setUrl] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const frameRef = useRef<HTMLIFrameElement>(null)
+  const fileName = `${doc.doc_number || 'document'}.pdf`
 
-  async function handleDownload() {
+  useEffect(() => () => { if (url) URL.revokeObjectURL(url) }, [url])
+  useEffect(() => {
+    if (!url) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close() }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [url])
+
+  function close() { setUrl(null) }
+
+  async function handlePreview() {
     if (loading) return
-    setLoading(true)
-    setStep(0)
-
+    setLoading(true); setStep(0); setError(null)
+    const t1 = setTimeout(() => setStep(1), 400)
+    const t2 = setTimeout(() => setStep(2), 900)
     try {
-      // PDF 다운로드 기능 비활성화 (버튼 애니메이션만 동작)
-      setTimeout(() => setStep(1), 400)
-      setTimeout(() => setStep(2), 900)
-      await new Promise((resolve) => setTimeout(resolve, 1400))
-
-      // const isEN = doc.lang === 'en'
-      // let element: React.ReactElement
-      // if (doc.doc_type === 'quotation') {
-      //   element = isEN
-      //     ? <QuotationDocEN c={doc.content as QuotationContent} />
-      //     : <QuotationDoc c={doc.content as QuotationContent} />
-      // } else if (doc.doc_type === 'purchase_order') {
-      //   element = isEN
-      //     ? <PurchaseOrderDocEN c={doc.content as PurchaseOrderContent} />
-      //     : <PurchaseOrderDoc c={doc.content as PurchaseOrderContent} />
-      // } else if (doc.doc_type === 'receipt') {
-      //   element = isEN
-      //     ? <ReceiptDocEN c={doc.content as ReceiptContent} />
-      //     : <ReceiptDoc c={doc.content as ReceiptContent} />
-      // } else if (doc.doc_type === 'invoice') {
-      //   element = <InvoiceDoc c={doc.content as InvoiceContent} />
-      // } else if (doc.doc_type === 'invoice_packing_list') {
-      //   element = <InvoicePackingListDoc c={doc.content as InvoicePackingListContent} />
-      // } else if (doc.doc_type === 'sales_contract') {
-      //   element = <SalesContractDoc c={doc.content as SalesContractContent} />
-      // } else {
-      //   element = <ReceiptDoc c={doc.content as ReceiptContent} />
-      // }
-
-      // const blob = await pdf(element as any).toBlob()
-      // clearTimeout(t1)
-      // clearTimeout(t2)
-
-      // const url = URL.createObjectURL(blob)
-      // const a = document.createElement('a')
-      // a.href = url
-      // a.download = `${doc.doc_number}.pdf`
-      // document.body.appendChild(a)
-      // a.click()
-      // document.body.removeChild(a)
-      // URL.revokeObjectURL(url)
+      const blob = await pdf(buildElement(doc) as any).toBlob()
+      setUrl(URL.createObjectURL(blob))
+    } catch (e) {
+      console.error(e)
+      setError('미리보기 생성에 실패했습니다.')
+      alert('미리보기 생성에 실패했습니다. 잠시 후 다시 시도해 주세요.')
     } finally {
-      setLoading(false)
-      setStep(0)
+      clearTimeout(t1); clearTimeout(t2)
+      setLoading(false); setStep(0)
     }
   }
 
-  if (size === 'md') {
-    return (
-      <div>
-        <button
-          className="btn btn-danger rounded-pill px-4"
-          onClick={handleDownload}
-          disabled={loading}
-        >
-          {loading ? (
-            <span className="d-flex align-items-center gap-2">
-              <span className="spinner-border spinner-border-sm" />
-              {STEPS[step]}
-            </span>
-          ) : (
-            <><i className="bi bi-file-earmark-pdf me-2" />PDF 다운로드</>
-          )}
-        </button>
-        {loading && (
-          <div className="mt-2">
-            <div className="progress rounded-pill" style={{ height: 4 }}>
-              <div
-                className="progress-bar progress-bar-animated bg-danger"
-                style={{ width: step === 0 ? '30%' : step === 1 ? '65%' : '90%', transition: 'width 0.4s ease' }}
-              />
-            </div>
-          </div>
-        )}
-      </div>
-    )
+  function handleDownload() {
+    if (!url) return
+    const a = document.createElement('a')
+    a.href = url
+    a.download = fileName
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
   }
 
-  return (
-    <button
-      className="btn btn-outline-danger btn-sm rounded-pill px-2"
-      onClick={handleDownload}
-      disabled={loading}
-      title="PDF 다운로드"
-    >
+  function handlePrint() {
+    const w = frameRef.current?.contentWindow
+    try {
+      w?.focus()
+      w?.print()
+    } catch {
+      // 일부 브라우저에서 PDF 뷰어 iframe 인쇄가 막힌 경우 새 창으로 열기
+      if (url) window.open(url, '_blank')
+    }
+  }
+
+  const trigger = size === 'md' ? (
+    <div>
+      <button className="btn btn-danger rounded-pill px-4" onClick={handlePreview} disabled={loading}>
+        {loading ? (
+          <span className="d-flex align-items-center gap-2">
+            <span className="spinner-border spinner-border-sm" />{STEPS[step]}
+          </span>
+        ) : (
+          <><i className="bi bi-eye me-2" />미리보기</>
+        )}
+      </button>
+      {loading && (
+        <div className="mt-2">
+          <div className="progress rounded-pill" style={{ height: 4 }}>
+            <div className="progress-bar progress-bar-animated bg-danger"
+              style={{ width: step === 0 ? '30%' : step === 1 ? '65%' : '90%', transition: 'width 0.4s ease' }} />
+          </div>
+        </div>
+      )}
+    </div>
+  ) : (
+    <button className="btn btn-outline-danger btn-sm rounded-pill px-2" onClick={handlePreview} disabled={loading} title="미리보기">
       {loading
         ? <span className="spinner-border spinner-border-sm" style={{ width: 12, height: 12 }} />
-        : <i className="bi bi-file-earmark-pdf" />
-      }
+        : <i className="bi bi-eye" />}
     </button>
+  )
+
+  return (
+    <>
+      {trigger}
+      {error && size === 'md' && <div className="text-danger small mt-1">{error}</div>}
+      {url && (
+        <div
+          style={{ position: 'fixed', inset: 0, zIndex: 2000, background: 'rgba(15,17,30,0.72)', display: 'flex', flexDirection: 'column' }}
+          role="dialog" aria-modal="true" aria-label="문서 미리보기"
+          onClick={(e) => { if (e.target === e.currentTarget) close() }}
+        >
+          <div style={{ background: '#fff', display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px', borderBottom: '1px solid #dee2e6' }}>
+            <strong style={{ color: '#16142F' }}>{doc.doc_number}</strong>
+            <span className="small" style={{ color: '#555370' }}>미리보기</span>
+            <div style={{ marginLeft: 'auto', display: 'flex', gap: 8 }}>
+              <button className="btn btn-outline-dark btn-sm rounded-pill px-3" onClick={handlePrint}>
+                <i className="bi bi-printer me-1" />인쇄
+              </button>
+              <button className="btn btn-danger btn-sm rounded-pill px-3" onClick={handleDownload}>
+                <i className="bi bi-download me-1" />PDF 다운로드
+              </button>
+              <button className="btn btn-light btn-sm rounded-pill px-3 border" onClick={close}>
+                <i className="bi bi-x-lg me-1" />닫기
+              </button>
+            </div>
+          </div>
+          <iframe ref={frameRef} src={url} title="문서 미리보기" style={{ flex: 1, width: '100%', border: 0, background: '#525659' }} />
+        </div>
+      )}
+    </>
   )
 }

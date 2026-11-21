@@ -137,7 +137,9 @@ export interface InvoiceContent {
   customerOrderNo: string
   countryOfOrigin: string
   items: InvoiceLineItem[]
-  total: number
+  shippingType?: '' | 'air' | 'ocean' // 운송비 (인보이스에만 표시)
+  shippingCharge?: number
+  total: number // 상품 합계 + 운송비
   totalInWords: string
   paymentTerms: string
   notes: string
@@ -161,7 +163,9 @@ export interface InvoicePackingListContent {
   customerOrderNo: string
   countryOfOrigin: string
   items: PackingLineItem[]
-  total: number
+  shippingType?: '' | 'air' | 'ocean' // 운송비 (인보이스에만 표시, 패킹리스트 제외)
+  shippingCharge?: number
+  total: number // 상품 합계 + 운송비
   totalInWords: string
   totalPackages: string
   totalNetWeight: number
@@ -327,6 +331,7 @@ export function defaultContent(type: DocType): DocContent {
     customerOrderNo: '',
     countryOfOrigin: 'REPUBLIC OF KOREA',
     items: [{ ...blankInvItem }],
+    shippingType: '', shippingCharge: 0,
     total: 0, totalInWords: '',
     paymentTerms: 'T/T 100% IN ADVANCE',
     notes: '',
@@ -344,6 +349,7 @@ export function defaultContent(type: DocType): DocContent {
     customerOrderNo: '',
     countryOfOrigin: 'REPUBLIC OF KOREA',
     items: [{ ...blankInvItem, netWeight: 0, grossWeight: 0, cbm: 0 }],
+    shippingType: '', shippingCharge: 0,
     total: 0, totalInWords: '',
     totalPackages: '',
     totalNetWeight: 0, totalGrossWeight: 0, totalCBM: 0,

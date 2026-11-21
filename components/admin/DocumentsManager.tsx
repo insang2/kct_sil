@@ -1267,6 +1267,48 @@ function InvoiceItemsTable({ items, onChange, accentColor, title = 'Commodity' }
 }
 
 // ─── 인보이스 편집기 ───────────────────────────────────────────────────────────
+// 운송비: Air / Ocean 선택. 인보이스에만 출력되고 패킹리스트에는 나오지 않는다.
+function ShippingCard({ c, onChange, color, showNote }: {
+  c: { shippingType?: '' | 'air' | 'ocean'; shippingCharge?: number; items: { amount: number }[]; total: number; currency: string }
+  onChange: (u: (p: any) => any) => void; color: string; showNote: boolean
+}) {
+  const type = c.shippingType ?? ''
+  const charge = c.shippingCharge ?? 0
+  const goods = +c.items.reduce((t, it) => t + it.amount, 0).toFixed(2)
+  function set(nextType: '' | 'air' | 'ocean', nextCharge: number) {
+    const ch = nextType ? Math.max(0, nextCharge) : 0
+    onChange(p => ({
+      ...p, shippingType: nextType, shippingCharge: ch,
+      total: +(p.items.reduce((t: number, it: { amount: number }) => t + it.amount, 0) + ch).toFixed(2),
+    }))
+  }
+  return (
+    <div className="card border-0 shadow-sm rounded-4 mb-3 p-4">
+      <h6 className="fw-bold text-dark mb-3" style={{ borderLeft: `3px solid ${color}`, paddingLeft: 10 }}>Shipping Charge (운송비)</h6>
+      <div className="row g-3 align-items-end">
+        <div className="col-md-3">
+          <label className="form-label small fw-bold text-dark mb-1">Shipping Type</label>
+          <select className="form-select form-select-sm" value={type} onChange={e => set(e.target.value as '' | 'air' | 'ocean', charge)}>
+            <option value="">— 없음 —</option>
+            <option value="air">Air</option>
+            <option value="ocean">Ocean</option>
+          </select>
+        </div>
+        <div className="col-md-3">
+          <label className="form-label small fw-bold text-dark mb-1">Charge ({c.currency})</label>
+          <input type="number" min={0} step={0.01} className="form-control form-control-sm text-end" disabled={!type}
+            value={charge} onChange={e => set(type, Number(e.target.value))} />
+        </div>
+        <div className="col-md-6 small" style={{ color: '#555370' }}>
+          Goods {goods.toLocaleString('en-US', { minimumFractionDigits: 2 })} + {type ? (type === 'air' ? 'Air' : 'Ocean') : 'Shipping'} {charge.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+          {' = '}<strong style={{ color }}>{c.total.toLocaleString('en-US', { minimumFractionDigits: 2 })} {c.currency}</strong>
+          {showNote && <div>※ 운송비는 인보이스에만 표시되고 패킹리스트에는 출력되지 않습니다.</div>}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function InvoiceEditor({ content: c, onChange, customers, onContactPick }: {
   content: InvoiceContent; onChange: (u: (p: any) => any) => void; customers: CustomerOption[]; onContactPick: (id: string) => void
 }) {
@@ -1297,7 +1339,7 @@ function InvoiceEditor({ content: c, onChange, customers, onContactPick }: {
         if (field === 'qty' || field === 'unitPrice') updated.amount = +(updated.qty * updated.unitPrice).toFixed(2)
         return updated
       })
-      const total = +newItems.reduce((s: number, it: InvoiceLineItem) => s + it.amount, 0).toFixed(2)
+      const total = +(newItems.reduce((s: number, it: InvoiceLineItem) => s + it.amount, 0) + (p.shippingCharge ?? 0)).toFixed(2)
       return { ...p, items: newItems, total }
     })
   }
@@ -1309,7 +1351,7 @@ function InvoiceEditor({ content: c, onChange, customers, onContactPick }: {
   function removeItem(index: number) {
     onChange(p => {
       const newItems = p.items.filter((_: InvoiceLineItem, i: number) => i !== index)
-      const total = +newItems.reduce((s: number, it: InvoiceLineItem) => s + it.amount, 0).toFixed(2)
+      const total = +(newItems.reduce((s: number, it: InvoiceLineItem) => s + it.amount, 0) + (p.shippingCharge ?? 0)).toFixed(2)
       return { ...p, items: newItems, total }
     })
   }
@@ -1386,19 +1428,20 @@ function InvoiceEditor({ content: c, onChange, customers, onContactPick }: {
           <button className="btn btn-sm btn-outline-secondary rounded-pill px-3" onClick={addItem}><i className="bi bi-plus me-1" />행 추가</button>
         </div>
         <div className="table-responsive">
-          <table className="table table-sm mb-0" style={{ fontSize: '0.8rem' }}>
+          <table className="table table-sm mb-0 align-middle" style={{ fontSize: '0.8rem', tableLayout: 'fixed', minWidth: 960 }}>
+            <colgroup><col style={{ width: 44  }} /><col style={{ width: 100  }} /><col style={{ width: 120  }} /><col style={{ width: 90  }} /><col /><col style={{ width: 56  }} /><col style={{ width: 75  }} /><col style={{ width: 95  }} /><col style={{ width: 110  }} /><col style={{ width: 44  }} /></colgroup>
             <thead className="table-light">
               <tr>
-                <th className="px-3 py-2" style={{ width: 28 }}>No</th>
-                <th style={{ width: 90 }}>Shipping Marks</th>
-                <th style={{ width: 120 }}>No.& kind of pkgs</th>
-                <th style={{ width: 80 }}>HS Code</th>
+                <th className="px-3 py-2 text-nowrap">No</th>
+                <th>Shipping Marks</th>
+                <th>No.& kind of pkgs</th>
+                <th>HS Code</th>
                 <th>Goods Description</th>
-                <th style={{ width: 50 }}>Unit</th>
-                <th style={{ width: 65 }}>Qty</th>
-                <th style={{ width: 90 }}>Unit Price</th>
-                <th style={{ width: 100 }}>Amount</th>
-                <th style={{ width: 36 }}></th>
+                <th>Unit</th>
+                <th className="text-end pe-2">Qty</th>
+                <th className="text-end pe-2">Unit Price</th>
+                <th className="text-end pe-2">Amount</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -1433,6 +1476,8 @@ function InvoiceEditor({ content: c, onChange, customers, onContactPick }: {
           </table>
         </div>
       </div>
+
+      <ShippingCard c={c} onChange={onChange} color={color} showNote={false} />
 
       <div className="card border-0 shadow-sm rounded-4 mb-3 p-4">
         <div className="row g-3">
@@ -1480,7 +1525,7 @@ function InvoicePackingListEditor({ content: c, onChange, customers, onContactPi
         if (field === 'qty' || field === 'unitPrice') updated.amount = +(updated.qty * updated.unitPrice).toFixed(2)
         return updated
       })
-      const total = +newItems.reduce((s: number, it: PackingLineItem) => s + it.amount, 0).toFixed(2)
+      const total = +(newItems.reduce((s: number, it: PackingLineItem) => s + it.amount, 0) + (p.shippingCharge ?? 0)).toFixed(2)
       const totalNetWeight = +newItems.reduce((s: number, it: PackingLineItem) => s + it.netWeight, 0).toFixed(3)
       const totalGrossWeight = +newItems.reduce((s: number, it: PackingLineItem) => s + it.grossWeight, 0).toFixed(3)
       const totalCBM = +newItems.reduce((s: number, it: PackingLineItem) => s + it.cbm, 0).toFixed(3)
@@ -1498,7 +1543,7 @@ function InvoicePackingListEditor({ content: c, onChange, customers, onContactPi
   function removeItem(index: number) {
     onChange(p => {
       const newItems = p.items.filter((_: PackingLineItem, i: number) => i !== index)
-      const total = +newItems.reduce((s: number, it: PackingLineItem) => s + it.amount, 0).toFixed(2)
+      const total = +(newItems.reduce((s: number, it: PackingLineItem) => s + it.amount, 0) + (p.shippingCharge ?? 0)).toFixed(2)
       const totalNetWeight = +newItems.reduce((s: number, it: PackingLineItem) => s + it.netWeight, 0).toFixed(3)
       const totalGrossWeight = +newItems.reduce((s: number, it: PackingLineItem) => s + it.grossWeight, 0).toFixed(3)
       const totalCBM = +newItems.reduce((s: number, it: PackingLineItem) => s + it.cbm, 0).toFixed(3)
@@ -1577,22 +1622,23 @@ function InvoicePackingListEditor({ content: c, onChange, customers, onContactPi
           <button className="btn btn-sm btn-outline-secondary rounded-pill px-3" onClick={addItem}><i className="bi bi-plus me-1" />행 추가</button>
         </div>
         <div className="table-responsive">
-          <table className="table table-sm mb-0" style={{ fontSize: '0.76rem' }}>
+          <table className="table table-sm mb-0 align-middle" style={{ fontSize: '0.76rem', tableLayout: 'fixed', minWidth: 1180 }}>
+            <colgroup><col style={{ width: 44  }} /><col style={{ width: 100  }} /><col style={{ width: 110  }} /><col style={{ width: 90  }} /><col /><col style={{ width: 56  }} /><col style={{ width: 70  }} /><col style={{ width: 90  }} /><col style={{ width: 100  }} /><col style={{ width: 90  }} /><col style={{ width: 90  }} /><col style={{ width: 80  }} /><col style={{ width: 44  }} /></colgroup>
             <thead className="table-light">
               <tr>
-                <th className="px-3 py-2" style={{ width: 24 }}>No</th>
-                <th style={{ width: 80 }}>Shipping Mark</th>
-                <th style={{ width: 100 }}>No.& kind pkgs</th>
-                <th style={{ width: 70 }}>HS Code</th>
+                <th className="px-3 py-2 text-nowrap">No</th>
+                <th>Shipping Mark</th>
+                <th>No.& kind pkgs</th>
+                <th>HS Code</th>
                 <th>Goods Description</th>
-                <th style={{ width: 44 }}>Unit</th>
-                <th style={{ width: 55 }}>Qty</th>
-                <th style={{ width: 80 }}>Unit Price</th>
-                <th style={{ width: 90 }}>Amount</th>
-                <th style={{ width: 80 }}>NW (kg)</th>
-                <th style={{ width: 80 }}>GW (kg)</th>
-                <th style={{ width: 70 }}>CBM</th>
-                <th style={{ width: 32 }}></th>
+                <th>Unit</th>
+                <th className="text-end pe-2">Qty</th>
+                <th className="text-end pe-2">Unit Price</th>
+                <th className="text-end pe-2">Amount</th>
+                <th className="text-end pe-2">NW (kg)</th>
+                <th className="text-end pe-2">GW (kg)</th>
+                <th className="text-end pe-2">CBM</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -1623,7 +1669,7 @@ function InvoicePackingListEditor({ content: c, onChange, customers, onContactPi
             <tfoot className="table-light">
               <tr>
                 <td colSpan={8} className="px-3 py-2 text-end fw-bold small" style={{ color }}>TOTAL</td>
-                <td className="py-2 fw-bold text-end pe-1" style={{ color }}>{fmt2(c.total)}</td>
+                <td className="py-2 fw-bold text-end pe-1" style={{ color }}>{fmt2(c.items.reduce((t, it) => t + it.amount, 0))}</td>
                 <td className="py-2 fw-bold text-end text-body-secondary">{fmt3(c.totalNetWeight)}</td>
                 <td className="py-2 fw-bold text-end text-body-secondary">{fmt3(c.totalGrossWeight)}</td>
                 <td className="py-2 fw-bold text-end text-body-secondary">{fmt3(c.totalCBM)}</td>
@@ -1633,6 +1679,8 @@ function InvoicePackingListEditor({ content: c, onChange, customers, onContactPi
           </table>
         </div>
       </div>
+
+      <ShippingCard c={c} onChange={onChange} color={color} showNote={true} />
 
       <div className="card border-0 shadow-sm rounded-4 mb-3 p-4">
         <div className="row g-3">
