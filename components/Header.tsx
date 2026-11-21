@@ -27,7 +27,7 @@ export default async function Header({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
           <Link className="navbar-brand" href={`/${lang}`}>
             <img
               src="/assets/img/logo/kct_logo.jpeg"
-              alt="KCT Logo"
+              alt="한국건설트레이딩 (KCT) 건축용 실리콘 로고"
               className="img-fluid"
               style={{ height: '45px', width: 'auto', mixBlendMode: 'multiply' }}
             />
@@ -39,6 +39,7 @@ export default async function Header({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
               home:     d.navigation.home,
               about:    d.navigation.about,
               products: d.navigation.products,
+              technical: d.navigation.technical,
               b2b:      d.navigation.b2b,
               export:   d.navigation.export,
               quote:    d.navigation.quote,

@@ -10,6 +10,7 @@ interface NavbarClientProps {
     home: string;
     about: string;
     products: string;
+    technical: string;
     b2b: string;
     export: string;
     quote: string;
@@ -117,6 +118,7 @@ export default function NavbarClient({ lang, navLabels, userSlot }: NavbarClient
             { label: navLabels.home,     href: `/${lang}` },
             { label: navLabels.about,    href: `/${lang}/about` },
             { label: navLabels.products, href: `/${lang}/products` },
+            { label: navLabels.technical, href: `/${lang}/technical` },
             { label: navLabels.b2b,      href: `/${lang}#b2b-form` },
             { label: navLabels.export,   href: `/${lang}/export` },
           ] as const).map(item => (

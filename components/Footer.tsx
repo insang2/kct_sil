@@ -21,7 +21,7 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
             <Link href={`/${lang}`} className="d-inline-block mb-4">
               <img
                 src="/assets/img/logo/kct_logo.jpeg"
-                alt="KCT Logo"
+                alt="한국건설트레이딩 (KCT) 로고"
                 style={{ height: '40px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.9 }}
               />
             </Link>
@@ -72,6 +72,7 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
                 { label: d.navigation.home,     href: `/${lang}` },
                 { label: d.navigation.about,    href: `/${lang}/about` },
                 { label: d.navigation.products, href: `/${lang}/products` },
+                { label: d.navigation.technical, href: `/${lang}/technical` },
                 { label: d.navigation.b2b,      href: `/${lang}#b2b-form` },
                 { label: d.navigation.export,   href: `/${lang}/export` },
               ].map((item) => (
