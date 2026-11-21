@@ -1,57 +1,59 @@
 import { getDictionary } from '@/lib/dictionaries';
-import { createClient } from '@/lib/supabase/server';
+import { CATALOG, CATEGORIES, tdsUrl } from '@/lib/products-catalog';
+import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: '제품정보 | 한국건설트레이딩 (KCT) - 건축용 실리콘 전문',
-  description: 'Dow 건축용·구조용 실리콘 전 라인업. 커튼월, 파사드 등 용도별 최적 실란트를 확인하세요.',
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: 'ko' | 'en' | 'ja' }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const isEn = lang === 'en';
+  const isJa = lang === 'ja';
 
-interface ProductRow {
-  id: number;
-  brand: string;
-  sku: string | null;
-  name_ko: string;
-  name_en: string | null;
-  category: string | null;
-  slug: string | null;
-  image_url: string | null;
-  is_active: boolean;
-  sort_order: number;
+  const title = isEn
+    ? 'Architectural Silicone Sealants Products | Korea Construction Trading (KCT)'
+    : isJa
+    ? '建築用シリコーン製品一覧 | 韓国建設トレー딩 (KCT)'
+    : '건축용 실리콘 제품정보 | 한국건설트레이딩 (KCT)';
+
+  const description = isEn
+    ? 'Explore full lineup of DOWSIL™ architectural and structural silicone sealants: 790, 791, 795, 995, 756 SMS, 977, 991, and more. Bulk B2B supply & global export.'
+    : isJa
+    ? 'DOWSIL™ 建築用・構造用シリコーンシーラント全製品ラインナップ。790, 791, 795, 995, 756 SMS, 977, 991など。B2B卸売・グローバル輸出対応。'
+    : 'Dow(다우) 건축용·구조용 실리콘 전 라인업: DOWSIL 790, 791, 795, 995, 756 SMS, 977, 991 등. 커튼월, 파사드, 구조글레이징 전용 B2B 도매 및 수출 공급.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://kconstrade.com/${lang}/products`,
+      languages: {
+        'ko': 'https://kconstrade.com/ko/products',
+        'en': 'https://kconstrade.com/en/products',
+        'ja': 'https://kconstrade.com/ja/products',
+        'x-default': 'https://kconstrade.com/ko/products',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://kconstrade.com/${lang}/products`,
+      siteName: '한국건설트레이딩 (KCT)',
+      images: [
+        {
+          url: 'https://kconstrade.com/assets/img/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: 'website',
+    },
+  };
 }
-
-const FALLBACK_PRODUCTS: ProductRow[] = [
-  { id: 1,  brand: 'DOWSIL', sku: '790',     name_ko: 'DOWSIL™ 790',     name_en: 'DOWSIL™ 790 Low-Modulus Sealant',       category: '내후성',  slug: 'dowsil-790',     image_url: '/assets/img/dow/789-cartridge-sausage-800.jpg', is_active: true, sort_order: 1 },
-  { id: 2,  brand: 'DOWSIL', sku: '791',     name_ko: 'DOWSIL™ 791',     name_en: 'DOWSIL™ 791 Weatherproofing Sealant',   category: '내후성',  slug: 'dowsil-791',     image_url: '/assets/img/dow/791-cartridge-sausage-800.jpg', is_active: true, sort_order: 2 },
-  { id: 3,  brand: 'DOWSIL', sku: '795',     name_ko: 'DOWSIL™ 795',     name_en: 'DOWSIL™ 795 Structural Glazing Sealant', category: '구조용',  slug: 'dowsil-795',     image_url: '/assets/img/dow/795-cartridge-sausage-800.jpg', is_active: true, sort_order: 3 },
-  { id: 4,  brand: 'DOWSIL', sku: '995',     name_ko: 'DOWSIL™ 995',     name_en: 'DOWSIL™ 995 Structural Sealant',        category: '구조용',  slug: 'dowsil-995',     image_url: '/assets/img/dow/995-cartridge-800.jpg',         is_active: true, sort_order: 4 },
-  { id: 5,  brand: 'DOWSIL', sku: '756 SMS', name_ko: 'DOWSIL™ 756 SMS', name_en: 'DOWSIL™ 756 SMS Stone & Facade Sealant', category: '특수',    slug: 'dowsil-756-sms', image_url: '/assets/img/dow/group-800.jpg',                  is_active: true, sort_order: 5 },
-  { id: 7,  brand: 'DOWSIL', sku: '732',     name_ko: 'DOWSIL™ 732',     name_en: 'DOWSIL™ 732 Multi-Purpose Sealant',     category: '다목적',  slug: 'dowsil-732',     image_url: '/assets/img/dow/group-800.jpg',                  is_active: true, sort_order: 7 },
-  { id: 8,  brand: 'DOWSIL', sku: '977',     name_ko: 'DOWSIL™ 977',     name_en: 'DOWSIL™ 977 Sausage Sealant',           category: '내후성',  slug: 'dowsil-977',     image_url: '/assets/img/dow/977-cartridge-sausage-800.jpg', is_active: true, sort_order: 8 },
-  { id: 9,  brand: 'DOWSIL', sku: '991',     name_ko: 'DOWSIL™ 991',     name_en: 'DOWSIL™ 991 Sausage Sealant',           category: '구조용',  slug: 'dowsil-991',     image_url: '/assets/img/dow/991-sausage-800.jpg',           is_active: true, sort_order: 9 },
-  { id: 10, brand: 'DOWSIL', sku: '983',     name_ko: 'DOWSIL™ 983',     name_en: 'DOWSIL™ 983 Two-Part Structural Sealant', category: '구조용', slug: 'dowsil-983',     image_url: '/assets/img/dow/group-800.jpg',                  is_active: true, sort_order: 10 },
-];
-
-const CATEGORY_BADGE: Record<string, string> = {
-  '내후성': 'bg-primary',
-  '구조용': 'bg-success',
-  '특수':   'bg-warning text-dark',
-  '내부':   'bg-info text-dark',
-  '다목적': 'bg-info text-dark',
-};
-
-const USE_TEXT: Record<string, string> = {
-  'dowsil-790':     '저모듈러스 · 확장 조인트용',
-  'dowsil-791':     '커튼월 · 파사드 내후성 실링',
-  'dowsil-795':     '다목적 구조용 · 내후성',
-  'dowsil-995':     '고장력 · 내풍압 고성능',
-  'dowsil-756-sms': '오염방지형 · 석재 · 패널용',
-  'dowsil-732':     '일반 접착 · 코팅 다목적',
-  'dowsil-977':     '소시지형 · 내후성용',
-  'dowsil-991':     '소시지형 · 구조용',
-  'dowsil-983':     '공장용 2액형 빠른 경화형',
-};
 
 export default async function ProductsPage({
   params,
@@ -62,46 +64,60 @@ export default async function ProductsPage({
   const dict = await getDictionary(lang);
   const d = dict as any;
 
-  let products: ProductRow[] = FALLBACK_PRODUCTS;
-  try {
-    const supabase = await createClient();
-    const { data } = await supabase
-      .from('products')
-      .select('id, brand, sku, name_ko, name_en, category, slug, image_url, is_active, sort_order')
-      .eq('is_active', true)
-      .order('sort_order', { ascending: true });
-    if (data && data.length > 0) products = data;
-  } catch {
-    // use fallback
-  }
+  const isEn = lang === 'en';
+  const cats = CATEGORIES.map((c) => (isEn ? { ...c, ...CATEGORY_EN[c.key] } : c));
+  const products = CATALOG.map((p0) => localizeCatalog(p0, lang)).map((p) => ({ ...p, brand: 'DOWSIL', name_ko: p.name, name_en: p.title, image_url: p.image ?? null }));
+  const productName = (p: (typeof products)[number]) => (lang === 'en' ? p.name_en : p.name_ko);
 
-  const itemListSchema = {
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": products.map((product, index) => {
-      const slug = product.slug ?? `${product.brand.toLowerCase()}-${(product.sku ?? '').toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
-      return {
-        "@type": "ListItem",
-        "position": index + 1,
-        "item": {
-          "@type": "Product",
-          "name": product.name_ko,
-          "url": `https://kconstrade.com/${lang}/products/${slug}`,
-          "image": product.image_url ? `https://kconstrade.com${product.image_url}` : `https://kconstrade.com/assets/img/dow/단체컷_sqr_800.jpg`,
-          "brand": {
-            "@type": "Brand",
-            "name": product.brand
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": lang === 'en' ? 'Home' : lang === 'ja' ? 'ホーム' : '홈',
+            "item": `https://kconstrade.com/${lang}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": lang === 'en' ? 'Products' : lang === 'ja' ? '製品' : '제품정보',
+            "item": `https://kconstrade.com/${lang}/products`
           }
-        }
-      };
-    })
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": lang === 'en' ? 'Architectural Silicone Products' : '건축용 실리콘 제품 목록',
+        "itemListElement": products.map((product, index) => {
+          const slug = product.slug;
+          return {
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+              "@type": "Product",
+              "name": productName(product),
+              "url": `https://kconstrade.com/${lang}/products/${slug}`,
+              "image": product.image_url ? `https://kconstrade.com${product.image_url}` : `https://kconstrade.com/assets/img/og-image.png`,
+              "brand": {
+                "@type": "Brand",
+                "name": product.brand
+              }
+            }
+          };
+        })
+      }
+    ]
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       {/* Hero */}
       <section
@@ -129,7 +145,7 @@ export default async function ProductsPage({
                 {d.navigation.products}
               </h1>
               <p className="lead text-white mb-0" style={{ opacity: 0.9, textShadow: '0 1px 5px rgba(0,0,0,0.2)' }}>
-                Dow Chemical 취급 · 건축·구조용 실리콘 전 라인업
+                {isEn ? 'Dow Chemical silicone sealants — full architectural & structural lineup' : 'Dow Chemical 취급 · 건축·구조용 실리콘 전 라인업'}
               </p>
             </div>
           </div>
@@ -148,68 +164,59 @@ export default async function ProductsPage({
         </div>
       </div>
 
-      {/* Product Grid */}
-      <section className="py-9 py-lg-11 bg-white">
+      {/* Category nav */}
+      <div className="bg-white border-bottom sticky-top" style={{ top: 72, zIndex: 10 }}>
+        <div className="container py-3 d-flex flex-wrap gap-2 justify-content-center">
+          {cats.map((c) => (
+            <a key={c.key} href={`#cat-${c.key}`} className="btn btn-outline-primary btn-sm rounded-pill px-3">
+              {c.label} <span className="opacity-75">({products.filter((p) => p.category === c.key).length})</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Product Grid by category */}
+      <section className="py-9 bg-white">
         <div className="container">
-          <div className="row g-4">
-            {products.map((product) => {
-              const slug = product.slug ?? `${product.brand.toLowerCase()}-${(product.sku ?? '').toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
-              const useText = USE_TEXT[slug] ?? '';
-              const imgSrc = product.image_url ?? '/assets/img/dow/단체컷_sqr_800.jpg';
-              const category = product.category ?? '';
-
-              return (
-                <div key={product.id} className="col-sm-6 col-lg-4 col-xl-3">
-                  <div className="card border-0 rounded-4 h-100 shadow-sm overflow-hidden product-card-hover">
-                    {/* Product Image */}
-                    <Link href={`/${lang}/products/${slug}`} className="d-block overflow-hidden" style={{ height: '200px', background: '#f8f9fa' }}>
-                      <img
-                        src={imgSrc}
-                        alt={product.name_ko}
-                        style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '12px' }}
-                        loading="lazy"
-                      />
-                    </Link>
-
-                    {/* Card Body */}
-                    <div className="card-body p-4">
-                      {category && (
-                        <span className={`badge rounded-pill px-3 py-1 small mb-2 d-inline-block ${CATEGORY_BADGE[category] ?? 'bg-secondary'}`}>
-                          {category}
-                        </span>
-                      )}
-                      <h5 className="fw-bold text-dark mb-1" style={{ fontSize: '1rem' }}>
-                        <Link href={`/${lang}/products/${slug}`} className="text-decoration-none text-dark">
-                          {product.name_ko}
+          {cats.map((cat) => (
+            <div key={cat.key} id={`cat-${cat.key}`} className="mb-9" style={{ scrollMarginTop: 150 }}>
+              <h2 className="h3 fw-bold mb-1">{cat.label}</h2>
+              <p className="mb-4" style={{ color: '#555370' }}>{cat.desc}</p>
+              <div className="row g-4">
+                {products.filter((p) => p.category === cat.key).map((product) => {
+                  const href = `/${lang}/products/${product.slug}`;
+                  return (
+                    <div key={product.slug} className="col-sm-6 col-lg-4 col-xl-3">
+                      <div className="card border-0 rounded-4 h-100 shadow-sm overflow-hidden product-card-hover">
+                        <Link href={href} className="d-block overflow-hidden" style={{ height: '180px', background: '#f8f9fa' }}>
+                          <img
+                            src={product.image_url ?? '/assets/img/logo/Dow_Chemical_Company_logo.svg'}
+                            alt={product.name_ko}
+                            style={{ width: '100%', height: '100%', objectFit: 'contain', padding: product.image_url ? '12px' : '40px', opacity: product.image_url ? 1 : 0.35 }}
+                            loading="lazy"
+                          />
                         </Link>
-                      </h5>
-                      {useText && (
-                        <p className="text-body-secondary small mb-0" style={{ lineHeight: 1.5 }}>{useText}</p>
-                      )}
+                        <div className="card-body p-4">
+                          <h5 className="fw-bold mb-2" style={{ fontSize: '1rem' }}>
+                            <Link href={href} className="text-decoration-none text-dark">{product.name_ko}</Link>
+                          </h5>
+                          <p className="small mb-0" style={{ lineHeight: 1.5, color: '#555370' }}>{product.summary}</p>
+                        </div>
+                        <div className="card-footer border-0 bg-transparent px-4 pb-4 pt-0 d-flex gap-2">
+                          <Link href={href} className="btn btn-primary btn-sm rounded-pill flex-grow-1">
+                            <i className="bi bi-info-circle me-1"></i>{isEn ? 'Details' : '상세 정보'}
+                          </Link>
+                          <a href={tdsUrl(product.slug)} download className="btn btn-outline-danger btn-sm rounded-pill flex-grow-1">
+                            <i className="bi bi-file-earmark-pdf me-1"></i>{product.docLabel ?? 'TDS'}
+                          </a>
+                        </div>
+                      </div>
                     </div>
-
-                    {/* Card Footer */}
-                    <div className="card-footer border-0 bg-transparent px-4 pb-4 pt-0 d-flex gap-2">
-                      <Link
-                        href={`/${lang}/products/${slug}`}
-                        className="btn btn-primary btn-sm rounded-pill flex-grow-1"
-                      >
-                        <i className="bi bi-info-circle me-1"></i>{d.products?.btn_detail ?? 'Details'}
-                      </Link>
-                      <a
-                        href={`https://wa.me/821089390284?text=${encodeURIComponent(`안녕하세요! ${product.name_ko} 제품 견적 문의드립니다.`)}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn btn-success btn-sm rounded-pill flex-grow-1"
-                      >
-                        <i className="bi bi-whatsapp me-1"></i>WhatsApp
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </>

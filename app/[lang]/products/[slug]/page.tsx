@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import type { Product } from '@/lib/pricing'
+import { bySlug, tdsUrl, CATEGORIES } from '@/lib/products-catalog'
+import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en'
 
 // ── Fallback product data (used when Supabase unavailable or fields not yet filled) ──
 const FALLBACKS: Record<string, Partial<Product> & {
@@ -116,12 +118,36 @@ const CATEGORY_COLORS: Record<string, string> = {
   '특수': 'bg-warning text-dark',
   '내부': 'bg-info text-dark',
   '다목적': 'bg-secondary',
+  '건축 외장': 'bg-primary',
+  'GMP·위생': 'bg-info text-dark',
+  '토목용': 'bg-dark',
+  '복층유리': 'bg-success',
+  '특수용': 'bg-warning text-dark',
+  '프라이머': 'bg-secondary',
+  'Building Envelope': 'bg-primary',
+  'GMP / Hygienic': 'bg-info text-dark',
+  'Civil Engineering': 'bg-dark',
+  'Insulating Glass': 'bg-success',
+  'Specialty': 'bg-warning text-dark',
+  'Primers': 'bg-secondary',
 }
 
 async function getProduct(slug: string, lang: string): Promise<(Product & {
   slug: string; category: string; description_ko: string;
   features: string[]; applications: string[]; specifications: Record<string, string>
 }) | null> {
+  const c0 = bySlug(slug)
+  if (c0) {
+    const c = localizeCatalog(c0, lang)
+    const cat = CATEGORIES.find((x) => x.key === c.category)!
+    return {
+      slug: c.slug, brand: 'DOWSIL', sku: c.name.replace('DOWSIL™ ', ''),
+      name_ko: c.name, name_en: c.title,
+      category: lang === 'en' ? CATEGORY_EN[c.category].label : cat.label,
+      description_ko: c.description, features: c.features, applications: c.applications,
+      specifications: c.specs, image_url: c.image ?? null, tds_url: tdsUrl(c.slug),
+    } as any
+  }
   try {
     const supabase = await createClient()
     const { data } = await supabase
@@ -148,23 +174,55 @@ export async function generateMetadata({
   const product = await getProduct(slug, lang)
   if (!product) return { title: '제품을 찾을 수 없습니다 | KCT' }
 
-  const title = `${product.name_ko} | 한국건설트레이딩 KCT`
-  const description = product.description_ko
-    ? product.description_ko.slice(0, 160)
-    : `${product.name_ko} - 한국건설트레이딩(KCT) 공급. B2B 특가 견적 및 빠른 납품.`
+  const isEn = lang === 'en'
+  const isJa = lang === 'ja'
+
+  const productName = (isEn && product.name_en) ? product.name_en : product.name_ko
+  const siteTitle = isEn ? 'Korea Construction Trading (KCT)' : isJa ? '韓国建設トレーディング (KCT)' : '한국건설트레이딩 (KCT)'
+
+  const title = `${productName} | ${siteTitle}`
+  const description = isEn
+    ? (product.name_en ? `${product.name_en} architectural and structural silicone sealant by Dow Chemical. Supplied by Korea Construction Trading (KCT). Inquire for B2B export & bulk pricing.` : `${product.name_ko} - Dow architectural silicone sealant supplied by KCT.`)
+    : isJa
+    ? `${product.name_ko} - Dow(ダウ) 建築用・構造用シリコーンシーラント。韓国建設トレーディング (KCT) 供給、B2B卸売・輸出見積対応。`
+    : (product.description_ko ? product.description_ko.slice(0, 160) : `${product.name_ko} - 한국건설트레이딩(KCT) 공식 취급 공급. B2B 대량 특가 견적 및 신속 현장 납품.`)
+
+  const ogImage = product.image_url
+    ? `https://kconstrade.com${product.image_url}`
+    : 'https://kconstrade.com/assets/img/og-image.png'
 
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://kconstrade.com/${lang}/products/${slug}`,
+      languages: {
+        'ko': `https://kconstrade.com/ko/products/${slug}`,
+        'en': `https://kconstrade.com/en/products/${slug}`,
+        'ja': `https://kconstrade.com/ja/products/${slug}`,
+        'x-default': `https://kconstrade.com/ko/products/${slug}`,
+      },
+    },
     openGraph: {
       title,
       description,
       url: `https://kconstrade.com/${lang}/products/${slug}`,
       siteName: '한국건설트레이딩 (KCT)',
-      images: product.image_url ? [{ url: product.image_url }] : [],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: productName,
+        },
+      ],
+      type: 'website',
     },
-    alternates: {
-      canonical: `https://kconstrade.com/ko/products/${slug}`,
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
     },
   }
 }
@@ -187,28 +245,63 @@ export default async function ProductDetailPage({
   const categoryColor = CATEGORY_COLORS[product.category] ?? 'bg-secondary'
   const hasSpecs = Object.keys(specs).length > 0
 
+  const isEn = lang === 'en'
+  const isJa = lang === 'ja'
+  const displayName = (isEn && product.name_en) ? product.name_en : product.name_ko
+
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': isEn ? 'Home' : isJa ? 'ホーム' : '홈',
+            'item': `https://kconstrade.com/${lang}`,
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': isEn ? 'Products' : isJa ? '製品' : '제품정보',
+            'item': `https://kconstrade.com/${lang}/products`,
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'name': displayName,
+            'item': `https://kconstrade.com/${lang}/products/${slug}`,
+          },
+        ],
+      },
+      {
+        '@type': 'Product',
+        name: displayName,
+        description: product.description_ko || `${displayName} - Dow architectural silicone sealant`,
+        brand: { '@type': 'Brand', name: product.brand },
+        sku: product.sku || slug,
+        mpn: product.sku || slug,
+        image: product.image_url ? [`https://kconstrade.com${product.image_url}`] : ['https://kconstrade.com/assets/img/og-image.png'],
+        offers: {
+          '@type': 'Offer',
+          seller: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)' },
+          availability: 'https://schema.org/InStock',
+          priceCurrency: isEn ? 'USD' : 'KRW',
+          price: (product as any).price_standard || (product as any).list_price || 0,
+          url: `https://kconstrade.com/${lang}/products/${slug}`,
+        },
+      },
+    ],
+  }
+
   return (
     <>
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Product',
-            name: product.name_ko,
-            description: product.description_ko,
-            brand: { '@type': 'Brand', name: product.brand },
-            sku: product.sku,
-            image: product.image_url ? [`https://kconstrade.com${product.image_url}`] : [],
-            offers: {
-              '@type': 'Offer',
-              seller: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)' },
-              availability: 'https://schema.org/InStock',
-              priceCurrency: 'KRW',
-              url: `https://kconstrade.com/${lang}/products/${slug}`,
-            },
-          }),
+          __html: JSON.stringify(productSchema),
         }}
       />
 
@@ -216,8 +309,8 @@ export default async function ProductDetailPage({
       <nav className="bg-white border-bottom" style={{ marginTop: '72px' }}>
         <div className="container py-3">
           <ol className="breadcrumb mb-0" style={{ fontSize: '0.85rem' }}>
-            <li className="breadcrumb-item"><Link href={`/${lang}`} className="text-decoration-none text-body-secondary">홈</Link></li>
-            <li className="breadcrumb-item text-body-secondary">제품</li>
+            <li className="breadcrumb-item"><Link href={`/${lang}`} className="text-decoration-none text-body-secondary">{isEn ? 'Home' : '홈'}</Link></li>
+            <li className="breadcrumb-item text-body-secondary">{isEn ? 'Products' : '제품'}</li>
             <li className="breadcrumb-item active text-dark fw-medium">{product.name_ko}</li>
           </ol>
         </div>
@@ -249,7 +342,7 @@ export default async function ProductDetailPage({
                   <span className={`badge rounded-pill ${categoryColor}`} style={{ fontSize: '0.8rem' }}>{product.category}</span>
                 )}
                 {product.sku && (
-                  <span className="text-body-secondary small">SKU: {product.sku}</span>
+                  <span className="small" style={{ color: '#555370' }}>SKU: {product.sku}</span>
                 )}
               </div>
 
@@ -267,7 +360,7 @@ export default async function ProductDetailPage({
               {/* Key Features preview (first 3) */}
               {features.length > 0 && (
                 <div className="mb-5">
-                  <h6 className="fw-bold text-dark mb-3">주요 특성</h6>
+                  <h6 className="fw-bold text-dark mb-3">{isEn ? 'Key Features' : '주요 특성'}</h6>
                   <ul className="list-unstyled mb-0">
                     {features.slice(0, 3).map((f, i) => (
                       <li key={i} className="d-flex align-items-start gap-2 mb-2">
@@ -282,14 +375,14 @@ export default async function ProductDetailPage({
               {/* Action Buttons */}
               <div className="d-flex flex-wrap gap-3">
                 {product.tds_url && (
-                  <a href={product.tds_url} target="_blank" rel="noreferrer"
+                  <a href={product.tds_url} target="_blank" rel="noreferrer" download
                     className="btn btn-outline-primary rounded-pill px-4 fw-medium">
-                    <i className="bi bi-file-earmark-pdf me-2"></i>TDS 다운로드
+                    <i className="bi bi-file-earmark-pdf me-2"></i>{isEn ? 'Download TDS' : 'TDS 다운로드'}
                   </a>
                 )}
                 <a href={`/${lang}#b2b-form`}
                   className="btn btn-primary rounded-pill px-4 fw-bold">
-                  <i className="bi bi-chat-dots me-2"></i>가격 문의하기
+                  <i className="bi bi-chat-dots me-2"></i>{isEn ? 'Request a Quote' : '가격 문의하기'}
                 </a>
                 <a href="https://wa.me/821089390284" target="_blank" rel="noreferrer"
                   className="btn btn-outline-success rounded-pill px-4">
@@ -307,7 +400,7 @@ export default async function ProductDetailPage({
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-10">
-                <h2 className="h4 fw-bold text-dark mb-5">제품 특성 및 장점</h2>
+                <h2 className="h4 fw-bold text-dark mb-5">{isEn ? 'Features & Benefits' : '제품 특성 및 장점'}</h2>
                 <div className="row g-3">
                   {features.map((f, i) => (
                     <div key={i} className="col-md-6">
@@ -333,7 +426,7 @@ export default async function ProductDetailPage({
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-10">
-                <h2 className="h4 fw-bold text-dark mb-5">주요 적용 분야</h2>
+                <h2 className="h4 fw-bold text-dark mb-5">{isEn ? 'Applications' : '주요 적용 분야'}</h2>
                 <div className="row g-3">
                   {applications.map((a, i) => (
                     <div key={i} className="col-sm-6 col-lg-4">
@@ -356,14 +449,14 @@ export default async function ProductDetailPage({
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8">
-                <h2 className="h4 fw-bold text-dark mb-5">기술 사양</h2>
+                <h2 className="h4 fw-bold text-dark mb-5">{isEn ? 'Technical Specifications' : '기술 사양'}</h2>
                 <div className="card border-0 shadow-sm rounded-4 overflow-hidden">
-                  <table className="table table-hover mb-0">
+                  <table className="table mb-0" style={{ ["--bs-table-bg" as string]: "#fff", ["--bs-table-color" as string]: "#16142F" }}>
                     <tbody>
                       {Object.entries(specs).map(([key, val], i) => (
                         <tr key={i}>
-                          <td className="fw-bold text-dark py-3 px-4 bg-white" style={{ width: '35%', fontSize: '0.9rem' }}>{key}</td>
-                          <td className="text-dark py-3 px-4" style={{ fontSize: '0.9rem' }}>{val}</td>
+                          <td className="fw-bold py-3 px-4" style={{ width: '35%', fontSize: '0.9rem', background: '#f8f9fa', color: '#16142F' }}>{key}</td>
+                          <td className="py-3 px-4" style={{ fontSize: '0.9rem', background: '#fff', color: '#16142F' }}>{val}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -380,7 +473,7 @@ export default async function ProductDetailPage({
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              <h2 className="h4 fw-bold text-dark mb-5">기술 자료 다운로드</h2>
+              <h2 className="h4 fw-bold text-dark mb-5">{isEn ? 'Technical Documents' : '기술 자료 다운로드'}</h2>
               <div className="row g-3">
                 {product.tds_url ? (
                   <div className="col-md-6">
@@ -392,7 +485,7 @@ export default async function ProductDetailPage({
                       </div>
                       <div>
                         <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>Technical Data Sheet (TDS)</div>
-                        <div className="text-body-secondary small">PDF 다운로드</div>
+                        <div className="small" style={{ color: '#555370' }}>{isEn ? 'PDF download' : 'PDF 다운로드'}</div>
                       </div>
                       <i className="bi bi-download ms-auto text-body-secondary"></i>
                     </a>
@@ -403,7 +496,7 @@ export default async function ProductDetailPage({
                       <i className="bi bi-info-circle text-primary fs-5 flex-shrink-0"></i>
                       <div>
                         <p className="mb-1 text-dark" style={{ fontSize: '0.9rem' }}>
-                          TDS(기술자료표) 및 SDS(안전자료표)가 필요하신 경우 아래로 문의해 주시면 즉시 제공해 드립니다.
+                          {isEn ? 'Contact us for the TDS (technical data sheet) or SDS (safety data sheet) and we will send it right away.' : 'TDS(기술자료표) 및 SDS(안전자료표)가 필요하신 경우 아래로 문의해 주시면 즉시 제공해 드립니다.'}
                         </p>
                         <a href="mailto:sales@kconstrade.com" className="text-primary text-decoration-none small fw-medium">
                           sales@kconstrade.com
@@ -423,8 +516,8 @@ export default async function ProductDetailPage({
                       <i className="bi bi-globe text-white fs-5"></i>
                     </div>
                     <div>
-                      <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>Dow 제품 페이지</div>
-                      <div className="text-body-secondary small">dow.com에서 확인하기</div>
+                      <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>{isEn ? 'Dow Product Page' : 'Dow 제품 페이지'}</div>
+                      <div className="small" style={{ color: '#555370' }}>{isEn ? 'View on dow.com' : 'dow.com에서 확인하기'}</div>
                     </div>
                     <i className="bi bi-box-arrow-up-right ms-auto text-body-secondary"></i>
                   </a>
@@ -440,16 +533,16 @@ export default async function ProductDetailPage({
         <div className="container">
           <div className="row align-items-center justify-content-between g-4">
             <div className="col-lg-7">
-              <h2 className="h3 fw-bold mb-2">{product.name_ko} 구매 문의</h2>
+              <h2 className="h3 fw-bold mb-2">{isEn ? `Inquire about ${product.name_ko}` : `${product.name_ko} 구매 문의`}</h2>
               <p className="mb-0 text-white" style={{ opacity: 0.9 }}>
-                B2B 특가 단가, 재고 확인, 납기 일정 등 모든 사항을 빠르게 안내해 드립니다.
+                {isEn ? 'B2B pricing, stock availability and lead times — we will respond quickly.' : 'B2B 특가 단가, 재고 확인, 납기 일정 등 모든 사항을 빠르게 안내해 드립니다.'}
               </p>
             </div>
             <div className="col-lg-auto">
               <div className="d-flex flex-wrap gap-3">
                 <a href="mailto:sales@kconstrade.com"
                   className="btn btn-outline-white rounded-pill px-4">
-                  <i className="bi bi-envelope me-2"></i>이메일 문의
+                  <i className="bi bi-envelope me-2"></i>{isEn ? 'Email Us' : '이메일 문의'}
                 </a>
               </div>
             </div>
