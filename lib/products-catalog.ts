@@ -224,7 +224,6 @@ export const CATALOG: CatalogProduct[] = [
     features: ['구조 및 웨더실 용도 승인', 'ASTM C719 Class 25 (G, A, O) · ASTM C1184 만족', '저VOC (혼합 시 18 g/L 미만)', '유리·알로다인·아노다이징 알루미늄에 우수한 접착 (Kynar 등은 Primer-C OS 권장)'],
     applications: ['공장 글레이징', '커튼월 유닛 생산'],
     specs: { '제품 유형': '2액형 중성 RTV 실리콘', '혼합 비율': '9:1 (부피)', '색상': 'Base 백색 / Catalyst 흑색 또는 회색', '가사시간': '10–25분', 'Unit handling time': '4–24시간 (24°C)', '경도 (Shore A)': '30–40 (1일) / 35–45 (7일)', '최대 인장강도': '2.0 MPa (7일)', '움직임 허용치': '±25%' },
-    image: img('group-800.jpg'),
   },
   {
     slug: 'dowsil-993', name: 'DOWSIL™ 993', category: 'igu',
