@@ -83,7 +83,13 @@ export default async function TechHub({ params }: { params: Promise<P> }) {
             ))}
           </div>
 
-          <h2 className="fw-bold mb-4" style={{ color: '#16142F' }}>{ko ? '기술정보 목차' : 'Contents'}</h2>
+          <Link href={`/${lang}/technical/industrial`} className="d-block p-4 rounded-4 mb-5 text-decoration-none" style={{ background: '#fff7ed', border: '1px solid #fed7aa' }}>
+            <div style={{ color: '#9a3412', fontSize: '.8rem', fontWeight: 700, letterSpacing: '.05em' }}>NEW · SELECTION GUIDE</div>
+            <div className="fw-bold my-1" style={{ color: '#16142F', fontSize: '1.2rem' }}>{ko ? '산업·가전·유지보수용 DOWSIL™ 실리콘 실란트·폼 선정 가이드 (38개 제품, 14페이지)' : 'DOWSIL™ Silicone Sealants and Foams for Industrial, Appliance and Maintenance (38 products, 14 pages)'}</div>
+            <div style={{ color: '#555370', fontSize: '.9rem' }}>{ko ? '아세톡시·알콕시·옥심·2액형·핫멜트 실란트, 실리콘 폼, 프라이머·세정제의 사양과 접착 등급, 표면 준비·시공 방법 →' : 'Acetoxy, alkoxy, oxime, two-part and hot-melt sealants, silicone foams, primers and cleaners: specifications, adhesion ratings, preparation and application →'}</div>
+          </Link>
+
+          <h2 className="fw-bold mb-4" style={{ color: '#16142F' }}>{ko ? '내화 기술정보 목차 (Fire-rated)' : 'Fire-rated technical manual'}</h2>
           <div className="row g-4">
             {PAGES.map((p) => (
               <div key={p.slug} className="col-md-6 col-lg-4">

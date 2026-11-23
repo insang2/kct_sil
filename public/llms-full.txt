@@ -1,0 +1,738 @@
+# DOWSIL™ Silicone Sealants and Foams for Industrial, Appliance and Maintenance – Selection Guide (full text)
+
+Publisher: Korea Construction Trading Co., Ltd. (KCT), kconstrade.com · Source: Dow, “DOWSIL™ Silicone Sealants and Foams for Industrial, Appliance and Maintenance – Selection Guide”, Form No. 80-8283-01-0922 S2D (© 2022 The Dow Chemical Company)
+Values are typical properties, not specifications. Verify with product data sheets. Contact: sales@kconstrade.com
+
+## DOWSIL™ Silicone Sealants – Benefits and Why Silicones
+https://kconstrade.com/en/technical/industrial/overview
+DOWSIL™ silicone sealants are durable RTV sealants that cure at room temperature to a tough, rubbery solid. When properly cured, most can be used from -56 to 177°C (204°C intermittent), and some above 260°C (315°C intermittent). Dow states that silicone protection typically lasts three times longer than organic materials in the same applications.
+
+Q: What temperature range can DOWSIL™ silicone sealants withstand?
+A: When properly cured, most DOWSIL™ products can be used at -56 to 177°C (204°C intermittent); some have higher thermal stability up to and exceeding 260°C (315°C intermittent).
+
+Q: Why choose silicone sealants over organic sealants?
+A: According to Dow, silicone protection typically lasts three times longer than organic materials in the same applications, with UV, ozone, rain, snow and temperature-extreme resistance, and continued flexibility and adhesion while stretched or compressed.
+
+Q: What is chemical reversion?
+A: A phenomenon in which organic polyurethane loses its cured properties and reverts to a substance with the softness of chewing gum.
+
+Q: Are silicone sealants flammable?
+A: In fire conditions, silicone adhesives/sealants are reluctant to burn, and many products comply with UL flammability standards.
+
+## Which Silicone? RTV, Heat Cure, Hot Melt, One-Part, Two-Part and Foams
+https://kconstrade.com/en/technical/industrial/which-silicone
+Dow offers silicone sealants as RTV (room-temperature-vulcanizing), heat cure, hot-melt, one-part, two-part and foam formulations. Silicone sealants typically consist of an inorganic siloxane (Si-O-Si-O-Si) polymer plus filler, crosslinker, catalyst, adhesion promoter, pigment and plasticizer.
+
+Q: What is the difference between one-part and two-part silicone sealants?
+A: One-part sealants contain all ingredients and cure with external factors such as air moisture, heat or UV light (moisture cure may take 24 hours or more to fully cure). Two-part sealants keep reactive ingredients separate, typically offer longer shelf life, high-speed cure and controllable working time, but require mixing.
+
+Q: What are silicone foams used for?
+A: As compression gaskets or “environmental seals” against ambient air, splashed water, dust and moisture; a cost-effective alternative to preformed gaskets and foam tapes for high-tolerance gaps, applied by automated robotic dispensing.
+
+Q: What is a hot-melt silicone sealant?
+A: A reactive hot-melt material for automated manufacturing that provides instant green strength, which can increase productivity, improve quality and reduce costs in industrial assembly.
+
+## Table I: Sealant Chemistries – Acetoxy, Alkoxy, Oxime, Hot Melt, Platinum
+https://kconstrade.com/en/technical/industrial/sealant-chemistries
+Acetoxy sealants cure fast and are competitively priced but are acidic and may corrode metals; neutral-cure alkoxy and oxime sealants avoid acid cure; two-part alkoxy gives fast green strength (parts can be moved in under 4 hours); hot melt gives instant green strength; platinum-cure two-part foams suit compression gaskets.
+
+Q: Which silicone chemistry gives the fastest green strength?
+A: Per Table I, hot-melt (one-part) and two-part alkoxy rate best (•••) for green strength; hot melt provides instant green strength, and two-part alkoxy parts can be moved in under 4 hours.
+
+Q: Why can acetoxy silicone corrode metals?
+A: Acetoxy is an acid-cure chemistry (it releases acetic acid during cure), so it is acidic and potentially corrosive to metals, and has a strong odor.
+
+Q: Which chemistry suits compression gaskets?
+A: Platinum-cure two-part silicone foams: ideal for compression gaskets and environmental sealing, with low sealing force/modulus; they are not optimized for fluid sealing and can be inhibited (“poisoned”) by contaminants.
+
+## Table II: Acetoxy Sealants – DOWSIL™ 730 FS, 732, 734, 786, XIAMETER™ and AP
+https://kconstrade.com/en/technical/industrial/acetoxy-sealants
+Eight acetoxy products are listed: DOWSIL™ 730 FS (solvent-resistant), 732 (multi-purpose; FDA; NSF), 734 (flowable, self-leveling), 786 (mildew-resistant), XIAMETER™ CTG-1890 (protective coating), XIAMETER™ SLT-5132, XIAMETER™ SLT-3445 and DOWSIL™ AP. Service temperature is -57 to 177°C (204°C intermittent) for the first five products.
+
+Q: Which DOWSIL™ acetoxy sealant is solvent resistant?
+A: DOWSIL™ 730 FS Solvent Resistant Sealant, used for bonding, sealing and caulking where resistance to fuels, oils and solvents is required (sealant type for fluid resistance table: FVMQ).
+
+Q: Which acetoxy sealant is FDA and NSF listed for general-purpose use?
+A: DOWSIL™ 732 Multi-Purpose Sealant: FDA 21 CFR 177.2600, NSF 51, NSF 61, UL 94 HB and MIL spec; colors aluminum, black, clear translucent, white.
+
+Q: Which acetoxy sealant resists mildew?
+A: DOWSIL™ 786 Silicone Sealant, for interior sealing applications exposed to high moisture such as tubs, sinks, plumbing fixtures and interior walls.
+
+## High-Temperature Acetoxy Sealants – DOWSIL™ 736 (315°C) and Q3-1566 (350°C)
+https://kconstrade.com/en/technical/industrial/high-temperature-sealants
+DOWSIL™ 736 Heat Resistant Sealant is rated -65 to 260°C (315°C intermittent) and DOWSIL™ Q3-1566 Heat Resistant Adhesive/Sealant -50 to 275°C (350°C intermittent), for sealing and bonding applications exposed to temperatures as high as 315°C and 350°C respectively.
+
+Q: Which silicone sealant can be used in ovens and boilers?
+A: DOWSIL™ 736 Heat Resistant Sealant (fired heaters, flanged pipe joints, access doors, moving oven belts, industrial ovens and boilers, plywood drying ovens, bag filters on smokestacks, flues on gas appliances) and DOWSIL™ Q3-1566 (ovens, cookers and other heating equipment; automotive oil and coolant sealing).
+
+Q: What is the maximum temperature of DOWSIL™ Q3-1566?
+A: -50 to 275°C continuous (350°C intermittent); it is intended for applications exposed to temperatures as high as 350°C.
+
+## Table III: Alkoxy Neutral-Cure Sealants – DOWSIL™ 739, 748, 3145, 7091–7094, AS 7096N, 3559
+https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants
+Nine alkoxy neutral-cure products are listed. DOWSIL™ 748 is FDA- and NSF-approved for electrical, food-processing and transportation uses; DOWSIL™ 7092 offers instant green strength; DOWSIL™ 7094 is flowable and self-leveling; DOWSIL™ 3145 can be considered for Mil Spec requirements (MIL-A-46146).
+
+Q: Which neutral-cure sealant is approved for food-processing and electrical use?
+A: DOWSIL™ 748 Non-Corrosive Sealant: FDA- and NSF-approved (FDA 21 CFR 177.2600 / 175.105, NSF 51, NSF 61, UL 94 HB); for electrical sealing applications and food-processing and transportation applications.
+
+Q: Which sealant offers instant green strength for immediate handling?
+A: DOWSIL™ 7092 High Green Strength Adhesive and Sealant, for applications that require immediate handling and processing of the units; no buffer for strength buildup is required.
+
+Q: Which DOWSIL™ sealant is a plastic adhesive?
+A: DOWSIL™ 739 Plastic Adhesive, for adhering, bonding and sealing plastic and metal and for making formed-in-place gaskets.
+
+## Table IV: Two-Part Alkoxy and One-Part Oxime Sealants – DOWSIL™ EA-2626, Q3-3526, SILASTIC™ Q3-3636, DOWSIL™ 1080
+https://kconstrade.com/en/technical/industrial/two-part-and-oxime-sealants
+DOWSIL™ EA-2626 is a two-component neutral alkoxy adhesive/sealant with weathering, UV and heat resistance to 190°C, suited to oven and ceramic hob assembly; DOWSIL™ Q3-3526 and SILASTIC™ Q3-3636 are fast-curing two-part adhesives for headlamps and appliances; DOWSIL™ 1080 is a one-part oxime sealant for formed-in-place gaskets.
+
+Q: Which DOWSIL™ adhesive is recommended for oven and ceramic hob assembly?
+A: DOWSIL™ EA-2626 Adhesive Sealant (two-component, fast room-temperature cure, neutral alkoxy, heat resistance to 190°C) and SILASTIC™ Q3-3636 Adhesive are cited for oven and ceramic hob assembly and bonding glass to metal, painted metal or plastic.
+
+Q: How do two-part alkoxy silicones cure compared with moisture-cure adhesives?
+A: They cure in depth (through cure) rather than from the outside inward like typical moisture-cure adhesives, and are not humidity-cure-sensitive (SILASTIC™ Q3-3636).
+
+## Table V: Hot-Melt Neutral-Cure Silicone Assembly Sealants – DOWSIL™ HM-2500, HM-2510, HM-2515, HM-2600
+https://kconstrade.com/en/technical/industrial/hot-melt-sealants
+DOWSIL™ HM-2500 offers the fastest green strength build, HM-2510 high robustness, HM-2515 the lowest viscosity (27 Pa·s at 120°C) and HM-2600 the highest mechanical adhesion; all are 100% silicone, clear, FDA 21 CFR 177.2600 and NSF/ANSI 51 and 61 compliant, UL 94 HB (105).
+
+Q: What are hot-melt silicone sealants used for?
+A: Assembly, bonding, sealing, gasketing and other OEM applications that require instant adhesion and high green strength.
+
+Q: What are the limitations of hot-melt silicone sealants?
+A: Not for total confinement (atmospheric moisture is required for cure), not for continuous water immersion, and not for surfaces that might bleed oils, plasticizers or solvents.
+
+Q: Which hot-melt sealant has the lowest viscosity?
+A: DOWSIL™ HM-2515 Assembly Sealant (27 Pa·s at 120°C), dispensable in fine beads, fibers or spiral patterns and usable in assembly and lamination.
+
+## Table VI: Two-Part Addition-Cure Silicone Foams – SILASTIC™ 8257, DOWSIL™ 3-8209, 3-8219 RF, 3-8259 RF
+https://kconstrade.com/en/technical/industrial/silicone-foams
+Two-part, addition-cure silicone foams are dispensed and cured directly on parts to form an integrated compression gasket (RTV cure, 1:1 mix ratio, CFC-free, low post-cure compression set). Densities range from 140 to 330 kg/m³ and hardness from Shore 00 25 to 50 across SILASTIC™ 8257, DOWSIL™ 3-8209, 3-8219 RF and 3-8259 RF.
+
+Q: What are the mix ratio and cure of DOWSIL™ silicone foams?
+A: Two-part, addition-cure foams with a 1:1 mix ratio and room temperature (RTV) cure; CFC-free with low post-cure compression set.
+
+Q: What is the density of SILASTIC™ 8257 and DOWSIL™ 3-8259 RF foam?
+A: SILASTIC™ 8257: 140 kg/m³ (white) and 150 kg/m³ (black); DOWSIL™ 3-8259 RF: 330 kg/m³ (gray and dark gray).
+
+Q: Which silicone foam is suited to vertical surfaces?
+A: DOWSIL™ 3-8219 RF and 3-8259 RF have reduced flow, which aids application to vertical surfaces.
+
+## Surface Preparation for Silicone Sealants
+https://kconstrade.com/en/technical/industrial/surface-preparation
+Maximum adhesion is only attained on clean, dry surfaces; contaminants such as dirt, grease, water, tar or rust act as release agents. Wipe with a clean oil-free cloth, re-wipe with IPA, mineral spirits, naphtha or ketones (do not use detergent or soap), lightly abrade, and let solvents evaporate completely before priming. A primer does not negate the need for proper cleaning.
+
+Q: How should surfaces be cleaned before applying silicone sealant?
+A: Wipe with a clean, oil-free cloth, then re-wipe with a suitable cleaner or solvent such as IPA, mineral spirits, naphtha or ketones; do not use detergent or soap (residue may act as a release agent); light abrasion is generally recommended; allow solvents to evaporate completely.
+
+Q: Can a primer replace surface cleaning?
+A: No. Use of a primer does not negate the necessity for proper surface cleaning.
+
+Q: What can be done for surfaces that are difficult to bond to?
+A: Increase surface reactivity using chemical etchants or oxidizers, or UV, corona, plasma or flame exposure.
+
+## Table VII: Primers, Adhesion Promoters and Cleaners – DOWSIL™ PR-1200, 1200 OS, 1203, PR-2260, DS-1000, DS-2025, R41
+https://kconstrade.com/en/technical/industrial/primers-and-cleaners
+For maximum adhesion DOWSIL™ primer is recommended: after solvent-cleaning, apply a very light, even coat by wiping, dipping or spraying and wipe off excess. Air-dry 5 to 30 minutes at room temperature and 50% RH; temperatures above 60°C are not recommended. Apply the sealant only after the primer has fully cured.
+
+Q: How long should a DOWSIL™ primer dry before applying sealant?
+A: At normal room temperature and 50% relative humidity, five to 30 minutes of air drying; low humidity or low temperature requires longer. Apply the sealant after the primer has fully cured.
+
+Q: What happens if too much primer is applied?
+A: Overapplication generally appears as a white, chalky surface; wipe off excess material, and dilute 2 to 4 times with solvent when dip- or spray-coating.
+
+Q: Which DOWSIL™ cleaner removes cured silicone residue?
+A: DOWSIL™ DS-2025 Silicone Cleaning Solvent (rapid digestion of cured silicone, leaves a silicone-free surface); DOWSIL™ DS-1000 Aqueous Silicone Cleaner is for uncured silicone.
+
+## Sealant Application, Cure Time, Compatibility and Cleanup
+https://kconstrade.com/en/technical/industrial/application-and-cure
+Freshly applied DOWSIL™ sealant skins over in about 5 to 10 minutes at room temperature and 50% RH, and cures inward to a depth of about 1/8" in 24 hours. Tool before the skin forms. Acetoxy products release a small amount of acetic acid during cure that may corrode some metals; platinum-cure silicones (including foams) can be inhibited by certain compounds.
+
+Q: How long does DOWSIL™ sealant take to skin over and cure?
+A: It skins over in about 5 to 10 minutes (depending on the product) at room temperature and 50% RH, then cures inward to about 1/8" in 24 hours; deep sections or limited moisture access and low humidity take longer.
+
+Q: When should the sealant be tooled?
+A: Tooling (dry-tooling with a round-tipped spatula) should be completed before the skin forms, to force sealant into the joint surfaces and remove air pockets or voids.
+
+Q: How do you remove cured silicone sealant?
+A: Cut it with a sharp blade if accessible; otherwise soften with IPA, toluene, xylene, naphtha or mineral spirits. DOWSIL™ OS Fluids, generally a lower-VOC alternative, can help soften it and remove residue.
+
+Q: What can inhibit the cure of silicone foams?
+A: Platinum catalysts in addition-cure silicones, including foams, are sensitive to contamination by certain compounds that can stop or inhibit cure (Dow Form No. 30-1053-01).
+
+## Product Selector – Compare All DOWSIL™ Industrial, Appliance and Maintenance Sealants
+https://kconstrade.com/en/technical/industrial/product-selector
+Use this page to compare every sealant, adhesive, foam, primer and cleaner in Dow’s selection guide. Highest rated service temperature: DOWSIL™ Q3-1566 (-50 to 275°C, 350°C intermittent). Instant green strength: hot-melt HM series and DOWSIL™ 7092. Compression gaskets: platinum-cure silicone foams. Food and water contact listings: DOWSIL™ 732 and 748 (FDA, NSF).
+
+Q: Which DOWSIL™ sealant has the highest service temperature?
+A: DOWSIL™ Q3-1566 Heat Resistant Adhesive/Sealant: -50 to 275°C (350°C intermittent). DOWSIL™ 736 follows at -65 to 260°C (315°C intermittent).
+
+Q: Which products are listed for FDA and NSF?
+A: DOWSIL™ 732 (FDA 21 CFR 177.2600, NSF 51, NSF 61), DOWSIL™ 748 (FDA, NSF 51, NSF 61), DOWSIL™ 734 and 786 (FDA, NSF 51), and the HM-2500/2510/2515/2600 hot-melt sealants (FDA 21 CFR 177.2600; NSF/ANSI 51 and 61).
+
+## Handling Precautions, Limited Warranty and Contact
+https://kconstrade.com/en/technical/industrial/notice-and-contact
+Product safety information required for safe use is not included in the selection guide; read the product and safety data sheets and container labels before handling. Dow’s sole warranty is that products will meet the sales specifications in effect at the time of shipment.
+
+Q: Where can I get the safety data sheet (SDS) for DOWSIL™ products?
+A: From the Dow website at consumer.dow.com, from your Dow sales application engineer or distributor, or by calling Dow customer service. KCT can also provide TDS and SDS on request (sales@kconstrade.com).
+
+# Product data
+
+## DOWSIL™ 730 FS Solvent Resistant Sealant
+https://kconstrade.com/en/technical/industrial/acetoxy-sealants#dowsil-730-fs
+Category: Acetoxy sealants (one-part)
+Special features: Solvent-resistant
+Primary uses: Bonding, sealing and caulking where resistance to fuels, oils and solvents is required
+Applications: Assembling and repairing fuel lines and tanks; bonding components exposed to fuels, oils and solvents; making formed-in-place gaskets for chemical compressors, fluid-filled distributors and transformers; repairing rubber linings exposed to corrosive conditions; sealing pipe joints on lines carrying corrosive chemicals
+Temperature range, °C, continuous (intermittent): -57 to 177 (204)
+Skin-over time, min: 5
+Tack-free time, min: 25
+Extrusion rate, g/min: 250
+Durometer, Shore A: 40
+Tensile, MPa: 2
+Elongation, %: 200
+Specific gravity: 1.4
+Color: White
+Sealant type for fluid resistance table: FVMQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=consult Dow; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=consult Dow; Aluminum, Mill Finish=consult Dow; Copper=consult Dow; Steel, Galvanized=consult Dow; Steel, Low Carbon=consult Dow; Steel, Stainless=consult Dow
+
+## DOWSIL™ 732 Multi-Purpose Sealant
+https://kconstrade.com/en/technical/industrial/acetoxy-sealants#dowsil-732
+Category: Acetoxy sealants (one-part)
+Special features: Multipurpose; FDA; NSF
+Primary uses: General-purpose bonding and sealing; making formed-in-place gaskets
+Applications: Sealing flashing, vents, flues, gutters, marine cabins and windows, and electrical boxes; caulking joints in sheet metal stacks and ductwork; bonding appliance parts, signs and sign letters; adhering auto trim, appliance trim and nameplates; making formed-in-place gaskets for compressors, gearboxes and pumps
+Temperature range, °C, continuous (intermittent): -57 to 177 (204)
+Skin-over time, min: 10
+Tack-free time, min: 20
+Extrusion rate, g/min: 350
+Durometer, Shore A: 25
+Tensile, MPa: 2.2
+Elongation, %: 600
+Specific gravity: 1.04
+Listings / specs: FDA 21 CFR 177.2600, NSF 51, NSF 61, UL 94 HB, MIL spec
+Color: Aluminum, black, clear translucent, white
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=Fair; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Fair; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=Fair; Aluminum, Mill Finish=consult Dow; Copper=consult Dow; Steel, Galvanized=consult Dow; Steel, Low Carbon=consult Dow; Steel, Stainless=consult Dow
+
+## DOWSIL™ 734 Flowable Sealant
+https://kconstrade.com/en/technical/industrial/acetoxy-sealants#dowsil-734
+Category: Acetoxy sealants (one-part)
+Special features: Flowable; self-leveling
+Primary uses: To fill voids, cracks and crevices; conformal coating for connections and battery terminals
+Applications: Coating mechanical devices; making formed-in-place gaskets for compressors, gearboxes and pumps; potting electrical terminals; sealing ammunition fuses, trailers and truck cabs
+Temperature range, °C, continuous (intermittent): -57 to 177 (204)
+Skin-over time, min: 7
+Tack-free time, min: 13
+Extrusion rate, g/min: 650
+Durometer, Shore A: 27
+Tensile, MPa: 1.5
+Elongation, %: 315
+Specific gravity: 1.03
+Listings / specs: FDA 21 CFR 177.2600, NSF 51, UL 94 HB, MIL spec
+Color: Clear translucent, white
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=consult Dow; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=consult Dow; Aluminum, Mill Finish=consult Dow; Copper=consult Dow; Steel, Galvanized=consult Dow; Steel, Low Carbon=consult Dow; Steel, Stainless=consult Dow
+
+## DOWSIL™ 786 Silicone Sealant
+https://kconstrade.com/en/technical/industrial/acetoxy-sealants#dowsil-786
+Category: Acetoxy sealants (one-part)
+Special features: Mildew-resistant
+Primary uses: Interior sealing applications exposed to high moisture
+Applications: Sealing tubs, sinks, plumbing fixtures and interior walls
+Temperature range, °C, continuous (intermittent): -57 to 177 (204)
+Skin-over time, min: 5
+Tack-free time, min: 20
+Extrusion rate, g/min: 350
+Durometer, Shore A: 25
+Tensile, MPa: 2.2
+Elongation, %: 600
+Specific gravity: 1.04
+Listings / specs: FDA 21 CFR 177.2600 and 21 CFR 175.105, NSF 51
+Color: Clear translucent, white
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=consult Dow; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=Fair; Aluminum, Mill Finish=consult Dow; Copper=consult Dow; Steel, Galvanized=consult Dow; Steel, Low Carbon=consult Dow; Steel, Stainless=consult Dow
+
+## XIAMETER™ CTG-1890 Protective Coating
+https://kconstrade.com/en/technical/industrial/acetoxy-sealants#xiameter-ctg-1890
+Category: Acetoxy sealants (one-part)
+Special features: Excellent moisture protection and resistance to sand, dust, and dirt particles; easy-to- apply, thin coating that will not run or drip when applied to vertical or overhead surfaces
+Primary uses: General-purpose coating for protecting motors and electrical equipment; maintenance coating
+Applications: Coating motor windings, bus bars, splines, connectors, transformers, insulators, trailers, truck cabs and wooden pole tops
+Temperature range, °C, continuous (intermittent): -57 to 177 (204)
+Skin-over time, min: 15
+Tack-free time, min: 25
+Durometer, Shore A: 21
+Specific gravity: 1.03
+Listings / specs: FDA 21 CFR 177.2600
+Color: Gray
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=consult Dow; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=consult Dow; Aluminum, Mill Finish=consult Dow; Copper=consult Dow; Steel, Galvanized=consult Dow; Steel, Low Carbon=consult Dow; Steel, Stainless=consult Dow
+
+## XIAMETER™ SLT-5132 Sealant Acetoxy
+https://kconstrade.com/en/technical/industrial/acetoxy-sealants#xiameter-slt-5132
+Category: Acetoxy sealants (one-part)
+Special features: Acetoxy; one-component; RTV silicone sealant
+Applications: Suitable for sealing and adhesive applications; diverse sealing and bonding applications, such as space- filling rubber adhesive
+Skin-over time, min: 10-11
+Tack-free time, min: 18
+Extrusion rate, g/min: 397
+Durometer, Shore A: 25
+Tensile, MPa: 2.4
+Elongation, %: 475
+Specific gravity: 1.03
+Color: Red
+Sealant type for fluid resistance table: VMQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=Fair; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Excellent; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Fair; Copper=Good; Steel, Galvanized=Good; Steel, Low Carbon=Excellent; Steel, Stainless=Fair
+
+## XIAMETER™ SLT-3445 Sealant Acetoxy
+https://kconstrade.com/en/technical/industrial/acetoxy-sealants#xiameter-slt-3445
+Category: Acetoxy sealants (one-part)
+Special features: Acetoxy; flowable, one-component RTV silicone sealant for high temperature release coatings; self- leveling liquid, suitable for spraying or dipping
+Applications: Typically used to coat plates or molds, used to produce bakery products or other foodstuffs
+Temperature range, °C, continuous (intermittent): 260 (300)
+Skin-over time, min: 10
+Tack-free time, min: 21
+Extrusion rate, g/min: 468
+Durometer, Shore A: 25
+Tensile, MPa: 1.5
+Elongation, %: 300
+Specific gravity: 1.05
+Listings / specs: XV BfR Recommendation and 90/128/EEC under EU Food Regulations; 21 CFR 175.105 and 21 CFR 177.2600 under U.S. FDA Regulations
+Color: Red
+Sealant type for fluid resistance table: VMQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Excellent; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Excellent; Steel, Galvanized=consult Dow; Steel, Low Carbon=Excellent; Steel, Stainless=Fair
+
+## DOWSIL™ AP Silicone Adhesive/Sealant
+https://kconstrade.com/en/technical/industrial/acetoxy-sealants#dowsil-ap
+Category: Acetoxy sealants (one-part)
+Special features: Acetoxy; one-component RTV adhesive/sealant; non-sag, paste consistency
+Applications: General industrial sealing, gasketing and bonding applications
+Temperature range, °C, continuous (intermittent): -50 to 180
+Skin-over time, min: 11
+Tack-free time, min: 21
+Extrusion rate, g/min: 450
+Durometer, Shore A: 25
+Tensile, MPa: 2.2
+Elongation, %: 540
+Specific gravity: 1.03
+Color: Clear, white, gray, black
+Sealant type for fluid resistance table: VMQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=Fair; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Excellent; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Fair; Copper=Fair; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Good
+
+## DOWSIL™ 736 Heat Resistant Sealant
+https://kconstrade.com/en/technical/industrial/high-temperature-sealants#dowsil-736
+Category: High-temperature acetoxy sealants
+Special features: High-temperature-resistant
+Primary uses: Sealing and bonding applications exposed to temperatures as high as 315°C
+Applications: Sealing fired heaters, flanged pipe joints, access doors, moving oven belts, industrial ovens and boilers, plywood drying ovens, bag filters on smokestacks, and flues on gas appliances; bonding appliance parts and electrical and electronic equipment; caulking joints in sheet metal stacks and ductwork
+Temperature range, °C, continuous (intermittent): -65 to 260 (315)
+Skin-over time, min: 10
+Tack-free time, min: 17
+Extrusion rate, g/min: 390
+Durometer, Shore A: 26
+Tensile, MPa: 2.4
+Elongation, %: 600
+Specific gravity: 1.04
+Listings / specs: FDA 21 CFR 177.2600, NSF 51, UL 94 HB, MIL spec
+Color: Red
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=Fair; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Fair; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=Fair; Aluminum, Mill Finish=consult Dow; Copper=Fair; Steel, Galvanized=consult Dow; Steel, Low Carbon=consult Dow; Steel, Stainless=consult Dow
+
+## DOWSIL™ Q3-1566 Heat Resistant Adhesive/Sealant
+https://kconstrade.com/en/technical/industrial/high-temperature-sealants#dowsil-q3-1566
+Category: High-temperature acetoxy sealants
+Special features: High-temperature-resistant
+Primary uses: Sealing and bonding applications exposed to temperatures as high as 350°C
+Applications: Can be used in ovens, cookers and other heating equipment; automotive oil and other coolant sealing applications
+Temperature range, °C, continuous (intermittent): -50 to 275 (350)
+Skin-over time, min: 5
+Tack-free time, min: 18
+Extrusion rate, g/min: 270
+Durometer, Shore A: 43
+Tensile, MPa: 3.6
+Elongation, %: 340
+Specific gravity: 1.06
+Listings / specs: —
+Color: Black
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=consult Dow; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=consult Dow; Aluminum, Mill Finish=consult Dow; Copper=consult Dow; Steel, Galvanized=consult Dow; Steel, Low Carbon=consult Dow; Steel, Stainless=consult Dow
+
+## DOWSIL™ 739 Plastic Adhesive
+https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants#dowsil-739
+Category: Alkoxy neutral-cure sealants (one-part)
+Special features: Plastic adhesive
+Primary uses: Adhering, bonding and sealing plastic and metal; making formed-in-place gaskets
+Applications: Adhering auto trim, appliance trim and parts; assembling plastic toys; bonding gaskets in refrigeration units, signs and sign letters; caulking cement and masonry; making formed-in- place gaskets for compressors, gearboxes and pumps; sealing flashing, vents, gutters, marine cabins and windows; waterproofing leakproof tractor cabs
+Temperature range, °C, continuous (intermittent): -54 to 149 (177)
+Skin-over time, min: 25
+Tack-free time, min: 45
+Extrusion rate, g/min: 110
+Durometer, Shore A: 37
+Tensile, MPa: 1.6
+Elongation, %: 640
+Specific gravity: 1.52
+Listings / specs: UL 94 HB
+Color: Black, gray, white
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=Good; Acrylonitrile Butadiene Styrene (ABS)=Excellent; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Excellent; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Good; Steel, Galvanized=Excellent; Steel, Low Carbon=Fair; Steel, Stainless=consult Dow
+
+## DOWSIL™ 748 Non-Corrosive Sealant
+https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants#dowsil-748
+Category: Alkoxy neutral-cure sealants (one-part)
+Special features: FDA- and NSF-approved
+Primary uses: Electrical sealing applications; food-processing and transportation applications
+Applications: Bonding and sealing electrical equipment, power and control connections, motors, cover plates, instrument lenses, regulators, junction boxes, and control panels; sealing refrigerator and freezer liners
+Temperature range, °C, continuous (intermittent): -55 to 177 (204)
+Skin-over time, min: 15
+Tack-free time, min: 30
+Extrusion rate, g/min: 150
+Durometer, Shore A: 25
+Tensile, MPa: 1.9
+Elongation, %: 350
+Specific gravity: 1.33
+Listings / specs: FDA 21 CFR 177.2600 and 21 CFR 175.105, NSF 51, NSF 61, UL 94 HB
+Color: Off-white
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Good; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=consult Dow; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Fair
+
+## DOWSIL™ 3145 RTV Mil-A-46146 Adhesive/Sealant
+https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants#dowsil-3145
+Category: Alkoxy neutral-cure sealants (one-part)
+Special features: Nonflowing; high tensile/ tear strength and elongation; faster in-line processing with optional heat acceleration; can be considered for uses with Mil Spec requirements
+Primary uses: Sealing and assembly in applications requiring Mil Spec standards
+Applications: Sealing openings in modules and housings; assembly of components on printed wiring boards (PWBs); sealing in and around wired and electrical leads
+Temperature range, °C, continuous (intermittent): -45 to 200
+Tack-free time, min: 63.8
+Extrusion rate, g/min: 78.6
+Durometer, Shore A: 45.6
+Tensile, MPa: 5.95
+Elongation, %: 626
+Specific gravity: 1.10
+Listings / specs: MIL-A-46146 Group II, TY, I, UL 94 HB
+Color: Clear translucent
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Fair; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=Good; Aluminum, Mill Finish=consult Dow; Copper=consult Dow; Steel, Galvanized=consult Dow; Steel, Low Carbon=consult Dow; Steel, Stainless=consult Dow
+
+## DOWSIL™ 7091 Adhesive Sealant
+https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants#dowsil-7091
+Category: Alkoxy neutral-cure sealants (one-part)
+Special features: Non-sag; paste consistency; easy to apply; cures to a tough, flexible rubber; excellent adhesion to many substrates
+Primary uses: Applications that demand a strong but flexible bond, such as when bonding materials with differing thermal expansion rates (e.g., glass to metal or glass to plastic)
+Applications: Adhering commonly used materials, including enameled and painted steel, aluminum, ceramic and glass, as well as to certain plastics used in engineering applications; formed-in-place gasket (FIPG) applications
+Temperature range, °C, continuous (intermittent): -40 to 180
+Skin-over time, min: 15
+Tack-free time, min: 41
+Extrusion rate, g/min: 185
+Durometer, Shore A: 32
+Tensile, MPa: 2.5
+Elongation, %: 680
+Specific gravity: 1.4
+Color: Black, gray, white
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=Excellent; Acrylonitrile Butadiene Styrene (ABS)=Excellent; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Excellent; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Excellent; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Good
+
+## DOWSIL™ 7092 High Green Strength Adhesive and Sealant
+https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants#dowsil-7092
+Category: Alkoxy neutral-cure sealants (one-part)
+Special features: Instant green strength; easy to use; excellent adhesion to a wide range of substrates, such as glass, metals and plastics; non-sag, paste consistency; fast strength buildup supports productivity enhancements due to fast handling of bonded units; saves time, as no buffer for strength buildup required
+Primary uses: Applications that require immediate handling and processing of the units
+Applications: Adhering commonly used materials, including certain steels, aluminum and glass, as well as certain plastics used in engineering applications
+Temperature range, °C, continuous (intermittent): -50 to 150
+Skin-over time, min: 15-25
+Extrusion rate, g/min: 217
+Durometer, Shore A: 55
+Tensile, MPa: 2
+Elongation, %: 435
+Specific gravity: 1.55
+Listings / specs: UL 94 HB
+Color: Black, white
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=consult Dow; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=consult Dow; Aluminum, Mill Finish=consult Dow; Copper=consult Dow; Steel, Galvanized=consult Dow; Steel, Low Carbon=consult Dow; Steel, Stainless=consult Dow
+
+## DOWSIL™ 7093 Adhesive Sealant
+https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants#dowsil-7093
+Category: Alkoxy neutral-cure sealants (one-part)
+Special features: Non-sag, paste consistency; low modulus for high movement capability
+Primary uses: General industrial sealing and bonding applications where a non-corrosive cure is required
+Applications: Good adhesion to many substrates
+Temperature range, °C, continuous (intermittent): -50 to 180
+Skin-over time, min: 15
+Tack-free time, min: 28
+Extrusion rate, g/min: 210
+Durometer, Shore A: 30
+Tensile, MPa: 1.7
+Elongation, %: 700
+Specific gravity: 1.5
+Color: White, black, gray
+Sealant type for fluid resistance table: VMQ
+Primerless adhesion: Acrylic=Good; Acrylonitrile Butadiene Styrene (ABS)=Fair; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Excellent; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Good; Steel, Galvanized=Excellent; Steel, Low Carbon=consult Dow; Steel, Stainless=Excellent
+
+## DOWSIL™ 7094 Flowable Sealant
+https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants#dowsil-7094
+Category: Alkoxy neutral-cure sealants (one-part)
+Special features: Flowable and self-leveling
+Primary uses: Sealing and bonding applications where low viscosity and self-leveling properties in combination with non-corrosive cure is required
+Applications: Good adhesion to many substrates
+Temperature range, °C, continuous (intermittent): -50 to 180
+Skin-over time, min: 25
+Tack-free time, min: 50
+Extrusion rate, g/min: Viscosity 28,000 mPa·s
+Durometer, Shore A: 19
+Tensile, MPa: 1.2
+Elongation, %: 400
+Specific gravity: 1.3
+Listings / specs: —
+Color: Black
+Sealant type for fluid resistance table: VMQ
+Primerless adhesion: Acrylic=Excellent; Acrylonitrile Butadiene Styrene (ABS)=Excellent; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Excellent; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Excellent; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Excellent
+
+## DOWSIL™ AS 7096N Sealant
+https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants#dowsil-as-7096n
+Category: Alkoxy neutral-cure sealants (one-part)
+Special features: Non-sag, paste consistency; contains fungicide; low modulus for high movement capability
+Primary uses: Sealing and bonding applications where translucent and non-corrosive cure is required
+Temperature range, °C, continuous (intermittent): -50 to 180
+Skin-over time, min: 5-10
+Tack-free time, min: 15-30
+Extrusion rate, g/min: 190
+Durometer, Shore A: 13
+Tensile, MPa: 1.0
+Elongation, %: 500
+Specific gravity: 1.01
+Color: Translucent
+Sealant type for fluid resistance table: VMQ
+Primerless adhesion: Acrylic=Good; Acrylonitrile Butadiene Styrene (ABS)=Fair; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=consult Dow; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Fair; Aluminum, Mill Finish=Good; Copper=Good; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Excellent
+
+## DOWSIL™ 3559 Neutral Silicone Adhesive Sealant
+https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants#dowsil-3559
+Category: Alkoxy neutral-cure sealants (one-part)
+Special features: Non-sag, paste consistency
+Primary uses: Designed to provide flexible yet structurally strong bonding in applications where a neutral cure and a fast build up of mechanical properties is required
+Applications: Excellent unprimed adhesion to many substrates
+Temperature range, °C, continuous (intermittent): -40 to 180
+Skin-over time, min: 7-8
+Tack-free time, min: 25
+Extrusion rate, g/min: 140
+Durometer, Shore A: 40
+Tensile, MPa: 1.6
+Elongation, %: 400
+Specific gravity: 1.3
+Color: Black
+Sealant type for fluid resistance table: VMQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=consult Dow; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Excellent; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Excellent
+
+## DOWSIL™ 1080 Oxime Sealant
+https://kconstrade.com/en/technical/industrial/two-part-and-oxime-sealants#dowsil-1080
+Category: Oxime neutral-cure sealants (one-part)
+Special features: Non-sag, paste consistency
+Primary uses: As a formed-in-place gasket for general industrial sealing and bonding applications; for sealing dissimilar metals and corrosion sensitive surfaces like chrome, copper, steel
+Applications: Good adhesion to many substrates
+Temperature range, °C, continuous (intermittent): -40 to 150
+Skin-over time, min: 10-11
+Tack-free time, min: 15
+Extrusion rate, g/min: 420
+Durometer, Shore A: 30
+Tensile, MPa: 1.8
+Elongation, %: 400
+Specific gravity: 1.03
+Color: White, black, translucent
+Sealant type for fluid resistance table: VMQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Excellent; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Fair; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Excellent
+
+## DOWSIL™ EA-2626 Adhesive Sealant
+https://kconstrade.com/en/technical/industrial/two-part-and-oxime-sealants#dowsil-ea-2626
+Category: Two-part alkoxy neutral-cure sealants
+Special features: Two-component adhesive/sealant; fast cure at room temperature; neutral alkoxy cure; non-self-leveling, paste consistency; good, durable adhesion; excellent weathering, UV and heat resistance to 190°C; fast cure allows rapid handling of bonded components; fast cure in-depth, and not outside-inward cure like typical moisture- cure adhesives
+Applications: A perfect solution in appliances manufacturing, especially for oven and ceramic hob assembly; for bonding glass to metal, glass to painted metal or glass to plastic
+Temperature range, °C, continuous (intermittent): -50 to 190
+Skin-over time, min: 6-9
+Tack-free time, min: 11-18
+Extrusion rate, g/min: —
+Flow rate, mm: Flow <2 mm
+Durometer, Shore A: 43-45
+Tensile, MPa: >1.9
+Elongation, %: >200
+Specific gravity: 1.32-1.33
+Color: Gray, black, special black
+Sealant type for fluid resistance table: VMQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Excellent; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Excellent; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Excellent
+
+## DOWSIL™ Q3-3526 Base and Catalyst Adhesive
+https://kconstrade.com/en/technical/industrial/two-part-and-oxime-sealants#dowsil-q3-3526
+Category: Two-part alkoxy neutral-cure sealants
+Special features: Fast curing, non-slump, two-part silicone adhesive/ sealant
+Applications: Assembly of automotive headlights and auxiliary lights, body panels and body components; assembly of oven door windows and other appliance components
+Temperature range, °C, continuous (intermittent): -50 to 190
+Skin-over time, min: 8
+Tack-free time, min: 20
+Flow rate, mm: Flow <2 mm
+Durometer, Shore A: 38-40
+Tensile, MPa: 2
+Elongation, %: 270-280
+Specific gravity: 1.36-1.32
+Color: Gray, black
+Sealant type for fluid resistance table: VMQ
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=Excellent; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Excellent; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Excellent
+
+## SILASTIC™ Q3-3636 Adhesive
+https://kconstrade.com/en/technical/industrial/two-part-and-oxime-sealants#silastic-q3-3636
+Category: Two-part alkoxy neutral-cure sealants
+Special features: Fast cure at room temperature; good, durable adhesion; reduced weight loss (fogging) at high operating temperatures; fast assembly process; adhesion to a wide variety of substrates; through cure and not an outside-inward cure like typical moisture-cure adhesives; not humidity-cure-sensitve
+Primary uses: Durable adhesive sealing of components that must perform in difficult environments
+Applications: Bonding of polycarbonate or glass lenses to the reflector housing of headlamps and fog lamps; in appliance manufacturing, especially for oven and ceramic hob assembly or for bonding glass to metal, glass to painted metal or glass to plastic
+Skin-over time, min: 2.5-10 min working time
+Tack-free time, min: 5-20
+Flow rate, mm: Flow <2 mm
+Durometer, Shore A: 32-35
+Tensile, MPa: >1.8
+Elongation, %: >300
+Specific gravity: 1.31 (base)/1.00-1.04 (catalyst)
+Color: Gray, black, special black
+Sealant type for fluid resistance table: MQ
+Primerless adhesion: Acrylic=Excellent; Acrylonitrile Butadiene Styrene (ABS)=Fair; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=consult Dow; Polycarbonate=Excellent; Polypropylene (PP)=consult Dow; Glass=Fair; Aluminum, Mill Finish=Fair; Copper=Excellent; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Fair
+
+## DOWSIL™ HM-2500 Assembly Sealant
+https://kconstrade.com/en/technical/industrial/hot-melt-sealants#dowsil-hm-2500
+Category: Hot-melt neutral-cure sealants
+Special features: Offers the fastest build of green strength; 100% silicone sealant; high viscosity at room temperature resists flow of material, which reduces material squeeze-out; excellent clarity
+Specific gravity: 1.08
+Viscosity at 120°C, Pa·s: 200
+15-min green strength, MPa: 0.06
+Durometer, Shore A: 49
+Ultimate tensile strength, MPa: 4.8
+Ultimate elongation, %: 1,900
+Tear strength – Type B, pli: 80
+Peel strength, pli (180° peel, ASTM C794; 21-day cure + 7-day water immersion): >45
+SAFT, °C (minimum; shear adhesion failure temperature, ASTM 4498): 250
+NSF/ANSI Standard 51 and 61: Yes
+FDA 21 CFR 177.2600: Yes
+UL 94 (Relative Thermal Index): HB (105)
+Color: Clear
+Primerless adhesion: Acrylic=Excellent; Acrylonitrile Butadiene Styrene (ABS)=Excellent; Low Density Polyethylene (LDPE)=Excellent; Nylon 6/6=Excellent; Polycarbonate=Excellent; Polypropylene (PP)=Excellent; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Excellent; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Excellent; Duranar, Black=Excellent; Fluropon, White=Excellent; Polyethylene Powder Coatings (PEPC), Black=Excellent
+
+## DOWSIL™ HM-2510 Assembly Sealant
+https://kconstrade.com/en/technical/industrial/hot-melt-sealants#dowsil-hm-2510
+Category: Hot-melt neutral-cure sealants
+Special features: Offers high robustness; multipurpose 100% silicone sealant; high viscosity at room temperature resists flow of material, which reduces material squeeze-out; excellent clarity
+Specific gravity: 1.08
+Viscosity at 120°C, Pa·s: 110
+15-min green strength, MPa: 0.04
+Durometer, Shore A: 38
+Ultimate tensile strength, MPa: 4.6
+Ultimate elongation, %: 1,900
+Tear strength – Type B, pli: 78
+Peel strength, pli (180° peel, ASTM C794; 21-day cure + 7-day water immersion): >41
+SAFT, °C (minimum; shear adhesion failure temperature, ASTM 4498): 280
+NSF/ANSI Standard 51 and 61: Yes
+FDA 21 CFR 177.2600: Yes
+UL 94 (Relative Thermal Index): HB (105)
+Color: Clear
+Primerless adhesion: Acrylic=Excellent; Acrylonitrile Butadiene Styrene (ABS)=Excellent; Low Density Polyethylene (LDPE)=Excellent; Nylon 6/6=Good; Polycarbonate=Good; Polypropylene (PP)=Excellent; Glass=Excellent; Aluminum, Mill Finish=Excellent; Copper=Excellent; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Excellent; Duranar, Black=Excellent; Fluropon, White=Excellent; Polyethylene Powder Coatings (PEPC), Black=Excellent
+
+## DOWSIL™ HM-2515 Assembly Sealant
+https://kconstrade.com/en/technical/industrial/hot-melt-sealants#dowsil-hm-2515
+Category: Hot-melt neutral-cure sealants
+Special features: Lowest viscosity; 100% silicone sealant; can be used in assembly and lamination; dispensed in fine beads, fibers or spiral patterns; low durometer
+Specific gravity: 1.07
+Viscosity at 120°C, Pa·s: 27
+15-min green strength, MPa: 0.004
+Durometer, Shore A: 14
+Ultimate tensile strength, MPa: 2.3
+Ultimate elongation, %: 1,500
+Tear strength – Type B, pli: 67
+Peel strength, pli (180° peel, ASTM C794; 21-day cure + 7-day water immersion): >33
+SAFT, °C (minimum; shear adhesion failure temperature, ASTM 4498): 240
+NSF/ANSI Standard 51 and 61: Yes
+FDA 21 CFR 177.2600: Yes
+UL 94 (Relative Thermal Index): HB (105)4
+Color: Clear
+Primerless adhesion: Acrylic=consult Dow; Acrylonitrile Butadiene Styrene (ABS)=consult Dow; Low Density Polyethylene (LDPE)=consult Dow; Nylon 6/6=consult Dow; Polycarbonate=consult Dow; Polypropylene (PP)=consult Dow; Glass=consult Dow; Aluminum, Mill Finish=consult Dow; Copper=consult Dow; Steel, Galvanized=consult Dow; Steel, Low Carbon=consult Dow; Steel, Stainless=consult Dow; Duranar, Black=consult Dow; Fluropon, White=consult Dow; Polyethylene Powder Coatings (PEPC), Black=consult Dow
+
+## DOWSIL™ HM-2600 Silicone Assembly Sealant
+https://kconstrade.com/en/technical/industrial/hot-melt-sealants#dowsil-hm-2600
+Category: Hot-melt neutral-cure sealants
+Special features: Offers highest degree of mechanical adhesion and overall performance; 100% silicone; high durometer; excellent clarity
+Specific gravity: 1.08
+Viscosity at 120°C, Pa·s: 70
+15-min green strength, MPa: 0.03
+Durometer, Shore A: 60
+Ultimate tensile strength, MPa: 4.4
+Ultimate elongation, %: 1,300
+Tear strength – Type B, pli: 70
+Peel strength, pli (180° peel, ASTM C794; 21-day cure + 7-day water immersion): >30
+SAFT, °C (minimum; shear adhesion failure temperature, ASTM 4498): 300
+NSF/ANSI Standard 51 and 61: Yes
+FDA 21 CFR 177.2600: Yes
+UL 94 (Relative Thermal Index): HB (105)4
+Color: Clear
+Primerless adhesion: Acrylic=Excellent; Acrylonitrile Butadiene Styrene (ABS)=Excellent; Low Density Polyethylene (LDPE)=Excellent; Nylon 6/6=Excellent; Polycarbonate=Excellent; Polypropylene (PP)=Excellent; Glass=Excellent; Aluminum, Mill Finish=Good; Copper=Good; Steel, Galvanized=Excellent; Steel, Low Carbon=Excellent; Steel, Stainless=Excellent; Duranar, Black=Excellent; Fluropon, White=Good; Polyethylene Powder Coatings (PEPC), Black=Excellent
+
+## SILASTIC™ 8257 Silicone Foam
+https://kconstrade.com/en/technical/industrial/silicone-foams#silastic-8257
+Category: Silicone foams (two-part, addition cure)
+Special features: Low hardness (Shore 00); available in white and black; low density
+Variant White: Viscosity, mPa·s=A: 21,000 B: 12,000; Snap time, sec=230; Tack-free time, min=8; Density, kg/m³=140; Flowability, cm=Flowable; Cell structure, cells/3 cm=35; Hardness, Shore 00=25
+Variant Black: Viscosity, mPa·s=A: 20,000 B: 12,000; Snap time, sec=240; Tack-free time, min=8; Density, kg/m³=150; Flowability, cm=Flowable; Cell structure, cells/3 cm=30; Hardness, Shore 00=25
+
+## DOWSIL™ 3-8209 Silicone Foam
+https://kconstrade.com/en/technical/industrial/silicone-foams#dowsil-3-8209
+Category: Silicone foams (two-part, addition cure)
+Special features: Low to medium hardness (Shore 00); medium density
+Variant standard: Viscosity, mPa·s=A: 14,000 B: 15,000; Snap time, sec=220; Tack-free time, min=7; Density, kg/m³=250; Flowability, cm=Flowable; Cell structure, cells/3 cm=Fine; Hardness, Shore 00=45
+
+## DOWSIL™ 3-8219 RF Silicone Foam
+https://kconstrade.com/en/technical/industrial/silicone-foams#dowsil-3-8219-rf
+Category: Silicone foams (two-part, addition cure)
+Special features: Medium hardness (Shore 00); medium to high density; reduced flow aids application to vertical surfaces
+Variant standard: Viscosity, mPa·s=A: 21,000 B: 40,000; Snap time, sec=200; Tack-free time, min=6; Density, kg/m³=300; Flowability, cm=17; Cell structure, cells/3 cm=Fine; Hardness, Shore 00=45
+
+## DOWSIL™ 3-8259 RF Silicone Foam
+https://kconstrade.com/en/technical/industrial/silicone-foams#dowsil-3-8259-rf
+Category: Silicone foams (two-part, addition cure)
+Special features: Medium hardness (Shore 00); available in gray and dark gray; high density; reduced flow aids application to vertical surfaces
+Variant Gray: Viscosity, mPa·s=A: 68,000 B: 63,000; Snap time, sec=200; Tack-free time, min=7; Density, kg/m³=330; Flowability, cm=15; Cell structure, cells/3 cm=Fine; Hardness, Shore 00=50
+Variant Dark Gray: Viscosity, mPa·s=A: 64,000 B: 62,000; Snap time, sec=200; Tack-free time, min=6; Density, kg/m³=330; Flowability, cm=16; Cell structure, cells/3 cm=Fine; Hardness, Shore 00=50
+
+## DOWSIL™ PR-1200 RTV Prime Coat
+https://kconstrade.com/en/technical/industrial/primers-and-cleaners#dowsil-pr-1200
+Category: Primers and adhesion promoters
+Special features: Significantly improves the adhesion of silicone sealants to a wide variety of challenging substrates; available in clear and red
+Applications: Improves the adhesion of silicone sealants, coatings and rubber to masonry, wood, granite, metals, glass, ceramics, plastics, rubbers and coatings
+
+## DOWSIL™ 1200 OS Primer Clear
+https://kconstrade.com/en/technical/industrial/primers-and-cleaners#dowsil-1200-os
+Category: Primers and adhesion promoters
+Special features: Useful for both moisture-curing-RTV and heat-curing silicones; diluted in low-molecular-weight silicone fluid; meets many international regulations for low VOC content (including European Union); similar to DOWSIL™ P5200 Adhesion Promoter
+Applications: Enhances bonding/adhesion of RTV and heat-cure silicones to ceramics, glass, wood, masonry, structural plastics (including FR-4) and many metals
+
+## DOWSIL™ 1203 3in1 Primer
+https://kconstrade.com/en/technical/industrial/primers-and-cleaners#dowsil-1203
+Category: Primers and adhesion promoters
+Special features: Cleaning and priming with only one material; traceability through UV lamp; optimizes adhesion of sealant to surface; more rapid development of adhesion to surface
+Applications: UV-traceable cleaner and primer for silicone adhesives and sealants
+
+## DOWSIL™ PR-2260 Prime Coat
+https://kconstrade.com/en/technical/industrial/primers-and-cleaners#dowsil-pr-2260
+Category: Primers and adhesion promoters
+Special features: Dilute solution of silane coupling agents and other active ingredients
+Applications: Enhances bonding/adhesion of RTV and heat-cure silicones to many metals, ceramics and some plastics
+
+## DOWSIL™ DS-1000 Aqueous Silicone Cleaner
+https://kconstrade.com/en/technical/industrial/primers-and-cleaners#dowsil-ds-1000
+Category: Cleaners
+Special features: Cleaner for use on uncured silicone; effectively emulsifies silicone oils, greases and uncured elastomers; effective degreaser on a wide range of applications; aqueous solution; complies with EU detergent regulation on biodegradability of surfactants; nonflammable
+Applications: Cleaning surfaces, equipment and manufacturing units contaminated with nonsubstantive uncured silicone residues
+
+## DOWSIL™ DS-2025 Silicone Cleaning Solvent
+https://kconstrade.com/en/technical/industrial/primers-and-cleaners#dowsil-ds-2025
+Category: Cleaners
+Special features: Cleaner for use on cured silicone; rapid digestion of cured silicone; leaves silicone-free surface; nonflammable; high flash point; does not contain aromatic solvent; nonhalogenated solvent; low viscosity; multiple use and recyclable
+Applications: Cleaning surfaces, equipment and manufacturing units contaminated with substantive cured silicone residues
+
+## DOWSIL™ R41 Cleaner Plus
+https://kconstrade.com/en/technical/industrial/primers-and-cleaners#dowsil-r41
+Category: Cleaners
+Special features: Specially formulated solvent containing a special DOWSIL™ catalyst substance designed to clean and additionally prepare a large variety of substrates for the bonding with DOWSIL™ sealants
+Applications: Cleaning and preparation of the most common surfaces such as glass, metal profiles, plastics and other non porous substrates
+

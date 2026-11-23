@@ -36,6 +36,26 @@ English and Korean edition of the Dow "Fire-rated Dow Technologies Technical Man
 - [DOWSIL™ 3-6548 Silicone RTV Foam – Application](https://kconstrade.com/en/technical/foam)
 - [Literature & Notice](https://kconstrade.com/en/technical/literature)
 
+## DOWSIL™ silicone sealants and foams for industrial, appliance and maintenance (Selection Guide)
+English and Korean edition of Dow's Selection Guide (Form No. 80-8283-01-0922 S2D): 38 products with specifications, adhesion ratings, surface preparation and application. Full plain-text version: https://kconstrade.com/llms-full.txt
+
+- [Selection guide hub](https://kconstrade.com/en/technical/industrial) · [한국어](https://kconstrade.com/ko/technical/industrial)
+- [Original PDF](https://kconstrade.com/docs/dow-silicone-sealants-foams-industrial-assembly.pdf)
+- [DOWSIL™ Silicone Sealants – Benefits and Why Silicones](https://kconstrade.com/en/technical/industrial/overview): Temperature stability, weather and chemical resistance, bond strength, electrical properties, low flammability; why silicones outperform organics.
+- [Which Silicone? RTV, Heat Cure, Hot Melt, One-Part, Two-Part and Foams](https://kconstrade.com/en/technical/industrial/which-silicone): The six formulation options (RTV, heat cure, hot-melt, one-part, two-part, silicone foams) and the basic chemistry of silicone sealants.
+- [Table I: Sealant Chemistries – Acetoxy, Alkoxy, Oxime, Hot Melt, Platinum](https://kconstrade.com/en/technical/industrial/sealant-chemistries): Compare acid-cure acetoxy and neutral-cure alkoxy, oxime, two-part alkoxy, hot-melt and platinum foam chemistries by cure, green strength, adhesion, shelf life and clarity.
+- [Table II: Acetoxy Sealants – DOWSIL™ 730 FS, 732, 734, 786, XIAMETER™ and AP](https://kconstrade.com/en/technical/industrial/acetoxy-sealants): Specifications, applications and primerless adhesion of eight one-part acetoxy silicone sealants and coatings.
+- [High-Temperature Acetoxy Sealants – DOWSIL™ 736 (315°C) and Q3-1566 (350°C)](https://kconstrade.com/en/technical/industrial/high-temperature-sealants): Heat-resistant sealants for ovens, boilers, flues and heating equipment with service temperatures to 260–275°C (315–350°C intermittent).
+- [Table III: Alkoxy Neutral-Cure Sealants – DOWSIL™ 739, 748, 3145, 7091–7094, AS 7096N, 3559](https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants): Nine one-part neutral-cure sealants and adhesives: plastic adhesive, electrical, Mil Spec, high green strength, flowable and low-modulus grades.
+- [Table IV: Two-Part Alkoxy and One-Part Oxime Sealants – DOWSIL™ EA-2626, Q3-3526, SILASTIC™ Q3-3636, DOWSIL™ 1080](https://kconstrade.com/en/technical/industrial/two-part-and-oxime-sealants): Fast-curing two-component neutral-cure adhesives for ovens, hobs and headlamps, plus DOWSIL™ 1080 one-part oxime sealant.
+- [Table V: Hot-Melt Neutral-Cure Silicone Assembly Sealants – DOWSIL™ HM-2500, HM-2510, HM-2515, HM-2600](https://kconstrade.com/en/technical/industrial/hot-melt-sealants): Instant-adhesion, 100% silicone hot-melt sealants for OEM assembly, bonding, sealing and gasketing, with green strength, SAFT and primerless adhesion data.
+- [Table VI: Two-Part Addition-Cure Silicone Foams – SILASTIC™ 8257, DOWSIL™ 3-8209, 3-8219 RF, 3-8259 RF](https://kconstrade.com/en/technical/industrial/silicone-foams): Formed-in-place compression gaskets: viscosity, snap time, density, hardness and cell structure of four silicone foam families.
+- [Surface Preparation for Silicone Sealants](https://kconstrade.com/en/technical/industrial/surface-preparation): How to clean, degrease and abrade surfaces, which solvents to use, and when to use plasma, corona, UV or flame pretreatment.
+- [Table VII: Primers, Adhesion Promoters and Cleaners – DOWSIL™ PR-1200, 1200 OS, 1203, PR-2260, DS-1000, DS-2025, R41](https://kconstrade.com/en/technical/industrial/primers-and-cleaners): When and how to prime, primer cure times (5–30 minutes), and DOWSIL™ primers and cleaners for cured and uncured silicone.
+- [Sealant Application, Cure Time, Compatibility and Cleanup](https://kconstrade.com/en/technical/industrial/application-and-cure): Skin-over in 5–10 minutes, cure depth of about 1/8" in 24 hours, tooling, acetic-acid corrosion, platinum inhibitors, sealant removal and safety information.
+- [Product Selector – Compare All DOWSIL™ Industrial, Appliance and Maintenance Sealants](https://kconstrade.com/en/technical/industrial/product-selector): One-page comparison of all 38 products by chemistry, temperature range, cure, hardness, tensile and elongation, plus a requirement-to-product quick guide.
+- [Handling Precautions, Limited Warranty and Contact](https://kconstrade.com/en/technical/industrial/notice-and-contact): Safety data sheet requirement, Dow limited warranty information and how to reach Dow and KCT.
+
 ## Building Envelope
 Curtain wall, structural glazing, weatherproofing and window perimeter sealing
 

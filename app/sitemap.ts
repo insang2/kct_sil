@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { CATALOG } from '@/lib/products-catalog';
 import { PAGES as TECH_PAGES } from '@/lib/tech-manual';
+import { IPAGES } from '@/lib/industrial/pages';
 
 const LANGS = ['ko', 'en', 'ja'] as const;
 
@@ -93,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   // Technical information (hub + pages)
-  const techPaths = ['technical', ...TECH_PAGES.map((p) => `technical/${p.slug}`)];
+  const techPaths = ['technical', ...TECH_PAGES.map((p) => `technical/${p.slug}`), 'technical/industrial', ...IPAGES.map((p) => `technical/industrial/${p.slug}`)];
   const technicalPages = LANGS.flatMap((lang) =>
     techPaths.map((path) => ({
       url: `${baseUrl}/${lang}/${path}`,
