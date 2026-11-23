@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PAGES, MANUAL_PDF, MANUAL_TITLE } from '@/lib/tech-manual'
 import { techCss } from '@/components/tech/TechBlocks'
+import { IPAGES } from '@/lib/industrial/pages'
 
 type P = { lang: string }
 const BASE = 'https://kconstrade.com'
@@ -83,11 +84,28 @@ export default async function TechHub({ params }: { params: Promise<P> }) {
             ))}
           </div>
 
-          <Link href={`/${lang}/technical/industrial`} className="d-block p-4 rounded-4 mb-5 text-decoration-none" style={{ background: '#fff7ed', border: '1px solid #fed7aa' }}>
+          <div className="p-4 rounded-4 mb-5" style={{ background: '#fff7ed', border: '1px solid #fed7aa' }}>
             <div style={{ color: '#9a3412', fontSize: '.8rem', fontWeight: 700, letterSpacing: '.05em' }}>NEW · SELECTION GUIDE</div>
-            <div className="fw-bold my-1" style={{ color: '#16142F', fontSize: '1.2rem' }}>{ko ? '산업·가전·유지보수용 DOWSIL™ 실리콘 실란트·폼 선정 가이드 (38개 제품, 14페이지)' : 'DOWSIL™ Silicone Sealants and Foams for Industrial, Appliance and Maintenance (38 products, 14 pages)'}</div>
-            <div style={{ color: '#555370', fontSize: '.9rem' }}>{ko ? '아세톡시·알콕시·옥심·2액형·핫멜트 실란트, 실리콘 폼, 프라이머·세정제의 사양과 접착 등급, 표면 준비·시공 방법 →' : 'Acetoxy, alkoxy, oxime, two-part and hot-melt sealants, silicone foams, primers and cleaners: specifications, adhesion ratings, preparation and application →'}</div>
-          </Link>
+            <h2 className="fw-bold my-1" style={{ color: '#16142F', fontSize: '1.3rem' }}>
+              {ko ? '산업·가전·유지보수용 DOWSIL™ 실리콘 실란트·폼 선정 가이드 (38개 제품, 14페이지)' : 'DOWSIL™ Silicone Sealants and Foams for Industrial, Appliance and Maintenance (38 products, 14 pages)'}
+            </h2>
+            <p style={{ color: '#555370', fontSize: '.92rem' }}>{ko ? '아세톡시·알콕시·옥심·2액형·핫멜트 실란트, 실리콘 폼, 프라이머·세정제의 사양과 접착 등급, 표면 준비·시공 방법.' : 'Acetoxy, alkoxy, oxime, two-part and hot-melt sealants, silicone foams, primers and cleaners: specifications, adhesion ratings, preparation and application.'}</p>
+            <div className="d-flex flex-wrap gap-2 mb-3">
+              <Link href={`/${lang}/technical/industrial`} className="btn btn-sm btn-warning rounded-pill px-3 fw-bold">{ko ? '선정 가이드 허브' : 'Guide hub'}</Link>
+              <Link href={`/${lang}/technical/industrial/product-selector`} className="btn btn-sm btn-outline-dark rounded-pill px-3">{ko ? '제품 전체 비교' : 'Compare all products'}</Link>
+              <Link href={`/${lang === 'ko' ? 'en' : 'ko'}/technical/industrial`} className="btn btn-sm btn-outline-secondary rounded-pill px-3">{ko ? 'English' : '한국어'}</Link>
+            </div>
+            <ul className="row g-2 list-unstyled mb-0">
+              {IPAGES.map((p) => (
+                <li key={p.slug} className="col-md-6 col-lg-4">
+                  <Link href={`/${lang}/technical/industrial/${p.slug}`} className="d-block p-3 rounded-3 text-decoration-none h-100" style={{ background: '#fff', border: '1px solid #fde4c8' }}>
+                    <span style={{ color: '#ea580c', fontSize: '.75rem', fontWeight: 700 }}>{String(p.no).padStart(2, '0')}</span>
+                    <span className="d-block fw-bold" style={{ color: '#16142F', fontSize: '.9rem', lineHeight: 1.45 }}>{p.title[l]}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <h2 className="fw-bold mb-4" style={{ color: '#16142F' }}>{ko ? '내화 기술정보 목차 (Fire-rated)' : 'Fire-rated technical manual'}</h2>
           <div className="row g-4">
