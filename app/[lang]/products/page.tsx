@@ -29,11 +29,10 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: `https://kconstrade.com/${lang}/products`,
+      canonical: `https://kconstrade.com/${lang === 'ja' ? 'ko' : lang}/products`, // ja는 한국어 본문이라 ko로 통합
       languages: {
         'ko': 'https://kconstrade.com/ko/products',
         'en': 'https://kconstrade.com/en/products',
-        'ja': 'https://kconstrade.com/ja/products',
         'x-default': 'https://kconstrade.com/ko/products',
       },
     },

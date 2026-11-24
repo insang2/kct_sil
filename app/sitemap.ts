@@ -4,6 +4,8 @@ import { PAGES as TECH_PAGES } from '@/lib/tech-manual';
 import { IPAGES } from '@/lib/industrial/pages';
 
 const LANGS = ['ko', 'en', 'ja'] as const;
+// 한국어/영문 본문만 있는 섹션(제품·기술정보)은 ja를 제외 — ja 페이지는 ko/en으로 canonical 통합
+const KO_EN = ['ko', 'en'] as const;
 
 const PRODUCT_SLUGS = CATALOG.map((p) => p.slug);
 
@@ -60,7 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Product list pages
-  const productListPages = LANGS.map((lang) => ({
+  const productListPages = KO_EN.map((lang) => ({
     url: `${baseUrl}/${lang}/products`,
     lastModified,
     changeFrequency: 'weekly' as const,
@@ -69,14 +71,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       languages: {
         ko: `${baseUrl}/ko/products`,
         en: `${baseUrl}/en/products`,
-        ja: `${baseUrl}/ja/products`,
         'x-default': `${baseUrl}/ko/products`,
       },
     },
   }));
 
   // Product detail pages
-  const productDetailPages = LANGS.flatMap((lang) =>
+  const productDetailPages = KO_EN.flatMap((lang) =>
     PRODUCT_SLUGS.map((slug) => ({
       url: `${baseUrl}/${lang}/products/${slug}`,
       lastModified,
@@ -86,7 +87,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko/products/${slug}`,
           en: `${baseUrl}/en/products/${slug}`,
-          ja: `${baseUrl}/ja/products/${slug}`,
           'x-default': `${baseUrl}/ko/products/${slug}`,
         },
       },
@@ -95,7 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Technical information (hub + pages)
   const techPaths = ['technical', ...TECH_PAGES.map((p) => `technical/${p.slug}`), 'technical/industrial', ...IPAGES.map((p) => `technical/industrial/${p.slug}`)];
-  const technicalPages = LANGS.flatMap((lang) =>
+  const technicalPages = KO_EN.flatMap((lang) =>
     techPaths.map((path) => ({
       url: `${baseUrl}/${lang}/${path}`,
       lastModified,
@@ -105,7 +105,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko/${path}`,
           en: `${baseUrl}/en/${path}`,
-          ja: `${baseUrl}/ja/${path}`,
           'x-default': `${baseUrl}/ko/${path}`,
         },
       },

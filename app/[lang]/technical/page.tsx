@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<P> }): Prom
   return {
     title,
     description,
-    alternates: { canonical: `${BASE}/${lang}/technical`, languages: { ko: `${BASE}/ko/technical`, en: `${BASE}/en/technical`, ja: `${BASE}/ja/technical`, 'x-default': `${BASE}/ko/technical` } },
+    alternates: { canonical: `${BASE}/${lang === 'ja' ? 'en' : lang}/technical`, languages: { ko: `${BASE}/ko/technical`, en: `${BASE}/en/technical`, 'x-default': `${BASE}/ko/technical` } },
     openGraph: { title, description, url: `${BASE}/${lang}/technical`, siteName: '한국건설트레이딩 (KCT)', images: [{ url: `${BASE}/assets/tech/cover.jpg` }], type: 'website' },
   }
 }

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<P> }): Prom
     : 'Complete Dow selection guide: 38 acetoxy, alkoxy, oxime, two-part and hot-melt silicone sealants, silicone foams, primers and cleaners with temperature range, cure time, hardness, tensile, elongation, adhesion ratings, surface preparation and application.'
   return {
     title, description,
-    alternates: { canonical: `${BASE}/${lang}/technical/industrial`, languages: { ko: `${BASE}/ko/technical/industrial`, en: `${BASE}/en/technical/industrial`, ja: `${BASE}/ja/technical/industrial`, 'x-default': `${BASE}/ko/technical/industrial` } },
+    alternates: { canonical: `${BASE}/${lang === 'ja' ? 'en' : lang}/technical/industrial`, languages: { ko: `${BASE}/ko/technical/industrial`, en: `${BASE}/en/technical/industrial`, 'x-default': `${BASE}/ko/technical/industrial` } },
     openGraph: { title, description, url: `${BASE}/${lang}/technical/industrial`, siteName: '한국건설트레이딩 (KCT)', images: [{ url: `${BASE}/assets/tech/ind-cover.jpg` }], type: 'website' },
     twitter: { card: 'summary_large_image', title, description, images: [`${BASE}/assets/tech/ind-cover.jpg`] },
   }

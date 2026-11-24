@@ -2,3 +2,7 @@
 # https://opennext.js.org/cloudflare/caching#static-assets-caching
 /_next/static/*
   Cache-Control: public,max-age=31536000,immutable
+
+# TDS PDF: 자기 자신을 canonical로 지정 (Search Console '사용자가 선택한 표준이 없는 중복 페이지' 해소)
+/tds/*
+  Link: <https://kconstrade.com/tds/:splat>; rel="canonical"
