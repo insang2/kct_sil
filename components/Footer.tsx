@@ -1,15 +1,19 @@
 import { getDictionary } from "@/lib/dictionaries";
 import Link from "next/link";
+import FloatingContact from "@/components/FloatingContact";
+import { PHONE_DISPLAY, PHONE_TEL, KAKAO_URL, SMARTSTORE_URL, ADDRESS, CONTACT_TEXT } from "@/lib/contact";
 
 const RETAIL_SHOPS = [
-  { key: 'naver', icon: 'bi-shop', href: 'https://smartstore.naver.com/kconstrade/' },
+  { key: 'naver', icon: 'bi-shop', href: SMARTSTORE_URL },
 ] as const;
 
 export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja' }) {
   const dict = await getDictionary(lang) as any;
   const d = dict;
+  const ct = CONTACT_TEXT[lang];
 
   return (
+    <>
     <footer className="footer mt-auto bg-dark text-white pt-9 pb-5">
       <div className="container">
 
@@ -96,6 +100,16 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
             </h6>
             <ul className="list-unstyled mb-0 small" style={{ color: 'rgba(255,255,255,0.82)', lineHeight: 1.9 }}>
               <li>
+                <i className="bi bi-telephone me-2 text-primary"></i>
+                <a href={PHONE_TEL} className="text-decoration-none fw-bold" style={{ color: 'inherit' }}>{PHONE_DISPLAY}</a>
+              </li>
+              {KAKAO_URL && (
+                <li>
+                  <i className="bi bi-chat-fill me-2" style={{ color: '#FEE500' }}></i>
+                  <a href={KAKAO_URL} target="_blank" rel="noreferrer" className="text-decoration-none" style={{ color: 'inherit' }}>{ct.kakao}</a>
+                </li>
+              )}
+              <li>
                 <i className="bi bi-envelope me-2 text-primary"></i>
                 <a href="mailto:sales@kconstrade.com" className="text-decoration-none" style={{ color: 'inherit' }}>
                   sales@kconstrade.com
@@ -103,8 +117,17 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
               </li>
               <li>
                 <i className="bi bi-geo-alt me-2 text-primary"></i>
-                10 Chungmin-ro, Songpa-gu<br />
-                <span style={{ paddingLeft: '1.25rem' }}>Seoul, Korea (Garden Five Tools 4-A19)</span>
+                {lang === 'ko' ? (
+                  <>
+                    {ADDRESS.ko}<br />
+                    <span style={{ paddingLeft: '1.25rem', opacity: 0.7 }}>{ADDRESS.en}</span>
+                  </>
+                ) : (
+                  <>
+                    10 Chungmin-ro, Songpa-gu<br />
+                    <span style={{ paddingLeft: '1.25rem' }}>Seoul, Korea (Garden Five Tools 4-A19)</span>
+                  </>
+                )}
               </li>
               <li className="mt-2">
                 <i className="bi bi-person me-2 text-primary"></i>
@@ -128,10 +151,9 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
                   href={shop.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="badge rounded-pill px-3 py-2 text-decoration-none small"
-                  style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.75)', fontSize: '0.75rem' }}
+                  className="btn btn-success btn-sm rounded-pill px-3 fw-bold"
                 >
-                  {d.retail?.shops?.[shop.key] ?? shop.key}
+                  <i className="bi bi-shop me-1"></i>{lang === 'ko' ? (d.retail?.shops?.[shop.key] ?? shop.key) : ct.store}
                 </a>
               ))}
             </div>
@@ -185,5 +207,7 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
 
       </div>
     </footer>
+    <FloatingContact lang={lang} />
+    </>
   );
 }

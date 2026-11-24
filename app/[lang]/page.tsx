@@ -1,11 +1,13 @@
 import { getDictionary } from '@/lib/dictionaries';
 import Script from 'next/script';
+import { PHONE_DISPLAY, PHONE_TEL, KAKAO_URL, SMARTSTORE_URL, ADDRESS, CONTACT_TEXT, MAP_URL } from '@/lib/contact';
 
 export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 'en' | 'ja' }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
   const isEn = lang === 'en';
+  const ct = CONTACT_TEXT[lang];
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -306,6 +308,26 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                   </a>
                 </div>
                 <div className="col-12 col-sm-6 col-md-auto">
+                  <a href={PHONE_TEL} className="btn btn-white btn-lg px-4 rounded-pill hover-lift d-flex align-items-center justify-content-center w-100 fw-bold">
+                    <i className="bi bi-telephone-fill me-2 fs-5"></i>
+                    <span>{PHONE_DISPLAY}</span>
+                  </a>
+                </div>
+                {KAKAO_URL && (
+                  <div className="col-12 col-sm-6 col-md-auto">
+                    <a href={KAKAO_URL} target="_blank" rel="noreferrer" className="btn btn-lg px-4 rounded-pill hover-lift d-flex align-items-center justify-content-center w-100 fw-bold" style={{ background: '#FEE500', color: '#191919' }}>
+                      <i className="bi bi-chat-fill me-2 fs-5"></i>
+                      <span>{ct.kakao}</span>
+                    </a>
+                  </div>
+                )}
+                <div className="col-12 col-sm-6 col-md-auto">
+                  <a href={SMARTSTORE_URL} target="_blank" rel="noreferrer" className="btn btn-outline-white btn-lg px-4 rounded-pill hover-lift d-flex align-items-center justify-content-center w-100">
+                    <i className="bi bi-shop me-2 fs-5"></i>
+                    <span>{ct.store}</span>
+                  </a>
+                </div>
+                <div className="col-12 col-sm-6 col-md-auto">
                   <a href="mailto:sales@kconstrade.com" className="btn btn-outline-white btn-lg px-4 rounded-pill hover-lift d-flex align-items-center justify-content-center w-100">
                     <i className="bi bi-envelope-fill me-2 fs-5"></i>
                     <span>{dict.cta.btn_email}</span>
@@ -342,6 +364,24 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Google Map"
                 ></iframe>
+              </div>
+              <div className="card border-0 shadow-sm rounded-4 mt-4 p-4 text-dark">
+                <div className="row g-4 align-items-center">
+                  <div className="col-lg-7">
+                    <div className="fw-bold mb-1"><i className="bi bi-geo-alt-fill text-primary me-2"></i>{ct.addr}</div>
+                    {lang === 'ko' && <div className="fs-5 fw-bold text-dark">{ADDRESS.ko}</div>}
+                    <div className={lang === 'ko' ? 'text-dark small' : 'fs-6 fw-bold text-dark'} style={lang === 'ko' ? { opacity: 0.7 } : undefined}>{ADDRESS.en}</div>
+                    <div className="mt-3">
+                      <i className="bi bi-telephone-fill text-primary me-2"></i>{ct.tel}: <a href={PHONE_TEL} className="fw-bold text-decoration-none">{PHONE_DISPLAY}</a>
+                    </div>
+                  </div>
+                  <div className="col-lg-5 d-flex flex-wrap gap-2 justify-content-lg-end">
+                    <a href={PHONE_TEL} className="btn btn-primary rounded-pill px-4"><i className="bi bi-telephone-fill me-2"></i>{ct.call}</a>
+                    {KAKAO_URL && <a href={KAKAO_URL} target="_blank" rel="noreferrer" className="btn rounded-pill px-4 fw-bold" style={{ background: '#FEE500', color: '#191919' }}><i className="bi bi-chat-fill me-2"></i>{ct.kakao}</a>}
+                    <a href={SMARTSTORE_URL} target="_blank" rel="noreferrer" className="btn btn-success rounded-pill px-4"><i className="bi bi-shop me-2"></i>{ct.store}</a>
+                    <a href={MAP_URL} target="_blank" rel="noreferrer" className="btn btn-outline-secondary rounded-pill px-4"><i className="bi bi-map me-2"></i>{ct.directions}</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
