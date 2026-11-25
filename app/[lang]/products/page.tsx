@@ -3,6 +3,8 @@ import { CATALOG, CATEGORIES, tdsUrl } from '@/lib/products-catalog';
 import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Tx from '@/components/tech/Tx';
+import { CAT_INTRO } from '@/lib/products-roles';
 
 export async function generateMetadata({
   params,
@@ -112,112 +114,107 @@ export default async function ProductsPage({
     ]
   };
 
+  const pick = <T extends { ko: string; en: string }>(x: T) => (isEn ? x.en : x.ko);
+  const bySlugMap = Object.fromEntries(products.map((p) => [p.slug, p]));
+
   return (
-    <>
+    <Tx>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      {/* Hero */}
-      <section
-        className="position-relative overflow-hidden text-white"
-        style={{ minHeight: '40vh', display: 'flex', alignItems: 'center' }}
-      >
-        <div
-          className="position-absolute top-0 start-0 w-100 h-100"
-          style={{
-            backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('/assets/img/backgrounds/hero_construction.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="container position-relative z-1 py-9 mt-6">
-          <div className="row align-items-center">
-            <div className="col-lg-8 mx-auto text-center">
-              <span
-                className="badge rounded-pill px-3 py-2 mb-4 text-uppercase fw-bold"
-                style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(4px)', letterSpacing: '0.08em' }}
-              >
-                Architectural Silicone
-              </span>
-              <h1 className="display-4 fw-bold text-white mb-3" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
-                {d.navigation.products}
-              </h1>
-              <p className="lead text-white mb-0" style={{ opacity: 0.9, textShadow: '0 1px 5px rgba(0,0,0,0.2)' }}>
-                {isEn ? 'Dow Chemical silicone sealants — full architectural & structural lineup' : 'Dow Chemical 취급 · 건축·구조용 실리콘 전 라인업'}
-              </p>
-            </div>
+
+      <section className="tx-hero tx-big" style={{ background: 'linear-gradient(180deg,rgba(12,13,15,.72),rgba(12,13,15,.94)), url(/assets/img/backgrounds/hero_construction.png) center/cover' }}>
+        <div className="container">
+          <nav aria-label="breadcrumb" className="mb-3">
+            <Link href={`/${lang}`}>{d.navigation.home}</Link><span> / </span><span style={{ color: '#EDEDED' }}>{d.navigation.products}</span>
+          </nav>
+          <span className="badge">Products</span>
+          <h1 className="fw-bold mt-3">
+            {isEn ? <>Products <span className="tx-light">DOWSIL™ {products.length}</span></> : <>제품정보 <span className="tx-light">DOWSIL™ {products.length}종</span></>}
+          </h1>
+          <p>{isEn ? 'Different jobs need different silicones. Find the product by what it does on site — structural glazing, weatherproofing, fire protection, primers — and download the TDS.' : '용도마다 맞는 실리콘이 다릅니다. 구조 글레이징, 웨더실링, 방화, 프라이머처럼 현장에서 하는 일로 제품을 찾고 TDS를 내려받으세요.'}</p>
+          <div className="d-flex flex-wrap gap-2 mt-4">
+            <a href="mailto:sales@kconstrade.com" className="btn btn-light">{isEn ? 'Request a quote' : '견적·자료 문의'} →</a>
+            <Link href={`/${lang}/technical`} className="btn btn-outline-light">{isEn ? 'Technical information' : '기술정보 보기'}</Link>
           </div>
         </div>
       </section>
 
-      {/* Breadcrumb */}
-      <div className="bg-light border-bottom py-2">
+      <nav className="tx-index" aria-label={isEn ? 'Product categories' : '제품군 바로가기'}>
         <div className="container">
-          <nav aria-label="breadcrumb">
-            <ol className="breadcrumb mb-0 small">
-              <li className="breadcrumb-item"><Link href={`/${lang}`} className="text-decoration-none">{d.navigation.home}</Link></li>
-              <li className="breadcrumb-item active">{d.navigation.products}</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-
-      {/* Category nav */}
-      <div className="bg-white border-bottom sticky-top" style={{ top: 72, zIndex: 10 }}>
-        <div className="container py-3 d-flex flex-wrap gap-2 justify-content-center">
-          {cats.map((c) => (
-            <a key={c.key} href={`#cat-${c.key}`} className="btn btn-outline-primary btn-sm rounded-pill px-3">
-              {c.label} <span className="opacity-75">({products.filter((p) => p.category === c.key).length})</span>
-            </a>
+          {cats.map((c, i) => (
+            <a key={c.key} href={`#cat-${c.key}`}><span>{String(i + 1).padStart(2, '0')}</span>{c.label}<span>{products.filter((p) => p.category === c.key).length}</span></a>
           ))}
         </div>
-      </div>
+      </nav>
 
-      {/* Product Grid by category */}
-      <section className="py-9 bg-white">
-        <div className="container">
-          {cats.map((cat) => (
-            <div key={cat.key} id={`cat-${cat.key}`} className="mb-9" style={{ scrollMarginTop: 150 }}>
-              <h2 className="h3 fw-bold mb-1">{cat.label}</h2>
-              <p className="mb-4" style={{ color: '#555370' }}>{cat.desc}</p>
-              <div className="row g-4">
-                {products.filter((p) => p.category === cat.key).map((product) => {
-                  const href = `/${lang}/products/${product.slug}`;
-                  return (
-                    <div key={product.slug} className="col-sm-6 col-lg-4 col-xl-3">
-                      <div className="card border-0 rounded-4 h-100 shadow-sm overflow-hidden product-card-hover">
-                        <Link href={href} tabIndex={-1} aria-hidden="true" className="d-block overflow-hidden" style={{ height: '180px', background: '#f8f9fa' }}>
-                          <img
-                            src={product.image_url ?? '/assets/img/logo/Dow_Chemical_Company_logo.svg'}
-                            alt={product.name_ko}
-                            style={{ width: '100%', height: '100%', objectFit: 'contain', padding: product.image_url ? '12px' : '40px', opacity: product.image_url ? 1 : 0.35 }}
-                            loading="lazy"
-                          />
-                        </Link>
-                        <div className="card-body p-4">
-                          <h3 className="h5 fw-bold mb-2" style={{ fontSize: '1rem' }}>
-                            <Link href={href} className="text-decoration-none text-dark">{product.name_ko}</Link>
-                          </h3>
-                          <p className="small mb-0" style={{ lineHeight: 1.5, color: '#555370' }}>{product.summary}</p>
-                        </div>
-                        <div className="card-footer border-0 bg-transparent px-4 pb-4 pt-0 d-flex gap-2">
-                          <Link href={href} className="btn btn-primary btn-sm rounded-pill flex-grow-1">
-                            <i className="bi bi-info-circle me-1"></i>{isEn ? 'Details' : '상세 정보'}
-                          </Link>
-                          <a href={tdsUrl(product.slug)} download className="btn btn-outline-danger btn-sm rounded-pill flex-grow-1">
-                            <i className="bi bi-file-earmark-pdf me-1"></i>{product.docLabel ?? 'TDS'}
-                          </a>
+      <div className="container pb-5">
+        {cats.map((cat, i) => {
+          const intro = CAT_INTRO[cat.key];
+          const list = products.filter((p) => p.category === cat.key);
+          return (
+            <section key={cat.key} id={`cat-${cat.key}`} className="tx-cat" aria-labelledby={`h-${cat.key}`}>
+              <div className="row g-4 g-lg-5">
+                <div className="col-lg-4">
+                  <div className="tx-cat-no">{String(i + 1).padStart(2, '0')} · {pick(intro.eyebrow)}</div>
+                  <h2 id={`h-${cat.key}`} className="tx-sec-h">{cat.label}</h2>
+                  <p className="tx-sec-sub" style={{ marginBottom: '.5rem' }}>{pick(intro.lead)}</p>
+                  <p style={{ color: '#5d646b', fontSize: '.92rem' }}>{cat.desc}</p>
+                </div>
+                <div className="col-lg-8">
+                  <div className="tx-roles">
+                    {intro.roles.map((r) => (
+                      <div key={r.role.en}>
+                        <div className="tx-role">{pick(r.role)}</div>
+                        <div>
+                          <h4>{pick(r.name)}</h4>
+                          <p>{pick(r.desc)}</p>
+                          {r.slugs.map((sl) => bySlugMap[sl] && (
+                            <Link key={sl} href={`/${lang}/products/${sl}`} className="tx-chip">{bySlugMap[sl].name_ko}</Link>
+                          ))}
                         </div>
                       </div>
-                    </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="tx-pgrid">
+                {list.map((product) => {
+                  const href = `/${lang}/products/${product.slug}`;
+                  return (
+                    <article key={product.slug} className="tx-pcard">
+                      <Link href={href} tabIndex={-1} aria-hidden="true" className="tx-pimg">
+                        <img
+                          src={product.image_url ?? '/assets/img/logo/Dow_Chemical_Company_logo.svg'}
+                          alt=""
+                          style={product.image_url ? undefined : { padding: 40, opacity: 0.35 }}
+                          loading="lazy"
+                        />
+                      </Link>
+                      <div className="tx-pbody">
+                        <h3><Link href={href}>{productName(product)}</Link></h3>
+                        <p>{product.summary}</p>
+                      </div>
+                      <div className="tx-pact">
+                        <Link href={href}>{isEn ? 'Details' : '상세 정보'}</Link>
+                        <a href={tdsUrl(product.slug)} download>{product.docLabel ?? 'TDS'}</a>
+                      </div>
+                    </article>
                   );
                 })}
               </div>
-            </div>
-          ))}
+            </section>
+          );
+        })}
+
+        <div className="tx-notes">
+          <div><h3>{isEn ? 'About the values' : '자료 수치 안내'}</h3><p>{isEn ? 'Product data is summarized from Dow TDS; values are typical properties, not specifications. The linked TDS PDFs are authoritative.' : '제품 정보는 Dow TDS를 요약한 것이며 수치는 대표 특성이지 규격값이 아닙니다. 기준은 링크된 TDS 원문입니다.'}</p></div>
+          <div><h3>{isEn ? 'Technical resources' : '기술정보'}</h3><p>{isEn ? 'Fire-rated manual, selection guides and training material. ' : '내화 매뉴얼, 선정 가이드, 실리콘 교육 자료. '}<Link href={`/${lang}/technical`}>{isEn ? 'Open Technical Information' : '기술정보 보기'}</Link></p></div>
+          <div><h3>{isEn ? 'Not sure which one?' : '어떤 제품이 맞을지 모르겠다면'}</h3><p>{isEn ? 'Tell us the substrate and conditions. ' : '시공 자재와 사용 환경을 알려 주세요. '}<a href="mailto:sales@kconstrade.com">sales@kconstrade.com</a> · <a href="tel:+821089390284">010-8939-0284</a></p></div>
         </div>
-      </section>
-    </>
+      </div>
+    </Tx>
   );
 }

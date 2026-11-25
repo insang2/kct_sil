@@ -1,3 +1,4 @@
+import Tx from '@/components/tech/Tx';
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
@@ -303,7 +304,7 @@ export default async function ProductDetailPage({
   }
 
   return (
-    <>
+    <Tx>
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
@@ -556,6 +557,6 @@ export default async function ProductDetailPage({
           </div>
         </div>
       </section>
-    </>
+    </Tx>
   )
 }
