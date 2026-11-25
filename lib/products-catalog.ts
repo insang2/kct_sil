@@ -118,6 +118,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['발코니·페리미터 등 움직임 조인트에 적합', '움직임 허용치 ±50%', '건 사용 시 꼬리 끌림 현상 없음', '모든 Dow 실란트와 상응성 우수', '폴리카보네이트와 상응성이 좋아 크랙·접착불량 없음'],
     applications: ['주거용 창호 페리미터 실링', '익스팬션 조인트 실링', '발코니 조인트'],
     specs: { '제품 유형': '1액형 중성 저모듈러스 실리콘', '색상': '백색', '표면경화시간': '35분', '완전경화시간': '7–14일', '비중': '1.52', '경도 (Shore A)': '31', '최대 인장강도': '17 kg/cm²', '최대 신율': '620%', '사용 온도': '-50 ~ 150°C', '규격': 'KS F 4910 25LM' },
+    image: img('1001-sausage-600.jpg'),
   },
   {
     slug: 'dowsil-double-n', name: 'DOWSIL™ Double-N', category: 'building',
@@ -149,6 +150,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['곰팡이·세균 저항, 정균성', '수축·균열·건조 없이 영구 유연', 'FDA 21 CFR 177.2600 적합', 'ISO 22196 (MRSA·대장균·살모넬라), ISO 846 시험 — 균에 민감하지 않음'],
     applications: ['샤워·욕조·싱크·소변기·월풀 주변 실링', '욕실 설비 주변', '냉동·냉장 설비, 냉장실 실링', '타일 줄눈'],
     specs: { '제품 유형': '아세톡시 경화 실리콘', '시공 온도': '+5 ~ +40°C', '비중': '1.01', 'Skin-over time': '15분', '경도 (Shore A)': '19', '최대 인장강도': '1.7 MPa', '최대 신율': '600%', '움직임 허용치': '±20%', '규격': 'ISO 11600-F-20LM' },
+    image: img('786-cartridge-431.jpg'),
   },
   {
     slug: 'dowsil-se-5088', name: 'DOWSIL™ SE 5088', category: 'gmp',
@@ -158,6 +160,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['상온 경화 RTV, 혼합 불필요', '실리콘 휘발분 최소화', '우수한 내후성 · 무프라이머 접착', '비흐름성 (Non flow)'],
     applications: ['클린룸 조인트 실링', '클린룸 패널 접착'],
     specs: { '제품 유형': '1액형 중성 경화 실리콘', '색상': 'White, Ivory, Light Gray', 'Tack free time': '22분 (JIS A 1439)', '비중': '1.41', '경도 (JIS A)': '19', '최대 인장강도': '1.74 MPa', '최대 신율': '534%', '저분자 실록산 (D4–D10)': '24 ppm', '권장 프라이머': 'DOWSIL™ Primer-D3(RF) (유리·금속·도장 금속)' },
+    image: img('se-5088-cartridge-600.jpg'),
   },
 
   // ───────── 3. 토목용 ─────────
@@ -169,6 +172,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['속경화, 사용 간편, 편리한 폐기 팩', '초저모듈러스 · 완전 탄성', '높은 움직임 허용 (+100/-50%)', '불규칙한 표면 실링, 자기 접착', '전 온도 시공 가능 (all-temperature gunnability)'],
     applications: ['교량·고속도로 신축이음 (콘크리트/강재)', '신설 및 보수 공사', '불규칙·경미한 박락 조인트'],
     specs: { '제품 유형': '2액형 실리콘 고무 (자기수평)', '혼합 비율': '1:1 (부피)', '색상': 'Part A 진회색 / Part B 흰색', 'Skin-over time': '12분 (25°C)', 'Tack-free time': '50분', '조인트 신율': '1200% 초과', '움직임 허용치': '+100/-50%', '규격': 'ASTM C920 Type M Grade P Class 100/50 Use T2, NT, M' },
+    image: img('902-rcs-pail-600.jpg'),
   },
   {
     slug: 'dowsil-888', name: 'DOWSIL™ 888', category: 'civil',
@@ -178,6 +182,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['-20~120°F(약 -29~49°C)에서 압출 가능', '움직임 허용치 100% 신장 / 50% 압축', '저모듈러스 · 내후/내UV', '단기 연료 노출 저항', '콘크리트에 프라이머 불필요 (표면은 청결·건조·무서리)', '표면경화 1시간 이내'],
     applications: ['콘크리트-콘크리트 포장 조인트', '신설/보수 공사', '경미한 박락 조인트'],
     specs: { '제품 유형': '1액형 비흐름성 실리콘', '색상': 'Gray', '비중': '1.48', '최대 신율': '1000% 이상 (Die C)', 'Shore A 경도': '15', '반발 탄성': '77%', '움직임 허용치': '+100/-50% (10 cycles)', '가속 내후성': '5,000시간 통과' },
+    image: img('888-sausage-600.jpg'),
   },
   {
     slug: 'dowsil-890-sl', name: 'DOWSIL™ 890-SL', category: 'civil',
@@ -199,6 +204,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['85°C까지 내열 — 복층유리 내부 흐름/유출 없음', '무용제 1액형 1차 씰재', '유리 및 다양한 웜엣지/일반 스페이서에 우수한 접착', '모든 Dow 파사드 실리콘과 상응성', 'EN 1279 기준 가스 충진 복층유리 적합'],
     applications: ['복층유리 1차 씰링 (이중/삼중, 플라스틱·금속 스페이서)', '주거용 창호 및 상업용 파사드 복층유리'],
     specs: { '제품 유형': '폴리이소부틸렌, 비반응성·무용제', '색상': 'Black', '비중': '1.24', '적용 온도': '125–145°C (가열식 부틸 도포기)', '수증기 투과': '0.05 g/m²/24h (2.0mm 필름)', '휘발분': '0.001% 이하', '용융률 (MVR)': '8–10.5 cm³/10min' },
+    image: img('335-butyl-600.jpg'),
   },
   {
     slug: 'dowsil-939', name: 'DOWSIL™ 939', category: 'igu',
@@ -208,6 +214,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['유리에 프라이머 없이 우수한 접착', '비흐름성 — 자동화 글레이징 가능', '우수한 사용 수명 안정성', '경화 속도 조절 (스냅타임 30–50분)', '비부식성 부산물'],
     applications: ['주거용 복층유리 2차 씰링'],
     specs: { '제품 유형': '2액형 실리콘 (중성 경화)', '혼합 비율': '13:1 (주제:경화제, 중량비)', '색상': '주제 백색 / 경화제 흑색 / 혼합 흑색', '가사시간': '40분', '경도 (Shore A)': '52', '최대 인장강도': '2.7 N/mm²', '최대 신율': '250%', '접착 시험 (유리/알루미늄)': '응집파괴 100%' },
+    image: img('939-drums-600.jpg'),
   },
   {
     slug: 'dowsil-982', name: 'DOWSIL™ 982', category: 'igu',
@@ -217,6 +224,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['구조적 지지력 (구조 글레이징용 복층유리 사용 시 적용 형태는 복층유리 제조자가 결정)', '유리·알루미늄·갈바나이징 철판에 프라이머 없이 접착', '비흐름성 — 자동화 글레이징 가능', '경화 시간 조절 가능 (30–70분)', '비부식성 경화 부산물'],
     applications: ['복층유리 2차 씰링', '구조 글레이징용 복층유리 2차 씰링'],
     specs: { '제품 유형': '2액형 실리콘', '혼합 비율': '12:1 (중량비)', '색상': '주제 백색(비중 1.37) / 경화제 흑색(비중 1.02)', '가사시간': '35분', '경도 (Shore A)': '42', '최대 인장강도': '16.5 kg/cm²', '최대 신율': '240%', '유통 기간': '12개월', '박리 접착성': '유리·알루미늄 응집파괴 100%' },
+    image: img('982-drum-600.jpg'),
   },
   {
     slug: 'dowsil-983', name: 'DOWSIL™ 983', category: 'igu',
@@ -226,6 +234,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['구조 및 웨더실 용도 승인', 'ASTM C719 Class 25 (G, A, O) · ASTM C1184 만족', '저VOC (혼합 시 18 g/L 미만)', '유리·알로다인·아노다이징 알루미늄에 우수한 접착 (Kynar 등은 Primer-C OS 권장)'],
     applications: ['공장 글레이징', '커튼월 유닛 생산'],
     specs: { '제품 유형': '2액형 중성 RTV 실리콘', '혼합 비율': '9:1 (부피)', '색상': 'Base 백색 / Catalyst 흑색 또는 회색', '가사시간': '10–25분', 'Unit handling time': '4–24시간 (24°C)', '경도 (Shore A)': '30–40 (1일) / 35–45 (7일)', '최대 인장강도': '2.0 MPa (7일)', '움직임 허용치': '±25%' },
+    image: img('983-curing-agent-600.jpg'),
   },
   {
     slug: 'dowsil-993', name: 'DOWSIL™ 993', category: 'igu',
@@ -246,6 +255,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['저모듈러스, 비흐름성, 중성·무할로겐 경화', '무프라이머로 다공성/비다공성 기재에 우수한 접착', 'ISO 11600-F&G-25LM, 움직임 ±50%', 'EN 13501-1 B,s2,d0 방화 반응 등급', 'EN 1366-4 / BS 476-22 선형 조인트 내화 시험, 관통부 BS 476-22', 'CE 마킹 (EAD 350141-00-1106), UAE Civil Defense 승인, 철도 EN 45545-2 승인'],
     applications: ['내화 벽체의 수직/수평 선형 익스팬션 조인트', '배관·케이블 관통부 실링'],
     specs: { '제품 유형': '1액형 내화 중성 실리콘', '비중': '1.48', '가사시간': '15분', 'Tack-free time': '1.5시간', '경도 (Shore A)': '26', '최대 인장강도': '0.57 MPa', '최대 신율': '345%', '움직임 허용치': '±50%', '내화 성능': '최대 240분 (조인트 구성에 따름)', '포장': '310ml 카트리지, 12개/박스' },
+    image: img('firestop-700-cartridge-600.jpg'),
   },
   {
     slug: 'dowsil-rtv-hi-temp', name: 'DOWSIL™ Hi-Temp', category: 'special',
@@ -255,6 +265,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['연속 260°C / 단속 288°C 고온 사용', '유연성 유지 — 취화·균열·수축 없음', '빠른 경화, 높은 강도', '재사용 가능한 노즐 포장'],
     applications: ['연돌 백필터', '가열로·점검구·플랜지 배관 이음', '가스 기기 연도, 오븐 도어, 오븐 창', '고온 실링·접착이 필요한 부위'],
     specs: { '제품 유형': '1액형 아세톡시 RTV 실리콘', 'Tooling time': '5–10분', 'Tack-free time': '15–20분', '시공 온도': '-29 ~ 50°C', '경도 (Shore A)': '30', '최대 인장강도': '325 psi', '최대 신율': '500%', '사용 온도': '-40 ~ 260°C (연속)', '움직임 허용치': '±25%', 'VOC': '33/34 g/L' },
+    image: img('rtv-hi-temp-736-600.jpg'),
   },
   {
     slug: 'dowsil-allguard', name: 'DOWSIL™ ALLGUARD', category: 'special',
@@ -264,6 +275,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['장기 방수 보호', '햇빛·비·눈·극한 온도에서도 방수 성능 유지', '100% 수성, 3종 틴트 베이스(유통처 조색)', '곰팡이 저항 (No growth), 동결/해동 저항, 풍우(Wind driven rain) 통과', '기재에 따라 DOWSIL™ ALLGUARD Primer 필요'],
     applications: ['콘크리트 블록·벽돌·스터코 외벽 방수', '현장타설/프리캐스트 콘크리트', 'EIFS 및 기존 도장 조적 기재'],
     specs: { '제품 유형': '1액형 수성 실리콘 엘라스토머 코팅', '고형분': '58.6 wt% / 50.1 vol%', '비중': '1.155 kg/L', 'VOC': '50 g/L 미만', '경도 (Shore A)': '38', '인장강도': '1.00 MPa 이상', '신율': '600%', '투습도': '43.2 perms' },
+    image: img('allguard-pail-600.jpg'),
   },
   {
     slug: 'dowsil-123', name: 'DOWSIL™ 123', category: 'special',
@@ -273,6 +285,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['+200/-75% 고이동 / 고전단 움직임 대응', '극저모듈러스 — 습식 실란트의 대안', 'SWRI 검증 성능', 'DOWSIL™ ALLGUARD 코팅과 함께 완전한 웨더실 시스템 구성', '맞춤 디자인 및 무광(EIFS 유사) 마감 가능'],
     applications: ['파손된 웨더프루핑 조인트 보수', 'EIFS 조인트 및 창 주변 복구 조인트', '고성능 창·커튼월 알루미늄 스플라이스', '파라펫·코핑 조인트, 누수 트랜지션, 스카이라이트 누수'],
     specs: { '제품 유형': '프리폼 실리콘 엘라스토머 압출품', '색상': 'Black, White, Grey, Bronze, Limestone, Sandstone (맞춤 가능)', '경도 (Shore A)': '25', '인장강도': '2.07 MPa', '신율': '500%', '인열강도 (Die B)': '17.5 kN/m', '움직임 허용치': '+200/-75%', '접착 실란트': 'DOWSIL™ 791 / 795 (동일 색상)' },
+    image: img('123-strips-600.jpg'),
   },
   {
     slug: 'dowsil-375', name: 'DOWSIL™ 375', category: 'special',
@@ -282,6 +295,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['보이지 않는 고정으로 전면 유리의 미관 확보', '우수한 유동성, 효율적·신속한 시공', '매우 단단한 고무로 경화 — 하중 시 패널 처짐 최소화', '긴 가사시간, 상온 초고속 경화', '무용제, 경량 용기'],
     applications: ['U-프로파일 글라스 난간 유리 임베딩', '실내외 적용'],
     specs: { '제품 유형': '2액형 폴리우레탄 (충전 폴리올 + 폴리머릭 이소시아네이트)', '혼합 비율': '100:19 (중량) / 100:25 (부피)', '색상': 'Part A Cream / Part B Brown', '혼합 점도': '5,000 mPa·s (23°C)', '가사시간': '60분', '경화시간': '7시간 (20°C)', '경도 (Shore D)': '70', '인장강도': '17 MPa', '신율': '11%' },
+    image: img('375-pails-600.jpg'),
   },
   {
     slug: 'dowsil-650-plus', name: 'DOWSIL™ 650+', category: 'special',
@@ -291,6 +305,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['잔여물 없이 쉽게 박리 (7일 경화 후)', '기재 손상·침투 없음', '일반 DOWSIL 글레이징 실란트와 상응성', '저VOC, APEO 프리', '장기 UV·풍화 노출 후에도 우수한 박리성', '최대 18개월 보호 (조건에 따름)'],
     applications: ['커튼월·파사드 유리/금속 임시 보호', '플라스틱 등 다양한 기재 임시 보호'],
     specs: { '제품 유형': '수성 아크릴 박리형 코팅', '외관': '반투명 청색 액체', '비중 (습윤)': '1.05 g/ml', 'MFFT': '8.5°C (±2)', '점도': '6,000 cps 미만', 'VOC': '6 g/L (SCAQMD)', '도포 두께 (건조 막)': '100 µm (붓/롤러/스프레이)' },
+    image: img('650-plus-drum-600.jpg'),
   },
 
   // ───────── 6. 프라이머 ─────────
@@ -302,6 +317,7 @@ export const CATALOG: CatalogProduct[] = [
     features: ['비오염성 실란 프라이머', '수분 경화', 'PVF2(Kynar)계 도료 및 폴리에스터 분체도장에 접착 촉진'],
     applications: ['DOWSIL™ 983 / 993 / 993N 구조 글레이징 실란트의 PVF2·Kynar계 도장 접착 촉진 (커튼월 전용)'],
     specs: { '제품 유형': '용제형 실란 프라이머', '색상': 'Clear', '비중': '0.90', '인화점': '-4°C (25°F) — 매우 인화성', 'VOC': '855 g/L', '도포량': '비다공성 기재 약 800 ft²/gal', '건조 시간': '상온 20분 / 5°C 1시간' },
+    image: img('primer-c-can-600.jpg'),
   },
   {
     slug: 'dowsil-allguard-primer', name: 'DOWSIL™ ALLGUARD Primer', category: 'primer',
