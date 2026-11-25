@@ -110,8 +110,8 @@ export const txCss = `
 .tx-roles .tx-chip:hover{border-color:var(--tx-fg)}
 .tx-pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:1.5rem;margin:2.2rem 0 1rem}
 .tx-pcard{background:#fff;border:1px solid var(--tx-line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.tx-pcard .tx-pimg{display:block;height:170px;background:#f0f1f4}
-.tx-pcard img{width:100%;height:100%;object-fit:contain;padding:12px}
+.tx-pcard .tx-pimg{display:block;height:190px;background:#fff;border-bottom:1px solid var(--tx-line)}
+.tx-pcard img{width:100%;height:100%;object-fit:contain;padding:14px;mix-blend-mode:multiply;border-radius:22px}
 .tx-pcard .tx-pbody{padding:1.1rem 1.2rem .6rem;flex:1}
 .tx-pcard h3{font-size:1.05rem;margin:0 0 .3rem;letter-spacing:-.02em}
 .tx-pcard h3 a{color:var(--tx-fg);text-decoration:none}

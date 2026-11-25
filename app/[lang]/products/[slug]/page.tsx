@@ -330,9 +330,9 @@ export default async function ProductDetailPage({
           <div className="row g-5 align-items-start">
             {/* Image */}
             <div className="col-lg-5">
-              <div className="rounded-4 overflow-hidden bg-light d-flex align-items-center justify-content-center" style={{ aspectRatio: '1/1' }}>
+              <div className="rounded-4 overflow-hidden d-flex align-items-center justify-content-center" style={{ aspectRatio: '1/1', background: '#fff', border: '1px solid rgba(22,24,28,.14)' }}>
                 {product.image_url ? (
-                  <img src={product.image_url} alt={product.name_ko} className="w-100 h-100 object-fit-cover" />
+                  <img src={product.image_url} alt={product.name_ko} className="w-100 h-100" style={{ objectFit: 'contain', padding: 16, mixBlendMode: 'multiply', borderRadius: 28 }} />
                 ) : (
                   <div className="text-center p-5">
                     <img src="/assets/img/logo/Dow_Chemical_Company_logo.svg" alt="Dow Chemical" style={{ width: '60%', opacity: 0.4 }} />
