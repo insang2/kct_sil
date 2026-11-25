@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { CATALOG } from '@/lib/products-catalog';
 import { PAGES as TECH_PAGES } from '@/lib/tech-manual';
 import { IPAGES } from '@/lib/industrial/pages';
+import { SERIES } from '@/lib/series/config';
 
 const LANGS = ['ko', 'en', 'ja'] as const;
 // 한국어/영문 본문만 있는 섹션(제품·기술정보)은 ja를 제외 — ja 페이지는 ko/en으로 canonical 통합
@@ -94,7 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   // Technical information (hub + pages)
-  const techPaths = ['technical', ...TECH_PAGES.map((p) => `technical/${p.slug}`), 'technical/industrial', ...IPAGES.map((p) => `technical/industrial/${p.slug}`)];
+  const techPaths = ['technical', ...TECH_PAGES.map((p) => `technical/${p.slug}`), 'technical/industrial', ...IPAGES.map((p) => `technical/industrial/${p.slug}`), ...Object.values(SERIES).flatMap((x) => [`technical/${x.key}`, ...x.pages.map((p) => `technical/${x.key}/${p.slug}`)])];
   const technicalPages = KO_EN.flatMap((lang) =>
     techPaths.map((path) => ({
       url: `${baseUrl}/${lang}/${path}`,

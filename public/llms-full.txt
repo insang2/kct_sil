@@ -176,6 +176,743 @@ Product safety information required for safe use is not included in the selectio
 Q: Where can I get the safety data sheet (SDS) for DOWSIL™ products?
 A: From the Dow website at consumer.dow.com, from your Dow sales application engineer or distributor, or by calling Dow customer service. KCT can also provide TDS and SDS on request (sales@kconstrade.com).
 
+# Silicone Basics Training: Chemistry, Manufacturing, Properties and Applications (full text)
+Source: 다우코닝 실리콘 교육자료 「제 2 장 실리콘 일반」(한국어, 23쪽) — Dow Corning Korea / 한국어 원문 수록 및 영어 번역: 한국건설트레이딩(KCT) / 보충: 공개 문헌 (아래 참고 자료 페이지)
+
+## What Is Silicone? Overview, History and Nomenclature
+https://kconstrade.com/en/technical/basics/overview-history
+
+Key facts: Silicone is a polymer material whose inorganic Si–O backbone comes from silicon (Si), obtained from sand (SiO₂), the second most abundant material on Earth. The term “Silicone” was first coined by F. Kipping (1899–1944); Dow Corning, the first silicone company, was founded in 1943, and the first silicone product was DC-4 grease.
+
+### 1. Silicone overview
+[Figure] Space-filling model of a linear polydimethylsiloxane molecule
+[Figure] Ball-and-stick model of linear polydimethylsiloxane
+
+현재 산업적으로 사용되고 있는 재료는 크게, 무기 재료, 금속 재료 그리고 고분자 재료의 세 가지 형태이다. 이 중 고분자 재료는 그 제품의 종류가 가장 다양하며 새로운 합성 기술로 신제품이 끊임없이 개발되어지고 있다. 그 중에 실리콘 재료는 그 역사가 상대적으로 그리 길지는 않다. 1960년대에는 꿈의 재료로 널리 알려지기 시작했다. 현재에는 거의 모든 산업에서 비중 있는 역할을 하는 재료로 사용되고 있다. 아직은 그 사용 규모나, 응용 분야에 있어서 많은 발전을 계속할 수 있는 재료라 할 수 있다. 지구상에서 두 번째로 풍부하게 존재하는 원료인 SiO2를 이용한 실리콘 재료는 최근 환경 문제가 대두되고 있는 시점에서 많은 유기 고분자 재료를 대체하고 있어 그 환경 친화성을 증명해 주고 있다.
+
+### 실리콘의 역사
+
+- 1824년: J.Berzelius가 Quartz으로부터 Si추출, Chlorine과 반응시켜 SiCl4합성.
+- 1863년: Friedel & Crafts가 Si-C결합을 최초로 합성.
+- 1899-1944년: F.Kipping이 Silicone에 대해 체계적으로 연구, 발표. “Silicone”이라 최초 명명.
+- 1930년: F.Hyde (Corning Glass Co)는 Silicone을 상업적으로 연구.
+- 1943년: 최초의 실리콘 회사, Dow Corning Corp., 가 설립됨.
+- 1944년: GE Silicone 설립됨.
+- 최초의 Silicone 제품은 DC-4 Grease이며, 세계 2차 대전 중 군사적 수요에 의해 급신장.
+
+### Nomenclature
+실리콘의 구성 원소 중 Si (Silicon)는 모래 즉, 이산화 규소 (SiO2)로부터 얻어진다. Si 원소는 주기율표에서 IVB족에 속하는 원소로서, 원소 번호: 14, 질량: 28.0855 인 무기 원소이다. 실리콘 화학에서 사용되는 명칭과 그 의미에 대해 살펴 보면 다음과 같다.
+
+Term | Meaning
+Silica | SiO₂
+Silicon | Pure Si metal; 28% of the Earth’s crust
+Silane (Organosilane) | Si–R₄
+Silicate | Complex of Si, O and other metals
+Siloxane (Organopolysiloxane) | Si–O₁⸝₂₋₂
+Fluid (Oil) | Linear polymer — PDMS (polydimethylsiloxane); Functional Fluid: PDMS with functional groups bonded (–OH, –CH=CH₂, –NH₂, –C₆H₅, –CₙH₂ₙCH₃, etc.)
+Gum | Ultra-high-molecular-weight linear polymer
+Resin | Polymer with a three-dimensional siloxane structure
+Elastomer (RTV, HCR, …) | Silane/siloxane crosslinked into a network
+
+Q: When and by whom was the word “silicone” coined?
+A: F. Kipping, who studied silicones systematically between 1899 and 1944, first named them “Silicone”.
+
+Q: What was the first silicone product?
+A: DC-4 grease, which grew rapidly because of military demand during World War II.
+
+Q: What is the difference between silica, silicon, silane and siloxane?
+A: Silica is SiO₂; silicon is pure Si metal (28% of the Earth’s crust); silane is Si–R₄ (organosilane); siloxane is the Si–O organopolysiloxane polymer.
+
+## How Silicone Is Made: Direct Process and Synthesis Mechanism
+https://kconstrade.com/en/technical/basics/manufacturing-process
+
+Key facts: Silicone is industrially produced by the Direct Process (the Grignard process is the alternative): SiO₂ is reduced to Si metal (SiO₂ + 2C → Si + 2CO), reacted with CH₃Cl to give (CH₃)₂SiCl₂ and related chlorosilanes, hydrolyzed to silanediols with recycled HCl, condensed into a polymer chain and end-blocked.
+
+### 2. Manufacturing methods
+실리콘의 제조 방법에는 크게 Direct Process와 Grignard Process가 있다. 공업적으로는 대량 생산에 적합한 Direct Process가 사용되고 있다. 여기서는 주로 Direct Process에 대해 설명한다.
+
+### 2.1 전반적인 제조 방법
+
+실리콘 제품의 전반적인 제조 공정을 도식화하면 다음과 같다.
+
+[Figure] 실리콘 제품의 제조 공정도 (SiO2(모래) → Si 금속 → Chlorosilane 화합물 → 분별 → 가수분해 → 중합/치환 → Fluid·Gum·Resin·기능성 Fluid·Silane → 가공 → 오일·에멀젼·컴파운드·디스퍼젼·라텍스·RTV·LSR·HCR / 기타 제품 형태: Flake(부정형 고체입자), Granule/Pellet, Powder)
+
+### 2.2 실리콘의 합성
+
+Silicone의 기본적인 합성 메커니즘은 다음과 같다.
+
+[Figure] 실리콘 제품의 기본적인 합성 메커니즘: Reduction SiO2 + 2C → Si + 2CO; 2CH3Cl → (CH3)2SiCl2 외 MeHSiCl2, Me2HSiCl, Me3SiCl; Hydrolysis 2H2O → (CH3)2Si(OH)2 + 2HCl (MeOH와 반응하여 CH3Cl 제조에 사용되어 재활용됨); Condensation; End Blocking → Silicone Polymer
+
+Q: Which process is used industrially to produce silicone?
+A: The Direct Process, which suits mass production, rather than the Grignard Process.
+
+Q: What is the first reaction in silicone production?
+A: Reduction of SiO₂ (sand) with carbon to silicon metal: SiO₂ + 2C → Si + 2CO.
+
+Q: What happens to the HCl formed in hydrolysis?
+A: It is reacted with methanol (MeOH) to make CH₃Cl, so it is recycled.
+
+## Silane and Silicone Resin Production
+https://kconstrade.com/en/technical/basics/silane-and-resin
+
+Key facts: Si metal (98% pure) is produced by SiO₂ + 2C → Si + 2CO at 2600°C. In the Direct Process with MeCl, dimethyldichlorosilane (Me₂SiCl₂) is the main product at 70–90%. Silicone resin has a three-dimensional network and is made by hydrolysis of trichlorosilane (RSiCl₃ → RSiO₃/₂, silsesquioxane).
+
+### 2.3 Manufacturing by product
+실리콘 제품의 형태에 따른 분류는 이전에 기술하였다. 그리고 관능기에 따라 분류하면 다음과 같은 제품들이 있다. 이는 유기화학의 관능기와 거의 유사하다 - Alkyl기, Aryl기, Allyl기, Alkenyl, Amido, Amino, Fluoroalkyl, Halide, Epoxy, Carboxy, Hydroxy, Alkoxy, Methyl Hydrogen 등. 그리고 Si를 포함하는 Copolymer에는 다음과 같은 것들이 있다. Siloxane-urethane copolymer, Siloxane-polycarbonate copolymer, Siloxane-polyester copolymer, Siloxane-polyimide copolymer, Acryloxymethylsiloxane, p-Styrylsiloxane, Polysilformal (Silicone과 Aldehyde와의 Copolymer) 등. 여기서는 각 실리콘 제품의 제조 방법에 대해서 알아보겠다.
+
+### 1. Silane
+실란의 제조 이전에, 실리콘 합성의 가장 기본이 되는 Si (Silicon) 금속의 제조 과정은 다음과 같다. SiO2 + 2C → Si + 2CO (2600°C). 여기서 Silicon은 98% 순수한 제련된 금속이다. 위에서 제조된 Si 금속을 이용하여 Silane을 만드는데, Silane의 일반적인 제조 방법인 Direct Process에 대한 설명이다. 두 가지 방법이 있다.
+
+- 1) Si(s) + HCl(g) → HSiCl3 + SiCl4 + H2 + DPR
+- 2) Si(s) + MeCl(g) → MexSiCl(4-x) + by-products
+
+#1)의 방법으로 제조된 HSiCl3나 SiCl4는 각각 Resin이나 Silica 또는 그 외 특수한 제품을 만드는 데 원료로 사용된다. 다음은 Direct Process 중 상기 #2) 반응에 의해 Silane 제조시 생성된 Silane의 종류와 함량 그리고 B.P에 대해 정리한 내용이다.
+
+Main product | Name | Content (%) | B.P., °C / 760 mm
+Me₂SiCl₂ | dimethyldichlorosilane | 70–90 | 70.2
+MeSiCl₃ | methyltrichlorosilane | 3–15 | 66.1
+Me₃SiCl | trimethylchlorosilane | 0–3 | 57.3
+MeHSiCl₂ | methyldichlorosilane | 3–20 | 40.4
+Me₂HSiCl | dimethylchlorosilane | 1–10 | 35.4
+Me₄Si | tetramethylsilane | 0.1 | 26.2
+Product content depends on the catalyst, reaction conditions and reactants used.
+
+### 2. Resin
+Resin은 삼차원적 망상 구조를 가지므로, 반응기가 세 개인 Trichlorosilane의 가수분해로부터 제조된다. RSiCl3 + H2O → [RSi(OH)3] + HCl → (RSiO3/2)n  Silicone Resin (= Silsesquioxane). 예, Phenyl Resin, H-Resin.
+
+[Figure] 실리콘 레진의 분자 구조 (Silicone Resin의 Molecular Structure)
+
+Q: What are the main products of the Direct Process with MeCl?
+A: Dimethyldichlorosilane (Me₂SiCl₂) at 70–90%, with methyltrichlorosilane 3–15%, methyldichlorosilane 3–20%, dimethylchlorosilane 1–10%, trimethylchlorosilane 0–3% and tetramethylsilane 0.1%.
+
+Q: How is silicone resin made?
+A: By hydrolyzing trichlorosilane (RSiCl₃), which has three reactive groups and therefore forms a three-dimensional network, (RSiO₃/₂)ₙ, also called silsesquioxane.
+
+## Silicone Polymer and Emulsion Production
+https://kconstrade.com/en/technical/basics/polymer-and-emulsion
+
+Key facts: Silicone polymers (fluids and gums) are made in seven steps: define structure, choose catalyst, choose endblocker, react, neutralize, filter and strip. Base catalysts (KOH, Bu₄P⁺ silanolate, Me₄NOH) or acid catalysts (H₂SO₄, triflic acid, clays, Amberlyst) drive condensation and equilibration. Silicone emulsions are made either mechanically or by emulsion polymerization, where the endblocker ratio sets the polymer molecular weight.
+
+### 3. Polymer
+실리콘 산업에서 가장 많이 사용되는 형태의 제품으로 여러 형태의 가공품의 원료로도 많이 사용되며, 타 제품과 반응 또는 단순 혼합의 원료로도 사용되며, 단독으로 사용되는 경우도 있다. 여기서는 흐름성이 있는 Fluid와 초고분자량의 Gum을 다 포함한다. Polymer 제조 단계는 일반적으로 다음과 같다.
+
+- 1) 제조하고자 하는 Polymer의 구조를 정한다.
+- 2) 촉매를 정한다.
+- 3) Endblocker 선정, Acid: MM. Base: MD2M, MDM.
+- 4) 원료를 투입하여 일정 온도 조건에서 반응시킴
+- 5) 촉매의 중화 (Neutralization)
+- 6) 여과 (Filtration)
+- 7) 증류 (Stripping)
+
+참고로 촉매 선택시 다음 사항을 고려하여야 한다. A. Base를 사용해야 되는 Polymer: PDMS, Trifluoro, Phenyl, Vinyl, amino polymer. B. Acid을 사용해야 되는 Polymer: PDMS, SiH, Carboxylic, Mercapto polymer. 축합 반응 및 평형 반응용 반응 촉매에는 다음과 같은 것들이 사용된다. 염기성 촉매: KOH, Bu4P+ Silanoate, Me4NOH. 산 촉매: H2SO4, Triflic Acid, Filtrol (H2SO4 Clay), Tonsil (HCl Clay), Amberlyst (H+ Resins).
+
+실리콘 모노머에는 선형 구조와 환형 구조의 두 가지가 있다. 그들을 중합하여 Polymer를 생성시키는 반응에는, 축합 반응 (Condensation Reaction), 평형 반응 (Equilibration Reaction)이 있다. 먼저 축합 반응에 대해 알아보자. 축합 반응에 의해 폴리머를 중합하기 위해서는 Chlorosilane의 가수분해 공정을 먼저 거쳐야 한다. Monochlorosilane은 주로 Endblocker로 사용되며, Silane 중에서는 Dichlorosilane이 가수분해되어 폴리머의 중합 원료로 사용된다. 다음은 폴리머 제조시 주원료가 되는 Dichlorosilane의 가수분해 반응을 정리한 것이다.
+
+[Figure] Dichlorosilane의 가수분해 (2H2O, -H2O → trisiloxanediol, tetrasiloxanediol). 생성된 Monomer들은 축합 반응을 통해 n HO-(Me2SiO)m-H → HO-(Me2SiO)nm-H 의 Polymer가 된다.
+
+### 4. Emulsion
+에멀젼이라는 것은 서로 섞이지 않는 두 상을 계면활성제를 첨가하여, Shear를 가하여 일정 크기 이하의 입자를 가지는 안정한 분산상을 말한다. 실리콘 에멀젼에는 제조 방법에 따라 두 종류가 있다.
+
+### 1) 기계적인 유화 제품
+
+Silicone Polymer를 유화제를 사용하여 물에 안정하게 분산시켜 놓는 방법이다. 유화제로는 비이온계, 양이온계, 음이온계 및 양쪽성 이온계의 유화제가 사용되며, 섬유 산업에서는 이온성 차이 때문에 많은 문제점이 있을 수 있으므로, 특별한 목적이 있거나 안정성이 우수해야 될 경우 및 이온성이 필요한 경우 외에는 비이온계 계면활성제가 사용된다. 유화 장비로는 일반 단순 Mixer, Colloid Mill, Homogenizer, Sonolater, High Shear Mixer 등이 사용된다.
+
+### 2) 유화 중합 제품
+
+원료 (D4 등의 cyclic 제품)를 먼저 유화시키고, 형성된 Micelle 내에서 중합을 시켜 고분자량의 에멀젼을 얻는 방법으로, 계면활성제는 비이온 계면활성제와 중합 촉매도 함께 하는 이온성을 띄는 계면활성제의 두 가지를 사용하는 경우가 대부분이다. 음이온 계면활성제 예, R-C6H4-SO3H. 유화 중합시, Endblocker의 비율이 에멀젼 내의 polymer의 분자량을 결정한다.
+
+Q: What are the steps to manufacture a silicone polymer?
+A: Define the structure, select the catalyst, select the endblocker (acid: MM; base: MD₂M, MDM), react at a set temperature, neutralize the catalyst, filter and strip.
+
+Q: What determines the molecular weight of a silicone emulsion polymer?
+A: In emulsion polymerization the ratio of endblocker determines the polymer molecular weight.
+
+Q: Which surfactants are preferred in textile silicone emulsions?
+A: Nonionic surfactants, because ionic differences can cause problems in textiles, unless a special purpose, high stability or ionicity is required.
+
+## Silicone Rubber: LSR, RTV, SWBE, Dispersion, HCR and Silica
+https://kconstrade.com/en/technical/basics/silicone-rubber
+
+Key facts: Silicone rubber means LSR, RTV and HCR moulded rubber. LSR is usually two-part (base polymer with vinyl groups + catalyst + filler + adhesion promoter in Part A; crosslinker in Part B); RTV is usually one-part with hydroxy-terminated polymer, filler, crosslinker, adhesion promoter and catalyst; HCR is milled from ultra-high-molecular-weight gum and silica. Silica (fumed, precipitated, treated) reinforces the rubber.
+
+### 5. Silicone rubber
+실리콘 제품을 언급할 때 일반적으로 고무라 하면, LSR, RTV 및 HCR로 성형된 고무를 말한다. 여기서는 경화되어 고무의 물성을 가지는 SWBE와 Dispersion도 함께 언급한다.
+
+### i) LSR (Liquid Silicone Rubber)
+보통 2액형의 제품으로 만들어진다. 한 부분은 주폴리머와 촉매 그리고 첨가제를 함유하며, 다른 한 부분은 가교제와 일부 첨가제를 함유한다. 원료의 종류에 따라 여러 가지 물성의 제품을 얻을 수 있다. 제조 방법은 열을 가하면서 고전단력으로 교반하여 제조한다. 주제는 주로 Vinyl기를 가지는 polymer이다.
+
+[Figure] I. Raw Materials in LSR — Part A: 1. Base Polymer (vinyl-terminated), 2. Catalyst (Pt compound), 3. Filler, 4. Adhesion Promoter, 5. Additive; Part B: 1. Base Polymer, 2. Crosslinker (SiH)
+
+### ii) RTV (Room Temperature Vulcanizing)
+보통 1액형 제품으로서 한 제품 내에, 주제, 가교제, 접착 증진제, 촉매 등을 포함하고 있다. 제조는 고전단력으로 교반하여 제조한다. 주제는 주로 Hydroxy기를 가지는 polymer이다.
+
+[Figure] I. Raw Materials in RTV — 1. Dimethylpolysiloxane, -OH terminated; 2. Filler; 3. Crosslinker (R–Si–X₃); 4. Additive; 5. Special Additive; 6. Catalyst
+
+### iii) SWBE and iv) Dispersion
+iii) SWBE (Silicone Water Based Elastomer): 에멀젼의 제조 방법 중, 유화 중합 방법과 동일하다. 현재까지의 기술로 만들어진 수용성 코팅제는 그 물성이 용제형이나, 100% Silicone Rubber 제품보다는 기계적 물성이 약하다.
+
+iv) Dispersion (Solvent based Dispersion): 이 형태의 Rubber는 보통 3액형의 제품이다. 초고분자량의 실리콘 Gum을 용제 (주로 Toluene)에 녹여 놓은 주제와, 가교제와 촉매의 3액형 제품이 대부분이다. 사용되는 주원료는 주로, Hydroxy기나, Vinyl기를 가지는 원료이다.
+
+### v) HCR and 6. Silica
+v) HCR (High Consistency Rubber): 초고분자량의 Silicone gum과 Silica 등을 milling하여 제조한다. 주로 2액형으로 주제와 경화제로 이루어진다.
+
+6. 기타 — Silica: 실리카의 종류에는 Fumed silica, Precipitated Silica, Treated Silica 등이 있다. Silica는 반응기가 네 개인 Tetrachlorosilane으로부터 만들어진다. SiCl4 + H2O → (SiO4/2)n (Silica). Silica는 실리콘 고무 내에서 충진제 역할을 하여 기계적 물성을 강화시킨다. Flake, Pellet에 대해서는 생략한다.
+
+[Figure] SiCl₄ + H₂O → (SiO₄/₂)ₙ (silica)
+[Figure] Silica particles in a silicone polymer network
+
+Q: What is the difference between LSR and RTV silicone rubber?
+A: LSR is usually a two-part product (vinyl-functional base with Pt catalyst; SiH crosslinker in the second part) made by stirring under heat and high shear; RTV is usually a one-part product with a hydroxy-terminated base, crosslinker, adhesion promoter and catalyst that cures at room temperature.
+
+Q: How is HCR made?
+A: By milling ultra-high-molecular-weight silicone gum with silica; it is mainly supplied as two parts, base and curing agent.
+
+Q: What does silica do in silicone rubber?
+A: It acts as a filler that strengthens the mechanical properties; types are fumed, precipitated and treated silica.
+
+## Characteristics of the Silicone Molecule: Si–O Backbone and CH₃ Side Groups
+https://kconstrade.com/en/technical/basics/molecular-characteristics
+
+Key facts: Si–O bond: bond energy 117 kcal/mol (C–C 85, C–O 81), rotation barrier 0.2 kcal/mol (C–C 3.3), bond angle 130° (C–C 112°), bond length 0.163 nm (C–C 0.154). The strong, long, freely rotating backbone gives heat stability and flexibility; the CH₃ side groups give low surface energy and hydrophobicity. PDMS Tg is −121 °C.
+
+### II. 1. Silicone molecular characteristics
+실리콘 분자의 특성은 일반 유기 화학 제품의 분자 특성과 다른 점이 많이 있다. 그러한 특유의 실리콘 분자의 특성은 결과적으로 실리콘 재료의 여러 가지 장점과 단점에 직접적으로 관련이 있다.
+
+[Figure] 실리콘 분자의 구조 및 주쇄의 특성 — 유기기(CH3)와 무기 주쇄(Si-O)
+
+[Figure] The Si–O bond rotates freely: rotation about the bond C–C 3.3 kcal/mol, Si–O 0.2 kcal/mol
+[Figure] The Si–O bond is stable: bond strength C–C 85, C–O 81, Si–O 117 kcal/mol
+[Figure] Bond angle and length: C–C 112° / 0.154 nm, C–O 111° / 0.142 nm, Si–O 130° / 0.163 nm
+
+실리콘 분자의 가장 특징적인 것은, Si-O의 무기 주쇄와 CH3의 유기 측쇄, 즉 유기와 무기 결합이 동시에 존재한다는 것이다. 따라서 Silicone이라는 물질은 Si-O로부터 얻어지는 무기물의 특성과 CH3 등의 유기 부분으로부터 얻어지는 유기물의 특성을 동시에 가지고 있어 그 특성이 특이하다.
+
+- Si-O 무기 주쇄: 높은 표면 에너지를 가짐. 기질과의 접촉면과 상호 작용을 함.
+- CH3 유기 측쇄: 낮은 표면 에너지를 가짐. 실리콘의 표면 특성을 나타냄. 소수성. 상호간의 낮은 분자력으로 인한 낮은 표면 에너지를 가지며, 그것은 분자의 표면장력을 낮게 함.
+
+### Summary of molecular characteristics
+일반적으로 실리콘 분자의 특성은 다음과 같이 정리할 수 있다.
+
+- 결합이 길고 강하고 안정함.
+- 분자의 움직임이 자유로움.
+- 사슬이 서로 엉키지 않음.
+- 끈적거리지 않음.
+- -CH3 기의 불활성 때문에 낮은 분자간 인력을 가짐. CH3기 간의 낮은 분자간 인력은 낮은 표면 에너지에 영향을 미치고 이는 또 낮은 표면 장력과 관련이 있다. Silicone의 유동적인 주쇄는 CH3기의 효과를 증대시킨다. 고분자량의 폴리머라도 유기 폴리머에 비해 흐름성이 탁월하다.
+
+Silicone vs. aliphatic hydrocarbon chemistry
+Property | Silicone | Aliphatic hydrocarbon
+Electronegativity | Si – 1.8 | C – 2.5
+Rotation energy, kcal/mol | Si–O: 0.2 | C–C: 3.3
+Bond energy, kcal/mol | Si–O: 117 | C–C: 85, C–O: 81
+Bond length, nm | Si–O: 0.163 | C–C: 0.154, C–O: 0.142
+Bond angle | Si–O: 130° | C–C: 112°, C–O: 111°
+Tg | PDMS: −121 °C
+
+Q: Why is the silicone backbone so flexible?
+A: The Si–O bond rotates with only 0.2 kcal/mol (C–C: 3.3) and has a wide 130° bond angle and a long 0.163 nm bond, so the chain moves freely and does not tangle.
+
+Q: Why does silicone resist heat better than organic polymers?
+A: The Si–O bond energy is 117 kcal/mol versus 85 for C–C and 81 for C–O.
+
+## Chemical and Physical Properties and Functional Groups of Silicone
+https://kconstrade.com/en/technical/basics/properties-and-functional-groups
+
+Key facts: Silicone offers low surface energy, hydrophobicity, high gas permeability, excellent weathering (no UV absorption), thermal stability, chemical and physiological inertness, electrical insulation and oxidation/ozone resistance. Weaknesses: poor compatibility with organic polymers, attack by strong acids/alkalis, weak corrosion protection when coated, difficult adhesion to other materials and lower tensile/tear strength than organic rubber.
+
+### II. 2. Chemical and physical properties
+실리콘은 다른 고분자 재료에 비해 다음과 같은 특성을 가지고 있다.
+
+- 고분산성, 낮은 표면 에너지 및 표면 장력: CH3 기, Si-O 결합의 자유로운 회전에 기인함. 실리콘은 그 보다 낮은 표면 장력을 갖는 계면에 분산성이 우수. 표면을 완전히 둘러싸고, 탁월한 분산성을 가짐.
+- 소수성: 표면을 둘러싼 소수성의 CH3에 기인.
+- 높은 공기 투과성: Si-O 결합의 긴 길이와 자유로운 회전, 높은 공기 투과성은 Si-O의 강한 결합력과는 관련이 없음.
+- 우수한 내후성: UV를 흡수하지 않음.
+- 열적안정성 - 내열성, 내한성, 낮은 Tg, Tm.
+- 높은 Flash Point.
+- 낮은 극성, 비자극성, 화학적, 생리학적 불활성.
+- 낮은 증발열 - Si 금속 때문.
+- 내산화성, 내오존성.
+- 전기 절연성, 낮은 전기전도성.
+- 유동성, 유연성.
+- 수증기, 공기 투과성.
+- 높은 압축성.
+
+### 단점
+
+- 일반적으로 타 유기 고분자와의 상용성이 좋지 않음
+- 강산과, 강알카리에 의해 분해될 수 있음
+- 코팅시 방청성이 약함
+- 타물질과의 접착이 어려움
+- 유기 고무와 비교시 인장 강도, 인열 강도가 낮음
+
+### Characteristics by functional group
+Silicone characteristics by functional group (R = chain end, R′ = side chain)
+Functional group | Position | Reactive | Function (property imparted)
+Phenyl | R′ | No | Heat resistance
+Fluoro | R′ | No | Chemical resistance
+Amino | R or R′ | Yes | Softness
+Methoxy | R | Yes | Durability, crosslinker
+Acetoxy / Hydroxyl | R | Yes | RTV crosslinker
+Glycol (Carbinol) | R or R′ | Yes / No | Water solubility, surfactant / lubricant
+Vinyl | R | Yes | LSR base
+Hydrogen | R′ | Yes | Water repellency, crosslinker
+Alkyl | R′ | No | Good compatibility with organic polymers
+Aryl | R′ | No | Good compatibility with organic polymers
+
+### Molecular characteristics → effect → application
+Molecular characteristic | Effect | Application
+Long Si–O bond | Fluidity, flexibility; low surface tension; air and water-vapour permeability; cold resistance, good processability | Sealant; antifoam; coating; sealant
+Wide Si–O bond angle | Free rotation, low Tg, Tm | Architectural coatings, industrial coatings
+Strong bond energy | Thermal stability, weatherability; limited solubility | Construction; uses requiring heat resistance
+Chemical inertness | Non-toxic; non-toxic on combustion | Environmentally friendly uses; FDA-approved uses — food, medical, skin contact
+Low intermolecular force of CH₃ | Low surface tension, limited solubility; hydrophobic surface; flexibility; air permeability | Antifoam; water repellent; fabric softener; coating
+
+[Figure] 실리콘의 특성에 따른 응용 분야 (원문 표)
+
+Q: What are the main disadvantages of silicone?
+A: Poor compatibility with other organic polymers, decomposition by strong acids and alkalis, weak corrosion protection when coated, difficult adhesion to other substances, and lower tensile and tear strength than organic rubber.
+
+Q: Which functional group gives heat resistance and which chemical resistance?
+A: Phenyl gives heat resistance; fluoro gives chemical resistance (both non-reactive, side-chain positions).
+
+## Silicone Applications by Industry and Product Forms (Fluid, Gum, Resin, Rubber)
+https://kconstrade.com/en/technical/basics/applications-and-forms
+
+Key facts: Silicone is used in almost every industry — aerospace, automotive, construction (glazing, waterproofing, roofing sealing, fire protection), electronics, food, medical, paints, plastics, paper release and textiles. Product forms are fluid, gum, resin, compound, silane, emulsion and rubber (RTV, LSR, HCR, SWBE, dispersion).
+
+### III. 1. Applications by industry
+실리콘 원료들은 오일, 에멀젼, 용제형, 고무 등의 형태로 가공되어 사용되어져 각 산업의 공정에 사용되어진다. 실리콘이 사용되는 응용 분야는 거의 전 산업에 걸쳐 사용되며, 그 응용 분야가 계속 개발되고 있다.
+
+Industry | Use
+Aerospace | Lubricants
+Automotive | Airbags, lubricants, areas requiring abrasion and oil resistance
+Construction | Glazing, waterproofing, roofing sealing, building fire protection
+General / petrochemical | Process aids
+Daily life | Shampoo, cosmetics, household goods
+Electrical / electronics | Protective, adhesive and insulating coatings
+Food | Process aids
+Medical / pharmaceutical | Medical tubing
+Paint / coatings | Antifoam, protective coatings
+Rubber processing | High tear, elongation and strength; conductive, insulating, flame-retardant; moulded parts, packing
+Plastics | Modifier, gloss agent, release agent
+Paper | Paper or label adhesive, release paper
+Textile / leather | Softener, process aid, coating, lubricant
+
+### III. 2-1. Product forms
+실리콘 제품의 형태에 따른 종류에는 다음과 같은 것들이 있다.
+
+- Silicone Fluid: PDMS, Organofunctional Fluid 등의 흐름성이 있는 Silicone Polymer.
+- Silicone Gum: 초고분자량의 Silicone polymer.
+- Silicone Resin: 3차원 상의 가교된 구조의 Silicone polymer.
+- Silicone Compound: Silicone Oil과 무기물이 Compounding된 형태.
+- Silane: Silicone Polymer 이전의 단량체 단계의 형태.
+- Silicone Emulsion: 실리콘 polymer를 유화제를 사용하여 안정한 상태로 분산시켜 놓은 상태. Mechanical Emulsion, EP Emulsion 등.
+- Silicone Rubber: 실리콘 폴리머, 가교제, 촉매 및 기타 첨가제로 조성된 제품으로 경화되어 탄성체를 형성하는 제품으로서, RTV (Room Temperature Vulcanizing), LSR (Liquid Silicone Rubber), HCR (High Consistency Rubber), SWBE (Silicone water based elastomer), Dispersion 등의 제품이 있다.
+- 기타: Flake (부정형 고체입자), Granule/Pellet, Powder 등의 형태의 실리콘 제품이 존재한다.
+
+### LSR과 RTV
+
+액상 실리콘 고무 (LSR, Liquid Silicone Rubber): 비용제형의 흐름성이 있는 2액형 또는 1액형 고무. 경화되었을 때, 탄성 필름을 형성. 열경화가 일반적이나, 상온에서도 경화됨. 열안정성, 내수성, 내화학성 및 내마모성이 우수. 제품에 따라 물리적 특성이 다양. 안료와 혼용 가능.
+
+상온 경화형 고무 (RTV, Room Temperature Vulcanizing): 1액형의 상온 경화형 고무. 열안정성. 우수한 접착력. 우수한 물리적 특성을 가짐.
+
+Q: In which construction applications is silicone used?
+A: Glazing, waterproofing, roofing sealing and building fire protection.
+
+Q: What forms do silicone products come in?
+A: Fluid, gum, resin, compound, silane, emulsion and rubber (RTV, LSR, HCR, SWBE, dispersion), plus flake, granule/pellet and powder.
+
+## How Each Silicone Product Is Used: Silane, Resin, Fluid, LSR, RTV
+https://kconstrade.com/en/technical/basics/usage-methods
+
+Key facts: Silane is used alone as a coupling agent or primer — diluted at low concentration in a solvent, applied by brush or spray, dried at room temperature, then topcoated. Resin is added to acrylic paint to improve heat resistance, weatherability and labelling. Fluids are mostly emulsified for aqueous use. LSR is mixed, applied by knife coating and cured; RTV is applied from a cartridge with a sealant gun and cures at room temperature.
+
+### III. 2-2. Usage by product
+각 형태의 제품별로 그 사용 방법에 대해 알아보면 다음과 같다. 여기서는 대표적 제품과 그것의 일반적인 사용 예를 간단하게 서술한다.
+
+### Silane
+
+Silane 제품이 단독으로 사용되는 경우는 주로 Coupling Agent 또는 Primer로 사용되어질 경우이다. 예를 들어 플라스틱 기질에 실리콘을 코팅할 경우에 접착성이 저조할 경우 Silane을 처리한다. 이 때 Silane을 적절한 용제에 저농도로 희석하여 Brush나 Spraying 방법 등의 적절한 방법으로 처리하여, 상온에서 건조시킨 다음, 코팅제를 처리한다. Silane은 여러 가지 관능기의 제품이 있어 기질에 따라 사용되는 제품이 다르다. 일반적으로 Silane은 -OH기를 가지는 대부분의 기질과 우수한 접착력을 가진다.
+
+[Figure] 실란과 기질 또는 다른 폴리머와의 반응
+
+### Resin
+
+Resin 제품은 주로 페인트 첨가제로 많이 사용된다. Acryl 페인트에 첨가되어, 내열성, 내후성, 라벨링성 등을 향상시키는데, Acryl 페인트에 단순 첨가되어 사용된다.
+
+### Silicone Fluid
+
+단독으로는 타 유기 재료에 첨가되어 사용되는 것이 대부분이며, 주로 유화되어 수성계에 사용된다. 예를 들어 섬유 유연제로 사용되는 경우에 아미노 오일은, 유화제를 사용하여 유화된 후, 물에 저농도로 희석하여 Padding Process 또는 Exhaustion 방법으로 천 또는 옷감에 처리된 후 건조 및 경화되어진다. 아미노 유연제 외에 다른 실리콘 오일도 섬유 산업에 사용될 때는 대부분 유화된 형태로 사용된다.
+
+### Silicone rubber: LSR and RTV
+i) LSR: LSR 고무는 주로 2액형의 형태로 공급이 되는데, 성형품으로 사용되기도 하고, 표면 코팅제로 사용되기도 한다. 섬유 산업에서의 응용 예를 들면, 다음과 같다. 우선 LSR의 주제와 경화제를 골고루 교반한다. 코팅하고자 하는 원단에 처리한다. 이 때 사용되는 코팅 설비는 주로 Knife 코팅 설비이다. 건조 및 경화한다.
+
+ii) RTV: 1액형의 제품으로 주로 카트리지 형태로 판매된다. 실란트 건 등의 기구를 사용하여 처리하고자 하는 부위에 제품을 처리한 후 상온에서 경화시킨다.
+
+Q: How is a silane primer applied?
+A: Dilute at low concentration in a suitable solvent, apply by brush or spray, dry at room temperature, then apply the coating.
+
+Q: How is RTV silicone applied?
+A: It is a one-part cartridge product applied with a sealant gun and cured at room temperature.
+
+## Appendix: Bond Energies, Nomenclature, Surface Energy, Viscosity–Molecular Weight, Heat and Permeability Data
+https://kconstrade.com/en/technical/basics/appendix-data
+
+Key facts: PDMS has a surface energy of 20–22 mN/m (water 72, PTFE 18.5, polyethylene 31). A 100 cSt PDMS has Mw ≈ 6000 (DP 64); 1000 cSt ≈ 28000 (DP 320); 10000 cSt ≈ 62000 (DP 730). Silicone rubber has a water-vapour permeability of 1830 and a dimethylsilicone oxygen permeability of 60.0 (×10⁹ cm³·cm/(s·cm²·cmHg)), far above butyl rubber (0.14).
+
+### Appendix 1 — Bond-cleavage energy (kcal/mol)
+X | Si–X | C–X
+Si | 83 | 87
+C | 87 | 83
+H | 94 | 94
+N | 77 | 73
+O | 108 | 85
+S | 61 | 65
+F | 135 | 116
+Cl | 106 | 81
+Br | 74 | 68
+I | 56 | 51
+
+### Appendix 2 — Names used in silicone chemistry
+Name | Notation | Description, example
+Silane | 1 Si atom, –Si– | SiH₄; Dichlorosilane H₂SiCl₂; Dimethyldichlorosilane Me₂SiCl₂
+Disilane | 2 Si atoms, –Si–Si– | H₃Si–SiH₃
+Trisilane | 3 Si atoms, –Si–Si–Si– | 
+Polysilane | Many Si atoms, (Si)ₓ | 
+Siloxane | –Si–O–Si– (Silicone) | Hexamethyldisiloxane Me₃Si–O–SiMe₃
+Disiloxane | –Si–O–Si– | 
+Trisiloxane | –Si–O–Si–O–Si– | 
+Polysiloxane | –(Si–O)ₓ– | Polydimethylsiloxane (PDMS) Me₃SiO(Me₂SiO)ₓSiMe₃
+Silanol | Si–OH | Trimethylsilanol Me₃SiOH
+Silazane | Si–N–Si | 
+Silthiane | Si–S–Si | 
+M | Me₃SiO | mono
+D | Me₂SiO₂ | di
+T | MeSiO₃ | tri
+Q | SiO₄ | quad
+
+### Appendix 3 — Surface energy of polymers
+Polymer | Surface energy (= surface tension), mN/m
+Polydimethylsiloxane | 20–22
+Polystyrene | 33–35
+Polyacrylate | 35
+Polyethylene terephthalate | 43
+PTFE | 18.5
+Polyethylene | 31
+Wool | 45
+Water | 72
+Water + surfactant | 30
+Ethanol | 50
+The lower the surface energy, the harder it is for other materials to adhere.
+
+### Appendix 4 — PDMS viscosity vs. molecular weight
+Viscosity, cSt | Molecular weight (Mw) | Degree of polymerization (n)
+5 | 800 | 10
+20 | 2,000 | 
+50 | 4,000 | 
+100 | 6,000 | 64
+200 | 9,500 | 
+350 | 14,000 | 
+500 | 17,000 | 
+1,000 | 28,000 | 320
+5,000 | 50,000 | 
+10,000 | 62,000 | 730
+12,500 | 68,000 | 
+50,000 | – | 1,300
+60,000 | 117,000 | 
+100,000 | 140,000 | 
+600,000 | 260,000 | 
+
+[Figure] PDMS 점도-분자량 관계 그래프
+
+### Appendices 5–8 — Thermal stability, heat ageing, permeability
+[Figure] 부록 5·6. 온도에 대한 안정성 변화 / 실리콘 고무의 우수한 내열성 (인장 강도 vs 노출 시간: Silicone Rubber, Neoprene, Nitrile, Butyl)
+
+Appendix 7 — Water-vapour permeability at 25 °C (P × 10⁹, cm³·cm/(s·cm²·cmHg))
+Material | P × 10⁹
+Collagen | 2710 ± 800
+Silicone rubber | 1830 ± 210
+Epoxy | 1480 ± 113
+Nylon 6 | 94
+Polystyrene | 65 ± 12
+Polyethylene | 11.3 ± 1.6
+
+Appendix 8 — Oxygen permeability of silicone polymer (P × 10⁹)
+Polymer | P × 10⁹
+Dimethylsilicone rubber | 60.0
+Natural rubber | 2.4
+Butyl rubber | 0.14
+Cellulose acetate | 0.08
+Nylon 6 | 0.004
+PTFE | 0.0004
+
+Q: What is the surface energy of PDMS compared with other polymers?
+A: 20–22 mN/m, lower than polyethylene (31) and polystyrene (33–35) and close to PTFE (18.5); lower surface energy makes adhesion by other materials harder.
+
+Q: What do M, D, T and Q mean?
+A: Siloxane unit notations: M = Me₃SiO (mono), D = Me₂SiO₂ (di), T = MeSiO₃ (tri), Q = SiO₄ (quad).
+
+## Supplementary Technical Notes and References (Beyond the Original Document)
+https://kconstrade.com/en/technical/basics/supplement-references
+
+Key facts: Supplement (not in the original PDF): the industrial route to dimethyldichlorosilane is the Müller–Rochow (direct) process — methyl chloride over silicon with a copper catalyst in a fluidized bed at roughly 300 °C, about 1.4 Mt of Me₂SiCl₂ per year worldwide per public references. Published PDMS glass-transition values range from about −120 to −127 °C depending on the source, so quote the source with the number.
+
+### Müller–Rochow direct process
+원문은 Direct Process를 대량 생산용 공정으로만 소개한다. 공개 자료에 따르면 이 공정은 1940년대에 Eugene Rochow와 Richard Müller가 각각 독립적으로 보고했고, 미분쇄한 규소를 유동층 반응기에서 염화메틸과 구리 촉매로 반응시켜 디메틸디클로로실란을 얻는다. 반응 메커니즘은 수십 년의 연구에도 완전히 규명되지 않았으며, 선택도와 생산성 향상을 위한 촉매·촉진제 연구가 계속되고 있다. 또한 가수분해 전 단량체의 순도가 낮으면 사슬 분지가 생겨 폴리머 품질에 영향을 준다.
+
+### Si–O bond behaviour and reported Tg values
+Si-O 결합은 규소(전기음성도 1.8)와 산소의 전기음성도 차이가 커서 분극이 크고 결합 에너지가 높아(약 452 kJ/mol ≈ 108 kcal/mol, 부록 1의 Si-O 108 kcal/mol과 일치) 열적으로 안정하지만, 산·염기 조건에서는 반응성을 보일 수 있다. 이는 원문이 단점으로 든 「강산·강알칼리에 의한 분해」와 같은 맥락이다. 한편 PDMS 유리전이온도는 자료에 따라 약 −120 °C, −127 °C, −150 °C 등으로 다르게 보고되므로(원문은 −121 °C), 인용 시 출처와 측정 조건을 확인해야 한다. 본 교육자료의 Si-O 결합 에너지 117 kcal/mol(결합 해리 에너지로서 부록 1의 108 kcal/mol과는 정의가 다른 값)도 문헌에 따라 다르게 제시될 수 있다.
+
+### References and KCT contact
+- Direct process — Wikipedia (Müller–Rochow process): https://en.wikipedia.org/wiki/Direct_process
+- Dimethyldichlorosilane — Wikipedia: https://en.wikipedia.org/wiki/Dimethyldichlorosilane
+- Silicone materials overview — Sigma-Aldrich: https://www.sigmaaldrich.com/US/en/products/materials-science/electronic-materials/silicone-materials
+- Open-access review on silicone chemistry — Chem. Commun. 2023 (RSC): https://pubs.rsc.org/en/content/articlehtml/2023/cc/d3cc03531j
+- Wetting on silicone surfaces — arXiv 2404.05571: https://arxiv.org/pdf/2404.05571
+
+DOWSIL™ 실리콘 제품 선정·견적·기술 문의는 한국건설트레이딩(sales@kconstrade.com, 010-8939-0284)으로 연락해 주십시오.
+
+Q: Who should I contact about DOWSIL silicone products in Korea?
+A: Korea Construction Trading (KCT, 한국건설트레이딩): sales@kconstrade.com, 010-8939-0284.
+
+# High-Performance Silicone PSAs: Product Selection and Application Guide (full text)
+Source: Dow Corning, “Product Selection and Application Guide — Dow Corning® brand High-Performance Silicone PSAs”, Form No. 30-083B-01 (AGP7825), ©2001, 2006 Dow Corning Corporation. 한국어 번역·정리: 한국건설트레이딩(KCT)
+
+## High-Performance Silicone PSAs: Product Line and How to Select
+https://kconstrade.com/en/technical/psa/overview-how-to-select
+
+Key facts: Dow Corning’s silicone PSA line consists of silicone PSAs (polydimethylsiloxane gums and resins dispersed in xylene or a xylene/toluene blend, platinum-cure or peroxide-cure), compatible primers for difficult substrates, and Syl-Off Q2-7785 fluorosilicone release coating. Select by following the flow chart, then Table 1 (cure system) and Table 2 (tack, adhesion, high-temperature hold).
+
+### Pressure Sensitive Adhesives from Dow Corning
+[Figure] Cover photography — laboratory
+[Figure] Cover photography — high-temperature / automotive use
+[Figure] Cover photography — aerospace use
+
+Dow Corning offers you a fully integrated, fully supported product line for use in the manufacture of high-performance adhesive tapes and components. The silicone pressure sensitive adhesives (PSAs) and related materials described in this guide are available globally and are appropriate for use worldwide.
+
+- Dow Corning® brand silicone PSAs – polydimethylsiloxane gums and resins dispersed in xylene or a blend of xylene and toluene. Two cure systems are available – platinum and peroxide.
+- Dow Corning® brand silicone primers – compatible primers used to increase anchorage to difficult substrates.
+- Syl-Off® Q2-7785 Release Coating – a solvent-based fluorosilicone release coating used in the production of liners, tapes and films for the release of industrial-grade silicone PSAs. Dow Corning silicone PSAs may be either wet cast or dry laminated to the coated liner.
+
+Dow Corning can also provide you with other high-performance materials used in the manufacture of pressure sensitive adhesive tapes and components, such as liquid silicone rubbers and adhesion promoters.
+
+### How to Select the Best Silicone PSA for Your Application
+Selecting the best silicone PSA for your application can be a complex undertaking. Substrate requirements, equipment limitations, performance demands for tack, adhesion and cohesive strength, and the need for release all enter into the picture. Begin with the PSA Selection Flow Chart, which tells you which adhesives meet your basic application and processing requirements. Then consult Tables 1 and 2: Table 1 helps you decide whether a peroxide- or platinum-cure silicone PSA is better for your needs; Table 2, supported by Figures 1–3, helps you determine which product best meets your requirements for tack, adhesion and high-temperature hold.
+
+### Silicone PSA performance capabilities
+
+- Ability to withstand exposure to extreme temperatures
+- Adhesion to low-energy surfaces such as silicone or Teflon®
+- Conformability
+- Chemical, UV and weather resistance
+
+With silicone PSAs from Dow Corning there are many ways to achieve the exact balance of performance properties your application requires. If none of the materials in this guide appear to meet your needs, contact your Dow Corning technical representative for additional suggestions.
+
+Q: What cure systems are available for Dow Corning silicone PSAs?
+A: Two: platinum cure and peroxide cure.
+
+Q: What solvents are the PSAs dispersed in?
+A: Xylene or a blend of xylene and toluene (2013 Adhesive is solvent-free).
+
+Q: Where can I enquire in Korea?
+A: Korea Construction Trading (KCT): sales@kconstrade.com, 010-8939-0284.
+
+## Silicone PSA Selection Flow Chart
+https://kconstrade.com/en/technical/psa/selection-flow-chart
+
+Key facts: No solvent handling → 2013 Adhesive/Syl-Off 4000 Catalyst. Food contact required → Q2-7406 Adhesive (benzoyl peroxide cure) or 7657 Adhesive/Syl-Off 4000. Tape wet cast: Q2-7735 (peroxide) or 7657, 2013, 7659 (platinum). Service range −73 to 260 °C (−100 to 500 °F); extended 288 °C (550 °F) or intermittent above: 7659, 7355, 7358, Q2-7406, Q2-7566.
+
+### Flow chart (original)
+[Figure] Silicone PSA Selection Flow Chart — platinum-cure material indicated in teal; peroxide-cure materials in black.
+
+### Flow chart in text form
+- Does your facility handle solvents? NO → Dow Corning® 2013 Adhesive / Syl-Off® 4000 Catalyst.
+- Is food-contact capability required? YES → Dow Corning® Q2-7406 Adhesive (can be cured with benzoyl peroxide) or Dow Corning® 7657 Adhesive / Syl-Off® 4000 Catalyst.
+- In what type of construction will the adhesive be used? Tape — wet cast: cured with benzoyl peroxide → Q2-7735 Adhesive; cured with Syl-Off 4000 Catalyst → 7657, 2013, 7659 Adhesive. Dry laminated: same PSAs as for wet cast; other PSAs may also be appropriate for some dry laminated applications — contact Dow Corning. Release from fluorosilicone liner made with Syl-Off® Q2-7785 Release Coating.
+- Cure temperature <80 °C (<176 °F): Q2-7406 Adhesive air dried without catalyst (not for high-temperature applications).
+- Cure temperature 80–150 °C (176–302 °F): 7657 Adhesive / Syl-Off 4000 Catalyst; 7659 Adhesive / Syl-Off 4000 Catalyst.
+- Cure temperature >150 °C (>302 °F): all PSAs in this guide.
+- Application or service-temperature range −73 to 260 °C (−100 to 500 °F): 7657 Adhesive / Syl-Off 4000 [up to 204 °C (400 °F)]; 280A; 282; 7355; 7356; 7358; Q2-7406; Q2-7566; Q2-7735 [up to 232 °C (450 °F)].
+- Extended 288 °C (550 °F) or intermittent >288 °C (550 °F): 7659 Adhesive / Syl-Off 4000 Catalyst; 7355; 7358; Q2-7406; Q2-7566.
+
+Q: Which silicone PSA is solvent-free?
+A: Dow Corning 2013 Adhesive, used with Syl-Off 4000 Catalyst.
+
+Q: Which PSAs suit food-contact applications?
+A: Q2-7406 Adhesive and 7657 Adhesive/Syl-Off 4000 Catalyst; both meet FDA requirements for certain food-contact applications — contact your representative for food-contact information.
+
+## Peroxide-Cure vs. Platinum-Cure Silicone PSAs (Table 1)
+https://kconstrade.com/en/technical/psa/platinum-vs-peroxide
+
+Key facts: Platinum-cure PSAs (2013, 7657, 7659 with Syl-Off 4000 Catalyst) are two-part systems with a bath life of 24 hours or less at 21 °C, cure at as low as 80 °C in a single-zone oven, and suit temperature-sensitive substrates, but the catalyst can be contaminated by peroxides and other materials. Peroxide-cure PSAs are one-part, have extended bath life, generally need >150 °C and a multi-zone oven for tapes, and are a robust cure system resistant to catalyst poisoning.
+
+### Table 1. Peroxide- vs. Platinum-Cure PSAs
+ | Platinum-Cure | Peroxide-Cure
+Dow Corning® brand silicone PSAs | 2013 Adhesive, 7657 Adhesive, 7659 Adhesive (with Syl-Off® 4000 Catalyst) | 280A, 282, 7355, 7356, 7358, Q2-7406, Q2-7566, Q2-7735 Adhesive
+Components | Two-part system: silicone resin, crosslinker and polymer dispersed in solvent + platinum catalyst; catalyst required; 2013 Adhesive does not contain solvent. | One-part system: silicone resin and polymer dispersed in solvent; used with a peroxide curing agent.
+Bath life | Generally 24 hours or less at 21 °C (70 °F) | Extended bath life
+Cure temperature and oven requirements | Can be cured at temperatures as low as 80 °C (176 °F) in a single-zone oven. | For tape constructions, cure temperatures >150 °C (302 °F) are generally required; cure is a two-step process that requires a multi-zone oven.
+Benefits | Fast, low-temperature cure; may be used on temperature-sensitive substrates. | Robust cure system; catalyst resistant to poisoning. Adhesive properties may be modified by manipulating peroxide levels and oven conditions.
+Drawbacks | Platinum catalyst is subject to contamination by peroxides and other materials. | Failure to remove solvent can result in bubbling, low adhesion, low cohesive strength. Failure to adequately degrade the peroxide can result in “snow” crystals, instability in high-temperature applications.
+
+Q: What is the bath life of platinum-cure silicone PSAs?
+A: Generally 24 hours or less at 21 °C (70 °F), so the coating bath should be used within 24 hours of catalyst addition.
+
+Q: What is the main drawback of peroxide cure?
+A: Residual solvent causes bubbling and low adhesion/cohesion; incomplete peroxide breakdown leaves “snow” crystals and instability at high temperature.
+
+## Silicone PSA Product Descriptions and Typical Performance (Table 2)
+https://kconstrade.com/en/technical/psa/product-descriptions
+
+Key facts: Highest hold: Q2-7406 and Q2-7566 at 288 °C (550 °F). Solvent-free: 2013 (260 °C). Low-temperature cure from 80 °C with FDA food-contact capability: 7657 (204 °C). Lead-free solder masking and PTFE/polyimide: 7659 (204 °C). Q2-7735 combines high tack and good adhesion (232 °C) and is recommended with Syl-Off Q2-7785 liners.
+
+### Table 2. Product descriptions, typical performance properties
+Product | Cure system | Features / benefits | Typical applications | High-temp hold/shear¹, °C (°F)
+2013 Adhesive / Syl-Off® 4000 Catalyst | Platinum | Solvent-free | Adhesive tapes, labels and transfer films; bonding low-energy substrates; high- and low-temperature labeling applications | 260 (500)
+7657 Adhesive / Syl-Off® 4000 Catalyst | Platinum | Low-temperature cure, as low as 80 °C (176 °F); high tack and adhesion; meets FDA requirements for certain food-contact applications² | Temperature-sensitive substrates; transfer tapes and labels; recommended for use with release liner coated with Syl-Off® Q2-7785 Release Coating | 204 (400)
+7659 Adhesive / Syl-Off® 4000 Catalyst | Platinum | Retains adhesion at high temperatures with minimum silicone left on the surface after tape removal; low cure temperatures | Lead-free solder masking and flexible substrates such as PTFE or polyimide; recommended for use with release liner coated with Syl-Off® Q2-7785 | 204 (400)
+280A Adhesive | Peroxide | Good tack | Masking and plating tapes | 260 (500)
+282 Adhesive | Peroxide | Good adhesion | Masking and plating tapes | 260 (500)
+7355 Adhesive | Peroxide | High adhesion; good high-temperature performance; low silicone volatiles | Masking, plating and splicing tapes | 260 (500)
+7356 Adhesive | Peroxide | Balanced tack and adhesion; good high-temperature performance; low silicone volatiles | High-temperature masking, plating, electrical, plasma flame spray | 260 (500)
+7358 Adhesive | Peroxide | High tack; good high-temperature performance; low silicone volatiles | Electrical, plasma/flame-spray and high-temperature masking tapes | 260 (500)
+Q2-7406 Adhesive | Peroxide | General purpose adhesive with excellent high-temperature properties; meets FDA requirements for certain food-contact applications² and low silicone volatiles | Splicing and plating tapes | 288 (550)
+Q2-7566 Adhesive | Peroxide | General purpose adhesive with excellent high-temperature properties | Electrical tapes and other very high-temperature tapes | 288 (550)
+Q2-7735 Adhesive | Peroxide | Combines high tack and good adhesion | Recommended for use with release liner coated with Syl-Off® Q2-7785; transfer films and labels; masking, plating, splicing and electrical tapes | 232 (450)
+¹ 15 days, 1000 grams. ² Contact your Dow Corning representative for food contact information.
+
+Q: Which silicone PSA has the highest high-temperature hold?
+A: Q2-7406 and Q2-7566 Adhesives, 288 °C (550 °F).
+
+Q: Which PSA suits lead-free solder masking?
+A: 7659 Adhesive with Syl-Off 4000 Catalyst, which retains adhesion at high temperature with minimum silicone residue.
+
+## Relative Tack, Adhesion and High-Temperature Hold (Figures 1–3)
+https://kconstrade.com/en/technical/psa/tack-adhesion-hold-charts
+
+Key facts: Expected Polyken probe tack is 600–1300 g (1-mil substrate) or 800–1500 g (2-mil). Expected adhesion is 30–45 oz/in (850–1290 g/in) on 1 mil and 45–65 oz/in (1290–1850 g/in) on 2 mil. Tack order in Figure 1 runs from 2013 (lowest) to 7657 (highest).
+
+### Figures 1–3
+[Figure] Figure 1. Polyken® Probe Tack; Figure 2. Adhesion; Figure 3. Comparative High-Temperature Hold (Cohesive Strength)
+
+### Figure 1 — relative tack (low → high)
+
+2013, Q2-7566, 7659, Q2-7406, 282, Q2-7735, 7355, 280A, 7358, 7356, 7657. Polyken Probe Tack values are expected to be in the range of 600–1300 g for a 1-mil substrate and 800–1500 g for a 2-mil substrate.
+
+### Figure 2 — relative adhesion (low → high)
+
+7659, Q2-7566, 2013, Q2-7406, 282, Q2-7735, 7355, 280A, 7358, 7657, 7356. Adhesion values are expected to be in the range of 30–45 oz/in (850–1290 g/in) for a 1-mil substrate and 45–65 oz/in (1290–1850 g/in) for a 2-mil substrate.
+
+### Figure 3 — comparative high-temperature hold
+
+Order shown on the chart: 7657, 7659, Q2-7735, 280A, 282, 7355, 7358, 7356, 2013, Q2-7566, Q2-7406 (temperature axis from −17.7 °C (0 °F) to 315 °C (600 °F)); see Table 2 for the numerical hold values.
+
+Q: Which PSA has the highest tack?
+A: In Figure 1, 7657 Adhesive shows the highest relative probe tack.
+
+Q: What adhesion values should be expected?
+A: 30–45 oz/in on 1-mil and 45–65 oz/in on 2-mil substrates.
+
+## Processing Considerations: Substrate and Adhesive Thickness Effects (Figures 4–5)
+https://kconstrade.com/en/technical/psa/processing-thickness-effects
+
+Key facts: Silicone PSAs can be applied as supplied on conventional tape-coating equipment but are usually diluted with toluene, xylene or other nonpolar solvents; coat-weight control is critical. The thicker the cured adhesive coating, the higher the adhesion and tack, and the backing material also affects both.
+
+### Processing and Curing Considerations
+Silicone PSAs from Dow Corning can be applied to backing materials as supplied using conventional tape coating equipment. However, they are most often diluted with toluene, xylene or other nonpolar solvents to achieve a coatable viscosity. Coat weight control is critical for consistent performance. In addition, peroxide-cure silicone PSAs from Dow Corning may be blended with other dimethyl-type silicone PSAs to modify the performance of the cured coating.
+
+### Effects of substrate variation and adhesive thickness
+
+The backing material to which a silicone PSA is applied affects its tack and adhesion values. Adhesive thickness also affects adhesive performance: the thicker the cured adhesive coating, the higher the adhesion and tack. See Figures 1, 2, 4 and 5.
+
+[Figure] Figure 4. Effect of substrate and adhesive thickness on initial adhesive strength. Tapes made with Dow Corning 280A Adhesive and different backing materials; adhesive cure: 5 minutes at 150 °C (300 °F); catalyst: 1.0% powdered benzoyl peroxide based on weight of adhesive solids; adhesive strength per ASTM D 1000.
+
+[Figure] Figure 5. Effect of adhesive thickness on adhesion and tack. Tapes made from 280A Adhesive; cure: 1 minute at 65 °C (150 °F) followed by 2 minutes at 177 °C (350 °F) for Mylar®, 2 minutes at 204 °C (400 °F) for Teflon®; adhesion per PSTC-1; Polyken® tack: 0.5 s dwell, 0.5 cm/s draw speed.
+
+Q: How are silicone PSAs usually coated?
+A: On conventional tape coating equipment, typically diluted with toluene, xylene or another nonpolar solvent to reach a coatable viscosity.
+
+Q: Does a thicker PSA layer raise adhesion?
+A: Yes — the thicker the cured coating, the higher the adhesion and tack.
+
+## Platinum-Cure Process: Catalyst, Bath Life and Cure Speed
+https://kconstrade.com/en/technical/psa/platinum-cure-process
+
+Key facts: Platinum-cure adhesives need Syl-Off 4000 Catalyst to develop PSA properties; use the bath within 24 hours. Cure in vented continuous coating ovens from 80 °C (176 °F); on polyester or polyolefin films typical cure is 2 minutes at 100 °C (212 °F) to 1 minute at 125 °C (257 °F). Changing the catalyst level has little impact on tack, adhesion or cohesive strength. Clean equipment thoroughly and use dedicated new containers.
+
+### Platinum Cure
+Dow Corning® platinum-cure adhesives require the addition of a platinum catalyst (Syl-Off® 4000 Catalyst) to develop PSA properties. The coating bath should be used within 24 hours of catalyst addition. These adhesives can be cured in vented, continuous coating ovens at temperatures as low as 80 °C (176 °F). When coated onto flexible substrates such as polyester or polyolefin films, typical cure speeds range from 2 minutes at 100 °C (212 °F) to 1 minute at 125 °C (257 °F). If cure speed needs to be increased or process oven temperatures lowered, the catalyst level can be increased. Changing the catalyst level has little impact on the tack, adhesion or cohesive strength of the cured adhesive.
+
+Note: Because the catalyst is subject to contamination by peroxide and other materials, mixing and coating equipment must be thoroughly cleaned, and dedicated new containers should be used for mixing.
+
+Q: What catalyst do platinum-cure Dow Corning PSAs use?
+A: Syl-Off 4000 Catalyst; use the bath within 24 hours of addition.
+
+Q: How can cure speed be raised?
+A: Increase the catalyst level; this has little effect on tack, adhesion or cohesive strength.
+
+## Peroxide-Cure Process: Benzoyl Peroxide Level, Solvent Removal and Heat Cure (Figure 6)
+https://kconstrade.com/en/technical/psa/peroxide-cure-process
+
+Key facts: Peroxide concentration (benzoyl peroxide) can be varied from 0.5 to 3.0% of adhesive solids; more peroxide lowers tack and adhesion and raises cohesive strength. Use powdered 98% benzoyl peroxide as a 10% toluene solution and use the bath within a day. Cure in two steps: solvent removal at 65–93 °C (150–200 °F), then typically 1 minute at 66 °C followed by 2 minutes at 177–204 °C (350–400 °F).
+
+### Peroxide Cure
+To achieve a good balance of tack, adhesive strength and cohesive strength over a wide range of operating temperatures, proper cure is essential. The catalyst most typically used with silicone PSAs is benzoyl peroxide. Peroxide concentration can be varied from 0.5 to 3.0 percent (based on adhesive solids). Increasing peroxide concentration will decrease the tack and adhesive strength of the cured coating, but will increase its cohesive strength (see Figure 6). The most consistent results are achieved by using the powdered, 98 percent benzoyl peroxide. Complete blending of peroxide and adhesive is best obtained by making a 10 percent solution of the peroxide in toluene. If a catalyst is added, the coating bath should be used within a day after mixing, as the peroxide loses its activity quite rapidly in solvent. Thorough dispersion of the adhesive and peroxide during mixing is necessary to achieve uniform results in the finished product.
+
+[Figure] Figure 6. Effect of peroxide level on adhesion and tack. Tapes made from 280A Adhesive; adhesive thickness 1.5 mil; cure: 1 minute at 65 °C (150 °F) followed by 2 minutes at 177 °C (350 °F) for Mylar®, 2 minutes at 204 °C (400 °F) for Teflon®; adhesion per PSTC-1; Polyken® tack: 0.5 s dwell, 0.5 cm/s draw speed.
+
+### Two-step cure: solvent removal and heat cure
+Curing the adhesive is a two-step process that requires the use of graded temperatures.
+
+### Solvent removal
+
+The first step in curing the adhesive, following its application to the backing material, is solvent removal. Recommended temperatures for solvent removal range from 65 to 93 °C (150 to 200 °F). Higher removal temperatures can cause the peroxide to decompose prematurely and crosslink the solvent into the adhesive. This can reduce the properties of the finished tape. The length of time for solvent removal should be sufficient to ensure that no solvent is present in the adhesive when it enters the curing zone.
+
+### Heat cure
+
+After the solvent is removed, a tacky, uniform film of adhesive is left on the backing. This film’s adhesive and cohesive strengths, as well as the tack, can be further developed by a heat cure. The amount of cure depends on a number of factors, including the type of catalyst or equipment and backing material. A cure of 1 minute at 66 °C (150 °F) for solvent removal, followed by 2 minutes at 177 to 204 °C (350 to 400 °F) is typically used for adhesives that contain benzoyl peroxide. If equipment and type of backing material permit the use of higher curing temperatures, the cure time may be shortened. Higher cure temperatures develop cohesive strength of the adhesive in less time than at lower temperatures. The ultimate adhesive strength of the fully cured material is essentially the same whether cured at higher or lower temperatures. The only difference is the time required to reach complete cure.
+
+### Alternative cure options
+Peroxide-cure silicone PSAs will develop basic PSA properties without the addition of a catalyst. Simple solvent removal followed by heat cure may be desirable for some low-temperature bonding applications. However, this procedure is not commonly used in the production of pressure sensitive adhesive tapes. Alternatively, a tin catalyst or a silane coupling agent, such as Dow Corning® Z-6020 Silane, may also be used. These options will produce a PSA that bonds well and offers good adhesive strength in low-temperature applications. However, the high-temperature performance of these materials will be inferior to those cured with peroxide and will continue to cure until dry.
+
+Q: What peroxide level is used for silicone PSAs?
+A: Benzoyl peroxide, 0.5–3.0% based on adhesive solids; higher levels lower tack and adhesive strength but raise cohesive strength.
+
+Q: What temperature should solvent be removed at?
+A: 65–93 °C (150–200 °F); higher temperatures can decompose the peroxide prematurely.
+
+## Oven Dusting, Anchorage Primers and Release (Syl-Off Q2-7785)
+https://kconstrade.com/en/technical/psa/oven-dusting-anchorage-release
+
+Key facts: Reduce oven dusting by choosing PSAs with lower volatile silicone (7355, 7358) and using ramped oven zones. Improve anchorage with a primer, or add 0.25–0.5% Z-6020 silane (based on active adhesive weight), which reduces tack and may shorten shelf life or high-temperature properties. For release use Syl-Off Q2-7785 fluorosilicone coating; Q2-7735 and platinum-cure adhesives give consistent, stable release when wet-cast on it.
+
+### Oven dusting
+The evaporation of volatile silicone in the curing oven can cause the formation of oven dust. The problem is typical in solvent incineration or air-recirculating direct-fired ovens and is especially prevalent in ovens that deliver too much heat too soon in the cure process. Two ways to reduce the problem are to: 1. Select silicone PSAs with lower volatile silicone content; Dow Corning 7355 Adhesive or Dow Corning 7358 Adhesive are two examples. 2. Use ramped oven zones – oven zones with temperatures that get progressively hotter.
+
+### Anchorage
+When silicone PSAs are used in the manufacture of self-wound tapes or laminate constructions with backings such as polyester, Kapton®, Teflon® and other plastic films, the use of a primer may be required to improve anchorage of the cured adhesive to the backing. Good anchorage reduces the possibility of adhesive transfer during unwind, and ensures clean slitting operations and clean removability following masking. For suggested primers and sample formulations contact your Dow Corning representative. If the application of a primer coat is not possible, anchorage to backing can be improved by adding 0.25 to 0.5 percent of a silane coupling agent, such as Dow Corning Z-6020 Silane, based on active adhesive weight. However, silane addition will reduce the tack of the cured adhesive and may shorten the shelf life or high-temperature properties of the tape.
+
+### Release of silicone PSAs
+Dow Corning offers a fluorosilicone silicone release coating (Syl-Off® Q2-7785 Coating) suitable for manufacturing release liners for industrial-grade silicone PSAs. The release characteristics of liner made with Syl-Off Q2-7785 Coating depend on the specific silicone PSA used and how it is cured. Dow Corning Q2-7735 Adhesive and Dow Corning platinum-cure adhesives provide consistent, stable release when wet-cast on this liner. Refer to the Syl-Off Q2-7785 Coating data sheet for processing and performance details. Other silicone PSAs from Dow Corning have also been successfully dry laminated (transfer coated) to this release system.
+
+### Applications for Syl-Off Q2-7785 Coating
+
+- Silicone PSA labels for automotive and aerospace applications, equipment labels and other die-cut applications
+- Silicone PSA transfer tapes
+- Wider silicone tapes using release liner or backsize
+- Double-sided tapes
+- Single or double-sided silicone rubber, foam or sponge insulation
+- Die-cut shapes for spot protection
+
+### Technical assistance and KCT inquiries
+Technical assistance is available from your Dow Corning technical or sales representative. Note: Dow Corning silicone products are now marketed under the DOWSIL™ brand; the guide’s product names are given here as in the original (Form No. 30-083B-01) and availability or naming may differ today. The information in the original guide is offered in good faith but should not substitute for the customer’s own tests.
+
+국내 문의: 한국건설트레이딩 — sales@kconstrade.com, 010-8939-0284 (서울 송파구 충민로 10 가든파이브툴 4-A19).
+
+Q: How can anchorage of silicone PSA to PET or polyimide film be improved?
+A: Use a primer, or add 0.25–0.5% silane coupling agent such as Z-6020 (based on active adhesive weight), accepting lower tack.
+
+Q: What liner release coating is recommended?
+A: Syl-Off Q2-7785 fluorosilicone release coating; Q2-7735 and platinum-cure PSAs give stable release when wet cast.
+
 # Product data
 
 ## DOWSIL™ 730 FS Solvent Resistant Sealant

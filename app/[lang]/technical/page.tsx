@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { PAGES, MANUAL_PDF, MANUAL_TITLE } from '@/lib/tech-manual'
 import { techCss } from '@/components/tech/TechBlocks'
 import { IPAGES } from '@/lib/industrial/pages'
+import { SERIES } from '@/lib/series/config'
 
 type P = { lang: string }
 const BASE = 'https://kconstrade.com'
@@ -106,6 +107,28 @@ export default async function TechHub({ params }: { params: Promise<P> }) {
               ))}
             </ul>
           </div>
+
+          {Object.values(SERIES).map((sr) => (
+            <div key={sr.key} className="p-4 rounded-4 mb-5" style={{ background: '#eef4ff', border: '1px solid #c7dafc' }}>
+              <div style={{ color: '#0b2a55', fontSize: '.8rem', fontWeight: 700, letterSpacing: '.05em' }}>NEW · {sr.badge}</div>
+              <h2 className="fw-bold my-1" style={{ color: '#16142F', fontSize: '1.3rem' }}>{sr.hubTitle[l]} ({sr.pages.length}{ko ? '페이지' : ' pages'})</h2>
+              <p style={{ color: '#555370', fontSize: '.92rem' }}>{sr.hubDesc[l]}</p>
+              <div className="d-flex flex-wrap gap-2 mb-3">
+                <Link href={`/${lang}/technical/${sr.key}`} className="btn btn-sm btn-primary rounded-pill px-3 fw-bold">{ko ? '허브 보기' : 'Open hub'}</Link>
+                <Link href={`/${lang === 'ko' ? 'en' : 'ko'}/technical/${sr.key}`} className="btn btn-sm btn-outline-secondary rounded-pill px-3">{ko ? 'English' : '한국어'}</Link>
+              </div>
+              <ul className="row g-2 list-unstyled mb-0">
+                {sr.pages.map((p) => (
+                  <li key={p.slug} className="col-md-6 col-lg-4">
+                    <Link href={`/${lang}/technical/${sr.key}/${p.slug}`} className="d-block p-3 rounded-3 text-decoration-none h-100" style={{ background: '#fff', border: '1px solid #dbe6fb' }}>
+                      <span style={{ color: '#1558D6', fontSize: '.75rem', fontWeight: 700 }}>{String(p.no).padStart(2, '0')}</span>
+                      <span className="d-block fw-bold" style={{ color: '#16142F', fontSize: '.9rem', lineHeight: 1.45 }}>{p.title[l]}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           <h2 className="fw-bold mb-4" style={{ color: '#16142F' }}>{ko ? '내화 기술정보 목차 (Fire-rated)' : 'Fire-rated technical manual'}</h2>
           <div className="row g-4">
