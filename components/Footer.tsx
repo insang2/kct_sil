@@ -22,13 +22,21 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
 
           {/* Brand column */}
           <div className="col-lg-4">
-            <Link href={`/${lang}`} className="d-inline-block mb-4">
-              <img
-                src="/assets/img/logo/kct_logo.jpeg"
-                alt="한국건설트레이딩 (KCT) 로고"
-                style={{ height: '40px', width: 'auto', filter: 'brightness(0) invert(1)', opacity: 0.9 }}
-              />
-            </Link>
+            <div className="d-flex flex-wrap align-items-center gap-3 mb-4">
+              <Link href={`/${lang}`} className="d-inline-flex align-items-center bg-white rounded-3 px-3 py-2" aria-label={lang === 'ko' ? '한국건설트레이딩 (KCT) 홈' : 'Korea Construction Trading (KCT) home'}>
+                <img
+                  src="/assets/img/logo/kct_logo.jpeg"
+                  alt="한국건설트레이딩 (KCT) 로고"
+                  style={{ height: '40px', width: 'auto' }}
+                />
+              </Link>
+              <div className="d-inline-flex align-items-center gap-2 bg-white rounded-3 px-3 py-2">
+                <img src="/assets/img/logo/Dow_Chemical_Company_logo.svg" alt="Dow" style={{ height: '26px', width: 'auto' }} />
+                <span style={{ color: '#16142F', fontSize: '.78rem', fontWeight: 600, lineHeight: 1.25, borderLeft: '1px solid #d5d8de', paddingLeft: 10 }}>
+                  {lang === 'ko' ? <>Dow<br />인증 판매점</> : lang === 'ja' ? <>Dow<br />認定販売店</> : <>Dow<br />Authorized Distributor</>}
+                </span>
+              </div>
+            </div>
             <p className="text-white mb-4 small" style={{ opacity: 0.75, lineHeight: 1.8 }}>
               {d.footer?.tagline_2 ?? 'Architectural Silicone Wholesale & Export'}<br />
               {d.footer?.tagline_3 ?? 'B2B Pricing · Quote within 24hrs'}

@@ -160,7 +160,6 @@ export const CATALOG: CatalogProduct[] = [
     features: ['상온 경화 RTV, 혼합 불필요', '실리콘 휘발분 최소화', '우수한 내후성 · 무프라이머 접착', '비흐름성 (Non flow)'],
     applications: ['클린룸 조인트 실링', '클린룸 패널 접착'],
     specs: { '제품 유형': '1액형 중성 경화 실리콘', '색상': 'White, Ivory, Light Gray', 'Tack free time': '22분 (JIS A 1439)', '비중': '1.41', '경도 (JIS A)': '19', '최대 인장강도': '1.74 MPa', '최대 신율': '534%', '저분자 실록산 (D4–D10)': '24 ppm', '권장 프라이머': 'DOWSIL™ Primer-D3(RF) (유리·금속·도장 금속)' },
-    image: img('se-5088-cartridge-600.jpg'),
   },
 
   // ───────── 3. 토목용 ─────────

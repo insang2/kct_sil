@@ -372,7 +372,7 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                     {lang === 'ko' && <div className="fs-5 fw-bold text-dark">{ADDRESS.ko}</div>}
                     <div className={lang === 'ko' ? 'text-dark small' : 'fs-6 fw-bold text-dark'} style={lang === 'ko' ? { opacity: 0.7 } : undefined}>{ADDRESS.en}</div>
                     <div className="mt-3">
-                      <i className="bi bi-telephone-fill text-primary me-2"></i>{ct.tel}: <a href={PHONE_TEL} className="fw-bold text-decoration-none">{PHONE_DISPLAY}</a>
+                      <i className="bi bi-telephone-fill text-primary me-2"></i>{ct.tel}: <a href={PHONE_TEL} className="fw-bold text-decoration-none" style={{ color: '#1558D6' }}>{PHONE_DISPLAY}</a>
                     </div>
                   </div>
                   <div className="col-lg-5 d-flex flex-wrap gap-2 justify-content-lg-end">
