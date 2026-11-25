@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import TechBlocks, { techCss } from '@/components/tech/TechBlocks'
+import Tx from '@/components/tech/Tx'
 import type { Series } from '@/lib/series/config'
 import TechEnhance from '@/components/tech/TechEnhance'
 import RelatedHubs from '@/components/tech/RelatedHubs'
@@ -56,10 +57,10 @@ export function SeriesHub({ s, lang }: { s: Series; lang: string }) {
     { '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q[l], acceptedAnswer: { '@type': 'Answer', text: f.a[l] } })) },
   ]
   return (
-    <>
+    <Tx>
       <style dangerouslySetInnerHTML={{ __html: techCss }} />
       <Ld graph={graph} />
-      <section style={{ background: C.dark, color: '#fff', paddingTop: 120, paddingBottom: 56 }}>
+      <section className="tx-hero tx-big" style={{ background: C.dark, color: '#fff', paddingTop: 120, paddingBottom: 56 }}>
         <div className="container">
           <div className="row align-items-center g-4">
             <div className="col-lg-7">
@@ -110,7 +111,7 @@ export function SeriesHub({ s, lang }: { s: Series; lang: string }) {
           <Contact ko={ko} />
         </div>
       </section>
-    </>
+    </Tx>
   )
 }
 
@@ -159,11 +160,11 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
   ]
   const A = ({ href, children }: { href: string; children: React.ReactNode }) => <a href={href} style={{ color: C.accent }}>{children}</a>
   return (
-    <>
+    <Tx>
       <style dangerouslySetInnerHTML={{ __html: techCss }} />
       <TechEnhance lang={l} />
       <Ld graph={graph} />
-      <section style={{ background: C.dark, color: '#fff', paddingTop: 110, paddingBottom: 40 }}>
+      <section className="tx-hero" style={{ background: C.dark, color: '#fff', paddingTop: 110, paddingBottom: 40 }}>
         <div className="container">
           <nav aria-label="breadcrumb" className="mb-3" style={{ fontSize: '.85rem' }}>
             <Link href={`/${lang}`} style={{ color: '#bfdbfe' }}>{ko ? '홈' : 'Home'}</Link><span style={{ color: '#93c5fd' }}> › </span>
@@ -232,6 +233,6 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
           </article>
         </div>
       </div>
-    </>
+    </Tx>
   )
 }

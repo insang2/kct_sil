@@ -4,6 +4,7 @@ import { IPAGES, SOURCE, SOURCE_PDF } from '@/lib/industrial/pages'
 import { PRODUCTS, GROUP_LABEL, GROUP_PAGE, type Group } from '@/lib/industrial/data'
 import { productLd } from '@/lib/industrial/jsonld'
 import { techCss } from '@/components/tech/TechBlocks'
+import Tx from '@/components/tech/Tx'
 
 type P = { lang: string }
 const BASE = 'https://kconstrade.com'
@@ -46,11 +47,11 @@ export default async function IndustrialHub({ params }: { params: Promise<P> }) 
   ]
 
   return (
-    <>
+    <Tx>
       <style dangerouslySetInnerHTML={{ __html: techCss }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }) }} />
 
-      <section style={{ background: 'linear-gradient(135deg,#7a2e00,#2b1200)', color: '#fff', paddingTop: 120, paddingBottom: 56 }}>
+      <section className="tx-hero tx-big" style={{ background: 'linear-gradient(135deg,#7a2e00,#2b1200)', color: '#fff', paddingTop: 120, paddingBottom: 56 }}>
         <div className="container">
           <div className="row align-items-center g-4">
             <div className="col-lg-7">
@@ -140,6 +141,6 @@ export default async function IndustrialHub({ params }: { params: Promise<P> }) 
           </div>
         </div>
       </section>
-    </>
+    </Tx>
   )
 }

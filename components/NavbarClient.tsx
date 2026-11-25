@@ -119,6 +119,7 @@ export default function NavbarClient({ lang, navLabels, userSlot }: NavbarClient
       {/* ── Toggler ── */}
       <button
         type="button"
+        className="d-lg-none"
         aria-expanded={menuOpen}
         aria-controls="main-nav"
         aria-label={menuOpen ? ml.close : ml.open}

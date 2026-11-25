@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PAGES, getPage, MANUAL_PDF } from '@/lib/tech-manual'
 import TechBlocks, { techCss } from '@/components/tech/TechBlocks'
+import Tx from '@/components/tech/Tx'
 import TechEnhance from '@/components/tech/TechEnhance'
 import RelatedHubs from '@/components/tech/RelatedHubs'
 import { TECH_UPDATED } from '@/lib/series/hubs'
@@ -67,12 +68,12 @@ export default async function TechPageView({ params }: { params: Promise<P> }) {
   }
 
   return (
-    <>
+    <Tx>
       <style dangerouslySetInnerHTML={{ __html: techCss }} />
       <TechEnhance lang={l} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <section style={{ background: 'linear-gradient(135deg,#1f3a5f,#0f2038)', color: '#fff', paddingTop: 110, paddingBottom: 40 }}>
+      <section className="tx-hero" style={{ background: 'linear-gradient(135deg,#1f3a5f,#0f2038)', color: '#fff', paddingTop: 110, paddingBottom: 40 }}>
         <div className="container">
           <nav aria-label="breadcrumb" className="mb-3" style={{ fontSize: '.85rem' }}>
             <Link href={`/${lang}`} style={{ color: '#cbd5e1' }}>{ko ? '홈' : 'Home'}</Link>
@@ -155,6 +156,6 @@ export default async function TechPageView({ params }: { params: Promise<P> }) {
           </article>
         </div>
       </div>
-    </>
+    </Tx>
   )
 }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PAGES, MANUAL_PDF, MANUAL_TITLE } from '@/lib/tech-manual'
 import { techCss } from '@/components/tech/TechBlocks'
+import Tx from '@/components/tech/Tx'
 import { IPAGES } from '@/lib/industrial/pages'
 import { SERIES } from '@/lib/series/config'
 import { HUBS, searchIndex } from '@/lib/series/hubs'
@@ -40,30 +41,25 @@ export default async function TechHub({ params }: { params: Promise<P> }) {
   }
 
   return (
-    <>
+    <Tx>
       <style dangerouslySetInnerHTML={{ __html: techCss }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <section className="position-relative overflow-hidden" style={{ background: '#0f2038', color: '#fff', paddingTop: 120, paddingBottom: 56 }}>
+      <section className="tx-hero tx-photo tx-big position-relative overflow-hidden" style={{ background: '#0f2038', color: '#fff', paddingTop: 120, paddingBottom: 56 }}>
         <div className="container">
           <div className="row align-items-center g-4">
-            <div className="col-lg-7">
+            <div className="col-lg-9">
               <span className="badge rounded-pill px-3 py-2 mb-3" style={{ background: 'rgba(255,255,255,.15)', letterSpacing: '.08em' }}>TECHNICAL INFORMATION</span>
-              <h1 className="fw-bold mb-3" style={{ color: '#fff', fontSize: 'clamp(1.9rem,4vw,3rem)' }}>
-                {ko ? 'DOWSIL™ 내화 실란트 기술정보' : 'DOWSIL™ Fire-rated Sealant Technical Information'}
-              </h1>
-              <p style={{ color: '#e2e8f0', lineHeight: 1.8, maxWidth: 620 }}>
+              <h1 className="fw-bold mb-3">{ko ? <>기술정보 <span className="tx-light">Technical Library</span></> : <>Technical <span className="tx-light">Library</span></>}</h1>
+              <p>
                 {ko
-                  ? 'Dow 「Fire-rated Dow Technologies Technical Manual」 전체를 영문 원문과 한국어 번역으로 수록했습니다. 화재 반응성·내화 성능의 개념부터 벽·바닥 선형 줄눈과 관통부 시험 결과, 연기 차단, 커튼월, 시공 지침까지 16개 페이지로 나누어 살펴볼 수 있습니다.'
-                  : 'The complete Dow “Fire-rated Dow Technologies Technical Manual”, reproduced in English with a Korean translation. Sixteen pages cover reaction to fire and fire resistance concepts, linear joint and penetration seal test results in walls and floors, smoke barriers, curtain walls and application guidelines.'}
+                  ? 'Dow 실리콘의 내화 매뉴얼, 산업·가전용 선정 가이드, 실리콘 일반 교육, 점착제(PSA) 선택 요령까지 4종 자료를 50개 페이지로 정리했습니다. 영문 원문과 한국어 번역을 함께 수록했으며, 문의는 한국건설트레이딩으로 주십시오.'
+                  : 'Four Dow silicone resources in 50 pages: the fire-rated technical manual, the industrial and appliance selection guide, silicone basics training and the PSA selection guide — English originals with Korean translations. Inquiries: Korea Construction Trading.'}
               </p>
-              <div className="d-flex flex-wrap gap-2">
-                <Link href={`/${lang}/technical/${PAGES[0].slug}`} className="btn btn-light rounded-pill px-4 fw-bold">{ko ? '처음부터 보기' : 'Start reading'}</Link>
-                <a href={MANUAL_PDF} download className="btn btn-outline-light rounded-pill px-4"><i className="bi bi-file-earmark-pdf me-2" />{ko ? '원문 PDF 다운로드 (영문, 2MB)' : 'Download original PDF (2 MB)'}</a>
+              <div className="d-flex flex-wrap gap-2 mt-4">
+                <a href="mailto:sales@kconstrade.com" className="btn btn-light">{ko ? '자료 문의' : 'Contact us'} →</a>
+                <a href="#tech-q" className="btn btn-outline-light">{ko ? '자료 찾기' : 'Search'}</a>
               </div>
-            </div>
-            <div className="col-lg-5">
-              <img src="/assets/tech/cover.jpg" alt={MANUAL_TITLE.en} className="w-100 rounded-4 shadow" style={{ maxHeight: 320, objectFit: 'cover', objectPosition: 'center 35%' }} />
             </div>
           </div>
         </div>
@@ -72,17 +68,18 @@ export default async function TechHub({ params }: { params: Promise<P> }) {
       <section className="py-5 bg-white">
         <div className="container">
           <TechSearch items={searchIndex(lang, l)} ko={ko} />
-          <h2 className="fw-bold mb-3" style={{ color: '#16142F' }}>{ko ? '자료 한눈에 보기' : 'Resources at a glance'}</h2>
-          <div className="row g-3 mb-5">
+          <div className="tx-eyebrow mb-1" style={{ color: '#5d646b' }}>{ko ? '자료 목록' : 'Library'}</div>
+          <h2 className="tx-sec-h">{ko ? '자료별 기술정보' : 'Technical information by resource'}</h2>
+          <p className="tx-sec-sub">{ko ? 'Dow 문서를 원문에 가깝게 수록하고 한국어 번역을 더했습니다. 자료를 선택하면 페이지별 목차로 이동합니다.' : 'Dow documents reproduced close to the original with Korean translation. Select a resource to see its page-by-page contents.'}</p>
+          <nav className="tx-tabs" aria-label={ko ? '자료 바로가기' : 'Resources'}>
+            {HUBS.map((h) => <Link key={h.key} href={`/${lang}/${h.path}`}>{h.title[l]}<small>{h.count}</small></Link>)}
+          </nav>
+          <div className="tx-grid">
             {HUBS.map((h) => (
-              <div key={h.key} className="col-md-6 col-lg-3">
-                <Link href={`/${lang}/${h.path}`} className="d-block p-4 border rounded-4 text-decoration-none h-100 product-card-hover">
-                  <i className={`bi ${h.icon}`} style={{ color: '#1558D6', fontSize: '1.6rem' }} aria-hidden="true" />
-                  <h3 className="h6 fw-bold mt-2" style={{ color: '#16142F', lineHeight: 1.4 }}>{h.title[l]}</h3>
-                  <p className="mb-2" style={{ color: '#555370', fontSize: '.88rem', lineHeight: 1.6 }}>{h.desc[l]}</p>
-                  <span style={{ color: '#1558D6', fontSize: '.82rem', fontWeight: 600 }}>{h.count}{ko ? '개 페이지' : ' pages'} →</span>
-                </Link>
-              </div>
+              <Link key={h.key} href={`/${lang}/${h.path}`}>
+                <h3>{h.title[l]}<em>{h.count}{ko ? '쪽' : ' pp.'}</em></h3>
+                <p>{h.desc[l]}</p>
+              </Link>
             ))}
           </div>
         </div>
@@ -181,6 +178,13 @@ export default async function TechHub({ params }: { params: Promise<P> }) {
           </div>
         </div>
       </section>
-    </>
+      <div className="container pb-5">
+        <div className="tx-notes">
+          <div><h3>{ko ? '자료 수치 안내' : 'About the values'}</h3><p>{ko ? '수록된 수치는 대표 특성이며 규격값이 아닙니다. 적용 전 사용 조건에서 직접 시험해 확인해 주십시오.' : 'Values are typical properties, not specifications. Please verify under your own conditions before use.'}</p></div>
+          <div><h3>{ko ? '원문 PDF' : 'Original PDFs'}</h3><p>{ko ? '각 자료 페이지에서 원문 PDF를 내려받을 수 있습니다.' : 'The original PDF is available on each resource page.'}</p></div>
+          <div><h3>{ko ? '문의' : 'Inquiries'}</h3><p>{ko ? '한국건설트레이딩 ' : 'Korea Construction Trading '}<a href="mailto:sales@kconstrade.com">sales@kconstrade.com</a> · <a href="tel:+821089390284">010-8939-0284</a></p></div>
+        </div>
+      </div>
+    </Tx>
   )
 }
