@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import TechBlocks, { techCss } from '@/components/tech/TechBlocks'
 import type { Series } from '@/lib/series/config'
+import TechEnhance from '@/components/tech/TechEnhance'
+import RelatedHubs from '@/components/tech/RelatedHubs'
+import { TECH_UPDATED } from '@/lib/series/hubs'
 
 const BASE = 'https://kconstrade.com'
 const brand = (l: 'ko' | 'en') => (l === 'ko' ? '한국건설트레이딩 (KCT)' : 'Korea Construction Trading (KCT)')
@@ -103,6 +106,7 @@ export function SeriesHub({ s, lang }: { s: Series; lang: string }) {
             ))}
           </div>
           <Cite s={s} l={l} ko={ko} url={url} title={s.hubTitle[l]} />
+          <RelatedHubs lang={lang} l={l} current={s.key} />
           <Contact ko={ko} />
         </div>
       </section>
@@ -147,7 +151,7 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
   const url = `${BASE}/${lang}/technical/${s.key}/${slug}`
   const graph = [
     { '@type': 'BreadcrumbList', itemListElement: [...crumbs(s, lang, ko, l), { '@type': 'ListItem', position: 4, name: page.title[l], item: url }] },
-    { '@type': 'TechArticle', '@id': url, headline: page.title[l], description: page.answer[l], abstract: page.summary[l], inLanguage: l, image: `${BASE}${page.image}`, url,
+    { '@type': 'TechArticle', '@id': url, headline: page.title[l], description: page.answer[l], abstract: page.summary[l], inLanguage: l, datePublished: TECH_UPDATED, dateModified: TECH_UPDATED, image: `${BASE}${page.image}`, url,
       isBasedOn: { '@type': 'CreativeWork', name: s.source, url: `${BASE}${s.pdf}` }, citation: s.source,
       author: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE },
       publisher: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE }, mainEntityOfPage: url },
@@ -157,6 +161,7 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: techCss }} />
+      <TechEnhance lang={l} />
       <Ld graph={graph} />
       <section style={{ background: C.dark, color: '#fff', paddingTop: 110, paddingBottom: 40 }}>
         <div className="container">
@@ -222,6 +227,7 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
                   <div style={{ color: '#555370', fontSize: '.8rem' }}>{ko ? '다음' : 'Next'} →</div><div className="fw-bold" style={{ color: '#16142F' }}>{next.title[l]}</div>
                 </Link>)}</div>
             </div>
+            <RelatedHubs lang={lang} l={l} current={s.key} />
             <Contact ko={ko} />
           </article>
         </div>

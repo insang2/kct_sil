@@ -332,3 +332,24 @@ main {
 .text-body-secondary { color: #555370 !important; }
 .breadcrumb-item, .breadcrumb-item a, .breadcrumb-item.active { color: #555370 !important; }
 .breadcrumb-item + .breadcrumb-item::before { color: #8a88a3 !important; }
+
+
+/* ── 접근성: 키보드 포커스, 본문 바로가기, 모션 감소, 앵커 오프셋 ── */
+html { scroll-padding-top: 84px; }
+:where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #1558D6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+main:focus { outline: none; }
+.skip-link {
+  position: absolute; left: 8px; top: -60px; z-index: 2000;
+  background: #16142F; color: #fff; padding: 10px 16px; border-radius: 8px; font-weight: 600;
+  transition: top .15s;
+}
+.skip-link:focus { top: 8px; color: #fff; }
+.nav-link.active { color: #1558D6 !important; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+@media (max-width: 991px) { .tech-submenu { position: static !important; box-shadow: none !important; border: 0 !important; padding-left: .75rem !important; } }

@@ -187,7 +187,7 @@ export default async function ProductsPage({
                   return (
                     <div key={product.slug} className="col-sm-6 col-lg-4 col-xl-3">
                       <div className="card border-0 rounded-4 h-100 shadow-sm overflow-hidden product-card-hover">
-                        <Link href={href} className="d-block overflow-hidden" style={{ height: '180px', background: '#f8f9fa' }}>
+                        <Link href={href} tabIndex={-1} aria-hidden="true" className="d-block overflow-hidden" style={{ height: '180px', background: '#f8f9fa' }}>
                           <img
                             src={product.image_url ?? '/assets/img/logo/Dow_Chemical_Company_logo.svg'}
                             alt={product.name_ko}

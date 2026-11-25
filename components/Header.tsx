@@ -22,12 +22,12 @@ export default async function Header({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-white border-bottom shadow-sm">
+      <nav aria-label={lang === "ko" ? "주 메뉴" : lang === "ja" ? "メインメニュー" : "Main"} className="navbar navbar-expand-lg fixed-top navbar-light bg-white border-bottom shadow-sm">
         <div className="container position-relative">
-          <Link className="navbar-brand" href={`/${lang}`}>
+          <Link className="navbar-brand" href={`/${lang}`} aria-label={lang === "ko" ? "한국건설트레이딩 홈" : "Korea Construction Trading home"}>
             <img
               src="/assets/img/logo/kct_logo.jpeg"
-              alt="한국건설트레이딩 (KCT) 건축용 실리콘 로고"
+              alt=""
               className="img-fluid"
               style={{ height: '45px', width: 'auto', mixBlendMode: 'multiply' }}
             />

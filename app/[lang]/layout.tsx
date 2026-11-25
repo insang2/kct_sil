@@ -165,9 +165,10 @@ export default async function RootLayout({
             gtag('config', 'G-CXKPTQTM71');
           `}
         </Script>
+        <a href="#main-content" className="skip-link">{lang === 'ko' ? '본문 바로가기' : lang === 'ja' ? '本文へスキップ' : 'Skip to main content'}</a>
         <Header lang={lang as 'ko' | 'en' | 'ja'} />
         
-        <main className="flex-grow-1">
+        <main id="main-content" tabIndex={-1} className="flex-grow-1">
           {children}
         </main>
 

@@ -4,6 +4,8 @@ import { PAGES, MANUAL_PDF, MANUAL_TITLE } from '@/lib/tech-manual'
 import { techCss } from '@/components/tech/TechBlocks'
 import { IPAGES } from '@/lib/industrial/pages'
 import { SERIES } from '@/lib/series/config'
+import { HUBS, searchIndex } from '@/lib/series/hubs'
+import TechSearch from '@/components/tech/TechSearch'
 
 type P = { lang: string }
 const BASE = 'https://kconstrade.com'
@@ -68,6 +70,25 @@ export default async function TechHub({ params }: { params: Promise<P> }) {
       </section>
 
       <section className="py-5 bg-white">
+        <div className="container">
+          <TechSearch items={searchIndex(lang, l)} ko={ko} />
+          <h2 className="fw-bold mb-3" style={{ color: '#16142F' }}>{ko ? '자료 한눈에 보기' : 'Resources at a glance'}</h2>
+          <div className="row g-3 mb-5">
+            {HUBS.map((h) => (
+              <div key={h.key} className="col-md-6 col-lg-3">
+                <Link href={`/${lang}/${h.path}`} className="d-block p-4 border rounded-4 text-decoration-none h-100 product-card-hover">
+                  <i className={`bi ${h.icon}`} style={{ color: '#1558D6', fontSize: '1.6rem' }} aria-hidden="true" />
+                  <h3 className="h6 fw-bold mt-2" style={{ color: '#16142F', lineHeight: 1.4 }}>{h.title[l]}</h3>
+                  <p className="mb-2" style={{ color: '#555370', fontSize: '.88rem', lineHeight: 1.6 }}>{h.desc[l]}</p>
+                  <span style={{ color: '#1558D6', fontSize: '.82rem', fontWeight: 600 }}>{h.count}{ko ? '개 페이지' : ' pages'} →</span>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5 bg-white" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="row g-3 mb-5 text-center">
             {[

@@ -4,6 +4,9 @@ import { notFound } from 'next/navigation'
 import { IPAGES, getIPage, SOURCE, SOURCE_PDF } from '@/lib/industrial/pages'
 import { productLd } from '@/lib/industrial/jsonld'
 import TechBlocks, { techCss } from '@/components/tech/TechBlocks'
+import TechEnhance from '@/components/tech/TechEnhance'
+import RelatedHubs from '@/components/tech/RelatedHubs'
+import { TECH_UPDATED } from '@/lib/series/hubs'
 
 type P = { lang: string; slug: string }
 const BASE = 'https://kconstrade.com'
@@ -57,6 +60,8 @@ export default async function IndustrialPage({ params }: { params: Promise<P> })
       description: page.answer[l],
       abstract: page.summary[l],
       inLanguage: l,
+      datePublished: TECH_UPDATED,
+      dateModified: TECH_UPDATED,
       image: `${BASE}${page.image}`,
       url,
       isBasedOn: { '@type': 'CreativeWork', name: SOURCE, publisher: { '@type': 'Organization', name: 'The Dow Chemical Company' }, url: `${BASE}${SOURCE_PDF}` },
@@ -75,6 +80,7 @@ export default async function IndustrialPage({ params }: { params: Promise<P> })
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: techCss }} />
+      <TechEnhance lang={l} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }) }} />
 
       <section style={{ background: 'linear-gradient(135deg,#7a2e00,#2b1200)', color: '#fff', paddingTop: 110, paddingBottom: 40 }}>
@@ -159,6 +165,8 @@ export default async function IndustrialPage({ params }: { params: Promise<P> })
                   <div style={{ color: '#555370', fontSize: '.8rem' }}>{ko ? '다음' : 'Next'} →</div><div className="fw-bold" style={{ color: '#16142F' }}>{next.title[l]}</div>
                 </Link>)}</div>
             </div>
+
+            <RelatedHubs lang={lang} l={l} current="industrial" />
 
             <div className="mt-4 p-4 rounded-4" style={{ background: '#f1f5fb', color: '#16142F' }}>
               <div className="fw-bold mb-1">{ko ? 'DOWSIL™ 실리콘 공급·견적 문의' : 'DOWSIL™ silicone supply and quotations'}</div>

@@ -3,6 +3,9 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PAGES, getPage, MANUAL_PDF } from '@/lib/tech-manual'
 import TechBlocks, { techCss } from '@/components/tech/TechBlocks'
+import TechEnhance from '@/components/tech/TechEnhance'
+import RelatedHubs from '@/components/tech/RelatedHubs'
+import { TECH_UPDATED } from '@/lib/series/hubs'
 
 type P = { lang: string; slug: string }
 const BASE = 'https://kconstrade.com'
@@ -54,6 +57,8 @@ export default async function TechPageView({ params }: { params: Promise<P> }) {
         headline: page.title[l],
         description: page.summary[l],
         inLanguage: l,
+        datePublished: TECH_UPDATED,
+        dateModified: TECH_UPDATED,
         image: `${BASE}${page.image}`,
         isBasedOn: 'Fire-rated Dow Technologies Technical Manual, Form No. 62-2233-01-0325',
         publisher: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)' },
@@ -64,6 +69,7 @@ export default async function TechPageView({ params }: { params: Promise<P> }) {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: techCss }} />
+      <TechEnhance lang={l} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <section style={{ background: 'linear-gradient(135deg,#1f3a5f,#0f2038)', color: '#fff', paddingTop: 110, paddingBottom: 40 }}>
@@ -135,6 +141,8 @@ export default async function TechPageView({ params }: { params: Promise<P> }) {
                 )}
               </div>
             </div>
+
+            <RelatedHubs lang={lang} l={l} current="fire" />
 
             <div className="mt-5 p-4 rounded-4" style={{ background: '#f1f5fb', color: '#16142F' }}>
               <div className="fw-bold mb-1">{ko ? '내화 실란트 제품 문의' : 'Fire-rated sealant inquiries'}</div>

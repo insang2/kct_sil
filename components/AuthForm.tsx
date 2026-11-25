@@ -93,10 +93,10 @@ export default function AuthForm({ mode, lang, dict }: AuthFormProps) {
   return (
     <div className="card border-0 shadow-lg rounded-4 overflow-hidden" data-form-section>
       <div className="card-body p-4 p-md-5">
-        <h2 className="fw-bold mb-4">{mode === 'login' ? t.login_title : t.signup_title}</h2>
+        <h1 className="fw-bold mb-4 h3">{mode === 'login' ? t.login_title : t.signup_title}</h1>
 
         {error && (
-          <div className="alert alert-danger rounded-3 mb-4" role="alert">{error}</div>
+          <div className="alert alert-danger rounded-3 mb-4" role="alert" aria-live="assertive">{error}</div>
         )}
         {success && (
           <div className="alert alert-success rounded-3 mb-4" role="alert">{success}</div>
@@ -106,8 +106,8 @@ export default function AuthForm({ mode, lang, dict }: AuthFormProps) {
           {mode === 'signup' && (
             <>
               <div className="mb-3">
-                <label className="form-label">{t.company_name}</label>
-                <input
+                <label className="form-label" htmlFor="auth-company_name">{t.company_name}</label>
+                <input id="auth-company_name" autoComplete="organization"
                   type="text"
                   className="form-control form-control-lg"
                   value={companyName}
@@ -117,8 +117,8 @@ export default function AuthForm({ mode, lang, dict }: AuthFormProps) {
                 />
               </div>
               <div className="mb-3">
-                <label className="form-label">{t.business_reg}</label>
-                <input
+                <label className="form-label" htmlFor="auth-business_reg">{t.business_reg}</label>
+                <input id="auth-business_reg" autoComplete="off"
                   type="text"
                   className="form-control form-control-lg"
                   value={businessReg}
@@ -127,8 +127,8 @@ export default function AuthForm({ mode, lang, dict }: AuthFormProps) {
                 />
               </div>
               <div className="mb-3">
-                <label className="form-label">{t.contact_person}</label>
-                <input
+                <label className="form-label" htmlFor="auth-contact_person">{t.contact_person}</label>
+                <input id="auth-contact_person" autoComplete="name"
                   type="text"
                   className="form-control form-control-lg"
                   value={contactPerson}
@@ -137,8 +137,8 @@ export default function AuthForm({ mode, lang, dict }: AuthFormProps) {
                 />
               </div>
               <div className="mb-3">
-                <label className="form-label">{t.phone}</label>
-                <input
+                <label className="form-label" htmlFor="auth-phone">{t.phone}</label>
+                <input id="auth-phone" autoComplete="tel"
                   type="tel"
                   className="form-control form-control-lg"
                   value={phone}
@@ -150,8 +150,8 @@ export default function AuthForm({ mode, lang, dict }: AuthFormProps) {
           )}
 
           <div className="mb-3">
-            <label className="form-label fw-bold text-dark">{t.email}</label>
-            <input
+            <label className="form-label fw-bold text-dark" htmlFor="auth-email">{t.email}</label>
+            <input id="auth-email" autoComplete="email"
               type="email"
               className="form-control form-control-lg"
               value={email}
@@ -161,8 +161,8 @@ export default function AuthForm({ mode, lang, dict }: AuthFormProps) {
             />
           </div>
           <div className="mb-4">
-            <label className="form-label fw-bold text-dark">{t.password}</label>
-            <input
+            <label className="form-label fw-bold text-dark" htmlFor="auth-password">{t.password}</label>
+            <input id="auth-password" autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
               type="password"
               className="form-control form-control-lg"
               value={password}
