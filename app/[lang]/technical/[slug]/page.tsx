@@ -6,6 +6,7 @@ import TechBlocks, { techCss } from '@/components/tech/TechBlocks'
 
 type P = { lang: string; slug: string }
 const BASE = 'https://kconstrade.com'
+const brand = (l: 'ko' | 'en') => (l === 'ko' ? '한국건설트레이딩 (KCT)' : 'Korea Construction Trading (KCT)')
 const norm = (lang: string): 'ko' | 'en' => (lang === 'ko' ? 'ko' : 'en') // ja는 영문 원문으로 표시
 
 export async function generateMetadata({ params }: { params: Promise<P> }): Promise<Metadata> {
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<P> }): Prom
   const page = getPage(slug)
   if (!page) return { title: 'Not found | KCT' }
   const l = norm(lang)
-  const title = `${page.title[l]} | ${l === 'ko' ? '기술정보' : 'Technical Information'} | KCT`
+  const title = `${page.title[l]} | ${l === 'ko' ? '기술정보' : 'Technical'} | ${brand(l)}`
   const description = page.summary[l]
   const path = `/technical/${slug}`
   return {
@@ -108,7 +109,7 @@ export default async function TechPageView({ params }: { params: Promise<P> }) {
             </div>
           </aside>
 
-          <main className="col-lg-9">
+          <article className="col-lg-9">
             {page.sections.map((s) => (
               <section key={s.id} id={s.id} className="mb-5" style={{ scrollMarginTop: 90 }}>
                 <h2 className="fw-bold mb-3 pb-2" style={{ color: '#16142F', fontSize: '1.5rem', borderBottom: '2px solid #1558D6' }}>{s.h[l]}</h2>
@@ -143,7 +144,7 @@ export default async function TechPageView({ params }: { params: Promise<P> }) {
               <a href="mailto:sales@kconstrade.com" className="btn btn-primary btn-sm rounded-pill px-3 me-2">sales@kconstrade.com</a>
               <a href="https://wa.me/821089390284" target="_blank" rel="noreferrer" className="btn btn-outline-success btn-sm rounded-pill px-3">WhatsApp</a>
             </div>
-          </main>
+          </article>
         </div>
       </div>
     </>

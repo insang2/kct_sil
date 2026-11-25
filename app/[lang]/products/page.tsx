@@ -14,16 +14,16 @@ export async function generateMetadata({
   const isJa = lang === 'ja';
 
   const title = isEn
-    ? 'Architectural Silicone Sealants Products | Korea Construction Trading (KCT)'
+    ? 'DOWSIL™ Silicone Sealants – 30 Products & TDS | Korea Construction Trading (KCT)'
     : isJa
-    ? '建築用シリコーン製品一覧 | 韓国建設トレー딩 (KCT)'
-    : '건축용 실리콘 제품정보 | 한국건설트레이딩 (KCT)';
+    ? '建築用シリコーン製品一覧 | 韓国建設トレーディング (KCT)'
+    : 'DOWSIL 실리콘 실란트 30종 · TDS 다운로드 | 한국건설트레이딩 (KCT)';
 
   const description = isEn
-    ? 'Explore full lineup of DOWSIL™ architectural and structural silicone sealants: 790, 791, 795, 995, 756 SMS, 977, 991, and more. Bulk B2B supply & global export.'
+    ? 'DOWSIL™ sealants by category: building envelope, GMP, civil, insulating glass, specialty, primers. TDS download for all 30 products. B2B supply & export.'
     : isJa
-    ? 'DOWSIL™ 建築用・構造用シリコーンシーラント全製品ラインナップ。790, 791, 795, 995, 756 SMS, 977, 991など。B2B卸売・グローバル輸出対応。'
-    : 'Dow(다우) 건축용·구조용 실리콘 전 라인업: DOWSIL 790, 791, 795, 995, 756 SMS, 977, 991 등. 커튼월, 파사드, 구조글레이징 전용 B2B 도매 및 수출 공급.';
+    ? 'DOWSIL™ 建築用・構造用シリコーンシーラント全製品ラインナップ。B2B卸売・グローバル輸出対応。'
+    : 'Dow 다우 DOWSIL 건축 외장·GMP·토목·복층유리·특수용·프라이머 실란트 30종. 제품별 TDS(기술자료) PDF 다운로드와 기술 사양, B2B 도매·수출 공급.';
 
   return {
     title,
@@ -196,9 +196,9 @@ export default async function ProductsPage({
                           />
                         </Link>
                         <div className="card-body p-4">
-                          <h5 className="fw-bold mb-2" style={{ fontSize: '1rem' }}>
+                          <h3 className="h5 fw-bold mb-2" style={{ fontSize: '1rem' }}>
                             <Link href={href} className="text-decoration-none text-dark">{product.name_ko}</Link>
-                          </h5>
+                          </h3>
                           <p className="small mb-0" style={{ lineHeight: 1.5, color: '#555370' }}>{product.summary}</p>
                         </div>
                         <div className="card-footer border-0 bg-transparent px-4 pb-4 pt-0 d-flex gap-2">

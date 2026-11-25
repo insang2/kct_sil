@@ -68,9 +68,9 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
 
           {/* Navigation column */}
           <div className="col-6 col-lg-2">
-            <h6 className="fw-bold text-white mb-4 text-uppercase" style={{ fontSize: '0.75rem', letterSpacing: '0.1em', opacity: 0.6 }}>
+            <h2 className="h6 fw-bold text-white mb-4 text-uppercase" style={{ fontSize: '0.75rem', letterSpacing: '0.1em', opacity: 0.6 }}>
               Menu
-            </h6>
+            </h2>
             <ul className="list-unstyled mb-0">
               {[
                 { label: d.navigation.home,     href: `/${lang}` },
@@ -95,9 +95,9 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
 
           {/* Contact column */}
           <div className="col-6 col-lg-3">
-            <h6 className="fw-bold text-white mb-4 text-uppercase" style={{ fontSize: '0.75rem', letterSpacing: '0.1em', opacity: 0.6 }}>
+            <h2 className="h6 fw-bold text-white mb-4 text-uppercase" style={{ fontSize: '0.75rem', letterSpacing: '0.1em', opacity: 0.6 }}>
               Contact
-            </h6>
+            </h2>
             <ul className="list-unstyled mb-0 small" style={{ color: 'rgba(255,255,255,0.82)', lineHeight: 1.9 }}>
               <li>
                 <i className="bi bi-telephone me-2 text-primary"></i>
@@ -138,9 +138,9 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
 
           {/* Retail shops column */}
           <div className="col-lg-3">
-            <h6 className="fw-bold text-white mb-4 text-uppercase" style={{ fontSize: '0.75rem', letterSpacing: '0.1em', opacity: 0.6 }}>
+            <h2 className="h6 fw-bold text-white mb-4 text-uppercase" style={{ fontSize: '0.75rem', letterSpacing: '0.1em', opacity: 0.6 }}>
               {d.retail?.label ?? '소량 주문'}
-            </h6>
+            </h2>
             <p className="small mb-3" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
                 {d.footer?.small_orders_hint ?? 'Small orders available on open markets.'}
             </p>

@@ -209,7 +209,7 @@ export default async function AboutPage({
                       <i className={`${item.icon} text-white fs-4`}></i>
                     </span>
                   </div>
-                  <h5 className="fw-bold text-dark mb-3">{item.title}</h5>
+                  <h3 className="h5 fw-bold text-dark mb-3">{item.title}</h3>
                   <p className="mb-0 text-body-secondary" style={{ lineHeight: 1.75 }}>{item.desc}</p>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default async function AboutPage({
                       <i className={`${item.icon} fs-3`} style={{ color: item.color }}></i>
                     </span>
                   </div>
-                  <h6 className="fw-bold text-dark mb-3">{item.title}</h6>
+                  <h3 className="h6 fw-bold text-dark mb-3">{item.title}</h3>
                   <p className="mb-0 small" style={{ color: '#555370', lineHeight: 1.7 }}>{item.desc}</p>
                 </div>
               </div>

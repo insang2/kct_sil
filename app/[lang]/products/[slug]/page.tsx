@@ -180,8 +180,16 @@ export async function generateMetadata({
   const productName = (isEn && product.name_en) ? product.name_en : product.name_ko
   const siteTitle = isEn ? 'Korea Construction Trading (KCT)' : isJa ? '韓国建設トレーディング (KCT)' : '한국건설트레이딩 (KCT)'
 
-  const title = `${productName} | ${siteTitle}`
-  const description = isEn
+  const cat = bySlug(slug)
+  const cl = cat ? localizeCatalog(cat, isEn ? 'en' : 'ko') : null
+  const title = cl
+    ? (isEn ? `${cl.title} – TDS & Specifications | ${siteTitle}` : `${cl.name} – ${cl.summary} | TDS 다운로드 | ${siteTitle}`)
+    : `${productName} | ${siteTitle}`
+  const description = cl
+    ? (isEn
+        ? `${cl.summary}. Download the Dow technical data sheet (TDS), view typical properties, applications and features. Supplied by KCT for B2B and export.`
+        : `${cl.summary}. ${cl.description.slice(0, 90).replace(/\s+\S*$/, '')}… TDS(기술자료) PDF 다운로드, 사양, 적용 분야. 한국건설트레이딩 B2B 공급.`)
+    : isEn
     ? (product.name_en ? `${product.name_en} architectural and structural silicone sealant by Dow Chemical. Supplied by Korea Construction Trading (KCT). Inquire for B2B export & bulk pricing.` : `${product.name_ko} - Dow architectural silicone sealant supplied by KCT.`)
     : isJa
     ? `${product.name_ko} - Dow(ダウ) 建築用・構造用シリコーンシーラント。韓国建設トレーディング (KCT) 供給、B2B卸売・輸出見積対応。`
@@ -359,7 +367,7 @@ export default async function ProductDetailPage({
               {/* Key Features preview (first 3) */}
               {features.length > 0 && (
                 <div className="mb-5">
-                  <h6 className="fw-bold text-dark mb-3">{isEn ? 'Key Features' : '주요 특성'}</h6>
+                  <h2 className="h6 fw-bold text-dark mb-3">{isEn ? 'Key Features' : '주요 특성'}</h2>
                   <ul className="list-unstyled mb-0">
                     {features.slice(0, 3).map((f, i) => (
                       <li key={i} className="d-flex align-items-start gap-2 mb-2">

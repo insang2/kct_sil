@@ -8,6 +8,7 @@ import TechBlocks, { techCss } from '@/components/tech/TechBlocks'
 type P = { lang: string; slug: string }
 const BASE = 'https://kconstrade.com'
 const navTitle = (t: string) => t.replace(/^(표|Table) [IVX]+:\s*/, '').split(' – ')[0]
+const brand = (l: 'ko' | 'en') => (l === 'ko' ? '한국건설트레이딩 (KCT)' : 'Korea Construction Trading (KCT)')
 const norm = (lang: string): 'ko' | 'en' => (lang === 'ko' ? 'ko' : 'en')
 
 export async function generateMetadata({ params }: { params: Promise<P> }): Promise<Metadata> {
@@ -15,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<P> }): Prom
   const page = getIPage(slug)
   if (!page) return { title: 'Not found | KCT' }
   const l = norm(lang)
-  const title = `${page.title[l]} | ${l === 'ko' ? '기술정보' : 'Technical'} | KCT`
-  const description = page.answer[l].slice(0, 300)
+  const title = `${navTitle(page.title[l])} | ${l === 'ko' ? '산업·가전 DOWSIL™ 선정 가이드' : 'DOWSIL™ Industrial Guide'} | ${brand(l)}`
+  const description = page.summary[l]
   const path = `/technical/industrial/${slug}`
   return {
     title,
@@ -114,7 +115,7 @@ export default async function IndustrialPage({ params }: { params: Promise<P> })
             </div>
           </aside>
 
-          <main className="col-lg-9">
+          <article className="col-lg-9">
             <section id="key-facts" className="mb-4 p-4 rounded-4" style={{ background: '#fff7ed', border: '1px solid #fed7aa', scrollMarginTop: 90 }} aria-label={ko ? '핵심 요약' : 'Key facts'}>
               <div className="fw-bold mb-1" style={{ color: '#9a3412', fontSize: '.85rem', letterSpacing: '.04em' }}>{ko ? '핵심 요약' : 'KEY FACTS'}</div>
               <p className="mb-0" style={{ color: '#16142F', lineHeight: 1.8 }}>{page.answer[l]}</p>
@@ -164,7 +165,7 @@ export default async function IndustrialPage({ params }: { params: Promise<P> })
               <a href="mailto:sales@kconstrade.com" className="btn btn-primary btn-sm rounded-pill px-3 me-2">sales@kconstrade.com</a>
               <a href="https://wa.me/821089390284" target="_blank" rel="noreferrer" className="btn btn-outline-success btn-sm rounded-pill px-3">WhatsApp</a>
             </div>
-          </main>
+          </article>
         </div>
       </div>
     </>

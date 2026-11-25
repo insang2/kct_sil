@@ -26,7 +26,7 @@ export async function generateMetadata({
     metadataBase: new URL('https://kconstrade.com'),
     title: {
       default: m.title,
-      template: `%s | 한국건설트레이딩 (KCT)`,
+      template: '%s', // 각 페이지 title에 브랜드명이 이미 포함됨 (중복 방지)
     },
     description: m.description,
     keywords: m.keywords,
@@ -139,8 +139,12 @@ export default async function RootLayout({
                 "postalCode": "05840",
                 "addressCountry": "KR"
               },
+              "geo": { "@type": "GeoCoordinates", "latitude": 37.478626, "longitude": 127.1192753 },
+              "areaServed": ["KR", "AE", "SA", "VN", "JP"],
               "sameAs": [
-                "https://www.linkedin.com/company/kct-korea-construction-trading"
+                "https://www.linkedin.com/company/kct-korea-construction-trading",
+                "https://www.instagram.com/kct.rading",
+                "https://smartstore.naver.com/kconstrade/"
               ]
             })
           }}

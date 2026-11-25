@@ -187,21 +187,21 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
               <div className="mb-4 position-relative fw-normal text-primary" style={{ fontSize: '3.5rem' }}>
                 <i className="icon-Repeat-2 position-relative"></i>
               </div>
-              <h5 className="mb-3 text-dark">{dict.features.f1_title}</h5>
+              <h3 className="h5 mb-3 text-dark">{dict.features.f1_title}</h3>
               <p className="mb-3 px-lg-3 text-body-secondary fw-normal">{dict.features.f1_desc}</p>
             </div>
             <div className="col-12 col-lg-4 mb-7 mb-lg-0 text-center">
               <div className="mb-4 position-relative fw-normal text-primary" style={{ fontSize: '3.5rem' }}>
                 <i className="icon-Truck position-relative"></i>
               </div>
-              <h5 className="mb-3 text-dark">{dict.features.f2_title}</h5>
+              <h3 className="h5 mb-3 text-dark">{dict.features.f2_title}</h3>
               <p className="mb-3 px-lg-3 text-body-secondary fw-normal">{dict.features.f2_desc}</p>
             </div>
             <div className="col-12 col-lg-4 text-center">
               <div className="mb-4 position-relative fw-normal text-primary" style={{ fontSize: '3.5rem' }}>
                 <i className="icon-File-Edit position-relative"></i>
               </div>
-              <h5 className="mb-3 text-dark">{dict.features.f3_title}</h5>
+              <h3 className="h5 mb-3 text-dark">{dict.features.f3_title}</h3>
               <p className="mb-3 px-lg-3 text-body-secondary fw-normal">{dict.features.f3_desc}</p>
             </div>
           </div>
@@ -235,7 +235,7 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                     {String(i + 1).padStart(2, '0')}
                   </div>
                 </div>
-                <h6 className="fw-bold text-dark mb-2">{item.title}</h6>
+                <h3 className="h6 fw-bold text-dark mb-2">{item.title}</h3>
                 <p className="text-body-secondary small mb-0" style={{ lineHeight: 1.7 }}>{item.desc}</p>
               </div>
             ))}
