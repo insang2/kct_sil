@@ -6,6 +6,7 @@ export interface IPage {
   slug: string
   no: number
   pdfPages: string
+  doc?: string // 시리즈에서 원문이 둘 이상일 때 출처 라벨 (예: '2024 최신판')
   title: L
   summary: L
   answer: L // 핵심 요약(검색·AI 인용용 첫 단락)

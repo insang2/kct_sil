@@ -31,6 +31,7 @@ export default async function TechHub({ params }: { params: Promise<P> }) {
   const { lang } = await params
   const l = norm(lang)
   const ko = l === 'ko'
+  const total = searchIndex(lang, l).length
 
   const schema = {
     '@context': 'https://schema.org',
@@ -53,8 +54,8 @@ export default async function TechHub({ params }: { params: Promise<P> }) {
               <h1 className="fw-bold mb-3">{ko ? <>기술정보 <span className="tx-light">Technical Library</span></> : <>Technical <span className="tx-light">Library</span></>}</h1>
               <p>
                 {ko
-                  ? 'Dow 실리콘의 내화 매뉴얼, 산업·가전용 선정 가이드, 실리콘 일반 교육, 점착제(PSA) 선택 요령까지 4종 자료를 50개 페이지로 정리했습니다. 영문 원문과 한국어 번역을 함께 수록했으며, 문의는 한국건설트레이딩으로 주십시오.'
-                  : 'Four Dow silicone resources in 50 pages: the fire-rated technical manual, the industrial and appliance selection guide, silicone basics training and the PSA selection guide — English originals with Korean translations. Inquiries: Korea Construction Trading.'}
+                  ? `Dow 실리콘의 내화 매뉴얼, 산업·가전용 선정 가이드, 실리콘 일반 교육, 점착제(PSA) 선택 요령, 전기·전자 테이프용 PSA까지 ${HUBS.length}종 자료를 ${total}개 페이지로 정리했습니다. 영문 원문과 한국어 번역을 함께 수록했으며, 한국건설트레이딩이 기술 지원을 위해 최선을 다합니다.`
+                  : `${HUBS.length} Dow silicone resources in ${total} pages: the fire-rated technical manual, the industrial and appliance selection guide, silicone basics training, the PSA selection guide and electrical tape PSAs — English originals with Korean translations. Korea Construction Trading does its best to support you technically.`}
               </p>
               <div className="d-flex flex-wrap gap-2 mt-4">
                 <a href="mailto:sales@kconstrade.com" className="btn btn-light">{ko ? '자료 문의' : 'Contact us'} →</a>

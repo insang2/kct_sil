@@ -54,6 +54,7 @@ const TECH_SUB: { path: string; ko: string; en: string; ja: string }[] = [
   { path: 'technical/industrial', ko: '산업·가전·유지보수 선정 가이드', en: 'Industrial & appliance guide', ja: '産業・家電・メンテナンス用ガイド' },
   { path: 'technical/basics', ko: '실리콘 일반 교육', en: 'Silicone basics training', ja: 'シリコーン基礎教育' },
   { path: 'technical/psa', ko: '실리콘 점착제(PSA) 선택 요령', en: 'Silicone PSA selection guide', ja: 'シリコーンPSA選定ガイド' },
+  { path: 'technical/tapes', ko: '전기·전자 테이프용 PSA', en: 'Electrical tape PSAs', ja: '電気・電子テープ用PSA' },
 ];
 
 const MENU_LABEL: Record<string, { open: string; close: string; lang: string }> = {

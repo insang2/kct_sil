@@ -1,10 +1,20 @@
 import type { IPage, } from '@/lib/industrial/pages'
 import type { L } from '@/lib/tech-manual/types'
 import { BASICS, BASICS_PDF } from './basics'
-import { PSA, PSA_PDF, PSA_FORM } from './psa'
+import { PSA as PSA_OLD, PSA_PDF, PSA_FORM } from './psa'
+import { PSA2, PSA2_PDF, PSA2_FORM } from './psa2'
+import { TAPES, TAPES_SOURCE } from './tapes'
+
+// 2006년판 페이지는 2024 최신판 뒤에 이어 붙인다 (URL은 그대로 유지)
+const PSA: IPage[] = [
+  ...PSA2,
+  ...PSA_OLD.map((x) => ({ ...x, no: x.no + PSA2.length, doc: '2006 · Form 30-083B-01' })),
+]
 
 export interface Series {
-  key: 'basics' | 'psa'
+  key: 'basics' | 'psa' | 'tapes'
+  pdfs?: { href: string; label: L }[] // 내려받을 수 있는 원문 PDF 전체 (없으면 pdf 하나)
+  srcLang?: 'ko' | 'en' // 원문 언어 (기본 en)
   pages: IPage[]
   pdf: string
   source: string
@@ -41,29 +51,62 @@ export const SERIES: Record<string, Series> = {
     cover: '/assets/tech/sb-molecule-3d.jpg',
     badge: 'SILICONE BASICS',
     hubFaqCount: 1,
+    srcLang: 'ko',
   },
   psa: {
     key: 'psa',
     pages: PSA,
-    pdf: PSA_PDF,
-    source: `Dow Corning, “Product Selection and Application Guide — Dow Corning® brand High-Performance Silicone PSAs”, ${PSA_FORM}. 한국어 번역·정리: 한국건설트레이딩(KCT)`,
+    pdf: PSA2_PDF,
+    pdfs: [
+      { href: PSA2_PDF, label: { en: 'Dow Silicone PSAs for High Performance Selection Guide (2024, 12 pp.)', ko: 'Dow 실리콘 PSA 고성능 선택 가이드 (2024, 12쪽)' } },
+      { href: PSA_PDF, label: { en: 'Dow Corning High-Performance Silicone PSAs Selection Guide (2006, 9 pp.)', ko: 'Dow Corning 고성능 실리콘 PSA 선택 요령 (2006, 9쪽)' } },
+    ],
+    source: `Dow, “Silicone PSAs for High Performance Selection Guide”, ${PSA2_FORM} (2024 최신판); Dow Corning, “Product Selection and Application Guide — Dow Corning® brand High-Performance Silicone PSAs”, ${PSA_FORM} (2006 구판). 한국어 번역·정리: 한국건설트레이딩(KCT)`,
     short: { en: 'Silicone PSA Guide', ko: '실리콘 점착제(PSA) 선택 요령' },
-    hubTitle: { en: 'High-Performance Silicone PSAs: Product Selection and Application Guide', ko: '고성능 실리콘 점착제(PSA) 선택 요령 – 제품 선정·가공 가이드' },
+    hubTitle: { en: 'High-Performance Silicone PSAs: Product Selection and Application Guide (2024 Update)', ko: '고성능 실리콘 점착제(PSA) 선택 요령 – 제품 선정·가공 가이드 (2024 최신판 반영)' },
     hubDesc: {
-      en: 'Dow Corning silicone pressure sensitive adhesive guide in 9 pages: selection flow chart, platinum vs. peroxide cure, 11-product table, tack/adhesion/high-temperature hold charts, coating, curing, oven dusting, anchorage and release (English original with Korean translation).',
-      ko: 'Dow Corning 실리콘 감압 점착제(PSA) 가이드를 9개 페이지로 수록: 선정 플로 차트, 백금·과산화물 경화 비교, 11개 제품 표, 택·접착력·고온 유지력 그래프, 도포·경화·오븐 분진·앵커리지·이형 (영어 원문 + 한국어 번역).',
+      en: 'Dow silicone PSA selection guide in 18 pages: the 2024 edition (application overview table, specifications of 41 PSAs, features, primers, crosslinkers, release coatings, processing and curing) plus the 2006 Dow Corning guide, with a comparison of the two editions (English originals with Korean translation).',
+      ko: 'Dow 실리콘 PSA 선택 가이드를 18개 페이지로 수록: 2024 최신판(용도 개요표, PSA 41종 사양, 특징, 프라이머·가교제·이형 코팅제, 가공·경화)과 2006 Dow Corning 가이드, 두 판본의 비교까지 (영어 원문 + 한국어 번역).',
     },
     keyFacts: {
-      en: 'Dow Corning silicone PSAs are polydimethylsiloxane gum/resin dispersions in xylene or xylene/toluene with platinum cure (2013, 7657, 7659 + Syl-Off 4000 Catalyst) or peroxide cure (280A, 282, 7355, 7356, 7358, Q2-7406, Q2-7566, Q2-7735). Service range is −73 to 260 °C (−100 to 500 °F); Q2-7406 and Q2-7566 hold to 288 °C (550 °F). Platinum cure runs from 80 °C with a 24-hour bath life; peroxide cure uses 0.5–3.0% benzoyl peroxide and a two-step graded cure.',
-      ko: 'Dow Corning 실리콘 PSA는 자일렌 또는 자일렌/톨루엔에 분산된 폴리디메틸실록산 검·레진이며 백금 경화(2013·7657·7659 + Syl-Off 4000 Catalyst) 또는 과산화물 경화(280A·282·7355·7356·7358·Q2-7406·Q2-7566·Q2-7735) 방식입니다. 사용 온도는 −73~260 °C(−100~500 °F), Q2-7406·Q2-7566은 288 °C(550 °F)까지 유지됩니다. 백금 경화는 80 °C부터 가능하고 배스 수명 24시간, 과산화물 경화는 과산화벤조일 0.5~3.0%와 2단계 구배 경화를 씁니다.',
+      en: 'The 2024 Dow guide covers 41 DOWSIL™ silicone PSAs, mica binders and solventless adhesives (peroxide or platinum cure) with viscosity, adhesion, probe tack and high-temperature hold: 260 °C for most peroxide grades, 288 °C for Q2-7566 and 300 °C for platinum SD 4600 FC. Platinum-cure bath life is six hours (24 hours in the 2006 guide); peroxide cure uses 0.5–3.0% benzoyl peroxide with solvent removal at 65–93 °C then heat cure. Primer 7499, SYL-OFF™ crosslinkers, anchorage additives and fluorosilicone release coatings complete the system.',
+      ko: '2024 Dow 가이드는 과산화물 또는 백금 경화 DOWSIL™ 실리콘 PSA·마이카 바인더·무용제 점착제 41종의 점도, 접착력, 프로브 택, 고온 유지력을 수록합니다. 고온 유지력은 대부분의 과산화물 등급 260 °C, Q2-7566 288 °C, 백금 SD 4600 FC 300 °C입니다. 백금 경화 배스 수명은 6시간(2006년판은 24시간), 과산화물 경화는 과산화벤조일 0.5~3.0%를 쓰며 65~93 °C 용제 제거 후 열 경화합니다. 프라이머 7499, SYL-OFF™ 가교제·앵커리지 첨가제·불소실리콘 이형 코팅제가 시스템을 완성합니다.',
     },
     intro: {
-      en: 'The complete Dow Corning guide (Form No. 30-083B-01) reproduced in English with a Korean translation. Product names are as printed in the original; Dow silicones are now marketed under the DOWSIL™ brand.',
-      ko: 'Dow Corning 가이드(Form No. 30-083B-01) 전문을 영어 원문과 한국어 번역으로 수록했습니다. 제품명은 원문 표기 그대로이며 현재 Dow 실리콘은 DOWSIL™ 브랜드로 판매됩니다.',
+      en: 'Both Dow guides are reproduced in English with a Korean translation: the 2024 edition (Form No. 30-1315-01-0524) first, then the 2006 Dow Corning edition (Form No. 30-083B-01). Dow Corning products are now marketed under the DOWSIL™ brand.',
+      ko: 'Dow 가이드 두 종을 영어 원문과 한국어 번역으로 수록했습니다. 2024 최신판(Form No. 30-1315-01-0524)을 먼저, 이어서 2006 Dow Corning판(Form No. 30-083B-01)입니다. Dow Corning 제품은 현재 DOWSIL™ 브랜드로 판매됩니다.',
     },
-    cover: '/assets/tech/psa-cover-lab.jpg',
+    cover: '/assets/tech/psa2-cover.jpg',
     badge: 'PSA SELECTION GUIDE',
     hubFaqCount: 1,
+  },
+  tapes: {
+    key: 'tapes',
+    pages: TAPES,
+    pdf: PSA2_PDF,
+    pdfs: [
+      { href: PSA2_PDF, label: { en: 'Dow Silicone PSAs for High Performance Selection Guide (2024, 12 pp.)', ko: 'Dow 실리콘 PSA 고성능 선택 가이드 (2024, 12쪽)' } },
+      { href: PSA_PDF, label: { en: 'Dow Corning High-Performance Silicone PSAs Selection Guide (2006, 9 pp.)', ko: 'Dow Corning 고성능 실리콘 PSA 선택 요령 (2006, 9쪽)' } },
+    ],
+    source: TAPES_SOURCE,
+    short: { en: 'Electrical Tape PSAs', ko: '전기·전자 테이프용 PSA' },
+    hubTitle: { en: 'Silicone PSAs for Electrical and Electronics Tapes: Products, Selection and KCT Support', ko: '전기·전자 테이프용 실리콘 PSA – 제품·선정·한국건설트레이딩 기술 지원' },
+    hubDesc: {
+      en: 'Electrical and electronics tape hub in 4 pages: Dow’s Korean page in full, the 20 Dow insulation-tape PSA products with typical properties, a selection table by tape use and KCT’s technical support information.',
+      ko: '전기·전자 테이프 허브 4페이지: Dow 한국어 페이지 전문, 절연테이프용 Dow 점착제 20종과 대표 물성, 테이프 용도별 선정표, 한국건설트레이딩 기술 지원 안내.',
+    },
+    keyFacts: {
+      en: 'Dow silicone PSAs for electrical insulation tapes (motor windings, transformers, capacitors, connectors) combine excellent adhesion and strength, high heat resistance and compatibility with PTFE, polyimide and glass-fiber substrates; for splicing tapes they offer high adhesion to low-energy surfaces or quick stick/high holding for flying splices. Dow Korea lists 20 insulation-tape PSA products; the 2024 guide marks DOWSIL™ 7268, Q2-7406, 7388, 7406-VLO, 7355, 7356, 7357, 7358, Q2-7566 and SD 4600 FC for insulation tapes (hold up to 240–300 °C).',
+      ko: '전기 절연 테이프(모터 권선, 변압기, 커패시터, 커넥터)용 Dow 실리콘 PSA는 우수한 밀착성과 강도, 높은 내열성, PTFE·폴리이미드·유리섬유 기재와의 호환성을 갖추고, 스플라이싱 테이프용으로는 저에너지 표면에 대한 높은 접착력 또는 플라잉 스플라이스용 빠른 스틱·높은 고정성을 제공합니다. Dow 한국은 절연테이프용 점착제 20종을 분류하며, 2024 가이드는 절연 테이프용으로 DOWSIL™ 7268, Q2-7406, 7388, 7406-VLO, 7355, 7356, 7357, 7358, Q2-7566, SD 4600 FC를 표시합니다(유지력 240~300 °C).',
+    },
+    intro: {
+      en: 'A related hub to the silicone PSA selection guide, focused on electrical and electronics tapes, with Korea Construction Trading’s technical support information.',
+      ko: '실리콘 PSA 선택 가이드와 연결되는 관련 허브로, 전기·전자 테이프에 초점을 맞추고 한국건설트레이딩의 기술 지원 안내를 담았습니다.',
+    },
+    cover: '/assets/tech/psa2-cover.jpg',
+    badge: 'ELECTRICAL TAPE PSA',
+    hubFaqCount: 1,
+    srcLang: 'ko',
   },
 }
 

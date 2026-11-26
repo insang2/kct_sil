@@ -19,7 +19,10 @@ export const HUBS: Hub[] = [
     desc: { ko: '실리콘의 화학·제조·특성·응용과 부록 데이터', en: 'Silicone chemistry, manufacturing, properties, applications and data' } },
   { key: 'psa', path: 'technical/psa', icon: 'bi-tape', count: SERIES.psa.pages.length,
     title: { ko: '실리콘 점착제(PSA) 선택 요령', en: 'Silicone PSA Selection Guide' },
-    desc: { ko: '백금·과산화물 경화 PSA 11종의 선정·도포·경화·이형', en: '11 platinum- and peroxide-cure PSAs: selection, coating, cure, release' } },
+    desc: { ko: '2024 최신판 포함, PSA 41종의 사양·선정·도포·경화·이형', en: '2024 edition included: 41 PSAs — specifications, selection, coating, cure, release' } },
+  { key: 'tapes', path: 'technical/tapes', icon: 'bi-lightning-charge', count: SERIES.tapes.pages.length,
+    title: { ko: '전기·전자 테이프용 PSA', en: 'Electrical Tape PSAs' },
+    desc: { ko: '절연테이프용 Dow 점착제 20종, 선정표, 한국건설트레이딩 기술 지원', en: '20 Dow insulation-tape PSAs, selection table, KCT technical support' } },
 ]
 
 export interface SearchItem { t: string; s: string; href: string; hub: string }

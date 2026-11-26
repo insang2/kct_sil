@@ -673,8 +673,430 @@ DOWSIL™ 실리콘 제품 선정·견적·기술 문의는 한국건설트레�
 Q: Who should I contact about DOWSIL silicone products in Korea?
 A: Korea Construction Trading (KCT, 한국건설트레이딩): sales@kconstrade.com, 010-8939-0284.
 
-# High-Performance Silicone PSAs: Product Selection and Application Guide (full text)
-Source: Dow Corning, “Product Selection and Application Guide — Dow Corning® brand High-Performance Silicone PSAs”, Form No. 30-083B-01 (AGP7825), ©2001, 2006 Dow Corning Corporation. 한국어 번역·정리: 한국건설트레이딩(KCT)
+# High-Performance Silicone PSAs: Product Selection and Application Guide (2024 Update) (full text)
+Source: Dow, “Silicone PSAs for High Performance Selection Guide”, Form No. 30-1315-01-0524 S2D, © 2024 The Dow Chemical Company (2024 최신판); Dow Corning, “Product Selection and Application Guide — Dow Corning® brand High-Performance Silicone PSAs”, Form No. 30-083B-01 (AGP7825), ©2001, 2006 Dow Corning Corporation (2006 구판). 한국어 번역·정리: 한국건설트레이딩(KCT)
+
+## Choose Dow Silicone PSAs for High Performance: Comprehensive Offerings (2024 Guide)
+https://kconstrade.com/en/technical/psa/high-performance-psa-overview
+
+Key facts: Dow silicone pressure sensitive adhesives (PSAs) offer a wide service-temperature range, adhesion to low-energy surfaces, conformability, clean removability, moisture/UV resistance, sound and shock dampening and electrical insulation properties that acrylic and natural-rubber adhesives cannot match. Different platinum-cure PSAs can be blended to reach a range of adhesion levels (about 5 to 50 g/in for 10/90 to 80/20 high/low-adhesion blend ratios in Dow laboratory conditions).
+
+### Choose Dow silicone PSAs for high performance
+[Figure] Cover of “Choose Dow silicone PSAs for high performance” — Films, Tapes and Release Liners
+
+Dow is a leader in silicone-based solutions for the fast-growing PSA industry. You work to balance demands for tack, adhesive/cohesive strength and electrical properties while also facing various substrate and processing parameters. And through it all, you look for the right balance of cost and performance to be competitive. We work to design products that help you meet these needs and find that balance.
+
+### Advantages and capabilities
+Dow silicone pressure sensitive adhesives (PSAs) offer critical advantages that cannot be matched by organic adhesives such as acrylic, natural rubber and other competing materials. The pressure sensitive adhesives in this guide offer the following high-performance silicone capabilities:
+
+- A wide service-temperature range
+- Adhesion to low-energy surfaces
+- Conformability
+- Clean removability
+- Moisture/UV resistance
+- Sound dampening / shock dampening
+- Electrical insulation properties
+- Much more
+
+You will find that our high-performance line of silicone PSAs can help you make specialty tapes, labels and films better and improve your overall system success. You also can use them as independent adhesives for a variety of bonding, fastening and holding applications.
+
+### Compatible substrates
+
+They adhere to a wide range of substrates, including:
+
+- Glass
+- Silicone rubber
+- Teflon film
+- PTFE (polytetrafluoroethylene)
+- Paper
+- Silicone-varnished cloth
+- Mylar PET film
+- FEP (fluorinated ethylene propylene)
+- Fabric
+- Silicone/glass laminates
+- Kapton polyimide film
+- Aluminum foil
+- Plastics
+- Polyester
+- Glass cloth
+- Stainless steel
+
+### Silicone-based solutions for customer success
+Dow silicone-based solutions for pressure sensitive adhesives provide exceptional adhesive performance for specialty tapes, high-performance films and labels that cannot be matched by organic adhesives such as acrylic, natural rubber and other competitive materials. No matter what your goals are – to innovate, grow reliably or drive costs down – we have the solutions you need. Our more than 60 years of industry experience give us a unique understanding of the challenges you face, as well as the expertise to provide you with a total systems solution tailored to meet your needs. Choose from our wide range of pressure sensitive adhesives to find the exact solution you need to grow your business.
+
+### Selecting the best silicone PSA for your application
+Selecting the best silicone PSA for your application can be a complex undertaking. Substrate requirements; equipment limitations; performance demands for tack, adhesion and cohesive strength and the need for release all enter into the picture. This guide will help you simplify the selection process.
+
+- Begin with Table 1, “Application overview.” It tells you which adhesives in the global silicone PSA line meet your basic application needs for specialty tapes, high-performance films and labels.
+- Then consult Table 2, “Product specifications and typical performance properties,” for more in-depth information: whether a peroxide- or platinum-cure silicone PSA is better for your needs and which product best meets your requirements for tack, adhesion and high-temperature hold and other needs.
+
+To meet customers’ diverse application needs, different platinum-cure PSAs can be blended to achieve a variety of adhesion levels. The graph below shows examples of blending ratios to achieve varying adhesion levels. With Dow brand silicone PSAs, there are many ways to achieve the exact balance of performance properties your application requires. If none of the materials in this guide appear to meet your needs, contact your Dow technical representative for additional suggestions.
+
+[Figure] High / low adhesion PSA blends ratio vs. adhesion (10/90: about 4–5 g/in, 33/67: about 5, 50/50: about 7, 60/40: about 12, 70/30: about 22, 80/20: about 50 g/in). Graph shows typical blending characteristics under Dow laboratory conditions and is intended for reference purposes only.
+
+### Typical structure of protective film
+
+[Figure] Typical structure of protective film: 1 PET base/carrier film; 2 DOWSIL™ low-adhesion, low-migration silicone PSA; 3 hard coating; 4 PET base/carrier film; 5 DOWSIL™ low-adhesion, low-migration silicone PSA; 6 disposable release liner
+
+Q: What substrates do Dow silicone PSAs adhere to?
+A: Glass, silicone rubber, Teflon film, PTFE, paper, silicone-varnished cloth, Mylar PET, FEP, fabric, silicone/glass laminates, Kapton polyimide, aluminum foil, plastics, polyester, glass cloth and stainless steel, among others.
+
+Q: How can adhesion be adjusted?
+A: Different platinum-cure PSAs can be blended; in Dow’s laboratory example a high/low-adhesion blend moves from about 4–5 g/in at 10/90 to about 50 g/in at 80/20.
+
+Q: Where can I get technical support for Dow silicone PSAs in Korea?
+A: Korea Construction Trading (KCT) supports product selection, technical documents, process conditions and troubleshooting to the best of its ability: sales@kconstrade.com, +82 10-8939-0284.
+
+## Table 1: Application Overview – Solutions for Films and Specialty Tapes
+https://kconstrade.com/en/technical/psa/application-overview-table
+
+Key facts: Table 1 maps 50 products to 14 end uses in four groups: masking and specialty tape solutions (high adhesion), protective film and tape solutions (low adhesion), assembly tape and label solutions, and specialty liners. For electrical and electronics tapes, the guide marks DOWSIL™ 7268, Q2-7406, 7388, 7406-VLO, 7355, 7356, 7357, 7358, Q2-7566 and SD 4600 FC for electrical, electronic, heat-shielding and terminal cable insulation tapes, and DOWSIL™ 7268, 7278, 7280, Q2-7406, 7355, 7356, 7357, 7358, 7657, 7687 and 7687N for industrial bonding and bundling tapes.
+
+### Table 1: Application overview – solutions for films and specialty tapes
+The table below reproduces Table 1 of the guide. A bullet (•) means “suggested.” Column groups: masking and specialty tape solutions (high adhesion) — columns 1–7 (masking tapes 1–3, specialty tapes 4–7) and mica-tape binders (8); protective film and tape solutions (low adhesion) — columns 9–11; assembly tape and label solutions — columns 12–14 (double-sided tapes, specialty labels, specialty liners). Scroll horizontally on small screens.
+
+Product | 1. Electrical and electronics masking and carrier tapes for industrial processing | 2. General-purpose masking tapes for low-surface-energy applications | 3. Thermal-spray and powder-coating masking tapes | 4. Electrical and electronics tapes for industrial bonding and bundling applications | 5. Heat-seal tapes for bonding heating surfaces | 6. Electrical, electronic, heat-shielding and terminal cable insulation tapes for electronics, aerospace, aircraft and automotive | 7. Splicing tapes for continuous processing of low-surface-energy substrates | 8. Binding material for mica tape applications | 9. Electronics and industrial component surface-protection films, mainly for shipment | 10. Window glass films in aftermarket electronics, auto, buildings, etc. | 11. Spot protection films in processing of die-cutting/carrier/supporting components, including glass, SUS, foams, PET, PI, Al foil, etc. | 12. Double-sided tapes, unsupported transfer tapes for lamination and mounting in electronics and automotive applications | 13. Marking labels in automotive, aerospace and other outdoor graphics | 14. Release liners for silicone PSA tapes, spot protection films in die-cut processing of single- or double-sided silicone rubber
+■ Pressure sensitive adhesives |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+DOWSIL™ 280A Adhesive | • | • |  |  |  |  | • |  |  |  |  |  |  | 
+DOWSIL™ 7268 Adhesive | • | • |  | • |  | • |  |  |  |  |  |  |  | 
+DOWSIL™ 7278 Adhesive | • | • |  | • |  |  |  |  |  |  |  |  |  | 
+DOWSIL™ 7366 Adhesive | • | • |  |  |  |  | • |  |  |  |  |  |  | 
+DOWSIL™ 7280 Adhesive | • | • |  | • |  |  |  |  |  |  |  |  |  | 
+DOWSIL™ Q2-7406 Adhesive | • |  |  | • |  | • | • |  |  |  |  |  |  | 
+DOWSIL™ 7388 Adhesive | • |  |  |  |  | • | • |  |  |  |  |  |  | 
+DOWSIL™ 7406-VLO Adhesive | • |  |  |  | • | • | • |  |  |  |  |  |  | 
+DOWSIL™ 7355 Adhesive |  |  |  | • | • | • |  |  |  |  |  |  |  | 
+DOWSIL™ 7356 Adhesive | • |  |  | • |  | • |  |  |  |  |  |  |  | 
+DOWSIL™ 7357 Adhesive |  |  |  | • | • | • |  |  |  |  |  |  |  | 
+DOWSIL™ 7358 Adhesive | • |  |  | • | • | • |  |  |  |  |  |  |  | 
+DOWSIL™ Q2-7566 Adhesive |  |  | • |  | • | • |  |  |  |  |  |  |  | 
+DOWSIL™ Q2-7735 Adhesive |  |  |  |  |  |  | • |  |  |  |  | • | • | 
+DOWSIL™ SD 4600 FC Adhesive |  |  | • |  | • | • |  |  |  |  |  |  |  | 
+DOWSIL™ 7657 Adhesive |  |  |  | • |  |  |  |  | • | • | • | • |  | 
+DOWSIL™ 7667 Adhesive |  |  |  |  |  |  |  |  | • | • | • | • |  | 
+DOWSIL™ 7636 Adhesive |  |  |  |  |  |  |  |  | • | • | • |  |  | 
+DOWSIL™ 7666 Adhesive |  |  |  |  |  |  |  |  | • | • | • |  |  | 
+DOWSIL™ 7666N Adhesive |  |  |  |  |  |  |  |  | • | • | • |  |  | 
+DOWSIL™ 7687 Adhesive |  |  |  | • |  |  |  |  | • | • | • |  |  | 
+DOWSIL™ 7669 Adhesive |  |  |  |  |  |  |  |  | • | • | • |  |  | 
+DOWSIL™ 7687N Adhesive |  |  |  | • |  |  |  |  | • | • | • |  |  | 
+DOWSIL™ 7685 Adhesive |  |  |  |  |  |  |  |  | • | • |  |  |  | 
+DOWSIL™ 7695 Adhesive |  |  |  |  |  |  |  |  | • | • |  | • |  | 
+DOWSIL™ 7645 Adhesive |  |  |  |  |  |  |  |  |  | • |  |  |  | 
+DOWSIL™ 7646 Adhesive |  |  |  |  |  |  |  |  |  | • |  |  |  | 
+DOWSIL™ 7647 Adhesive |  |  |  |  |  |  |  |  | • |  | • |  |  | 
+DOWSIL™ 7660 Adhesive |  |  |  |  |  |  |  |  | • |  | • |  |  | 
+DOWSIL™ 7651T Adhesive |  |  |  |  |  |  |  |  | • | • | • |  |  | 
+DOWSIL™ 7652T Adhesive |  |  |  |  |  |  |  |  | • | • | • |  |  | 
+DOWSIL™ 7651 Adhesive |  |  |  |  |  |  |  |  | • | • | • |  |  | 
+DOWSIL™ 7652 Adhesive |  |  |  |  |  |  |  |  | • | • | • |  |  | 
+DOWSIL™ 288 Mica Binder |  |  |  |  |  |  | • | • |  |  |  |  |  | 
+DOWSIL™ 290 Mica Binder |  |  |  |  |  |  |  | • |  |  |  |  |  | 
+DOWSIL™ 298 Mica Binder |  |  |  |  |  |  |  | • |  |  |  |  |  | 
+■ Solventless pressure sensitive adhesives |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+DOWSIL™ 2102 Adhesive |  |  |  |  |  |  |  |  | • | • | • | • |  | 
+DOWSIL™ 2110 Adhesive |  |  |  |  |  |  |  |  | • | • | • | • |  | 
+DOWSIL™ 2013 Adhesive |  |  |  |  |  |  |  |  |  |  |  | • | • | 
+DOWSIL™ 2014 Adhesive |  |  |  |  |  |  |  |  | • | • | • | • |  | 
+DOWSIL™ 2015 Adhesive |  |  |  |  |  |  |  |  | • | • | • | • |  | 
+■ Fluorosilicone release coatings |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+SYL-OFF™ Q2-7785 Release Coating |  |  |  |  |  |  |  |  |  |  |  | • | • | •
+SYL-OFF™ 7786 Coating |  |  |  |  |  |  |  |  |  |  |  | • | • | •
+SYL-OFF™ 7555 Coating |  |  |  |  |  |  |  |  |  |  |  |  | • | •
+SYL-OFF™ 7792 Fluorosilicone Release Coating |  |  |  |  |  |  |  |  |  |  |  | • | • | •
+SYL-OFF™ 7795 Fluorosilicone Release Coating |  |  |  |  |  |  |  |  |  |  |  | • | • | •
+SYL-OFF™ 7798 Fluorosilicone Release Coating |  |  |  |  |  |  |  |  |  |  |  | • | • | •
+Please note: suggestions in the table are typical applications, subject to customer process conditions. Use of products is not necessarily limited to these applications. Emerging applications could be added after consulting with Dow. • = suggested.
+
+Q: Which DOWSIL PSAs are suggested for electrical insulation tapes?
+A: In Table 1 the column “Electrical, electronic, heat-shielding and terminal cable insulation tapes” marks DOWSIL™ 7268, Q2-7406, 7388, 7406-VLO, 7355, 7356, 7357, 7358, Q2-7566 and SD 4600 FC.
+
+Q: Where can I get technical support for Dow silicone PSAs in Korea?
+A: Korea Construction Trading (KCT) supports product selection, technical documents, process conditions and troubleshooting to the best of its ability: sales@kconstrade.com, +82 10-8939-0284.
+
+## Table 2: Product Specifications and Typical Performance Properties (Viscosity, Adhesion, Tack, High-Temperature Hold)
+https://kconstrade.com/en/technical/psa/product-specifications-table
+
+Key facts: Peroxide-cure DOWSIL™ PSAs such as 280A, 7355, 7356, 7358 and Q2-7406 hold to 260 °C (500 °F); Q2-7566 holds to 288 °C (550 °F) and platinum-cure DOWSIL™ SD 4600 FC to 300 °C (572 °F). DOWSIL™ 7657 (platinum) has the highest probe tack in the table at 1,160 g with 1,280 g/in adhesion; DOWSIL™ 7695 reaches 1,400–1,800 g/in and DOWSIL™ 7687/7687N 1,800 g/in. Values are typical and not for specifications.
+
+### Pressure sensitive adhesives and mica binders
+Product | Cure system | Viscosity, cps | Non-volatile content, % | Adhesion, g/in | Probe tack, g | High-temperature hold/shear, °C (°F)
+DOWSIL™ 280A Adhesive | Peroxide | 38,900 | 57 | 850 | 470 | 260 (500)
+DOWSIL™ 7268 Adhesive | Peroxide | 53,000 | 60 | 1,240 | 600 | 240 (464)
+DOWSIL™ 7278 Adhesive | Peroxide | 52,900 | 74 | 1,260 | 560 | 220 (428)
+DOWSIL™ 7366 Adhesive | Peroxide | 58,100 | 57 | 900 | 400 | 220 (428)
+DOWSIL™ 7280 Adhesive | Peroxide | 17,000 | 56 | 1439 | 217 | 220 (428)
+DOWSIL™ Q2-7406 Adhesive | Peroxide | 31,700 | 57 | 940 | 400 | 260 (500)
+DOWSIL™ 7388 Adhesive | Peroxide | 30,500 | 57 | 930 | 380 | 260 (500)
+DOWSIL™ 7406-VLO Adhesive | Peroxide | 31,300 | 56 | 940 | 280 | 260 (500)
+DOWSIL™ 7355 Adhesive | Peroxide | 20,700 | 57 | 1,200 | 430 | 260 (500)
+DOWSIL™ 7356 Adhesive | Peroxide | 23,100 | 56 | 960 | 470 | 260 (500)
+DOWSIL™ 7357 Adhesive | Peroxide | 28,000 | 57 | 1030 | 450 | 260 (500)
+DOWSIL™ 7358 Adhesive | Peroxide | 20,900 | 57 | 1,050 | 490 | 260 (500)
+DOWSIL™ Q2-7566 Adhesive | Peroxide | 33,000 | 57 | 910 | 390 | 288 (550)
+DOWSIL™ Q2-7735 Adhesive | Peroxide | 32,800 | 57 | 1,200 | 530 | 232 (450)
+DOWSIL™ SD 4600 FC Adhesive | Platinum | 40,000 | 60 | 810 | 320 | 300 (572)
+DOWSIL™ 7657 Adhesive | Platinum | 22,500 | 56 | 1,280 | 1,160 | 260 (500)
+DOWSIL™ 7667 Adhesive | Platinum | 55,000 | 70 | 400 | N/A | N/A
+DOWSIL™ 7636 Adhesive | Platinum | 48,000 | > 99 | < 3 | N/A | N/A
+DOWSIL™ 7666 Adhesive | Platinum | 22,500 | > 97 | < 3 | N/A | N/A
+DOWSIL™ 7666N Adhesive | Platinum | 22,500 | > 97 | < 3 | N/A | N/A
+DOWSIL™ 7687 Adhesive | Platinum | 45,000 | 70 | 1,800 | N/A | 200 (392)
+DOWSIL™ 7669 Adhesive | Platinum | 48,000 | > 99 | < 3 | N/A | N/A
+DOWSIL™ 7687N Adhesive | Platinum | 45,000 | 70 | 1,800 | N/A | 200 (392)
+DOWSIL™ 7685 Adhesive | Platinum | 4,200 | 63 | 200-400 | 100-200 | N/A
+DOWSIL™ 7695 Adhesive | Platinum | 14,600 | 63 | 1400-1800 | 600-800 | N/A
+DOWSIL™ 7645 Adhesive | Platinum | 57,000 | 40 | 5 | N/A | N/A
+DOWSIL™ 7646 Adhesive | Platinum | 56,600 | 99 | < 3 | N/A | N/A
+DOWSIL™ 7647 Adhesive | Platinum | 7,500 | 98 | < 3 | N/A | N/A
+DOWSIL™ 7660 Adhesive | Platinum | 46,900 | 97 | < 3 | N/A | N/A
+DOWSIL™ 7651T Adhesive | Platinum | 27,000 | 40 | 10 | N/A | 260 (500)
+DOWSIL™ 7652T Adhesive | Platinum | 10,000 | 40 | 200 | 30 | 260 (500)
+DOWSIL™ 7651 Adhesive | Platinum | 27,000 | 40 | 10 | N/A | 260 (500)
+DOWSIL™ 7652 Adhesive | Platinum | 10,000 | 40 | 200 | 30 | 260 (500)
+DOWSIL™ 288 Mica Binder | Peroxide | 51,600 | 61 | 860 | N/A | N/A
+DOWSIL™ 290 Mica Binder | Peroxide, silane | 38,900 | 56.5 | 860 | N/A | N/A
+DOWSIL™ 298 Mica Binder | Peroxide, silane | 38,000 | 60 | 860 | N/A | N/A
+Footnotes: (1) Specification writers: these values are not intended for use in preparing specifications; contact your local Dow sales office or your Global Dow Connection before writing specifications. (2) Average quality data for comparison purposes only. (3) Measurements are within ±100 cps. (4) Measurements are within ±10 g/in. (5) Adhesion and tack are dependent on substrate backing, film thickness, formulation, etc.; these values represent only one test condition under Dow-established quality assurance procedures at the time of initial manufacture and are intended for comparison purposes only. Contact Dow for specification limits.
+
+### Solventless pressure sensitive adhesives
+Product | Cure system | Viscosity, cps | Non-volatile content, % | Adhesion, g/in | Probe tack, g | High-temperature hold/shear, °C (°F)
+DOWSIL™ 2102 Adhesive | Platinum | 1950 | 100 | 3 | N/A | N/A
+DOWSIL™ 2110 Adhesive | Platinum | 2000 | 100 | 50 | N/A | N/A
+DOWSIL™ 2013 Adhesive | Platinum | 13,100 | 100 | 1,410 | 620 | 260 (500)
+DOWSIL™ 2014 Adhesive | Platinum | 10,000 | 100 | 1,000 | 12 | 220 (428)
+DOWSIL™ 2015 Adhesive | Platinum | 17,000 | 99 | 1,300 | 321 | 260 (500)
+Footnotes: (1) Specification writers: these values are not intended for use in preparing specifications; contact your local Dow sales office or your Global Dow Connection before writing specifications. (2) Average quality data for comparison purposes only. (3) Measurements are within ±100 cps. (4) Measurements are within ±10 g/in. (5) Adhesion and tack are dependent on substrate backing, film thickness, formulation, etc.; these values represent only one test condition under Dow-established quality assurance procedures at the time of initial manufacture and are intended for comparison purposes only. Contact Dow for specification limits.
+
+N/A = not available / not applicable. Peroxide-cure PSAs are one-part systems cured with benzoyl peroxide; platinum-cure PSAs need a platinum catalyst (SYL-OFF™ 4000 Catalyst). See the processing and curing page.
+
+Q: Which DOWSIL PSA has the highest high-temperature hold?
+A: DOWSIL™ SD 4600 FC (platinum cure) is listed at 300 °C (572 °F); DOWSIL™ Q2-7566 is listed at 288 °C (550 °F).
+
+Q: Can these values be used for specifications?
+A: No. Dow states the values are average quality data for comparison only and not intended for specifications; contact Dow for specification limits.
+
+Q: Where can I get technical support for Dow silicone PSAs in Korea?
+A: Korea Construction Trading (KCT) supports product selection, technical documents, process conditions and troubleshooting to the best of its ability: sales@kconstrade.com, +82 10-8939-0284.
+
+## Features/Benefits and Typical Applications of Each DOWSIL™ PSA
+https://kconstrade.com/en/technical/psa/features-and-applications
+
+Key facts: Peroxide-cure DOWSIL™ 7355, 7356 and 7358 combine high-temperature performance with low silicone volatiles for masking, thermal-spray masking and electrical-insulation wraps; DOWSIL™ 7406-VLO is the low-volatile version of Q2-7406; DOWSIL™ 7657 cures as low as 80 °C; low-adhesion platinum PSAs such as 7685 and 7645–7660 target protective films; 288, 290 and 298 are binders for flame-retardant mica tapes.
+
+### Features/benefits and typical applications
+Product | Features/benefits | Typical applications
+DOWSIL™ 280A Adhesive | Good tack | Masking, plating and splicing tapes
+DOWSIL™ 7268 Adhesive | High tack; high adhesion | Masking and plating tapes; shoe sole tape
+DOWSIL™ 7278 Adhesive | High solid content; high adhesion | Masking and plating tapes
+DOWSIL™ 7366 Adhesive | Good tack | Masking, plating, and splicing tapes
+DOWSIL™ 7280 Adhesive | Ultra-high adhesion, suitable tack | Masking and plating tapes; flexibility to use with other peroxide cure PSA to adjust their adhesion
+DOWSIL™ Q2-7406 Adhesive | Excellent high-temperature properties; meets FDA requirements for certain food-contact applications | Splicing and plating tapes; electrical and heat-shielding specialty tapes
+DOWSIL™ 7388 Adhesive | Very good high-temperature performance | Splicing and plating tapes
+DOWSIL™ 7406-VLO Adhesive | Low-silicone-volatile version of DOWSIL™ Q2-7406 Adhesive | Splicing and plating tapes; electrical and heat-shielding specialty tapes
+DOWSIL™ 7355 Adhesive | High adhesion; good high-temperature performance; low silicone volatiles | Masking, plating, splicing and thermal-spray masking tapes
+DOWSIL™ 7356 Adhesive | Balanced tack and adhesion; good high-temperature performance; low silicone volatiles | Plating, thermal-spray masking and high-temperature masking tapes; electrical-insulation wraps
+DOWSIL™ 7357 Adhesive | Benzene, Toluene and Xylene (BTX) free; good high-temperature performance; low silicone volatiles | High temperature masking tapes; splicing tapes; release tapes; application requiring a balance of properties emphasizing adhesion
+DOWSIL™ 7358 Adhesive | High tack; good high-temperature performance; low silicone volatiles | High-temperature masking and thermal-spray masking tapes, heat-seal tapes, electrical-insulation wraps
+DOWSIL™ Q2-7566 Adhesive | General-purpose adhesive with excellent high-temperature properties; low silicone volatiles | Electrical tapes and other very high-temperature tapes
+DOWSIL™ Q2-7735 Adhesive | Combines high tack and good adhesion | Transfer films and labels; masking, plating, splicing and electrical tapes. Suggested for use with release liner coated with SYL-OFF™ Q2-7785 Release Coating
+DOWSIL™ SD 4600 FC Adhesive | Excellent high-temperature resistance | Electrical tapes and other very-high-temperature tapes
+DOWSIL™ 7657 Adhesive | Low-temperature cure as low as 80°C (176°F); high tack and adhesion; meets FDA requirements for certain food-contact applications; low silicone volatiles | Temperature-sensitive substrates; transfer tapes and labels; suggested for use with release liner coated with SYL-OFF™ Q2-7785 Release Coating
+DOWSIL™ 7667 Adhesive | Stable, medium-adhesion PSA for protective film application | Protective film application PSA
+DOWSIL™ 7636 Adhesive | Low adhesion, excellent wetting performance | Applications requiring low adhesion and good wet-out performance for protective tape/film
+DOWSIL™ 7666 Adhesive | Stable & low adhesion; fast cure | Applications requiring low adhesion and good wet-out performance for protective film; flexibility to use with other addition cure PSA to control peeling adhesion
+DOWSIL™ 7666N Adhesive | No inhibitor; fast curing; stable & low adhesion | Applications requiring low adhesion and good wet-out performance for protective film; flexibility to use with other addition cure PSA to control peeling adhesion
+DOWSIL™ 7687 Adhesive | High solid content and very high adhesion, low to medium tackiness | Manufacture of adhesive tapes, labels and transfer/protective films; assembly or permanent bonding applications;
+DOWSIL™ 7669 Adhesive | No inhibitor; fast curing, low adhesion, excellent wetting performance | Applications requiring low adhesion and good wet-out performance for protective tape / film;
+DOWSIL™ 7687N Adhesive | No inhibitor, fast curing, high solid content and very high adhesion, low tackiness | Manufacture of adhesive tapes, labels and transfer/protective films; assembly or permanent bonding applications;
+DOWSIL™ 7685 Adhesive | Stable middle adhesion, very high tackiness | Protective film for anti-finger screen, flexibility to use with other addition cure PSA to control peeling adhesion
+DOWSIL™ 7695 Adhesive | Ultra-high adhesion and tackiness, high adhesion on anti-finger screen | Protective film for anti-finger screen, flexibility to use with other addition cure PSA to control peeling adhesion, bonding low-energy substrates, assembly or permanent bonding applications;
+DOWSIL™ 7645 Adhesive | Excellent wet-out ability | Aftermarket screen protection
+DOWSIL™ 7646 Adhesive | Low adhesion and good wet-out | Protective film for both industrial process and aftermarket (3-layer)
+DOWSIL™ 7647 Adhesive | Stable at low adhesion | Protective film for industrial process (2-layer)
+DOWSIL™ 7660 Adhesive | Very stable at low adhesion | Protective film for industrial process (2-layer)
+DOWSIL™ 7651T Adhesive | Low Si-migration, stable adhesion | Low Si-migration applications
+DOWSIL™ 7652T Adhesive | Low Si-migration, stable adhesion | Low Si-migration applications
+DOWSIL™ 7651 Adhesive | Low Si-migration, stable adhesion | Low Si-migration applications
+DOWSIL™ 7652 Adhesive | Low Si-migration, stable adhesion | Low Si-migration applications
+DOWSIL™ 288 Mica Binder | Good penetration and adhesion to a variety of substrates | Binder for flame-retardant mica tapes
+DOWSIL™ 290 Mica Binder | Good penetration and adhesion to a variety of substrates, good flexibility | Binder for flame-retardant mica tapes
+DOWSIL™ 298 Mica Binder | Good penetration and adhesion to variety of substrates, good flexibility | Binder for flame-retardant mica tapes
+DOWSIL™ 2102 Adhesive | Solventless, fast curing, stable adhesion | Solventless protective film
+DOWSIL™ 2110 Adhesive | Solventless, fast curing, stable adhesion | Solventless protective film
+DOWSIL™ 2013 Adhesive | Solventless; allows for thicker coat weights | Adhesive tapes, labels and transfer films; bonding low-energy substrates; high- and low-temperature labeling applications; suggested for use with release liner coated with SYL-OFF™ Q2-7785 Release Coating
+DOWSIL™ 2014 Adhesive | Solventless; allows for thicker coat weights | Adhesive tapes, labels and transfer films; bonding low-energy substrates; high- and low-temperature labeling applications
+DOWSIL™ 2015 Adhesive | Solventless; allows for thicker coat weights | Adhesive tapes, labels and transfer films; bonding low-energy substrates; high- and low-temperature labeling applications
+Original table as printed on page 7 of the guide; some rows end with a semicolon as in the original.
+
+Q: Which PSA has low silicone volatiles to reduce oven dusting?
+A: DOWSIL™ 7406-VLO, 7355 and 7358 (the guide names these three) and others marked “low silicone volatiles”.
+
+Q: Which DOWSIL products are binders for mica tape?
+A: DOWSIL™ 288, 290 and 298 Mica Binders (peroxide cure; 290 and 298 also silane).
+
+Q: Where can I get technical support for Dow silicone PSAs in Korea?
+A: Korea Construction Trading (KCT) supports product selection, technical documents, process conditions and troubleshooting to the best of its ability: sales@kconstrade.com, +82 10-8939-0284.
+
+## Primer, Crosslinkers, Anchorage Additives and Fluorosilicone Release Coatings
+https://kconstrade.com/en/technical/psa/primers-crosslinkers-release-coatings
+
+Key facts: Auxiliary materials improve cure and anchorage: DOWSIL™ 7499 PSA Primer (platinum and tin cure, 23% non-volatile) is a primer for silicone PSA on diversified films; SYL-OFF™ SL 7028 and 7678 are crosslinkers for low-adhesion protective films or carrier tapes; SYL-OFF™ SL 9250, 297 and 397 improve anchorage; and the SYL-OFF™ Q2-7785, 7786, 7792, 7795, 7798 and 7555 coatings release industrial-grade silicone PSAs.
+
+### More options: primer, crosslinkers, anchorage additives, release coatings
+The guide’s product line also includes auxiliary materials like crosslinkers, anchorage additives and compatible silicone primers that help increase adhesives’ curing and offer good anchorage to difficult substrates. Table 2 (continued) lists them with the fluorosilicone release coatings used with the PSAs.
+
+Type | Product | Cure system | Viscosity, cps | Non-volatile content, % | Features/benefits | Typical applications
+Primer | DOWSIL™ 7499 PSA Primer | Platinum and Tin | 1,800 | 23 | Suitable for various substrates and PSAs with good anchorage | Primer for silicone PSA
+Crosslinkers | SYL-OFF™ SL 7028 Crosslinker | – | 22 | > 97 | Good anchorage | Crosslinker for low-adhesion protective films or carrier tapes
+Crosslinkers | SYL-OFF™ 7678 Crosslinker | – | 30 | > 95 | Fast cure | Crosslinker for low-adhesion protective films or carrier tapes
+Anchorage addition | SYL-OFF™ SL 9250 Anchorage Additive | – | 6 | 100 (active ingredient) | Good anchorage; minimal impact on cure performance and adhesion | To improve the anchorage of low-adhesion PSA on substrates
+Anchorage addition | SYL-OFF™ 297 Anchorage Additive | – | 4 | – | Very good performance to improve adherence of PSA to substrates | To improve the anchorage of low-adhesion PSA on substrates
+Anchorage addition | SYL-OFF™ 397 Anchorage Additive | – | 9 | – | Good anchorage; minimal impact on optical, cure and adhesion stability of PSA | To improve the anchorage of low-adhesion PSA on filmic substrates
+Fluorosilicone release coatings and crosslinkers | SYL-OFF™ Q2-7785 Release Coating | Platinum | 3,060 | 80 | Solventless; allows for thicker coat weights | Adhesive tapes, labels and transfer films; bonding low- energy substrates; high- and low-temperature labeling applications
+Fluorosilicone release coatings and crosslinkers | SYL-OFF™ 7786 Coating | Platinum | 330 | > 95 | Higher fluorosilicone content for differential release values | Release of industrial-grade silicone pressure sensitive adhesives
+Fluorosilicone release coatings and crosslinkers | SYL-OFF™ 7792 Fluorosilicone Release Coating | Platinum | 3,120 | 80 | Low and stable release force; Suitable for laminate various silicone pressure sensitive adhesive films on the release liner | Production of release substrates coated from solvent. Release of industrial grade silicone pressure sensitive adhesives; major uses with silicone PSA tape forms include: adhesive transfer tapes; industrial single coated or double coated tapes; labels; Silicone foam or rubber tapes; in process liner for converting
+Fluorosilicone release coatings and crosslinkers | SYL-OFF™ 7795 Fluorosilicone Release Coating | Platinum | 3,010 | 80 | Low and stable release force; suitable for laminate various silicone pressure sensitive adhesive film on the release liner; suitable for more silicone PSA wet coating on the release liner | Production of release substrates coated from solvent. Release of industrial grade silicone pressure sensitive adhesives; major uses with silicone PSA tape forms include: adhesive transfer tapes; industrial single coated or double coated tapes; labels; silicone foam or rubber tapes; in process liner for converting
+Fluorosilicone release coatings and crosslinkers | SYL-OFF™ 7798 Fluorosilicone Release Coating | Platinum | 4,000 | 85 | Low and stable release force. High SAS. Suitable for dry laminate and wet casting using a wide range of silicone PSAs | Release of industrial grade silicone pressure sensitive adhesives. Main uses with silicone PSA tape forms include adhesive transfer tapes, industrial single coated or double coated tapes, labels, silicone foams or rubber tapes, in process liner for converting, and silicone PSA assembly tapes
+Fluorosilicone release coatings and crosslinkers | SYL-OFF™ 7555 Coating | Platinum | 429 | 100 (active ingredient) | Solventless; stable release | Release coating for pressure sensitive laminate/labelstock
+Fluorosilicone release coatings and crosslinkers | SYL-OFF™ Q2-7560 Crosslinker | – | 35 | 100 | Crosslinker for SYL-OFF™ Q2-7785 Release Coating, SYL-OFF™ 7786 Coating, SYL-OFF™ 7792 Coating and SYL-OFF™ 7795 Coating and SYL-OFF™ 7798 Fluorosilicone Release Coating | 
+Fluorosilicone release coatings and crosslinkers | SYL-OFF™ SL 7561 Crosslinker | – | 210 | 100 | Crosslinker for SYL-OFF™ 7555 Coating | 
+Footnotes: (1) Specification writers: these values are not intended for use in preparing specifications; contact your local Dow sales office or your Global Dow Connection before writing specifications. (2) Average quality data for comparison purposes only. (3) Measurements are within ±100 cps. (4) Measurements are within ±10 g/in. (5) Adhesion and tack are dependent on substrate backing, film thickness, formulation, etc.; these values represent only one test condition under Dow-established quality assurance procedures at the time of initial manufacture and are intended for comparison purposes only. Contact Dow for specification limits.
+
+Q: How do I improve anchorage of low-adhesion PSA on film?
+A: Use DOWSIL™ 7499 PSA Primer, or anchorage additives SYL-OFF™ SL 9250, 297 or 397 (397 is for filmic substrates).
+
+Q: Where can I get technical support for Dow silicone PSAs in Korea?
+A: Korea Construction Trading (KCT) supports product selection, technical documents, process conditions and troubleshooting to the best of its ability: sales@kconstrade.com, +82 10-8939-0284.
+
+## Release of Silicone PSAs: Fluorosilicone Release Coatings and Table 3 (Transfer Coating / Direct Cast)
+https://kconstrade.com/en/technical/psa/release-coating-and-transfer-coating
+
+Key facts: SYL-OFF™ fluorosilicone release coatings are designed to provide consistent, stable release from Dow silicone PSAs for transfer films, labels and two-sided tapes. A differential release force can be created from the difference between direct-cast and nipped liner, giving a differential of 1.2–2.5 ratio depending on the application. Table 3 marks combinations as recommended (◊) or recommended under specific conditions (•).
+
+### Release of silicone pressure sensitive adhesives
+SYL-OFF™ fluorosilicone release coatings are designed to provide consistent, stable release from Dow silicone pressure sensitive adhesives, which allows you to develop and produce transfer films, labels, two-sided tapes and other release-liner constructions. Dow offers a range of fluorosilicone release coatings and complementary silicone PSAs. This provides an array of choices that can help with extending the adhesive performance of silicone PSAs to new applications, developing more innovative products, meeting changing customer needs, entering new markets, and achieving the best balance of economy and performance. Use Table 3 to explore combinations of Dow silicone PSAs and SYL-OFF™ fluorosilicone release coatings for specific release-liner coating applications.
+
+[Figure] Tape constructions: single-sided (liner / adhesive / carrier) and double-sided (liner / adhesive / carrier / adhesive)
+
+### Explore the potential
+
+Double-sided tapes, unsupported or transfer tapes often may require a differential in release to avoid confusion during application. One option to create a differential release force is to utilize the difference between direct-cast and nipped liner to achieve a differential of 1.2-2.5 ratio, depending on the application’s needs. SYL-OFF™ Release Coatings offer alternative options to process transfer-coated PSA and still obtain a differential release force.
+
+### Table 3. DOWSIL™ silicone PSAs for transfer coating / direct cast applications
+Pressure sensitive adhesives | Transfer coated: SYL-OFF™ 7555 Coating | Transfer coated: SYL-OFF™ Q2-7785 Release Coating | Transfer coated: SYL-OFF™ Q2-7786 Coating | Transfer coated: SYL-OFF™ 7792 Fluorosilicone Release Coating | Transfer coated: SYL-OFF™ 7795 Fluorosilicone Release Coating | Dry lamination: SYL-OFF™ 7555 Coating | Dry lamination: Typical applications | Dry lamination: Typical applications | Dry lamination: Features/benefits | Dry lamination: Typical applications
+DOWSIL™ Q2-7735 Adhesive | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊
+DOWSIL™ Q2-7406 Adhesive | • | ◊ | ◊ | ◊ | ◊ | • | ◊ | ◊ | ◊ | ◊
+DOWSIL™ Q2-7566 Adhesive | • | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊
+DOWSIL™ 7355 Adhesive | • | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊
+DOWSIL™ 7358 Adhesive |  | ◊ | ◊ | ◊ | ◊ | • | ◊ | ◊ | ◊ | ◊
+DOWSIL™ 280A Adhesive |  | • | • | ◊ | ◊ | • | ◊ | ◊ | ◊ | ◊
+DOWSIL™ 282 Adhesive | • | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊ | ◊
+◊ Recommended; • Recommended under specific conditions. The header labels of the last four columns repeat “Typical applications / Features/benefits” exactly as printed in the original table; the original prints ◊ in these columns.
+
+Q: What is a differential release and how is it made?
+A: Double-sided and transfer tapes often need different release forces on each liner. One option is using the difference between direct-cast and nipped liner for a 1.2–2.5 ratio; SYL-OFF™ coatings offer alternatives for transfer-coated PSA.
+
+Q: Where can I get technical support for Dow silicone PSAs in Korea?
+A: Korea Construction Trading (KCT) supports product selection, technical documents, process conditions and troubleshooting to the best of its ability: sales@kconstrade.com, +82 10-8939-0284.
+
+## Processing and Curing Considerations (2024): Platinum and Peroxide Cure, Oven Dusting, Anchorage
+https://kconstrade.com/en/technical/psa/processing-and-curing-2024
+
+Key facts: Platinum-cure DOWSIL™ PSAs need SYL-OFF™ 4000 Catalyst and the coating bath should be used within six hours (the 2006 guide said 24 hours); they cure from 80 °C (typical dwell: 2 min at 100 °C to 1 min at 125 °C). Peroxide-cure PSAs use 0.5–3.0% benzoyl peroxide by weight; remove solvent at 65–93 °C first, then typically 1 min at 66 °C followed by 2 min at 177–204 °C.
+
+### Processing and curing considerations
+Dow silicone PSAs can be applied to backing materials as supplied, using conventional tape-coating equipment. However, they are most often diluted with toluene, xylene or other nonpolar solvents to achieve a coatable viscosity*. Coat-weight control is critical for consistent performance. In addition, Dow silicone PSAs may be blended to modify the performance of the cured coating. Contact your Dow representative for information on blending PSAs.
+
+* When diluting with any solvent, refer to the solvent vendor’s safety data sheet for information on physical and health hazards associated with the solvent and use of ventilation, PPE, bonding and grounding or other measures that can minimize or eliminate these hazards.
+
+### Effects of substrate variation and adhesive thickness
+
+The backing material to which a silicone PSA is applied affects its tack and adhesion values. Adhesive thickness also affects adhesive performance: The thicker the cured adhesive coating, the higher the adhesion and tack.
+
+### Platinum cure
+Platinum-cure adhesives from Dow require the addition of a platinum catalyst (SYL-OFF™ 4000 Catalyst) to develop PSA properties. The coating bath should be used within six hours of catalyst addition. These adhesives can be cured in vented, continuous coating ovens at temperatures as low as 80°C (176°F). When coated onto flexible substrates such as polyester or polyolefin films, typical oven dwell times range from 2 minutes at 100°C (212°F) to 1 minute at 125°C (257°F). If the cure rate needs to be increased to accommodate a shorter oven dwell time (to increase line speed, for example) or the process oven temperatures lowered, the catalyst level can be increased. Changing the catalyst level has little impact on the tack, adhesion or cohesive strength of the cured adhesive. Note: Because the catalyst is subject to contamination by peroxide and other materials, mixing and coating equipment must be thoroughly cleaned, and dedicated new containers should be used for mixing.
+
+### Peroxide cure
+To achieve a good balance of tack, adhesive strength and cohesive strength over a wide range of operating temperatures, proper cure is essential. The catalyst typically used with silicone PSAs is benzoyl peroxide. Peroxide concentration can be varied from 0.5 to 3.0 percent by weight (based on adhesive solids). Increasing peroxide concentration will decrease the tack and adhesive strength of the cured coating but increase its cohesive strength. The most consistent results are achieved by using powdered 98 percent benzoyl peroxide. Complete blending of peroxide and adhesive is best obtained by making a 10 percent w/v solution of the peroxide in toluene. If a catalyst is added, the coating bath should be used within a day after mixing, as the peroxide loses its activity quite rapidly in solvent. Thorough dispersion of the adhesive and peroxide during mixing is necessary to achieve uniform results in the finished product. Curing the adhesive is a two-step process that requires the use of graded temperatures.
+
+### Solvent removal
+
+The first step in curing the adhesive, following its application to the backing material, is solvent removal. Recommended temperatures for solvent removal range from 65°C to 93°C (150 to 200°F). Higher removal temperatures can cause the peroxide to decompose prematurely and crosslink the solvent into the adhesive, potentially reducing the properties of the finished tape. The length of time for solvent removal should be sufficient to ensure that no solvent is present in the adhesive when it enters the curing zone.
+
+### Heat cure
+
+After the solvent is removed, a tacky, uniform film of adhesive is left on the backing. This film’s adhesive and cohesive strengths, as well as the tack, can be further developed by a heat cure. The amount of cure depends on a number of factors, including the type of catalyst or equipment and backing material. A cure of 1 minute at 66°C (150°F) for solvent removal, followed by 2 minutes at 177 to 204°C (350 to 400°F) is typically used for adhesives that contain benzoyl peroxide. If equipment and type of backing material permit the use of higher curing temperatures, the cure time may be shortened. Higher cure temperatures develop the cohesive strength of the adhesive in less time than at lower temperatures. The ultimate adhesive strength of the fully cured material is essentially the same whether cured at higher or lower temperatures; the only difference is the time required to reach complete cure.
+
+### Oven dusting and anchorage
+Oven dusting: the evaporation of volatile silicone in the curing oven can cause the formation of oven dust. The problem is typical in solvent incineration or air-recirculating direct-fired ovens and is especially prevalent in ovens that deliver too much heat too early in the cure process. Two ways to reduce the problem are to: (1) select silicone PSAs with lower volatile silicone content, such as DOWSIL™ 7406-VLO Adhesive, DOWSIL™ 7355 Adhesive or DOWSIL™ 7358 Adhesive; (2) use ramped oven zones (oven zones with temperatures that get progressively hotter).
+
+Anchorage: when silicone PSAs are used in the manufacture of self-wound tapes or laminate constructions with backings such as polyester, Kapton, Teflon and other plastic films, the use of a primer may be required to improve anchorage of the cured adhesive to the backing. Good anchorage reduces the possibility of adhesive transfer during unwind and ensures clean slitting operations and clean removability following masking. For suggested primers and sample formulations, contact your Dow representative.
+
+### Adhesion vs. tack as a function of peroxide level, cure time and cure temperature
+
+- Cure parameter range: 1.5–3.0% benzoyl peroxide
+- 184–204°C cure temperature (70°C/2 min standard devolatilization temperature)
+- 1.5–3 min cure time
+
+[Figure] Adhesion (oz/inch) vs. tack (g) for DOWSIL™ Q2-7406, 7358, 280A, Q2-7566, Q2-7735 and 7355 Adhesives over the cure parameter range above
+
+Q: What is the bath life of platinum-cure silicone PSA after adding catalyst?
+A: The 2024 Dow guide says to use the coating bath within six hours of catalyst addition (the 2006 guide stated 24 hours — always follow the current guide).
+
+Q: What peroxide level is used?
+A: 0.5 to 3.0 percent by weight of adhesive solids (benzoyl peroxide); higher levels lower tack and adhesive strength and raise cohesive strength.
+
+Q: Where can I get technical support for Dow silicone PSAs in Korea?
+A: Korea Construction Trading (KCT) supports product selection, technical documents, process conditions and troubleshooting to the best of its ability: sales@kconstrade.com, +82 10-8939-0284.
+
+## What Changed: 2006 Dow Corning PSA Guide vs. 2024 Dow Silicone PSA Guide
+https://kconstrade.com/en/technical/psa/guide-2006-vs-2024-changes
+
+Key facts: The 2024 guide (Form No. 30-1315-01-0524) lists 41 PSAs, mica binders and solventless adhesives plus primer, crosslinkers, anchorage additives and six fluorosilicone release coatings, under the DOWSIL™ / SYL-OFF™ names. Key differences from the 2006 Dow Corning guide (Form No. 30-083B-01): platinum bath life six hours instead of 24, DOWSIL™ 7657 hold 260 °C instead of 204 °C and Q2-7406 260 °C instead of 288 °C, and a new blending graph.
+
+### Comparison
+Item | 2006 Dow Corning guide (30-083B-01) | 2024 Dow guide (30-1315-01-0524)
+Brand name | Dow Corning® 2013, 7657, 280A … | DOWSIL™ 2013, 7657, 280A …; SYL-OFF™
+Products covered | 11 PSAs (3 platinum, 8 peroxide) + Syl-Off Q2-7785 | 41 PSAs, mica binders and solventless adhesives + primer, crosslinkers, anchorage additives, six fluorosilicone release coatings
+Platinum-cure bath life | Within 24 hours of catalyst addition (Table 1: generally 24 hours or less at 21°C) | Within six hours of catalyst addition
+DOWSIL™ 7657 high-temperature hold | 204 °C (400 °F) | 260 °C (500 °F)
+DOWSIL™ Q2-7406 high-temperature hold | 288 °C (550 °F) | 260 °C (500 °F)
+Peroxide concentration wording | 0.5–3.0 percent (based on adhesive solids) | 0.5–3.0 percent by weight (based on adhesive solids); 10 percent w/v solution in toluene
+Blending | Peroxide-cure PSAs may be blended with other dimethyl-type PSAs | Dow silicone PSAs may be blended; platinum-cure PSAs blended for adhesion levels (graph)
+Oven-dusting examples | DOWSIL 7355 / 7358 | DOWSIL™ 7406-VLO / 7355 / 7358
+Silane coupling agent (Z-6020) for anchorage | Described: 0.25–0.5% if a primer cannot be applied | Not described; primer DOWSIL™ 7499 and anchorage additives listed instead
+Differences are taken only from the two documents. Test conditions may differ between editions; always check the current Dow data sheet. Dow Corning products are now marketed under the DOWSIL™ brand.
+
+Q: Which guide should I follow?
+A: Use the 2024 guide as the primary reference and confirm any value with the current Dow technical data sheet or with KCT. The 2006 guide is kept for reference.
+
+Q: Where can I get technical support for Dow silicone PSAs in Korea?
+A: Korea Construction Trading (KCT) supports product selection, technical documents, process conditions and troubleshooting to the best of its ability: sales@kconstrade.com, +82 10-8939-0284.
+
+## More Options for Your Business, Global Support and Safety Notice
+https://kconstrade.com/en/technical/psa/more-options-and-dow-support
+
+Key facts: Dow formulates adhesives to customers’ specific needs; its application experts help with recommendations and problem resolution, and its engineering experts can provide specific quality testing and data. Product safety information is not included in the guide: read the product and safety data sheets and container labels before handling. Korea Construction Trading relays these resources and supports customers in Korea.
+
+### More options for your business
+Our product line also includes auxiliary materials like crosslinkers, anchorage additives and compatible silicone primers that help increase adhesives’ curing and offer good anchorage to difficult substrates. To help you make better products—and get them to market faster—our development team formulates adhesives according to your specific needs, and our application experts help with recommendations and problem resolution. And in sensitive applications, our engineering experts are able to provide specific quality testing and data as well as test development and alignment to ensure success. Give us your challenge, and we’ll find a solution!
+
+### Global. Local. Ready to help.
+Dow has sales offices, manufacturing sites and science and technology laboratories around the globe. For product data sheets, selection guides and an overview of Dow’s comprehensive line of products and services for the pressure sensitive industry, visit www.dow.com.
+
+PRODUCT SAFETY INFORMATION REQUIRED FOR SAFE USE IS NOT INCLUDED IN THIS DOCUMENT. BEFORE HANDLING, READ PRODUCT AND SAFETY DATA SHEETS AND CONTAINER LABELS FOR SAFE USE, PHYSICAL AND HEALTH HAZARD INFORMATION. THE SAFETY DATA SHEET IS AVAILABLE ON THE DOW WEBSITE AT WWW.DOW.COM, OR FROM YOUR DOW SALES APPLICATION ENGINEER, OR DISTRIBUTOR, OR BY CALLING DOW CUSTOMER SERVICE.
+
+### Notice
+NOTICE: No freedom from infringement of any patent owned by Dow or others is to be inferred. Because use conditions and applicable laws may differ from one location to another and may change with time, Customer is responsible for determining whether products and the information in this document are appropriate for Customer’s use and for ensuring that Customer’s workplace and disposal practices are in compliance with applicable laws and other government enactments. The product shown in this literature may not be available for sale and/or available in all geographies where Dow is represented. The claims made may not have been approved for use in all countries. Dow assumes no obligation or liability for the information in this document. References to “Dow” or the “Company” mean the Dow legal entity selling the products to Customer unless otherwise expressly noted. NO WARRANTIES ARE GIVEN; ALL IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE ARE EXPRESSLY EXCLUDED.
+
+®™ Trademark of The Dow Chemical Company (“Dow”) or an affiliated company of Dow. © 2024 The Dow Chemical Company. All rights reserved. Form No. 30-1315-01-0524 S2D.
+
+Q: Where do I find safety information for these products?
+A: In the product Safety Data Sheet (SDS) and container label; the guide itself does not include safety information.
+
+Q: Where can I get technical support for Dow silicone PSAs in Korea?
+A: Korea Construction Trading (KCT) supports product selection, technical documents, process conditions and troubleshooting to the best of its ability: sales@kconstrade.com, +82 10-8939-0284.
 
 ## High-Performance Silicone PSAs: Product Line and How to Select
 https://kconstrade.com/en/technical/psa/overview-how-to-select
@@ -912,6 +1334,240 @@ A: Use a primer, or add 0.25–0.5% silane coupling agent such as Z-6020 (based 
 
 Q: What liner release coating is recommended?
 A: Syl-Off Q2-7785 fluorosilicone release coating; Q2-7735 and platinum-cure PSAs give stable release when wet cast.
+
+# Silicone PSAs for Electrical and Electronics Tapes: Products, Selection and KCT Support (full text)
+Source: Dow, “Electrical and electronics tapes” and Dow Korea product search (Adhesives & Release Agents › PSAs › PSAs for insulation tapes), dow.com/ko-kr, checked 2026-11; Dow, “Silicone PSAs for High Performance Selection Guide”, Form No. 30-1315-01-0524 S2D (© 2024 The Dow Chemical Company). 한국어/영어 정리: 한국건설트레이딩(KCT)
+
+## Silicone PSAs for Electrical and Electronics Tape Applications (Dow Korea)
+https://kconstrade.com/en/technical/tapes/electrical-electronics-tape-psa
+
+Key facts: Dow offers innovative pressure sensitive adhesives (PSAs) that balance strength, flexibility and high-temperature resistance for electrical and electronics tapes. For electrical insulation tapes (motor windings, transformers, capacitors, connectors) they offer excellent adhesion and strength, high heat resistance and compatibility with PTFE, polyimide and glass-fiber substrates; for splicing tapes they offer high adhesion to low-energy surfaces or quick stick/high holding for flying splices, compatible with PET backings.
+
+### Silicone PSAs for electrical and electronics tape applications
+Dow offers innovative pressure sensitive adhesives (PSAs) that provide an excellent balance of strength, flexibility and high-temperature resistance for electrical and electronics tape applications.
+
+### PSAs for electrical insulation tapes
+Dow’s PSA products serve electrical tape applications such as motor windings, transformers, capacitors and connectors, which require excellent insulating properties over a wide temperature range. They offer:
+
+- Excellent adhesion and strength
+- High heat resistance
+- Compatibility with PTFE, polyimide and glass-fiber substrates
+
+### PSAs for splicing tapes
+Dow’s PSAs are also ideal for splicing tape applications that need high adhesion to low-energy surfaces, or quick stick/high holding for flying splices. Our silicone PSA solutions are compatible with PET backings and can be used in demanding applications or processes such as:
+
+- Bonding and joining of low-surface-energy substrates at high temperature
+- Chemical processing
+- Solvent etching processes
+- High-speed continuous processes
+
+### Silicone-based solutions for customer success
+With more than 50 years of industry experience, we understand the unique challenges customers face in PSA applications. Whether you are looking to innovate, grow reliably or reduce costs, we have the solutions and expertise to help you succeed. Would you like to know which solution is right for you? Learn more with the silicone PSA guide.
+
+Electrical and electronics tapes: explore our portfolio. Talk to an expert: we are committed to providing experts and resources to solve every challenge. (Dow page, in Dow’s words.)
+
+### Technical support from Korea Construction Trading
+Korea Construction Trading (KCT) does its best to support customers technically: product selection, technical documents (TDS/SDS), process-condition review and troubleshooting for Dow silicone PSAs. Items that need confirmation are checked with Dow technical staff wherever possible. Contact sales@kconstrade.com or +82 10-8939-0284.
+
+Related pages: the Dow silicone PSA selection guide (2024, 9 pages), the Dow product list for electrical-insulation-tape PSAs and the electrical-tape selection table on this hub.
+
+Source: Dow, “Electrical and electronics tapes” (Korean page) — https://www.dow.com/ko-kr/market/mkt-films-tapes-release-liners/sub-films-specialty-tapes-films/app-films-special-electrical-electronics-tapes.html
+
+Q: What are Dow PSAs for electrical insulation tapes known for?
+A: Excellent adhesion and strength, high heat resistance, and compatibility with PTFE, polyimide and glass-fiber substrates.
+
+Q: What are Dow PSAs for splicing tapes used for?
+A: High-temperature bonding of low-surface-energy substrates, chemical processing, solvent etching and high-speed continuous processes, with PET backings.
+
+Q: Does KCT provide technical support for Dow silicone PSAs?
+A: Korea Construction Trading (KCT) does its best to support customers technically: product selection, technical documents (TDS/SDS), process-condition review and troubleshooting for Dow silicone PSAs. Items that need confirmation are checked with Dow technical staff wherever possible. Contact sales@kconstrade.com or +82 10-8939-0284.
+
+## Dow PSA Products for Electrical Insulation Tapes (20 Products, Dow Korea Listing)
+https://kconstrade.com/en/technical/tapes/dow-insulation-tape-psa-product-list
+
+Key facts: Dow Korea’s product search lists 20 products under PSAs for insulation tapes: DOWSIL™ 280A, 7268, 7278, 7355, 7356, 7357, 7358, 7388, 7406-VLO, Q2-7406, 7657, SH 4280, SD 4518, 7651T, 2014, 2015, plus the DOWSIL™ 7499 PSA Primer, 7429 PSA Additive and SYL-OFF™ 4500 Catalyst and EM 7958 Coating. Typical values from the 2024 guide are joined where available.
+
+### Product list with typical properties
+Dow Korea’s filtered search (Adhesives & Release Agents › Adhesives › PSAs for insulation tapes) shows 20 results in two pages. Descriptions are those on the Dow page (some are in Korean and some in English there); the missing language has been translated by KCT. Typical properties come from Table 2 of the 2024 Dow guide; “–” means the guide has no value for that product. Several Dow descriptions repeat the same blurb (excellent holding power and adhesion up to 240°C for masking and plating tapes) — compare individual products with the properties columns.
+
+Product | Dow description | Cure system | Viscosity, cps | Adhesion, g/in | Probe tack, g | High-temp. hold, °C (°F)
+DOWSIL™ 7651T Adhesive | A silicone pressure sensitive adhesive that, when used with SYL-OFF™ 7678 Crosslinker or SYL-OFF™ 7028 Crosslinker and SYL-OFF™ 4000 Catalyst, offers the ability to prepare pressure sensitive constructions at low curing temperature. | Platinum | 27,000 | 10 | N/A | 260 (500)
+DOWSIL™ 2014 Adhesive | A solventless silicone pressure sensitive adhesive that, when used with SYL-OFF™ 4000 Catalyst, offers the ability to prepare pressure sensitive constructions at low curing temperatures. It also yields a stable release system when applied and cured on release liners coated with SYL-OFF™ Q2-7785 Coating and SYL-OFF™ 7795 Coating. It can be blended with other DOWSIL™ solvent free platinum catalyzed PSAs like DOWSIL™ 7626 Adhesive, DOWSIL™ 7636 Adhesive, DOWSIL™ 7646 Adhesive and DOWSIL™ 7666 Adhes… (text truncated on the Dow page) | Platinum | 10,000 | 1,000 | 12 | 220 (428)
+DOWSIL™ SD 4518 Adhesive | Heptane-based Silicone pressure sensitive adhesive for high adhesion electronic grade tape applications. | – | – | – | – | –
+DOWSIL™ Q2-7406 Adhesive | A dispersion of polydimethylsiloxane gum and resin that combines excellent adhesion with high tack. | Peroxide | 31,700 | 940 | 400 | 260 (500)
+DOWSIL™ SH 4280 Pressure Sensitive Adhesive | Peroxide cure silicone pressure sensitive adhesive. Flexible to control adhesion and tackiness by adjusting Peroxide content. | – | – | – | – | –
+DOWSIL™ 7657 Adhesive | Solvent-based silicone pressure sensitive adhesive with excellent holding power and adhesion up to 240°C for masking and plating tapes. | Platinum | 22,500 | 1,280 | 1,160 | 260 (500)
+DOWSIL™ 7357 Adhesive | Silicone pressure sensitive adhesive that maintains tape performance up to at least 260°C for applications including plater’s tapes, high temperature masking tapes, and splicing and release tapes. | Peroxide | 28,000 | 1030 | 450 | 260 (500)
+SYL-OFF™ 4500 Catalyst | 4500 Pt Catalyst, could be used in solvent-base and solvent-less silicone products, to accelerate curing speed. | – | – | – | – | –
+DOWSIL™ 7355 Adhesive | Solvent-based silicone pressure sensitive adhesive with excellent holding power and adhesion up to 240°C for masking and plating tapes. | Peroxide | 20,700 | 1,200 | 430 | 260 (500)
+DOWSIL™ 7356 Adhesive | Solvent-based silicone pressure sensitive adhesive with excellent holding power and adhesion up to 240°C for masking and plating tapes. | Peroxide | 23,100 | 960 | 470 | 260 (500)
+DOWSIL™ 7268 Adhesive | Solvent-based silicone pressure sensitive adhesive with excellent holding power and adhesion up to 240°C for masking and plating tapes. | Peroxide | 53,000 | 1,240 | 600 | 240 (464)
+DOWSIL™ 7406-VLO Adhesive | Solvent-based silicone pressure sensitive adhesive with excellent holding power and adhesion up to 240°C for masking and plating tapes. | Peroxide | 31,300 | 940 | 280 | 260 (500)
+DOWSIL™ 7278 Adhesive | Solvent-based silicone pressure sensitive adhesive with excellent holding power and adhesion up to 240°C for masking and plating tapes. | Peroxide | 52,900 | 1,260 | 560 | 220 (428)
+DOWSIL™ 280A Adhesive | Solvent-based silicone pressure sensitive adhesive with excellent holding power and adhesion up to 240°C for masking and plating tapes. | Peroxide | 38,900 | 850 | 470 | 260 (500)
+DOWSIL™ 7499 PSA Primer | Primer for silicone pressure sensitive adhesive coating on diversified film substrates (such as PET, PI, Teflon…) to improve anchorage performance in demanding tape applications. | – | – | – | – | –
+DOWSIL™ 7429 PSA Additive | PSA additive. | – | – | – | – | –
+DOWSIL™ 7388 Adhesive | Solvent-based silicone pressure sensitive adhesive with excellent holding power and adhesion up to 240°C for masking and plating tapes. | Peroxide | 30,500 | 930 | 380 | 260 (500)
+DOWSIL™ 7358 Adhesive | Solvent-based silicone pressure sensitive adhesive with excellent holding power and adhesion up to 240°C for masking and plating tapes. | Peroxide | 20,900 | 1,050 | 490 | 260 (500)
+SYL-OFF™ EM 7958 Coating | A silicone release coating in emulsion form pre-formulated with crosslinker. It provides excellent release performance and excellent bath life, and is suitable for off-line coating. | – | – | – | – | –
+DOWSIL™ 2015 Adhesive | A solventless silicone pressure sensitive adhesive with high peel adhesion and tack that, when catalyzed with SYL-OFF™ 4000 Catalyst, offers the ability to prepare pressure sensitive constructions. It also yields a stable release system when applied and cured on release liners coated with SYL-OFF™ 7795 Coating. | Platinum | 17,000 | 1,300 | 321 | 260 (500)
+Properties are typical values from the 2024 Dow guide, not specifications (±100 cps, ±10 g/in). Availability may differ by region.
+
+### Dow product pages (Korean)
+Each product page on dow.com has technical data sheets and safety data sheets. Dow search (filtered): https://www.dow.com/ko-kr/search.html#tab=Products&cf-dow_market_hierarchy=%EC%A0%90%EC%B0%A9%EC%A0%9C%20%EB%B0%8F%20%EC%9D%B4%ED%98%95%EC%A0%9C,%EC%A0%90%EC%B0%A9%EC%A0%9C,%EC%A0%88%EC%97%B0%ED%85%8C%EC%9D%B4%ED%94%84%EC%9A%A9%20%EC%A0%90%EC%B0%A9%EC%A0%9C
+
+- DOWSIL™ 7651T Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-7651t-adhesive.847983z.html
+- DOWSIL™ 2014 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-2014-adhesive.507102z.html
+- DOWSIL™ SD 4518 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-sd-4518-adhesive.498519z.html
+- DOWSIL™ Q2-7406 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-q2-7406-adhesive.04015245z.html
+- DOWSIL™ SH 4280 Pressure Sensitive Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-sh-4280-pressure-sensitive-adhesive.01701452z.html
+- DOWSIL™ 7657 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-7657-adhesive.02646731z.html
+- DOWSIL™ 7357 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-7357-adhesive.489375z.html
+- SYL-OFF™ 4500 Catalyst — https://www.dow.com/ko-kr/pdp.syl-off-4500-catalyst.489668z.html
+- DOWSIL™ 7355 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-7355-adhesive.03009556z.html
+- DOWSIL™ 7356 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-7356-adhesive.03286592z.html
+- DOWSIL™ 7268 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-7268-adhesive.04081831z.html
+- DOWSIL™ 7406-VLO Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-7406-vlo-adhesive.04063445z.html
+- DOWSIL™ 7278 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-7278-adhesive.04110446z.html
+- DOWSIL™ 280A Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-280a-adhesive.01171101z.html
+- DOWSIL™ 7499 PSA Primer — https://www.dow.com/ko-kr/pdp.dowsil-7499-psa-primer.04026470z.html
+- DOWSIL™ 7429 PSA Additive — https://www.dow.com/ko-kr/pdp.dowsil-7429-psa-additive.04074436z.html
+- DOWSIL™ 7388 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-7388-adhesive.04071731h.html
+- DOWSIL™ 7358 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-7358-adhesive.03087344z.html
+- SYL-OFF™ EM 7958 Coating — https://www.dow.com/ko-kr/pdp.syl-off-em-7958-coating.491433z.html
+- DOWSIL™ 2015 Adhesive — https://www.dow.com/ko-kr/pdp.dowsil-2015-adhesive.512448z.html
+
+### Technical support from Korea Construction Trading
+Korea Construction Trading (KCT) does its best to support customers technically: product selection, technical documents (TDS/SDS), process-condition review and troubleshooting for Dow silicone PSAs. Items that need confirmation are checked with Dow technical staff wherever possible. Contact sales@kconstrade.com or +82 10-8939-0284.
+
+Q: How many PSA products does Dow Korea list for insulation tapes?
+A: 20 products (two result pages) including PSAs, a primer, an additive, a catalyst and a release coating.
+
+Q: Does KCT provide technical support for Dow silicone PSAs?
+A: Korea Construction Trading (KCT) does its best to support customers technically: product selection, technical documents (TDS/SDS), process-condition review and troubleshooting for Dow silicone PSAs. Items that need confirmation are checked with Dow technical staff wherever possible. Contact sales@kconstrade.com or +82 10-8939-0284.
+
+## Electrical and Specialty Tape PSA Selection Table (From the 2024 Dow Guide)
+https://kconstrade.com/en/technical/tapes/electrical-tape-psa-selection-table
+
+Key facts: Built from Tables 1 and 2 of the 2024 Dow guide: for electrical, electronic, heat-shielding and terminal cable insulation tapes the suggested DOWSIL™ PSAs are 7268, Q2-7406, 7388, 7406-VLO, 7355, 7356, 7357, 7358, Q2-7566 and SD 4600 FC (hold 240–300 °C). Choose peroxide cure for robust, contamination-tolerant processing and platinum cure for fast low-temperature cure; always confirm with the current data sheet.
+
+### Electrical and electronics masking and carrier tapes for industrial processing
+Suggested product | Cure system | Adhesion, g/in | Probe tack, g | High-temp. hold, °C (°F)
+DOWSIL™ 280A Adhesive | Peroxide | 850 | 470 | 260 (500)
+DOWSIL™ 7268 Adhesive | Peroxide | 1,240 | 600 | 240 (464)
+DOWSIL™ 7278 Adhesive | Peroxide | 1,260 | 560 | 220 (428)
+DOWSIL™ 7366 Adhesive | Peroxide | 900 | 400 | 220 (428)
+DOWSIL™ 7280 Adhesive | Peroxide | 1439 | 217 | 220 (428)
+DOWSIL™ Q2-7406 Adhesive | Peroxide | 940 | 400 | 260 (500)
+DOWSIL™ 7388 Adhesive | Peroxide | 930 | 380 | 260 (500)
+DOWSIL™ 7406-VLO Adhesive | Peroxide | 940 | 280 | 260 (500)
+DOWSIL™ 7356 Adhesive | Peroxide | 960 | 470 | 260 (500)
+DOWSIL™ 7358 Adhesive | Peroxide | 1,050 | 490 | 260 (500)
+
+### Electrical and electronics tapes for industrial bonding and bundling applications
+Suggested product | Cure system | Adhesion, g/in | Probe tack, g | High-temp. hold, °C (°F)
+DOWSIL™ 7268 Adhesive | Peroxide | 1,240 | 600 | 240 (464)
+DOWSIL™ 7278 Adhesive | Peroxide | 1,260 | 560 | 220 (428)
+DOWSIL™ 7280 Adhesive | Peroxide | 1439 | 217 | 220 (428)
+DOWSIL™ Q2-7406 Adhesive | Peroxide | 940 | 400 | 260 (500)
+DOWSIL™ 7355 Adhesive | Peroxide | 1,200 | 430 | 260 (500)
+DOWSIL™ 7356 Adhesive | Peroxide | 960 | 470 | 260 (500)
+DOWSIL™ 7357 Adhesive | Peroxide | 1030 | 450 | 260 (500)
+DOWSIL™ 7358 Adhesive | Peroxide | 1,050 | 490 | 260 (500)
+DOWSIL™ 7657 Adhesive | Platinum | 1,280 | 1,160 | 260 (500)
+DOWSIL™ 7687 Adhesive | Platinum | 1,800 | N/A | 200 (392)
+DOWSIL™ 7687N Adhesive | Platinum | 1,800 | N/A | 200 (392)
+
+### Electrical, electronic, heat-shielding and terminal cable insulation tapes
+Suggested product | Cure system | Adhesion, g/in | Probe tack, g | High-temp. hold, °C (°F)
+DOWSIL™ 7268 Adhesive | Peroxide | 1,240 | 600 | 240 (464)
+DOWSIL™ Q2-7406 Adhesive | Peroxide | 940 | 400 | 260 (500)
+DOWSIL™ 7388 Adhesive | Peroxide | 930 | 380 | 260 (500)
+DOWSIL™ 7406-VLO Adhesive | Peroxide | 940 | 280 | 260 (500)
+DOWSIL™ 7355 Adhesive | Peroxide | 1,200 | 430 | 260 (500)
+DOWSIL™ 7356 Adhesive | Peroxide | 960 | 470 | 260 (500)
+DOWSIL™ 7357 Adhesive | Peroxide | 1030 | 450 | 260 (500)
+DOWSIL™ 7358 Adhesive | Peroxide | 1,050 | 490 | 260 (500)
+DOWSIL™ Q2-7566 Adhesive | Peroxide | 910 | 390 | 288 (550)
+DOWSIL™ SD 4600 FC Adhesive | Platinum | 810 | 320 | 300 (572)
+
+### Heat-seal tapes for bonding heating surfaces
+Suggested product | Cure system | Adhesion, g/in | Probe tack, g | High-temp. hold, °C (°F)
+DOWSIL™ 7406-VLO Adhesive | Peroxide | 940 | 280 | 260 (500)
+DOWSIL™ 7355 Adhesive | Peroxide | 1,200 | 430 | 260 (500)
+DOWSIL™ 7357 Adhesive | Peroxide | 1030 | 450 | 260 (500)
+DOWSIL™ 7358 Adhesive | Peroxide | 1,050 | 490 | 260 (500)
+DOWSIL™ Q2-7566 Adhesive | Peroxide | 910 | 390 | 288 (550)
+DOWSIL™ SD 4600 FC Adhesive | Platinum | 810 | 320 | 300 (572)
+
+### Splicing tapes for continuous processing of low-surface-energy substrates
+Suggested product | Cure system | Adhesion, g/in | Probe tack, g | High-temp. hold, °C (°F)
+DOWSIL™ 280A Adhesive | Peroxide | 850 | 470 | 260 (500)
+DOWSIL™ 7366 Adhesive | Peroxide | 900 | 400 | 220 (428)
+DOWSIL™ Q2-7406 Adhesive | Peroxide | 940 | 400 | 260 (500)
+DOWSIL™ 7388 Adhesive | Peroxide | 930 | 380 | 260 (500)
+DOWSIL™ 7406-VLO Adhesive | Peroxide | 940 | 280 | 260 (500)
+DOWSIL™ Q2-7735 Adhesive | Peroxide | 1,200 | 530 | 232 (450)
+DOWSIL™ 288 Mica Binder | Peroxide | 860 | N/A | N/A
+
+### Thermal-spray and powder-coating masking tapes
+Suggested product | Cure system | Adhesion, g/in | Probe tack, g | High-temp. hold, °C (°F)
+DOWSIL™ Q2-7566 Adhesive | Peroxide | 910 | 390 | 288 (550)
+DOWSIL™ SD 4600 FC Adhesive | Platinum | 810 | 320 | 300 (572)
+
+### Binding material for mica tape applications
+Suggested product | Cure system | Adhesion, g/in | Probe tack, g | High-temp. hold, °C (°F)
+DOWSIL™ 288 Mica Binder | Peroxide | 860 | N/A | N/A
+DOWSIL™ 290 Mica Binder | Peroxide, silane | 860 | N/A | N/A
+DOWSIL™ 298 Mica Binder | Peroxide, silane | 860 | N/A | N/A
+
+### Peroxide cure vs. platinum cure
+- Platinum cure: two-part (catalyst required), bath life of six hours (2024 guide), cures from 80 °C in a single-zone oven; fast, low-temperature cure; the catalyst can be contaminated by peroxides and other materials.
+- Peroxide cure: one-part with benzoyl peroxide (0.5–3.0% by weight), extended bath life, two-step graded cure (solvent removal at 65–93 °C, then heat cure); robust and resistant to catalyst poisoning; incomplete solvent removal can cause bubbling and low adhesion.
+
+Selection requires your substrate, process equipment and performance targets. Ask Korea Construction Trading to review your conditions before ordering.
+
+Q: Which PSA for splicing tapes?
+A: Table 1 marks DOWSIL™ 280A, 7366, Q2-7406, 7388, 7406-VLO and Q2-7735 (and 288 Mica Binder as printed) for splicing tapes for continuous processing of low-surface-energy substrates.
+
+Q: Does KCT provide technical support for Dow silicone PSAs?
+A: Korea Construction Trading (KCT) does its best to support customers technically: product selection, technical documents (TDS/SDS), process-condition review and troubleshooting for Dow silicone PSAs. Items that need confirmation are checked with Dow technical staff wherever possible. Contact sales@kconstrade.com or +82 10-8939-0284.
+
+## Technical Support from Korea Construction Trading (KCT) for Dow Silicone PSAs
+https://kconstrade.com/en/technical/tapes/kct-technical-support
+
+Key facts: Korea Construction Trading (한국건설트레이딩) does its best to give technical support for Dow silicone PSAs: help choosing among peroxide- and platinum-cure grades, guiding TDS/SDS and guide documents, reviewing coating, solvent-removal and cure conditions, anchorage and primer choices, and troubleshooting issues such as bubbling, low adhesion and oven dusting. Send your tape type, backing film, service temperature and process conditions to sales@kconstrade.com or call 010-8939-0284.
+
+### Our commitment
+Korea Construction Trading (KCT) does its best to support customers technically: product selection, technical documents (TDS/SDS), process-condition review and troubleshooting for Dow silicone PSAs. Items that need confirmation are checked with Dow technical staff wherever possible. Contact sales@kconstrade.com or +82 10-8939-0284.
+
+The technical content on this site is organized from Dow documents so that engineers can find it quickly in Korean and English. It does not replace Dow’s current data sheets, safety data sheets or your own testing.
+
+### What we can help with
+- Product selection: tape type (masking, plating, electrical insulation, splicing, heat-seal, protective film, double-sided), adhesion/tack target, service temperature and cure system.
+- Documents: Dow selection guides, technical data sheets (TDS) and safety data sheets (SDS).
+- Process conditions: dilution solvent, coat weight, catalyst/peroxide level, solvent removal and heat-cure profile, oven design and dusting.
+- Anchorage and release: primers, anchorage additives, SYL-OFF™ release coatings and liner combinations.
+- Troubleshooting: bubbling, low adhesion or cohesion, “snow” crystals, catalyst poisoning, adhesive transfer on unwind.
+- Quotation and supply in Korea.
+
+### Inquiry checklist
+- Tape or film type and end use
+- Backing/carrier film (PET, polyimide, PTFE, glass cloth, aluminum foil, …) and thickness
+- Mating surface (metal, silicone rubber, low-energy plastic, …)
+- Required adhesion, tack and holding power; service and process temperatures
+- Coating line: solvent handling, oven zones, dwell time, line speed
+- Regulatory needs (for example food-contact) and expected volume
+- Current product, problem observed and photos or data if available
+
+### Contact
+Korea Construction Trading — sales@kconstrade.com · 010-8939-0284 · Garden Five Tools 4-A19, 10 Chungmin-ro, Songpa-gu, Seoul.
+
+Q: Does KCT provide technical support for Dow silicone PSAs?
+A: Korea Construction Trading (KCT) does its best to support customers technically: product selection, technical documents (TDS/SDS), process-condition review and troubleshooting for Dow silicone PSAs. Items that need confirmation are checked with Dow technical staff wherever possible. Contact sales@kconstrade.com or +82 10-8939-0284.
+
+Q: What should I send with a technical inquiry?
+A: Tape type, backing film, mating surface, target adhesion/tack, service and process temperatures, coating line conditions, regulatory needs and, if there is a problem, photos or data.
 
 # Product data
 

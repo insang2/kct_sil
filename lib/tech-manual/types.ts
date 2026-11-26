@@ -8,7 +8,7 @@ export type Block =
   | { k: 'ul'; items: [string, string][] }
   | { k: 'fig'; src: string; en: string; ko: string }
   | { k: 'figs'; items: { src: string; en: string; ko: string }[] }
-  | { k: 'tbl'; title?: L; head: Cell[]; rows: Cell[][]; note?: L }
+  | { k: 'tbl'; title?: L; head: Cell[]; rows: Cell[][]; note?: L; big?: boolean }
   | { k: 'data'; id: 'walls' | 'floors' | 'pen_walls' | 'pen_floors' }
   | { k: 'note'; en: string; ko: string }
   | { k: 'prods'; ids: string[] }

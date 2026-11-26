@@ -7,13 +7,20 @@ const INK = '#16142F'
 const SUB = '#555370'
 const t = (c: Cell, lang: Lang) => (typeof c === 'string' ? c : lang === 'ko' ? c[1] : c[0])
 
+// 본문의 http(s) 주소를 링크로 바꾼다 (외부 링크는 rel 지정)
+function linkify(text: string): React.ReactNode {
+  const parts = text.split(/(https?:\/\/[^\s)]+)/g)
+  if (parts.length === 1) return text
+  return parts.map((s, i) => (/^https?:\/\//.test(s) ? <a key={i} href={s} target="_blank" rel="noopener noreferrer" style={{ wordBreak: 'break-all' }}>{s}</a> : s))
+}
+
 // ko 페이지에서는 번역문 아래에 영문 원문을 접어서 함께 제공한다.
-function Original({ en, lang }: { en: string; lang: Lang }) {
+function Original({ en, lang, label }: { en: string; lang: Lang; label: string }) {
   if (lang !== 'ko') return null
   return (
     <details className="tech-orig mb-3">
-      <summary>English original</summary>
-      <p className="mb-0">{en}</p>
+      <summary>{label}</summary>
+      <p className="mb-0">{linkify(en)}</p>
     </details>
   )
 }
@@ -35,7 +42,7 @@ function Table({ head, rows, lang, compact }: { head: Cell[]; rows: Cell[][]; la
   )
 }
 
-export default function TechBlocks({ blocks, lang }: { blocks: Block[]; lang: Lang }) {
+export default function TechBlocks({ blocks, lang, enLabel = 'English original' }: { blocks: Block[]; lang: Lang; enLabel?: string }) {
   return (
     <>
       {blocks.map((b, i) => {
@@ -43,8 +50,8 @@ export default function TechBlocks({ blocks, lang }: { blocks: Block[]; lang: La
           case 'p':
             return (
               <div key={i}>
-                <p className="tech-p">{lang === 'ko' ? b.ko : b.en}</p>
-                <Original en={b.en} lang={lang} />
+                <p className="tech-p">{linkify(lang === 'ko' ? b.ko : b.en)}</p>
+                <Original en={b.en} lang={lang} label={enLabel} />
               </div>
             )
           case 'h':
@@ -53,19 +60,19 @@ export default function TechBlocks({ blocks, lang }: { blocks: Block[]; lang: La
             return (
               <div key={i} className="tech-note">
                 {lang === 'ko' ? b.ko : b.en}
-                {lang === 'ko' && <details className="tech-orig mt-2 mb-0"><summary>English original</summary><p className="mb-0">{b.en}</p></details>}
+                {lang === 'ko' && <details className="tech-orig mt-2 mb-0"><summary>{enLabel}</summary><p className="mb-0">{b.en}</p></details>}
               </div>
             )
           case 'ul':
             return (
               <div key={i}>
                 <ul className="tech-ul">
-                  {b.items.map(([en, ko], j) => <li key={j}>{lang === 'ko' ? ko : en}</li>)}
+                  {b.items.map(([en, ko], j) => <li key={j}>{linkify(lang === 'ko' ? ko : en)}</li>)}
                 </ul>
                 {lang === 'ko' && (
                   <details className="tech-orig mb-3">
-                    <summary>English original</summary>
-                    <ul className="mb-0">{b.items.map(([en], j) => <li key={j}>{en}</li>)}</ul>
+                    <summary>{enLabel}</summary>
+                    <ul className="mb-0">{b.items.map(([en], j) => <li key={j}>{linkify(en)}</li>)}</ul>
                   </details>
                 )}
               </div>
@@ -96,7 +103,7 @@ export default function TechBlocks({ blocks, lang }: { blocks: Block[]; lang: La
             return (
               <div key={i} className="mb-4">
                 {b.title && <div className="tech-table-title">{lang === 'ko' ? b.title.ko : b.title.en}</div>}
-                <Table head={b.head} rows={b.rows} lang={lang} />
+                <Table head={b.head} rows={b.rows} lang={lang} compact={b.big} />
                 {b.note && <div className="tech-table-note">{lang === 'ko' ? b.note.ko : b.note.en}</div>}
               </div>
             )

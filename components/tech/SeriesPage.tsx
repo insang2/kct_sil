@@ -51,7 +51,7 @@ export function SeriesHub({ s, lang }: { s: Series; lang: string }) {
   const graph = [
     { '@type': 'BreadcrumbList', itemListElement: crumbs(s, lang, ko, l) },
     { '@type': 'CollectionPage', '@id': url, name: s.hubTitle[l], description: s.hubDesc[l], inLanguage: l, url, citation: s.source,
-      isBasedOn: { '@type': 'CreativeWork', name: s.source, url: `${BASE}${s.pdf}` },
+      isBasedOn: (s.pdfs ?? [{ href: s.pdf }]).map((d) => ({ '@type': 'CreativeWork', name: s.source, url: `${BASE}${d.href}` })),
       publisher: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE },
       hasPart: s.pages.map((p) => ({ '@type': 'TechArticle', headline: p.title[l], url: `${url}/${p.slug}` })) },
     { '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q[l], acceptedAnswer: { '@type': 'Answer', text: f.a[l] } })) },
@@ -73,7 +73,9 @@ export function SeriesHub({ s, lang }: { s: Series; lang: string }) {
               <p style={{ color: '#dbeafe', lineHeight: 1.8, maxWidth: 640 }}>{s.intro[l]}</p>
               <div className="d-flex flex-wrap gap-2">
                 <Link href={`/${lang}/technical/${s.key}/${s.pages[0].slug}`} className="btn btn-light rounded-pill px-4 fw-bold">{ko ? '처음부터 보기' : 'Start reading'}</Link>
-                <a href={s.pdf} download className="btn btn-outline-light rounded-pill px-4"><i className="bi bi-file-earmark-pdf me-2" />{ko ? '원문 PDF' : 'Original PDF'}</a>
+                {(s.pdfs ?? [{ href: s.pdf, label: { en: 'Original PDF', ko: '원문 PDF' } }]).map((d) => (
+                  <a key={d.href} href={d.href} download className="btn btn-outline-light rounded-pill px-4"><i className="bi bi-file-earmark-pdf me-2" />{s.pdfs ? d.label[l] : ko ? '원문 PDF' : 'Original PDF'}</a>
+                ))}
               </div>
             </div>
             <div className="col-lg-5"><img src={s.cover} alt={s.hubTitle[l]} className="w-100 rounded-4 shadow bg-white" /></div>
@@ -92,7 +94,7 @@ export function SeriesHub({ s, lang }: { s: Series; lang: string }) {
               <div key={p.slug} className="col-md-6 col-lg-4">
                 <Link href={`/${lang}/technical/${s.key}/${p.slug}`} className="card h-100 border-0 shadow-sm rounded-4 text-decoration-none product-card-hover">
                   <div className="card-body p-4">
-                    <div style={{ color: C.accent, fontSize: '.78rem', fontWeight: 700 }}>{String(p.no).padStart(2, '0')}{p.pdfPages !== '—' && ` · ${ko ? `원문 ${p.pdfPages}쪽` : `pp. ${p.pdfPages}`}`}</div>
+                    <div style={{ color: C.accent, fontSize: '.78rem', fontWeight: 700 }}>{String(p.no).padStart(2, '0')}{p.doc && ` · ${p.doc}`}{p.pdfPages !== '—' && ` · ${ko ? `원문 ${p.pdfPages}쪽` : `pp. ${p.pdfPages}`}`}</div>
                     <h3 className="h6 fw-bold my-2" style={{ color: '#16142F', lineHeight: 1.45 }}>{p.title[l]}</h3>
                     <p className="mb-0" style={{ color: '#555370', fontSize: '.86rem', lineHeight: 1.65 }}>{p.summary[l]}</p>
                   </div>
@@ -108,7 +110,7 @@ export function SeriesHub({ s, lang }: { s: Series; lang: string }) {
           </div>
           <Cite s={s} l={l} ko={ko} url={url} title={s.hubTitle[l]} />
           <RelatedHubs lang={lang} l={l} current={s.key} />
-          <Contact ko={ko} />
+          <Contact ko={ko} lang={lang} />
         </div>
       </section>
     </Tx>
@@ -130,11 +132,11 @@ function Cite({ s, l, ko, url, title }: { s: Series; l: 'ko' | 'en'; ko: boolean
   )
 }
 
-function Contact({ ko }: { ko: boolean }) {
+function Contact({ ko, lang }: { ko: boolean; lang: string }) {
   return (
     <div className="mt-4 p-4 rounded-4" style={{ background: '#f1f5fb', color: '#16142F' }}>
       <div className="fw-bold mb-1">{ko ? '문의 · 한국건설트레이딩 (KCT)' : 'Inquiries · Korea Construction Trading (KCT)'}</div>
-      <p className="mb-2" style={{ fontSize: '.9rem' }}>{ko ? 'DOWSIL™ 실리콘 제품 선정, 견적, 기술 상담은 한국건설트레이딩으로 문의해 주십시오.' : 'For DOWSIL™ silicone selection, quotations and technical advice, please contact Korea Construction Trading.'}</p>
+      <p className="mb-2" style={{ fontSize: '.9rem' }}>{ko ? 'DOWSIL™ 실리콘 제품 선정, 견적, 기술 상담은 한국건설트레이딩으로 문의해 주십시오. 한국건설트레이딩은 제품 선정부터 공정 조건 검토와 문제 해결까지 기술 지원을 위해 최선을 다하겠습니다.' : 'For DOWSIL™ silicone selection, quotations and technical advice, please contact Korea Construction Trading. We do our best to support you technically, from product selection to process-condition review and troubleshooting.'}{' '}<Link href={`/${lang}/technical/tapes/kct-technical-support`}>{ko ? '기술 지원 안내 →' : 'Technical support details →'}</Link></p>
       <a href="mailto:sales@kconstrade.com" className="btn btn-primary btn-sm rounded-pill px-3 me-2">sales@kconstrade.com</a>
       <a href="tel:+821089390284" className="btn btn-outline-primary btn-sm rounded-pill px-3 me-2">010-8939-0284</a>
       <a href="https://wa.me/821089390284" target="_blank" rel="noreferrer" className="btn btn-outline-success btn-sm rounded-pill px-3">WhatsApp</a>
@@ -153,7 +155,7 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
   const graph = [
     { '@type': 'BreadcrumbList', itemListElement: [...crumbs(s, lang, ko, l), { '@type': 'ListItem', position: 4, name: page.title[l], item: url }] },
     { '@type': 'TechArticle', '@id': url, headline: page.title[l], description: page.answer[l], abstract: page.summary[l], inLanguage: l, datePublished: TECH_UPDATED, dateModified: TECH_UPDATED, image: `${BASE}${page.image}`, url,
-      isBasedOn: { '@type': 'CreativeWork', name: s.source, url: `${BASE}${s.pdf}` }, citation: s.source,
+      isBasedOn: (s.pdfs ?? [{ href: s.pdf }]).map((d) => ({ '@type': 'CreativeWork', name: s.source, url: `${BASE}${d.href}` })), citation: s.source,
       author: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE },
       publisher: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE }, mainEntityOfPage: url },
     { '@type': 'FAQPage', mainEntity: page.faq.map((f) => ({ '@type': 'Question', name: f.q[l], acceptedAnswer: { '@type': 'Answer', text: f.a[l] } })) },
@@ -172,7 +174,7 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
             <Link href={`/${lang}/technical/${s.key}`} style={{ color: '#bfdbfe' }}>{s.short[l]}</Link>
           </nav>
           <div style={{ color: '#93c5fd', fontWeight: 600, fontSize: '.85rem', letterSpacing: '.05em' }}>
-            {s.badge} {page.no} / {s.pages.length}{page.pdfPages !== '—' && ` · ${ko ? `원문 ${page.pdfPages}쪽` : `Original pp. ${page.pdfPages}`}`}
+            {s.badge} {page.no} / {s.pages.length}{page.doc && ` · ${page.doc}`}{page.pdfPages !== '—' && ` · ${ko ? `원문 ${page.pdfPages}쪽` : `Original pp. ${page.pdfPages}`}`}
           </div>
           <h1 className="fw-bold mt-1 mb-2" style={{ color: '#fff', fontSize: 'clamp(1.5rem,3.2vw,2.2rem)', lineHeight: 1.3 }}>{page.title[l]}</h1>
           <p className="mb-0" style={{ color: '#dbeafe', maxWidth: 780 }}>{page.summary[l]}</p>
@@ -197,7 +199,11 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
                   </li>
                 ))}
               </ol>
-              <a href={s.pdf} download className="btn btn-danger btn-sm rounded-pill px-3"><i className="bi bi-file-earmark-pdf me-1" />{ko ? '원문 PDF' : 'Original PDF'}</a>
+              <div className="d-flex flex-column gap-2 align-items-start">
+                {(s.pdfs ?? [{ href: s.pdf, label: { en: 'Original PDF', ko: '원문 PDF' } }]).map((d) => (
+                  <a key={d.href} href={d.href} download className="btn btn-danger btn-sm rounded-pill px-3 text-start"><i className="bi bi-file-earmark-pdf me-1" />{s.pdfs ? d.label[l] : ko ? '원문 PDF' : 'Original PDF'}</a>
+                ))}
+              </div>
             </div>
           </aside>
           <article className="col-lg-9">
@@ -208,7 +214,7 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
             {page.sections.map((x) => (
               <section key={x.id} id={x.id} className="mb-5" style={{ scrollMarginTop: 90 }}>
                 <H2>{x.h[l]}</H2>
-                <TechBlocks blocks={x.blocks} lang={l} />
+                <TechBlocks blocks={x.blocks} lang={l} enLabel={s.srcLang === 'ko' ? 'English translation' : 'English original'} />
               </section>
             ))}
             <section id="faq" className="mb-5" style={{ scrollMarginTop: 90 }}>
@@ -229,7 +235,7 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
                 </Link>)}</div>
             </div>
             <RelatedHubs lang={lang} l={l} current={s.key} />
-            <Contact ko={ko} />
+            <Contact ko={ko} lang={lang} />
           </article>
         </div>
       </div>
