@@ -101,6 +101,7 @@ export default async function RootLayout({
         <meta name="color-scheme" content="light only" />
         <meta name="supported-color-schemes" content="light" />
         <meta name="naver-site-verification" content="8cbbf2d9359c252fd97e2dc14cb0a35f29d98184" />
+        <meta name="naver-site-verification" content="fd0a30a32f4bcd37434525a44524178124fba745" />
         <meta name="google-site-verification" content="MDkLA39MDvqE2qFlhXtDGZ7CStYVHZmiRxySzzxD97U" />
         <meta name="msvalidate.01" content="ED4DEB0C324AB26280EFC4E027A2C73F" />
         <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
