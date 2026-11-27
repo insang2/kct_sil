@@ -11,7 +11,7 @@ export const SITE_DATES = {
   about: '2026-11-25',
   export: '2026-11-21',
   quote: '2026-11-21',
-  technicalHub: '2026-11-27',
+  technicalHub: '2026-11-28',
 } as const
 
 export const SERIES_DATES: Record<string, string> = {
@@ -21,7 +21,7 @@ export const SERIES_DATES: Record<string, string> = {
   psa: '2026-11-27',        // 실리콘 점착제(PSA) 선택 요령 허브·2024 최신판
   psa2006: '2026-11-26',    // 실리콘 PSA 2006 구판 페이지
   tapes: '2026-11-27',      // 전기·전자 테이프용 PSA
-  selection: '2026-11-27',  // DOWSIL 실란트 비교·선택 가이드
+  selection: '2026-11-28',  // DOWSIL 실란트 비교·선택 가이드
 }
 
 export function seriesPageDate(seriesKey: string, doc?: string): string {

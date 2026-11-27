@@ -88,8 +88,8 @@ export const SERIES: Record<string, Series> = {
     short: { en: 'Sealant Comparison', ko: '실란트 비교·선택' },
     hubTitle: { en: 'DOWSIL Sealant Comparison and Selection Guide: Structural, Weatherproofing, Insulating Glass', ko: 'DOWSIL 실란트 비교·선택 가이드 – 구조용·내후성·복층유리' },
     hubDesc: {
-      en: 'Data-driven comparison of DOWSIL structural glazing, weatherproofing, stone/concrete and insulating-glass sealants (789, 791, 795, 995, 121, 977, 991, 813C, 335, 939, 982, 983, 993) from their TDS.',
-      ko: 'DOWSIL 구조용·내후성·석재·콘크리트·복층유리 실란트(789·791·795·995·121·977·991·813C·335·939·982·983·993)를 TDS 기준으로 비교한 선택 가이드.',
+      en: 'Data-driven comparison of DOWSIL structural glazing, weatherproofing, stone/concrete and insulating-glass sealants (789, 791, 795, 995, 121, 977, 991, 813C, 335, 939, 982, 983, 993) from their TDS, plus buying, warranty, fire-test standard, glossary, consumption, color and packaging guides.',
+      ko: 'DOWSIL 구조용·내후성·석재·콘크리트·복층유리 실란트(789·791·795·995·121·977·991·813C·335·939·982·983·993)를 TDS 기준으로 비교하고, 구매·보증·내화 규격·용어·소요량·색상·포장 가이드를 더한 선택 가이드.',
     },
     keyFacts: {
       en: 'DOWSIL™ 995 is the high-strength one-part structural glazing sealant, 795 combines ASTM C1184 structural capability with ±50% movement, 789/791 are weatherproofing sealants, 977/991 reduce staining on stone, 813C suits concrete; for insulating glass, 335 is the butyl primary seal and 939/982/983/993 are two-part secondary or structural sealants. Structural applications require review by Dow technical staff.',

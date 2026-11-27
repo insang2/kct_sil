@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PAGES, getPage } from '@/lib/tech-manual'
 import { IPAGES, getIPage } from '@/lib/industrial/pages'
 import { SERIES, type Series } from './config'
+import { SELECTION_EXTRA_META } from './selection'
 
 export const TECH_UPDATED = '2026-11-27'
 
@@ -295,6 +296,7 @@ const SERIES_HUB_META: Record<string, MetaPair> = {
 }
 
 const SERIES_PAGE_META: Record<string, MetaPair> = {
+  ...SELECTION_EXTRA_META,
   // basics (11)
   'basics/overview-history': {
     title: { ko: '실리콘이란? 개요·역사·용어 명명 | KCT', en: 'What Is Silicone? Overview, History & Terms | KCT' },
@@ -583,7 +585,7 @@ export function industrialHubMeta(lang: string): Metadata {
 
 export function firePageMeta(slug: string, lang: string): Metadata {
   const page = getPage(slug)
-  if (!page) return { title: 'Not found | KCT' }
+  if (!page) return { title: 'Not found | KCT', robots: { index: false, follow: false } }
   const l = normTechLang(lang)
   const m = FIRE_META[slug]
   const title = m ? m.title[l] : `${page.title[l]} | KCT`
@@ -593,7 +595,7 @@ export function firePageMeta(slug: string, lang: string): Metadata {
 
 export function industrialPageMeta(slug: string, lang: string): Metadata {
   const page = getIPage(slug)
-  if (!page) return { title: 'Not found | KCT' }
+  if (!page) return { title: 'Not found | KCT', robots: { index: false, follow: false } }
   const l = normTechLang(lang)
   const m = INDUSTRIAL_META[slug]
   const title = m ? m.title[l] : `${page.title[l]} | KCT`
@@ -604,7 +606,7 @@ export function industrialPageMeta(slug: string, lang: string): Metadata {
 export function seriesPageMeta(s: Series, lang: string, slug?: string): Metadata {
   const l = normTechLang(lang)
   const page = slug ? s.pages.find((x) => x.slug === slug) : undefined
-  if (slug && !page) return { title: 'Not found | KCT' }
+  if (slug && !page) return { title: 'Not found | KCT', robots: { index: false, follow: false } }
   const path = `/technical/${s.key}${slug ? `/${slug}` : ''}`
   const m = slug ? SERIES_PAGE_META[`${s.key}/${slug}`] : SERIES_HUB_META[s.key]
   const title = m ? m.title[l] : `${page ? page.title[l] : s.hubTitle[l]} | KCT`

@@ -1416,6 +1416,538 @@ A: Both are two-part neutral-cure structural sealants; DOWSIL™ 983 targets fac
 Q: Which DOWSIL sealant should I choose?
 A: Tell Korea Construction Trading (KCT) the substrates, joint movement, structural or weatherproofing duty and environment — sales@kconstrade.com, +82 10-8939-0284. We do our best to support product selection.
 
+## Dow Sealant Warranty Guide: Structural Adhesion and Weatherseal Warranty Process
+https://kconstrade.com/en/technical/selection/dow-warranty-guide
+
+Key facts: Dow publicly lists an “up to 20-year structural adhesion limited warranty” for DOWSIL structural glazing, and states that warranty options vary by region. Warranty is project-specific: it follows project testing and design review by Dow, not the purchase of the sealant alone. Exact terms, covered products and conditions are confirmed with Dow through KCT.
+
+### Warranty types Dow states
+- Structural adhesion limited warranty: “up to 20-year”, for structural glazing systems (Dow structural glazing page).
+- Dow states that warranty options vary by region and tells customers to contact Dow for specific warranty information.
+- Weatherseal warranty term, covered products and exclusions: not confirmed in the sources we checked — ask.
+
+Do not assume a warranty period for a project until Dow confirms it in writing for that project and region.
+
+### Typical process
+Dow states that structural glazing risk is mitigated by “project-specific testing for both two- and four-sided structural glazing systems”, and offers technical manuals and a submittal tool for documents. In practice, the steps below are what to prepare; the exact sequence and sample requirements are given by Dow per project.
+
+- 1. Share drawings: joint/glazing details, glass/metal/gasket/spacer materials, loads and wind data.
+- 2. Design review by Dow technical staff (required for structural glazing).
+- 3. Adhesion and compatibility testing with project substrates and components; sample quantities and time are specified by Dow.
+- 4. Dow issues test results and, if conditions are met, the warranty decision. Terms: confirm.
+- 5. Apply per approved details with quality control records (see the structural sealant selection guide).
+
+### Documents to prepare
+- Project name, location, facade type and glazing drawings
+- Substrate list: glass, coatings, aluminum finish, gaskets, spacers, setting blocks
+- Product and quantity plan (structural vs. weatherseal duty)
+- Applicator and quality-control plan
+
+Which items Dow requires for a given warranty is decided by Dow. Ask KCT for the current requirement list.
+
+### Why a warranty may not be granted
+Limited warranties generally depend on conditions. Typical reasons a warranty request is not accepted include untested or incompatible substrates, unreviewed design details, products used outside their stated application, or application outside the approved conditions. Dow’s own exclusion list was not available in the sources we checked, so confirm it before bidding.
+
+### References
+- Dow: DOWSIL structural glazing (warranty and project-specific testing statements) — dow.com/en-us/market/mkt-building-construction/sub-build-commercial-glazing/app-build-comglaz-structural-glazing.html
+- Standards named on that page: ETAG 002, GB 16776, ASTM C1184
+- Products: https://kconstrade.com/en/products/dowsil-995, dowsil-795, dowsil-983, dowsil-121
+
+Q: How long is the DOWSIL structural glazing warranty?
+A: Dow publishes “up to 20-year structural adhesion limited warranty”, and says options vary by region. The period for your project is confirmed by Dow.
+
+Q: Is the warranty included when I buy the sealant?
+A: No. Dow ties structural glazing risk mitigation to project-specific testing and review, so request the warranty before construction.
+
+Q: What testing comes before a warranty?
+A: Project-specific testing with your substrates, typically adhesion and compatibility. Sample quantities and duration are set by Dow.
+
+Q: Does a weatherseal also get a warranty?
+A: We could not confirm the weatherseal warranty terms in public Dow sources; ask KCT to check with Dow for your project.
+
+Q: Who can support this at KCT?
+A: Korea Construction Trading (KCT) supports DOWSIL product selection and documentation requests: sales@kconstrade.com, +82 10-8939-0284. Final requirements are confirmed with Dow and the authority having jurisdiction.
+
+## Firestop Standards Compared: ASTM E119, E814/UL 1479, E1966 vs. EN 1366-3/-4
+https://kconstrade.com/en/technical/selection/astm-e119-vs-en-1366-firestop
+
+Key facts: EN 1366-3 (penetration seals) and EN 1366-4 (linear joint seals) are classified under EN 13501-2 as E (integrity) and I (insulation) in minutes. In North America, penetration seals are tested to ASTM E814 / UL 1479 (F and T ratings) and linear joints to ASTM E1966 / UL 2079. ASTM E119 is the general fire test for building construction. The ratings are not interchangeable; use the standard your project or authority requires.
+
+### Standards at a glance
+Fire-resistance test standards (from the Dow fire-rated manual and general knowledge)
+Application | Europe | North America | Rating
+Penetration seals | EN 1366-3 / EN 13501-2 | ASTM E814 · UL 1479 | E, I (min) / F, T (hours)
+Linear joints | EN 1366-4 / EN 13501-2 | ASTM E1966 · UL 2079 | E, I (min) / hours
+Wall/floor elements in general | EN 1364 / EN 1365 / EN 13501-2 | ASTM E119 | Minutes / hours
+Curtain wall, perimeter joint | EN 1364-4 (curtain walling) | ASTM E2307 (perimeter fire barrier) | Confirm
+Korea: fire-stop structure | Confirm | Confirm | Confirm
+EN 1366-3/-4, EN 13501-2, UL 1479, ASTM E814, UL 2079 and ASTM E1966 are cited in the Dow fire-rated manual. EN 1364-4, ASTM E119 and ASTM E2307 are listed from general standard titles. Korean system details: confirm with the authority.
+
+### E, I and F, T ratings
+- E (integrity): prevents passage of flames and hot gases; failure includes sustained flaming over 10 s or gap gauge penetration (6 mm / 25 mm gauges).
+- I (insulation): mean unexposed face temperature rise limited to 140 °C, any point 180 °C above initial.
+- F and T ratings (ASTM E814 / UL 1479): F relates to flame passage, T adds the temperature criterion on the unexposed side. Numeric criteria: confirm in the standard.
+
+E and I criteria above are quoted from the Dow manual (see /technical/fire-resistance).
+
+### Korean approval system
+Korea has its own approval route for fire-stop structures. The applicable test standard, approval body, validity period and how foreign test reports are accepted were not verified here, so they are marked “confirm”. Ask KCT to check the current Dow reports and your project’s requirement.
+
+### References
+- Dow Fire-Rated Technologies Technical Manual (Form No. 62-2233-01-0325): /technical/fire-resistance, /technical/penetration-seals
+- Product: https://kconstrade.com/en/products/dowsil-firestop-700
+
+Q: Is ASTM E814 the same as EN 1366-3?
+A: Both test penetration seals, but test method, exposure and rating system differ (F/T vs. E/I), so results are not directly interchangeable.
+
+Q: Which standard covers linear joints?
+A: EN 1366-4 in Europe; UL 2079 and ASTM E1966 in North America (per the Dow manual).
+
+Q: What do E and I mean?
+A: E = integrity (flames and hot gases blocked), I = insulation (unexposed side temperature limited); each expressed in minutes.
+
+Q: Is EN 1366 accepted in Korea?
+A: We could not verify this; acceptance depends on the Korean approval system and the authority. Ask KCT.
+
+Q: Who can support this at KCT?
+A: Korea Construction Trading (KCT) supports DOWSIL product selection and documentation requests: sales@kconstrade.com, +82 10-8939-0284. Final requirements are confirmed with Dow and the authority having jurisdiction.
+
+## Dow Corning to DOWSIL: Old Product Name to Current Name Cross-Reference
+https://kconstrade.com/en/technical/selection/dow-corning-to-dowsil
+
+Key facts: DOWSIL is the product brand Dow Performance Silicones introduced for heritage Dow Corning building silicones; Dow Corning-branded building products moved to the DOWSIL name in a phased roll-out. The product descriptors stay the same and Dow stated customers can rely on the same silicone chemistries, features and benefits. For example, Dow Corning 795 is now DOWSIL™ 795.
+
+### Background of the change
+According to the Dow announcement, Dow Performance Silicones (a global business unit of the DowDuPont Materials Science division) introduced DOWSIL as the name for heritage Dow Corning high-performance silicone building products. Dow Corning-branded building and construction silicones, including structural glazing and weatherproofing sealants, were to move to the DOWSIL name through a phased implementation over the following year, and products are sold by Dow.
+
+Announcement date and exact per-product schedule were not stated on the page we read. Model numbers: Dow said product descriptors remain the same; verify the exact catalog number with the current TDS.
+
+### Cross-reference table
+Legacy name to current DOWSIL name
+Legacy name | Current name | KCT page
+Dow Corning 789 / DC 789 | DOWSIL™ 789 | /products/dowsil-789
+Dow Corning 791 / DC 791 | DOWSIL™ 791 | /products/dowsil-791
+Dow Corning 795 / DC 795 | DOWSIL™ 795 | /products/dowsil-795
+Dow Corning 995 / DC 995 | DOWSIL™ 995 | /products/dowsil-995
+Dow Corning 121 / DC 121 | DOWSIL™ 121 | /products/dowsil-121
+Dow Corning 977 / DC 977 | DOWSIL™ 977 | /products/dowsil-977
+Dow Corning 991 / DC 991 | DOWSIL™ 991 | /products/dowsil-991
+Dow Corning 993 / DC 993 | DOWSIL™ 993 | /products/dowsil-993
+Dow Corning 983 / DC 983 | DOWSIL™ 983 | /products/dowsil-983
+Dow Corning 982 / DC 982 | DOWSIL™ 982 | /products/dowsil-982
+Dow Corning 939 / DC 939 | DOWSIL™ 939 | /products/dowsil-939
+Dow Corning 335 Butyl / DC 335 Butyl | DOWSIL™ 335 Butyl | /products/dowsil-335
+Dow Corning 888 / DC 888 | DOWSIL™ 888 | /products/dowsil-888
+Dow Corning 890-SL / DC 890-SL | DOWSIL™ 890-SL | /products/dowsil-890-sl
+Dow Corning 902 RCS / DC 902 RCS | DOWSIL™ 902 RCS | /products/dowsil-902-rcs
+Dow Corning 123 / DC 123 | DOWSIL™ 123 | /products/dowsil-123
+Dow Corning 786+ / DC 786+ | DOWSIL™ 786+ | /products/dowsil-786-plus
+Dow Corning FIRESTOP 700 / DC FIRESTOP 700 | DOWSIL™ FIRESTOP 700 | /products/dowsil-firestop-700
+Dow Corning ALLGUARD / DC ALLGUARD | DOWSIL™ ALLGUARD | /products/dowsil-allguard
+Dow Corning Primer-C / DC Primer-C | DOWSIL™ Primer-C | /products/dowsil-primer-c
+Dow Corning ALLGUARD Primer / DC ALLGUARD Primer | DOWSIL™ ALLGUARD Primer | /products/dowsil-allguard-primer
+Dow Corning 1200 OS / DC 1200 OS | DOWSIL™ 1200 OS | /products/dowsil-1200-os
+Legacy names reflect trade usage and search terms; a few may differ from the exact historical designation. Confirm with the TDS before specifying.
+
+### References
+- Dow announcement: “DOWSIL™ Product Brand Name Announced for Heritage Dow Corning High-Performance Silicone Building Products” (reproduced at worldconstructionnetwork.com)
+
+Q: Is DOWSIL the same product as Dow Corning?
+A: Dow said customers can continue to rely on the same silicone chemistries, features and benefits under the new name. Check the current TDS for each product.
+
+Q: Did product numbers change?
+A: Dow stated product descriptors remain the same; numbers were carried over in the products listed here (e.g. 795, 995). Verify any specific item.
+
+Q: Can I use old specifications naming Dow Corning?
+A: Map the name using the table, then confirm with the current TDS and your engineer. KCT can help.
+
+Q: Who sells DOWSIL now?
+A: Dow stated products are sold by Dow. In Korea, contact KCT for supply and support.
+
+Q: Who can support this at KCT?
+A: Korea Construction Trading (KCT) supports DOWSIL product selection and documentation requests: sales@kconstrade.com, +82 10-8939-0284. Final requirements are confirmed with Dow and the authority having jurisdiction.
+
+## How to Buy DOWSIL™ Silicone Sealants in Korea: Retail, Domestic B2B & Export Guide
+https://kconstrade.com/en/technical/selection/buy-dowsil-in-korea
+
+Key facts: In Korea, DOWSIL™ silicone sealants can be ordered through Korea Construction Trading (KCT) via three channels: Naver Smart Store for small or individual orders, direct B2B inquiry or online quotation (with tax invoice and split-delivery consultation) for domestic sites, and FOB/CIF/EXW export orders (MOQ from 1 box of 6 pcs to 1 pallet depending on product) for overseas buyers. Pricing, stock availability, and lead times vary by model and quantity and are confirmed upon quotation.
+
+### Domestic & Overseas Buying Channels
+Choose the purchasing route that fits your order size and delivery destination. Korea Construction Trading (KCT, Business Reg. No. 371-07-03719, est. 2018) handles domestic wholesale, small-quantity retail, and international export of architectural and structural silicone sealants.
+
+KCT Purchasing Channels at a Glance
+Channel | Best for | How to order | Documents & features
+Small / retail orders | Small repair jobs or individual buyers | Naver Smart Store (https://smartstore.naver.com/kconstrade/) and open-market channels | Direct online checkout for listed items
+Domestic B2B / site supply | Contractors, curtain-wall fabricators, site managers | Phone, email, KakaoTalk, or B2B online quotation page (/en/quote) | Quotation within 24 hours, tax invoice, multi-site split delivery & on-site direct delivery available upon consultation
+Overseas export | International contractors and distributors | Export inquiry page (/en/export), email, or WhatsApp (+82-10-8939-0284) | FOB/CIF/EXW terms, CI·PL·CO·MSDS·TDS documents, T/T & L/C negotiable
+Exact unit pricing, current stock status, shelf life, and delivery dates are confirmed per inquiry and quotation.
+
+For domestic B2B members, the online quotation builder allows logged-in users to select products and quantities, generate a PDF quotation (valid for 30 days, showing subtotal and 10% VAT), and review saved quotation history.
+
+### Four Details Needed for a Fast Quotation
+Preparing four core items when submitting an inquiry helps KCT return an accurate quotation within 24 business hours without back-and-forth delays.
+
+- 1. Product model (or application): State the DOWSIL™ model number (e.g., 789, 791, 795, 995, 991, 983, 993, FIRESTOP 700). If undecided, share your substrates, joint movement, and whether structural or weatherproofing duty is needed.
+- 2. Color and packaging preference: Specify the required color (e.g., Black, Gray, White, Limestone) and preferred container type (cartridge, foil sausage, pail, or drum), subject to each product’s available formats.
+- 3. Estimated quantity: Provide box/piece count or, if still estimating, joint width, depth, and total linear meters so consumption can be checked together.
+- 4. Delivery destination and schedule: For domestic sites, share the site region, desired delivery window, and whether split delivery is needed. For export, include destination country and preferred Incoterms (FOB, CIF, EXW, or DAP).
+
+### Four-Step B2B Order Process
+
+- Step 1 — Submit inquiry: Send product, quantity, and site details via phone, email, KakaoTalk, or the website form.
+- Step 2 — Custom quotation: KCT reviews availability and sends a quotation with pricing and delivery schedule within 24 hours.
+- Step 3 — Order confirmation: Confirm payment terms and issue the purchase order. Tax invoices are issued for domestic B2B transactions.
+- Step 4 — Dispatch & delivery: Domestic delivery schedules (including multi-site split delivery) and export shipments are executed per the confirmed order.
+
+### Overseas Export Conditions
+KCT supplies architectural and structural silicone sealants to overseas buyers across markets including the UAE, Australia, Vietnam, Singapore and Southeast Asia, Japan, and Taiwan. Export terms published on the KCT export page are summarized below.
+
+Export Terms Summary
+Item | Published KCT Export Condition
+Incoterms | FOB · CIF · EXW negotiable (DAP also selectable on inquiry form)
+MOQ | 1 box (6 pcs) to 1 pallet depending on the product
+Lead time | 3–7 business days from stock after order confirmation
+Payment terms | T/T Wire Transfer · L/C negotiable
+Export documents | CI (Commercial Invoice) · PL (Packing List) · CO (Certificate of Origin) · MSDS · TDS
+Language support | Korean · English · Japanese · Chinese
+Inquiry response | Within 24 business hours
+Non-stock items, custom colors, dangerous-goods packing (e.g., flammable primers), and destination customs requirements are confirmed individually before order placement.
+
+### KCT Contact, Technical Support & Useful Links
+Korea Construction Trading (KCT) supports product selection, TDS/MSDS provision, and domestic or export quotations. Contact sales@kconstrade.com or +82 10-8939-0284 (010-8939-0284) with your substrates, joint movement, and project requirements.
+
+- Phone / WhatsApp: +82 10-8939-0284 (010-8939-0284) · WhatsApp: https://wa.me/821089390284
+- Email & KakaoTalk: sales@kconstrade.com · KakaoTalk channel: https://pf.kakao.com/_xcnxdfX
+- Office address: 10 Chungmin-ro, Songpa-gu, Seoul, Korea (Garden Five Tools 4-A19) · Map: https://www.google.com/maps?q=37.478626,127.1192753
+- Small orders (Naver Smart Store): https://smartstore.naver.com/kconstrade/
+- DOWSIL™ 30-product catalog & TDS downloads: https://kconstrade.com/en/products
+- B2B online quotation page: https://kconstrade.com/en/quote
+- Export inquiry page: https://kconstrade.com/en/export
+- About Korea Construction Trading (KCT): https://kconstrade.com/en/about
+- DOWSIL™ 789 — One-part neutral-cure weatherproofing sealant with primerless adhesion: https://kconstrade.com/en/products/dowsil-789
+- DOWSIL™ 791 — One-part neutral-cure sealant for curtain wall and façade weather sealing: https://kconstrade.com/en/products/dowsil-791
+- DOWSIL™ 795 — One-part neutral sealant for structural glazing and ±50% weatherseal: https://kconstrade.com/en/products/dowsil-795
+- DOWSIL™ 995 — High-strength one-part neutral sealant for structural glazing: https://kconstrade.com/en/products/dowsil-995
+- DOWSIL™ 991 — Non-staining medium-modulus sealant for natural stone, glass and metal panels: https://kconstrade.com/en/products/dowsil-991
+- DOWSIL™ 993 — Two-part structural sealant meeting European (EOTA) and Chinese GB standards: https://kconstrade.com/en/products/dowsil-993
+
+### References
+- Korea Construction Trading (KCT) Contact & Channel Information (lib/contact.ts): phone, address, Naver Smart Store, KakaoTalk channel, map.
+- KCT Export Inquiry Page (/en/export) & Bilingual Site Dictionaries: Incoterms (FOB/CIF/EXW), MOQ, stock lead time, payment (T/T, L/C), export documents (CI, PL, CO, MSDS, TDS), and supported languages.
+- KCT B2B Online Quotation Page (/en/quote): B2B login quotation builder, PDF download, 30-day quote validity, and VAT display.
+
+Q: Can I buy a small quantity of DOWSIL™ silicone in Korea?
+A: Yes. Small and individual orders for listed products can be placed directly on KCT’s Naver Smart Store (https://smartstore.naver.com/kconstrade/). For bulk site orders, non-listed models, or formal tax-invoice quotes, contact KCT directly.
+
+Q: What information should I send when requesting a B2B quote?
+A: Share four details: (1) DOWSIL™ model name or intended application, (2) color and packaging preference, (3) estimated quantity (or joint dimensions and length), and (4) delivery site or destination country and target schedule.
+
+Q: What are the MOQ, Incoterms, and payment options for overseas export?
+A: Per KCT’s export terms, MOQ ranges from 1 box (6 pcs) to 1 pallet depending on the product, Incoterms include FOB, CIF, and EXW (negotiable), lead time is 3–7 business days from stock, and payment is available via T/T wire transfer or negotiable L/C. CI, PL, CO, MSDS, and TDS are provided.
+
+Q: Where can I check current unit price, stock, shelf life, or test reports?
+A: Unit prices, real-time stock, manufacture/use-by dates, and project documentation (such as TDS, MSDS, or Dow technical review requirements for structural glazing) vary by model and timing. Contact sales@kconstrade.com or +82 10-8939-0284 to confirm before ordering.
+
+Q: Can KCT help if I am not sure which DOWSIL™ sealant to specify?
+A: Yes. Share your substrates, joint movement, structural or weatherproofing duty, and environment with KCT (sales@kconstrade.com, +82 10-8939-0284). We support product selection and TDS review.
+
+## Architectural Silicone Sealant Glossary (30 EN–KR Terms) & Neutral vs. Acetoxy Guide
+https://kconstrade.com/en/technical/selection/silicone-sealant-glossary-neutral-vs-acetoxy
+
+Key facts: In Korean construction sites, “builders silicone” is called 건축용 실리콘 (or 코킹) and “neutral cure sealant” is called 중성 실리콘 or 비초산 실리콘. Acetoxy (초산형) silicones cure fast with a strong vinegar-like acetic acid odor and may corrode metals, whereas neutral-cure alkoxy (알콕시) silicones offer low VOC and non-corrosive adhesion for aluminum curtain walls, facades, and concrete. For porous natural stone, select a neutral sealant verified for low staining (ASTM C1248), such as DOWSIL™ 977 or 991.
+
+### 30 Essential Architectural Silicone Terms (English–Korean)
+This bilingual glossary maps 30 core terms used on Korean construction sites, in Dow Technical Data Sheets (TDS), and in international facade specifications.
+
+30 Architectural Silicone Terms (EN–KR)
+No. | English term | Korean term (site / spec) | Definition & practical note
+01 | Builders silicone | 건축용 실리콘 (코킹) | Silicone sealant for building joints such as windows, facades, and interiors
+02 | Silicone sealant | 실리콘 실란트 | Elastomeric joint sealant with an inorganic Si–O siloxane backbone for weatherability
+03 | Neutral cure (Non-acid) | 중성 경화 / 비초산 실리콘 | Cure chemistry releasing non-acidic by-products (alkoxy or oxime); called 비초산 on Korean sites
+04 | Acetoxy (Acid cure) | 초산형 / 아세톡시 경화 | Acid-cure silicone releasing acetic acid (vinegar odor); fast cure but potentially corrosive to metals
+05 | Alkoxy cure | 알콕시 경화 (중성) | Neutral cure releasing alcohol by-products; low VOC, low odor, widely used in construction
+06 | Oxime cure | 옥심 경화 (중성) | Neutral cure with faster cure and clear options, but stronger odor and typically higher VOC
+07 | RTV (Room-Temperature Vulcanizing) | 상온 경화 (RTV) | Silicone that cures to a rubbery solid at ambient temperature via moisture or catalyst
+08 | One-part (1-component) | 1액형 | Ready-to-use cartridge/sausage sealant cured by atmospheric moisture
+09 | Two-part (2-component) | 2액형 | Base and curing agent metered and mixed for fast through-cure in factories or rapid repair
+10 | Structural glazing (SSG) | 구조 글레이징 / 구조용 실링 | Bonding glass or panels to framing so the sealant carries wind and design loads; requires Dow review
+11 | Weatherproofing / Weathersealing | 내후성 실링 / 웨더실링 | Non-structural exterior joint sealing to block rain, air, and UV exposure
+12 | Perimeter joint | 페리미터 조인트 (창호 주위 줄눈) | Joint around the perimeter between a window/curtain-wall frame and the wall structure
+13 | Expansion joint | 신축이음 / 익스팬션 조인트 | Movement joint designed to absorb thermal expansion and structural displacement
+14 | Movement capability | 움직임 허용치 | Maximum joint extension/compression a cured sealant accommodates without failure (e.g., ±50%)
+15 | Modulus (Low / Medium / High) | 모듈러스 (저·중·고탄성률) | Stress generated when stretched; low/medium modulus suits moving joints, high modulus suits structural loads
+16 | Hardness (Shore A) | 경도 (쇼어 A) | Indentation hardness of cured silicone rubber; higher numbers indicate firmer elastomer
+17 | Backer rod | 백업재 / 백커로드 | Foam rod (e.g., closed-cell PE) inserted to control joint depth, give back pressure, and stop 3-sided adhesion
+18 | Bond breaker | 본드 브레이커 (절연 테이프) | Low-tack polyethylene tape used in shallow joints so sealant does not adhere to the joint bottom
+19 | Three-sided adhesion | 3면 접착 | Undesirable bonding to joint bottom as well as both sidewalls, restricting movement and causing tears
+20 | Primer | 프라이머 / 접착 증진제 | Thin pretreatment applied after cleaning to improve adhesion and speed adhesion buildup on difficult substrates
+21 | Surface preparation | 표면 준비 / 전처리 | Cleaning dust, oil, grease, moisture, or old sealant with solvent and drying before priming/sealing
+22 | Tooling | 툴링 / 헤라 마감 | Pressing and smoothing fresh sealant before skin-over to wet substrates and remove air voids
+23 | Skin-over / Tack-free time | 표면 경화 / 지촉 건조(택프리) 시간 | Time until a surface skin forms or surface is no longer tacky; tooling must finish before skin-over
+24 | Working time (Open time) | 가사시간 / 작업 가능 시간 | Time window after dispensing or mixing during which tooling or assembly can be performed
+25 | Full cure time | 완전 경화 시간 | Duration for moisture cure to progress through the full joint depth (commonly 7–14 days for 1-part building sealants)
+26 | Cohesive / Adhesive failure | 응집 파괴 / 계면(접착) 파괴 | Cohesive failure tears inside the sealant (desired in adhesion tests); adhesive failure peels off the substrate
+27 | Compatibility | 상용성 / 호환성 | Ability of sealant to contact gaskets, spacers, setting blocks, or existing sealants without discoloration or loss of adhesion
+28 | Non-staining (Fluid migration) | 비오염성 / 유체 이행 방지 | Formulation resisting fluid migration that darkens porous stone such as granite or marble (e.g., ASTM C1248)
+29 | Insulating glass unit (IGU) | 복층유리 (단열유리) | Multi-pane glass assembly sealed with a primary butyl seal and secondary silicone seal around a spacer
+30 | Firestop / Fire-rated sealant | 내화 실란트 / 방화 실리콘 | Fire-tested silicone sealant for linear joints and service penetrations in fire-rated walls or floors
+
+### Neutral Cure (Alkoxy & Oxime) vs. Acetoxy Silicone
+Curing chemistry determines odor, metal corrosion risk, cure speed, VOC level, and substrate suitability. The comparison below aligns with Dow’s Sealant Chemistries guide (Table I) and architectural product TDS summaries.
+
+Neutral (Alkoxy / Oxime / 2-Part) vs. Acetoxy Comparison
+Criterion | Neutral — Alkoxy (1-part) | Neutral — Oxime (1-part) | Acid — Acetoxy (1-part) | Neutral — Alkoxy (2-part)
+Cure by-product & odor | Neutral (alcohol-type); low odor | Neutral (oxime-type); strong odor | Acetic acid; strong vinegar-like odor | Neutral; low/no odor, low mixed VOC
+Metal corrosion risk | Non-corrosive to anodized/coated aluminum & architectural metals | Avoids acid cure (verify sensitive metals per TDS) | Acidic; potentially corrosive to metals, especially in direct contact or enclosed spaces | Non-corrosive by-product
+Porous stone / staining | Neutral cure suits masonry, but porous stone requires ASTM C1248 low-staining grades (e.g., 977, 991) | Check individual TDS for porous stone suitability | Not suited for alkaline masonry or porous natural stone; for non-porous surfaces | Designed for factory glazing/IGU; verify stone compatibility per TDS
+Surface cure speed (Dow Table I) | Slower (•) | Fast (••) | Fastest (•••) | Fast green strength (•••); through-cure independent of humidity
+VOC & clarity notes (Dow Table I) | Low VOC; clear/translucent options limited (LA); robust adhesion | Typically high VOC; clear/translucent available (••); 40°C storage can cause discoloration | Clear available (••); good shelf life (•••); competitively priced vs. organics | Clear NA; requires metered mixing equipment; flammable catalyst in some grades
+Typical applications | Curtain wall, facade weathersealing, structural glazing (1-part), concrete & window perimeters | Fast-cure or clear neutral sealing and formed-in-place gaskets | Non-porous sanitary/wet areas (786+), high-temp flues/ovens (Hi-Temp), general glass/ceramic | Factory curtain-wall unit glazing (983, 993), IGU secondary seal (939, 982), rapid repair (121)
+Dot ratings (• / •• / •••) and chemistry notes follow Dow Form No. 80-8283-01-0922 Table I. Always verify each product’s TDS for exact cure type and substrate limitations.
+
+### Quick DOWSIL™ Product Matching by Application
+Every product below is listed in the KCT DOWSIL™ catalog with downloadable Dow TDS files. Structural glazing projects require design review and adhesion/compatibility testing by Dow technical staff.
+
+DOWSIL™ Architectural Product Matching Table
+Application / Substrate | Cure / Type | DOWSIL™ Models (Catalog) | Key TDS Highlight
+Curtain wall & facade weatherproofing | 1-part neutral | DOWSIL™ 789, DOWSIL™ 791 | ±50% movement; primerless adhesion on many substrates
+1-part structural glazing / dual duty | 1-part neutral | DOWSIL™ 995, DOWSIL™ 795 | 995: high-strength structural; 795: ASTM C1184 structural + ±50% weatherseal
+Factory structural glazing / rapid repair | 2-part neutral | DOWSIL™ 983, DOWSIL™ 993, DOWSIL™ 121 | 983/993: factory production (993 meets EOTA & GB 16776); 121: 24–48 h repair handling
+Natural stone, granite & metal panels | 1-part neutral (low staining) | DOWSIL™ 977, DOWSIL™ 991 | Medium modulus, ±50% movement, ASTM C1248 staining: None
+Concrete, masonry & residential windows | 1-part neutral (low modulus) | DOWSIL™ 813C, DOWSIL™ 1001 | ±50% movement; 813C alkoxy low odor; 1001 KS F 4910 25LM
+General trade glazing & sealing | 1-part neutral | DOWSIL™ Double-N | General trade weathersealing & glazing in wide color range
+Bathrooms, kitchens & sanitary wet areas | Neutral (Sanitary) / Acetoxy (786+) | DOWSIL™ Sanitary, DOWSIL™ 786+ | Sanitary: neutral mildew-resistant; 786+: acetoxy for non-porous wet areas, FDA 21 CFR 177.2600
+Cleanrooms (low outgassing) | 1-part neutral | DOWSIL™ SE 5088 | Low-molecular siloxane (D4–D10) 24 ppm; non-flow
+Roads, bridges & concrete pavements | 1-part / 2-part civil silicone | DOWSIL™ 888, DOWSIL™ 890-SL, DOWSIL™ 902 RCS | +100/-50% movement; 888 non-sag, 890-SL & 902 RCS self-leveling
+Fire-rated joints / High-temp ovens & flues | Neutral (Firestop) / Acetoxy (Hi-Temp) | DOWSIL™ FIRESTOP 700, DOWSIL™ Hi-Temp | FIRESTOP 700: up to 240 min (joint dependent); Hi-Temp: 260°C continuous (288°C intermittent)
+Insulating glass units (IGU) | Butyl 1st / 2-part neutral 2nd | DOWSIL™ 335 Butyl, DOWSIL™ 939, DOWSIL™ 982 | 335 primary PIB barrier; 939 residential 2nd; 982 structural-capable 2nd
+Adhesion primers | Moisture-cure silane / siloxane | DOWSIL™ 1200 OS, DOWSIL™ Primer-C | 1200 OS: multi-substrate; Primer-C: PVF2/Kynar coatings with 983/993/993N
+
+### Related Technical Guides & Product Pages
+
+- Sealant chemistries comparison (Dow Table I): https://kconstrade.com/en/technical/industrial/sealant-chemistries
+- Alkoxy neutral-cure sealants (industrial guide): https://kconstrade.com/en/technical/industrial/alkoxy-neutral-cure-sealants
+- Acetoxy sealants (industrial guide): https://kconstrade.com/en/technical/industrial/acetoxy-sealants
+- Two-part alkoxy and one-part oxime sealants: https://kconstrade.com/en/technical/industrial/two-part-and-oxime-sealants
+- Sealant application, cure time & compatibility: https://kconstrade.com/en/technical/industrial/application-and-cure
+- DOWSIL™ structural vs. weatherproofing comparison: https://kconstrade.com/en/technical/selection/structural-vs-weatherproofing-sealants
+- DOWSIL™ 789 — One-part neutral-cure weatherproofing sealant with primerless adhesion: https://kconstrade.com/en/products/dowsil-789
+- DOWSIL™ 791 — One-part neutral-cure sealant for curtain wall and façade weather sealing: https://kconstrade.com/en/products/dowsil-791
+- DOWSIL™ 795 — One-part neutral sealant for structural glazing and ±50% weatherseal: https://kconstrade.com/en/products/dowsil-795
+- DOWSIL™ 995 — High-strength one-part neutral sealant for structural glazing: https://kconstrade.com/en/products/dowsil-995
+- DOWSIL™ 977 — Medium-modulus sealant that reduces staining on porous stone and metal panels: https://kconstrade.com/en/products/dowsil-977
+- DOWSIL™ 991 — Non-staining medium-modulus sealant for natural stone, glass and metal panels: https://kconstrade.com/en/products/dowsil-991
+- DOWSIL™ 813C — Low-modulus neutral sealant for concrete and masonry joints: https://kconstrade.com/en/products/dowsil-813c
+- DOWSIL™ Sanitary — Mould-resistant neutral silicone for bathrooms and kitchens: https://kconstrade.com/en/products/dowsil-sanitary
+- DOWSIL™ 786+ — Mould- and bacteria-resistant hygienic sealant (FDA-compliant for possible food contact): https://kconstrade.com/en/products/dowsil-786-plus
+- DOWSIL™ 1200 OS — General-purpose primer that improves silicone sealant adhesion to metal, glass, masonry and more: https://kconstrade.com/en/products/dowsil-1200-os
+
+Korea Construction Trading (KCT) supports product selection, TDS/MSDS provision, and domestic or export quotations. Contact sales@kconstrade.com or +82 10-8939-0284 (010-8939-0284) with your substrates, joint movement, and project requirements.
+
+### References
+- Dow, “DOWSIL™ Silicone Sealants and Foams for Industrial, Appliance and Maintenance – Selection Guide”, Form No. 80-8283-01-0922 S2D (Table I Sealant Chemistries, Application and Cure).
+- KCT DOWSIL™ Product Catalog & Dow Product Technical Data Sheets (lib/products-catalog.ts & /tds/*.pdf): DOWSIL™ 789, 791, 795, 995, 121, 977, 991, 813C, 1001, Double-N, Sanitary, 786+, SE 5088, 888, 890-SL, 902 RCS, 335, 939, 982, 983, 993, FIRESTOP 700, Hi-Temp, Primer-C, 1200 OS.
+
+Q: What are “builders silicone” and “neutral cure sealant” called in Korea?
+A: On Korean sites and hardware stores, “builders silicone” is typically called 건축용 실리콘 (or 코킹 / 실란트), and “neutral cure sealant” is called 중성 실리콘 or 비초산 실리콘 (meaning non-acetoxy).
+
+Q: Do “비초산 (non-acetoxy)” and “중성 (neutral cure)” mean the same thing?
+A: In everyday Korean construction terminology, yes — 비초산 (non-acetoxy) refers to neutral-cure silicones that do not release acetic acid. Technically, neutral cure includes sub-chemistries such as alkoxy (low odor, low VOC) and oxime (faster cure, stronger odor), so check the TDS for exact chemistry.
+
+Q: Why should acetoxy silicone be avoided on aluminum windows or curtain walls?
+A: Acetoxy silicone releases acetic acid during cure, which is acidic and potentially corrosive to metals—especially in direct contact or enclosed joints. Neutral-cure architectural silicones such as DOWSIL™ 789, 791, or 795 are designed for anodized and coated aluminum without corrosion.
+
+Q: Can any neutral-cure silicone be used on natural stone such as granite or marble?
+A: No. Even neutral-cure silicones can cause fluid migration staining on porous stone if not formulated for stone. Use low-staining neutral sealants tested to ASTM C1248 (None), such as DOWSIL™ 977 or DOWSIL™ 991, and confirm with a substrate test.
+
+Q: What is the main difference between alkoxy and oxime neutral-cure silicones?
+A: Per Dow’s Sealant Chemistries table, one-part alkoxy offers low VOC, low odor, and robust adhesion but cures more slowly with limited clear options; one-part oxime cures faster and offers clear/translucent versions, but has a stronger odor, typically higher VOC, and may discolor if stored at 40°C.
+
+## Silicone Sealant Consumption Calculation & 2:1 Joint Design Guide
+https://kconstrade.com/en/technical/selection/sealant-consumption-guide
+
+Key facts: For a rectangular sealant joint, theoretical sealant volume in milliliters equals Joint Width (mm) × Joint Depth (mm) × Total Length (m), because 1 mm × 1 mm × 1 m = 1,000 mm³ = 1 mL. Divide total volume by the container’s net volume V_unit (mL) verified from the product TDS (or entered as a variable if unlisted), then add an assumed site loss allowance and round up. Per Dow weatherproofing TDS documents, ideal movement-joint width-to-depth ratio is about 2:1 with 6–12 mm sealant depth and minimum 6 mm width.
+
+### Volume & Quantity Calculation Formula
+Because 1 mm × 1 mm × 1,000 mm (1 m) equals 1,000 mm³ = 1 cm³ = 1 mL, the theoretical sealant volume for a rectangular joint is computed directly without complex unit conversions.
+
+- Volume per meter (mL/m) = Width W (mm) × Depth D (mm)
+- Total theoretical volume V_total (mL) = W (mm) × D (mm) × Total length L (m)
+- Theoretical linear coverage per container (m/unit) = Container volume V_unit (mL) ÷ (W × D)
+- Estimated order quantity with assumed loss rate r = ceil( [V_total × (1 + r)] ÷ V_unit )
+
+Loss-rate assumption notice: Dow TDS consumption tables (such as DOWSIL™ 789 Table 1 and FIRESTOP 700 Table 4) report theoretical geometric yield and state that actual usage varies with joint profile, backer rod placement, tooling, and site waste. Any loss rate (e.g., 10% or 15%) in calculations is an illustrative site assumption—not a fixed Dow specification.
+
+### Container Volumes Confirmed in Catalog / Dow TDS (and Input Variable Rule)
+Container net volume (V_unit) differs by product and regional packaging—common cartridges are 300 mL or 310 mL, and foil sausages are 500 mL or 600 mL. Use only the volume verified in each product’s TDS; for models without a listed volume in the catalog summary, treat V_unit as a user-input variable and confirm the exact pack size with KCT before ordering.
+
+TDS-Verified Packaging Sizes for Key Architectural Sealants
+Product | Packaging confirmed in catalog / Dow TDS | Source (Form No.)
+DOWSIL™ 789 | 300 mL cartridge · 500 mL foil sausage | Dow TDS (63-1244-43-0725 S2D)
+DOWSIL™ 791 | 300 mL cartridge · 500 mL foil sausage | Dow TDS (63-6149-43-0325 S2D)
+DOWSIL™ 795 | 300 mL cartridge · 600 mL foil sausage | Dow TDS (63-1217-43-0124 S2D)
+DOWSIL™ 995 | 300 mL cartridge | Dow TDS (63-6337-43 A)
+DOWSIL™ 977 | 300 mL cartridge · 500 mL sausage | Dow TDS (62-2002-01 B)
+DOWSIL™ 991 | 500/600 mL Turbo foil sausages | Dow TDS (63-1072-01-0226 S2D)
+DOWSIL™ 813C | 310 mL cartridge (12/box) · 600 mL sausage (20/box) | Dow TDS (62-1451-01-1124 S2D)
+DOWSIL™ 1001 | 300 mL cartridge · 500 mL foil | Dow TDS (/tds/dowsil-1001.pdf)
+DOWSIL™ FIRESTOP 700 | 310 mL cartridge (12/box) · 20 L pail | Catalog & Dow TDS (62-0905-01-1020 S2D)
+DOWSIL™ 786+ | 310 mL cartridge (12/box) | Dow TDS (62-2298-01-0425 S2D)
+Other models / custom supply | Enter actual net volume V_unit as a variable — confirm with KCT | KCT quotation
+Box quantities and pack availability in Korea may vary by supply lot; confirm exact packaging when requesting a quote.
+
+Quick Reference: Theoretical Linear Meters per Container (Before Site Loss)
+Joint W × D (mm) | Theoretical vol. (mL/m) | Per 300 mL (m) | Per 310 mL (m) | Per 500 mL (m) | Per 600 mL (m)
+6 × 6 | 36 | 8.33 | 8.61 | 13.89 | 16.67
+10 × 6 | 60 | 5.00 | 5.17 | 8.33 | 10.00
+12 × 6 | 72 | 4.17 | 4.31 | 6.94 | 8.33
+15 × 8 | 120 | 2.50 | 2.58 | 4.17 | 5.00
+16 × 8 | 128 | 2.34 | 2.42 | 3.91 | 4.69
+20 × 10 | 200 | 1.50 | 1.55 | 2.50 | 3.00
+25 × 12 | 300 | 1.00 | 1.03 | 1.67 | 2.00
+Pure theoretical geometric yield = V_unit ÷ (W × D), rounded to 2 decimal places. Does not include site waste, concave tooling profile, or irregular joint cavities.
+
+### Joint Width-to-Depth Design Principles (Dow TDS Summary)
+A thinner sealant bead accommodates more joint movement than an overly thick bead. The guidelines below summarize dimensions explicitly stated in Dow’s architectural TDS documents.
+
+- Weatherproofing 2:1 ratio & depth range (DOWSIL™ 789, 977, 991 TDS): Ideal width-to-depth ratio is about 2:1. Sealant depth over the backer rod should be 6–12 mm, with a minimum joint width of 6 mm (for joints wider than 25 mm in DOWSIL™ 977 TDS, hold sealant depth at 12 mm for optimum movement capability).
+- Narrow & fillet joint rule (DOWSIL™ 813C, 786+ TDS): Minimum width 6 mm; for 6–12 mm wide joints, maintain 6 mm depth; above 12 mm width, use a 2:1 width-to-depth ratio. For fillet joints, provide at least 6 mm sealant bite to each substrate. For 813C joints wider than 25 mm or deeper than 15 mm, consult technical service.
+- Prevent three-sided adhesion (backer rod & bond breaker): Install closed-cell polyethylene backer rod (or approved backing) to control joint depth, provide tooling back pressure, and allow free extension/compression. Where a joint is too shallow for a backer rod, apply low-tack polyethylene bond-breaker tape at the joint bottom.
+- Structural glazing joints (DOWSIL™ 795, 995 TDS): Structural bite and depth must be calculated specifically for design wind/seismic loads (minimum 6 mm width and depth in DOWSIL™ 795 TDS; max 12 mm depth for one-side air-exposed field cure, or up to 24 mm only with air-permeable backing where approved). All structural glazing joint designs require review by Dow technical staff.
+- Primer coverage note: If adhesion testing shows a primer is required, estimate primer separately. For example, DOWSIL™ Primer-C TDS lists non-porous coverage of approximately 800 ft²/gal (or 10,000 ft/gal linear for a 1/2" wide joint using a lint-free cloth; brush application reduces coverage). For other primers such as DOWSIL™ 1200 OS, confirm consumption by substrate porosity and trial wipe.
+
+### Two Worked Consumption Examples (Double-Checked)
+### Example 1: Curtain-Wall Weatherproofing Joint (600 mL Foil Sausage)
+
+Scenario: Joint width W = 16 mm, depth D = 8 mm (2:1 ratio, within 6–12 mm), total length L = 250 m, using DOWSIL™ 795 600 mL foil sausages (V_unit = 600 mL, confirmed in TDS), with an illustrative site loss-rate assumption of 10% (r = 0.10).
+
+- 1) Volume per meter: 16 mm × 8 mm = 128 mL/m
+- 2) Total theoretical volume: 128 mL/m × 250 m = 32,000 mL (= 32.0 L)
+- 3) Theoretical length per 600 mL sausage: 600 ÷ 128 = 4.6875 m (approx. 4.69 m)
+- 4) Theoretical sausage count: 32,000 ÷ 600 = 53.33 pcs (rounded up: 54 pcs)
+- 5) With 10% assumed loss: 32,000 × 1.10 = 35,200 mL → 35,200 ÷ 600 = 58.67 pcs → Order estimate: 59 sausages (600 mL)
+
+### Example 2: Linear Fire-Rated Joint (310 mL Cartridge, 12 pcs/box)
+
+Scenario: Joint width W = 10 mm, depth D = 10 mm (a joint size listed in DOWSIL™ FIRESTOP 700 TDS Table 4; actual firestop depth must follow the tested fire-rating assembly), total length L = 120 m, using 310 mL cartridges packed 12 per box (confirmed in catalog & TDS), with an illustrative site loss-rate assumption of 15% (r = 0.15).
+
+- 1) Volume per meter: 10 mm × 10 mm = 100 mL/m
+- 2) Total theoretical volume: 100 mL/m × 120 m = 12,000 mL (= 12.0 L)
+- 3) Theoretical length per 310 mL cartridge: 310 ÷ 100 = 3.10 m (matches 3.1 m in FIRESTOP 700 TDS Table 4)
+- 4) Theoretical cartridge count: 12,000 ÷ 310 = 38.71 pcs (rounded up: 39 pcs)
+- 5) With 15% assumed loss: 12,000 × 1.15 = 13,800 mL → 13,800 ÷ 310 = 44.52 pcs → Order estimate: 45 cartridges (4 boxes = 48 pcs at 12/box)
+
+### Request a Project Quantity Check & Quotation
+Once you have your joint dimensions and total length, send your estimated quantity—or raw joint measurements—to Korea Construction Trading (KCT) to confirm current packaging, box counts, and delivery schedule.
+
+Korea Construction Trading (KCT) supports product selection, TDS/MSDS provision, and domestic or export quotations. Contact sales@kconstrade.com or +82 10-8939-0284 (010-8939-0284) with your substrates, joint movement, and project requirements.
+
+- B2B online quotation page: https://kconstrade.com/en/quote
+- Export inquiry page (overseas projects): https://kconstrade.com/en/export
+- How to buy DOWSIL™ in Korea: https://kconstrade.com/en/technical/selection/buy-dowsil-in-korea
+- Surface preparation guide: https://kconstrade.com/en/technical/industrial/surface-preparation
+- Primers and cleaners guide: https://kconstrade.com/en/technical/industrial/primers-and-cleaners
+- DOWSIL™ 789 — One-part neutral-cure weatherproofing sealant with primerless adhesion: https://kconstrade.com/en/products/dowsil-789
+- DOWSIL™ 791 — One-part neutral-cure sealant for curtain wall and façade weather sealing: https://kconstrade.com/en/products/dowsil-791
+- DOWSIL™ 795 — One-part neutral sealant for structural glazing and ±50% weatherseal: https://kconstrade.com/en/products/dowsil-795
+- DOWSIL™ 995 — High-strength one-part neutral sealant for structural glazing: https://kconstrade.com/en/products/dowsil-995
+- DOWSIL™ 991 — Non-staining medium-modulus sealant for natural stone, glass and metal panels: https://kconstrade.com/en/products/dowsil-991
+- DOWSIL™ 813C — Low-modulus neutral sealant for concrete and masonry joints: https://kconstrade.com/en/products/dowsil-813c
+- DOWSIL™ FIRESTOP 700 — Fire-rated silicone for linear joints and penetration seals: https://kconstrade.com/en/products/dowsil-firestop-700
+- DOWSIL™ Primer-C — Silane primer for PVF2 (Kynar) and polyester powder-coated surfaces: https://kconstrade.com/en/products/dowsil-primer-c
+- DOWSIL™ 1200 OS — General-purpose primer that improves silicone sealant adhesion to metal, glass, masonry and more: https://kconstrade.com/en/products/dowsil-1200-os
+
+### References
+- Dow Technical Data Sheets (/tds/*.pdf): DOWSIL™ 789 (Form No. 63-1244-43-0725 S2D, Table 1 & joint design), DOWSIL™ 791 (63-6149-43-0325 S2D), DOWSIL™ 795 (63-1217-43-0124 S2D), DOWSIL™ 977 (62-2002-01 B), DOWSIL™ 991 (63-1072-01-0226 S2D), DOWSIL™ 995 (63-6337-43 A), DOWSIL™ 813C (62-1451-01-1124 S2D), DOWSIL™ FIRESTOP 700 (62-0905-01-1020 S2D, Table 4), DOWSIL™ 786+ (62-2298-01-0425 S2D), DOWSIL™ Primer-C (63-1079-01-0623A S2D).
+- KCT DOWSIL™ Product Catalog (lib/products-catalog.ts) & Dow Industrial Selection Guide (Form No. 80-8283-01-0922 S2D, Surface Preparation & Primers).
+
+Q: Why does Width (mm) × Depth (mm) × Length (m) directly give milliliters (mL)?
+A: Because 1 m equals 1,000 mm, so 1 mm × 1 mm × 1 m = 1,000 mm³ = 1 cm³ = 1 mL. Multiplying W (mm) × D (mm) × L (m) gives the exact theoretical volume in mL for a rectangular joint.
+
+Q: How many linear meters does one 600 mL sausage cover?
+A: It depends on joint cross-section. Theoretically (before site loss), 600 mL covers 10.00 m at 10×6 mm, 4.69 m at 16×8 mm, and 3.00 m at 20×10 mm. Always confirm whether your chosen DOWSIL™ model is supplied in 500 mL or 600 mL sausages and allow for site loss.
+
+Q: Why is a 2:1 width-to-depth ratio recommended for weatherproofing joints?
+A: Dow TDS guidelines note that a thinner sealant bead accommodates more joint movement than a thick bead. Keeping depth between 6 and 12 mm at roughly a 2:1 width-to-depth ratio (with a backer rod to prevent three-sided adhesion) reduces peel stress during expansion and contraction.
+
+Q: What loss rate should I assume when ordering silicone sealant?
+A: Dow TDS documents do not set a single fixed loss percentage because actual consumption depends on joint irregularity, backer rod depth, tooling, and nozzle/gun residue. Common estimating practice adds an assumed allowance (for example, 10–15% as an assumption), adjusted for site conditions.
+
+Q: Can I use the same 2:1 rule for structural glazing or fire-rated joints?
+A: No. Structural glazing joint bite and depth must be engineered for wind and design loads and reviewed by Dow technical staff. Fire-rated joints (such as DOWSIL™ FIRESTOP 700) must follow the exact tested depth and backing configuration for the required fire rating.
+
+## DOWSIL™ Colors, Packaging & Shelf Life Guide (All 30 Products)
+https://kconstrade.com/en/technical/selection/color-and-packaging-guide
+
+Key facts: This table compiles only the color/appearance, packaging and shelf-life fields explicitly listed in KCT’s Dow TDS product catalog across all 30 DOWSIL™ products. Multi-color options are listed for 789, 977, 991, Double-N and 123; packaging is stated for FIRESTOP 700 (310 ml cartridge, 12/box); shelf life is stated for 995 (18 months at ≤32°C), 121 (12 months) and 982 (12 months). All unlisted fields are marked "Inquire" — contact Korea Construction Trading (KCT) to confirm current color availability, pack formats and stock dates.
+
+### How to read this table
+Color ranges, packaging formats (cartridge, sausage, pail, drum) and shelf life for DOWSIL™ products can vary by region, order volume and TDS revision. To avoid inaccurate assumptions, this guide lists only the values documented in the KCT catalog (summarized from Dow TDS) and marks every undocumented field as "Inquire".
+
+No digital color swatches are displayed on this page because monitor rendering differs from cured silicone elastomers. Always verify exact color matching and current pack availability with KCT before specifying or ordering.
+
+### All 30 products: colors, packaging and shelf life
+DOWSIL™ 30 Products — Catalog-Verified Colors, Packaging and Shelf Life
+Product | Category | Colors / Appearance | Packaging | Shelf life
+DOWSIL™ 789 | Building Envelope | Black, Gray, Bronze, Limestone, Precast White, White (special colors available) | Inquire | Inquire
+DOWSIL™ 791 | Building Envelope | Inquire | Inquire | Inquire
+DOWSIL™ 795 | Building Envelope | Inquire | Inquire | Inquire
+DOWSIL™ 995 | Building Envelope | Black | Inquire | Shelf life of 18 months (stored at or below 32°C)
+DOWSIL™ 121 | Building Envelope | Base black / dark gray, Catalyst white | Inquire | 12 months from date of manufacture
+DOWSIL™ 977 | Building Envelope | Grey, Bronze, Black, Limestone, White, Charcoal and custom colors | Inquire | Inquire
+DOWSIL™ 991 | Building Envelope | Black, Gray, Bronze, White, Limestone, Charcoal, Dark Gray, Sandstone, Pink (9 colors) | Inquire | Inquire
+DOWSIL™ 813C | Building Envelope | Inquire | Inquire | Inquire
+DOWSIL™ 1001 | Building Envelope | White | Inquire | Inquire
+DOWSIL™ Double-N | Building Envelope | Clear, Gray, Black, Red, White, Green, Dark Bronze, Sky blue, Ivory, Bright Gray, Wood, Cherry, Dark blue, Precast white | Inquire | Inquire
+DOWSIL™ Sanitary | Building Envelope | Translucent, White, Ivory | Inquire | Inquire
+DOWSIL™ 786+ | GMP / Hygienic | Inquire | Inquire | Inquire
+DOWSIL™ SE 5088 | GMP / Hygienic | White, Ivory, Light Gray | Inquire | Inquire
+DOWSIL™ 902 RCS | Civil Engineering | Part A dark gray / Part B white | Inquire | Inquire
+DOWSIL™ 888 | Civil Engineering | Gray | Inquire | Inquire
+DOWSIL™ 890-SL | Civil Engineering | Dark gray / Light gray | Inquire | Inquire
+DOWSIL™ 335 Butyl | Insulating Glass | Black | Inquire | Inquire
+DOWSIL™ 939 | Insulating Glass | Base white / curing agent black / mixed black | Inquire | Inquire
+DOWSIL™ 982 | Insulating Glass | Base white (SG 1.37) / curing agent black (SG 1.02) | Inquire | 12 months
+DOWSIL™ 983 | Insulating Glass | Base white / Catalyst black or gray | Inquire | Inquire
+DOWSIL™ 993 | Insulating Glass | As mixed: Black non-slump paste, specific gravity 1.33 | Inquire | Inquire
+DOWSIL™ FIRESTOP 700 | Specialty | Inquire | 310 ml cartridge, 12 per box | Inquire
+DOWSIL™ Hi-Temp | Specialty | Inquire | Inquire | Inquire
+DOWSIL™ ALLGUARD | Specialty | Inquire | Inquire | Inquire
+DOWSIL™ 123 | Specialty | Black, White, Grey, Bronze, Limestone, Sandstone (custom available) | Inquire | Inquire
+DOWSIL™ 375 | Specialty | Part A Cream / Part B Brown | Inquire | Inquire
+DOWSIL™ 650+ | Specialty | translucent blue liquid | Inquire | Inquire
+DOWSIL™ Primer-C | Primers | Clear | Inquire | Inquire
+DOWSIL™ ALLGUARD Primer | Primers | Milky white liquid / transparent when cured (may darken substrate) | Inquire | Inquire
+DOWSIL™ 1200 OS | Primers | Inquire | Inquire | Inquire
+Values reflect only the fields stated in the summarized KCT product catalog (from Dow TDS). "Inquire" means the field is not listed in the summarized catalog; confirm current colors, packaging units and lot shelf life with Dow TDS and Korea Construction Trading (KCT).
+
+### Catalog-verified highlights by group
+- Multi-color architectural / stone sealants listed in catalog: DOWSIL™ 789 (Black, Gray, Bronze, Limestone, Precast White, White + special colors), DOWSIL™ 977 (Grey, Bronze, Black, Limestone, White, Charcoal + custom colors), DOWSIL™ 991 (9 colors: Black, Gray, Bronze, White, Limestone, Charcoal, Dark Gray, Sandstone, Pink), DOWSIL™ Double-N (14 colors), DOWSIL™ 123 (6 colors + custom).
+- Two-part products with contrasting base / catalyst colors listed in catalog: DOWSIL™ 121 (Base black/dark gray, Catalyst white), DOWSIL™ 902 RCS (Part A dark gray, Part B white), DOWSIL™ 939 (Base white, Curing agent black, Mixed black), DOWSIL™ 982 (Base white, Curing agent black), DOWSIL™ 983 (Base white, Catalyst black or gray), DOWSIL™ 375 (Part A Cream, Part B Brown), and DOWSIL™ 993 (mixed: black non-slump paste).
+- Packaging stated in catalog: DOWSIL™ FIRESTOP 700 (310 ml cartridge, 12 per box). All other 29 products are marked "Inquire" for packaging.
+- Shelf life stated in catalog: DOWSIL™ 995 (18 months stored at or below 32°C), DOWSIL™ 121 (12 months from date of manufacture), DOWSIL™ 982 (12 months). All other 27 products are marked "Inquire".
+- Coatings and primers with appearance notes in catalog: DOWSIL™ 650+ (translucent blue liquid), DOWSIL™ ALLGUARD Primer (milky white liquid, transparent when cured), DOWSIL™ Primer-C (Clear). DOWSIL™ ALLGUARD uses three tint bases pigmented at the distributor.
+
+### Sources and KCT technical support
+Source: Individual Dow Technical Data Sheets (TDS) summarized in the Korea Construction Trading (KCT) product catalog (30 products). Each product’s original PDF can be downloaded from the KCT TDS Download Center (/en/tds) or the individual product pages (/en/products).
+
+Korea Construction Trading (KCT) does its best to support product selection, latest TDS/SDS confirmation, color and packaging availability checks, and B2B supply quotations (sales@kconstrade.com, +82 10-8939-0284).
+
+Q: Why are colors or packaging marked "Inquire" for products like DOWSIL™ 795 and 791?
+A: This page records only fields explicitly stated in the summarized KCT product catalog and avoids guessing unlisted specifications. Download the product’s TDS PDF on the TDS center or contact KCT (sales@kconstrade.com, +82 10-8939-0284) to verify currently supplied colors, cartridge/sausage/pail/drum options and lead times.
+
+Q: Why are there no visual color swatches on this page?
+A: Screen displays vary significantly and cannot reproduce the true shade or finish of cured silicone sealants. Confirm color selection with official reference materials and KCT before ordering.
+
+Q: Which DOWSIL™ exterior sealants list multiple standard colors in the catalog?
+A: In the catalog, DOWSIL™ 789 lists 6 standard colors plus special colors, DOWSIL™ 977 lists 6 colors plus custom colors, DOWSIL™ 991 lists 9 colors, DOWSIL™ Double-N lists 14 colors and DOWSIL™ 123 lists 6 colors plus custom options.
+
+Q: Which products have shelf life stated in the catalog, and how do I check others?
+A: The catalog lists 18 months (at ≤32°C) for DOWSIL™ 995, 12 months from manufacture for DOWSIL™ 121 and 12 months for DOWSIL™ 982. For all other products, check the product TDS PDF and confirm manufacturing dates and storage conditions with KCT before delivery.
+
+Q: How can I confirm stock packaging and request a B2B quote from KCT?
+A: Send the product code, desired color, estimated quantity and project destination to Korea Construction Trading (sales@kconstrade.com, +82 10-8939-0284 or WhatsApp). We support both domestic B2B supply and global export.
+
 # Silicone PSAs for Electrical and Electronics Tapes: Products, Selection and KCT Support (full text)
 Source: Dow, “Electrical and electronics tapes” and Dow Korea product search (Adhesives & Release Agents › PSAs › PSAs for insulation tapes), dow.com/ko-kr, checked 2026-11; Dow, “Silicone PSAs for High Performance Selection Guide”, Form No. 30-1315-01-0524 S2D (© 2024 The Dow Chemical Company). 한국어/영어 정리: 한국건설트레이딩(KCT)
 

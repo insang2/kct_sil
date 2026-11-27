@@ -6,7 +6,7 @@ import { SERIES } from '@/lib/series/config'
 import { HUBS, TECH_UPDATED } from '@/lib/series/hubs'
 import { SERIES_DATES, SITE_DATES, seriesPageDate } from '@/lib/series/dates'
 
-export const PRODUCTS_UPDATED = '2026-11-27'
+export const PRODUCTS_UPDATED = '2026-11-28'
 export const BASE = 'https://kconstrade.com'
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')

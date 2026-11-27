@@ -25,6 +25,13 @@ function Original({ en, lang, label }: { en: string; lang: Lang; label: string }
   )
 }
 
+// '/products/…' 형태의 셀은 현재 언어의 제품 상세 내부 링크로 표시
+function cellNode(v: string, lang: Lang): React.ReactNode {
+  if (!v) return '–'
+  if (/^\/products\/[a-z0-9-]+$/.test(v)) return <a href={`/${lang}${v}`}>{lang === 'ko' ? '제품 보기' : 'View product'}</a>
+  return v
+}
+
 function Table({ head, rows, lang, compact, caption }: { head: Cell[]; rows: Cell[][]; lang: Lang; compact?: boolean; caption?: string }) {
   return (
     <div className={`tech-table-wrap${compact ? ' tech-table-big' : ''}`} tabIndex={0} role="region" aria-label={lang === 'ko' ? '표 (가로 스크롤 가능)' : 'Table (scrollable)'}>
@@ -35,7 +42,7 @@ function Table({ head, rows, lang, compact, caption }: { head: Cell[]; rows: Cel
         </thead>
         <tbody>
           {rows.map((r, i) => (
-            <tr key={i}>{r.map((c, j) => <td key={j}>{t(c, lang) || '–'}</td>)}</tr>
+            <tr key={i}>{r.map((c, j) => <td key={j}>{cellNode(t(c, lang), lang)}</td>)}</tr>
           ))}
         </tbody>
       </table>

@@ -141,9 +141,11 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
                 { label: d.navigation.about,     href: `/${lang}/about` },
                 { label: d.navigation.products,  href: `/${lang}/products` },
                 { label: d.navigation.technical, href: `/${lang}/technical` },
+                { label: lang === 'en' ? 'TDS Download' : lang === 'ja' ? 'TDSダウンロード' : 'TDS 자료실', href: `/${lang === 'ja' ? 'en' : lang}/tds` },
                 { label: d.navigation.quote ?? (lang === 'en' ? 'Quotation' : lang === 'ja' ? '見積書' : '견적서'), href: `/${lang}/quote` },
                 { label: d.navigation.b2b,       href: `/${lang}#b2b-form` },
                 { label: d.navigation.export,    href: `/${lang}/export` },
+                { label: lang === 'en' ? 'Sitemap' : lang === 'ja' ? 'サイトマップ' : '사이트맵', href: `/${lang === 'ja' ? 'en' : lang}/sitemap` },
               ].map((item) => (
                 <li key={item.href} className="mb-2">
                   <Link

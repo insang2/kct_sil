@@ -1,4 +1,5 @@
 import Tx from '@/components/tech/Tx';
+import { techCss } from '@/components/tech/TechBlocks';
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
@@ -6,7 +7,16 @@ import Link from 'next/link'
 import type { Product } from '@/lib/pricing'
 import { bySlug, tdsUrl, CATEGORIES, CATALOG } from '@/lib/products-catalog'
 import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en'
-import { aliasesOf, productFaq, productSeoMeta, relatedTech } from '@/lib/product-seo'
+import {
+  aliasesOf,
+  keySpecCard,
+  productComparison,
+  productDeepGuide,
+  productFaq,
+  productSeoMeta,
+  relatedTech,
+  siblingProducts,
+} from '@/lib/product-seo'
 
 // ── Fallback product data (used when Supabase unavailable or fields not yet filled) ──
 const FALLBACKS: Record<string, Partial<Product> & {
@@ -179,7 +189,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug, lang } = await params
   const product = await getProduct(slug, lang)
-  if (!product) return { title: '제품을 찾을 수 없습니다 | KCT' }
+  if (!product) return { title: '제품을 찾을 수 없습니다 | KCT', robots: { index: false, follow: false } }
 
   const isEn = lang === 'en'
   const isJa = lang === 'ja'
@@ -260,9 +270,17 @@ export default async function ProductDetailPage({
 
   const isEn = lang === 'en'
   const isJa = lang === 'ja'
+  const contentLang: 'ko' | 'en' = isEn ? 'en' : 'ko'
+  const catalogItem = bySlug(slug)
   const displayName = (isEn && product.name_en) ? product.name_en : product.name_ko
+  const docLabel = catalogItem?.docLabel ? (isEn ? 'LEED letter' : catalogItem.docLabel) : 'TDS'
 
-  const faqItems = lang === 'ja' ? [] : productFaq(slug, isEn ? 'en' : 'ko')
+  const keySpecs = keySpecCard(slug, contentLang)
+  const deepGuide = productDeepGuide(slug, contentLang)
+  const comparison = productComparison(slug, contentLang)
+  const siblings = siblingProducts(slug, contentLang)
+  const techLinks = lang === 'ja' ? [] : relatedTech(slug, contentLang)
+  const faqItems = lang === 'ja' ? [] : productFaq(slug, contentLang)
   const productSchema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -312,6 +330,7 @@ export default async function ProductDetailPage({
 
   return (
     <Tx>
+      <style dangerouslySetInnerHTML={{ __html: techCss }} />
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
@@ -325,7 +344,10 @@ export default async function ProductDetailPage({
         <div className="container py-3">
           <ol className="breadcrumb mb-0" style={{ fontSize: '0.85rem' }}>
             <li className="breadcrumb-item"><Link href={`/${lang}`} className="text-decoration-none text-body-secondary">{isEn ? 'Home' : '홈'}</Link></li>
-            <li className="breadcrumb-item text-body-secondary">{isEn ? 'Products' : '제품'}</li>
+            <li className="breadcrumb-item"><Link href={`/${lang}/products`} className="text-decoration-none text-body-secondary">{isEn ? 'Products' : '제품정보'}</Link></li>
+            {catalogItem && (
+              <li className="breadcrumb-item"><Link href={`/${lang}/products#cat-${catalogItem.category}`} className="text-decoration-none text-body-secondary">{product.category}</Link></li>
+            )}
             <li className="breadcrumb-item active text-dark fw-medium">{product.name_ko}</li>
           </ol>
         </div>
@@ -409,30 +431,42 @@ export default async function ProductDetailPage({
                 )}
               </div>
 
-              <h1 className="display-5 fw-bold text-dark mb-3">{product.name_ko}</h1>
-              <p className="text-body-secondary mb-2" style={{ fontSize: '0.88rem' }}>{isEn ? 'Also known as' : '다른 이름·표기'}: {aliasesOf(slug).join(' · ')}</p>
+              <h1 className="display-5 fw-bold text-dark mb-2">{product.name_ko}</h1>
               {product.name_en && (
-                <p className="text-body-secondary mb-4" style={{ fontSize: '0.95rem' }}>{product.name_en}</p>
+                <p className="text-body-secondary mb-3" style={{ fontSize: '0.95rem' }}>{product.name_en}</p>
               )}
 
               {product.description_ko && (
-                <p className="text-dark mb-5" style={{ lineHeight: 1.8, fontSize: '0.975rem' }}>
+                <p className="text-dark mb-4" style={{ lineHeight: 1.8, fontSize: '0.975rem' }}>
                   {product.description_ko}
                 </p>
               )}
 
-              {/* Key Features preview (first 3) */}
-              {features.length > 0 && (
-                <div className="mb-5">
-                  <h2 className="h6 fw-bold text-dark mb-3">{isEn ? 'Key Features' : '주요 특성'}</h2>
-                  <ul className="list-unstyled mb-0">
-                    {features.slice(0, 3).map((f, i) => (
-                      <li key={i} className="d-flex align-items-start gap-2 mb-2">
-                        <i className="bi bi-check-circle-fill text-primary mt-1 flex-shrink-0" style={{ fontSize: '0.85rem' }}></i>
-                        <span className="text-dark" style={{ fontSize: '0.9rem' }}>{f}</span>
-                      </li>
+              {/* 상단 핵심 사양 요약 카드 (카탈로그 실측 필드만 표시, 미기재 시 '문의') */}
+              {keySpecs.length > 0 && (
+                <div className="mb-4 p-3 p-md-4 rounded-4" style={{ background: '#fff', border: '1px solid rgba(22,24,28,.14)' }}>
+                  <div className="d-flex justify-content-between align-items-baseline mb-3">
+                    <h2 className="h6 fw-bold text-dark mb-0">{isEn ? 'Key Specifications (TDS Summary)' : '핵심 사양 요약 (TDS 기준)'}</h2>
+                    <span className="small text-body-secondary">{isEn ? 'Typical values' : '대표 특성 · 미기재 시 문의'}</span>
+                  </div>
+                  <dl className="row g-3 mb-0">
+                    {keySpecs.map((item) => (
+                      <div key={item.label} className="col-sm-6">
+                        <dt className="small text-body-secondary fw-semibold mb-1">{item.label}</dt>
+                        <dd
+                          className="mb-0"
+                          style={{
+                            fontSize: '0.9rem',
+                            lineHeight: 1.5,
+                            color: item.missing ? '#5d646b' : '#16181C',
+                            fontWeight: item.missing ? 400 : 600,
+                          }}
+                        >
+                          {item.value}
+                        </dd>
+                      </div>
                     ))}
-                  </ul>
+                  </dl>
                 </div>
               )}
 
@@ -441,12 +475,12 @@ export default async function ProductDetailPage({
                 {product.tds_url && (
                   <a href={product.tds_url} target="_blank" rel="noreferrer" download
                     className="btn btn-outline-primary rounded-pill px-4 fw-medium">
-                    <i className="bi bi-file-earmark-pdf me-2"></i>{isEn ? 'Download TDS' : 'TDS 다운로드'}
+                    <i className="bi bi-file-earmark-pdf me-2"></i>{isEn ? `Download ${docLabel}` : `${docLabel} 다운로드`}
                   </a>
                 )}
                 <a href={`/${lang}#b2b-form`}
                   className="btn btn-primary rounded-pill px-4 fw-bold">
-                  <i className="bi bi-chat-dots me-2"></i>{isEn ? 'Request a Quote' : '가격 문의하기'}
+                  <i className="bi bi-chat-dots me-2"></i>{isEn ? 'Request a Quote' : '견적·기술 문의'}
                 </a>
                 <a href="https://wa.me/821089390284" target="_blank" rel="noreferrer"
                   className="btn btn-outline-success rounded-pill px-4">
@@ -494,13 +528,120 @@ export default async function ProductDetailPage({
                 <div className="row g-3">
                   {applications.map((a, i) => (
                     <div key={i} className="col-sm-6 col-lg-4">
-                      <div className="d-flex align-items-center gap-3 p-3 bg-light rounded-3">
+                      <div className="d-flex align-items-center gap-3 p-3 bg-light rounded-3 h-100">
                         <i className="bi bi-building-check text-primary flex-shrink-0 fs-5"></i>
                         <span className="text-dark" style={{ fontSize: '0.9rem' }}>{a}</span>
                       </div>
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Product-specific Deep Selection & Handling Guide */}
+      {deepGuide && (
+        <section className="py-9 bg-light" aria-labelledby="product-guide">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-10">
+                <h2 id="product-guide" className="h4 fw-bold text-dark mb-2">{deepGuide.heading}</h2>
+                <p className="text-body-secondary mb-4" style={{ fontSize: '0.95rem', lineHeight: 1.75 }}>{deepGuide.intro}</p>
+                <div className="row g-4">
+                  <div className="col-md-6">
+                    <div className="p-4 bg-white rounded-4 border h-100">
+                      <h3 className="h6 fw-bold text-dark mb-3">{deepGuide.selectionTitle}</h3>
+                      <ul className="mb-0 ps-3" style={{ fontSize: '0.92rem', lineHeight: 1.75 }}>
+                        {deepGuide.selectionPoints.map((pt, i) => (
+                          <li key={i} className="mb-2 text-dark">{pt}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="p-4 bg-white rounded-4 border h-100">
+                      <h3 className="h6 fw-bold text-dark mb-3">{deepGuide.handlingTitle}</h3>
+                      <ul className="mb-0 ps-3" style={{ fontSize: '0.92rem', lineHeight: 1.75 }}>
+                        {deepGuide.handlingPoints.map((pt, i) => (
+                          <li key={i} className="mb-2 text-dark">{pt}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                {deepGuide.companionSlugs && deepGuide.companionSlugs.length > 0 && (
+                  <div className="mt-4 p-4 bg-white rounded-4 border">
+                    <div className="fw-bold text-dark mb-2" style={{ fontSize: '0.9rem' }}>
+                      {isEn ? 'Related system products & alternatives' : '함께 검토하는 프라이머 · 대안 제품'}
+                    </div>
+                    <div className="row g-3">
+                      {deepGuide.companionSlugs.map((cp) => {
+                        const target = bySlug(cp.slug)
+                        if (!target) return null
+                        return (
+                          <div key={cp.slug} className="col-md-6">
+                            <Link href={`/${lang}/products/${cp.slug}`} className="d-block p-3 rounded-3 border text-decoration-none h-100">
+                              <span className="fw-bold d-block" style={{ color: '#1558D6', fontSize: '0.92rem' }}>{target.name} →</span>
+                              <span className="small text-body-secondary">{cp.note}</span>
+                            </Link>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Similar Model Mini Comparison */}
+      {comparison && comparison.rows.length > 0 && (
+        <section className="py-9 bg-white" aria-labelledby="mini-comparison">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-10">
+                <h2 id="mini-comparison" className="h4 fw-bold text-dark mb-2">{comparison.title}</h2>
+                <p className="text-body-secondary mb-4" style={{ fontSize: '0.93rem' }}>{comparison.subtitle}</p>
+                <div className="tech-table-wrap" tabIndex={0} role="region" aria-label={isEn ? 'Model comparison table (scrollable)' : '유사 모델 비교표 (가로 스크롤 가능)'}>
+                  <table className="table table-sm tech-table mb-0">
+                    <caption className="visually-hidden">{comparison.title}</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">{isEn ? 'Property (TDS)' : '항목 (TDS)'}</th>
+                        {comparison.columns.map((col) => (
+                          <th key={col.slug} scope="col">
+                            {col.isCurrent ? (
+                              <span>{col.name}</span>
+                            ) : (
+                              <Link href={`/${lang}/products/${col.slug}`} style={{ color: '#fff', textDecoration: 'underline' }}>
+                                {col.name}
+                              </Link>
+                            )}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {comparison.rows.map((row) => (
+                        <tr key={row.label}>
+                          <td className="fw-semibold">{row.label}</td>
+                          {row.values.map((v, idx) => (
+                            <td key={idx}>{v}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="small text-body-secondary mt-2 mb-0">
+                  {isEn
+                    ? 'Source: KCT catalog summary of each product’s Dow TDS (test conditions may differ by product; values are typical, not specifications). "Inquire" = not stated in summarized catalog.'
+                    : '출처: 각 제품 Dow TDS를 요약한 KCT 카탈로그 데이터(제품별 시험 조건이 다를 수 있으며 대표 특성이지 시방 값이 아님). 「문의」는 요약 카탈로그 미기재 항목입니다.'}
+                </p>
               </div>
             </div>
           </div>
@@ -523,9 +664,22 @@ export default async function ProductDetailPage({
                           <td className="py-3 px-4" style={{ fontSize: '0.9rem', background: '#fff', color: '#16142F' }}>{val}</td>
                         </tr>
                       ))}
+                      <tr>
+                        <td className="fw-bold py-3 px-4" style={{ width: '35%', fontSize: '0.9rem', background: '#f8f9fa', color: '#16142F' }}>
+                          {isEn ? 'Also known as' : '다른 이름 · 검색 표기'}
+                        </td>
+                        <td className="py-3 px-4" style={{ fontSize: '0.9rem', background: '#fff', color: '#555370' }}>
+                          {(isEn ? aliasesOf(slug).filter((a) => !/[가-힣]/.test(a)) : aliasesOf(slug)).join(' · ')}
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
+                <p className="small text-body-secondary mt-3 mb-0" style={{ lineHeight: 1.7 }}>
+                  {isEn
+                    ? 'Source: Dow Technical Data Sheet (TDS). All values are typical properties and not intended for preparing specifications. Korea Construction Trading (KCT) supports latest TDS/SDS confirmation and product selection.'
+                    : '출처: Dow 기술 데이터시트(TDS) 요약. 표기된 수치는 대표 특성이며 시방서 작성용 규격값이 아닙니다. 한국건설트레이딩(KCT)이 최신 TDS·SDS 확인과 제품 선정 기술 지원을 도와드립니다.'}
+                </p>
               </div>
             </div>
           </div>
@@ -541,14 +695,16 @@ export default async function ProductDetailPage({
               <div className="row g-3">
                 {product.tds_url ? (
                   <div className="col-md-6">
-                    <a href={product.tds_url} target="_blank" rel="noreferrer"
-                      className="d-flex align-items-center gap-3 p-4 border rounded-4 text-decoration-none hover-shadow">
+                    <a href={product.tds_url} target="_blank" rel="noreferrer" download
+                      className="d-flex align-items-center gap-3 p-4 border rounded-4 text-decoration-none hover-shadow h-100">
                       <div className="d-flex align-items-center justify-content-center rounded-3 bg-danger"
                         style={{ width: 48, height: 48, flexShrink: 0 }}>
                         <i className="bi bi-file-earmark-pdf-fill text-white fs-5"></i>
                       </div>
                       <div>
-                        <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>Technical Data Sheet (TDS)</div>
+                        <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>
+                          {catalogItem?.docLabel ? (isEn ? 'LEED / VOC Letter' : catalogItem.docLabel) : 'Technical Data Sheet (TDS)'}
+                        </div>
                         <div className="small" style={{ color: '#555370' }}>{isEn ? 'PDF download' : 'PDF 다운로드'}</div>
                       </div>
                       <i className="bi bi-download ms-auto text-body-secondary"></i>
@@ -574,7 +730,7 @@ export default async function ProductDetailPage({
                 <div className="col-md-6">
                   <a href={`https://www.dow.com/ko-kr/search.html#first=10&q=${encodeURIComponent((product.sku ?? ''))}&t=Products&sort=relevancy`}
                     target="_blank" rel="noreferrer"
-                    className="d-flex align-items-center gap-3 p-4 border rounded-4 text-decoration-none hover-shadow">
+                    className="d-flex align-items-center gap-3 p-4 border rounded-4 text-decoration-none hover-shadow h-100">
                     <div className="d-flex align-items-center justify-content-center rounded-3 bg-primary"
                       style={{ width: 48, height: 48, flexShrink: 0 }}>
                       <i className="bi bi-globe text-white fs-5"></i>
@@ -586,19 +742,77 @@ export default async function ProductDetailPage({
                     <i className="bi bi-box-arrow-up-right ms-auto text-body-secondary"></i>
                   </a>
                 </div>
+
+                {/* All 30 TDS Download Center */}
+                <div className="col-md-6">
+                  <Link href={`/${lang}/tds`}
+                    className="d-flex align-items-center gap-3 p-4 border rounded-4 text-decoration-none hover-shadow h-100">
+                    <div className="d-flex align-items-center justify-content-center rounded-3 bg-dark"
+                      style={{ width: 48, height: 48, flexShrink: 0 }}>
+                      <i className="bi bi-collection text-white fs-5"></i>
+                    </div>
+                    <div>
+                      <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>{isEn ? 'All 30 TDS Center' : '전 제품 30종 TDS 센터'}</div>
+                      <div className="small" style={{ color: '#555370' }}>{isEn ? 'Browse all DOWSIL™ TDS PDFs' : '전 제품 TDS 한곳에서 받기'}</div>
+                    </div>
+                    <i className="bi bi-arrow-right ms-auto text-body-secondary"></i>
+                  </Link>
+                </div>
+
+                {/* Colors & Packaging Guide */}
+                <div className="col-md-6">
+                  <Link href={`/${lang}/technical/selection/color-and-packaging-guide`}
+                    className="d-flex align-items-center gap-3 p-4 border rounded-4 text-decoration-none hover-shadow h-100">
+                    <div className="d-flex align-items-center justify-content-center rounded-3 bg-secondary"
+                      style={{ width: 48, height: 48, flexShrink: 0 }}>
+                      <i className="bi bi-table text-white fs-5"></i>
+                    </div>
+                    <div>
+                      <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>{isEn ? 'Colors & Packaging Table' : '색상·포장·유효기간 표'}</div>
+                      <div className="small" style={{ color: '#555370' }}>{isEn ? 'Compare all 30 products' : '30종 카탈로그 정리표 보기'}</div>
+                    </div>
+                    <i className="bi bi-arrow-right ms-auto text-body-secondary"></i>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      {lang !== 'ja' && relatedTech(slug, isEn ? 'en' : 'ko').length > 0 && (
-        <section className="py-9 bg-light" aria-labelledby="related-tech">
-          <div className="container" style={{ maxWidth: 1000 }}>
-            <h2 id="related-tech" className="fw-bold mb-3">{isEn ? 'Related technical information' : '관련 기술자료'}</h2>
+      {/* Sibling / Alternative Products */}
+      {siblings.length > 0 && (
+        <section className="py-9 bg-light" aria-labelledby="sibling-products">
+          <div className="container" style={{ maxWidth: 1080 }}>
+            <div className="d-flex flex-wrap justify-content-between align-items-baseline gap-2 mb-4">
+              <h2 id="sibling-products" className="h4 fw-bold mb-0">{isEn ? 'Similar & alternative DOWSIL™ products' : '형제 · 대체 제품 비교'}</h2>
+              <Link href={`/${lang}/products`} className="small fw-semibold text-decoration-none" style={{ color: '#1558D6' }}>
+                {isEn ? 'View all 30 products →' : '전 제품 30종 보기 →'}
+              </Link>
+            </div>
             <div className="row g-3">
-              {relatedTech(slug, isEn ? 'en' : 'ko').map((r) => (
+              {siblings.map((s) => (
+                <div key={s.slug} className="col-sm-6 col-lg-3">
+                  <Link href={`/${lang}/products/${s.slug}`} className="d-flex flex-column p-3 p-md-4 border rounded-4 text-decoration-none h-100 bg-white">
+                    <span className="small fw-semibold mb-1" style={{ color: '#5b49e6', fontSize: '0.78rem' }}>{s.categoryLabel}</span>
+                    <span className="fw-bold text-dark mb-1" style={{ fontSize: '1rem' }}>{s.name}</span>
+                    <span className="small text-body-secondary mb-2" style={{ lineHeight: 1.55 }}>{s.relation}</span>
+                    <span className="mt-auto fw-semibold" style={{ color: '#1558D6', fontSize: '0.84rem' }}>{isEn ? 'View specs →' : '사양 보기 →'}</span>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Technical Information */}
+      {techLinks.length > 0 && (
+        <section className="py-9 bg-white" aria-labelledby="related-tech">
+          <div className="container" style={{ maxWidth: 1080 }}>
+            <h2 id="related-tech" className="h4 fw-bold mb-4">{isEn ? 'Related technical information' : '관련 기술자료'}</h2>
+            <div className="row g-3">
+              {techLinks.map((r) => (
                 <div key={r.path} className="col-md-4">
                   <Link href={`/${lang}/${r.path}`} className="d-block p-3 border rounded-4 text-decoration-none h-100 bg-white">
                     <span className="d-block fw-bold" style={{ color: '#16142F', lineHeight: 1.45 }}>{r.title}</span>
@@ -612,9 +826,9 @@ export default async function ProductDetailPage({
       )}
 
       {faqItems.length > 0 && (
-        <section className="py-9 bg-white" aria-labelledby="product-faq">
+        <section className="py-9 bg-light" aria-labelledby="product-faq">
           <div className="container" style={{ maxWidth: 860 }}>
-            <h2 id="product-faq" className="fw-bold mb-3">{isEn ? 'Frequently asked questions' : '자주 묻는 질문'}</h2>
+            <h2 id="product-faq" className="h4 fw-bold mb-3">{isEn ? 'Frequently asked questions' : '자주 묻는 질문'}</h2>
             {faqItems.map((f, i) => (
               <details key={i} className="tx-faq" open={i === 0}>
                 <summary>{f.q}</summary>
@@ -629,9 +843,11 @@ export default async function ProductDetailPage({
         <div className="container">
           <div className="row align-items-center justify-content-between g-4">
             <div className="col-lg-7">
-              <h2 className="h3 fw-bold mb-2">{isEn ? `Inquire about ${product.name_ko}` : `${product.name_ko} 구매 문의`}</h2>
+              <h2 className="h3 fw-bold mb-2">{isEn ? `Inquire about ${product.name_ko}` : `${product.name_ko} 구매 · 기술 지원 문의`}</h2>
               <p className="mb-0 text-white" style={{ opacity: 0.9 }}>
-                {isEn ? 'B2B pricing, stock availability and lead times — we will respond quickly.' : 'B2B 특가 단가, 재고 확인, 납기 일정 등 모든 사항을 빠르게 안내해 드립니다.'}
+                {isEn
+                  ? 'Korea Construction Trading (KCT) supports B2B supply, export quotations, latest TDS/SDS documents and product selection.'
+                  : '한국건설트레이딩(KCT)이 B2B 공급·수출 견적, 재고·포장 확인, 최신 TDS·SDS 제공 및 제품 선정 기술 지원을 빠르게 안내합니다.'}
               </p>
             </div>
             <div className="col-lg-auto">

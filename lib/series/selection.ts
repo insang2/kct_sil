@@ -3,6 +3,9 @@ import type { Cell, Block } from '@/lib/tech-manual/types'
 import type { IPage } from '@/lib/industrial/pages'
 import { bySlug } from '@/lib/products-catalog'
 import { localizeCatalog } from '@/lib/products-catalog-en'
+import * as FIRE from './selection-fire'
+import * as GUIDES from './selection-guides'
+import * as DATA from './selection-data'
 
 // DOWSIL 건축용 실란트 비교·선택 가이드 — 제품 TDS 요약(카탈로그)을 같은 기준으로 나란히 비교한 데이터 기반 페이지
 // 수치는 Dow TDS의 대표 특성이며 시방용이 아닙니다.
@@ -53,7 +56,7 @@ const SUP = {
   },
 }
 
-export const SELECTION: IPage[] = [
+const BASE_SELECTION: IPage[] = [
   {
     slug: 'structural-vs-weatherproofing-sealants', no: 1, pdfPages: '—', doc: 'TDS 요약',
     title: { en: 'DOWSIL Structural Glazing vs. Weatherproofing Sealants: 789, 791, 795, 995, 121, 977, 991, 813C Compared', ko: 'DOWSIL 구조용·내후성 실란트 비교: 789·791·795·995·121·977·991·813C' },
@@ -120,3 +123,7 @@ export const SELECTION: IPage[] = [
   },
 ]
 void h
+
+// 확장 가이드 (구매·보증·내화 규격·용어·소요량·색상 등): 각 파일의 PAGES 를 이어 붙이고 번호를 자동 부여
+export const SELECTION: IPage[] = [...BASE_SELECTION, ...FIRE.PAGES, ...GUIDES.PAGES, ...DATA.PAGES].map((x, i) => ({ ...x, no: i + 1 }))
+export const SELECTION_EXTRA_META = { ...FIRE.META, ...GUIDES.META, ...DATA.META }
