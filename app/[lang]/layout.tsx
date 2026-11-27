@@ -104,6 +104,7 @@ export default async function RootLayout({
         <meta name="naver-site-verification" content="fd0a30a32f4bcd37434525a44524178124fba745" />
         <meta name="google-site-verification" content="MDkLA39MDvqE2qFlhXtDGZ7CStYVHZmiRxySzzxD97U" />
         <meta name="msvalidate.01" content="ED4DEB0C324AB26280EFC4E027A2C73F" />
+        <link rel="alternate" type="application/rss+xml" title="한국건설트레이딩 (KCT) RSS" href="/rss.xml" />
         <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
         <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/favicon.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />

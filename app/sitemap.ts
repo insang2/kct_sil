@@ -3,6 +3,8 @@ import { CATALOG } from '@/lib/products-catalog';
 import { PAGES as TECH_PAGES } from '@/lib/tech-manual';
 import { IPAGES } from '@/lib/industrial/pages';
 import { SERIES } from '@/lib/series/config';
+import { TECH_UPDATED } from '@/lib/series/hubs';
+import { PRODUCTS_UPDATED } from '@/lib/rss';
 
 const LANGS = ['ko', 'en', 'ja'] as const;
 // 한국어/영문 본문만 있는 섹션(제품·기술정보)은 ja를 제외 — ja 페이지는 ko/en으로 canonical 통합
@@ -12,7 +14,9 @@ const PRODUCT_SLUGS = CATALOG.map((p) => p.slug);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kconstrade.com';
-  const lastModified = new Date();
+  // 매 요청마다 바뀌는 날짜는 구글이 무시하므로 실제 콘텐츠 수정일로 고정
+  const lastModified = new Date(TECH_UPDATED);
+  const productsModified = new Date(PRODUCTS_UPDATED);
 
   // Root redirect entry
   const rootEntry = {
@@ -65,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Product list pages
   const productListPages = KO_EN.map((lang) => ({
     url: `${baseUrl}/${lang}/products`,
-    lastModified,
+    lastModified: productsModified,
     changeFrequency: 'weekly' as const,
     priority: lang === 'ko' || lang === 'en' ? 0.95 : 0.85,
     alternates: {
@@ -81,7 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const productDetailPages = KO_EN.flatMap((lang) =>
     PRODUCT_SLUGS.map((slug) => ({
       url: `${baseUrl}/${lang}/products/${slug}`,
-      lastModified,
+      lastModified: productsModified,
       changeFrequency: 'monthly' as const,
       priority: lang === 'ko' || lang === 'en' ? 0.85 : 0.75,
       alternates: {

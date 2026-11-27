@@ -2,7 +2,7 @@ import { PAGES } from '@/lib/tech-manual'
 import { IPAGES } from '@/lib/industrial/pages'
 import { SERIES } from './config'
 
-export const TECH_UPDATED = '2026-11-26'
+export const TECH_UPDATED = '2026-11-27'
 
 export interface Hub { key: string; path: string; title: { ko: string; en: string }; desc: { ko: string; en: string }; count: number; icon: string }
 
