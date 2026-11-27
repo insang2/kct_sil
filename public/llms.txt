@@ -97,6 +97,14 @@ Dow silicone PSA selection guide in 18 pages: the 2024 edition (application over
 - [Peroxide-Cure Process: Benzoyl Peroxide Level, Solvent Removal and Heat Cure (Figure 6)](https://kconstrade.com/en/technical/psa/peroxide-cure-process): Benzoyl peroxide at 0.5–3.0% of solids, 10% toluene solution, two-step graded cure (65–93 °C solvent removal, then 177–204 °C), and alternative tin or silane cure options.
 - [Oven Dusting, Anchorage Primers and Release (Syl-Off Q2-7785)](https://kconstrade.com/en/technical/psa/oven-dusting-anchorage-release): How to reduce oven dusting from volatile silicone, improve anchorage to PET/Kapton/Teflon with primers or 0.25–0.5% Z-6020 silane, and the Syl-Off Q2-7785 fluorosilicone release coating and its applications.
 
+## DOWSIL Sealant Comparison and Selection Guide: Structural, Weatherproofing, Insulating Glass
+Data-driven comparison of DOWSIL structural glazing, weatherproofing, stone/concrete and insulating-glass sealants (789, 791, 795, 995, 121, 977, 991, 813C, 335, 939, 982, 983, 993) from their TDS. Inquiries: Korea Construction Trading (KCT), sales@kconstrade.com, +82 10-8939-0284. Full plain-text version: https://kconstrade.com/llms-full.txt
+
+- [Hub](https://kconstrade.com/en/technical/selection) · [한국어](https://kconstrade.com/ko/technical/selection)
+- [Original PDF](https://kconstrade.comundefined)
+- [DOWSIL Structural Glazing vs. Weatherproofing Sealants: 789, 791, 795, 995, 121, 977, 991, 813C Compared](https://kconstrade.com/en/technical/selection/structural-vs-weatherproofing-sealants): Side-by-side comparison of DOWSIL 789, 791, 795, 995, 121, 977, 991 and 813C from their TDS: structural vs. weatherproofing duty, movement capability, hardness, strength and cure.
+- [DOWSIL Insulating Glass and Two-Part Structural Sealants: 335, 939, 982, 983, 993, 121 Compared](https://kconstrade.com/en/technical/selection/insulating-glass-and-two-part-structural-sealants): Comparison of the primary butyl seal DOWSIL 335 and the two-part secondary / structural sealants 939, 982, 983, 993 and 121 from their TDS.
+
 ## Silicone PSAs for Electrical and Electronics Tapes: Products, Selection and KCT Support
 Electrical and electronics tape hub in 4 pages: Dow’s Korean page in full, the 20 Dow insulation-tape PSA products with typical properties, a selection table by tape use and KCT’s technical support information. Inquiries: Korea Construction Trading (KCT), sales@kconstrade.com, +82 10-8939-0284. Full plain-text version: https://kconstrade.com/llms-full.txt
 

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import type { Product } from '@/lib/pricing'
 import { bySlug, tdsUrl, CATEGORIES } from '@/lib/products-catalog'
 import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en'
-import { aliasesOf, productFaq } from '@/lib/product-seo'
+import { aliasesOf, productFaq, relatedTech } from '@/lib/product-seo'
 
 // ── Fallback product data (used when Supabase unavailable or fields not yet filled) ──
 const FALLBACKS: Record<string, Partial<Product> & {
@@ -545,6 +545,24 @@ export default async function ProductDetailPage({
       </section>
 
       {/* CTA */}
+      {lang !== 'ja' && relatedTech(slug, isEn ? 'en' : 'ko').length > 0 && (
+        <section className="py-9 bg-light" aria-labelledby="related-tech">
+          <div className="container" style={{ maxWidth: 1000 }}>
+            <h2 id="related-tech" className="fw-bold mb-3">{isEn ? 'Related technical information' : '관련 기술자료'}</h2>
+            <div className="row g-3">
+              {relatedTech(slug, isEn ? 'en' : 'ko').map((r) => (
+                <div key={r.path} className="col-md-4">
+                  <Link href={`/${lang}/${r.path}`} className="d-block p-3 border rounded-4 text-decoration-none h-100 bg-white">
+                    <span className="d-block fw-bold" style={{ color: '#16142F', lineHeight: 1.45 }}>{r.title}</span>
+                    <span style={{ color: '#1558D6', fontSize: '.85rem', fontWeight: 600 }}>{isEn ? 'Read →' : '자세히 보기 →'}</span>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {faqItems.length > 0 && (
         <section className="py-9 bg-white" aria-labelledby="product-faq">
           <div className="container" style={{ maxWidth: 860 }}>

@@ -79,3 +79,36 @@ export function productFaq(slug: string, lang: 'ko' | 'en'): Faq[] {
   })
   return faqs
 }
+
+// ───────── 제품 → 관련 기술자료 내부 링크 ─────────
+import { PAGES as TECH_PAGES } from '@/lib/tech-manual'
+import { IPAGES } from '@/lib/industrial/pages'
+import { SERIES } from '@/lib/series/config'
+
+const RELATED: Record<string, string[]> = {
+  'dowsil-firestop-700': ['technical/fire-safety-products', 'technical/linear-joints-walls', 'technical/penetration-seals', 'technical/curtain-wall'],
+  'dowsil-primer-c': ['technical/industrial/primers-and-cleaners', 'technical/industrial/surface-preparation', 'technical/curtain-wall'],
+  'dowsil-allguard-primer': ['technical/industrial/primers-and-cleaners', 'technical/industrial/surface-preparation'],
+  'dowsil-1200-os': ['technical/industrial/primers-and-cleaners', 'technical/industrial/surface-preparation', 'technical/industrial/application-and-cure'],
+  'dowsil-rtv-hi-temp': ['technical/industrial/high-temperature-sealants', 'technical/industrial/acetoxy-sealants', 'technical/industrial/which-silicone'],
+  'dowsil-786-plus': ['technical/industrial/acetoxy-sealants', 'technical/industrial/which-silicone', 'technical/industrial/application-and-cure'],
+  'dowsil-sanitary': ['technical/industrial/acetoxy-sealants', 'technical/industrial/which-silicone'],
+}
+const STRUCT = ['technical/curtain-wall', 'technical/industrial/surface-preparation', 'technical/basics/properties-and-functional-groups']
+const DEFAULT = ['technical/industrial/which-silicone', 'technical/industrial/surface-preparation', 'technical/basics/properties-and-functional-groups']
+
+function titleOf(path: string, lang: 'ko' | 'en'): string | null {
+  const parts = path.split('/')
+  if (parts[1] === 'industrial') return IPAGES.find((p) => p.slug === parts[2])?.title[lang] ?? null
+  if (parts[1] in SERIES) return SERIES[parts[1]].pages.find((p) => p.slug === parts[2])?.title[lang] ?? null
+  return TECH_PAGES.find((p) => p.slug === parts[1])?.title[lang] ?? null
+}
+
+export function relatedTech(slug: string, lang: 'ko' | 'en'): { path: string; title: string }[] {
+  const c = bySlug(slug)
+  const paths = RELATED[slug] ?? (STRUCTURAL_OR_IGU.has(c?.category ?? '') ? STRUCT : DEFAULT)
+  return paths
+    .map((path) => ({ path, title: titleOf(path, lang) }))
+    .filter((x): x is { path: string; title: string } => !!x.title)
+}
+const STRUCTURAL_OR_IGU = new Set(['building', 'igu'])

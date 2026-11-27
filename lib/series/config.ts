@@ -4,6 +4,7 @@ import { BASICS, BASICS_PDF } from './basics'
 import { PSA as PSA_OLD, PSA_PDF, PSA_FORM } from './psa'
 import { PSA2, PSA2_PDF, PSA2_FORM } from './psa2'
 import { TAPES, TAPES_SOURCE } from './tapes'
+import { SELECTION } from './selection'
 
 // 2006년판 페이지는 2024 최신판 뒤에 이어 붙인다 (URL은 그대로 유지)
 const PSA: IPage[] = [
@@ -12,11 +13,11 @@ const PSA: IPage[] = [
 ]
 
 export interface Series {
-  key: 'basics' | 'psa' | 'tapes'
+  key: 'basics' | 'psa' | 'tapes' | 'selection'
   pdfs?: { href: string; label: L }[] // 내려받을 수 있는 원문 PDF 전체 (없으면 pdf 하나)
   srcLang?: 'ko' | 'en' // 원문 언어 (기본 en)
   pages: IPage[]
-  pdf: string
+  pdf?: string
   source: string
   short: L // 브레드크럼/사이드바용 짧은 이름
   hubTitle: L
@@ -78,6 +79,28 @@ export const SERIES: Record<string, Series> = {
     },
     cover: '/assets/tech/psa2-cover.jpg',
     badge: 'PSA SELECTION GUIDE',
+    hubFaqCount: 1,
+  },
+  selection: {
+    key: 'selection',
+    pages: SELECTION,
+    source: 'Dow 제품 기술 데이터시트(TDS)의 대표 특성을 한국건설트레이딩(KCT)이 같은 기준으로 요약·비교 (각 제품 페이지의 TDS PDF 참조). 수치는 시방용이 아님',
+    short: { en: 'Sealant Comparison', ko: '실란트 비교·선택' },
+    hubTitle: { en: 'DOWSIL Sealant Comparison and Selection Guide: Structural, Weatherproofing, Insulating Glass', ko: 'DOWSIL 실란트 비교·선택 가이드 – 구조용·내후성·복층유리' },
+    hubDesc: {
+      en: 'Data-driven comparison of DOWSIL structural glazing, weatherproofing, stone/concrete and insulating-glass sealants (789, 791, 795, 995, 121, 977, 991, 813C, 335, 939, 982, 983, 993) from their TDS.',
+      ko: 'DOWSIL 구조용·내후성·석재·콘크리트·복층유리 실란트(789·791·795·995·121·977·991·813C·335·939·982·983·993)를 TDS 기준으로 비교한 선택 가이드.',
+    },
+    keyFacts: {
+      en: 'DOWSIL™ 995 is the high-strength one-part structural glazing sealant, 795 combines ASTM C1184 structural capability with ±50% movement, 789/791 are weatherproofing sealants, 977/991 reduce staining on stone, 813C suits concrete; for insulating glass, 335 is the butyl primary seal and 939/982/983/993 are two-part secondary or structural sealants. Structural applications require review by Dow technical staff.',
+      ko: 'DOWSIL™ 995는 고강도 1액형 구조 글레이징 실란트, 795는 ASTM C1184 구조 성능과 ±50% 움직임을 겸하고, 789·791은 웨더실링, 977·991은 석재 오염 저감, 813C는 콘크리트용입니다. 복층유리는 335가 부틸 1차 씰, 939·982·983·993이 2액형 2차·구조 실란트입니다. 구조용 적용은 Dow 기술진의 검토가 필요합니다.',
+    },
+    intro: {
+      en: 'Compare the DOWSIL sealants side by side with the same criteria from each Dow TDS, then ask Korea Construction Trading to confirm the choice for your project.',
+      ko: '각 Dow TDS의 같은 기준으로 DOWSIL 실란트를 나란히 비교하고, 프로젝트에 맞는지 한국건설트레이딩에 확인하십시오.',
+    },
+    cover: '/assets/tech/cover.jpg',
+    badge: 'SEALANT SELECTION',
     hubFaqCount: 1,
   },
   tapes: {

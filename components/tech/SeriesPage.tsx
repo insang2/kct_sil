@@ -51,7 +51,7 @@ export function SeriesHub({ s, lang }: { s: Series; lang: string }) {
   const graph = [
     { '@type': 'BreadcrumbList', itemListElement: crumbs(s, lang, ko, l) },
     { '@type': 'CollectionPage', '@id': url, name: s.hubTitle[l], description: s.hubDesc[l], inLanguage: l, url, citation: s.source,
-      isBasedOn: (s.pdfs ?? [{ href: s.pdf }]).map((d) => ({ '@type': 'CreativeWork', name: s.source, url: `${BASE}${d.href}` })),
+      isBasedOn: (s.pdfs ?? (s.pdf ? [{ href: s.pdf }] : [])).map((d) => ({ '@type': 'CreativeWork', name: s.source, url: `${BASE}${d.href}` })),
       publisher: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE },
       hasPart: s.pages.map((p) => ({ '@type': 'TechArticle', headline: p.title[l], url: `${url}/${p.slug}` })) },
     { '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q[l], acceptedAnswer: { '@type': 'Answer', text: f.a[l] } })) },
@@ -73,7 +73,7 @@ export function SeriesHub({ s, lang }: { s: Series; lang: string }) {
               <p style={{ color: '#dbeafe', lineHeight: 1.8, maxWidth: 640 }}>{s.intro[l]}</p>
               <div className="d-flex flex-wrap gap-2">
                 <Link href={`/${lang}/technical/${s.key}/${s.pages[0].slug}`} className="btn btn-light rounded-pill px-4 fw-bold">{ko ? '처음부터 보기' : 'Start reading'}</Link>
-                {(s.pdfs ?? [{ href: s.pdf, label: { en: 'Original PDF', ko: '원문 PDF' } }]).map((d) => (
+                {(s.pdfs ?? (s.pdf ? [{ href: s.pdf, label: { en: 'Original PDF', ko: '원문 PDF' } }] : [])).map((d) => (
                   <a key={d.href} href={d.href} download className="btn btn-outline-light rounded-pill px-4"><i className="bi bi-file-earmark-pdf me-2" />{s.pdfs ? d.label[l] : ko ? '원문 PDF' : 'Original PDF'}</a>
                 ))}
               </div>
@@ -155,7 +155,7 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
   const graph = [
     { '@type': 'BreadcrumbList', itemListElement: [...crumbs(s, lang, ko, l), { '@type': 'ListItem', position: 4, name: page.title[l], item: url }] },
     { '@type': 'TechArticle', '@id': url, headline: page.title[l], description: page.answer[l], abstract: page.summary[l], inLanguage: l, datePublished: TECH_UPDATED, dateModified: TECH_UPDATED, image: `${BASE}${page.image}`, url,
-      isBasedOn: (s.pdfs ?? [{ href: s.pdf }]).map((d) => ({ '@type': 'CreativeWork', name: s.source, url: `${BASE}${d.href}` })), citation: s.source,
+      isBasedOn: (s.pdfs ?? (s.pdf ? [{ href: s.pdf }] : [])).map((d) => ({ '@type': 'CreativeWork', name: s.source, url: `${BASE}${d.href}` })), citation: s.source,
       author: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE },
       publisher: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE }, mainEntityOfPage: url },
     { '@type': 'FAQPage', mainEntity: page.faq.map((f) => ({ '@type': 'Question', name: f.q[l], acceptedAnswer: { '@type': 'Answer', text: f.a[l] } })) },
@@ -200,7 +200,7 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
                 ))}
               </ol>
               <div className="d-flex flex-column gap-2 align-items-start">
-                {(s.pdfs ?? [{ href: s.pdf, label: { en: 'Original PDF', ko: '원문 PDF' } }]).map((d) => (
+                {(s.pdfs ?? (s.pdf ? [{ href: s.pdf, label: { en: 'Original PDF', ko: '원문 PDF' } }] : [])).map((d) => (
                   <a key={d.href} href={d.href} download className="btn btn-danger btn-sm rounded-pill px-3 text-start"><i className="bi bi-file-earmark-pdf me-1" />{s.pdfs ? d.label[l] : ko ? '원문 PDF' : 'Original PDF'}</a>
                 ))}
               </div>

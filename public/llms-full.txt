@@ -1335,6 +1335,87 @@ A: Use a primer, or add 0.25–0.5% silane coupling agent such as Z-6020 (based 
 Q: What liner release coating is recommended?
 A: Syl-Off Q2-7785 fluorosilicone release coating; Q2-7735 and platinum-cure PSAs give stable release when wet cast.
 
+# DOWSIL Sealant Comparison and Selection Guide: Structural, Weatherproofing, Insulating Glass (full text)
+Source: Dow 제품 기술 데이터시트(TDS)의 대표 특성을 한국건설트레이딩(KCT)이 같은 기준으로 요약·비교 (각 제품 페이지의 TDS PDF 참조). 수치는 시방용이 아님
+
+## DOWSIL Structural Glazing vs. Weatherproofing Sealants: 789, 791, 795, 995, 121, 977, 991, 813C Compared
+https://kconstrade.com/en/technical/selection/structural-vs-weatherproofing-sealants
+
+Key facts: DOWSIL™ 995 is the high-strength one-part neutral structural glazing sealant; DOWSIL™ 795 combines ASTM C1184 structural capability with ±50% weatherseal movement; DOWSIL™ 121 is a fast two-part structural/weatherseal sealant for repair and reglazing; DOWSIL™ 789 and 791 are one-part neutral weatherproofing sealants (±50%); DOWSIL™ 977 and 991 are medium-modulus sealants for porous stone and metal panels with low staining; DOWSIL™ 813C is a low-modulus sealant for concrete and masonry.
+
+### Structural glazing vs. weatherproofing
+Structural glazing sealants bond glass or panels to the frame so that the sealant carries the load; weatherproofing sealants keep rain and air out of movement joints. Several DOWSIL products serve both duties. Structural glazing applications require review by Dow technical staff.
+
+- Structural: DOWSIL™ 995, 795 (ASTM C1184), 121 (two-part, fast)
+- Weatherproofing: DOWSIL™ 789, 791, 795 (±50% movement)
+- Stone and metal panels (low staining): DOWSIL™ 977, 991
+- Concrete and masonry: DOWSIL™ 813C
+
+### Comparison table
+DOWSIL 789 / 791 / 795 / 995 / 121 / 977 / 991 / 813C
+Product | Type | Movement capability | Hardness (Shore A) | Ultimate tensile strength | Ultimate elongation | Skin-over / tack-free | Full cure / handling | Working time
+DOWSIL™ 789 | One-part neutral-cure silicone | ±50% | 28 | 16 kg/cm² | 700% | Under 80 min (25°C, 50% RH) | 7–14 days | 15–30 min
+DOWSIL™ 791 | One-part neutral-cure silicone | ±50% | 25–30 | 0.83 MPa | 430% | 45 min (25°C, 50% RH) | 7–14 days | 20 min
+DOWSIL™ 795 | One-part neutral-cure silicone | ±50% | 35 | 2.3 MPa (7 days) | 670% (7 days) | Within 1.5 h (25°C, 50% RH) | 7–14 days | –
+DOWSIL™ 995 | One-part neutral-cure structural silicone | – | 40 | 23 kg/cm² | 525% | 1.5 h (25°C, 50% RH) | 7–14 days | 10–20 min
+DOWSIL™ 121 | Two-part neutral-cure RTV silicone | – | 30 (1 day) / 30–40 (7 days) | – | – | – | At least 24 h | 15–45 min
+DOWSIL™ 977 | One-part neutral-cure silicone | ±50% | 19 | 1.3 MPa (7 days) | 800% (7 days) | 20 min | 7–14 days (25°C, 50% RH) | –
+DOWSIL™ 991 | One-part neutral-cure silicone | ±50% | 24 | 0.7 MPa (21 days) | 400% (21 days) | 30 min | 7–14 days | –
+DOWSIL™ 813C | One-part neutral-cure (alkoxy) silicone | ±50% | 29 | 1.9 MPa (S2 specimen) | 700% (S2 specimen) | 20 min / 30 min | – | –
+Typical values summarized from each product’s Dow TDS (different test conditions per product). “–” = not stated in the summarized TDS. Not for specifications; see each TDS and ask KCT for confirmation.
+
+### Product pages
+- DOWSIL™ 789 — One-part neutral-cure weatherproofing sealant with primerless adhesion: https://kconstrade.com/en/products/dowsil-789
+- DOWSIL™ 791 — One-part neutral-cure sealant for curtain wall and façade weather sealing: https://kconstrade.com/en/products/dowsil-791
+- DOWSIL™ 795 — One-part neutral sealant for structural glazing and ±50% weatherseal: https://kconstrade.com/en/products/dowsil-795
+- DOWSIL™ 995 — High-strength one-part neutral sealant for structural glazing: https://kconstrade.com/en/products/dowsil-995
+- DOWSIL™ 121 — Fast-curing two-part neutral structural / weatherseal sealant: https://kconstrade.com/en/products/dowsil-121
+- DOWSIL™ 977 — Medium-modulus sealant that reduces staining on porous stone and metal panels: https://kconstrade.com/en/products/dowsil-977
+- DOWSIL™ 991 — Non-staining medium-modulus sealant for natural stone, glass and metal panels: https://kconstrade.com/en/products/dowsil-991
+- DOWSIL™ 813C — Low-modulus neutral sealant for concrete and masonry joints: https://kconstrade.com/en/products/dowsil-813c
+
+Q: What is the difference between DOWSIL 795 and 995?
+A: DOWSIL™ 995 is a high-strength one-part structural glazing sealant; DOWSIL™ 795 meets ASTM C1184 for structural glazing and, with ±50% movement (ASTM C719 Class 50), can also be used as a weatherseal.
+
+Q: Which DOWSIL sealant suits porous stone without staining?
+A: DOWSIL™ 977 and 991 are medium-modulus sealants for stone, glass and metal panels with reduced staining.
+
+Q: Which DOWSIL sealant should I choose?
+A: Tell Korea Construction Trading (KCT) the substrates, joint movement, structural or weatherproofing duty and environment — sales@kconstrade.com, +82 10-8939-0284. We do our best to support product selection.
+
+## DOWSIL Insulating Glass and Two-Part Structural Sealants: 335, 939, 982, 983, 993, 121 Compared
+https://kconstrade.com/en/technical/selection/insulating-glass-and-two-part-structural-sealants
+
+Key facts: DOWSIL™ 335 is the polyisobutylene primary seal of an insulating glass unit; DOWSIL™ 939 is a two-part secondary sealant for residential IG; DOWSIL™ 982 is a two-part secondary seal that can provide structural support; DOWSIL™ 983 is a two-part structural sealant for factory glazing and curtain-wall production; DOWSIL™ 993 meets European (EOTA) and Chinese GB requirements; DOWSIL™ 121 is a fast two-part structural/weatherseal sealant for repair and reglazing.
+
+### Primary seal, secondary seal and structural bonding
+- Primary seal (gas and moisture barrier): DOWSIL™ 335
+- Secondary seal: DOWSIL™ 939 (residential), 982 (structural support possible)
+- Factory glazing / curtain-wall structural bonding: DOWSIL™ 983, 993
+- On-site repair and reglazing: DOWSIL™ 121 (24–48 h handling)
+
+Structural glazing applications require review by Dow technical staff. Two-part products need metered, air-free mixing equipment.
+
+### Comparison table
+DOWSIL 335 / 939 / 982 / 983 / 993 / 121
+Product | Type | Movement capability | Hardness (Shore A) | Ultimate tensile strength | Ultimate elongation | Skin-over / tack-free | Full cure / handling | Working time
+DOWSIL™ 335 Butyl | Polyisobutylene, non-reactive, solvent-free | – | – | – | – | – | – | –
+DOWSIL™ 939 | Two-part silicone (neutral cure) | – | 52 | 2.7 N/mm² | 250% | – | – | 40 min
+DOWSIL™ 982 | Two-part silicone | – | 42 | 16.5 kg/cm² | 240% | – | – | 35 min
+DOWSIL™ 983 | Two-part neutral-cure RTV silicone | ±25% | 30–40 (1 day) / 35–45 (7 days) | 2.0 MPa (7 days) | – | – | 4–24 h (24°C) | 10–25 min
+DOWSIL™ 993 | Two-part silicone rubber | – | 40 | – | – | 80–100 min | – | 10–30 min
+DOWSIL™ 121 | Two-part neutral-cure RTV silicone | – | 30 (1 day) / 30–40 (7 days) | – | – | – | At least 24 h | 15–45 min
+Typical values summarized from each product’s Dow TDS (different test conditions per product). “–” = not stated in the summarized TDS. Not for specifications; see each TDS and ask KCT for confirmation.
+
+Q: Which DOWSIL sealant is the primary seal of an insulating glass unit?
+A: DOWSIL™ 335, a polyisobutylene (butyl) sealant.
+
+Q: What is the difference between DOWSIL 983 and 993?
+A: Both are two-part neutral-cure structural sealants; DOWSIL™ 983 targets factory glazing and curtain-wall production, while DOWSIL™ 993 additionally meets European (EOTA) and Chinese GB 16776 requirements.
+
+Q: Which DOWSIL sealant should I choose?
+A: Tell Korea Construction Trading (KCT) the substrates, joint movement, structural or weatherproofing duty and environment — sales@kconstrade.com, +82 10-8939-0284. We do our best to support product selection.
+
 # Silicone PSAs for Electrical and Electronics Tapes: Products, Selection and KCT Support (full text)
 Source: Dow, “Electrical and electronics tapes” and Dow Korea product search (Adhesives & Release Agents › PSAs › PSAs for insulation tapes), dow.com/ko-kr, checked 2026-11; Dow, “Silicone PSAs for High Performance Selection Guide”, Form No. 30-1315-01-0524 S2D (© 2024 The Dow Chemical Company). 한국어/영어 정리: 한국건설트레이딩(KCT)
 
