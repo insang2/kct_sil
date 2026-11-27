@@ -1,24 +1,10 @@
 import { getDictionary } from '@/lib/dictionaries';
-import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
-import UserMenu from '@/components/UserMenu';
 import NavbarClient from '@/components/NavbarClient';
 
 export default async function Header({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja' }) {
   const dict = await getDictionary(lang);
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
   const d = dict as any;
-
-  const userSlot = user ? (
-    <UserMenu
-      lang={lang}
-      userEmail={user.email ?? null}
-      logoutLabel={d.auth.btn_logout}
-      mypageLabel={d.navigation.mypage}
-      quoteLabel={d.navigation.quote}
-    />
-  ) : undefined;
 
   return (
     <header>
@@ -45,7 +31,7 @@ export default async function Header({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
               quote:    d.navigation.quote,
               login:    d.navigation.login,
             }}
-            userSlot={userSlot}
+            userLabels={{ logout: d.auth.btn_logout, mypage: d.navigation.mypage, quote: d.navigation.quote }}
           />
         </div>
       </nav>

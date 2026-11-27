@@ -1,4 +1,5 @@
 import { getDictionary } from '@/lib/dictionaries';
+import { CATALOG } from '@/lib/products-catalog';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({
@@ -11,7 +12,7 @@ export async function generateMetadata({
   const isJa = lang === 'ja';
 
   const title = isEn
-    ? 'About Us | Korea Construction Trading (KCT) - Architectural Silicone Supplier'
+    ? 'About KCT | Korea Construction Trading - DOWSIL Supplier'
     : isJa
     ? '会社紹介 | 韓国建設トレーディング (KCT) - 建築用シリコーン専門'
     : '회사소개 | 한국건설트레이딩 (KCT) - Dow 건축용 실리콘 전문';
@@ -19,7 +20,7 @@ export async function generateMetadata({
   const description = isEn
     ? 'Learn about Korea Construction Trading (KCT), a global supplier and exporter of Dow Chemical architectural and structural silicone sealants.'
     : isJa
-    ? '韓国建設トレーディング (KCT) は、Dow(ダウ) 建築用・構造用シリコーンの卸売販売およびグローバル貿易輸出を専門とする企業です。'
+    ? '韓国建設トレーディング (KCT) は、Dow(ダウ) 建築用・構造用シリコーンの卸売販売およびグローバル貿易輸出を専門とする企業です。全国への迅速な配送と現場直納、プロジェクト別の見積に対応します。'
     : '한국건설트레이딩(KCT)은 Dow Chemical의 건축용·구조용 실리콘 전문 판매 및 글로벌 수출 기업입니다. 전국 신속 배송 및 현장 직납, 프로젝트 맞춤 견적을 제공합니다.';
 
   return {
@@ -38,7 +39,7 @@ export async function generateMetadata({
       title,
       description,
       url: `https://kconstrade.com/${lang}/about`,
-      siteName: '한국건설트레이딩 (KCT)',
+      siteName: isEn ? 'Korea Construction Trading (KCT)' : isJa ? '韓国建設トレーディング (KCT)' : '한국건설트레이딩 (KCT)',
       images: [
         {
           url: 'https://kconstrade.com/assets/img/og-image.png',
@@ -90,14 +91,14 @@ export default async function AboutPage({
         "description": t.hero_subtitle,
         "publisher": {
           "@type": "Organization",
-          "name": "한국건설트레이딩 (Korea Construction Trading)",
+          "name": isEn ? "Korea Construction Trading (KCT)" : isJa ? "韓国建設トレーディング (KCT)" : "한국건설트레이딩 (Korea Construction Trading)",
           "alternateName": "KCT",
           "url": "https://kconstrade.com",
           "logo": "https://kconstrade.com/assets/img/logo/kct_logo.jpeg"
         },
         "mainEntity": {
           "@type": "Organization",
-          "name": "한국건설트레이딩 (Korea Construction Trading)",
+          "name": isEn ? "Korea Construction Trading (KCT)" : isJa ? "韓国建設トレーディング (KCT)" : "한국건설트레이딩 (Korea Construction Trading)",
           "foundingDate": "2018",
           "description": t.mission_desc
         }
@@ -149,7 +150,9 @@ export default async function AboutPage({
               <p className="lead text-dark mb-5" style={{ lineHeight: 1.8 }}>{t.mission_desc}</p>
               <div className="d-flex flex-wrap gap-4">
                 <div className="text-center" style={{ minWidth: '70px' }}>
-                  <div className="fw-bold text-primary" style={{ fontSize: '2rem' }}>11+</div>
+                  <div className="fw-bold text-primary" style={{ fontSize: '2rem' }}>
+                    {isEn ? `${CATALOG.length}` : isJa ? `${CATALOG.length}種` : `${CATALOG.length}종`}
+                  </div>
                   <div className="text-dark small fw-bold">{t.stat_products}</div>
                 </div>
                 <div className="text-center" style={{ minWidth: '70px' }}>

@@ -3,7 +3,7 @@ import { CATALOG } from '@/lib/products-catalog';
 import { PAGES as TECH_PAGES } from '@/lib/tech-manual';
 import { IPAGES } from '@/lib/industrial/pages';
 import { SERIES } from '@/lib/series/config';
-import { TECH_UPDATED } from '@/lib/series/hubs';
+import { SERIES_DATES, SITE_DATES, seriesPageDate } from '@/lib/series/dates';
 import { PRODUCTS_UPDATED } from '@/lib/rss';
 
 const LANGS = ['ko', 'en', 'ja'] as const;
@@ -14,30 +14,17 @@ const PRODUCT_SLUGS = CATALOG.map((p) => p.slug);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kconstrade.com';
-  // 매 요청마다 바뀌는 날짜는 구글이 무시하므로 실제 콘텐츠 수정일로 고정
-  const lastModified = new Date(TECH_UPDATED);
+  // 섹션·시리즈별 실제 콘텐츠 수정일로 분산 고정 (루트 307/308 리다이렉트 URL 제외)
+  const homeModified = new Date(SITE_DATES.home);
+  const aboutModified = new Date(SITE_DATES.about);
+  const exportModified = new Date(SITE_DATES.export);
+  const quoteModified = new Date(SITE_DATES.quote);
   const productsModified = new Date(PRODUCTS_UPDATED);
-
-  // Root redirect entry
-  const rootEntry = {
-    url: baseUrl,
-    lastModified,
-    changeFrequency: 'weekly' as const,
-    priority: 1.0,
-    alternates: {
-      languages: {
-        ko: `${baseUrl}/ko`,
-        en: `${baseUrl}/en`,
-        ja: `${baseUrl}/ja`,
-        'x-default': `${baseUrl}/ko`,
-      },
-    },
-  };
 
   // Homepages
   const homepages = LANGS.map((lang) => ({
     url: `${baseUrl}/${lang}`,
-    lastModified,
+    lastModified: homeModified,
     changeFrequency: 'weekly' as const,
     priority: lang === 'ko' || lang === 'en' ? 1.0 : 0.85,
     alternates: {
@@ -53,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // About pages
   const aboutPages = LANGS.map((lang) => ({
     url: `${baseUrl}/${lang}/about`,
-    lastModified,
+    lastModified: aboutModified,
     changeFrequency: 'monthly' as const,
     priority: lang === 'ko' || lang === 'en' ? 0.9 : 0.8,
     alternates: {
@@ -98,12 +85,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Technical information (hub + pages)
-  const techPaths = ['technical', ...TECH_PAGES.map((p) => `technical/${p.slug}`), 'technical/industrial', ...IPAGES.map((p) => `technical/industrial/${p.slug}`), ...Object.values(SERIES).flatMap((x) => [`technical/${x.key}`, ...x.pages.map((p) => `technical/${x.key}/${p.slug}`)])];
+  // Technical information (hub + pages, 시리즈·판본별 실제 갱신일 사용)
+  const techEntries: { path: string; date: string }[] = [
+    { path: 'technical', date: SITE_DATES.technicalHub },
+    ...TECH_PAGES.map((p) => ({ path: `technical/${p.slug}`, date: SERIES_DATES.fire })),
+    { path: 'technical/industrial', date: SERIES_DATES.industrial },
+    ...IPAGES.map((p) => ({ path: `technical/industrial/${p.slug}`, date: SERIES_DATES.industrial })),
+    ...Object.values(SERIES).flatMap((x) => [
+      { path: `technical/${x.key}`, date: seriesPageDate(x.key) },
+      ...x.pages.map((p) => ({ path: `technical/${x.key}/${p.slug}`, date: seriesPageDate(x.key, p.doc) })),
+    ]),
+  ];
   const technicalPages = KO_EN.flatMap((lang) =>
-    techPaths.map((path) => ({
+    techEntries.map(({ path, date }) => ({
       url: `${baseUrl}/${lang}/${path}`,
-      lastModified,
+      lastModified: new Date(date),
       changeFrequency: 'monthly' as const,
       priority: path === 'technical' ? 0.9 : 0.8,
       alternates: {
@@ -119,7 +115,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Export inquiry pages
   const exportPages = LANGS.map((lang) => ({
     url: `${baseUrl}/${lang}/export`,
-    lastModified,
+    lastModified: exportModified,
     changeFrequency: 'weekly' as const,
     priority: lang === 'en' ? 1.0 : (lang === 'ko' ? 0.85 : 0.8),
     alternates: {
@@ -135,7 +131,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Quote request pages
   const quotePages = LANGS.map((lang) => ({
     url: `${baseUrl}/${lang}/quote`,
-    lastModified,
+    lastModified: quoteModified,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
     alternates: {
@@ -149,7 +145,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   return [
-    rootEntry,
     ...homepages,
     ...aboutPages,
     ...productListPages,

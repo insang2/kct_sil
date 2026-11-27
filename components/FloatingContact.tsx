@@ -8,11 +8,11 @@ export default function FloatingContact({ lang = 'ko' }: { lang?: 'ko' | 'en' | 
     <div style={{ position: 'fixed', right: 16, bottom: 16, zIndex: 1040, display: 'flex', flexDirection: 'column', gap: 10 }}>
       {KAKAO_URL && (
         <a href={KAKAO_URL} target="_blank" rel="noreferrer" aria-label={t.kakao} title={t.kakao} style={{ ...btn, background: '#FEE500', color: '#191919' }}>
-          <i className="bi bi-chat-fill" style={{ fontSize: '1.3rem' }} />
+          <i className="bi bi-chat-fill" aria-hidden="true" style={{ fontSize: '1.3rem' }} />
         </a>
       )}
       <a href={PHONE_TEL} aria-label={t.call} title={t.call} style={{ ...btn, background: '#1558D6', color: '#fff' }}>
-        <i className="bi bi-telephone-fill" style={{ fontSize: '1.25rem' }} />
+        <i className="bi bi-telephone-fill" aria-hidden="true" style={{ fontSize: '1.25rem' }} />
       </a>
     </div>
   )

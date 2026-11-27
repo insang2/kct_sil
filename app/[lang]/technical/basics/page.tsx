@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { SERIES } from '@/lib/series/config'
-import { SeriesHub, seriesPageMeta } from '@/components/tech/SeriesPage'
+import { SeriesHub } from '@/components/tech/SeriesPage'
+import { seriesPageMeta } from '@/lib/series/hubs'
 
 type P = { lang: string }
 const s = SERIES.basics

@@ -5,6 +5,7 @@ import { PRODUCTS, GROUP_LABEL, GROUP_PAGE, type Group } from '@/lib/industrial/
 import { productLd } from '@/lib/industrial/jsonld'
 import { techCss } from '@/components/tech/TechBlocks'
 import Tx from '@/components/tech/Tx'
+import { industrialHubMeta } from '@/lib/series/hubs'
 
 type P = { lang: string }
 const BASE = 'https://kconstrade.com'
@@ -13,17 +14,7 @@ const ORDER: Group[] = ['acetoxy', 'hightemp', 'alkoxy', 'oxime', 'twopart', 'ho
 
 export async function generateMetadata({ params }: { params: Promise<P> }): Promise<Metadata> {
   const { lang } = await params
-  const ko = norm(lang) === 'ko'
-  const title = ko ? '산업·가전·유지보수용 DOWSIL™ 실리콘 실란트·폼 선정 가이드 | 한국건설트레이딩 (KCT)' : 'DOWSIL™ Silicone Sealants and Foams for Industrial, Appliance and Maintenance – Selection Guide | KCT'
-  const description = ko
-    ? 'Dow 선정 가이드 전문 수록: 아세톡시·알콕시·옥심·2액형·핫멜트 실란트와 실리콘 폼, 프라이머·세정제 38개 제품의 온도 범위, 경화 시간, 경도, 인장·신율, 접착 등급, 표면 준비와 시공 방법.'
-    : 'Complete Dow selection guide: 38 acetoxy, alkoxy, oxime, two-part and hot-melt silicone sealants, silicone foams, primers and cleaners with temperature range, cure time, hardness, tensile, elongation, adhesion ratings, surface preparation and application.'
-  return {
-    title, description,
-    alternates: { canonical: `${BASE}/${lang === 'ja' ? 'en' : lang}/technical/industrial`, languages: { ko: `${BASE}/ko/technical/industrial`, en: `${BASE}/en/technical/industrial`, 'x-default': `${BASE}/ko/technical/industrial` } },
-    openGraph: { title, description, url: `${BASE}/${lang}/technical/industrial`, siteName: '한국건설트레이딩 (KCT)', images: [{ url: `${BASE}/assets/tech/ind-cover.jpg` }], type: 'website' },
-    twitter: { card: 'summary_large_image', title, description, images: [`${BASE}/assets/tech/ind-cover.jpg`] },
-  }
+  return industrialHubMeta(lang)
 }
 
 export default async function IndustrialHub({ params }: { params: Promise<P> }) {

@@ -65,7 +65,10 @@ export async function generateMetadata({
     verification: {
       google: "MDkLA39MDvqE2qFlhXtDGZ7CStYVHZmiRxySzzxD97U",
       other: {
-        "naver-site-verification": "8cbbf2d9359c252fd97e2dc14cb0a35f29d98184",
+        "naver-site-verification": [
+          "8cbbf2d9359c252fd97e2dc14cb0a35f29d98184",
+          "fd0a30a32f4bcd37434525a44524178124fba745",
+        ],
         "msvalidate.01": "ED4DEB0C324AB26280EFC4E027A2C73F",
       },
     },
@@ -100,10 +103,6 @@ export default async function RootLayout({
       <head>
         <meta name="color-scheme" content="light only" />
         <meta name="supported-color-schemes" content="light" />
-        <meta name="naver-site-verification" content="8cbbf2d9359c252fd97e2dc14cb0a35f29d98184" />
-        <meta name="naver-site-verification" content="fd0a30a32f4bcd37434525a44524178124fba745" />
-        <meta name="google-site-verification" content="MDkLA39MDvqE2qFlhXtDGZ7CStYVHZmiRxySzzxD97U" />
-        <meta name="msvalidate.01" content="ED4DEB0C324AB26280EFC4E027A2C73F" />
         <link rel="alternate" type="application/rss+xml" title="한국건설트레이딩 (KCT) RSS" href="/rss.xml" />
         <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
         <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/favicon.png" />
@@ -150,7 +149,8 @@ export default async function RootLayout({
               "sameAs": [
                 "https://www.linkedin.com/company/kct-korea-construction-trading",
                 "https://www.instagram.com/kct.rading",
-                "https://smartstore.naver.com/kconstrade/"
+                "https://smartstore.naver.com/kconstrade/",
+                "https://pf.kakao.com/_xcnxdfX"
               ]
             })
           }}

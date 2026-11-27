@@ -23,7 +23,7 @@ export async function generateMetadata({
   const description = isEn
     ? 'Instant online quotation for architectural and structural silicone sealants. Transparent B2B pricing, volume discounts, and custom PDF quote generation.'
     : isJa
-    ? '建築用・構造用シリコーンシーラントのオンライン即時見積。B2B特別単価、ボリュームディスカウント、PDF見積書発行対応。'
+    ? '建築用・構造用シリコーンシーラントのオンライン即時見積。事業者会員向けの特別単価、大量購入割引、PDF見積書の即時ダウンロードに対応しています。'
     : '건축용·구조용 실리콘 B2B 온라인 즉시 견적. 사업자 회원 등급별 맞춤 단가, 대량 구매 할인, PDF 견적서 즉시 다운로드.';
 
   return {

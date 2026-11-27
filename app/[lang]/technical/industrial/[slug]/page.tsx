@@ -7,29 +7,22 @@ import TechBlocks, { techCss } from '@/components/tech/TechBlocks'
 import Tx from '@/components/tech/Tx'
 import TechEnhance from '@/components/tech/TechEnhance'
 import RelatedHubs from '@/components/tech/RelatedHubs'
-import { TECH_UPDATED } from '@/lib/series/hubs'
+import { ORG_ENTITY, SERIES_DATES } from '@/lib/series/dates'
+import { industrialPageMeta } from '@/lib/series/hubs'
 
 type P = { lang: string; slug: string }
 const BASE = 'https://kconstrade.com'
 const navTitle = (t: string) => t.replace(/^(표|Table) [IVX]+:\s*/, '').split(' – ')[0]
-const brand = (l: 'ko' | 'en') => (l === 'ko' ? '한국건설트레이딩 (KCT)' : 'Korea Construction Trading (KCT)')
 const norm = (lang: string): 'ko' | 'en' => (lang === 'ko' ? 'ko' : 'en')
+
+// 사전 렌더(SSG): 크롤러 요청마다 Worker가 SSR 하지 않도록
+export function generateStaticParams() {
+  return ['ko','en','ja'].flatMap((lang) => IPAGES.map((p) => p.slug).map((slug) => ({ lang, slug })))
+}
 
 export async function generateMetadata({ params }: { params: Promise<P> }): Promise<Metadata> {
   const { lang, slug } = await params
-  const page = getIPage(slug)
-  if (!page) return { title: 'Not found | KCT' }
-  const l = norm(lang)
-  const title = `${navTitle(page.title[l])} | ${l === 'ko' ? '산업·가전 DOWSIL™ 선정 가이드' : 'DOWSIL™ Industrial Guide'} | ${brand(l)}`
-  const description = page.summary[l]
-  const path = `/technical/industrial/${slug}`
-  return {
-    title,
-    description,
-    alternates: { canonical: `${BASE}/${lang === 'ja' ? 'en' : lang}${path}`, languages: { ko: `${BASE}/ko${path}`, en: `${BASE}/en${path}`, 'x-default': `${BASE}/ko${path}` } },
-    openGraph: { title, description, url: `${BASE}/${lang}${path}`, siteName: '한국건설트레이딩 (KCT)', images: [{ url: `${BASE}${page.image}` }], type: 'article' },
-    twitter: { card: 'summary_large_image', title, description, images: [`${BASE}${page.image}`] },
-  }
+  return industrialPageMeta(slug, lang)
 }
 
 export default async function IndustrialPage({ params }: { params: Promise<P> }) {
@@ -61,14 +54,14 @@ export default async function IndustrialPage({ params }: { params: Promise<P> })
       description: page.answer[l],
       abstract: page.summary[l],
       inLanguage: l,
-      datePublished: TECH_UPDATED,
-      dateModified: TECH_UPDATED,
+      datePublished: SERIES_DATES.industrial,
+      dateModified: SERIES_DATES.industrial,
       image: `${BASE}${page.image}`,
       url,
       isBasedOn: { '@type': 'CreativeWork', name: SOURCE, publisher: { '@type': 'Organization', name: 'The Dow Chemical Company' }, url: `${BASE}${SOURCE_PDF}` },
       citation: SOURCE,
-      author: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE },
-      publisher: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE },
+      author: ORG_ENTITY,
+      publisher: ORG_ENTITY,
       mainEntityOfPage: url,
     },
     {

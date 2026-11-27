@@ -6,30 +6,21 @@ import TechBlocks, { techCss } from '@/components/tech/TechBlocks'
 import Tx from '@/components/tech/Tx'
 import TechEnhance from '@/components/tech/TechEnhance'
 import RelatedHubs from '@/components/tech/RelatedHubs'
-import { TECH_UPDATED } from '@/lib/series/hubs'
+import { ORG_ENTITY, SERIES_DATES } from '@/lib/series/dates'
+import { firePageMeta } from '@/lib/series/hubs'
 
 type P = { lang: string; slug: string }
 const BASE = 'https://kconstrade.com'
-const brand = (l: 'ko' | 'en') => (l === 'ko' ? '한국건설트레이딩 (KCT)' : 'Korea Construction Trading (KCT)')
 const norm = (lang: string): 'ko' | 'en' => (lang === 'ko' ? 'ko' : 'en') // ja는 영문 원문으로 표시
+
+// 사전 렌더(SSG): 크롤러 요청마다 Worker가 SSR 하지 않도록
+export function generateStaticParams() {
+  return ['ko','en','ja'].flatMap((lang) => PAGES.map((p) => p.slug).map((slug) => ({ lang, slug })))
+}
 
 export async function generateMetadata({ params }: { params: Promise<P> }): Promise<Metadata> {
   const { lang, slug } = await params
-  const page = getPage(slug)
-  if (!page) return { title: 'Not found | KCT' }
-  const l = norm(lang)
-  const title = `${page.title[l]} | ${l === 'ko' ? '기술정보' : 'Technical'} | ${brand(l)}`
-  const description = page.summary[l]
-  const path = `/technical/${slug}`
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `${BASE}/${lang === 'ja' ? 'en' : lang}${path}`,
-      languages: { ko: `${BASE}/ko${path}`, en: `${BASE}/en${path}`, 'x-default': `${BASE}/ko${path}` },
-    },
-    openGraph: { title, description, url: `${BASE}/${lang}${path}`, siteName: '한국건설트레이딩 (KCT)', images: [{ url: `${BASE}${page.image}` }], type: 'article' },
-  }
+  return firePageMeta(slug, lang)
 }
 
 export default async function TechPageView({ params }: { params: Promise<P> }) {
@@ -55,14 +46,18 @@ export default async function TechPageView({ params }: { params: Promise<P> }) {
       },
       {
         '@type': 'TechArticle',
+        '@id': `${BASE}/${lang}/technical/${slug}`,
         headline: page.title[l],
         description: page.summary[l],
         inLanguage: l,
-        datePublished: TECH_UPDATED,
-        dateModified: TECH_UPDATED,
+        datePublished: SERIES_DATES.fire,
+        dateModified: SERIES_DATES.fire,
         image: `${BASE}${page.image}`,
+        url: `${BASE}/${lang}/technical/${slug}`,
+        mainEntityOfPage: `${BASE}/${lang}/technical/${slug}`,
         isBasedOn: 'Fire-rated Dow Technologies Technical Manual, Form No. 62-2233-01-0325',
-        publisher: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)' },
+        author: ORG_ENTITY,
+        publisher: ORG_ENTITY,
       },
     ],
   }

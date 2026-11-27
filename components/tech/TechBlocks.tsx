@@ -25,12 +25,13 @@ function Original({ en, lang, label }: { en: string; lang: Lang; label: string }
   )
 }
 
-function Table({ head, rows, lang, compact }: { head: Cell[]; rows: Cell[][]; lang: Lang; compact?: boolean }) {
+function Table({ head, rows, lang, compact, caption }: { head: Cell[]; rows: Cell[][]; lang: Lang; compact?: boolean; caption?: string }) {
   return (
     <div className={`tech-table-wrap${compact ? ' tech-table-big' : ''}`} tabIndex={0} role="region" aria-label={lang === 'ko' ? '표 (가로 스크롤 가능)' : 'Table (scrollable)'}>
       <table className="table table-sm tech-table mb-0">
+        {caption && <caption className="visually-hidden">{caption}</caption>}
         <thead>
-          <tr>{head.map((c, i) => <th key={i}>{t(c, lang)}</th>)}</tr>
+          <tr>{head.map((c, i) => <th key={i} scope="col">{t(c, lang)}</th>)}</tr>
         </thead>
         <tbody>
           {rows.map((r, i) => (
@@ -40,6 +41,93 @@ function Table({ head, rows, lang, compact }: { head: Cell[]; rows: Cell[][]; la
       </table>
     </div>
   )
+}
+
+const TECH_IMG_DIMS: Record<string, readonly [number, number]> = {
+  '/assets/tech/cover.jpg': [1400, 908],
+  '/assets/tech/fig-foam-cell.jpg': [1134, 411],
+  '/assets/tech/fig-foam-color.jpg': [1134, 317],
+  '/assets/tech/fig01-uses.jpg': [559, 439],
+  '/assets/tech/fig02-fire-resistance.jpg': [610, 343],
+  '/assets/tech/fig03-sand-to-silicon.jpg': [624, 279],
+  '/assets/tech/fig04-silicon-to-rubber.jpg': [610, 144],
+  '/assets/tech/fig05-decomposition.jpg': [610, 143],
+  '/assets/tech/fig06-building-after-fire.jpg': [616, 348],
+  '/assets/tech/fig06-silica-char.jpg': [610, 342],
+  '/assets/tech/fig07-fire-phases.jpg': [637, 314],
+  '/assets/tech/fig08a-en13823.jpg': [333, 469],
+  '/assets/tech/fig08b-en11925.jpg': [258, 469],
+  '/assets/tech/fig09-class-b-s2-d0.jpg': [610, 318],
+  '/assets/tech/fig10-matches.jpg': [610, 344],
+  '/assets/tech/fig11-compartmentation.jpg': [1247, 404],
+  '/assets/tech/fig12-linear-joint-types.jpg': [1290, 478],
+  '/assets/tech/fig13-penetrants.jpg': [624, 421],
+  '/assets/tech/fig14a-integrity.jpg': [335, 230],
+  '/assets/tech/fig14b-insulation.jpg': [335, 227],
+  '/assets/tech/fig15-window-perimeter.jpg': [610, 339],
+  '/assets/tech/fig16-curtain-wall.jpg': [610, 344],
+  '/assets/tech/fig19-linear-install.jpg': [610, 217],
+  '/assets/tech/fig20-penetration-install.jpg': [610, 149],
+  '/assets/tech/fig21-foam-mixing.jpg': [656, 356],
+  '/assets/tech/fig22-snap-time.jpg': [538, 446],
+  '/assets/tech/fig24-foam-install.jpg': [553, 287],
+  '/assets/tech/ind-application.jpg': [605, 618],
+  '/assets/tech/ind-benefits.jpg': [1100, 731],
+  '/assets/tech/ind-cover.jpg': [1275, 793],
+  '/assets/tech/ind-which-silicone.jpg': [731, 681],
+  '/assets/tech/ind-why-silicones.jpg': [1106, 728],
+  '/assets/tech/pen-P1-floor.jpg': [258, 260],
+  '/assets/tech/pen-P1-wall.jpg': [265, 258],
+  '/assets/tech/pen-P2-floor.jpg': [264, 261],
+  '/assets/tech/pen-P2-wall.jpg': [265, 261],
+  '/assets/tech/pen-P3-a.jpg': [275, 275],
+  '/assets/tech/pen-P3-b.jpg': [276, 276],
+  '/assets/tech/pen-P3-c.jpg': [275, 273],
+  '/assets/tech/pen-P3-d.jpg': [275, 278],
+  '/assets/tech/prod-700-linear.jpg': [612, 375],
+  '/assets/tech/prod-800sl.jpg': [564, 375],
+  '/assets/tech/prod-813fr.jpg': [607, 344],
+  '/assets/tech/prod-foam.jpg': [607, 344],
+  '/assets/tech/prod-strip.jpg': [1100, 233],
+  '/assets/tech/psa-cover-jet.jpg': [261, 166],
+  '/assets/tech/psa-cover-lab.jpg': [369, 322],
+  '/assets/tech/psa-cover-race.jpg': [294, 373],
+  '/assets/tech/psa-fig4-thickness.jpg': [670, 894],
+  '/assets/tech/psa-fig5-thickness-adhesion.jpg': [664, 398],
+  '/assets/tech/psa-fig6-peroxide.jpg': [664, 401],
+  '/assets/tech/psa-figures-1-3.jpg': [750, 1345],
+  '/assets/tech/psa-flowchart.jpg': [1151, 1542],
+  '/assets/tech/psa2-adhesion-vs-tack.jpg': [596, 363],
+  '/assets/tech/psa2-blend-graph.jpg': [581, 487],
+  '/assets/tech/psa2-cover.jpg': [900, 1165],
+  '/assets/tech/psa2-protective-film-structure.jpg': [581, 334],
+  '/assets/tech/psa2-tape-construction.jpg': [523, 741],
+  '/assets/tech/sb-application-table.jpg': [848, 568],
+  '/assets/tech/sb-backbone.jpg': [916, 200],
+  '/assets/tech/sb-bond-geometry.jpg': [306, 150],
+  '/assets/tech/sb-bond-rotation.jpg': [285, 145],
+  '/assets/tech/sb-bond-strength.jpg': [239, 150],
+  '/assets/tech/sb-heat-stability-graph.jpg': [743, 334],
+  '/assets/tech/sb-hydrolysis.jpg': [848, 459],
+  '/assets/tech/sb-lsr-raw.jpg': [624, 291],
+  '/assets/tech/sb-molecule-3d.jpg': [427, 246],
+  '/assets/tech/sb-molecule-ball.jpg': [419, 244],
+  '/assets/tech/sb-pdms-viscosity-graph.jpg': [696, 648],
+  '/assets/tech/sb-process-flow.jpg': [848, 914],
+  '/assets/tech/sb-resin-structure.jpg': [555, 278],
+  '/assets/tech/sb-rtv-raw.jpg': [756, 180],
+  '/assets/tech/sb-silane-substrate.jpg': [669, 167],
+  '/assets/tech/sb-silica-reaction.jpg': [848, 144],
+  '/assets/tech/sb-silica.jpg': [407, 289],
+  '/assets/tech/sb-synthesis.jpg': [848, 809],
+  '/assets/tech/seal-L1.jpg': [259, 242],
+  '/assets/tech/seal-L2.jpg': [252, 249],
+  '/assets/tech/seal-L3.jpg': [241, 241],
+  '/assets/tech/seal-L4.jpg': [245, 241],
+  '/assets/tech/sl-step1.jpg': [568, 344],
+  '/assets/tech/sl-step2.jpg': [568, 344],
+  '/assets/tech/sl-step3.jpg': [570, 341],
+  '/assets/tech/sl-step4.jpg': [571, 341],
 }
 
 export default function TechBlocks({ blocks, lang, enLabel = 'English original' }: { blocks: Block[]; lang: Lang; enLabel?: string }) {
@@ -77,33 +165,38 @@ export default function TechBlocks({ blocks, lang, enLabel = 'English original' 
                 )}
               </div>
             )
-          case 'fig':
+          case 'fig': {
+            const dim = TECH_IMG_DIMS[b.src]
             return (
               <figure key={i} className="tech-fig">
-                <img src={b.src} alt={lang === 'ko' ? b.ko : b.en} loading="lazy" />
+                <img src={b.src} alt={lang === 'ko' ? b.ko : b.en} width={dim?.[0]} height={dim?.[1]} loading="lazy" decoding="async" />
                 <figcaption>{lang === 'ko' ? b.ko : b.en}</figcaption>
                 {lang === 'ko' && <details className="tech-orig mt-1 mb-0"><summary>English caption</summary><p className="mb-0">{b.en}</p></details>}
               </figure>
             )
+          }
           case 'figs':
             return (
               <div key={i} className="row g-3 mb-4">
-                {b.items.map((f, j) => (
-                  <div key={j} className={b.items.length === 1 ? 'col-12' : 'col-md-6'}>
-                    <figure className="tech-fig h-100">
-                      <img src={f.src} alt={lang === 'ko' ? f.ko : f.en} loading="lazy" />
-                      <figcaption>{lang === 'ko' ? f.ko : f.en}</figcaption>
-                      {lang === 'ko' && <details className="tech-orig mt-1 mb-0"><summary>English caption</summary><p className="mb-0">{f.en}</p></details>}
-                    </figure>
-                  </div>
-                ))}
+                {b.items.map((f, j) => {
+                  const dim = TECH_IMG_DIMS[f.src]
+                  return (
+                    <div key={j} className={b.items.length === 1 ? 'col-12' : 'col-md-6'}>
+                      <figure className="tech-fig h-100">
+                        <img src={f.src} alt={lang === 'ko' ? f.ko : f.en} width={dim?.[0]} height={dim?.[1]} loading="lazy" decoding="async" />
+                        <figcaption>{lang === 'ko' ? f.ko : f.en}</figcaption>
+                        {lang === 'ko' && <details className="tech-orig mt-1 mb-0"><summary>English caption</summary><p className="mb-0">{f.en}</p></details>}
+                      </figure>
+                    </div>
+                  )
+                })}
               </div>
             )
           case 'tbl':
             return (
               <div key={i} className="mb-4">
                 {b.title && <div className="tech-table-title">{lang === 'ko' ? b.title.ko : b.title.en}</div>}
-                <Table head={b.head} rows={b.rows} lang={lang} compact={b.big} />
+                <Table head={b.head} rows={b.rows} lang={lang} compact={b.big} caption={b.title ? (lang === 'ko' ? b.title.ko : b.title.en) : undefined} />
                 {b.note && <div className="tech-table-note">{lang === 'ko' ? b.note.ko : b.note.en}</div>}
               </div>
             )

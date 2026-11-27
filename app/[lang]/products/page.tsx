@@ -18,16 +18,16 @@ export async function generateMetadata({
   const isJa = lang === 'ja';
 
   const title = isEn
-    ? 'DOWSIL™ Silicone Sealants – 30 Products & TDS | Korea Construction Trading (KCT)'
+    ? 'DOWSIL™ Silicone Sealants – 30 Products & TDS | KCT'
     : isJa
-    ? '建築用シリコーン製品一覧 | 韓国建設トレーディング (KCT)'
-    : 'DOWSIL(다우실) 실리콘 실란트 30종 · TDS·색상 | 한국건설트레이딩 (KCT)';
+    ? 'DOWSIL™ 建築用シリコーン製品30種・TDS一覧 | KCT'
+    : 'DOWSIL(다우실) 실리콘 실란트 30종 목록·TDS | KCT';
 
   const description = isEn
-    ? 'DOWSIL™ sealants by category: building envelope, GMP, civil, insulating glass, specialty, primers. TDS download for all 30 products. B2B supply & export.'
+    ? 'Browse 30 DOWSIL™ sealants and primers across building envelope, GMP, civil, insulating glass and specialty lines with TDS PDFs and B2B supply.'
     : isJa
-    ? 'DOWSIL™ 建築用・構造用シリコーンシーラント全製品ラインナップ。B2B卸売・グローバル輸出対応。'
-    : 'Dow DOWSIL(다우실) 구조용·내후성·내화·복층유리·GMP·토목·프라이머 실란트 30종. 제품별 TDS(기술자료) PDF 다운로드, 색상·포장·사양, 기술 지원과 B2B 견적.';
+    ? 'Dow DOWSIL™の建築外装・GMP・土木・複層ガラス・特殊用途・プライマー全30種を掲載。製品別TDSダウンロード、仕様確認、B2B卸売・輸出見積に対応。'
+    : 'Dow DOWSIL(다우실) 건축 외장·GMP·토목·복층유리·특수용·프라이머 30종 제품 목록. 제품별 TDS 다운로드, 주요 사양, 기술 지원 및 B2B 견적 안내.';
 
   return {
     title,
@@ -108,6 +108,36 @@ export default async function ProductsPage({
 
   const pick = <T extends { ko: string; en: string }>(x: T) => (isEn ? x.en : x.ko);
   const bySlugMap = Object.fromEntries(products.map((p) => [p.slug, p]));
+  const IMG_DIMS: Record<string, readonly [number, number]> = {
+    '/assets/img/dow/1001-sausage-600.jpg': [600, 400],
+    '/assets/img/dow/1200-os-can-400.png': [400, 400],
+    '/assets/img/dow/121-kit-500.png': [500, 500],
+    '/assets/img/dow/123-strips-600.jpg': [600, 600],
+    '/assets/img/dow/335-butyl-600.jpg': [550, 550],
+    '/assets/img/dow/375-pails-600.jpg': [540, 540],
+    '/assets/img/dow/650-plus-drum-600.jpg': [510, 510],
+    '/assets/img/dow/786-cartridge-431.jpg': [431, 431],
+    '/assets/img/dow/789-cartridge-sausage-800.jpg': [800, 800],
+    '/assets/img/dow/791-cartridge-sausage-800.jpg': [800, 800],
+    '/assets/img/dow/795-cartridge-sausage-800.jpg': [800, 800],
+    '/assets/img/dow/813c-sausage-600.jpg': [600, 600],
+    '/assets/img/dow/888-sausage-600.jpg': [480, 480],
+    '/assets/img/dow/890-sl-800.jpg': [800, 800],
+    '/assets/img/dow/902-rcs-pail-600.jpg': [600, 600],
+    '/assets/img/dow/939-drums-600.jpg': [550, 380],
+    '/assets/img/dow/977-cartridge-sausage-800.jpg': [800, 800],
+    '/assets/img/dow/982-drum-600.jpg': [411, 600],
+    '/assets/img/dow/983-curing-agent-600.jpg': [540, 540],
+    '/assets/img/dow/991-sausage-800.jpg': [800, 800],
+    '/assets/img/dow/995-cartridge-800.jpg': [800, 800],
+    '/assets/img/dow/allguard-pail-600.jpg': [600, 600],
+    '/assets/img/dow/double-n-800.jpg': [800, 800],
+    '/assets/img/dow/double-n-bath-800.jpg': [800, 800],
+    '/assets/img/dow/firestop-700-cartridge-600.jpg': [600, 600],
+    '/assets/img/dow/primer-c-can-600.jpg': [600, 600],
+    '/assets/img/dow/rtv-hi-temp-736-600.jpg': [431, 431],
+    '/assets/img/logo/Dow_Chemical_Company_logo.svg': [598, 210],
+  };
 
   return (
     <Tx>
@@ -161,7 +191,7 @@ export default async function ProductsPage({
                       <div key={r.role.en}>
                         <div className="tx-role">{pick(r.role)}</div>
                         <div>
-                          <h4>{pick(r.name)}</h4>
+                          <h3>{pick(r.name)}</h3>
                           <p>{pick(r.desc)}</p>
                           {r.slugs.map((sl) => bySlugMap[sl] && (
                             <Link key={sl} href={`/${lang}/products/${sl}`} className="tx-chip">{bySlugMap[sl].name_ko}</Link>
@@ -176,14 +206,19 @@ export default async function ProductsPage({
               <div className="tx-pgrid">
                 {list.map((product) => {
                   const href = `/${lang}/products/${product.slug}`;
+                  const imgSrc = product.image_url ?? '/assets/img/logo/Dow_Chemical_Company_logo.svg';
+                  const [imgW, imgH] = IMG_DIMS[imgSrc] ?? [600, 600];
                   return (
                     <article key={product.slug} className="tx-pcard">
-                      <Link href={href} tabIndex={-1} aria-hidden="true" className="tx-pimg">
+                      <Link href={href} tabIndex={-1} className="tx-pimg">
                         <img
-                          src={product.image_url ?? '/assets/img/logo/Dow_Chemical_Company_logo.svg'}
-                          alt=""
+                          src={imgSrc}
+                          alt={product.image_url ? productName(product) : `${productName(product)} — Dow`}
+                          width={imgW}
+                          height={imgH}
                           style={product.image_url ? undefined : { padding: 40, opacity: 0.35 }}
                           loading="lazy"
+                          decoding="async"
                         />
                       </Link>
                       <div className="tx-pbody">
@@ -209,14 +244,15 @@ export default async function ProductsPage({
           <style dangerouslySetInnerHTML={{ __html: techCss }} />
           <div className="tech-table-wrap" tabIndex={0} role="region" aria-label={isEn ? 'TDS, colors and packaging table (scrollable)' : 'TDS·색상·포장 표 (가로 스크롤 가능)'}>
             <table className="table table-sm tech-table mb-0">
-              <thead><tr><th>{isEn ? 'Product' : '제품'}</th><th>{isEn ? 'Also known as' : '다른 이름·표기'}</th><th>{isEn ? 'Colors' : '색상'}</th><th>{isEn ? 'Packaging' : '포장'}</th><th>TDS</th></tr></thead>
+              <caption className="visually-hidden">{isEn ? 'DOWSIL product TDS, colors and packaging' : 'DOWSIL 제품별 TDS·색상·포장'}</caption>
+              <thead><tr><th scope="col">{isEn ? 'Product' : '제품'}</th><th scope="col">{isEn ? 'Also known as' : '다른 이름·표기'}</th><th scope="col">{isEn ? 'Colors' : '색상'}</th><th scope="col">{isEn ? 'Packaging' : '포장'}</th><th scope="col">TDS</th></tr></thead>
               <tbody>
                 {products.map((pr) => {
                   const sp = pr.specs as Record<string, string>;
                   return (
                     <tr key={pr.slug}>
                       <td><Link href={`/${lang}/products/${pr.slug}`}>{pr.name}</Link></td>
-                      <td>{aliasesOf(pr.slug).slice(0, 3).join(' · ')}</td>
+                      <td>{(isEn ? aliasesOf(pr.slug).filter((a) => !/[가-힣]/.test(a)) : aliasesOf(pr.slug)).slice(0, 3).join(' · ')}</td>
                       <td>{(isEn ? sp['Colors'] : sp['색상']) || '–'}</td>
                       <td>{(isEn ? sp['Packaging'] : sp['포장']) || '–'}</td>
                       <td><a href={tdsUrl(pr.slug)} download>{pr.docLabel ?? 'TDS'} (PDF)</a></td>
@@ -231,7 +267,7 @@ export default async function ProductsPage({
         <div className="tx-notes">
           <div><h3>{isEn ? 'About the values' : '자료 수치 안내'}</h3><p>{isEn ? 'Product data is summarized from Dow TDS; values are typical properties, not specifications. The linked TDS PDFs are authoritative.' : '제품 정보는 Dow TDS를 요약한 것이며 수치는 대표 특성이지 규격값이 아닙니다. 기준은 링크된 TDS 원문입니다.'}</p></div>
           <div><h3>{isEn ? 'Technical resources' : '기술정보'}</h3><p>{isEn ? 'Fire-rated manual, selection guides and training material. ' : '내화 매뉴얼, 선정 가이드, 실리콘 교육 자료. '}<Link href={`/${lang}/technical`}>{isEn ? 'Open Technical Information' : '기술정보 보기'}</Link></p></div>
-          <div><h3>{isEn ? 'Not sure which one?' : '어떤 제품이 맞을지 모르겠다면'}</h3><p>{isEn ? 'Tell us the substrate and conditions. ' : '시공 자재와 사용 환경을 알려 주세요. '}<a href="mailto:sales@kconstrade.com">sales@kconstrade.com</a> · <a href="tel:+821089390284">010-8939-0284</a></p></div>
+          <div><h3>{isEn ? 'Not sure which one?' : '어떤 제품이 맞을지 모르겠다면'}</h3><p>{isEn ? 'Tell us the substrate and conditions. ' : '시공 자재와 사용 환경을 알려 주세요. '}<a href="mailto:sales@kconstrade.com">sales@kconstrade.com</a> · <a href="tel:+821089390284">{isEn ? '+82 10-8939-0284' : '010-8939-0284'}</a></p></div>
         </div>
       </div>
     </Tx>

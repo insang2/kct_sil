@@ -109,7 +109,7 @@ export const txCss = `
 .tx-cat-no{font-size:.85rem;font-weight:700;color:var(--tx-accent);letter-spacing:.06em}
 .tx-roles>div{display:grid;grid-template-columns:minmax(120px,.7fr) 2fr;gap:.4rem 2rem;border-top:1px solid var(--tx-line);padding:1.2rem 0}
 .tx-roles .tx-role{font-size:.82rem;font-weight:700;color:var(--tx-accent);letter-spacing:.03em}
-.tx-roles h4{font-size:1.15rem;margin:0 0 .25rem;letter-spacing:-.02em}
+.tx-roles h3{font-size:1.15rem;margin:0 0 .25rem;letter-spacing:-.02em}
 .tx-roles p{margin:0 0 .6rem;color:var(--tx-mute);font-size:.97rem}
 .tx-roles .tx-chip{display:inline-block;border:1px solid var(--tx-line);border-radius:999px;padding:.12rem .8rem;margin:0 .4rem .4rem 0;font-size:.85rem;font-weight:600;color:var(--tx-fg);text-decoration:none;background:#fff}
 .tx-roles .tx-chip:hover{border-color:var(--tx-fg)}

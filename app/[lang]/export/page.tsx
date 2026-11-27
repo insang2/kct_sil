@@ -7,13 +7,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isJa = lang === 'ja';
 
   const title = isEn
-    ? 'Export Inquiry | Korea Construction Trading (KCT) - Architectural Silicone Export'
+    ? 'Silicone Export Inquiry | Korea Construction Trading (KCT)'
     : isJa
     ? '輸出・貿易のお問い合わせ | 韓国建設トレーディング (KCT) - 建築用シリコーン輸出'
     : '수출 문의 | 한국건설트레이딩 (KCT) - 건축용 실리콘 수출 전문';
 
   const description = isEn
-    ? 'KCT exports architectural and structural silicone to buyers in the UAE, Australia, Southeast Asia and beyond. FOB/CIF terms, full export documentation, and customs support.'
+    ? 'KCT exports DOWSIL architectural and structural silicone to buyers in the UAE, Southeast Asia and beyond. FOB/CIF terms and export documents.'
     : isJa
     ? 'KCTは日本、UAE、豪州、東南アジア等の海外バイヤーへ建築用・構造用シリコーンを輸出しています。FOB/CIF条件、輸出書類代行、通関サポートまでワンストップで対応。'
     : 'KCT는 UAE, 호주, 동남아시아, 일본 등 해외 바이어에게 건축용·구조용 실리콘을 수출합니다. FOB/CIF 조건, 수출 서류 대행, 현지 통관 지원까지 원스톱으로 처리합니다.';
@@ -27,14 +27,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         'ko': 'https://kconstrade.com/ko/export',
         'en': 'https://kconstrade.com/en/export',
         'ja': 'https://kconstrade.com/ja/export',
-        'x-default': 'https://kconstrade.com/en/export',
+        'x-default': 'https://kconstrade.com/ko/export',
       },
     },
     openGraph: {
       title,
       description,
       url: `https://kconstrade.com/${lang}/export`,
-      siteName: '한국건설트레이딩 (KCT)',
+      siteName: isEn ? 'Korea Construction Trading (KCT)' : '한국건설트레이딩 (KCT)',
       images: [
         {
           url: 'https://kconstrade.com/assets/img/og-image.png',
@@ -199,20 +199,20 @@ export default async function ExportPage({ params }: { params: Promise<{ lang: '
 
                     <div className="row g-4">
                       <div className="col-12">
-                        <label className="form-label fw-medium">{ep.form_company ?? 'Company / Contact Name'} <span className="text-danger">*</span></label>
-                        <input type="text" name="name" className="form-control form-control-lg" placeholder="e.g. ABC Construction Co. / John Doe" required />
+                        <label className="form-label fw-medium" htmlFor="export-1">{ep.form_company ?? 'Company / Contact Name'} <span className="text-danger">*</span></label>
+                        <input id="export-1" type="text" name="name" className="form-control form-control-lg" placeholder="e.g. ABC Construction Co. / John Doe" required />
                       </div>
                       <div className="col-md-6">
-                        <label className="form-label fw-medium">{d.auth?.email ?? 'Email'} <span className="text-danger">*</span></label>
-                        <input type="email" name="email" className="form-control form-control-lg" placeholder="name@company.com" required />
+                        <label className="form-label fw-medium" htmlFor="export-2">{d.auth?.email ?? 'Email'} <span className="text-danger">*</span></label>
+                        <input id="export-2" type="email" name="email" className="form-control form-control-lg" placeholder="name@company.com" required />
                       </div>
                       <div className="col-md-6">
-                        <label className="form-label fw-medium">{ep.form_phone ?? 'Phone (with country code)'} <span className="text-danger">*</span></label>
-                        <input type="tel" name="phone" className="form-control form-control-lg" placeholder="+81 90-1234-5678" required />
+                        <label className="form-label fw-medium" htmlFor="export-3">{ep.form_phone ?? 'Phone (with country code)'} <span className="text-danger">*</span></label>
+                        <input id="export-3" type="tel" name="phone" className="form-control form-control-lg" placeholder="+81 90-1234-5678" required />
                       </div>
                       <div className="col-md-6">
-                        <label className="form-label fw-medium">{ep.form_destination ?? 'Destination Country'} <span className="text-danger">*</span></label>
-                        <select name="country" className="form-select form-select-lg" required>
+                        <label className="form-label fw-medium" htmlFor="export-4">{ep.form_destination ?? 'Destination Country'} <span className="text-danger">*</span></label>
+                        <select id="export-4" name="country" className="form-select form-select-lg" required>
                           <option value="">{ep.btn_select ?? 'Select'}</option>
                           <option value="UAE">🇦🇪 UAE</option>
                           <option value="Australia">🇦🇺 Australia</option>
@@ -226,8 +226,8 @@ export default async function ExportPage({ params }: { params: Promise<{ lang: '
                         </select>
                       </div>
                       <div className="col-md-6">
-                        <label className="form-label fw-medium">{ep.form_incoterms_pref ?? 'Preferred Incoterms'}</label>
-                        <select name="incoterms" className="form-select form-select-lg">
+                        <label className="form-label fw-medium" htmlFor="export-5">{ep.form_incoterms_pref ?? 'Preferred Incoterms'}</label>
+                        <select id="export-5" name="incoterms" className="form-select form-select-lg">
                           <option value="">{ep.btn_select ?? 'Select'}</option>
                           <option value="FOB">FOB (Free On Board)</option>
                           <option value="CIF">CIF (Cost, Insurance &amp; Freight)</option>
@@ -236,8 +236,8 @@ export default async function ExportPage({ params }: { params: Promise<{ lang: '
                         </select>
                       </div>
                       <div className="col-12">
-                        <label className="form-label fw-medium">{ep.form_message ?? 'Inquiry Details'} <span className="text-danger">*</span></label>
-                        <textarea name="message" className="form-control form-control-lg" rows={5}
+                        <label className="form-label fw-medium" htmlFor="export-6">{ep.form_message ?? 'Inquiry Details'} <span className="text-danger">*</span></label>
+                        <textarea id="export-6" name="message" className="form-control form-control-lg" rows={5}
                           placeholder="Please describe: ① Products needed (e.g. DOWSIL 791, 995) ② Estimated quantity ③ Delivery schedule" required></textarea>
                       </div>
                     </div>

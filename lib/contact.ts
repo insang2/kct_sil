@@ -2,7 +2,7 @@
 export const PHONE_DISPLAY = '010-8939-0284'
 export const PHONE_TEL = 'tel:+821089390284'
 export const SMARTSTORE_URL = 'https://smartstore.naver.com/kconstrade/'
-export const KAKAO_URL = '' // 예: 'https://pf.kakao.com/_xxxxxx' 또는 'https://open.kakao.com/o/xxxxxx'
+export const KAKAO_URL = 'https://pf.kakao.com/_xcnxdfX' // 카카오톡 채널
 export const MAP_URL = 'https://www.google.com/maps?q=37.478626,127.1192753'
 
 export const ADDRESS = {

@@ -23,15 +23,43 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
           {/* Brand column */}
           <div className="col-lg-4">
             <div className="d-flex flex-wrap align-items-center gap-3 mb-4">
-              <Link href={`/${lang}`} className="d-inline-flex align-items-center bg-white rounded-3 px-3 py-2" aria-label={lang === 'ko' ? '한국건설트레이딩 (KCT) 홈' : 'Korea Construction Trading (KCT) home'}>
+              <Link
+                href={`/${lang}`}
+                className="d-inline-flex align-items-center bg-white rounded-3 px-3 py-2"
+                aria-label={
+                  lang === 'ko'
+                    ? '한국건설트레이딩 (KCT) 홈'
+                    : lang === 'ja'
+                    ? '韓国建設トレーディング (KCT) ホーム'
+                    : 'Korea Construction Trading (KCT) home'
+                }
+              >
                 <img
                   src="/assets/img/logo/kct_logo.jpeg"
-                  alt="한국건설트레이딩 (KCT) 로고"
+                  alt={
+                    lang === 'ko'
+                      ? '한국건설트레이딩 (KCT) 로고'
+                      : lang === 'ja'
+                      ? '韓国建設トレーディング (KCT) ロゴ'
+                      : 'Korea Construction Trading (KCT) Logo'
+                  }
+                  width={1380}
+                  height={752}
+                  loading="lazy"
+                  decoding="async"
                   style={{ height: '40px', width: 'auto' }}
                 />
               </Link>
               <div className="d-inline-flex align-items-center gap-2 bg-white rounded-3 px-3 py-2">
-                <img src="/assets/img/logo/Dow_Chemical_Company_logo.svg" alt="Dow" style={{ height: '26px', width: 'auto' }} />
+                <img
+                  src="/assets/img/logo/Dow_Chemical_Company_logo.svg"
+                  alt="Dow"
+                  width={598}
+                  height={210}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ height: '26px', width: 'auto' }}
+                />
                 <span style={{ color: '#16142F', fontSize: '.78rem', fontWeight: 600, lineHeight: 1.25, borderLeft: '1px solid #d5d8de', paddingLeft: 10 }}>
                   {lang === 'ko' ? <>Dow<br />인증 판매점</> : lang === 'ja' ? <>Dow<br />認定販売店</> : <>Dow<br />Authorized Distributor</>}
                 </span>
@@ -72,6 +100,34 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
                 <i className="bi bi-envelope-fill" style={{ fontSize: '1rem' }}></i>
               </a>
             </div>
+            {/* Language links (static SSR links for ko/en/ja discovery) */}
+            <nav
+              aria-label={lang === 'ko' ? '언어 선택' : lang === 'ja' ? '言語選択' : 'Language'}
+              className="d-flex flex-wrap align-items-center gap-2 mt-4"
+            >
+              {[
+                { code: 'ko', label: '한국어', href: '/ko' },
+                { code: 'en', label: 'English', href: '/en' },
+                { code: 'ja', label: '日本語', href: '/ja' },
+              ].map((item) => (
+                <Link
+                  key={item.code}
+                  href={item.href}
+                  hrefLang={item.code}
+                  lang={item.code}
+                  aria-current={lang === item.code ? 'true' : undefined}
+                  className="text-decoration-none px-2 py-1 rounded-pill"
+                  style={{
+                    color: lang === item.code ? '#ffffff' : 'rgba(255,255,255,0.78)',
+                    background: lang === item.code ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.08)',
+                    fontWeight: lang === item.code ? 600 : 400,
+                    fontSize: '0.78rem',
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           </div>
 
           {/* Navigation column */}
@@ -81,12 +137,13 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
             </h2>
             <ul className="list-unstyled mb-0">
               {[
-                { label: d.navigation.home,     href: `/${lang}` },
-                { label: d.navigation.about,    href: `/${lang}/about` },
-                { label: d.navigation.products, href: `/${lang}/products` },
+                { label: d.navigation.home,      href: `/${lang}` },
+                { label: d.navigation.about,     href: `/${lang}/about` },
+                { label: d.navigation.products,  href: `/${lang}/products` },
                 { label: d.navigation.technical, href: `/${lang}/technical` },
-                { label: d.navigation.b2b,      href: `/${lang}#b2b-form` },
-                { label: d.navigation.export,   href: `/${lang}/export` },
+                { label: d.navigation.quote ?? (lang === 'en' ? 'Quotation' : lang === 'ja' ? '見積書' : '견적서'), href: `/${lang}/quote` },
+                { label: d.navigation.b2b,       href: `/${lang}#b2b-form` },
+                { label: d.navigation.export,    href: `/${lang}/export` },
               ].map((item) => (
                 <li key={item.href} className="mb-2">
                   <Link
@@ -106,6 +163,7 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
             <h2 className="h6 fw-bold text-white mb-4 text-uppercase" style={{ fontSize: '0.75rem', letterSpacing: '0.1em', opacity: 0.6 }}>
               Contact
             </h2>
+            <address className="mb-0" style={{ fontStyle: 'normal' }}>
             <ul className="list-unstyled mb-0 small" style={{ color: 'rgba(255,255,255,0.82)', lineHeight: 1.9 }}>
               <li>
                 <i className="bi bi-telephone me-2 text-primary"></i>
@@ -142,12 +200,13 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
                 {d.footer?.sales_manager ?? 'Sales Manager: Lee Joon-hwan'}
               </li>
             </ul>
+            </address>
           </div>
 
           {/* Retail shops column */}
           <div className="col-lg-3">
             <h2 className="h6 fw-bold text-white mb-4 text-uppercase" style={{ fontSize: '0.75rem', letterSpacing: '0.1em', opacity: 0.6 }}>
-              {d.retail?.label ?? '소량 주문'}
+              {d.retail?.label ?? (lang === 'en' ? 'Small Orders' : lang === 'ja' ? '小口注文' : '소량 주문')}
             </h2>
             <p className="small mb-3" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
                 {d.footer?.small_orders_hint ?? 'Small orders available on open markets.'}
@@ -195,7 +254,11 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
             <img
               src="/assets/img/logo/Dow_Chemical_Company_logo.svg"
               alt="Dow Chemical"
-              style={{ height: '22px', opacity: 0.35, filter: 'brightness(0) invert(1)' }}
+              width={598}
+              height={210}
+              loading="lazy"
+              decoding="async"
+              style={{ height: '22px', width: 'auto', opacity: 0.35, filter: 'brightness(0) invert(1)' }}
             />
           </div>
         </div>

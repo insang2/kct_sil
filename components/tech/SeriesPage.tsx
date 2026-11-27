@@ -5,7 +5,7 @@ import Tx from '@/components/tech/Tx'
 import type { Series } from '@/lib/series/config'
 import TechEnhance from '@/components/tech/TechEnhance'
 import RelatedHubs from '@/components/tech/RelatedHubs'
-import { TECH_UPDATED } from '@/lib/series/hubs'
+import { ORG_ENTITY, seriesPageDate } from '@/lib/series/dates'
 
 const BASE = 'https://kconstrade.com'
 const brand = (l: 'ko' | 'en') => (l === 'ko' ? '한국건설트레이딩 (KCT)' : 'Korea Construction Trading (KCT)')
@@ -78,7 +78,16 @@ export function SeriesHub({ s, lang }: { s: Series; lang: string }) {
                 ))}
               </div>
             </div>
-            <div className="col-lg-5"><img src={s.cover} alt={s.hubTitle[l]} className="w-100 rounded-4 shadow bg-white" /></div>
+            <div className="col-lg-5">{(() => {
+              const COVER_DIMS: Record<string, readonly [number, number]> = {
+                '/assets/tech/sb-molecule-3d.jpg': [427, 246],
+                '/assets/tech/psa2-cover.jpg': [900, 1165],
+                '/assets/tech/cover.jpg': [1400, 908],
+                '/assets/tech/ind-cover.jpg': [1275, 793],
+              }
+              const dim = COVER_DIMS[s.cover]
+              return <img src={s.cover} alt={s.hubTitle[l]} width={dim?.[0]} height={dim?.[1]} decoding="async" fetchPriority="high" className="w-100 rounded-4 shadow bg-white" style={{ height: 'auto' }} />
+            })()}</div>
           </div>
         </div>
       </section>
@@ -154,10 +163,10 @@ export function SeriesArticle({ s, lang, slug }: { s: Series; lang: string; slug
   const url = `${BASE}/${lang}/technical/${s.key}/${slug}`
   const graph = [
     { '@type': 'BreadcrumbList', itemListElement: [...crumbs(s, lang, ko, l), { '@type': 'ListItem', position: 4, name: page.title[l], item: url }] },
-    { '@type': 'TechArticle', '@id': url, headline: page.title[l], description: page.answer[l], abstract: page.summary[l], inLanguage: l, datePublished: TECH_UPDATED, dateModified: TECH_UPDATED, image: `${BASE}${page.image}`, url,
+    { '@type': 'TechArticle', '@id': url, headline: page.title[l], description: page.answer[l], abstract: page.summary[l], inLanguage: l, datePublished: seriesPageDate(s.key, page.doc), dateModified: seriesPageDate(s.key, page.doc), image: `${BASE}${page.image}`, url,
       isBasedOn: (s.pdfs ?? (s.pdf ? [{ href: s.pdf }] : [])).map((d) => ({ '@type': 'CreativeWork', name: s.source, url: `${BASE}${d.href}` })), citation: s.source,
-      author: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE },
-      publisher: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)', url: BASE }, mainEntityOfPage: url },
+      author: ORG_ENTITY,
+      publisher: ORG_ENTITY, mainEntityOfPage: url },
     { '@type': 'FAQPage', mainEntity: page.faq.map((f) => ({ '@type': 'Question', name: f.q[l], acceptedAnswer: { '@type': 'Answer', text: f.a[l] } })) },
   ]
   const A = ({ href, children }: { href: string; children: React.ReactNode }) => <a href={href} style={{ color: C.accent }}>{children}</a>

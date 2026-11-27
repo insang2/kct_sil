@@ -4,9 +4,9 @@ import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import type { Product } from '@/lib/pricing'
-import { bySlug, tdsUrl, CATEGORIES } from '@/lib/products-catalog'
+import { bySlug, tdsUrl, CATEGORIES, CATALOG } from '@/lib/products-catalog'
 import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en'
-import { aliasesOf, productFaq, relatedTech } from '@/lib/product-seo'
+import { aliasesOf, productFaq, productSeoMeta, relatedTech } from '@/lib/product-seo'
 
 // ── Fallback product data (used when Supabase unavailable or fields not yet filled) ──
 const FALLBACKS: Record<string, Partial<Product> & {
@@ -167,6 +167,11 @@ async function getProduct(slug: string, lang: string): Promise<(Product & {
   return fb ? (fb as any) : null
 }
 
+// 사전 렌더(SSG): 크롤러 요청마다 Worker가 SSR 하지 않도록
+export function generateStaticParams() {
+  return ['ko','en','ja'].flatMap((lang) => CATALOG.map((p) => p.slug).map((slug) => ({ lang, slug })))
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -180,22 +185,17 @@ export async function generateMetadata({
   const isJa = lang === 'ja'
 
   const productName = (isEn && product.name_en) ? product.name_en : product.name_ko
-  const siteTitle = isEn ? 'Korea Construction Trading (KCT)' : isJa ? '韓国建設トレーディング (KCT)' : '한국건설트레이딩 (KCT)'
-
-  const cat = bySlug(slug)
-  const cl = cat ? localizeCatalog(cat, isEn ? 'en' : 'ko') : null
-  const title = cl
-    ? (isEn ? `${cl.title} – TDS & Specifications | ${siteTitle}` : `${cl.name} – ${cl.summary} | TDS 다운로드 | ${siteTitle}`)
-    : `${productName} | ${siteTitle}`
-  const description = cl
-    ? (isEn
-        ? `${cl.summary}. Download the Dow technical data sheet (TDS), view typical properties, applications and features. Supplied by KCT for B2B and export.`
-        : `${cl.summary}. ${cl.description.slice(0, 90).replace(/\s+\S*$/, '')}… TDS(기술자료) PDF 다운로드, 사양, 적용 분야. 한국건설트레이딩 B2B 공급.`)
+  const seo = productSeoMeta(slug, lang)
+  const title = seo
+    ? seo.title
+    : `${productName} | KCT`
+  const description = seo
+    ? seo.description
     : isEn
-    ? (product.name_en ? `${product.name_en} architectural and structural silicone sealant by Dow Chemical. Supplied by Korea Construction Trading (KCT). Inquire for B2B export & bulk pricing.` : `${product.name_ko} - Dow architectural silicone sealant supplied by KCT.`)
+    ? `${productName} by Dow Chemical. Review typical properties, applications and technical support, and contact Korea Construction Trading (KCT) for B2B quotes.`
     : isJa
-    ? `${product.name_ko} - Dow(ダウ) 建築用・構造用シリコーンシーラント。韓国建設トレーディング (KCT) 供給、B2B卸売・輸出見積対応。`
-    : (product.description_ko ? product.description_ko.slice(0, 160) : `${product.name_ko} - 한국건설트레이딩(KCT) 공식 취급 공급. B2B 대량 특가 견적 및 신속 현장 납품.`)
+    ? `${product.name_ko}はDow(ダウ)建築・構造用シリコーンシーラントです。製品仕様のご確認、B2B卸売・グローバル輸出のお見積りは韓国建設トレーディング(KCT)へ。`
+    : `${product.name_ko} 제품 사양과 적용 분야를 확인하세요. 한국건설트레이딩(KCT)에서 Dow 실리콘 실란트 B2B 공급·수출 견적과 기술 자료를 지원합니다.`
 
   const aliasList = aliasesOf(slug)
   const keywords = [product.name_ko, product.name_en, ...aliasList, 'TDS', 'DOWSIL', isEn ? 'silicone sealant Korea' : '실리콘 실란트', isEn ? 'Korea Construction Trading' : '한국건설트레이딩'].filter(Boolean) as string[]
@@ -206,7 +206,7 @@ export async function generateMetadata({
 
   return {
     title,
-    description: cl ? `${isEn ? '' : `${aliasList.slice(0, 2).join(' · ')}. `}${description}`.slice(0, isEn ? 320 : 220) : description,
+    description,
     keywords,
     alternates: {
       canonical: `https://kconstrade.com/${lang === 'ja' ? 'ko' : lang}/products/${slug}`, // ja는 한국어 본문이라 ko로 통합
@@ -321,7 +321,7 @@ export default async function ProductDetailPage({
       />
 
       {/* Breadcrumb */}
-      <nav className="bg-white border-bottom" style={{ marginTop: '72px' }}>
+      <nav aria-label={isEn ? 'Breadcrumb' : '현재 위치'} className="bg-white border-bottom" style={{ marginTop: '72px' }}>
         <div className="container py-3">
           <ol className="breadcrumb mb-0" style={{ fontSize: '0.85rem' }}>
             <li className="breadcrumb-item"><Link href={`/${lang}`} className="text-decoration-none text-body-secondary">{isEn ? 'Home' : '홈'}</Link></li>
@@ -338,11 +338,59 @@ export default async function ProductDetailPage({
             {/* Image */}
             <div className="col-lg-5">
               <div className="rounded-4 overflow-hidden d-flex align-items-center justify-content-center" style={{ aspectRatio: '1/1', background: '#fff', border: '1px solid rgba(22,24,28,.14)' }}>
-                {product.image_url ? (
-                  <img src={product.image_url} alt={product.name_ko} className="w-100 h-100" style={{ objectFit: 'contain', padding: 16, mixBlendMode: 'multiply', borderRadius: 28 }} />
-                ) : (
+                {product.image_url ? (() => {
+                  const DIMS: Record<string, readonly [number, number]> = {
+                    '/assets/img/dow/1001-sausage-600.jpg': [600, 400],
+                    '/assets/img/dow/1200-os-can-400.png': [400, 400],
+                    '/assets/img/dow/121-kit-500.png': [500, 500],
+                    '/assets/img/dow/123-strips-600.jpg': [600, 600],
+                    '/assets/img/dow/335-butyl-600.jpg': [550, 550],
+                    '/assets/img/dow/375-pails-600.jpg': [540, 540],
+                    '/assets/img/dow/650-plus-drum-600.jpg': [510, 510],
+                    '/assets/img/dow/786-cartridge-431.jpg': [431, 431],
+                    '/assets/img/dow/789-cartridge-sausage-800.jpg': [800, 800],
+                    '/assets/img/dow/791-cartridge-sausage-800.jpg': [800, 800],
+                    '/assets/img/dow/795-cartridge-sausage-800.jpg': [800, 800],
+                    '/assets/img/dow/813c-sausage-600.jpg': [600, 600],
+                    '/assets/img/dow/888-sausage-600.jpg': [480, 480],
+                    '/assets/img/dow/890-sl-800.jpg': [800, 800],
+                    '/assets/img/dow/902-rcs-pail-600.jpg': [600, 600],
+                    '/assets/img/dow/939-drums-600.jpg': [550, 380],
+                    '/assets/img/dow/977-cartridge-sausage-800.jpg': [800, 800],
+                    '/assets/img/dow/982-drum-600.jpg': [411, 600],
+                    '/assets/img/dow/983-curing-agent-600.jpg': [540, 540],
+                    '/assets/img/dow/991-sausage-800.jpg': [800, 800],
+                    '/assets/img/dow/995-cartridge-800.jpg': [800, 800],
+                    '/assets/img/dow/allguard-pail-600.jpg': [600, 600],
+                    '/assets/img/dow/double-n-800.jpg': [800, 800],
+                    '/assets/img/dow/double-n-bath-800.jpg': [800, 800],
+                    '/assets/img/dow/firestop-700-cartridge-600.jpg': [600, 600],
+                    '/assets/img/dow/primer-c-can-600.jpg': [600, 600],
+                    '/assets/img/dow/rtv-hi-temp-736-600.jpg': [431, 431],
+                  }
+                  const [w, h] = DIMS[product.image_url] ?? [800, 800]
+                  return (
+                    <img
+                      src={product.image_url}
+                      alt={displayName}
+                      width={w}
+                      height={h}
+                      decoding="async"
+                      fetchPriority="high"
+                      className="w-100 h-100"
+                      style={{ objectFit: 'contain', padding: 16, mixBlendMode: 'multiply', borderRadius: 28 }}
+                    />
+                  )
+                })() : (
                   <div className="text-center p-5">
-                    <img src="/assets/img/logo/Dow_Chemical_Company_logo.svg" alt="Dow Chemical" style={{ width: '60%', opacity: 0.4 }} />
+                    <img
+                      src="/assets/img/logo/Dow_Chemical_Company_logo.svg"
+                      alt={`${displayName} — Dow Chemical`}
+                      width={598}
+                      height={210}
+                      decoding="async"
+                      style={{ width: '60%', height: 'auto', opacity: 0.4 }}
+                    />
                     <p className="text-body-secondary small mt-3 mb-0">{product.brand} {product.sku}</p>
                   </div>
                 )}

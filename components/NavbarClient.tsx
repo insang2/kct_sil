@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { createClient } from '@/lib/supabase/client';
+import UserMenu from '@/components/UserMenu';
 
 interface NavbarClientProps {
   lang: string;
@@ -16,7 +18,7 @@ interface NavbarClientProps {
     quote: string;
     login: string;
   };
-  userSlot?: React.ReactNode;
+  userLabels: { logout: string; mypage: string; quote: string };
 }
 
 const LANGS = [
@@ -64,7 +66,18 @@ const MENU_LABEL: Record<string, { open: string; close: string; lang: string }> 
   ja: { open: 'メニューを開く', close: 'メニューを閉じる', lang: '言語を選択' },
 };
 
-export default function NavbarClient({ lang, navLabels, userSlot }: NavbarClientProps) {
+export default function NavbarClient({ lang, navLabels, userLabels }: NavbarClientProps) {
+  // 세션은 브라우저에서 조회 → 공개 페이지를 정적(캐시 가능)으로 유지
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+  useEffect(() => {
+    const sb = createClient();
+    sb.auth.getUser().then(({ data }) => setUserEmail(data.user?.email ?? null));
+    const { data: sub } = sb.auth.onAuthStateChange((_e, session) => setUserEmail(session?.user?.email ?? null));
+    return () => sub.subscription.unsubscribe();
+  }, []);
+  const userSlot = userEmail ? (
+    <UserMenu lang={lang} userEmail={userEmail} logoutLabel={userLabels.logout} mypageLabel={userLabels.mypage} quoteLabel={userLabels.quote} />
+  ) : undefined;
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [techOpen, setTechOpen] = useState(false);

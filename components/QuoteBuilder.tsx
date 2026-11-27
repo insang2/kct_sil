@@ -216,7 +216,7 @@ export default function QuoteBuilder({ products, userTier, userId, lang, dict }:
     <div className="row g-5" data-form-section>
       {/* Left: Product selection + Trade Terms */}
       <div className="col-lg-7">
-        <h5 className="fw-bold mb-4 text-dark">{t.product_select}</h5>
+        <h2 className="h5 fw-bold mb-4 text-dark">{t.product_select}</h2>
         <div className="list-group shadow-sm rounded-4 overflow-hidden mb-5">
           {products.map(product => {
             const checked = !!selected[product.id]
@@ -266,13 +266,13 @@ export default function QuoteBuilder({ products, userTier, userId, lang, dict }:
         {/* Trade Terms */}
         <div className="card border-0 shadow-sm rounded-4">
           <div className="card-body p-4">
-            <h5 className="fw-bold mb-1 text-dark">
+            <h2 className="h5 fw-bold mb-1 text-dark">
               <i className="bi bi-globe2 me-2 text-primary"></i>Trade Terms
-            </h5>
+            </h2>
             <p className="text-body-secondary small mb-4">수출 견적 시 적용할 무역 조건을 선택하세요.</p>
 
             <div className="mb-4">
-              <label className="form-label fw-bold text-dark small mb-2">Incoterms 2020</label>
+              <label className="form-label fw-bold text-dark small mb-2" htmlFor="quote-1">Incoterms 2020</label>
               <ChipGroup options={INCOTERMS} value={tradeTerms.incoterms} onChange={v => setTrade('incoterms', v)} />
               <div className="text-body-secondary mt-1" style={{ fontSize: '0.72rem' }}>
                 {{
@@ -299,14 +299,14 @@ export default function QuoteBuilder({ products, userTier, userId, lang, dict }:
             <div className="row g-3 mb-4">
               <div className="col-6">
                 <label className="form-label fw-bold text-dark small">Port of Loading</label>
-                <select className="form-select form-select-sm text-dark"
+                <select id="quote-1" className="form-select form-select-sm text-dark"
                   value={tradeTerms.portOfLoading} onChange={e => setTrade('portOfLoading', e.target.value)}>
                   {PORTS.map(p => <option key={p}>{p}</option>)}
                 </select>
               </div>
               <div className="col-6">
-                <label className="form-label fw-bold text-dark small">Lead Time</label>
-                <select className="form-select form-select-sm text-dark"
+                <label className="form-label fw-bold text-dark small" htmlFor="quote-2">Lead Time</label>
+                <select id="quote-2" className="form-select form-select-sm text-dark"
                   value={tradeTerms.leadTime} onChange={e => setTrade('leadTime', e.target.value)}>
                   {LEAD_TIMES.map(l => <option key={l}>{l}</option>)}
                 </select>
@@ -314,7 +314,7 @@ export default function QuoteBuilder({ products, userTier, userId, lang, dict }:
             </div>
 
             <div className="mb-4">
-              <label className="form-label fw-bold text-dark small mb-2">Quote Validity</label>
+              <label className="form-label fw-bold text-dark small mb-2" htmlFor="quote-3">Quote Validity</label>
               <ChipGroup options={VALIDITIES} value={tradeTerms.validity} onChange={v => setTrade('validity', v)} />
             </div>
 
@@ -345,26 +345,26 @@ export default function QuoteBuilder({ products, userTier, userId, lang, dict }:
       <div className="col-lg-5">
         <div className="card border-0 shadow-sm rounded-4 mb-4">
           <div className="card-body p-4">
-            <h5 className="fw-bold mb-4 text-dark">{t.customer_info}</h5>
+            <h2 className="h5 fw-bold mb-4 text-dark">{t.customer_info}</h2>
             <div className="mb-3">
               <label className="form-label fw-bold text-dark small">{ta.company_name}</label>
-              <input type="text" className="form-control text-dark" value={customerCompany} onChange={e => setCustomerCompany(e.target.value)} placeholder="예: ABC Trading Co., Ltd." />
+              <input id="quote-3" type="text" className="form-control text-dark" value={customerCompany} onChange={e => setCustomerCompany(e.target.value)} placeholder="예: ABC Trading Co., Ltd." />
             </div>
             <div className="mb-3">
-              <label className="form-label fw-bold text-dark small">{ta.contact_person}</label>
-              <input type="text" className="form-control text-dark" value={customerName} onChange={e => setCustomerName(e.target.value)} placeholder="예: John Smith" />
+              <label className="form-label fw-bold text-dark small" htmlFor="quote-4">{ta.contact_person}</label>
+              <input id="quote-4" type="text" className="form-control text-dark" value={customerName} onChange={e => setCustomerName(e.target.value)} placeholder="예: John Smith" />
             </div>
             <div className="mb-3">
-              <label className="form-label fw-bold text-dark small">{ta.email}</label>
-              <input type="email" className="form-control text-dark" value={customerEmail} onChange={e => setCustomerEmail(e.target.value)} placeholder="name@company.com" />
+              <label className="form-label fw-bold text-dark small" htmlFor="quote-5">{ta.email}</label>
+              <input id="quote-5" type="email" className="form-control text-dark" value={customerEmail} onChange={e => setCustomerEmail(e.target.value)} placeholder="name@company.com" />
             </div>
             <div className="mb-3">
-              <label className="form-label fw-bold text-dark small">{ta.phone}</label>
-              <input type="tel" className="form-control text-dark" value={customerPhone} onChange={e => setCustomerPhone(e.target.value)} placeholder="+81-XX-XXXX-XXXX" />
+              <label className="form-label fw-bold text-dark small" htmlFor="quote-6">{ta.phone}</label>
+              <input id="quote-6" type="tel" className="form-control text-dark" value={customerPhone} onChange={e => setCustomerPhone(e.target.value)} placeholder="+81-XX-XXXX-XXXX" />
             </div>
             <div className="mb-0">
-              <label className="form-label fw-bold text-dark small">{t.notes}</label>
-              <textarea className="form-control text-dark" rows={3} value={notes} onChange={e => setNotes(e.target.value)} placeholder={t.notes_placeholder} />
+              <label className="form-label fw-bold text-dark small" htmlFor="quote-7">{t.notes}</label>
+              <textarea id="quote-7" className="form-control text-dark" rows={3} value={notes} onChange={e => setNotes(e.target.value)} placeholder={t.notes_placeholder} />
             </div>
           </div>
         </div>
@@ -372,7 +372,7 @@ export default function QuoteBuilder({ products, userTier, userId, lang, dict }:
         {/* Summary */}
         <div className="card border-0 shadow-sm rounded-4 mb-4">
           <div className="card-body p-4">
-            <h6 className="fw-bold mb-3 text-dark">Quote Summary</h6>
+            <h2 className="h6 fw-bold mb-3 text-dark">Quote Summary</h2>
             {items.length === 0 ? (
               <p className="text-body-secondary small mb-3">제품을 선택해 주세요.</p>
             ) : (

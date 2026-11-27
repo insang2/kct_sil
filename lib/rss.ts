@@ -4,6 +4,7 @@ import { PAGES as TECH_PAGES } from '@/lib/tech-manual'
 import { IPAGES } from '@/lib/industrial/pages'
 import { SERIES } from '@/lib/series/config'
 import { HUBS, TECH_UPDATED } from '@/lib/series/hubs'
+import { SERIES_DATES, SITE_DATES, seriesPageDate } from '@/lib/series/dates'
 
 export const PRODUCTS_UPDATED = '2026-11-27'
 export const BASE = 'https://kconstrade.com'
@@ -19,10 +20,10 @@ export function buildRss(lang: 'ko' | 'en'): string {
   const add = (path: string, title: string, desc: string, date: string, cat: string) =>
     items.push({ title, link: `${BASE}/${lang}/${path}`, desc, date, cat })
 
-  for (const h of HUBS) add(h.path, h.title[lang], h.desc[lang], TECH_UPDATED, ko ? '기술정보' : 'Technical')
-  for (const p of TECH_PAGES) add(`technical/${p.slug}`, p.title[lang], p.summary[lang], TECH_UPDATED, ko ? '기술정보 · 내화 실란트' : 'Technical · Fire-rated')
-  for (const p of IPAGES) add(`technical/industrial/${p.slug}`, p.title[lang], p.summary[lang], TECH_UPDATED, ko ? '기술정보 · 산업·가전·유지보수' : 'Technical · Industrial')
-  for (const s of Object.values(SERIES)) for (const p of s.pages) add(`technical/${s.key}/${p.slug}`, p.title[lang], p.summary[lang], TECH_UPDATED, `${ko ? '기술정보' : 'Technical'} · ${s.short[lang]}`)
+  for (const h of HUBS) add(h.path, h.title[lang], h.desc[lang], h.path === 'technical' ? SITE_DATES.technicalHub : seriesPageDate(h.key), ko ? '기술정보' : 'Technical')
+  for (const p of TECH_PAGES) add(`technical/${p.slug}`, p.title[lang], p.summary[lang], SERIES_DATES.fire, ko ? '기술정보 · 내화 실란트' : 'Technical · Fire-rated')
+  for (const p of IPAGES) add(`technical/industrial/${p.slug}`, p.title[lang], p.summary[lang], SERIES_DATES.industrial, ko ? '기술정보 · 산업·가전·유지보수' : 'Technical · Industrial')
+  for (const s of Object.values(SERIES)) for (const p of s.pages) add(`technical/${s.key}/${p.slug}`, p.title[lang], p.summary[lang], seriesPageDate(s.key, p.doc), `${ko ? '기술정보' : 'Technical'} · ${s.short[lang]}`)
   for (const c of CATALOG) {
     const p = localizeCatalog(c, lang)
     add(`products/${c.slug}`, `${c.name} – ${p.summary}`, p.description.slice(0, 280), PRODUCTS_UPDATED, ko ? '제품정보' : 'Products')

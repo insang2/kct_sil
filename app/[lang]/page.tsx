@@ -1,13 +1,245 @@
 import { getDictionary } from '@/lib/dictionaries';
-import Script from 'next/script';
+import Link from 'next/link';
 import { PHONE_DISPLAY, PHONE_TEL, KAKAO_URL, SMARTSTORE_URL, ADDRESS, CONTACT_TEXT, MAP_URL } from '@/lib/contact';
+import { CATALOG, CATEGORIES, bySlug, tdsUrl, type CategoryKey } from '@/lib/products-catalog';
+import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en';
+import { HUBS } from '@/lib/series/hubs';
+
+const FEATURED_SLUGS = [
+  'dowsil-993',
+  'dowsil-995',
+  'dowsil-795',
+  'dowsil-789',
+  'dowsil-791',
+  'dowsil-983',
+  'dowsil-650-plus',
+  'dowsil-firestop-700',
+] as const;
+
+const FEATURED_IMG_DIMS: Record<string, readonly [number, number]> = {
+  '/assets/img/dow/995-cartridge-800.jpg': [800, 800],
+  '/assets/img/dow/795-cartridge-sausage-800.jpg': [800, 800],
+  '/assets/img/dow/789-cartridge-sausage-800.jpg': [800, 800],
+  '/assets/img/dow/791-cartridge-sausage-800.jpg': [800, 800],
+  '/assets/img/dow/983-curing-agent-600.jpg': [540, 540],
+  '/assets/img/dow/650-plus-drum-600.jpg': [510, 510],
+  '/assets/img/dow/firestop-700-cartridge-600.jpg': [600, 600],
+  '/assets/img/logo/Dow_Chemical_Company_logo.svg': [598, 210],
+};
+
+const CAT_JA: Record<CategoryKey, string> = {
+  building: '建築外装',
+  gmp: 'GMP・衛生',
+  civil: '土木用',
+  igu: '複層ガラス',
+  special: '特殊用途',
+  primer: 'プライマー',
+};
+
+const JA_SUMMARY: Record<string, string> = {
+  'dowsil-993': '欧州(EOTA)・中国GB規格対応 2液型構造用シーラント',
+  'dowsil-995': '高強度ストラクチュラル・グレージング用 1液型中性シーラント',
+  'dowsil-795': '構造用・±50%耐候性兼用 1液型中性シーラント',
+  'dowsil-789': 'プライマー不要で接着する1液型中性耐候性シーラント',
+  'dowsil-791': 'カーテンウォール・外装ウェザーシーリング用1液型中性シーラント',
+  'dowsil-983': '工場グレージング・カーテンウォール生産用 2液型構造用シーラント',
+  'dowsil-650-plus': 'ファサードガラス・金属の一時保護用剥離コーティング',
+  'dowsil-firestop-700': '屋内外のリニアジョイント・貫通部用 耐火シリコーン',
+};
+
+const HUB_JA: Record<string, { title: string; desc: string }> = {
+  fire: {
+    title: '耐火シーラント技術マニュアル',
+    desc: '火災反応性・耐火性能、リニアジョイント・貫通部試験、煙制御、施工指針',
+  },
+  selection: {
+    title: 'DOWSIL™ シーラント比較・選定ガイド',
+    desc: '構造用・耐候性・複層ガラス用シーラント13種をTDS基準で比較',
+  },
+  psa: {
+    title: 'シリコーン粘着剤(PSA)選定ガイド',
+    desc: '2024年最新版を含むPSA 41種の仕様・選定・塗工・硬化・剥離ガイド',
+  },
+  basics: {
+    title: 'シリコーン基礎教育',
+    desc: 'シリコーンの化学・製造・特性・応用および付録データ',
+  },
+  tapes: {
+    title: '電気・電子テープ用シリコーンPSA',
+    desc: '絶縁テープ用Dow粘着剤20種、選定表、KCT技術サポート案内',
+  },
+  industrial: {
+    title: '産業・家電・メンテナンス用選定ガイド',
+    desc: 'アセトキシ・アルコキシ・オキシム・ホットメルト・シリコーンフォーム38製品',
+  },
+};
+
+const HUB_ORDER = ['fire', 'selection', 'psa', 'basics', 'tapes', 'industrial'] as const;
 
 export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 'en' | 'ja' }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
   const isEn = lang === 'en';
+  const isJa = lang === 'ja';
   const ct = CONTACT_TEXT[lang];
+  const productCount = CATALOG.length;
+
+  const featuredProducts = FEATURED_SLUGS.map((slug) => bySlug(slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p))
+    .map((p0) => {
+      const p = localizeCatalog(p0, lang);
+      const catLabel = isEn
+        ? CATEGORY_EN[p.category].label
+        : isJa
+        ? CAT_JA[p.category]
+        : (CATEGORIES.find((c) => c.key === p.category)?.label ?? p.category);
+      return {
+        slug: p.slug,
+        name: p.name,
+        title: p.title,
+        summary: isJa ? (JA_SUMMARY[p.slug] ?? p.summary) : p.summary,
+        catLabel,
+        image: p.image ?? null,
+        docLabel: p.docLabel ?? 'TDS',
+      };
+    });
+
+  const orderedHubs = HUB_ORDER.map((key) => HUBS.find((h) => h.key === key)).filter(
+    (h): h is (typeof HUBS)[number] => Boolean(h),
+  );
+
+  const faqs = isEn
+    ? [
+        {
+          q: 'What DOWSIL™ products do you supply?',
+          a: `Korea Construction Trading (KCT) supplies ${productCount} Dow DOWSIL™ silicone products — including structural glazing, weatherproofing, fire-rated, insulating glass, civil engineering, GMP/hygienic sealants, and primers — with downloadable TDS PDFs.`,
+        },
+        {
+          q: 'Do you export architectural silicone globally?',
+          a: 'Yes. We export Dow DOWSIL™ architectural and structural silicone sealants to overseas buyers in Japan, Taiwan, Southeast Asia, and other regions with full export documentation.',
+        },
+        {
+          q: 'How can I purchase or request a quotation?',
+          a: 'Contact us by phone, email, WhatsApp, or our quotation page with the product model and quantity needed. Our team will confirm stock, lead time, and pricing within 24 hours.',
+        },
+        {
+          q: 'Are there benefits for B2B bulk orders?',
+          a: 'Yes. We offer B2B wholesale pricing, multi-site split delivery, tax invoices, and technical documentation (TDS/SDS) support for construction projects and international buyers.',
+        },
+      ]
+    : isJa
+    ? [
+        {
+          q: 'どのようなDOWSIL™製品を取り扱っていますか？',
+          a: `韓国建設トレーディング(KCT)は、構造用・耐候性・耐火・複層ガラス・土木・GMP衛生用シーラントおよびプライマーなどDow DOWSIL™製品${productCount}種を取り扱い、製品別TDS資料を提供しています。`,
+        },
+        {
+          q: '海外への輸出に対応していますか？',
+          a: 'はい。日本・台湾・東南アジアをはじめとする海外バイヤーへ建築用・構造用シリコーンシーラントを輸出しており、輸出書類の作成まで一括対応しています。',
+        },
+        {
+          q: '購入や見積依頼はどのように行えますか？',
+          a: 'お電話、メール、WhatsApp、または見積書ページよりご希望の製品名と数量をお知らせください。在庫・納期・単価を確認のうえ迅速にご案内します。',
+        },
+        {
+          q: 'B2B大量購入のサポートはありますか？',
+          a: 'はい。プロジェクト規模に応じたB2B特別単価、複数現場への分割配送、TDSなどの技術資料サポートをご提供しています。',
+        },
+      ]
+    : [
+        {
+          q: '어떤 DOWSIL(다우실) 제품을 취급하나요?',
+          a: `한국건설트레이딩(KCT)은 Dow DOWSIL(다우실) 구조용·내후성·내화·복층유리·토목·GMP·특수 실란트와 프라이머 ${productCount}종을 전문 공급하며, 각 제품별 TDS(기술자료) PDF를 제공합니다.`,
+        },
+        {
+          q: '제품 구매 및 견적 요청은 어떻게 하나요?',
+          a: '전화, 이메일, 카카오톡, WhatsApp 또는 견적서 페이지를 통해 필요한 모델명과 수량을 알려주시면 재고·납기·단가를 확인해 안내해 드립니다.',
+        },
+        {
+          q: 'B2B 대량 구매 시 혜택이 있나요?',
+          a: '현장 및 건설사를 위한 B2B 특가 단가, 다중 현장 분할 배송, 세금계산서 발행, 프로젝트 맞춤 견적 및 기술자료 지원을 제공합니다.',
+        },
+        {
+          q: '배송 기간은 얼마나 걸리나요?',
+          a: '재고 보유 제품 기준으로 수도권은 당일 또는 익일 배송이 가능하며, 전국 2~3일 이내 신속하게 납품해 드립니다.',
+        },
+      ];
+
+  const copy = isEn
+    ? {
+        badge: 'DOWSIL™ Silicone Supplier & Exporter · Korea Construction Trading (KCT)',
+        h1: 'DOWSIL™ Structural, Weatherproofing & Fire-Rated Silicone Sealants',
+        desc1: `Korea Construction Trading (KCT) supplies and exports ${productCount} Dow DOWSIL™ structural, weatherproofing, and fire-rated silicone sealants.`,
+        desc2: 'Product TDS downloads, B2B quotations within 24 hours, and technical support.',
+        btnProducts: `Browse ${productCount} Products & TDS`,
+        btnTechnical: 'Technical Library',
+        btnQuote: 'Create Quotation',
+        prodEyebrow: 'DOWSIL™ PRODUCT LINEUP',
+        prodTitle: 'Featured DOWSIL™ Sealants',
+        prodSub: `Key structural glazing, weatherproofing, firestop, and specialty grades from our ${productCount}-product DOWSIL™ catalog with downloadable TDS.`,
+        prodDetails: 'Details',
+        prodAll: `View all ${productCount} products & TDS`,
+        techEyebrow: 'TECHNICAL LIBRARY',
+        techTitle: 'DOWSIL™ Technical Guides & Manuals',
+        techSub: 'Direct access to fire-rated manuals, sealant comparison guides, silicone PSA guides, silicone basics, and industrial selection guides.',
+        techPages: 'pages',
+        techOpen: 'Open guide',
+        faqEyebrow: 'FAQ',
+        faqTitle: 'Frequently Asked Questions',
+        locationLabel: 'Location',
+        locationTitle: 'Location & Directions',
+        mapTitle: 'Korea Construction Trading (KCT) Location Map',
+      }
+    : isJa
+    ? {
+        badge: 'DOWSIL™ シリコーン専門供給・輸出 · 韓国建設トレーディング (KCT)',
+        h1: 'DOWSIL™ 構造用・耐候性・耐火シリコーンシーラント専門供給',
+        desc1: `韓国建設トレーディング(KCT)はDow DOWSIL™の構造用・耐候性・耐火シリコーンシーラント${productCount}種を供給・輸出しています。`,
+        desc2: '製品別TDS資料のダウンロード、24時間以内のB2B見積、技術サポートに対応します。',
+        btnProducts: `製品一覧・TDS (${productCount}種)`,
+        btnTechnical: '技術情報ライブラリ',
+        btnQuote: '見積書作成',
+        prodEyebrow: 'DOWSIL™ PRODUCT LINEUP',
+        prodTitle: '主要 DOWSIL™ シーラント 8種',
+        prodSub: `全${productCount}種のラインナップから構造用・耐候性・耐火・特殊保護の代表的なDOWSIL™製品とTDSをご確認いただけます。`,
+        prodDetails: '詳細',
+        prodAll: `全${productCount}種の製品・TDSを見る`,
+        techEyebrow: 'TECHNICAL LIBRARY',
+        techTitle: 'DOWSIL™ 技術資料ハブ',
+        techSub: '耐火マニュアル、シーラント比較・選定、シリコーンPSA、基礎教育、電気テープ用PSA、産業用選定ガイドへ直接アクセスできます。',
+        techPages: 'ページ',
+        techOpen: 'ガイドを見る',
+        faqEyebrow: 'FAQ',
+        faqTitle: 'よくある質問',
+        locationLabel: 'Location',
+        locationTitle: 'アクセス',
+        mapTitle: '韓国建設トレーディング (KCT) 所在地マップ',
+      }
+    : {
+        badge: 'DOWSIL(다우실) 실리콘 공급 · 한국건설트레이딩 (KCT)',
+        h1: 'DOWSIL(다우실) 구조용·내후성·내화 실리콘 실란트 전문 공급',
+        desc1: `한국건설트레이딩(KCT)은 Dow DOWSIL(다우실) 구조용·내후성·내화 실란트 ${productCount}종을 국내 B2B 공급 및 해외 수출합니다.`,
+        desc2: '제품별 TDS(기술자료) 다운로드 · 24시간 내 B2B 맞춤 견적 · 전국 신속 납품.',
+        btnProducts: `DOWSIL ${productCount}종 제품·TDS 보기`,
+        btnTechnical: '기술자료 허브',
+        btnQuote: '견적서 작성',
+        prodEyebrow: 'DOWSIL™ PRODUCT LINEUP',
+        prodTitle: '대표 DOWSIL(다우실) 실란트 8종',
+        prodSub: `커튼월 구조용·외장 내후성·내화·파사드 보호 등 한국건설트레이딩이 공급하는 ${productCount}종 라인업의 핵심 제품과 TDS를 바로 확인하세요.`,
+        prodDetails: '상세 정보',
+        prodAll: `전체 ${productCount}종 제품·TDS 보기`,
+        techEyebrow: 'TECHNICAL LIBRARY',
+        techTitle: 'DOWSIL 기술자료 허브 6종',
+        techSub: '내화 실란트 매뉴얼, 실란트 비교·선택, 실리콘 점착제(PSA), 실리콘 일반 교육, 전기·전자 테이프용 PSA, 산업·가전용 선정 가이드로 바로 이동하세요.',
+        techPages: '개 페이지',
+        techOpen: '자료 보기',
+        faqEyebrow: 'FAQ',
+        faqTitle: '자주 묻는 질문',
+        locationLabel: 'Location',
+        locationTitle: '오시는 길',
+        mapTitle: '한국건설트레이딩 (KCT) 오시는 길 지도',
+      };
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -26,19 +258,28 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
       {
         "@type": "LocalBusiness",
         "@id": `https://kconstrade.com/${lang}/#localbusiness`,
-        "name": isEn ? "Korea Construction Trading (KCT)" : "한국건설트레이딩 (Korea Construction Trading)",
+        "name": isEn ? "Korea Construction Trading (KCT)" : isJa ? "韓国建設トレーディング (KCT)" : "한국건설트레이딩 (Korea Construction Trading)",
         "image": "https://kconstrade.com/assets/img/logo/kct_logo.jpeg",
         "url": "https://kconstrade.com",
         "telephone": "+82-10-8939-0284",
         "email": "sales@kconstrade.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "충민로 10 4-A19 가든파이브툴",
-          "addressLocality": "송파구",
-          "addressRegion": "서울특별시",
-          "postalCode": "05840",
-          "addressCountry": "KR"
-        },
+        "address": isEn
+          ? {
+              "@type": "PostalAddress",
+              "streetAddress": "10 Chungmin-ro, 4-A19 Garden Five Tools",
+              "addressLocality": "Songpa-gu",
+              "addressRegion": "Seoul",
+              "postalCode": "05840",
+              "addressCountry": "KR"
+            }
+          : {
+              "@type": "PostalAddress",
+              "streetAddress": "충민로 10 4-A19 가든파이브툴",
+              "addressLocality": "송파구",
+              "addressRegion": "서울특별시",
+              "postalCode": "05840",
+              "addressCountry": "KR"
+            },
         "priceRange": "$$",
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
@@ -50,80 +291,21 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
       {
         "@type": "FAQPage",
         "@id": `https://kconstrade.com/${lang}/#faq`,
-        "mainEntity": isEn ? [
-          {
-            "@type": "Question",
-            "name": "What products do you supply?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Korea Construction Trading (KCT) specializes exclusively in Dow Chemical architectural and structural silicone sealants — weathersealing, structural glazing, and specialty grades. We do not source other construction materials."
-            }
+        "mainEntity": faqs.map((item) => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a,
           },
-          {
-            "@type": "Question",
-            "name": "Do you export architectural silicone globally?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we are a major exporter of architectural silicone sealants to international buyers in Japan, Taiwan, Southeast Asia, and worldwide."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How can I purchase your silicone products?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Contact us by phone, email, or WhatsApp with the product and quantity you need. Our team will confirm stock and pricing, and you can complete your purchase right after the consultation."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are there benefits for B2B bulk purchases?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely. We offer special B2B wholesale pricing, split delivery services, and comprehensive export documentation for large construction projects and international buyers."
-            }
-          }
-        ] : [
-          {
-            "@type": "Question",
-            "name": "어떤 제품을 취급하나요?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "한국건설트레이딩(KCT)은 Dow Chemical의 건축용·구조용 실리콘 전문 판매 기업입니다. 내후성 실란트, 구조용 실란트, 특수 실란트 등 건축용 실리콘 전 라인업을 취급하며, 실리콘 외 다른 건설자재는 취급하지 않습니다."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "제품 구매는 어떻게 하나요?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "전화, 이메일, 카카오톡, WhatsApp 중 편하신 방법으로 문의해 주시면 담당자가 재고와 단가를 안내해 드리며, 상담 후 바로 구매하실 수 있습니다."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "B2B 대량 구매 시 혜택이 있나요?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "네, 현장 소장님 및 건설사를 위한 특별 B2B 단가를 제공하며, 다중 현장 분할 배송 및 세금계산서 발행, 맞춤 견적 서비스를 제공합니다."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "배송 기간은 얼마나 걸리나요?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "수도권은 당일 또는 익일 배송이 가능하며, 전국 어디든 2~3일 이내에 신속하게 납품해 드립니다."
-            }
-          }
-        ]
+        })),
       }
     ]
   };
 
   return (
     <>
-      <Script id="structured-data" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       {/* Hero Slider Area */}
       <section className="position-relative overflow-hidden bg-white" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
         <div className="position-absolute top-0 start-0 w-100 h-100"
@@ -137,18 +319,24 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
           <div className="row align-items-center">
             <div className="col-lg-10 col-xl-8 mx-auto text-center text-white">
               <span className="badge rounded-pill px-3 py-2 mb-4 d-inline-block" style={{ background: 'rgba(255,255,255,0.25)', backdropFilter: 'blur(4px)', fontSize: '0.8rem', letterSpacing: '0.06em', border: '1px solid rgba(255,255,255,0.3)' }}>
-                건축용실리콘 취급업체 · Korea Construction Trading
+                {copy.badge}
               </span>
               <h1 className="display-2 mb-4 fw-bold text-white" style={{ lineHeight: 1.15, textShadow: '0 2px 12px rgba(0,0,0,0.4)' }}>
-                {dict.hero.title}
+                {copy.h1}
               </h1>
               <p className="lead mb-5 text-white fw-normal" style={{ fontSize: '1.15rem', opacity: 1, textShadow: '0 1px 6px rgba(0,0,0,0.35)' }}>
-                {dict.hero.description_1}<br className="d-none d-sm-block" />
-                {dict.hero.description_2}
+                {copy.desc1}<br className="d-none d-sm-block" />
+                {copy.desc2}
               </p>
               <div className="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://wa.me/821089390284" target="_blank" rel="noreferrer" className="btn btn-primary btn-lg px-4 px-md-5 rounded-pill fw-bold shadow-lg hover-lift">
-                  <i className="bi bi-whatsapp me-2"></i>{dict.cta.btn_whatsapp}
+                <Link href={`/${lang}/products`} className="btn btn-primary btn-lg px-4 px-md-5 rounded-pill fw-bold shadow-lg hover-lift">
+                  <i className="bi bi-grid me-2" aria-hidden="true"></i>{copy.btnProducts}
+                </Link>
+                <Link href={`/${lang}/technical`} className="btn btn-outline-white btn-lg px-4 rounded-pill fw-bold hover-lift">
+                  <i className="bi bi-journal-text me-2" aria-hidden="true"></i>{copy.btnTechnical}
+                </Link>
+                <a href="https://wa.me/821089390284" target="_blank" rel="noreferrer" className="btn btn-outline-white btn-lg px-4 rounded-pill fw-bold hover-lift">
+                  <i className="bi bi-whatsapp me-2" aria-hidden="true"></i>{dict.cta.btn_whatsapp}
                 </a>
               </div>
             </div>
@@ -172,6 +360,130 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
           </div>
         </div>
       </div>
+
+      {/* Featured DOWSIL Products Section */}
+      <section className="py-9 py-lg-11 bg-light border-bottom reveal-fade-in" aria-labelledby="home-featured-products">
+        <div className="container">
+          <div className="row justify-content-center mb-7 text-center">
+            <div className="col-lg-8">
+              <span className="h6 text-primary fw-bold text-uppercase d-block mb-2">{copy.prodEyebrow}</span>
+              <h2 id="home-featured-products" className="display-4 mb-3 fw-bold text-dark">{copy.prodTitle}</h2>
+              <p className="lead text-body-secondary mb-0">{copy.prodSub}</p>
+            </div>
+          </div>
+          <div className="row g-4">
+            {featuredProducts.map((product) => {
+              const href = `/${lang}/products/${product.slug}`;
+              const imgSrc = product.image ?? '/assets/img/logo/Dow_Chemical_Company_logo.svg';
+              const [imgW, imgH] = FEATURED_IMG_DIMS[imgSrc] ?? [600, 600];
+              const displayLabel = isEn ? product.title : product.name;
+              return (
+                <div key={product.slug} className="col-sm-6 col-lg-3">
+                  <article className="card border-0 shadow-sm rounded-4 h-100 overflow-hidden bg-white">
+                    <Link
+                      href={href}
+                      tabIndex={-1}
+                      className="d-flex align-items-center justify-content-center bg-white border-bottom p-3"
+                      style={{ height: 170 }}
+                    >
+                      <img
+                        src={imgSrc}
+                        alt={product.image ? displayLabel : `${displayLabel} — Dow`}
+                        width={imgW}
+                        height={imgH}
+                        loading="lazy"
+                        decoding="async"
+                        style={
+                          product.image
+                            ? { maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto', objectFit: 'contain' }
+                            : { width: '55%', height: 'auto', opacity: 0.35 }
+                        }
+                      />
+                    </Link>
+                    <div className="card-body d-flex flex-column p-4">
+                      <span className="badge bg-light text-primary border align-self-start mb-2 fw-semibold" style={{ fontSize: '0.72rem' }}>
+                        {product.catLabel}
+                      </span>
+                      <h3 className="h6 fw-bold text-dark mb-2">
+                        <Link href={href} className="text-dark text-decoration-none">
+                          {product.name}
+                        </Link>
+                      </h3>
+                      <p className="small text-body-secondary mb-4 flex-grow-1" style={{ lineHeight: 1.6 }}>
+                        {product.summary}
+                      </p>
+                      <div className="d-flex gap-2">
+                        <Link href={href} className="btn btn-primary btn-sm rounded-pill flex-fill fw-semibold">
+                          {copy.prodDetails}
+                        </Link>
+                        <a href={tdsUrl(product.slug)} download className="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-semibold">
+                          {product.docLabel}
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              );
+            })}
+          </div>
+          <div className="d-flex justify-content-center gap-3 flex-wrap mt-7">
+            <Link href={`/${lang}/products`} className="btn btn-primary btn-lg rounded-pill px-5 fw-bold shadow-sm hover-lift">
+              {copy.prodAll}
+            </Link>
+            <Link href={`/${lang}/quote`} className="btn btn-outline-primary btn-lg rounded-pill px-4 fw-bold hover-lift">
+              <i className="bi bi-file-earmark-text me-2" aria-hidden="true"></i>{copy.btnQuote}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Resources Hub Section */}
+      <section className="py-9 py-lg-11 bg-white border-bottom reveal-fade-in" aria-labelledby="home-technical-hubs">
+        <div className="container">
+          <div className="row justify-content-center mb-7 text-center">
+            <div className="col-lg-8">
+              <span className="h6 text-primary fw-bold text-uppercase d-block mb-2">{copy.techEyebrow}</span>
+              <h2 id="home-technical-hubs" className="display-4 mb-3 fw-bold text-dark">{copy.techTitle}</h2>
+              <p className="lead text-body-secondary mb-0">{copy.techSub}</p>
+            </div>
+          </div>
+          <div className="row g-4">
+            {orderedHubs.map((hub) => {
+              const title = isEn ? hub.title.en : isJa ? (HUB_JA[hub.key]?.title ?? hub.title.en) : hub.title.ko;
+              const desc = isEn ? hub.desc.en : isJa ? (HUB_JA[hub.key]?.desc ?? hub.desc.en) : hub.desc.ko;
+              return (
+                <div key={hub.key} className="col-md-6 col-lg-4">
+                  <Link
+                    href={`/${lang}/${hub.path}`}
+                    className="card border-0 shadow-sm rounded-4 h-100 p-4 text-decoration-none bg-light d-flex flex-column"
+                  >
+                    <div className="d-flex align-items-center justify-content-between mb-3">
+                      <span
+                        className="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary text-white"
+                        style={{ width: 44, height: 44 }}
+                      >
+                        <i className={`bi ${hub.icon} fs-5`} aria-hidden="true"></i>
+                      </span>
+                      <span className="badge bg-white text-primary border rounded-pill fw-semibold" style={{ fontSize: '0.75rem' }}>
+                        {hub.count} {copy.techPages}
+                      </span>
+                    </div>
+                    <h3 className="h6 fw-bold text-dark mb-2" style={{ lineHeight: 1.45 }}>
+                      {title}
+                    </h3>
+                    <p className="small text-body-secondary mb-3 flex-grow-1" style={{ lineHeight: 1.65 }}>
+                      {desc}
+                    </p>
+                    <span className="small fw-bold text-primary">
+                      {copy.techOpen} →
+                    </span>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* Features section */}
       <section className="position-relative border-bottom py-9 py-lg-11 bg-white reveal-fade-in">
@@ -263,23 +575,23 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                     <input type="hidden" name="redirect" value="https://kconstrade.com" />
 
                     <div className="mb-4">
-                      <label className="form-label">{(dict as any).b2b_form?.form_name ?? 'Company / Contact Name'}</label>
-                      <input type="text" name="name" className="form-control form-control-lg" placeholder={(dict as any).b2b_form?.form_name_ph ?? 'e.g. ABC Construction / John Doe'} required />
+                      <label className="form-label" htmlFor="home-1">{(dict as any).b2b_form?.form_name ?? 'Company / Contact Name'}</label>
+                      <input id="home-1" type="text" name="name" className="form-control form-control-lg" placeholder={(dict as any).b2b_form?.form_name_ph ?? 'e.g. ABC Construction / John Doe'} required />
                     </div>
 
                     <div className="mb-4">
-                      <label className="form-label">{(dict as any).auth?.email ?? 'Email'}</label>
-                      <input type="email" name="email" className="form-control form-control-lg" placeholder="name@company.com" required />
+                      <label className="form-label" htmlFor="home-2">{(dict as any).auth?.email ?? 'Email'}</label>
+                      <input id="home-2" type="email" name="email" className="form-control form-control-lg" placeholder="name@company.com" required />
                     </div>
 
                     <div className="mb-4">
-                      <label className="form-label">{(dict as any).auth?.phone ?? 'Phone'}</label>
-                      <input type="tel" name="phone" className="form-control form-control-lg" placeholder="+82 10-1234-5678" required />
+                      <label className="form-label" htmlFor="home-3">{(dict as any).auth?.phone ?? 'Phone'}</label>
+                      <input id="home-3" type="tel" name="phone" className="form-control form-control-lg" placeholder="+82 10-1234-5678" required />
                     </div>
 
                     <div className="mb-4">
-                      <label className="form-label">{(dict as any).b2b_form?.form_message ?? 'Inquiry Details'}</label>
-                      <textarea name="message" className="form-control form-control-lg" rows={5} placeholder={(dict as any).b2b_form?.form_message_ph ?? 'Please include the materials, quantities, and site location.'} required></textarea>
+                      <label className="form-label" htmlFor="home-4">{(dict as any).b2b_form?.form_message ?? 'Inquiry Details'}</label>
+                      <textarea id="home-4" name="message" className="form-control form-control-lg" rows={5} placeholder={(dict as any).b2b_form?.form_message_ph ?? 'Please include the materials, quantities, and site location.'} required></textarea>
                     </div>
 
                     <div className="d-grid mt-5">
@@ -287,6 +599,34 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
                     </div>
                   </form>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section (matches FAQPage JSON-LD) */}
+      <section className="py-9 py-lg-11 bg-white border-top reveal-fade-in" aria-labelledby="home-faq-title">
+        <div className="container">
+          <div className="row justify-content-center mb-7 text-center">
+            <div className="col-lg-8">
+              <span className="h6 text-primary fw-bold text-uppercase d-block mb-2">{copy.faqEyebrow}</span>
+              <h2 id="home-faq-title" className="display-4 mb-0 fw-bold text-dark">{copy.faqTitle}</h2>
+            </div>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+              <div className="d-flex flex-column gap-3">
+                {faqs.map((item, idx) => (
+                  <details key={idx} className="card border rounded-4 p-4 bg-light" open={idx === 0}>
+                    <summary className="fw-bold text-dark" style={{ cursor: 'pointer', lineHeight: 1.5 }}>
+                      {item.q}
+                    </summary>
+                    <p className="text-body-secondary mb-0 mt-3" style={{ lineHeight: 1.75 }}>
+                      {item.a}
+                    </p>
+                  </details>
+                ))}
               </div>
             </div>
           </div>
@@ -339,7 +679,7 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
         </div>
         {/* Background decorative elements */}
         <div className="position-absolute top-0 end-0 mt-n5 me-n5 opacity-25">
-           <img src="/assets/img/vectors/pattern-dots.svg" alt="pattern" width="300" height="300" />
+           <img src="/assets/img/vectors/pattern-dots.svg" alt="" aria-hidden="true" width={78} height={172} loading="lazy" decoding="async" style={{ width: '160px', height: 'auto' }} />
         </div>
       </section>
       {/* Location / Map Section */}
@@ -347,22 +687,22 @@ export default async function Home({ params }: { params: Promise<{ lang: 'ko' | 
         <div className="container">
           <div className="row justify-content-center mb-7 text-center">
             <div className="col-lg-8">
-              <span className="h6 text-primary fw-bold text-uppercase">Location</span>
-              <h2 className="display-4 mb-3 fw-bold text-dark">오시는 길</h2>
+              <span className="h6 text-primary fw-bold text-uppercase">{copy.locationLabel}</span>
+              <h2 className="display-4 mb-3 fw-bold text-dark">{copy.locationTitle}</h2>
             </div>
           </div>
           <div className="row justify-content-center">
             <div className="col-12">
               <div className="card border-0 shadow-lg overflow-hidden rounded-4">
                 <iframe
-                  src="https://maps.google.com/maps?q=37.478626,127.1192753&hl=ko&z=16&output=embed"
+                  src={`https://maps.google.com/maps?q=37.478626,127.1192753&hl=${lang}&z=16&output=embed`}
                   width="100%"
                   height="450"
                   style={{ border: 0 }}
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Google Map"
+                  title={copy.mapTitle}
                 ></iframe>
               </div>
               <div className="card border-0 shadow-sm rounded-4 mt-4 p-4 text-dark">
