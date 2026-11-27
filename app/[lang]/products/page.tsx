@@ -95,23 +95,13 @@ export default async function ProductsPage({
       {
         "@type": "ItemList",
         "name": lang === 'en' ? 'Architectural Silicone Products' : '건축용 실리콘 제품 목록',
-        "itemListElement": products.map((product, index) => {
-          const slug = product.slug;
-          return {
-            "@type": "ListItem",
-            "position": index + 1,
-            "item": {
-              "@type": "Product",
-              "name": productName(product),
-              "url": `https://kconstrade.com/${lang}/products/${slug}`,
-              "image": product.image_url ? `https://kconstrade.com${product.image_url}` : `https://kconstrade.com/assets/img/og-image.png`,
-              "brand": {
-                "@type": "Brand",
-                "name": product.brand
-              }
-            }
-          };
-        })
+        // 목록 페이지에는 Product 형식을 중첩하지 않는다 (가격·리뷰가 없으면 제품 스니펫 오류) — 이름·URL만 제공
+        "itemListElement": products.map((product, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": productName(product),
+          "url": `https://kconstrade.com/${lang}/products/${product.slug}`,
+        }))
       }
     ]
   };
