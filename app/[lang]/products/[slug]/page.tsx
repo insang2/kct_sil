@@ -6,6 +6,7 @@ import Link from 'next/link'
 import type { Product } from '@/lib/pricing'
 import { bySlug, tdsUrl, CATEGORIES } from '@/lib/products-catalog'
 import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en'
+import { aliasesOf, productFaq } from '@/lib/product-seo'
 
 // ── Fallback product data (used when Supabase unavailable or fields not yet filled) ──
 const FALLBACKS: Record<string, Partial<Product> & {
@@ -196,13 +197,17 @@ export async function generateMetadata({
     ? `${product.name_ko} - Dow(ダウ) 建築用・構造用シリコーンシーラント。韓国建設トレーディング (KCT) 供給、B2B卸売・輸出見積対応。`
     : (product.description_ko ? product.description_ko.slice(0, 160) : `${product.name_ko} - 한국건설트레이딩(KCT) 공식 취급 공급. B2B 대량 특가 견적 및 신속 현장 납품.`)
 
+  const aliasList = aliasesOf(slug)
+  const keywords = [product.name_ko, product.name_en, ...aliasList, 'TDS', 'DOWSIL', isEn ? 'silicone sealant Korea' : '실리콘 실란트', isEn ? 'Korea Construction Trading' : '한국건설트레이딩'].filter(Boolean) as string[]
+
   const ogImage = product.image_url
     ? `https://kconstrade.com${product.image_url}`
     : 'https://kconstrade.com/assets/img/og-image.png'
 
   return {
     title,
-    description,
+    description: cl ? `${isEn ? '' : `${aliasList.slice(0, 2).join(' · ')}. `}${description}`.slice(0, isEn ? 320 : 220) : description,
+    keywords,
     alternates: {
       canonical: `https://kconstrade.com/${lang === 'ja' ? 'ko' : lang}/products/${slug}`, // ja는 한국어 본문이라 ko로 통합
       languages: {
@@ -257,6 +262,7 @@ export default async function ProductDetailPage({
   const isJa = lang === 'ja'
   const displayName = (isEn && product.name_en) ? product.name_en : product.name_ko
 
+  const faqItems = lang === 'ja' ? [] : productFaq(slug, isEn ? 'en' : 'ko')
   const productSchema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -291,15 +297,16 @@ export default async function ProductDetailPage({
         sku: product.sku || slug,
         mpn: product.sku || slug,
         image: product.image_url ? [`https://kconstrade.com${product.image_url}`] : ['https://kconstrade.com/assets/img/og-image.png'],
+        alternateName: aliasesOf(slug),
+        // B2B 견적 제품이라 가격은 표기하지 않는다 (가격 0 표기는 실제 화면과 불일치)
         offers: {
           '@type': 'Offer',
           seller: { '@type': 'Organization', name: '한국건설트레이딩 (KCT)' },
-          availability: 'https://schema.org/InStock',
-          priceCurrency: isEn ? 'USD' : 'KRW',
-          price: (product as any).price_standard || (product as any).list_price || 0,
+          eligibleCustomerType: 'https://purl.org/goodrelations/v1#Business',
           url: `https://kconstrade.com/${lang}/products/${slug}`,
         },
       },
+      ...(faqItems.length ? [{ '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }] : []),
     ],
   }
 
@@ -355,6 +362,7 @@ export default async function ProductDetailPage({
               </div>
 
               <h1 className="display-5 fw-bold text-dark mb-3">{product.name_ko}</h1>
+              <p className="text-body-secondary mb-2" style={{ fontSize: '0.88rem' }}>{isEn ? 'Also known as' : '다른 이름·표기'}: {aliasesOf(slug).join(' · ')}</p>
               {product.name_en && (
                 <p className="text-body-secondary mb-4" style={{ fontSize: '0.95rem' }}>{product.name_en}</p>
               )}
@@ -537,6 +545,20 @@ export default async function ProductDetailPage({
       </section>
 
       {/* CTA */}
+      {faqItems.length > 0 && (
+        <section className="py-9 bg-white" aria-labelledby="product-faq">
+          <div className="container" style={{ maxWidth: 860 }}>
+            <h2 id="product-faq" className="fw-bold mb-3">{isEn ? 'Frequently asked questions' : '자주 묻는 질문'}</h2>
+            {faqItems.map((f, i) => (
+              <details key={i} className="tx-faq" open={i === 0}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="py-9 bg-primary text-white">
         <div className="container">
           <div className="row align-items-center justify-content-between g-4">

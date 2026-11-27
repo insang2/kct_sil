@@ -121,8 +121,12 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": ["Organization", "LocalBusiness"],
+              "@id": "https://kconstrade.com/#organization",
               "name": "KOREA CONSTRUCTION TRADING (한국건설트레이딩)",
+              "telephone": "+82-10-8939-0284",
+              "email": "sales@kconstrade.com",
+              "image": "https://kconstrade.com/assets/img/og-image.png",
               "alternateName": ["KCT", "Korea Construction Trading", "한국건설트레이딩"],
               "description": "Architectural silicone wholesale supplier and global exporter.",
               "url": "https://kconstrade.com",
@@ -148,6 +152,21 @@ export default async function RootLayout({
                 "https://www.instagram.com/kct.rading",
                 "https://smartstore.naver.com/kconstrade/"
               ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://kconstrade.com/#website",
+              "url": "https://kconstrade.com",
+              "name": "한국건설트레이딩 (KCT)",
+              "alternateName": ["KCT", "Korea Construction Trading", "한국건설트레이딩"],
+              "inLanguage": ["ko", "en", "ja"],
+              "publisher": { "@id": "https://kconstrade.com/#organization" }
             })
           }}
         />

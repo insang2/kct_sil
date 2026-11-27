@@ -5,7 +5,7 @@ import { IPAGES } from '@/lib/industrial/pages'
 import { SERIES } from '@/lib/series/config'
 import { HUBS, TECH_UPDATED } from '@/lib/series/hubs'
 
-export const PRODUCTS_UPDATED = '2026-11-26'
+export const PRODUCTS_UPDATED = '2026-11-27'
 export const BASE = 'https://kconstrade.com'
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')

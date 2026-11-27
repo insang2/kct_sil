@@ -15,10 +15,11 @@ const norm = (lang: string): 'ko' | 'en' => (lang === 'ko' ? 'ko' : 'en')
 export async function generateMetadata({ params }: { params: Promise<P> }): Promise<Metadata> {
   const { lang } = await params
   const ko = norm(lang) === 'ko'
-  const title = ko ? '기술정보 | DOWSIL™ 내화 실란트 기술 매뉴얼 | 한국건설트레이딩 (KCT)' : 'Technical Information | DOWSIL™ Fire-rated Sealant Technical Manual | KCT'
+  const total = searchIndex(lang, norm(lang)).length
+  const title = ko ? '기술정보 | DOWSIL 내화·산업용·PSA·실리콘 교육 기술자료 | 한국건설트레이딩 (KCT)' : 'Technical Information | DOWSIL Fire-rated, Industrial, PSA and Silicone Basics | KCT'
   const description = ko
-    ? 'Dow 내화(Fire-rated) 기술 매뉴얼을 한국어·영문으로 정리: 화재 반응성, 내화 성능, 선형 줄눈·관통부 시험 결과, 연기 차단, 커튼월, 시공 지침, 폼 시공.'
-    : 'Dow fire-rated technical manual in English and Korean: reaction to fire, fire resistance, linear joint and penetration seal test results, smoke barriers, curtain walls, application guidelines and foam installation.'
+    ? `Dow DOWSIL 기술 자료 ${HUBS.length}종 ${total}쪽을 한국어·영문으로 수록: 내화 실란트 매뉴얼, 산업·가전용 선정 가이드, 실리콘 교육, PSA 선택 요령, 전기·전자 테이프용 PSA. 한국건설트레이딩이 기술 지원을 위해 최선을 다합니다.`
+    : `${HUBS.length} Dow DOWSIL technical resources in ${total} pages, in English and Korean: fire-rated sealant manual, industrial and appliance selection guide, silicone basics, PSA selection guide and electrical tape PSAs. Technical support from Korea Construction Trading.`
   return {
     title,
     description,

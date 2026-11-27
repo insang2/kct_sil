@@ -92,6 +92,11 @@ export const txCss = `
 .tx aside ol a,.tx aside ul a{color:var(--tx-mute) !important}
 .tx aside ol a[style*="font-weight: 700"],.tx aside a.is-active{color:var(--tx-fg) !important}
 .tx .tech-orig{background:#fff;border:1px solid var(--tx-line)}
+.tx .tech-table a{color:#1558D6 !important;text-decoration:underline;text-underline-offset:2px}
+.tx-faq a{color:#1558D6}
+.tx-faq{border-top:1px solid var(--tx-line);padding:1rem 0}
+.tx-faq summary{cursor:pointer;font-weight:600;font-size:1.05rem;line-height:1.5}
+.tx-faq p{margin:.7rem 0 0;color:var(--tx-fg);line-height:1.85}
 .tx-foot{font-size:.9rem;color:var(--tx-mute)}
 /* 제품 정보: 색인 바, 용도별 블록, 제품 타일 */
 .tx-index{position:sticky;top:76px;z-index:20;background:#fff;border-bottom:1px solid var(--tx-line);overflow-x:auto}

@@ -5,6 +5,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Tx from '@/components/tech/Tx';
 import { CAT_INTRO } from '@/lib/products-roles';
+import { techCss } from '@/components/tech/TechBlocks';
+import { aliasesOf } from '@/lib/product-seo';
 
 export async function generateMetadata({
   params,
@@ -19,13 +21,13 @@ export async function generateMetadata({
     ? 'DOWSIL™ Silicone Sealants – 30 Products & TDS | Korea Construction Trading (KCT)'
     : isJa
     ? '建築用シリコーン製品一覧 | 韓国建設トレーディング (KCT)'
-    : 'DOWSIL 실리콘 실란트 30종 · TDS 다운로드 | 한국건설트레이딩 (KCT)';
+    : 'DOWSIL(다우실) 실리콘 실란트 30종 · TDS·색상 | 한국건설트레이딩 (KCT)';
 
   const description = isEn
     ? 'DOWSIL™ sealants by category: building envelope, GMP, civil, insulating glass, specialty, primers. TDS download for all 30 products. B2B supply & export.'
     : isJa
     ? 'DOWSIL™ 建築用・構造用シリコーンシーラント全製品ラインナップ。B2B卸売・グローバル輸出対応。'
-    : 'Dow 다우 DOWSIL 건축 외장·GMP·토목·복층유리·특수용·프라이머 실란트 30종. 제품별 TDS(기술자료) PDF 다운로드와 기술 사양, B2B 도매·수출 공급.';
+    : 'Dow DOWSIL(다우실) 구조용·내후성·내화·복층유리·GMP·토목·프라이머 실란트 30종. 제품별 TDS(기술자료) PDF 다운로드, 색상·포장·사양, 기술 지원과 B2B 견적.';
 
   return {
     title,
@@ -146,6 +148,7 @@ export default async function ProductsPage({
           {cats.map((c, i) => (
             <a key={c.key} href={`#cat-${c.key}`}><span>{String(i + 1).padStart(2, '0')}</span>{c.label}<span>{products.filter((p) => p.category === c.key).length}</span></a>
           ))}
+          <a href="#tds-colors"><span>TDS</span>{isEn ? 'TDS · colors' : 'TDS · 색상'}</a>
         </div>
       </nav>
 
@@ -208,6 +211,32 @@ export default async function ProductsPage({
             </section>
           );
         })}
+
+        <section id="tds-colors" className="tx-cat" aria-labelledby="h-tds">
+          <div className="tx-cat-no">TDS · {isEn ? 'Colors · Packaging' : '색상 · 포장'}</div>
+          <h2 id="h-tds" className="tx-sec-h">{isEn ? 'TDS, colors and packaging at a glance' : 'TDS · 색상 · 포장 한눈에 보기'}</h2>
+          <p className="tx-sec-sub">{isEn ? 'Download the technical data sheet (TDS) of every product and check colors and packaging as stated in the TDS. Ask us for the latest color chart and availability.' : '모든 제품의 기술 데이터시트(TDS) PDF를 바로 받고, TDS에 표기된 색상과 포장을 확인하세요. 최신 색상표(color chart)와 재고는 문의해 주세요.'}</p>
+          <style dangerouslySetInnerHTML={{ __html: techCss }} />
+          <div className="tech-table-wrap" tabIndex={0} role="region" aria-label={isEn ? 'TDS, colors and packaging table (scrollable)' : 'TDS·색상·포장 표 (가로 스크롤 가능)'}>
+            <table className="table table-sm tech-table mb-0">
+              <thead><tr><th>{isEn ? 'Product' : '제품'}</th><th>{isEn ? 'Also known as' : '다른 이름·표기'}</th><th>{isEn ? 'Colors' : '색상'}</th><th>{isEn ? 'Packaging' : '포장'}</th><th>TDS</th></tr></thead>
+              <tbody>
+                {products.map((pr) => {
+                  const sp = pr.specs as Record<string, string>;
+                  return (
+                    <tr key={pr.slug}>
+                      <td><Link href={`/${lang}/products/${pr.slug}`}>{pr.name}</Link></td>
+                      <td>{aliasesOf(pr.slug).slice(0, 3).join(' · ')}</td>
+                      <td>{(isEn ? sp['Colors'] : sp['색상']) || '–'}</td>
+                      <td>{(isEn ? sp['Packaging'] : sp['포장']) || '–'}</td>
+                      <td><a href={tdsUrl(pr.slug)} download>{pr.docLabel ?? 'TDS'} (PDF)</a></td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
 
         <div className="tx-notes">
           <div><h3>{isEn ? 'About the values' : '자료 수치 안내'}</h3><p>{isEn ? 'Product data is summarized from Dow TDS; values are typical properties, not specifications. The linked TDS PDFs are authoritative.' : '제품 정보는 Dow TDS를 요약한 것이며 수치는 대표 특성이지 규격값이 아닙니다. 기준은 링크된 TDS 원문입니다.'}</p></div>
