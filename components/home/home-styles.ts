@@ -80,10 +80,12 @@ export const homeCss = `
 .tx .th-pcard-body h3 a:hover{color:var(--tx-accent)}
 .tx .th-pcard-body p{margin:0;color:var(--tx-mute);font-size:.88rem;line-height:1.58;flex:1}
 .tx .th-pcard-act{display:flex;gap:.5rem;padding:.75rem 1.25rem 1.15rem}
-.tx .th-pcard-act a{flex:1;display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:999px;font-size:.85rem;font-weight:600;text-decoration:none;border:1px solid var(--tx-line);color:var(--tx-fg);transition:background .2s,border-color .2s,color .2s}
+.tx .th-pcard-act a,.tx .th-pcard-act button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.3rem;min-height:44px;padding:.4rem .6rem;border-radius:999px;font-size:.85rem;font-weight:600;text-decoration:none;border:1px solid var(--tx-line);color:var(--tx-fg);background:#FFFFFF;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
 .tx .th-pcard-act a:first-child{background:var(--tx-fg);border-color:var(--tx-fg);color:#FFFFFF}
 .tx .th-pcard-act a:first-child:hover{background:var(--tx-accent);border-color:var(--tx-accent)}
-.tx .th-pcard-act a:last-child:hover{border-color:var(--tx-fg)}
+.tx .th-pcard-act a:last-child:hover,.tx .th-pcard-act button:last-child:hover{border-color:var(--tx-fg)}
+.tx .th-pcard-act .kct-tds-btn-dl{border-color:var(--tx-accent);color:var(--tx-accent)}
+.tx .th-pcard-act .kct-tds-btn-dl:hover{background:var(--tx-accent);border-color:var(--tx-accent);color:#FFFFFF}
 .tx .th-prod-foot{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-top:2.25rem}
 
 /* ⑤ 기술정보 허브 6곳 타일 */

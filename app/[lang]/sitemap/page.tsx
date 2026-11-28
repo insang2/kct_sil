@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Tx from '@/components/tech/Tx'
-import { CATALOG, CATEGORIES, tdsUrl } from '@/lib/products-catalog'
+import { CATALOG, CATEGORIES } from '@/lib/products-catalog'
 import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en'
+
+const PUBLIC_LEED_SLUGS = new Set(['dowsil-1200-os'])
 import { PAGES as FIRE_PAGES } from '@/lib/tech-manual'
 import { IPAGES } from '@/lib/industrial/pages'
 import { SERIES } from '@/lib/series/config'
@@ -84,7 +86,7 @@ export default async function HtmlSitemapPage({
     { href: `/${lang}`, title: ko ? '홈' : 'Home', desc: ko ? '한국건설트레이딩(KCT) 메인 및 B2B 문의' : 'Korea Construction Trading (KCT) home & B2B inquiry' },
     { href: `/${lang}/about`, title: ko ? '회사소개' : 'About KCT', desc: ko ? '회사 개요, 사업자 정보 및 연락처' : 'Company profile, location and contacts' },
     { href: `/${lang}/products`, title: ko ? `제품정보 (DOWSIL™ ${CATALOG.length}종)` : `Products (${CATALOG.length} DOWSIL™ items)`, desc: ko ? '6개 제품군별 실란트·코팅·프라이머 카탈로그' : 'Full catalog across 6 product lines' },
-    { href: `/${lang}/tds`, title: ko ? 'TDS 다운로드 센터' : 'TDS Download Center', desc: ko ? '전 제품 30종 TDS PDF 및 핵심 물성 3항목 요약' : 'Direct TDS PDFs and 3 key properties for all 30 products' },
+    { href: `/${lang}/tds`, title: ko ? 'TDS 자료실' : 'TDS Center', desc: ko ? '전 제품 30종 핵심 물성 3항목 요약 및 TDS 다운로드(승인 회원)·전송 요청' : '3 key properties and TDS access (member download / request) for all 30 products' },
     { href: `/${lang}/technical`, title: ko ? '기술정보 허브' : 'Technical Library', desc: ko ? 'Dow 매뉴얼·선정 가이드·교육 자료 6개 허브' : '6 hubs of Dow technical manuals and selection guides' },
     { href: `/${lang}/export`, title: ko ? '수출 문의' : 'Export Inquiry', desc: ko ? '해외 바이어용 FOB·CIF 조건 및 수출 서류 안내' : 'FOB/CIF export terms and international buyer inquiries' },
     { href: `/${lang}/quote`, title: ko ? '견적 요청' : 'Request a Quote', desc: ko ? '국내 B2B·현장 납품 맞춤 견적 신청' : 'B2B pricing and project supply quotations' },
@@ -215,7 +217,7 @@ export default async function HtmlSitemapPage({
               <h2 id="h-sm-products" className="h3 fw-bold mb-0">{ko ? `DOWSIL™ 전 제품 (${CATALOG.length}종)` : `All DOWSIL™ Products (${CATALOG.length})`}</h2>
             </div>
             <Link href={`/${lang}/tds`} className="small fw-semibold text-decoration-none" style={{ color: '#1558D6' }}>
-              {ko ? 'TDS 다운로드 센터 열기 →' : 'Open TDS Download Center →'}
+              {ko ? 'TDS 자료실 열기 →' : 'Open TDS Center →'}
             </Link>
           </div>
           <div className="row g-4">
@@ -240,9 +242,25 @@ export default async function HtmlSitemapPage({
                             <Link href={`/${lang}/products/${p.slug}`} className="text-decoration-none fw-medium" style={{ color: '#16142F' }} title={loc.summary}>
                               {p.name}
                             </Link>
-                            <a href={tdsUrl(p.slug)} download className="small text-decoration-none text-nowrap" style={{ color: '#1558D6', fontSize: '0.78rem' }}>
-                              {p.docLabel ? (ko ? p.docLabel : 'LEED') : 'TDS'}
-                            </a>
+                            {PUBLIC_LEED_SLUGS.has(p.slug) ? (
+                              <a
+                                href={`/tds/${p.slug}.pdf`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="small text-decoration-none text-nowrap"
+                                style={{ color: '#1558D6', fontSize: '0.78rem' }}
+                              >
+                                {ko ? (p.docLabel ?? 'LEED 확인서') : 'LEED'}
+                              </a>
+                            ) : (
+                              <Link
+                                href={`/${lang}/tds?product=${p.slug}`}
+                                className="small text-decoration-none text-nowrap"
+                                style={{ color: '#1558D6', fontSize: '0.78rem' }}
+                              >
+                                TDS
+                              </Link>
+                            )}
                           </li>
                         )
                       })}

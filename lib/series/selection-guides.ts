@@ -574,8 +574,8 @@ export const PAGES: IPage[] = [
             'Dow, 「DOWSIL™ 산업·가전·유지보수용 실리콘 실란트 및 폼 – 선정 가이드」, Form No. 80-8283-01-0922 S2D (표 I 실란트 화학, 시공과 경화).',
           ],
           [
-            'KCT DOWSIL™ Product Catalog & Dow Product Technical Data Sheets (lib/products-catalog.ts & /tds/*.pdf): DOWSIL™ 789, 791, 795, 995, 121, 977, 991, 813C, 1001, Double-N, Sanitary, 786+, SE 5088, 888, 890-SL, 902 RCS, 335, 939, 982, 983, 993, FIRESTOP 700, Hi-Temp, Primer-C, 1200 OS.',
-            '한국건설트레이딩(KCT) DOWSIL™ 제품 카탈로그 및 각 제품 Dow TDS(lib/products-catalog.ts, /tds/*.pdf): DOWSIL™ 789·791·795·995·121·977·991·813C·1001·Double-N·Sanitary·786+·SE 5088·888·890-SL·902 RCS·335·939·982·983·993·FIRESTOP 700·Hi-Temp·Primer-C·1200 OS.',
+            'KCT DOWSIL™ Product Catalog & Dow Product Technical Data Sheets (KCT TDS Center /en/tds): DOWSIL™ 789, 791, 795, 995, 121, 977, 991, 813C, 1001, Double-N, Sanitary, 786+, SE 5088, 888, 890-SL, 902 RCS, 335, 939, 982, 983, 993, FIRESTOP 700, Hi-Temp, Primer-C, 1200 OS.',
+            '한국건설트레이딩(KCT) DOWSIL™ 제품 카탈로그 및 각 제품 Dow TDS(KCT TDS 자료실 /ko/tds): DOWSIL™ 789·791·795·995·121·977·991·813C·1001·Double-N·Sanitary·786+·SE 5088·888·890-SL·902 RCS·335·939·982·983·993·FIRESTOP 700·Hi-Temp·Primer-C·1200 OS.',
           ],
         ),
       ),
@@ -694,7 +694,7 @@ export const PAGES: IPage[] = [
             ['DOWSIL™ 977', bi('300 mL cartridge · 500 mL sausage', '300 mL 카트리지 · 500 mL 소시지'), 'Dow TDS (62-2002-01 B)'],
             ['DOWSIL™ 991', bi('500/600 mL Turbo foil sausages', '500/600 mL 터보 포일 소시지'), 'Dow TDS (63-1072-01-0226 S2D)'],
             ['DOWSIL™ 813C', bi('310 mL cartridge (12/box) · 600 mL sausage (20/box)', '310 mL 카트리지(12개/박스) · 600 mL 소시지(20개/박스)'), 'Dow TDS (62-1451-01-1124 S2D)'],
-            ['DOWSIL™ 1001', bi('300 mL cartridge · 500 mL foil', '300 mL 카트리지 · 500 mL 포일'), 'Dow TDS (/tds/dowsil-1001.pdf)'],
+            ['DOWSIL™ 1001', bi('300 mL cartridge · 500 mL foil', '300 mL 카트리지 · 500 mL 포일'), 'Dow TDS (DOWSIL™ 1001)'],
             ['DOWSIL™ FIRESTOP 700', bi('310 mL cartridge (12/box) · 20 L pail', '310 mL 카트리지(12개/박스) · 20 L 페일'), 'Catalog & Dow TDS (62-0905-01-1020 S2D)'],
             ['DOWSIL™ 786+', bi('310 mL cartridge (12/box)', '310 mL 카트리지(12개/박스)'), 'Dow TDS (62-2298-01-0425 S2D)'],
             [
@@ -875,8 +875,8 @@ export const PAGES: IPage[] = [
         '참고 출처',
         ul(
           [
-            'Dow Technical Data Sheets (/tds/*.pdf): DOWSIL™ 789 (Form No. 63-1244-43-0725 S2D, Table 1 & joint design), DOWSIL™ 791 (63-6149-43-0325 S2D), DOWSIL™ 795 (63-1217-43-0124 S2D), DOWSIL™ 977 (62-2002-01 B), DOWSIL™ 991 (63-1072-01-0226 S2D), DOWSIL™ 995 (63-6337-43 A), DOWSIL™ 813C (62-1451-01-1124 S2D), DOWSIL™ FIRESTOP 700 (62-0905-01-1020 S2D, Table 4), DOWSIL™ 786+ (62-2298-01-0425 S2D), DOWSIL™ Primer-C (63-1079-01-0623A S2D).',
-            'Dow 제품 기술 데이터시트(/tds/*.pdf): DOWSIL™ 789(Form No. 63-1244-43-0725 S2D, 표 1 및 조인트 설계), 791(63-6149-43-0325 S2D), 795(63-1217-43-0124 S2D), 977(62-2002-01 B), 991(63-1072-01-0226 S2D), 995(63-6337-43 A), 813C(62-1451-01-1124 S2D), FIRESTOP 700(62-0905-01-1020 S2D, 표 4), 786+(62-2298-01-0425 S2D), Primer-C(63-1079-01-0623A S2D).',
+            'Dow Technical Data Sheets (KCT TDS Center /en/tds): DOWSIL™ 789 (Form No. 63-1244-43-0725 S2D, Table 1 & joint design), DOWSIL™ 791 (63-6149-43-0325 S2D), DOWSIL™ 795 (63-1217-43-0124 S2D), DOWSIL™ 977 (62-2002-01 B), DOWSIL™ 991 (63-1072-01-0226 S2D), DOWSIL™ 995 (63-6337-43 A), DOWSIL™ 813C (62-1451-01-1124 S2D), DOWSIL™ FIRESTOP 700 (62-0905-01-1020 S2D, Table 4), DOWSIL™ 786+ (62-2298-01-0425 S2D), DOWSIL™ Primer-C (63-1079-01-0623A S2D).',
+            'Dow 제품 기술 데이터시트(KCT TDS 자료실 /ko/tds): DOWSIL™ 789(Form No. 63-1244-43-0725 S2D, 표 1 및 조인트 설계), 791(63-6149-43-0325 S2D), 795(63-1217-43-0124 S2D), 977(62-2002-01 B), 991(63-1072-01-0226 S2D), 995(63-6337-43 A), 813C(62-1451-01-1124 S2D), FIRESTOP 700(62-0905-01-1020 S2D, 표 4), 786+(62-2298-01-0425 S2D), Primer-C(63-1079-01-0623A S2D).',
           ],
           [
             'KCT DOWSIL™ Product Catalog (lib/products-catalog.ts) & Dow Industrial Selection Guide (Form No. 80-8283-01-0922 S2D, Surface Preparation & Primers).',

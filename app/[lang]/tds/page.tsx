@@ -1,9 +1,13 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Tx from '@/components/tech/Tx'
 import { techCss } from '@/components/tech/TechBlocks'
-import { CATALOG, CATEGORIES, tdsUrl, type CatalogProduct } from '@/lib/products-catalog'
+import TdsAccess, { TdsCenterAutoOpen } from '@/components/tds/TdsAccess'
+import { CATALOG, CATEGORIES, type CatalogProduct } from '@/lib/products-catalog'
 import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en'
+
+const PUBLIC_LEED_SLUGS = new Set(['dowsil-1200-os'])
 
 const BASE = 'https://kconstrade.com'
 const SITE_NAME = '한국건설트레이딩 (KCT)'
@@ -23,12 +27,12 @@ export async function generateMetadata({
   const ko = norm(lang) === 'ko'
 
   const title = ko
-    ? 'DOWSIL 전 제품 30종 TDS 다운로드 센터 | KCT'
-    : 'DOWSIL™ TDS Download Center (30 Products) | KCT'
+    ? 'DOWSIL 전 제품 30종 TDS 자료실 · 요청 센터 | KCT'
+    : 'DOWSIL™ TDS Center (30 Products) | KCT'
 
   const description = ko
-    ? 'DOWSIL(다우실) 건축·구조·GMP·토목·복층유리·특수·프라이머 30종의 TDS PDF 다운로드, 제품 유형, 핵심 물성 3항목과 KCT 기술 지원 안내.'
-    : 'Download Dow DOWSIL™ Technical Data Sheets (TDS) for all 30 sealants and primers, with product types, three key properties and KCT support.'
+    ? 'DOWSIL(다우실) 건축·구조·GMP·토목·복층유리·특수·프라이머 30종의 핵심 물성 3항목 요약과 TDS 다운로드(승인 회원)·이메일 전송 요청 안내.'
+    : 'Dow DOWSIL™ Technical Data Sheets (TDS) for all 30 sealants and primers: product types, three key properties, instant download for approved members and email delivery requests.'
 
   const canonicalLang = lang === 'ja' ? 'en' : lang
 
@@ -179,8 +183,12 @@ function pickTop3Props(c: CatalogProduct, ko: boolean): { key: string; value: st
 const FAQS = {
   ko: [
     {
-      q: '이 페이지에서 제공하는 DOWSIL™ TDS PDF는 어떤 제품군을 포함하나요?',
-      a: '한국건설트레이딩(KCT) 카탈로그에 수록된 건축 외장, GMP·위생, 토목용, 복층유리, 특수용, 프라이머 등 전 제품 30종의 문서를 한곳에서 내려받을 수 있습니다. DOWSIL™ 1200 OS는 Dow LEED/VOC 확인서(2025-01-01) PDF가 연결되어 있습니다.',
+      q: 'DOWSIL™ TDS PDF는 어떻게 받을 수 있나요?',
+      a: 'TDS는 승인된 회원에게 바로 다운로드로 제공되며, 비회원이나 승인 대기 중인 회원은 각 제품의 「TDS 요청」 버튼으로 전송을 요청하시면 담당자가 확인 후 이메일로 다운로드 링크를 보내드립니다. DOWSIL™ 1200 OS의 LEED/VOC 확인서(2025-01-01)는 별도 요청 없이 바로 열람할 수 있습니다.',
+    },
+    {
+      q: '이 페이지에서 다루는 DOWSIL™ 제품군은 어떤 것들이 있나요?',
+      a: '한국건설트레이딩(KCT) 카탈로그에 수록된 건축 외장, GMP·위생, 토목용, 복층유리, 특수용, 프라이머 등 전 제품 30종의 제품 유형과 핵심 물성 3항목을 한눈에 비교하고 필요한 TDS를 다운로드하거나 요청할 수 있습니다.',
     },
     {
       q: '표에 나온 핵심 물성 수치를 시방서 작성에 그대로 사용해도 되나요?',
@@ -192,13 +200,17 @@ const FAQS = {
     },
     {
       q: '구 Dow Corning(다우코닝) 제품 번호로 적힌 시방서의 TDS는 어떻게 찾나요?',
-      a: '기존 Dow Corning® 789·791·795·995·993·983·888·890-SL·ALLGUARD 등은 현재 DOWSIL™ 브랜드로 동일 번호 체계로 공급됩니다. 아래 표에서 동일 모델 번호의 제품명 또는 TDS 링크를 선택하시면 됩니다.',
+      a: '기존 Dow Corning® 789·791·795·995·993·983·888·890-SL·ALLGUARD 등은 현재 DOWSIL™ 브랜드로 동일 번호 체계로 공급됩니다. 아래 표에서 동일 모델 번호의 제품명 또는 TDS 버튼을 선택하시면 됩니다.',
     },
   ],
   en: [
     {
-      q: 'Which DOWSIL™ product lines are covered in this TDS Download Center?',
-      a: 'All 30 products in the Korea Construction Trading (KCT) catalog across Building Envelope, GMP/Hygienic, Civil Engineering, Insulating Glass, Specialty and Primers are listed with direct PDF downloads (DOWSIL™ 1200 OS links to Dow’s LEED/VOC letter dated 2025-01-01).',
+      q: 'How can I obtain DOWSIL™ TDS PDFs?',
+      a: 'Approved B2B members can download TDS PDFs immediately after signing in. Non-members or accounts pending approval can click "Request TDS" on any product and our team will email a time-limited download link after review. Dow’s LEED/VOC letter for DOWSIL™ 1200 OS (2025-01-01) remains publicly accessible.',
+    },
+    {
+      q: 'Which DOWSIL™ product lines are covered in this TDS Center?',
+      a: 'All 30 products in the Korea Construction Trading (KCT) catalog across Building Envelope, GMP/Hygienic, Civil Engineering, Insulating Glass, Specialty and Primers are listed with product types, three key properties, and TDS access.',
     },
     {
       q: 'Can the three key properties in the table be used directly as project specifications?',
@@ -240,10 +252,10 @@ export default async function TdsCenterPage({
       {
         '@type': 'CollectionPage',
         '@id': pageUrl,
-        name: ko ? 'DOWSIL™ 전 제품 30종 TDS 다운로드 센터' : 'DOWSIL™ TDS Download Center (30 Products)',
+        name: ko ? 'DOWSIL™ 전 제품 30종 TDS 자료실' : 'DOWSIL™ TDS Center (30 Products)',
         description: ko
-          ? 'Dow DOWSIL™ 30종 제품의 기술 데이터시트(TDS) PDF 다운로드, 제품 유형 및 핵심 물성 3항목 요약.'
-          : 'Download Dow DOWSIL™ Technical Data Sheets (TDS) for all 30 catalog products with product types and three key properties.',
+          ? 'Dow DOWSIL™ 30종 제품의 핵심 물성 3항목 요약 및 기술 데이터시트(TDS) 회원 다운로드·이메일 전송 요청 센터.'
+          : 'Dow DOWSIL™ Technical Data Sheets (TDS) for all 30 catalog products with product types, three key properties, member downloads and delivery requests.',
         inLanguage: l,
         url: pageUrl,
         publisher: { '@id': `${BASE}/#organization` },
@@ -259,10 +271,15 @@ export default async function TdsCenterPage({
     ],
   }
 
+  const isJa = lang === 'ja'
+
   return (
     <Tx>
       <style dangerouslySetInnerHTML={{ __html: techCss }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <Suspense fallback={null}>
+        <TdsCenterAutoOpen />
+      </Suspense>
 
       {/* Hero */}
       <section className="tx-hero tx-photo tx-big">
@@ -272,20 +289,20 @@ export default async function TdsCenterPage({
             <span> / </span>
             <Link href={`/${lang}/products`}>{ko ? '제품정보' : 'Products'}</Link>
             <span> / </span>
-            <span style={{ color: '#EDEDED' }}>{ko ? 'TDS 다운로드 센터' : 'TDS Center'}</span>
+            <span style={{ color: '#EDEDED' }}>{ko ? 'TDS 자료실' : 'TDS Center'}</span>
           </nav>
-          <span className="badge">TDS DOWNLOAD CENTER</span>
+          <span className="badge">TDS CENTER</span>
           <h1 className="fw-bold mt-3">
             {ko ? (
-              <>DOWSIL™ TDS <span className="tx-light">다운로드 센터</span></>
+              <>DOWSIL™ TDS <span className="tx-light">자료실</span></>
             ) : (
-              <>DOWSIL™ TDS <span className="tx-light">Download Center</span></>
+              <>DOWSIL™ TDS <span className="tx-light">Center</span></>
             )}
           </h1>
           <p>
             {ko
-              ? `Dow DOWSIL™ 전 제품 ${CATALOG.length}종의 기술 데이터시트(TDS) PDF, 제품 유형, 핵심 물성 3항목을 카테고리별로 한눈에 확인하고 내려받으세요. 최신 SDS·기술 자료 문의는 한국건설트레이딩(KCT)이 지원합니다.`
-              : `Download Dow Technical Data Sheets (TDS) for all ${CATALOG.length} DOWSIL™ catalog products, organized by category with product type and three key properties. Contact Korea Construction Trading (KCT) for SDS and technical support.`}
+              ? `Dow DOWSIL™ 전 제품 ${CATALOG.length}종의 제품 유형과 핵심 물성 3항목을 카테고리별로 한눈에 비교하고, 필요한 기술 데이터시트(TDS) PDF를 바로 받거나(승인 회원) 이메일 전송을 요청하세요.`
+              : `Browse product types and three key properties for all ${CATALOG.length} DOWSIL™ catalog products. Approved members can download TDS PDFs immediately, and guests can request email delivery.`}
           </p>
           <div className="d-flex flex-wrap gap-2 mt-4">
             <a href="mailto:sales@kconstrade.com" className="btn btn-light">
@@ -319,19 +336,34 @@ export default async function TdsCenterPage({
       </nav>
 
       <div className="container py-5">
-        {/* Direct Answer / Key Facts */}
+        {/* TDS Access Guide & Key Facts */}
         <section
           className="p-4 rounded-4 mb-5"
           style={{ background: '#eef4ff', border: '1px solid #c7dafc' }}
-          aria-label={ko ? '핵심 안내' : 'Key facts'}
+          aria-label={ko ? 'TDS 이용 안내' : isJa ? 'TDSご利用案内' : 'TDS Access Guide'}
         >
           <div className="fw-bold mb-1" style={{ color: '#0b2a55', fontSize: '.85rem', letterSpacing: '.04em' }}>
-            {ko ? '핵심 안내' : 'KEY FACTS'}
+            {ko ? 'TDS 제공 안내' : isJa ? 'TDS提供のご案内' : 'TDS ACCESS GUIDE'}
           </div>
-          <p className="mb-0" style={{ color: '#16142F', lineHeight: 1.8 }}>
+          <p className="mb-2 fw-semibold" style={{ color: '#16142F', lineHeight: 1.7 }}>
             {ko
-              ? `이 페이지에서 건축 외장(11종)·GMP·위생(2종)·토목용(3종)·복층유리(5종)·특수용(6종)·프라이머(3종) 총 ${CATALOG.length}종의 Dow TDS PDF(1200 OS는 LEED 확인서)를 바로 내려받을 수 있습니다. 표의 물성은 각 TDS 요약 기준 대표 특성이며 시방용이 아니므로 설계·시공 전 원문 PDF와 한국건설트레이딩(KCT)의 확인을 권장합니다.`
-              : `Direct PDF downloads are provided for all ${CATALOG.length} DOWSIL™ products across Building Envelope (11), GMP/Hygienic (2), Civil (3), Insulating Glass (5), Specialty (6) and Primers (3) (1200 OS provides Dow’s LEED confirmation letter). Values shown are typical properties summarized from Dow TDS, not specifications; verify against the original PDF and consult KCT.`}
+              ? 'TDS는 승인된 회원에게 바로 제공되며, 비회원은 전송을 요청하시면 담당자가 이메일로 보내드립니다.'
+              : isJa
+              ? 'TDSは承認済み会員にすぐ提供されます。非会員の方は送信をリクエストいただければ、担当者がメールでお送りします。'
+              : 'TDS PDFs are provided directly to approved members. Non-members can request delivery and our team will email the document.'}
+          </p>
+          <div className="d-flex flex-wrap gap-2 align-items-center mb-3">
+            <Link href={`/${lang}/auth/login`} className="btn btn-primary btn-sm">
+              {ko ? '로그인' : isJa ? 'ログイン' : 'Sign in'}
+            </Link>
+            <Link href={`/${lang}/auth/signup`} className="btn btn-outline-dark btn-sm">
+              {ko ? '회원가입' : isJa ? '会員登録' : 'Sign up'}
+            </Link>
+          </div>
+          <p className="mb-0 small" style={{ color: '#5d646b', lineHeight: 1.75 }}>
+            {ko
+              ? `건축 외장(11종)·GMP·위생(2종)·토목용(3종)·복층유리(5종)·특수용(6종)·프라이머(3종) 총 ${CATALOG.length}종의 핵심 물성 3항목은 누구나 열람할 수 있으며(1200 OS는 Dow LEED 확인서 공개), 표의 물성은 대표 특성이므로 설계·시공 전 원문 PDF와 한국건설트레이딩(KCT)의 확인을 권장합니다.`
+              : `Key property summaries for all ${CATALOG.length} DOWSIL™ products across Building Envelope (11), GMP/Hygienic (2), Civil (3), Insulating Glass (5), Specialty (6) and Primers (3) are open to view (1200 OS provides Dow’s public LEED confirmation letter). Values are typical properties, not specifications.`}
           </p>
         </section>
 
@@ -377,7 +409,7 @@ export default async function TdsCenterPage({
                       <th scope="col" style={{ minWidth: 180 }}>{ko ? '제품명' : 'Product'}</th>
                       <th scope="col" style={{ minWidth: 170 }}>{ko ? '유형' : 'Type'}</th>
                       <th scope="col" style={{ minWidth: 320 }}>{ko ? '핵심 물성 3항목 (TDS 요약)' : '3 Key Properties (TDS Summary)'}</th>
-                      <th scope="col" style={{ minWidth: 130 }}>{ko ? '문서 다운로드' : 'Download'}</th>
+                      <th scope="col" style={{ minWidth: 150 }}>{ko ? 'TDS 다운로드 · 요청' : 'TDS Access'}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -385,9 +417,10 @@ export default async function TdsCenterPage({
                       const loc = localizeCatalog(raw, l)
                       const typeVal = ko ? raw.specs['제품 유형'] : loc.specs['Product type']
                       const props3 = pickTop3Props(raw, ko)
+                      const isPublicLeed = PUBLIC_LEED_SLUGS.has(raw.slug)
                       const label = raw.docLabel ? (ko ? raw.docLabel : 'LEED letter') : 'TDS'
                       return (
-                        <tr key={raw.slug}>
+                        <tr key={raw.slug} id={`tds-row-${raw.slug}`}>
                           <td>
                             <Link href={`/${lang}/products/${raw.slug}`} className="fw-bold">
                               {raw.name}
@@ -407,10 +440,24 @@ export default async function TdsCenterPage({
                             </ul>
                           </td>
                           <td>
-                            <a href={tdsUrl(raw.slug)} download className="fw-semibold text-nowrap">
-                              <i className="bi bi-file-earmark-pdf me-1" />
-                              {label} (PDF)
-                            </a>
+                            {isPublicLeed ? (
+                              <a
+                                href={`/tds/${raw.slug}.pdf`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="fw-semibold text-nowrap"
+                              >
+                                <i className="bi bi-file-earmark-pdf me-1" aria-hidden="true" />
+                                {label} (PDF)
+                              </a>
+                            ) : (
+                              <TdsAccess
+                                slug={raw.slug}
+                                productName={raw.name}
+                                lang={lang}
+                                variant="link"
+                              />
+                            )}
                           </td>
                         </tr>
                       )

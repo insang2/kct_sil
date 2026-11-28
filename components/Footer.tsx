@@ -202,9 +202,9 @@ export default async function Footer({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja
                 <li>
                   <Link href={`/${lang === 'ja' ? 'en' : lang}/tds`}>
                     {lang === 'en'
-                      ? 'TDS Download'
+                      ? 'TDS Center'
                       : lang === 'ja'
-                      ? 'TDSダウンロード'
+                      ? 'TDS資料室'
                       : 'TDS 자료실'}
                   </Link>
                 </li>

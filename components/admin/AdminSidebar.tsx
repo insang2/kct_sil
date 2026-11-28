@@ -4,18 +4,38 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const navItems = [
-  { href: '/admin',           icon: 'bi-speedometer2',       label: '대시보드' },
-  { href: '/admin/products',  icon: 'bi-box-seam',           label: '제품 관리' },
-  { href: '/admin/customers', icon: 'bi-people',             label: '고객 관리' },
-  { href: '/admin/quotes',    icon: 'bi-file-earmark-text',  label: '견적 현황' },
-  { href: '/admin/deals',     icon: 'bi-diagram-3',          label: '거래 파이프라인' },
-  { href: '/admin/inventory', icon: 'bi-box2-heart',         label: '자재 재고' },
-  { href: '/admin/documents', icon: 'bi-file-earmark-plus',  label: '문서 생성' },
-  { href: '/admin/admins',    icon: 'bi-shield-lock',        label: '관리자 계정' },
+interface NavItem {
+  href: string
+  icon: string
+  label: string
+  badgeKey?: 'members' | 'tdsRequests'
+}
+
+const navItems: NavItem[] = [
+  { href: '/admin',              icon: 'bi-speedometer2',       label: '대시보드' },
+  { href: '/admin/members',      icon: 'bi-person-check',       label: '회원 관리', badgeKey: 'members' },
+  { href: '/admin/tds-requests', icon: 'bi-file-earmark-pdf',   label: 'TDS 요청', badgeKey: 'tdsRequests' },
+  { href: '/admin/products',     icon: 'bi-box-seam',           label: '제품 관리' },
+  { href: '/admin/customers',    icon: 'bi-people',             label: '고객 관리' },
+  { href: '/admin/quotes',       icon: 'bi-file-earmark-text',  label: '견적 현황' },
+  { href: '/admin/deals',        icon: 'bi-diagram-3',          label: '거래 파이프라인' },
+  { href: '/admin/inventory',    icon: 'bi-box2-heart',         label: '자재 재고' },
+  { href: '/admin/documents',    icon: 'bi-file-earmark-plus',  label: '문서 생성' },
+  { href: '/admin/admins',       icon: 'bi-shield-lock',        label: '관리자 계정' },
 ]
 
-export default function AdminSidebar({ username }: { username: string }) {
+export interface PendingCounts {
+  members: number
+  tdsRequests: number
+}
+
+export default function AdminSidebar({
+  username,
+  pendingCounts,
+}: {
+  username: string
+  pendingCounts?: PendingCounts | null
+}) {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
 
@@ -45,6 +65,7 @@ export default function AdminSidebar({ username }: { username: string }) {
 
       {/* Sidebar */}
       <nav
+        aria-label="관리자 주 메뉴"
         className="kct-sidebar d-flex flex-column"
         style={{
           width: 220, background: '#1e1e2e',
@@ -66,25 +87,39 @@ export default function AdminSidebar({ username }: { username: string }) {
         <hr style={{ borderColor: 'rgba(255,255,255,0.2)', margin: '0 16px' }} />
 
         <ul className="nav flex-column p-3 gap-1 mt-2 flex-grow-1">
-          {navItems.map(item => (
-            <li key={item.href} className="nav-item">
-              <Link
-                href={item.href}
-                className="nav-link text-white d-flex align-items-center gap-2 rounded-3 px-3 py-2"
-                style={{
-                  fontSize: '0.88rem',
-                  transition: 'background 0.15s',
-                  background: isActive(item.href) ? 'rgba(255,255,255,0.18)' : undefined,
-                  fontWeight: isActive(item.href) ? 600 : undefined,
-                  borderLeft: isActive(item.href) ? '3px solid #4e8fff' : '3px solid transparent',
-                }}
-                onClick={() => setOpen(false)}
-              >
-                <i className={`bi ${item.icon}`} style={{ width: 18 }} />
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          {navItems.map(item => {
+            const active = isActive(item.href)
+            const badgeCount = item.badgeKey && pendingCounts ? pendingCounts[item.badgeKey] : 0
+            return (
+              <li key={item.href} className="nav-item">
+                <Link
+                  href={item.href}
+                  aria-current={active ? 'page' : undefined}
+                  className="nav-link text-white d-flex align-items-center gap-2 rounded-3 px-3 py-2"
+                  style={{
+                    fontSize: '0.88rem',
+                    transition: 'background 0.15s',
+                    background: active ? 'rgba(255,255,255,0.18)' : undefined,
+                    fontWeight: active ? 600 : undefined,
+                    borderLeft: active ? '3px solid #4e8fff' : '3px solid transparent',
+                  }}
+                  onClick={() => setOpen(false)}
+                >
+                  <i className={`bi ${item.icon}`} style={{ width: 18 }} aria-hidden="true" />
+                  <span className="flex-grow-1 text-truncate">{item.label}</span>
+                  {badgeCount > 0 && (
+                    <span
+                      className="badge rounded-pill bg-danger ms-auto flex-shrink-0"
+                      style={{ fontSize: '0.68rem', minWidth: 20 }}
+                      aria-label={`대기 ${badgeCount}건`}
+                    >
+                      {badgeCount > 99 ? '99+' : badgeCount}
+                    </span>
+                  )}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
 
         <div className="p-3 flex-shrink-0">
@@ -112,7 +147,8 @@ export default function AdminSidebar({ username }: { username: string }) {
           transition: 'all 0.2s',
         }}
         onClick={() => setOpen(v => !v)}
-        aria-label="메뉴"
+        aria-label={open ? '메뉴 닫기' : '메뉴 열기'}
+        aria-expanded={open}
       >
         <i className={`bi ${open ? 'bi-x-lg text-white' : 'bi-list text-dark'}`} style={{ fontSize: '1.25rem' }} />
       </button>

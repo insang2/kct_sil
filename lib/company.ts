@@ -58,7 +58,7 @@ export const PRACTICES: { title: L3; desc: L3 }[] = [
   },
   {
     title: l('전자 문서화', 'Paperless documents', '書類の電子化'),
-    desc: l('TDS는 PDF로 내려받고, 견적서도 PDF로 발행해 종이 사용을 줄입니다.', 'TDS are downloadable PDFs and quotations are issued as PDFs to cut paper use.', 'TDSはPDFでダウンロードでき、見積書もPDFで発行して紙の使用を減らします。'),
+    desc: l('TDS는 전자 PDF로 제공하고, 견적서도 PDF로 발행해 종이 사용을 줄입니다.', 'TDS are provided as electronic PDFs and quotations are issued as PDFs to cut paper use.', 'TDSは電子PDFで提供し、見積書もPDFで発行して紙の使用を減らします。'),
   },
   {
     title: l('안전보건 정보 제공', 'Safety data provided', '安全衛生情報の提供'),

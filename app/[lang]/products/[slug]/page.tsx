@@ -1,12 +1,15 @@
 import Tx from '@/components/tech/Tx';
 import { techCss } from '@/components/tech/TechBlocks';
+import TdsAccess from '@/components/tds/TdsAccess'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import type { Product } from '@/lib/pricing'
-import { bySlug, tdsUrl, CATEGORIES, CATALOG } from '@/lib/products-catalog'
+import { bySlug, CATEGORIES, CATALOG } from '@/lib/products-catalog'
 import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en'
+
+const PUBLIC_LEED_SLUGS = new Set(['dowsil-1200-os'])
 import {
   aliasesOf,
   keySpecCard,
@@ -157,7 +160,7 @@ async function getProduct(slug: string, lang: string): Promise<(Product & {
       name_ko: c.name, name_en: c.title,
       category: lang === 'en' ? CATEGORY_EN[c.category].label : cat.label,
       description_ko: c.description, features: c.features, applications: c.applications,
-      specifications: c.specs, image_url: c.image ?? null, tds_url: tdsUrl(c.slug),
+      specifications: c.specs, image_url: c.image ?? null, tds_url: PUBLIC_LEED_SLUGS.has(c.slug) ? `/tds/${c.slug}.pdf` : null,
     } as any
   }
   try {
@@ -274,6 +277,8 @@ export default async function ProductDetailPage({
   const catalogItem = bySlug(slug)
   const displayName = (isEn && product.name_en) ? product.name_en : product.name_ko
   const docLabel = catalogItem?.docLabel ? (isEn ? 'LEED letter' : catalogItem.docLabel) : 'TDS'
+  const isPublicLeed = PUBLIC_LEED_SLUGS.has(slug)
+  const isGatedCatalogTds = Boolean(catalogItem) && !isPublicLeed
 
   const keySpecs = keySpecCard(slug, contentLang)
   const deepGuide = productDeepGuide(slug, contentLang)
@@ -471,20 +476,28 @@ export default async function ProductDetailPage({
               )}
 
               {/* Action Buttons */}
-              <div className="d-flex flex-wrap gap-3">
-                {product.tds_url && (
-                  <a href={product.tds_url} target="_blank" rel="noreferrer" download
+              <div className="d-flex flex-wrap gap-3 align-items-center">
+                {isPublicLeed ? (
+                  <a href={`/tds/${slug}.pdf`} target="_blank" rel="noopener noreferrer"
                     className="btn btn-outline-primary rounded-pill px-4 fw-medium">
-                    <i className="bi bi-file-earmark-pdf me-2"></i>{isEn ? `Download ${docLabel}` : `${docLabel} 다운로드`}
+                    <i className="bi bi-file-earmark-pdf me-2" aria-hidden="true"></i>{isEn ? `View ${docLabel}` : `${docLabel} 보기`}
                   </a>
-                )}
+                ) : isGatedCatalogTds ? (
+                  <TdsAccess
+                    slug={slug}
+                    productName={displayName}
+                    lang={lang}
+                    variant="button"
+                    compact
+                  />
+                ) : null}
                 <a href={`/${lang}#b2b-form`}
                   className="btn btn-primary rounded-pill px-4 fw-bold">
-                  <i className="bi bi-chat-dots me-2"></i>{isEn ? 'Request a Quote' : '견적·기술 문의'}
+                  <i className="bi bi-chat-dots me-2" aria-hidden="true"></i>{isEn ? 'Request a Quote' : '견적·기술 문의'}
                 </a>
                 <a href="https://wa.me/821089390284" target="_blank" rel="noreferrer"
                   className="btn btn-outline-success rounded-pill px-4">
-                  <i className="bi bi-whatsapp me-2"></i>WhatsApp
+                  <i className="bi bi-whatsapp me-2" aria-hidden="true"></i>WhatsApp
                 </a>
               </div>
             </div>
@@ -691,24 +704,49 @@ export default async function ProductDetailPage({
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              <h2 className="h4 fw-bold text-dark mb-5">{isEn ? 'Technical Documents' : '기술 자료 다운로드'}</h2>
+              <h2 className="h4 fw-bold text-dark mb-5">{isEn ? 'Technical Documents' : '기술 자료'}</h2>
               <div className="row g-3">
-                {product.tds_url ? (
+                {isPublicLeed ? (
                   <div className="col-md-6">
-                    <a href={product.tds_url} target="_blank" rel="noreferrer" download
+                    <a href={`/tds/${slug}.pdf`} target="_blank" rel="noopener noreferrer"
                       className="d-flex align-items-center gap-3 p-4 border rounded-4 text-decoration-none hover-shadow h-100">
                       <div className="d-flex align-items-center justify-content-center rounded-3 bg-danger"
                         style={{ width: 48, height: 48, flexShrink: 0 }}>
-                        <i className="bi bi-file-earmark-pdf-fill text-white fs-5"></i>
+                        <i className="bi bi-file-earmark-pdf-fill text-white fs-5" aria-hidden="true"></i>
                       </div>
                       <div>
                         <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>
-                          {catalogItem?.docLabel ? (isEn ? 'LEED / VOC Letter' : catalogItem.docLabel) : 'Technical Data Sheet (TDS)'}
+                          {isEn ? 'LEED / VOC Letter' : (catalogItem?.docLabel ?? 'LEED 확인서')}
                         </div>
-                        <div className="small" style={{ color: '#555370' }}>{isEn ? 'PDF download' : 'PDF 다운로드'}</div>
+                        <div className="small" style={{ color: '#555370' }}>{isEn ? 'Public PDF' : '공개 PDF 열람'}</div>
                       </div>
-                      <i className="bi bi-download ms-auto text-body-secondary"></i>
+                      <i className="bi bi-box-arrow-up-right ms-auto text-body-secondary" aria-hidden="true"></i>
                     </a>
+                  </div>
+                ) : isGatedCatalogTds ? (
+                  <div className="col-md-6">
+                    <div className="d-flex flex-column gap-3 p-4 border rounded-4 h-100 bg-white">
+                      <div className="d-flex align-items-center gap-3">
+                        <div className="d-flex align-items-center justify-content-center rounded-3 bg-danger"
+                          style={{ width: 48, height: 48, flexShrink: 0 }}>
+                          <i className="bi bi-file-earmark-pdf-fill text-white fs-5" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                          <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>
+                            Technical Data Sheet (TDS)
+                          </div>
+                          <div className="small" style={{ color: '#555370' }}>
+                            {isEn ? 'Instant download for approved members or request by email' : '승인 회원 바로 다운로드 · 비회원 이메일 전송 요청'}
+                          </div>
+                        </div>
+                      </div>
+                      <TdsAccess
+                        slug={slug}
+                        productName={displayName}
+                        lang={lang}
+                        variant="button"
+                      />
+                    </div>
                   </div>
                 ) : (
                   <div className="col-12">
@@ -752,8 +790,8 @@ export default async function ProductDetailPage({
                       <i className="bi bi-collection text-white fs-5"></i>
                     </div>
                     <div>
-                      <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>{isEn ? 'All 30 TDS Center' : '전 제품 30종 TDS 센터'}</div>
-                      <div className="small" style={{ color: '#555370' }}>{isEn ? 'Browse all DOWSIL™ TDS PDFs' : '전 제품 TDS 한곳에서 받기'}</div>
+                      <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>{isEn ? 'All 30 TDS Center' : '전 제품 30종 TDS 자료실'}</div>
+                      <div className="small" style={{ color: '#555370' }}>{isEn ? 'Browse or request all DOWSIL™ TDS' : '전 제품 TDS 확인·요청'}</div>
                     </div>
                     <i className="bi bi-arrow-right ms-auto text-body-secondary"></i>
                   </Link>

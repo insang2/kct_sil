@@ -26,6 +26,9 @@
 			"service": "kct-frontend"
 		}
 	],
+	"r2_buckets": [
+		{ "binding": "TDS_BUCKET", "bucket_name": "kct-tds" }
+	],
 	"images": {
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image

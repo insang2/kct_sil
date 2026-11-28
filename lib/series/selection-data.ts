@@ -146,8 +146,8 @@ export const PAGES: IPage[] = [
         'Sources and KCT technical support',
         '출처 및 한국건설트레이딩(KCT) 기술 지원',
         p(
-          'Source: Individual Dow Technical Data Sheets (TDS) summarized in the Korea Construction Trading (KCT) product catalog (30 products). Each product’s original PDF can be downloaded from the KCT TDS Download Center (/en/tds) or the individual product pages (/en/products).',
-          '출처: 한국건설트레이딩(KCT) 제품 카탈로그(30종)에 요약된 각 제품의 Dow 기술 데이터시트(TDS). 각 제품의 원문 PDF는 KCT TDS 다운로드 센터(/ko/tds)와 제품 상세 페이지(/ko/products)에서 직접 내려받을 수 있습니다.',
+          'Source: Individual Dow Technical Data Sheets (TDS) summarized in the Korea Construction Trading (KCT) product catalog (30 products). Each product’s original PDF can be downloaded by approved members or requested via email from the KCT TDS Center (/en/tds) or the individual product pages (/en/products).',
+          '출처: 한국건설트레이딩(KCT) 제품 카탈로그(30종)에 요약된 각 제품의 Dow 기술 데이터시트(TDS). 각 제품의 원문 PDF는 KCT TDS 자료실(/ko/tds)과 제품 상세 페이지(/ko/products)에서 승인 회원은 바로 다운로드하고 비회원은 이메일 전송을 요청할 수 있습니다.',
         ),
         p(
           'Korea Construction Trading (KCT) does its best to support product selection, latest TDS/SDS confirmation, color and packaging availability checks, and B2B supply quotations (sales@kconstrade.com, +82 10-8939-0284).',
@@ -162,8 +162,8 @@ export const PAGES: IPage[] = [
           ko: 'DOWSIL™ 795·791 등 일부 제품의 색상·포장이 「문의」로 표기된 이유는 무엇인가요?',
         },
         a: {
-          en: 'This page records only fields explicitly stated in the summarized KCT product catalog and avoids guessing unlisted specifications. Download the product’s TDS PDF on the TDS center or contact KCT (sales@kconstrade.com, +82 10-8939-0284) to verify currently supplied colors, cartridge/sausage/pail/drum options and lead times.',
-          ko: '이 페이지는 요약 카탈로그에 명시된 사실만 수록하며 미기재 사양을 추정하지 않습니다. 각 제품의 TDS PDF를 확인하시거나 한국건설트레이딩(sales@kconstrade.com, 010-8939-0284)으로 문의하시면 현재 국내·수출 공급 가능한 색상과 포장 단위를 안내해 드립니다.',
+          en: 'This page records only fields explicitly stated in the summarized KCT product catalog and avoids guessing unlisted specifications. Check or request the product’s TDS PDF on the TDS center or contact KCT (sales@kconstrade.com, +82 10-8939-0284) to verify currently supplied colors, cartridge/sausage/pail/drum options and lead times.',
+          ko: '이 페이지는 요약 카탈로그에 명시된 사실만 수록하며 미기재 사양을 추정하지 않습니다. TDS 자료실에서 각 제품의 TDS를 확인·요청하시거나 한국건설트레이딩(sales@kconstrade.com, 010-8939-0284)으로 문의하시면 현재 국내·수출 공급 가능한 색상과 포장 단위를 안내해 드립니다.',
         },
       },
       {

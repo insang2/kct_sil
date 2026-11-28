@@ -123,8 +123,10 @@ export const txCss = `
 .tx-pcard h3 a:hover{color:var(--tx-accent)}
 .tx-pcard p{margin:0;color:var(--tx-mute);font-size:.9rem;line-height:1.55}
 .tx-pcard .tx-pact{display:flex;gap:.5rem;padding:.8rem 1.2rem 1.1rem}
-.tx-pcard .tx-pact a{flex:1;text-align:center;border:1px solid var(--tx-line);border-radius:999px;padding:.4rem .6rem;font-size:.85rem;font-weight:600;color:var(--tx-fg);text-decoration:none}
+.tx-pcard .tx-pact a,.tx-pcard .tx-pact button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.3rem;text-align:center;border:1px solid var(--tx-line);border-radius:999px;padding:.4rem .6rem;min-height:40px;font-size:.85rem;font-weight:600;color:var(--tx-fg);background:#fff;text-decoration:none;cursor:pointer}
 .tx-pcard .tx-pact a:first-child{background:var(--tx-fg);border-color:var(--tx-fg);color:#fff}
+.tx-pcard .tx-pact .kct-tds-btn-dl{border-color:var(--tx-accent);color:var(--tx-accent)}
+.tx-pcard .tx-pact .kct-tds-btn-dl:hover{background:var(--tx-accent);border-color:var(--tx-accent);color:#fff}
 @media (max-width:767px){.tx-roles>div{grid-template-columns:1fr}.tx-cat{padding-top:3rem}}
 @media (max-width:767px){.tx{font-size:16px}.tx .tx-hero{padding-top:104px !important;padding-bottom:44px !important}}
 `

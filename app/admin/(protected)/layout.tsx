@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { verifySession, ADMIN_COOKIE } from '@/lib/admin-auth'
+import { pendingCounts } from '@/lib/tds-admin'
 import AdminSidebar from '@/components/admin/AdminSidebar'
 import GlobalSearch from '@/components/admin/GlobalSearch'
 
@@ -11,9 +12,18 @@ export default async function AdminProtectedLayout({ children }: { children: Rea
   const username = token ? await verifySession(token) : null
   if (!username) redirect('/admin/login')
 
+  let counts: { members: number; tdsRequests: number } | null = null
+  if (token) {
+    try {
+      counts = await pendingCounts(token)
+    } catch {
+      counts = null
+    }
+  }
+
   return (
     <div className="d-flex flex-column flex-lg-row" style={{ minHeight: '100vh' }}>
-      <AdminSidebar username={username} />
+      <AdminSidebar username={username} pendingCounts={counts} />
 
       <div className="flex-grow-1 d-flex flex-column" style={{ minWidth: 0 }}>
         {/* Top bar */}

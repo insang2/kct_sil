@@ -1,4 +1,8 @@
+import Link from 'next/link'
+import { cookies } from 'next/headers'
 import { createClient } from '@/lib/supabase/server'
+import { ADMIN_COOKIE } from '@/lib/admin-auth'
+import { pendingCounts } from '@/lib/tds-admin'
 import { DOC_TYPE_LABELS, DOC_TYPE_COLORS, DOC_TYPE_ICONS } from '@/lib/admin-document-types'
 import type { DocType } from '@/lib/admin-document-types'
 import { WorldClockWidget, ExchangeRateWidget, FxCalculatorWidget } from '@/components/admin/DashboardWidgets'
@@ -7,6 +11,12 @@ const DOC_TYPES: DocType[] = ['quotation', 'purchase_order', 'receipt', 'invoice
 
 export default async function AdminDashboard() {
   const supabase = await createClient()
+  const cookieStore = await cookies()
+  const adminToken = cookieStore.get(ADMIN_COOKIE)?.value
+
+  const tdsPendingPromise: Promise<{ members: number; tdsRequests: number } | null> = adminToken
+    ? pendingCounts(adminToken).catch(() => null)
+    : Promise.resolve(null)
 
   const sixMonthsAgo = new Date(); sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6)
   const threeDaysAgo = new Date(); threeDaysAgo.setDate(threeDaysAgo.getDate() - 3)
@@ -29,6 +39,7 @@ export default async function AdminDashboard() {
     { data: overdueFollowups },
     { data: oldPendingQuotes },
     { data: contactCountries },
+    tdsPending,
   ] = await Promise.all([
     supabase.from('products').select('*', { count: 'exact', head: true }).eq('is_active', true),
     supabase.from('admin_contacts').select('*', { count: 'exact', head: true }),
@@ -46,6 +57,7 @@ export default async function AdminDashboard() {
     supabase.from('admin_contacts').select('id,company_name,next_followup_at,country').lt('next_followup_at', nowIso).not('next_followup_at', 'is', null).order('next_followup_at').limit(5),
     supabase.from('quotes').select('quote_number,customer_company,total,created_at').eq('admin_status', 'pending').lt('created_at', threeDaysAgo.toISOString()).order('created_at').limit(5),
     supabase.from('admin_contacts').select('country').not('country', 'is', null),
+    tdsPendingPromise,
   ])
 
   const totalRevenue = (recentQuotes || []).reduce((s: number, q: any) => s + Number(q.total || 0), 0)
@@ -165,6 +177,103 @@ export default async function AdminDashboard() {
       <WorldClockWidget />
       <ExchangeRateWidget />
       <FxCalculatorWidget />
+
+      {/* 회원 승인 · TDS 요청 대기 현황 */}
+      <div className="row g-3 g-md-4 mb-4">
+        <div className="col-md-6">
+          <div
+            className="card border-0 shadow-sm rounded-4 h-100"
+            style={{
+              borderLeft: (tdsPending?.members ?? 0) > 0 ? '4px solid #D97706' : '4px solid #E5E7EB',
+            }}
+          >
+            <div className="card-body p-4 d-flex flex-wrap align-items-center justify-content-between gap-3">
+              <div className="d-flex align-items-center gap-3">
+                <div
+                  className="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{
+                    width: 52, height: 52,
+                    background: (tdsPending?.members ?? 0) > 0 ? '#FEF3C7' : '#F3F4F6',
+                  }}
+                >
+                  <i
+                    className="bi bi-person-check-fill fs-4"
+                    style={{ color: (tdsPending?.members ?? 0) > 0 ? '#D97706' : '#6B7280' }}
+                    aria-hidden="true"
+                  />
+                </div>
+                <div>
+                  <div className="text-body-secondary small fw-medium">승인 대기 회원</div>
+                  {tdsPending ? (
+                    <div className="d-flex align-items-baseline gap-2">
+                      <span className="fw-bold fs-4 text-dark">{tdsPending.members.toLocaleString('ko-KR')}</span>
+                      <span className="text-body-secondary small">명</span>
+                      {tdsPending.members > 0 && (
+                        <span className="badge rounded-pill bg-warning text-dark" style={{ fontSize: '0.68rem' }}>확인 필요</span>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="text-body-secondary small mt-1">일시적으로 조회할 수 없습니다</div>
+                  )}
+                </div>
+              </div>
+              <Link
+                href="/admin/members?status=pending"
+                className={`btn btn-sm rounded-pill px-3 ${(tdsPending?.members ?? 0) > 0 ? 'btn-warning text-dark fw-semibold' : 'btn-outline-secondary'}`}
+              >
+                회원 관리 바로가기 <i className="bi bi-arrow-right ms-1" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-6">
+          <div
+            className="card border-0 shadow-sm rounded-4 h-100"
+            style={{
+              borderLeft: (tdsPending?.tdsRequests ?? 0) > 0 ? '4px solid #DC2626' : '4px solid #E5E7EB',
+            }}
+          >
+            <div className="card-body p-4 d-flex flex-wrap align-items-center justify-content-between gap-3">
+              <div className="d-flex align-items-center gap-3">
+                <div
+                  className="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{
+                    width: 52, height: 52,
+                    background: (tdsPending?.tdsRequests ?? 0) > 0 ? '#FEE2E2' : '#F3F4F6',
+                  }}
+                >
+                  <i
+                    className="bi bi-file-earmark-pdf-fill fs-4"
+                    style={{ color: (tdsPending?.tdsRequests ?? 0) > 0 ? '#DC2626' : '#6B7280' }}
+                    aria-hidden="true"
+                  />
+                </div>
+                <div>
+                  <div className="text-body-secondary small fw-medium">대기 중인 TDS 요청</div>
+                  {tdsPending ? (
+                    <div className="d-flex align-items-baseline gap-2">
+                      <span className="fw-bold fs-4 text-dark">{tdsPending.tdsRequests.toLocaleString('ko-KR')}</span>
+                      <span className="text-body-secondary small">건</span>
+                      {tdsPending.tdsRequests > 0 && (
+                        <span className="badge rounded-pill bg-danger" style={{ fontSize: '0.68rem' }}>발송 대기</span>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="text-body-secondary small mt-1">일시적으로 조회할 수 없습니다</div>
+                  )}
+                </div>
+              </div>
+              <Link
+                href="/admin/tds-requests?status=pending"
+                className={`btn btn-sm rounded-pill px-3 ${(tdsPending?.tdsRequests ?? 0) > 0 ? 'btn-danger fw-semibold' : 'btn-outline-secondary'}`}
+              >
+                TDS 요청 바로가기 <i className="bi bi-arrow-right ms-1" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* 상단 통계 카드 */}
       <div className="row g-4 mb-4">

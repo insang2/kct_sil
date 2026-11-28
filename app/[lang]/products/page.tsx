@@ -1,12 +1,15 @@
 import { getDictionary } from '@/lib/dictionaries';
-import { CATALOG, CATEGORIES, tdsUrl } from '@/lib/products-catalog';
+import { CATALOG, CATEGORIES } from '@/lib/products-catalog';
 import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Tx from '@/components/tech/Tx';
+import TdsAccess from '@/components/tds/TdsAccess';
 import { CAT_INTRO } from '@/lib/products-roles';
 import { techCss } from '@/components/tech/TechBlocks';
 import { aliasesOf } from '@/lib/product-seo';
+
+const PUBLIC_LEED_SLUGS = new Set(['dowsil-1200-os']);
 
 export async function generateMetadata({
   params,
@@ -155,7 +158,7 @@ export default async function ProductsPage({
           <h1 className="fw-bold mt-3">
             {isEn ? <>Products <span className="tx-light">DOWSIL™ {products.length}</span></> : <>제품정보 <span className="tx-light">DOWSIL™ {products.length}종</span></>}
           </h1>
-          <p>{isEn ? 'Different jobs need different silicones. Find the product by what it does on site — structural glazing, weatherproofing, fire protection, primers — and download the TDS.' : '용도마다 맞는 실리콘이 다릅니다. 구조 글레이징, 웨더실링, 방화, 프라이머처럼 현장에서 하는 일로 제품을 찾고 TDS를 내려받으세요.'}</p>
+          <p>{isEn ? 'Different jobs need different silicones. Find the product by what it does on site — structural glazing, weatherproofing, fire protection, primers — and request or download the TDS.' : '용도마다 맞는 실리콘이 다릅니다. 구조 글레이징, 웨더실링, 방화, 프라이머처럼 현장에서 하는 일로 제품을 찾고 TDS를 확인·요청하세요.'}</p>
           <div className="d-flex flex-wrap gap-2 mt-4">
             <a href="mailto:sales@kconstrade.com" className="btn btn-light">{isEn ? 'Request a quote' : '견적·자료 문의'} →</a>
             <Link href={`/${lang}/technical`} className="btn btn-outline-light">{isEn ? 'Technical information' : '기술정보 보기'}</Link>
@@ -227,7 +230,19 @@ export default async function ProductsPage({
                       </div>
                       <div className="tx-pact">
                         <Link href={href}>{isEn ? 'Details' : '상세 정보'}</Link>
-                        <a href={tdsUrl(product.slug)} download>{product.docLabel ?? 'TDS'}</a>
+                        {PUBLIC_LEED_SLUGS.has(product.slug) ? (
+                          <a href={`/tds/${product.slug}.pdf`} target="_blank" rel="noopener noreferrer">
+                            {isEn ? 'LEED letter' : (product.docLabel ?? 'LEED 확인서')}
+                          </a>
+                        ) : (
+                          <TdsAccess
+                            slug={product.slug}
+                            productName={product.name}
+                            lang={lang}
+                            variant="button"
+                            compact
+                          />
+                        )}
                       </div>
                     </article>
                   );
@@ -240,7 +255,7 @@ export default async function ProductsPage({
         <section id="tds-colors" className="tx-cat" aria-labelledby="h-tds">
           <div className="tx-cat-no">TDS · {isEn ? 'Colors · Packaging' : '색상 · 포장'}</div>
           <h2 id="h-tds" className="tx-sec-h">{isEn ? 'TDS, colors and packaging at a glance' : 'TDS · 색상 · 포장 한눈에 보기'}</h2>
-          <p className="tx-sec-sub">{isEn ? 'Download the technical data sheet (TDS) of every product and check colors and packaging as stated in the TDS. Ask us for the latest color chart and availability.' : '모든 제품의 기술 데이터시트(TDS) PDF를 바로 받고, TDS에 표기된 색상과 포장을 확인하세요. 최신 색상표(color chart)와 재고는 문의해 주세요.'}</p>
+          <p className="tx-sec-sub">{isEn ? 'Access the technical data sheet (TDS) of every product (instant download for approved members or email request) and check colors and packaging as stated in the TDS.' : '모든 제품의 기술 데이터시트(TDS)를 확인·요청(승인 회원은 바로 다운로드)하고, TDS에 표기된 색상과 포장을 확인하세요. 최신 색상표(color chart)와 재고는 문의해 주세요.'}</p>
           <style dangerouslySetInnerHTML={{ __html: techCss }} />
           <div className="tech-table-wrap" tabIndex={0} role="region" aria-label={isEn ? 'TDS, colors and packaging table (scrollable)' : 'TDS·색상·포장 표 (가로 스크롤 가능)'}>
             <table className="table table-sm tech-table mb-0">
@@ -255,7 +270,20 @@ export default async function ProductsPage({
                       <td>{(isEn ? aliasesOf(pr.slug).filter((a) => !/[가-힣]/.test(a)) : aliasesOf(pr.slug)).slice(0, 3).join(' · ')}</td>
                       <td>{(isEn ? sp['Colors'] : sp['색상']) || '–'}</td>
                       <td>{(isEn ? sp['Packaging'] : sp['포장']) || '–'}</td>
-                      <td><a href={tdsUrl(pr.slug)} download>{pr.docLabel ?? 'TDS'} (PDF)</a></td>
+                      <td>
+                        {PUBLIC_LEED_SLUGS.has(pr.slug) ? (
+                          <a href={`/tds/${pr.slug}.pdf`} target="_blank" rel="noopener noreferrer">
+                            {isEn ? 'LEED letter' : (pr.docLabel ?? 'LEED 확인서')} (PDF)
+                          </a>
+                        ) : (
+                          <TdsAccess
+                            slug={pr.slug}
+                            productName={pr.name}
+                            lang={lang}
+                            variant="link"
+                          />
+                        )}
+                      </td>
                     </tr>
                   );
                 })}
@@ -265,7 +293,7 @@ export default async function ProductsPage({
         </section>
 
         <div className="tx-notes">
-          <div><h3>{isEn ? 'About the values' : '자료 수치 안내'}</h3><p>{isEn ? 'Product data is summarized from Dow TDS; values are typical properties, not specifications. The linked TDS PDFs are authoritative.' : '제품 정보는 Dow TDS를 요약한 것이며 수치는 대표 특성이지 규격값이 아닙니다. 기준은 링크된 TDS 원문입니다.'}</p></div>
+          <div><h3>{isEn ? 'About the values' : '자료 수치 안내'}</h3><p>{isEn ? 'Product data is summarized from Dow TDS; values are typical properties, not specifications. Always refer to the original TDS PDF.' : '제품 정보는 Dow TDS를 요약한 것이며 수치는 대표 특성이지 규격값이 아닙니다. 기준은 원문 TDS입니다.'}</p></div>
           <div><h3>{isEn ? 'Technical resources' : '기술정보'}</h3><p>{isEn ? 'Fire-rated manual, selection guides and training material. ' : '내화 매뉴얼, 선정 가이드, 실리콘 교육 자료. '}<Link href={`/${lang}/technical`}>{isEn ? 'Open Technical Information' : '기술정보 보기'}</Link></p></div>
           <div><h3>{isEn ? 'Not sure which one?' : '어떤 제품이 맞을지 모르겠다면'}</h3><p>{isEn ? 'Tell us the substrate and conditions. ' : '시공 자재와 사용 환경을 알려 주세요. '}<a href="mailto:sales@kconstrade.com">sales@kconstrade.com</a> · <a href="tel:+821089390284">{isEn ? '+82 10-8939-0284' : '010-8939-0284'}</a></p></div>
         </div>

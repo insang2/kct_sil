@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { getDictionary } from '@/lib/dictionaries';
-import { CATALOG, CATEGORIES, bySlug, tdsUrl } from '@/lib/products-catalog';
+import { CATALOG, CATEGORIES, bySlug } from '@/lib/products-catalog';
 import { localizeCatalog, CATEGORY_EN } from '@/lib/products-catalog-en';
 import { CAT_INTRO } from '@/lib/products-roles';
 import { HUBS } from '@/lib/series/hubs';
 import Tx from '@/components/tech/Tx';
+import TdsAccess from '@/components/tds/TdsAccess';
 import HomeFormSection from '@/components/home/HomeFormSection';
 import { homeCss } from '@/components/home/home-styles';
 import {
@@ -338,9 +339,13 @@ export default async function Home({ params }: { params: Promise<{ lang: Lang }>
                   </div>
                   <div className="th-pcard-act">
                     <Link href={href}>{copy.prodDetails}</Link>
-                    <a href={tdsUrl(product.slug)} download>
-                      {product.docLabel}
-                    </a>
+                    <TdsAccess
+                      slug={product.slug}
+                      productName={product.name}
+                      lang={lang}
+                      variant="button"
+                      compact
+                    />
                   </div>
                 </article>
               );
