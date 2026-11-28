@@ -186,9 +186,7 @@ main:focus {
   inset: 0 0 auto 0;
   z-index: 1030;
   min-block-size: var(--kct-hdr-h);
-  background: rgba(255, 255, 255, 0.9);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
+  background: #fff; /* 로고 배경(흰색)과 동일한 불투명 배경 */
   border-bottom: 1px solid var(--kct-line);
   transition: background-color 0.25s var(--kct-ease), border-color 0.25s var(--kct-ease);
   color-scheme: light;
@@ -196,7 +194,7 @@ main:focus {
 
 .kct-hdr.is-scrolled,
 .kct-hdr.is-open {
-  background: rgba(255, 255, 255, 0.97);
+  background: #fff;
   border-bottom-color: var(--kct-line-strong);
 }
 
@@ -1259,7 +1257,7 @@ main:focus {
     border-color: var(--kct-line) !important;
   }
   .kct-hdr {
-    background-color: rgba(255, 255, 255, 0.94) !important;
+    background-color: #fff !important;
     border-bottom-color: var(--kct-line) !important;
   }
   .kct-nav-panel,
