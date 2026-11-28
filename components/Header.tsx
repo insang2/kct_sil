@@ -1,40 +1,41 @@
 import { getDictionary } from '@/lib/dictionaries';
-import Link from 'next/link';
 import NavbarClient from '@/components/NavbarClient';
 
 export default async function Header({ lang = 'ko' }: { lang?: 'ko' | 'en' | 'ja' }) {
   const dict = await getDictionary(lang);
   const d = dict as any;
 
-  return (
-    <header>
-      <nav aria-label={lang === "ko" ? "주 메뉴" : lang === "ja" ? "メインメニュー" : "Main"} className="navbar navbar-expand-lg fixed-top navbar-light bg-white border-bottom shadow-sm">
-        <div className="container position-relative">
-          <Link className="navbar-brand" href={`/${lang}`} aria-label={lang === "ko" ? "한국건설트레이딩 홈" : "Korea Construction Trading home"}>
-            <img
-              src="/assets/img/logo/kct_logo.jpeg"
-              alt=""
-              className="img-fluid"
-              style={{ height: '45px', width: 'auto', mixBlendMode: 'multiply' }}
-            />
-          </Link>
+  const sustainabilityLabel =
+    lang === 'en' ? 'Sustainability' : lang === 'ja' ? 'サステナビリティ' : '지속가능경영';
+  const inquiryLabel =
+    lang === 'en' ? 'Inquire' : lang === 'ja' ? 'お問い合わせ' : '문의하기';
+  const productsLabel =
+    lang === 'ko' ? '제품' : lang === 'ja' ? '製品' : (d.navigation?.products ?? 'Products');
+  const exportLabel =
+    lang === 'ko' ? '수출' : lang === 'ja' ? '輸出' : 'Export';
+  const quoteLabel =
+    lang === 'ko' ? '견적' : lang === 'ja' ? '見積' : (d.navigation?.quote ?? 'Quotation');
 
-          <NavbarClient
-            lang={lang}
-            navLabels={{
-              home:     d.navigation.home,
-              about:    d.navigation.about,
-              products: d.navigation.products,
-              technical: d.navigation.technical,
-              b2b:      d.navigation.b2b,
-              export:   d.navigation.export,
-              quote:    d.navigation.quote,
-              login:    d.navigation.login,
-            }}
-            userLabels={{ logout: d.auth.btn_logout, mypage: d.navigation.mypage, quote: d.navigation.quote }}
-          />
-        </div>
-      </nav>
-    </header>
+  return (
+    <NavbarClient
+      lang={lang}
+      navLabels={{
+        home: d.navigation.home,
+        about: d.navigation.about,
+        sustainability: sustainabilityLabel,
+        products: productsLabel,
+        technical: d.navigation.technical,
+        b2b: d.navigation.b2b,
+        export: exportLabel,
+        quote: quoteLabel,
+        inquiry: inquiryLabel,
+        login: d.navigation.login,
+      }}
+      userLabels={{
+        logout: d.auth.btn_logout,
+        mypage: d.navigation.mypage,
+        quote: d.navigation.quote,
+      }}
+    />
   );
 }

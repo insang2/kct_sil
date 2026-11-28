@@ -3,8 +3,8 @@ import type { ReactNode } from 'react'
 // 기술정보 전용 디자인 시스템 (Pretendard · 본문 17px · 1360px 폭 · 헤어라인 그리드 · 다크 히어로)
 // 사이트 다른 영역에는 영향이 없도록 .tx 범위 안에서만 적용한다.
 export const txCss = `
-.tx{--tx-bg:#F5F6F8;--tx-fg:#16181C;--tx-mute:#5d646b;--tx-line:rgba(22,24,28,.14);--tx-accent:#5b49e6;--tx-ink:#0C0D0F;
-  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+.tx{--tx-bg:var(--kct-bg,#F5F6F8);--tx-fg:var(--kct-fg,#16181C);--tx-mute:var(--kct-mute,#5d646b);--tx-line:var(--kct-line,rgba(22,24,28,.14));--tx-accent:var(--kct-accent,#5b49e6);--tx-ink:var(--kct-ink,#0C0D0F);
+  font-family:var(--kct-sans,"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif);
   font-size:17px;line-height:1.7;letter-spacing:-.011em;color:var(--tx-fg);background:var(--tx-bg);word-break:keep-all;overflow-wrap:break-word}
 .tx *{font-family:inherit}
 .tx i[class^="bi"],.tx i[class*=" bi-"]{font-family:"bootstrap-icons" !important}
@@ -99,7 +99,7 @@ export const txCss = `
 .tx-faq p{margin:.7rem 0 0;color:var(--tx-fg);line-height:1.85}
 .tx-foot{font-size:.9rem;color:var(--tx-mute)}
 /* 제품 정보: 색인 바, 용도별 블록, 제품 타일 */
-.tx-index{position:sticky;top:76px;z-index:20;background:#fff;border-bottom:1px solid var(--tx-line);overflow-x:auto}
+.tx-index{position:sticky;top:var(--kct-hdr-h,76px);z-index:20;background:#fff;border-bottom:1px solid var(--tx-line);overflow-x:auto}
 .tx-index .container{display:flex;gap:2rem;white-space:nowrap}
 .tx-index a{display:flex;gap:.6rem;align-items:baseline;padding:1rem 0;color:var(--tx-fg);text-decoration:none;font-weight:500;font-size:.95rem}
 .tx-index a span{color:var(--tx-mute);font-size:.78rem;font-weight:600}

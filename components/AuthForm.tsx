@@ -44,6 +44,22 @@ export default function AuthForm({ mode, lang, dict }: AuthFormProps) {
   const router = useRouter()
   const supabase = createClient()
   const t = dict.auth
+  const isEn = lang === 'en'
+  const isJa = lang === 'ja'
+
+  const ph = isEn
+    ? { company: 'e.g. ABC Construction Co.', reg: 'e.g. 000-00-00000', contact: 'e.g. John Doe', phone: 'e.g. +82 10-1234-5678' }
+    : isJa
+    ? { company: '例: ABC建設株式会社', reg: '例: 000-00-00000', contact: '例: 山田太郎', phone: '例: +81 90-1234-5678' }
+    : { company: '예: 한국건설(주)', reg: '예: 000-00-00000', contact: '예: 홍길동', phone: '예: 010-1234-5678' }
+
+  const inputStyle = {
+    minHeight: 48,
+    fontSize: 'max(1rem, 1em)',
+    borderColor: 'rgba(22,24,28,.24)',
+    backgroundColor: '#fff',
+    color: '#16181C',
+  } as const
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -91,107 +107,145 @@ export default function AuthForm({ mode, lang, dict }: AuthFormProps) {
   }
 
   return (
-    <div className="card border-0 shadow-lg rounded-4 overflow-hidden" data-form-section>
-      <div className="card-body p-4 p-md-5">
-        <h1 className="fw-bold mb-4 h3">{mode === 'login' ? t.login_title : t.signup_title}</h1>
+    <div className="border rounded-4 p-4 p-md-5" style={{ background: '#fff' }}>
+      <div className="tx-no mb-1">{mode === 'login' ? 'SIGN IN' : 'CREATE ACCOUNT'}</div>
+      <h2 id="auth-form-heading" className="fw-bold mb-4 h4">
+        {mode === 'login' ? t.login_title : t.signup_title}
+      </h2>
 
-        {error && (
-          <div className="alert alert-danger rounded-3 mb-4" role="alert" aria-live="assertive">{error}</div>
+      {error && (
+        <div className="alert alert-danger rounded-3 mb-4" role="alert" aria-live="assertive">{error}</div>
+      )}
+      {success && (
+        <div className="alert alert-success rounded-3 mb-4" role="alert" aria-live="polite">{success}</div>
+      )}
+
+      <form onSubmit={handleSubmit} aria-labelledby="auth-form-heading">
+        {mode === 'signup' && (
+          <>
+            <div className="mb-3">
+              <label className="form-label fw-semibold small" htmlFor="auth-company_name" style={{ color: 'var(--tx-fg)' }}>
+                {t.company_name} <span className="text-danger" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="auth-company_name"
+                autoComplete="organization"
+                type="text"
+                className="form-control form-control-lg"
+                style={inputStyle}
+                value={companyName}
+                onChange={e => setCompanyName(e.target.value)}
+                placeholder={ph.company}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label fw-semibold small" htmlFor="auth-business_reg" style={{ color: 'var(--tx-fg)' }}>
+                {t.business_reg}
+              </label>
+              <input
+                id="auth-business_reg"
+                autoComplete="off"
+                type="text"
+                className="form-control form-control-lg"
+                style={inputStyle}
+                value={businessReg}
+                onChange={e => setBusinessReg(e.target.value)}
+                placeholder={ph.reg}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label fw-semibold small" htmlFor="auth-contact_person" style={{ color: 'var(--tx-fg)' }}>
+                {t.contact_person}
+              </label>
+              <input
+                id="auth-contact_person"
+                autoComplete="name"
+                type="text"
+                className="form-control form-control-lg"
+                style={inputStyle}
+                value={contactPerson}
+                onChange={e => setContactPerson(e.target.value)}
+                placeholder={ph.contact}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label fw-semibold small" htmlFor="auth-phone" style={{ color: 'var(--tx-fg)' }}>
+                {t.phone}
+              </label>
+              <input
+                id="auth-phone"
+                autoComplete="tel"
+                type="tel"
+                className="form-control form-control-lg"
+                style={inputStyle}
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                placeholder={ph.phone}
+              />
+            </div>
+          </>
         )}
-        {success && (
-          <div className="alert alert-success rounded-3 mb-4" role="alert">{success}</div>
-        )}
 
-        <form onSubmit={handleSubmit}>
-          {mode === 'signup' && (
-            <>
-              <div className="mb-3">
-                <label className="form-label" htmlFor="auth-company_name">{t.company_name}</label>
-                <input id="auth-company_name" autoComplete="organization"
-                  type="text"
-                  className="form-control form-control-lg"
-                  value={companyName}
-                  onChange={e => setCompanyName(e.target.value)}
-                  placeholder="예: 한국건설(주)"
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label className="form-label" htmlFor="auth-business_reg">{t.business_reg}</label>
-                <input id="auth-business_reg" autoComplete="off"
-                  type="text"
-                  className="form-control form-control-lg"
-                  value={businessReg}
-                  onChange={e => setBusinessReg(e.target.value)}
-                  placeholder="예: 000-00-00000"
-                />
-              </div>
-              <div className="mb-3">
-                <label className="form-label" htmlFor="auth-contact_person">{t.contact_person}</label>
-                <input id="auth-contact_person" autoComplete="name"
-                  type="text"
-                  className="form-control form-control-lg"
-                  value={contactPerson}
-                  onChange={e => setContactPerson(e.target.value)}
-                  placeholder="예: 홍길동"
-                />
-              </div>
-              <div className="mb-3">
-                <label className="form-label" htmlFor="auth-phone">{t.phone}</label>
-                <input id="auth-phone" autoComplete="tel"
-                  type="tel"
-                  className="form-control form-control-lg"
-                  value={phone}
-                  onChange={e => setPhone(e.target.value)}
-                  placeholder="예: 010-1234-5678"
-                />
-              </div>
-            </>
-          )}
+        <div className="mb-3">
+          <label className="form-label fw-semibold small" htmlFor="auth-email" style={{ color: 'var(--tx-fg)' }}>
+            {t.email} <span className="text-danger" aria-hidden="true">*</span>
+          </label>
+          <input
+            id="auth-email"
+            autoComplete="email"
+            autoCorrect="off"
+            autoCapitalize="none"
+            spellCheck={false}
+            type="email"
+            className="form-control form-control-lg"
+            style={inputStyle}
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            placeholder="name@company.com"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label className="form-label fw-semibold small" htmlFor="auth-password" style={{ color: 'var(--tx-fg)' }}>
+            {t.password} <span className="text-danger" aria-hidden="true">*</span>
+          </label>
+          <input
+            id="auth-password"
+            autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
+            type="password"
+            className="form-control form-control-lg"
+            style={inputStyle}
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            placeholder="••••••••"
+            required
+            minLength={6}
+          />
+        </div>
 
-          <div className="mb-3">
-            <label className="form-label fw-bold text-dark" htmlFor="auth-email">{t.email}</label>
-            <input id="auth-email" autoComplete="email"
-              type="email"
-              className="form-control form-control-lg"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="name@company.com"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="form-label fw-bold text-dark" htmlFor="auth-password">{t.password}</label>
-            <input id="auth-password" autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
-              type="password"
-              className="form-control form-control-lg"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              placeholder="••••••••"
-              required
-              minLength={6}
-            />
-          </div>
+        <div className="d-grid mb-4">
+          <button
+            type="submit"
+            className="btn btn-primary btn-lg"
+            style={{ minHeight: 50 }}
+            disabled={loading}
+          >
+            {loading ? (
+              <span className="spinner-border spinner-border-sm me-2" role="status" />
+            ) : null}
+            {mode === 'login' ? t.btn_login : t.btn_signup}
+          </button>
+        </div>
+      </form>
 
-          <div className="d-grid mb-4">
-            <button
-              type="submit"
-              className="btn btn-primary btn-lg rounded-pill shadow-sm"
-              disabled={loading}
-            >
-              {loading ? (
-                <span className="spinner-border spinner-border-sm me-2" role="status" />
-              ) : null}
-              {mode === 'login' ? t.btn_login : t.btn_signup}
-            </button>
-          </div>
-        </form>
-
-        <p className="text-center text-body-secondary mb-0">
+      <div className="pt-3 text-center" style={{ borderTop: '1px solid var(--tx-line)' }}>
+        <p className="mb-0" style={{ color: 'var(--tx-mute)', fontSize: '0.94rem' }}>
           {mode === 'login' ? t.no_account : t.have_account}{' '}
           <a
             href={mode === 'login' ? `/${lang}/auth/signup` : `/${lang}/auth/login`}
-            className="text-primary fw-bold"
+            className="fw-semibold"
+            style={{ color: 'var(--tx-accent)', textDecoration: 'underline', textUnderlineOffset: 3 }}
           >
             {mode === 'login' ? t.signup_link : t.login_link}
           </a>

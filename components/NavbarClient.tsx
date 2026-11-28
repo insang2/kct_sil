@@ -11,45 +11,33 @@ interface NavbarClientProps {
   navLabels: {
     home: string;
     about: string;
+    sustainability: string;
     products: string;
     technical: string;
     b2b: string;
     export: string;
     quote: string;
+    inquiry: string;
     login: string;
   };
   userLabels: { logout: string; mypage: string; quote: string };
 }
 
+type LangKey = 'ko' | 'en' | 'ja';
+type DropdownKey = 'about' | 'technical';
+
 const LANGS = [
-  { code: 'ko',    label: '한국어 (KO)' },
-  { code: 'en',    label: 'English (EN)' },
-  { code: 'ja',    label: '日本語 (JA)' },
+  { code: 'ko', label: '한국어 (KO)' },
+  { code: 'en', label: 'English (EN)' },
+  { code: 'ja', label: '日本語 (JA)' },
 ] as const;
 
-/* ─── shared styles ─────────────────────────────────────── */
-const LIGHT: React.CSSProperties = {
-  backgroundColor: '#ffffff',
-  color: '#16142F',
-  colorScheme: 'light',
-};
-
-const LINK_STYLE: React.CSSProperties = {
-  color: '#16142F',
-  display: 'flex',
-  alignItems: 'center',
-};
-
-const LINK_STYLE_PRIMARY: React.CSSProperties = {
-  color: '#ffffff',
-  backgroundColor: '#1558D6',
-  borderRadius: '50rem',
-  padding: '0.35rem 1rem',
-  display: 'inline-flex',
-  alignItems: 'center',
-  fontWeight: 600,
-  fontSize: '0.875rem',
-};
+const ABOUT_SUB: { hash: string; ko: string; en: string; ja: string }[] = [
+  { hash: 'greeting', ko: '인사말', en: 'Greeting', ja: 'ご挨拶' },
+  { hash: 'history', ko: '연혁', en: 'History', ja: '沿革' },
+  { hash: 'quality', ko: '품질·환경·안전', en: 'Quality · EHS', ja: '品質・環境・安全' },
+  { hash: 'locations', ko: '사업장', en: 'Locations', ja: '事業所' },
+];
 
 const TECH_SUB: { path: string; ko: string; en: string; ja: string }[] = [
   { path: 'technical', ko: '내화 실란트 기술 매뉴얼', en: 'Fire-rated sealant manual', ja: '耐火シーラント技術マニュアル' },
@@ -60,280 +48,504 @@ const TECH_SUB: { path: string; ko: string; en: string; ja: string }[] = [
   { path: 'technical/tapes', ko: '전기·전자 테이프용 PSA', en: 'Electrical tape PSAs', ja: '電気・電子テープ用PSA' },
 ];
 
-const MENU_LABEL: Record<string, { open: string; close: string; lang: string }> = {
-  ko: { open: '메뉴 열기', close: '메뉴 닫기', lang: '언어 선택' },
-  en: { open: 'Open menu', close: 'Close menu', lang: 'Select language' },
-  ja: { open: 'メニューを開く', close: 'メニューを閉じる', lang: '言語を選択' },
+const A11Y_LABEL: Record<
+  LangKey,
+  { nav: string; homeAria: string; open: string; close: string; lang: string; sub: string }
+> = {
+  ko: {
+    nav: '주 메뉴',
+    homeAria: '한국건설트레이딩 홈',
+    open: '메뉴 열기',
+    close: '메뉴 닫기',
+    lang: '언어 선택',
+    sub: '하위 메뉴',
+  },
+  en: {
+    nav: 'Primary',
+    homeAria: 'Korea Construction Trading home',
+    open: 'Open menu',
+    close: 'Close menu',
+    lang: 'Select language',
+    sub: 'submenu',
+  },
+  ja: {
+    nav: 'メイン',
+    homeAria: '韓国建設トレーディング ホーム',
+    open: 'メニューを開く',
+    close: 'メニューを閉じる',
+    lang: '言語を選択',
+    sub: 'サブメニュー',
+  },
 };
 
 export default function NavbarClient({ lang, navLabels, userLabels }: NavbarClientProps) {
+  const langKey: LangKey = lang === 'en' || lang === 'ja' ? lang : 'ko';
+  const a11y = A11Y_LABEL[langKey];
+
   // 세션은 브라우저에서 조회 → 공개 페이지를 정적(캐시 가능)으로 유지
   const [userEmail, setUserEmail] = useState<string | null>(null);
   useEffect(() => {
     const sb = createClient();
     sb.auth.getUser().then(({ data }) => setUserEmail(data.user?.email ?? null));
-    const { data: sub } = sb.auth.onAuthStateChange((_e, session) => setUserEmail(session?.user?.email ?? null));
+    const { data: sub } = sb.auth.onAuthStateChange((_e, session) =>
+      setUserEmail(session?.user?.email ?? null),
+    );
     return () => sub.subscription.unsubscribe();
   }, []);
-  const userSlot = userEmail ? (
-    <UserMenu lang={lang} userEmail={userEmail} logoutLabel={userLabels.logout} mypageLabel={userLabels.mypage} quoteLabel={userLabels.quote} />
-  ) : undefined;
+
+  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [techOpen, setTechOpen] = useState(false);
-  const techRef = useRef<HTMLLIElement>(null);
-  const pathname = usePathname();
-  const langRef = useRef<HTMLLIElement>(null);
+  const [openSub, setOpenSub] = useState<DropdownKey | null>(null);
+  const [hoverPreview, setHoverPreview] = useState<DropdownKey | null>(null);
 
-  // Close on navigation
+  const pathname = usePathname();
+  const aboutRef = useRef<HTMLLIElement>(null);
+  const aboutBtnRef = useRef<HTMLButtonElement>(null);
+  const techRef = useRef<HTMLLIElement>(null);
+  const techBtnRef = useRef<HTMLButtonElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
+  const langBtnRef = useRef<HTMLButtonElement>(null);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
+
+  // Subtle scrolled hairline state
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Close menus on route change
   useEffect(() => {
     setMenuOpen(false);
     setLangOpen(false);
-    setTechOpen(false);
+    setOpenSub(null);
+    setHoverPreview(null);
   }, [pathname]);
 
-  // Close lang dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
-    if (!langOpen && !techOpen) return;
-    function handle(e: MouseEvent) {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false);
-      if (techRef.current && !techRef.current.contains(e.target as Node)) setTechOpen(false);
+    if (!langOpen && !openSub) return;
+    function handleOutside(e: MouseEvent) {
+      const target = e.target as Node;
+      if (langRef.current && !langRef.current.contains(target)) setLangOpen(false);
+      if (
+        openSub === 'about' &&
+        aboutRef.current &&
+        !aboutRef.current.contains(target)
+      ) {
+        setOpenSub(null);
+        setHoverPreview(null);
+      }
+      if (
+        openSub === 'technical' &&
+        techRef.current &&
+        !techRef.current.contains(target)
+      ) {
+        setOpenSub(null);
+        setHoverPreview(null);
+      }
     }
-    document.addEventListener('mousedown', handle);
-    return () => document.removeEventListener('mousedown', handle);
-  }, [langOpen, techOpen]);
+    document.addEventListener('mousedown', handleOutside);
+    return () => document.removeEventListener('mousedown', handleOutside);
+  }, [langOpen, openSub]);
 
-  // Escape 키로 메뉴·언어 목록 닫기
+  // Escape key closes open dropdowns / mobile menu and restores trigger focus
   useEffect(() => {
-    if (!menuOpen && !langOpen && !techOpen) return;
+    if (!menuOpen && !langOpen && !openSub) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { setMenuOpen(false); setLangOpen(false); setTechOpen(false); }
+      if (e.key !== 'Escape') return;
+      const active = document.activeElement;
+      if (langOpen) {
+        setLangOpen(false);
+        if (langRef.current?.contains(active)) langBtnRef.current?.focus();
+        return;
+      }
+      if (openSub) {
+        const prev = openSub;
+        setOpenSub(null);
+        setHoverPreview(null);
+        if (prev === 'about' && aboutRef.current?.contains(active)) {
+          aboutBtnRef.current?.focus();
+        } else if (prev === 'technical' && techRef.current?.contains(active)) {
+          techBtnRef.current?.focus();
+        }
+        return;
+      }
+      if (menuOpen) {
+        setMenuOpen(false);
+        menuBtnRef.current?.focus();
+      }
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [menuOpen, langOpen, techOpen]);
+  }, [menuOpen, langOpen, openSub]);
 
   // 현재 페이지 경로를 유지한 채 언어만 전환 (/ko/products/x -> /en/products/x)
   const switchPath = (code: string) => {
     const rest = (pathname || `/${lang}`).replace(/^\/(ko|en|ja)(?=\/|$)/, '');
     return `/${code}${rest}`;
   };
+
   const isActive = (href: string) => {
     if (href.includes('#')) return false;
-    return href === `/${lang}` ? pathname === href : pathname === href || !!pathname?.startsWith(href + '/');
+    return href === `/${lang}`
+      ? pathname === href
+      : pathname === href || !!pathname?.startsWith(href + '/');
   };
-  const ml = MENU_LABEL[lang] ?? MENU_LABEL.en;
 
-  const closeMenu = () => {
+  const closeAll = () => {
     setMenuOpen(false);
     setLangOpen(false);
+    setOpenSub(null);
+    setHoverPreview(null);
   };
 
+  const isDesktopHover = (e: React.PointerEvent) =>
+    e.pointerType !== 'touch' &&
+    typeof window !== 'undefined' &&
+    window.innerWidth >= 1024 &&
+    window.matchMedia('(hover: hover)').matches;
+
+  const handleSubEnter = (key: DropdownKey) => (e: React.PointerEvent) => {
+    if (!isDesktopHover(e)) return;
+    setOpenSub(key);
+    setHoverPreview(key);
+  };
+
+  const handleSubLeave = (key: DropdownKey) => (e: React.PointerEvent) => {
+    if (!isDesktopHover(e)) return;
+    if (hoverPreview === key) {
+      setOpenSub((cur) => (cur === key ? null : cur));
+      setHoverPreview(null);
+    }
+  };
+
+  const handleSubToggle = (key: DropdownKey) => () => {
+    // If currently only hover-previewed, pin it open instead of closing immediately
+    if (openSub === key && hoverPreview === key) {
+      setHoverPreview(null);
+      return;
+    }
+    setHoverPreview(null);
+    setOpenSub((cur) => (cur === key ? null : key));
+  };
+
+  const handleSubBlur = (
+    key: DropdownKey,
+    ref: React.RefObject<HTMLLIElement | null>,
+  ) => (e: React.FocusEvent<HTMLLIElement>) => {
+    if (e.relatedTarget && !ref.current?.contains(e.relatedTarget as Node)) {
+      setOpenSub((cur) => (cur === key ? null : cur));
+      setHoverPreview((cur) => (cur === key ? null : cur));
+    }
+  };
+
+  const aboutOpen = openSub === 'about';
+  const techOpen = openSub === 'technical';
+
+  const userSlot = userEmail ? (
+    <UserMenu
+      lang={lang}
+      userEmail={userEmail}
+      logoutLabel={userLabels.logout}
+      mypageLabel={userLabels.mypage}
+      quoteLabel={userLabels.quote}
+      onNavigate={closeAll}
+    />
+  ) : null;
+
   return (
-    <>
-      {/* ── Toggler ── */}
-      <button
-        type="button"
-        className="d-lg-none"
-        aria-expanded={menuOpen}
-        aria-controls="main-nav"
-        aria-label={menuOpen ? ml.close : ml.open}
-        onClick={() => setMenuOpen(p => !p)}
-        style={{
-          background: '#ffffff',
-          border: '1.5px solid rgba(0,0,0,0.18)',
-          borderRadius: '8px',
-          padding: '6px 10px',
-          cursor: 'pointer',
-          color: '#16142F',
-          marginLeft: 'auto',
-          colorScheme: 'light',
-        }}
-      >
-        {menuOpen
-          ? <i className="bi bi-x-lg"  style={{ fontSize: '1.1rem', color: '#16142F', display: 'block' }}></i>
-          : <i className="bi bi-list"  style={{ fontSize: '1.25rem', color: '#16142F', display: 'block' }}></i>
-        }
-      </button>
-
-      {/* ── Collapse panel ── */}
-      <div
-        id="main-nav"
-        className={`navbar-collapse${menuOpen ? ' show' : ' collapse'}`}
-        style={menuOpen ? { display: 'block', ...LIGHT } : { colorScheme: 'light' }}
-      >
-        <ul
-          className="navbar-nav ms-auto align-items-lg-center"
-          style={LIGHT}
+    <header
+      className={`kct-hdr${scrolled ? ' is-scrolled' : ''}${menuOpen ? ' is-open' : ''}`}
+    >
+      <div className="kct-hdr-in">
+        {/* Brand */}
+        <Link
+          className="kct-brand"
+          href={`/${lang}`}
+          aria-label={a11y.homeAria}
+          onClick={closeAll}
         >
+          <img
+            src="/assets/img/logo/kct_logo.jpeg"
+            alt=""
+            width={1380}
+            height={752}
+            className="kct-brand-img"
+          />
+        </Link>
 
-          {/* Nav links */}
-          {([
-            { label: navLabels.home,     href: `/${lang}` },
-            { label: navLabels.about,    href: `/${lang}/about` },
-            { label: navLabels.products, href: `/${lang}/products` },
-            { label: navLabels.technical, href: `/${lang}/technical` },
-            { label: navLabels.b2b,      href: `/${lang}#b2b-form` },
-            { label: navLabels.export,   href: `/${lang}/export` },
-          ] as const).map(item => item.href === `/${lang}/technical` ? (
-            <li key={item.href} className="nav-item d-lg-flex align-items-lg-center" ref={techRef} style={{ position: 'relative', backgroundColor: '#ffffff' }}>
-              <Link
-                className={`nav-link${isActive(item.href) || pathname?.startsWith(item.href) ? ' active fw-bold' : ''}`}
-                aria-current={pathname === item.href ? 'page' : undefined}
-                href={item.href}
-                onClick={closeMenu}
-                style={LINK_STYLE}
+        {/* Single semantic navigation landmark */}
+        <nav className="kct-nav" aria-label={a11y.nav}>
+          {/* Mobile quick actions (< 1024px) */}
+          <div className="kct-mobile-actions">
+            <Link
+              href={`/${lang}/quote`}
+              className="kct-cta-pill kct-mobile-cta"
+              onClick={closeAll}
+            >
+              {navLabels.inquiry}
+            </Link>
+            <button
+              ref={menuBtnRef}
+              type="button"
+              className="kct-menu-btn"
+              aria-expanded={menuOpen}
+              aria-controls="kct-nav-panel"
+              aria-label={menuOpen ? a11y.close : a11y.open}
+              onClick={() => setMenuOpen((prev) => !prev)}
+            >
+              <span aria-hidden="true" />
+              <span aria-hidden="true" />
+            </button>
+          </div>
+
+          {/* Mobile backdrop */}
+          {menuOpen && (
+            <div
+              className="kct-mobile-backdrop"
+              aria-hidden="true"
+              onClick={closeAll}
+            />
+          )}
+
+          {/* Navigation panel (inline on desktop, drawer on mobile) */}
+          <div
+            id="kct-nav-panel"
+            className={`kct-nav-panel${menuOpen ? ' is-open' : ''}`}
+          >
+            <ul className="kct-nav-list">
+              {/* 1. 회사소개 (About + anchors dropdown) */}
+              <li
+                className="kct-nav-item"
+                ref={aboutRef}
+                onPointerEnter={handleSubEnter('about')}
+                onPointerLeave={handleSubLeave('about')}
+                onBlur={handleSubBlur('about', aboutRef)}
               >
-                {item.label}
-              </Link>
-              <button
-                type="button"
-                aria-expanded={techOpen}
-                aria-haspopup="true"
-                aria-controls="tech-submenu"
-                aria-label={`${item.label} ${lang === 'ko' ? '하위 메뉴' : lang === 'ja' ? 'サブメニュー' : 'submenu'}`}
-                onClick={() => setTechOpen(p => !p)}
-                style={{ background: '#fff', border: 0, padding: '0.25rem 0.5rem', color: '#16142F', cursor: 'pointer' }}
-              >
-                <i className={`bi bi-chevron-${techOpen ? 'up' : 'down'}`} style={{ fontSize: '0.7rem' }} aria-hidden="true"></i>
-              </button>
-              {techOpen && (
+                <div className="kct-nav-row">
+                  <Link
+                    href={`/${lang}/about`}
+                    className={`kct-nav-link${isActive(`/${lang}/about`) ? ' is-active' : ''}`}
+                    aria-current={pathname === `/${lang}/about` ? 'page' : undefined}
+                    onClick={closeAll}
+                  >
+                    {navLabels.about}
+                  </Link>
+                  <button
+                    ref={aboutBtnRef}
+                    type="button"
+                    className="kct-sub-toggle"
+                    aria-expanded={aboutOpen}
+                    aria-controls="kct-sub-about"
+                    aria-label={`${navLabels.about} ${a11y.sub}`}
+                    onClick={handleSubToggle('about')}
+                  >
+                    <i className="bi bi-chevron-down" aria-hidden="true" />
+                  </button>
+                </div>
                 <ul
-                  id="tech-submenu"
-                  className="tech-submenu"
-                  style={{
-                    position: 'absolute', left: 0, top: '100%', zIndex: 1050, minWidth: '270px', backgroundColor: '#fff',
-                    border: '1px solid rgba(0,0,0,0.1)', borderRadius: '0.75rem', boxShadow: '0 0.5rem 1rem rgba(0,0,0,0.12)',
-                    padding: '0.5rem 0', listStyle: 'none', margin: 0, colorScheme: 'light',
-                  }}
+                  id="kct-sub-about"
+                  className="kct-sub"
+                  hidden={!aboutOpen}
                 >
-                  {TECH_SUB.map(sub => {
+                  {ABOUT_SUB.map((sub) => (
+                    <li key={sub.hash}>
+                      <Link
+                        href={`/${lang}/about#${sub.hash}`}
+                        className="kct-sub-link"
+                        onClick={closeAll}
+                      >
+                        {sub[langKey]}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+
+              {/* 2. 지속가능경영 (Sustainability) */}
+              <li className="kct-nav-item">
+                <Link
+                  href={`/${lang}/sustainability`}
+                  className={`kct-nav-link${isActive(`/${lang}/sustainability`) ? ' is-active' : ''}`}
+                  aria-current={isActive(`/${lang}/sustainability`) ? 'page' : undefined}
+                  onClick={closeAll}
+                >
+                  {navLabels.sustainability}
+                </Link>
+              </li>
+
+              {/* 3. 제품 (Products) */}
+              <li className="kct-nav-item">
+                <Link
+                  href={`/${lang}/products`}
+                  className={`kct-nav-link${isActive(`/${lang}/products`) ? ' is-active' : ''}`}
+                  aria-current={isActive(`/${lang}/products`) ? 'page' : undefined}
+                  onClick={closeAll}
+                >
+                  {navLabels.products}
+                </Link>
+              </li>
+
+              {/* 4. 기술정보 (Technical + existing TECH_SUB dropdown) */}
+              <li
+                className="kct-nav-item"
+                ref={techRef}
+                onPointerEnter={handleSubEnter('technical')}
+                onPointerLeave={handleSubLeave('technical')}
+                onBlur={handleSubBlur('technical', techRef)}
+              >
+                <div className="kct-nav-row">
+                  <Link
+                    href={`/${lang}/technical`}
+                    className={`kct-nav-link${isActive(`/${lang}/technical`) ? ' is-active' : ''}`}
+                    aria-current={pathname === `/${lang}/technical` ? 'page' : undefined}
+                    onClick={closeAll}
+                  >
+                    {navLabels.technical}
+                  </Link>
+                  <button
+                    ref={techBtnRef}
+                    type="button"
+                    className="kct-sub-toggle"
+                    aria-expanded={techOpen}
+                    aria-controls="kct-sub-tech"
+                    aria-label={`${navLabels.technical} ${a11y.sub}`}
+                    onClick={handleSubToggle('technical')}
+                  >
+                    <i className="bi bi-chevron-down" aria-hidden="true" />
+                  </button>
+                </div>
+                <ul
+                  id="kct-sub-tech"
+                  className="kct-sub"
+                  hidden={!techOpen}
+                >
+                  {TECH_SUB.map((sub) => {
                     const href = `/${lang}/${sub.path}`;
-                    const cur = pathname === href || (sub.path !== 'technical' && !!pathname?.startsWith(href + '/'));
+                    const cur =
+                      pathname === href ||
+                      (sub.path !== 'technical' && !!pathname?.startsWith(href + '/'));
                     return (
                       <li key={sub.path}>
                         <Link
                           href={href}
-                          onClick={closeMenu}
+                          className="kct-sub-link"
                           aria-current={cur ? 'page' : undefined}
-                          style={{ display: 'block', padding: '0.55rem 1rem', color: cur ? '#1558D6' : '#16142F', fontWeight: cur ? 600 : 400, textDecoration: 'none', fontSize: '0.92rem' }}
+                          onClick={closeAll}
                         >
-                          {sub[(lang as 'ko' | 'en' | 'ja')] ?? sub.en}
+                          {sub[langKey]}
                         </Link>
                       </li>
                     );
                   })}
                 </ul>
-              )}
-            </li>
-          ) : (
-            <li key={item.href} className="nav-item" style={{ backgroundColor: '#ffffff', borderBottomColor: '#f1f5f9' }}>
-              <Link
-                className={`nav-link${isActive(item.href) ? ' active fw-bold' : ''}`}
-                aria-current={isActive(item.href) ? 'page' : undefined}
-                href={item.href}
-                onClick={closeMenu}
-                style={LINK_STYLE}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
+              </li>
 
-          {/* ── Language switcher ── */}
-          <li
-            className="nav-item ms-lg-2"
-            ref={langRef}
-            style={{ position: 'relative', backgroundColor: '#ffffff' }}
-          >
-            <button
-              onClick={() => setLangOpen(p => !p)}
-              aria-expanded={langOpen}
-              aria-haspopup="true"
-              aria-label={`${ml.lang}: ${lang.toUpperCase()}`}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.25rem',
-                background: '#ffffff',
-                border: '1px solid #dee2e6',
-                borderRadius: '50rem',
-                padding: '0.25rem 0.75rem',
-                cursor: 'pointer',
-                color: '#16142F',
-                fontSize: '0.875rem',
-                fontWeight: 500,
-                colorScheme: 'light',
-              }}
-            >
-              <i className="bi bi-globe" style={{ color: '#16142F' }}></i>
-              <span style={{ color: '#16142F' }}>{lang.toUpperCase()}</span>
-              <i
-                className={`bi bi-chevron-${langOpen ? 'up' : 'down'}`}
-                style={{ fontSize: '0.65rem', color: '#16142F' }}
-              ></i>
-            </button>
+              {/* 5. 수출 (Export) */}
+              <li className="kct-nav-item">
+                <Link
+                  href={`/${lang}/export`}
+                  className={`kct-nav-link${isActive(`/${lang}/export`) ? ' is-active' : ''}`}
+                  aria-current={isActive(`/${lang}/export`) ? 'page' : undefined}
+                  onClick={closeAll}
+                >
+                  {navLabels.export}
+                </Link>
+              </li>
 
-            {langOpen && (
-              <ul
-                style={{
-                  position: 'absolute',
-                  right: 0,
-                  top: '110%',
-                  zIndex: 1050,
-                  minWidth: '180px',
-                  backgroundColor: '#ffffff',
-                  border: '1px solid rgba(0,0,0,0.1)',
-                  borderRadius: '0.75rem',
-                  boxShadow: '0 0.5rem 1rem rgba(0,0,0,0.12)',
-                  padding: '0.5rem 0',
-                  listStyle: 'none',
-                  margin: 0,
-                  colorScheme: 'light',
+              {/* 6. 견적 (Quote) */}
+              <li className="kct-nav-item">
+                <Link
+                  href={`/${lang}/quote`}
+                  className={`kct-nav-link${isActive(`/${lang}/quote`) ? ' is-active' : ''}`}
+                  aria-current={isActive(`/${lang}/quote`) ? 'page' : undefined}
+                  onClick={closeAll}
+                >
+                  {navLabels.quote}
+                </Link>
+              </li>
+            </ul>
+
+            {/* Right Utility Cluster: Language · Auth · Pill CTA */}
+            <div className="kct-hdr-side">
+              {/* Language switcher */}
+              <div
+                className="kct-lang"
+                ref={langRef}
+                onBlur={(e) => {
+                  if (e.relatedTarget && !langRef.current?.contains(e.relatedTarget as Node)) {
+                    setLangOpen(false);
+                  }
                 }}
               >
-                {LANGS.map(l => (
-                  <li key={l.code}>
-                    <a
-                      href={switchPath(l.code)}
-                      lang={l.code}
-                      hrefLang={l.code}
-                      aria-current={l.code === lang ? 'true' : undefined}
-                      onClick={closeMenu}
-                      style={{
-                        display: 'block',
-                        padding: '0.5rem 1rem',
-                        color: l.code === lang ? '#1558D6' : '#16142F',
-                        fontWeight: l.code === lang ? 600 : 400,
-                        textDecoration: 'none',
-                        backgroundColor: l.code === lang ? '#f0f4ff' : 'transparent',
-                        fontSize: '0.9rem',
-                      }}
-                    >
-                      {l.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
+                <button
+                  ref={langBtnRef}
+                  type="button"
+                  className="kct-lang-btn"
+                  aria-expanded={langOpen}
+                  aria-controls="kct-lang-list"
+                  aria-label={`${a11y.lang}: ${lang.toUpperCase()}`}
+                  onClick={() => setLangOpen((prev) => !prev)}
+                >
+                  <i className="bi bi-globe" aria-hidden="true" />
+                  <span>{lang.toUpperCase()}</span>
+                  <i
+                    className={`bi bi-chevron-${langOpen ? 'up' : 'down'}`}
+                    aria-hidden="true"
+                    style={{ fontSize: '0.65rem' }}
+                  />
+                </button>
+                {langOpen && (
+                  <ul id="kct-lang-list" className="kct-lang-list">
+                    {LANGS.map((l) => (
+                      <li key={l.code}>
+                        <a
+                          href={switchPath(l.code)}
+                          lang={l.code}
+                          hrefLang={l.code}
+                          aria-current={l.code === lang ? 'true' : undefined}
+                          className="kct-lang-link"
+                          onClick={closeAll}
+                        >
+                          <span>{l.label}</span>
+                          {l.code === lang && (
+                            <i className="bi bi-check2" aria-hidden="true" />
+                          )}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
 
-          {/* ── Auth area ── */}
-          {userSlot ?? (
-            <li className="nav-item ms-lg-2" style={{ backgroundColor: '#ffffff' }}>
+              {/* Auth area (client getUser) */}
+              {userSlot ?? (
+                <Link
+                  href={`/${lang}/auth/login`}
+                  className="kct-login-link"
+                  onClick={closeAll}
+                >
+                  <i className="bi bi-person" aria-hidden="true" />
+                  <span>{navLabels.login}</span>
+                </Link>
+              )}
+
+              {/* Pill CTA "문의하기" (Quote) */}
               <Link
-                href={`/${lang}/auth/login`}
-                onClick={closeMenu}
-                style={LINK_STYLE_PRIMARY}
+                href={`/${lang}/quote`}
+                className="kct-cta-pill"
+                onClick={closeAll}
               >
-                <i className="bi bi-person me-1"></i>
-                {navLabels.login}
+                <span>{navLabels.inquiry}</span>
+                <span className="kct-cta-arw" aria-hidden="true">→</span>
               </Link>
-            </li>
-          )}
-
-        </ul>
+            </div>
+          </div>
+        </nav>
       </div>
-    </>
+    </header>
   );
 }

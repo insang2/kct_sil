@@ -146,11 +146,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // TDS 센터 · HTML 사이트맵 (ko/en)
   const utilityPages = KO_EN.flatMap((lang) =>
-    ['tds', 'sitemap'].map((path) => ({
+    ['tds', 'sitemap', 'sustainability'].map((path) => ({
       url: `${baseUrl}/${lang}/${path}`,
       lastModified: new Date(SITE_DATES.technicalHub),
       changeFrequency: 'monthly' as const,
-      priority: path === 'tds' ? 0.8 : 0.5,
+      priority: path === 'tds' ? 0.8 : path === 'sustainability' ? 0.6 : 0.5,
       alternates: {
         languages: { ko: `${baseUrl}/ko/${path}`, en: `${baseUrl}/en/${path}`, 'x-default': `${baseUrl}/ko/${path}` },
       },

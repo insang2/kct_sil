@@ -1,9 +1,11 @@
 import { getDictionary } from '@/lib/dictionaries'
 import { createClient } from '@/lib/supabase/server'
 import QuoteBuilder from '@/components/QuoteBuilder'
+import Tx from '@/components/tech/Tx'
 import type { PriceTier, Product } from '@/lib/pricing'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { PHONE_DISPLAY, PHONE_TEL } from '@/lib/contact'
 
 export async function generateMetadata({
   params,
@@ -24,7 +26,7 @@ export async function generateMetadata({
     ? 'Instant online quotation for architectural and structural silicone sealants. Transparent B2B pricing, volume discounts, and custom PDF quote generation.'
     : isJa
     ? '建築用・構造用シリコーンシーラントのオンライン即時見積。事業者会員向けの特別単価、大量購入割引、PDF見積書の即時ダウンロードに対応しています。'
-    : '건축용·구조용 실리콘 B2B 온라인 즉시 견적. 사업자 회원 등급별 맞춤 단가, 대량 구매 할인, PDF 견적서 즉시 다운로드.';
+    : '건축용·구조용 실리콘 B2B 온라인 즉시 견적. 사업자 회원 등급별 맞춤 단가, 대량 구매 할인, PDF 견적서 즉시 다운로드.'
 
   return {
     title,
@@ -76,6 +78,8 @@ export default async function QuotePage({
   const { lang } = await params
   const dict = await getDictionary(lang)
   const d = dict as any
+  const isEn = lang === 'en'
+  const isJa = lang === 'ja'
 
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -103,34 +107,93 @@ export default async function QuotePage({
     }
   }
 
+  const notes = isEn
+    ? {
+        t1: 'Products & TDS',
+        p1: 'Check full specifications and download TDS PDFs for all 30 DOWSIL™ products. ',
+        l1: 'Browse products',
+        t2: 'Export Inquiry',
+        p2: 'Need FOB/CIF shipping, customs documents, or overseas bulk supply? ',
+        l2: 'Go to export inquiry',
+        t3: 'Direct Sales Support',
+        p3: 'For custom project pricing or unlisted grades, contact our sales team: ',
+        phone: '+82 10-8939-0284',
+      }
+    : isJa
+    ? {
+        t1: '製品情報・TDS',
+        p1: 'DOWSIL™全30種の仕様とTDS資料をご確認いただけます。',
+        l1: '製品一覧を見る',
+        t2: '輸出のお問い合わせ',
+        p2: 'FOB/CIF条件や輸出書類を含む海外出荷のご相談はこちら。',
+        l2: '輸出問い合わせへ',
+        t3: '営業担当へのお問い合わせ',
+        p3: '大量案件や掲載外製品の単価確認は直接ご連絡ください。',
+        phone: '+82 10-8939-0284',
+      }
+    : {
+        t1: '제품 사양 · TDS',
+        p1: 'DOWSIL™ 30종 전체 제품 사양과 TDS PDF를 먼저 확인하실 수 있습니다. ',
+        l1: '제품정보 보기',
+        t2: '해외 수출 문의',
+        p2: 'FOB/CIF 조건, 수출 서류 및 해외 발주는 수출 문의 페이지를 이용해 주세요. ',
+        l2: '수출문의 바로가기',
+        t3: '직접 상담 · 특가 문의',
+        p3: '대량 프로젝트 단가나 목록 외 제품 견적은 영업 담당자에게 문의해 주세요. ',
+        phone: PHONE_DISPLAY,
+      }
+
   return (
-    <>
-      {/* Hero */}
-      <section className="position-relative overflow-hidden pt-11 pb-7 bg-white" style={{ minHeight: '30vh', display: 'flex', alignItems: 'center' }}>
-        <div className="container position-relative z-1 mt-5">
-          <div className="row align-items-center">
-            <div className="col-lg-8 mx-auto text-center">
-              <span className="h6 fw-bold text-uppercase text-primary">{d.quote.label}</span>
-              <h1 className="display-4 mb-3 fw-bold text-dark">{d.quote.title}</h1>
-              <p className="lead fw-medium text-body-secondary">{d.quote.subtitle}</p>
-              {user && (
-                <div className="d-flex justify-content-center gap-2 mt-3">
-                  <span className="badge bg-primary rounded-pill px-3 py-2">
-                    <i className="bi bi-person-check me-1"></i>{user.email}
-                  </span>
-                  <a href={`/${lang}/quote/history`} className="btn btn-sm btn-outline-primary rounded-pill px-3">
-                    <i className="bi bi-clock-history me-1"></i>{d.quote.history_title}
-                  </a>
-                </div>
-              )}
-            </div>
+    <Tx>
+      {/* Dark Hero */}
+      <section
+        className="tx-hero"
+        style={{ background: 'linear-gradient(180deg,rgba(12,13,15,.74),rgba(12,13,15,.95)), url(/assets/img/backgrounds/hero_construction.png) center/cover' }}
+      >
+        <div className="container">
+          <nav aria-label="breadcrumb" className="mb-3">
+            <Link href={`/${lang}`}>{d.navigation.home}</Link>
+            <span> / </span>
+            <span style={{ color: '#EDEDED' }}>{d.navigation.quote}</span>
+          </nav>
+          <span className="badge">{d.quote.label}</span>
+          <h1 className="fw-bold mt-3">{d.quote.title}</h1>
+          <p>{d.quote.subtitle}</p>
+          <div className="d-flex flex-wrap align-items-center gap-2 mt-4">
+            {user ? (
+              <>
+                <span
+                  className="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill"
+                  style={{ border: '1px solid rgba(237,237,237,.22)', background: 'rgba(255,255,255,.06)', color: '#EDEDED', fontSize: '0.88rem' }}
+                >
+                  <i className="bi bi-person-check" aria-hidden="true" style={{ color: '#8B7CFF' }}></i>
+                  {user.email}
+                </span>
+                <Link href={`/${lang}/quote/history`} className="btn btn-light btn-sm">
+                  <i className="bi bi-clock-history me-1" aria-hidden="true"></i>
+                  {d.quote.history_title} →
+                </Link>
+                <Link href={`/${lang}/profile`} className="btn btn-outline-light btn-sm">
+                  {d.navigation.mypage}
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link href={`/${lang}/auth/login`} className="btn btn-light btn-sm">
+                  {d.navigation.login} →
+                </Link>
+                <Link href={`/${lang}/products`} className="btn btn-outline-light btn-sm">
+                  {d.navigation.products}
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </section>
 
       {/* Builder */}
-      <section className="py-9 py-lg-11" data-form-section>
-        <div className="container">
+      <section className="py-5">
+        <div className="container pb-5">
           <QuoteBuilder
             products={products}
             userTier={userTier}
@@ -138,8 +201,33 @@ export default async function QuotePage({
             lang={lang}
             dict={d}
           />
+
+          <div className="tx-notes">
+            <div>
+              <h3>{notes.t1}</h3>
+              <p>
+                {notes.p1}
+                <Link href={`/${lang}/products`}>{notes.l1}</Link>
+              </p>
+            </div>
+            <div>
+              <h3>{notes.t2}</h3>
+              <p>
+                {notes.p2}
+                <Link href={`/${lang}/export`}>{notes.l2}</Link>
+              </p>
+            </div>
+            <div>
+              <h3>{notes.t3}</h3>
+              <p>
+                {notes.p3}
+                <a href="mailto:sales@kconstrade.com">sales@kconstrade.com</a> ·{' '}
+                <a href={PHONE_TEL}>{notes.phone}</a>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
-    </>
+    </Tx>
   )
 }

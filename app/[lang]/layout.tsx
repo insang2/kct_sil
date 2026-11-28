@@ -111,9 +111,12 @@ export default async function RootLayout({
         <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/icon-512.png" />
         <link rel="stylesheet" href="/assets/fonts/bootstrap-icons/bootstrap-icons.min.css" />
         <link rel="stylesheet" href="/assets/fonts/iconsmind/iconsmind.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+          precedence="default"
+        />
         <link href="/assets/css/theme.css" rel="stylesheet" />
         <script
           type="application/ld+json"
@@ -171,7 +174,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="d-flex flex-column min-vh-100">
+      <body className="kct-body d-flex flex-column min-vh-100">
         {/* Google Analytics */}
         <Script 
           src="https://www.googletagmanager.com/gtag/js?id=G-CXKPTQTM71" 

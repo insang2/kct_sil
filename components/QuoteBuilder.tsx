@@ -94,8 +94,9 @@ function ChipGroup({
         <button
           key={opt}
           type="button"
+          aria-pressed={value === opt}
           className={`btn btn-sm rounded-pill px-3 ${value === opt ? 'btn-primary' : 'btn-outline-secondary'}`}
-          style={{ fontSize: '0.78rem' }}
+          style={{ fontSize: '0.82rem', minHeight: 38 }}
           onClick={() => onChange(opt)}
         >
           {opt}
@@ -212,213 +213,317 @@ export default function QuoteBuilder({ products, userTier, userId, lang, dict }:
     setSaveMsg(error ? '저장 실패. 다시 시도해 주세요.' : '견적서가 저장되었습니다.')
   }
 
+  const fieldStyle = {
+    minHeight: 44,
+    fontSize: 'max(1rem, 1em)',
+    borderColor: 'rgba(22,24,28,.22)',
+    backgroundColor: '#fff',
+    color: '#16181C',
+  } as const
+
   return (
-    <div className="row g-5" data-form-section>
+    <div className="row g-4 g-lg-5 align-items-start">
       {/* Left: Product selection + Trade Terms */}
       <div className="col-lg-7">
-        <h2 className="h5 fw-bold mb-4 text-dark">{t.product_select}</h2>
-        <div className="list-group shadow-sm rounded-4 overflow-hidden mb-5">
-          {products.map(product => {
-            const checked = !!selected[product.id]
-            const price = getPrice(product, userTier)
-            return (
-              <div
-                key={product.id}
-                className={`list-group-item list-group-item-action d-flex align-items-center gap-3 py-3 px-4 ${checked ? 'border-primary bg-primary bg-opacity-10' : ''}`}
-              >
-                <input
-                  className="form-check-input flex-shrink-0 mt-0"
-                  type="checkbox"
-                  checked={checked}
-                  onChange={() => toggleProduct(product)}
-                  id={`product-${product.id}`}
-                />
-                <label className="flex-grow-1 mb-0" htmlFor={`product-${product.id}`} style={{ cursor: 'pointer' }}>
-                  <div className="fw-bold text-dark" style={{ fontSize: '0.9rem' }}>{product.name_ko}</div>
-                  {product.sku && <div className="text-body-secondary" style={{ fontSize: '0.78rem' }}>SKU: {product.sku}</div>}
-                </label>
-                <div className="text-end flex-shrink-0">
-                  <div className="fw-bold text-primary" style={{ fontSize: '0.9rem' }}>
-                    {price.toLocaleString('ko-KR')}원/{product.unit}
-                  </div>
-                </div>
-                {checked && (
-                  <div className="d-flex align-items-center gap-1 flex-shrink-0">
-                    <button className="btn btn-outline-secondary btn-sm" style={{ width: 28, height: 28, padding: 0 }}
-                      onClick={() => setQuantity(product.id, (selected[product.id]?.quantity ?? 1) - 1)}>-</button>
-                    <input
-                      type="number"
-                      className="form-control form-control-sm text-center"
-                      style={{ width: 56 }}
-                      min={1}
-                      value={selected[product.id]?.quantity ?? 1}
-                      onChange={e => setQuantity(product.id, parseInt(e.target.value) || 1)}
-                    />
-                    <button className="btn btn-outline-secondary btn-sm" style={{ width: 28, height: 28, padding: 0 }}
-                      onClick={() => setQuantity(product.id, (selected[product.id]?.quantity ?? 1) + 1)}>+</button>
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
-
-        {/* Trade Terms */}
-        <div className="card border-0 shadow-sm rounded-4">
-          <div className="card-body p-4">
-            <h2 className="h5 fw-bold mb-1 text-dark">
-              <i className="bi bi-globe2 me-2 text-primary"></i>Trade Terms
-            </h2>
-            <p className="text-body-secondary small mb-4">수출 견적 시 적용할 무역 조건을 선택하세요.</p>
-
-            <div className="mb-4">
-              <label className="form-label fw-bold text-dark small mb-2" htmlFor="quote-1">Incoterms 2020</label>
-              <ChipGroup options={INCOTERMS} value={tradeTerms.incoterms} onChange={v => setTrade('incoterms', v)} />
-              <div className="text-body-secondary mt-1" style={{ fontSize: '0.72rem' }}>
-                {{
-                  EXW: 'EXW — 공장인도 (매도인 최소 의무)',
-                  FOB: 'FOB — 본선인도 (선적항 위험 이전)',
-                  CFR: 'CFR — 운임포함 (목적항까지 운임 부담)',
-                  CIF: 'CIF — 운임·보험료포함 (운임+보험 부담)',
-                  DAP: 'DAP — 목적지인도 (목적지까지 위험 부담)',
-                  DDP: 'DDP — 관세지급인도 (매도인 최대 의무)',
-                }[tradeTerms.incoterms]}
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <label className="form-label fw-bold text-dark small mb-2">Payment Terms</label>
-              <ChipGroup options={PAYMENT_TERMS} value={tradeTerms.paymentTerms} onChange={v => setTrade('paymentTerms', v)} />
-            </div>
-
-            <div className="mb-4">
-              <label className="form-label fw-bold text-dark small mb-2">Currency</label>
-              <ChipGroup options={CURRENCIES} value={tradeTerms.currency} onChange={v => setTrade('currency', v)} />
-            </div>
-
-            <div className="row g-3 mb-4">
-              <div className="col-6">
-                <label className="form-label fw-bold text-dark small">Port of Loading</label>
-                <select id="quote-1" className="form-select form-select-sm text-dark"
-                  value={tradeTerms.portOfLoading} onChange={e => setTrade('portOfLoading', e.target.value)}>
-                  {PORTS.map(p => <option key={p}>{p}</option>)}
-                </select>
-              </div>
-              <div className="col-6">
-                <label className="form-label fw-bold text-dark small" htmlFor="quote-2">Lead Time</label>
-                <select id="quote-2" className="form-select form-select-sm text-dark"
-                  value={tradeTerms.leadTime} onChange={e => setTrade('leadTime', e.target.value)}>
-                  {LEAD_TIMES.map(l => <option key={l}>{l}</option>)}
-                </select>
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <label className="form-label fw-bold text-dark small mb-2" htmlFor="quote-3">Quote Validity</label>
-              <ChipGroup options={VALIDITIES} value={tradeTerms.validity} onChange={v => setTrade('validity', v)} />
-            </div>
-
-            <div>
-              <label className="form-label fw-bold text-dark small mb-2">Documents Provided</label>
-              <div className="row g-2">
-                {DOCUMENTS.map(doc => (
-                  <div key={doc} className="col-12">
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id={`doc-${doc}`}
-                        checked={tradeTerms.documents.includes(doc)}
-                        onChange={() => toggleDoc(doc)}
-                      />
-                      <label className="form-check-label text-dark small" htmlFor={`doc-${doc}`}>{doc}</label>
+        {/* 01 Product Selection */}
+        <div className="mb-5">
+          <div className="tx-no mb-1">01 · PRODUCTS</div>
+          <h2 className="h4 fw-bold mb-3">{t.product_select}</h2>
+          <div className="border rounded-4 overflow-hidden" style={{ background: '#fff' }}>
+            {products.map((product, idx) => {
+              const checked = !!selected[product.id]
+              const price = getPrice(product, userTier)
+              return (
+                <div
+                  key={product.id}
+                  className="d-flex flex-wrap flex-sm-nowrap align-items-center gap-3 py-3 px-3 px-md-4"
+                  style={{
+                    borderTop: idx === 0 ? 'none' : '1px solid var(--tx-line)',
+                    background: checked ? 'rgba(91, 73, 230, 0.055)' : '#fff',
+                    transition: 'background-color 0.15s ease',
+                  }}
+                >
+                  <input
+                    className="form-check-input flex-shrink-0 mt-0"
+                    style={{ width: 20, height: 20, accentColor: '#5b49e6', cursor: 'pointer' }}
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => toggleProduct(product)}
+                    id={`product-${product.id}`}
+                  />
+                  <label className="flex-grow-1 mb-0" htmlFor={`product-${product.id}`} style={{ cursor: 'pointer', minWidth: 160 }}>
+                    <div className="fw-semibold" style={{ fontSize: '0.96rem', color: 'var(--tx-fg)' }}>{product.name_ko}</div>
+                    {product.sku && <div style={{ fontSize: '0.8rem', color: 'var(--tx-mute)' }}>SKU: {product.sku}</div>}
+                  </label>
+                  <div className="text-end flex-shrink-0 ms-auto">
+                    <div className="fw-bold" style={{ fontSize: '0.94rem', color: checked ? 'var(--tx-accent)' : 'var(--tx-fg)', fontVariantNumeric: 'tabular-nums' }}>
+                      {price.toLocaleString('ko-KR')}원/{product.unit}
                     </div>
                   </div>
-                ))}
-              </div>
+                  {checked && (
+                    <div className="d-flex align-items-center gap-1 flex-shrink-0">
+                      <button
+                        type="button"
+                        aria-label={`${product.name_ko} -`}
+                        className="btn btn-outline-secondary btn-sm"
+                        style={{ minWidth: 36, minHeight: 36, padding: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                        onClick={() => setQuantity(product.id, (selected[product.id]?.quantity ?? 1) - 1)}
+                      >
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        aria-label={`${product.name_ko} ${t.quantity}`}
+                        className="form-control form-control-sm text-center"
+                        style={{ width: 60, minHeight: 36, fontSize: 'max(1rem, 0.92rem)', borderColor: 'rgba(22,24,28,.22)' }}
+                        min={1}
+                        value={selected[product.id]?.quantity ?? 1}
+                        onChange={e => setQuantity(product.id, parseInt(e.target.value) || 1)}
+                      />
+                      <button
+                        type="button"
+                        aria-label={`${product.name_ko} +`}
+                        className="btn btn-outline-secondary btn-sm"
+                        style={{ minWidth: 36, minHeight: 36, padding: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                        onClick={() => setQuantity(product.id, (selected[product.id]?.quantity ?? 1) + 1)}
+                      >
+                        +
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* 02 Trade Terms */}
+        <div className="border rounded-4 p-4 p-md-5" style={{ background: '#fff' }}>
+          <div className="tx-no mb-1">02 · TRADE TERMS</div>
+          <h2 className="h4 fw-bold mb-1">
+            <i className="bi bi-globe2 me-2" aria-hidden="true" style={{ color: 'var(--tx-accent)' }}></i>
+            Trade Terms
+          </h2>
+          <p className="mb-4" style={{ color: 'var(--tx-mute)', fontSize: '0.92rem' }}>
+            수출 견적 시 적용할 무역 조건을 선택하세요.
+          </p>
+
+          <div className="mb-4 pb-4" style={{ borderBottom: '1px solid var(--tx-line)' }}>
+            <div className="form-label fw-semibold small mb-2" style={{ color: 'var(--tx-fg)' }}>Incoterms 2020</div>
+            <ChipGroup options={INCOTERMS} value={tradeTerms.incoterms} onChange={v => setTrade('incoterms', v)} />
+            <div className="mt-2" style={{ fontSize: '0.8rem', color: 'var(--tx-mute)' }}>
+              {{
+                EXW: 'EXW — 공장인도 (매도인 최소 의무)',
+                FOB: 'FOB — 본선인도 (선적항 위험 이전)',
+                CFR: 'CFR — 운임포함 (목적항까지 운임 부담)',
+                CIF: 'CIF — 운임·보험료포함 (운임+보험 부담)',
+                DAP: 'DAP — 목적지인도 (목적지까지 위험 부담)',
+                DDP: 'DDP — 관세지급인도 (매도인 최대 의무)',
+              }[tradeTerms.incoterms]}
+            </div>
+          </div>
+
+          <div className="mb-4 pb-4" style={{ borderBottom: '1px solid var(--tx-line)' }}>
+            <div className="form-label fw-semibold small mb-2" style={{ color: 'var(--tx-fg)' }}>Payment Terms</div>
+            <ChipGroup options={PAYMENT_TERMS} value={tradeTerms.paymentTerms} onChange={v => setTrade('paymentTerms', v)} />
+          </div>
+
+          <div className="mb-4 pb-4" style={{ borderBottom: '1px solid var(--tx-line)' }}>
+            <div className="form-label fw-semibold small mb-2" style={{ color: 'var(--tx-fg)' }}>Currency</div>
+            <ChipGroup options={CURRENCIES} value={tradeTerms.currency} onChange={v => setTrade('currency', v)} />
+          </div>
+
+          <div className="row g-3 mb-4 pb-4" style={{ borderBottom: '1px solid var(--tx-line)' }}>
+            <div className="col-sm-6">
+              <label className="form-label fw-semibold small" htmlFor="quote-1" style={{ color: 'var(--tx-fg)' }}>Port of Loading</label>
+              <select
+                id="quote-1"
+                className="form-select"
+                style={fieldStyle}
+                value={tradeTerms.portOfLoading}
+                onChange={e => setTrade('portOfLoading', e.target.value)}
+              >
+                {PORTS.map(p => <option key={p}>{p}</option>)}
+              </select>
+            </div>
+            <div className="col-sm-6">
+              <label className="form-label fw-semibold small" htmlFor="quote-2" style={{ color: 'var(--tx-fg)' }}>Lead Time</label>
+              <select
+                id="quote-2"
+                className="form-select"
+                style={fieldStyle}
+                value={tradeTerms.leadTime}
+                onChange={e => setTrade('leadTime', e.target.value)}
+              >
+                {LEAD_TIMES.map(l => <option key={l}>{l}</option>)}
+              </select>
+            </div>
+          </div>
+
+          <div className="mb-4 pb-4" style={{ borderBottom: '1px solid var(--tx-line)' }}>
+            <div className="form-label fw-semibold small mb-2" style={{ color: 'var(--tx-fg)' }}>Quote Validity</div>
+            <ChipGroup options={VALIDITIES} value={tradeTerms.validity} onChange={v => setTrade('validity', v)} />
+          </div>
+
+          <div>
+            <div className="form-label fw-semibold small mb-2" style={{ color: 'var(--tx-fg)' }}>Documents Provided</div>
+            <div className="row g-2">
+              {DOCUMENTS.map(doc => (
+                <div key={doc} className="col-sm-6">
+                  <div className="form-check d-flex align-items-center gap-2">
+                    <input
+                      className="form-check-input mt-0"
+                      style={{ width: 18, height: 18, accentColor: '#5b49e6', cursor: 'pointer' }}
+                      type="checkbox"
+                      id={`doc-${doc}`}
+                      checked={tradeTerms.documents.includes(doc)}
+                      onChange={() => toggleDoc(doc)}
+                    />
+                    <label className="form-check-label small" htmlFor={`doc-${doc}`} style={{ color: 'var(--tx-fg)', cursor: 'pointer' }}>
+                      {doc}
+                    </label>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
       {/* Right: Customer info + summary */}
-      <div className="col-lg-5">
-        <div className="card border-0 shadow-sm rounded-4 mb-4">
-          <div className="card-body p-4">
-            <h2 className="h5 fw-bold mb-4 text-dark">{t.customer_info}</h2>
-            <div className="mb-3">
-              <label className="form-label fw-bold text-dark small">{ta.company_name}</label>
-              <input id="quote-3" type="text" className="form-control text-dark" value={customerCompany} onChange={e => setCustomerCompany(e.target.value)} placeholder="예: ABC Trading Co., Ltd." />
-            </div>
-            <div className="mb-3">
-              <label className="form-label fw-bold text-dark small" htmlFor="quote-4">{ta.contact_person}</label>
-              <input id="quote-4" type="text" className="form-control text-dark" value={customerName} onChange={e => setCustomerName(e.target.value)} placeholder="예: John Smith" />
-            </div>
-            <div className="mb-3">
-              <label className="form-label fw-bold text-dark small" htmlFor="quote-5">{ta.email}</label>
-              <input id="quote-5" type="email" className="form-control text-dark" value={customerEmail} onChange={e => setCustomerEmail(e.target.value)} placeholder="name@company.com" />
-            </div>
-            <div className="mb-3">
-              <label className="form-label fw-bold text-dark small" htmlFor="quote-6">{ta.phone}</label>
-              <input id="quote-6" type="tel" className="form-control text-dark" value={customerPhone} onChange={e => setCustomerPhone(e.target.value)} placeholder="+81-XX-XXXX-XXXX" />
-            </div>
-            <div className="mb-0">
-              <label className="form-label fw-bold text-dark small" htmlFor="quote-7">{t.notes}</label>
-              <textarea id="quote-7" className="form-control text-dark" rows={3} value={notes} onChange={e => setNotes(e.target.value)} placeholder={t.notes_placeholder} />
-            </div>
+      <div className="col-lg-5" style={{ position: 'sticky', top: 96 }}>
+        {/* 03 Customer Info */}
+        <div className="border rounded-4 p-4 mb-4" style={{ background: '#fff' }}>
+          <div className="tx-no mb-1">03 · CUSTOMER</div>
+          <h2 className="h5 fw-bold mb-4">{t.customer_info}</h2>
+          <div className="mb-3">
+            <label className="form-label fw-semibold small" htmlFor="quote-3" style={{ color: 'var(--tx-fg)' }}>{ta.company_name}</label>
+            <input
+              id="quote-3"
+              type="text"
+              autoComplete="organization"
+              className="form-control"
+              style={fieldStyle}
+              value={customerCompany}
+              onChange={e => setCustomerCompany(e.target.value)}
+              placeholder="예: ABC Trading Co., Ltd."
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label fw-semibold small" htmlFor="quote-4" style={{ color: 'var(--tx-fg)' }}>{ta.contact_person}</label>
+            <input
+              id="quote-4"
+              type="text"
+              autoComplete="name"
+              className="form-control"
+              style={fieldStyle}
+              value={customerName}
+              onChange={e => setCustomerName(e.target.value)}
+              placeholder="예: John Smith"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label fw-semibold small" htmlFor="quote-5" style={{ color: 'var(--tx-fg)' }}>{ta.email}</label>
+            <input
+              id="quote-5"
+              type="email"
+              autoComplete="email"
+              autoCorrect="off"
+              autoCapitalize="none"
+              spellCheck={false}
+              className="form-control"
+              style={fieldStyle}
+              value={customerEmail}
+              onChange={e => setCustomerEmail(e.target.value)}
+              placeholder="name@company.com"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label fw-semibold small" htmlFor="quote-6" style={{ color: 'var(--tx-fg)' }}>{ta.phone}</label>
+            <input
+              id="quote-6"
+              type="tel"
+              autoComplete="tel"
+              className="form-control"
+              style={fieldStyle}
+              value={customerPhone}
+              onChange={e => setCustomerPhone(e.target.value)}
+              placeholder="+81-XX-XXXX-XXXX"
+            />
+          </div>
+          <div className="mb-0">
+            <label className="form-label fw-semibold small" htmlFor="quote-7" style={{ color: 'var(--tx-fg)' }}>{t.notes}</label>
+            <textarea
+              id="quote-7"
+              className="form-control"
+              style={{ ...fieldStyle, minHeight: 88 }}
+              rows={3}
+              value={notes}
+              onChange={e => setNotes(e.target.value)}
+              placeholder={t.notes_placeholder}
+            />
           </div>
         </div>
 
-        {/* Summary */}
-        <div className="card border-0 shadow-sm rounded-4 mb-4">
-          <div className="card-body p-4">
-            <h2 className="h6 fw-bold mb-3 text-dark">Quote Summary</h2>
-            {items.length === 0 ? (
-              <p className="text-body-secondary small mb-3">제품을 선택해 주세요.</p>
-            ) : (
-              <ul className="list-unstyled mb-3" style={{ fontSize: '0.85rem' }}>
-                {items.map(item => (
-                  <li key={item.id} className="d-flex justify-content-between mb-1">
-                    <span className="text-truncate me-2 text-dark">{item.name_ko} ×{item.quantity}</span>
-                    <span className="fw-bold flex-shrink-0">{item.amount.toLocaleString('ko-KR')}원</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-            <hr />
+        {/* 04 Summary */}
+        <div className="border rounded-4 p-4 mb-4" style={{ background: '#fff' }}>
+          <div className="d-flex justify-content-between align-items-baseline mb-3">
+            <div>
+              <div className="tx-no mb-1">04 · SUMMARY</div>
+              <h2 className="h5 fw-bold mb-0">Quote Summary</h2>
+            </div>
+            <span style={{ fontSize: '0.78rem', color: 'var(--tx-mute)', fontVariantNumeric: 'tabular-nums' }}>
+              {quoteNumber}
+            </span>
+          </div>
+
+          {items.length === 0 ? (
+            <p className="small mb-3" style={{ color: 'var(--tx-mute)' }}>제품을 선택해 주세요.</p>
+          ) : (
+            <ul className="list-unstyled mb-3" style={{ fontSize: '0.88rem' }}>
+              {items.map(item => (
+                <li key={item.id} className="d-flex justify-content-between gap-2 py-1" style={{ borderBottom: '1px solid rgba(22,24,28,.06)' }}>
+                  <span className="text-truncate" style={{ color: 'var(--tx-fg)' }}>{item.name_ko} ×{item.quantity}</span>
+                  <span className="fw-semibold flex-shrink-0" style={{ fontVariantNumeric: 'tabular-nums' }}>{item.amount.toLocaleString('ko-KR')}원</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <div className="pt-3" style={{ borderTop: '1px solid var(--tx-line)' }}>
             <div className="d-flex justify-content-between mb-1" style={{ fontSize: '0.9rem' }}>
-              <span className="text-body-secondary">{t.subtotal}</span>
-              <span className="fw-bold">{subtotal.toLocaleString('ko-KR')}원</span>
+              <span style={{ color: 'var(--tx-mute)' }}>{t.subtotal}</span>
+              <span className="fw-semibold" style={{ fontVariantNumeric: 'tabular-nums' }}>{subtotal.toLocaleString('ko-KR')}원</span>
             </div>
             <div className="d-flex justify-content-between mb-2" style={{ fontSize: '0.9rem' }}>
-              <span className="text-body-secondary">{t.tax}</span>
-              <span className="fw-bold">{tax.toLocaleString('ko-KR')}원</span>
+              <span style={{ color: 'var(--tx-mute)' }}>{t.tax}</span>
+              <span className="fw-semibold" style={{ fontVariantNumeric: 'tabular-nums' }}>{tax.toLocaleString('ko-KR')}원</span>
             </div>
-            <div className="d-flex justify-content-between mb-0 border-top pt-2">
-              <span className="fw-bold text-primary">{t.total}</span>
-              <span className="fw-bold text-primary fs-5">{total.toLocaleString('ko-KR')}원</span>
+            <div className="d-flex justify-content-between align-items-baseline mb-0 pt-2" style={{ borderTop: '1px solid var(--tx-line)' }}>
+              <span className="fw-bold" style={{ color: 'var(--tx-fg)' }}>{t.total}</span>
+              <span className="fw-bold fs-4" style={{ color: 'var(--tx-accent)', fontVariantNumeric: 'tabular-nums' }}>
+                {total.toLocaleString('ko-KR')}원
+              </span>
             </div>
           </div>
         </div>
 
         {/* Trade Terms Summary */}
-        <div className="card border-0 rounded-4 mb-4" style={{ background: '#f0f4ff' }}>
-          <div className="card-body p-3">
-            <div className="row g-1" style={{ fontSize: '0.78rem' }}>
-              {[
-                ['Incoterms', tradeTerms.incoterms],
-                ['Payment', tradeTerms.paymentTerms],
-                ['Currency', tradeTerms.currency],
-                ['Port', tradeTerms.portOfLoading],
-                ['Lead Time', tradeTerms.leadTime],
-                ['Validity', tradeTerms.validity],
-              ].map(([label, value]) => (
-                <div key={label} className="col-6 d-flex gap-1">
-                  <span className="text-body-secondary">{label}:</span>
-                  <span className="fw-bold text-dark">{value}</span>
-                </div>
-              ))}
-            </div>
+        <div className="border rounded-4 p-3 mb-4" style={{ background: '#fff' }}>
+          <div className="row g-2" style={{ fontSize: '0.82rem' }}>
+            {[
+              ['Incoterms', tradeTerms.incoterms],
+              ['Payment', tradeTerms.paymentTerms],
+              ['Currency', tradeTerms.currency],
+              ['Port', tradeTerms.portOfLoading],
+              ['Lead Time', tradeTerms.leadTime],
+              ['Validity', tradeTerms.validity],
+            ].map(([label, value]) => (
+              <div key={label} className="col-6 d-flex flex-column">
+                <span style={{ color: 'var(--tx-mute)', fontSize: '0.75rem' }}>{label}</span>
+                <span className="fw-semibold" style={{ color: 'var(--tx-fg)' }}>{value}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -431,27 +536,40 @@ export default function QuoteBuilder({ products, userTier, userId, lang, dict }:
               label={t.btn_generate}
             />
           ) : (
-            <button className="btn btn-primary btn-lg rounded-pill" disabled>
-              <i className="bi bi-file-earmark-pdf me-2"></i>{t.btn_generate}
+            <button type="button" className="btn btn-primary btn-lg rounded-pill" style={{ minHeight: 50 }} disabled>
+              <i className="bi bi-file-earmark-pdf me-2" aria-hidden="true"></i>{t.btn_generate}
             </button>
           )}
 
           {userId ? (
             <button
+              type="button"
               className="btn btn-outline-primary rounded-pill"
+              style={{ minHeight: 46 }}
               onClick={handleSave}
               disabled={saving || items.length === 0}
             >
-              {saving ? <><span className="spinner-border spinner-border-sm me-2" />저장 중...</> : <><i className="bi bi-save me-2"></i>{t.btn_save}</>}
+              {saving ? (
+                <><span className="spinner-border spinner-border-sm me-2" role="status" />저장 중...</>
+              ) : (
+                <><i className="bi bi-save me-2" aria-hidden="true"></i>{t.btn_save}</>
+              )}
             </button>
           ) : (
-            <p className="text-body-secondary small text-center mb-0">
-              <i className="bi bi-info-circle me-1"></i>
-              <a href={`/${lang}/auth/login`} className="text-primary fw-bold">로그인</a>하면 견적 이력을 저장할 수 있습니다.
+            <p className="small text-center mb-0 mt-2" style={{ color: 'var(--tx-mute)' }}>
+              <i className="bi bi-info-circle me-1" aria-hidden="true"></i>
+              <a href={`/${lang}/auth/login`} className="fw-semibold" style={{ color: 'var(--tx-accent)', textDecoration: 'underline', textUnderlineOffset: 3 }}>
+                로그인
+              </a>
+              하면 견적 이력을 저장할 수 있습니다.
             </p>
           )}
           {saveMsg && (
-            <div className={`alert ${saveMsg.includes('실패') ? 'alert-danger' : 'alert-success'} py-2 rounded-3 small`} role="alert">
+            <div
+              className={`alert ${saveMsg.includes('실패') ? 'alert-danger' : 'alert-success'} py-2 rounded-3 small mb-0`}
+              role="alert"
+              aria-live="polite"
+            >
               {saveMsg}
             </div>
           )}
