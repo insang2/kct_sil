@@ -172,7 +172,7 @@ export function getHomeFaqs(lang: Lang, productCount: number): HomeFaqItem[] {
 export function getHomeCopy(lang: Lang, productCount: number, categoryCount: number, hubCount: number, totalTechPages: number) {
   if (lang === 'en') {
     return {
-      heroEyebrow: 'DOWSIL™ Silicone Supplier & Exporter · Est. 2018',
+      heroEyebrow: 'DOWSIL™ Silicone Supplier & Exporter',
       h1Main: 'DOWSIL™ Structural, Weatherproofing & Fire-Rated Silicones',
       h1Light: 'Korea Construction Trading (KCT)',
       heroDesc1: `Korea Construction Trading (KCT) supplies and exports ${productCount} Dow DOWSIL™ structural, weatherproofing, and fire-rated silicone sealants.`,
@@ -207,7 +207,7 @@ export function getHomeCopy(lang: Lang, productCount: number, categoryCount: num
       techOpen: 'Open guide',
       companyEyebrow: 'ABOUT KCT · DOW SILICONE SUPPLY',
       companyTitle: 'Reliable Dow architectural silicone supply, domestic and global',
-      companyDesc: 'Founded in 2018 in Seoul, Korea Construction Trading (KCT) supplies Dow DOWSIL™ architectural and structural silicones to domestic sites and international buyers — combining B2B wholesale pricing, export documentation, and TDS-backed product guidance.',
+      companyDesc: 'Based in Seoul, Korea Construction Trading (KCT) supplies Dow DOWSIL™ architectural and structural silicones to domestic sites and international buyers — combining B2B wholesale pricing, export documentation, and TDS-backed product guidance.',
       companyLinkAbout: 'Company overview',
       companyLinkExport: 'Export services',
       dowCaption: 'Dow architectural & structural silicone sales and export',
@@ -238,7 +238,7 @@ export function getHomeCopy(lang: Lang, productCount: number, categoryCount: num
   }
   if (lang === 'ja') {
     return {
-      heroEyebrow: 'DOWSIL™ シリコーン専門供給・輸出 · 2018年設立',
+      heroEyebrow: 'DOWSIL™ シリコーン専門供給・輸出',
       h1Main: 'DOWSIL™ 構造用・耐候性・耐火シリコーン',
       h1Light: '韓国建設トレーディング (KCT)',
       heroDesc1: `韓国建設トレーディング(KCT)はDow DOWSIL™の構造用・耐候性・耐火シリコーンシーラント${productCount}種を供給・輸出しています。`,
@@ -273,7 +273,7 @@ export function getHomeCopy(lang: Lang, productCount: number, categoryCount: num
       techOpen: 'ガイドを見る',
       companyEyebrow: 'ABOUT KCT · DOW SILICONE SUPPLY',
       companyTitle: 'Dow建築・構造用シリコーンの専門供給と輸出パートナー',
-      companyDesc: '2018年設立の韓国建設トレーディング(KCT)は、Dow DOWSIL™の建築用・構造用シリコーンを韓国内現場および日本・台湾・東南アジアなど海外バイヤーへ供給しています。製品選定からTDS資料提供、輸出書類作成まで一貫対応します。',
+      companyDesc: 'ソウルに拠点を置く韓国建設トレーディング(KCT)は、Dow DOWSIL™の建築用・構造用シリコーンを韓国内現場および日本・台湾・東南アジアなど海外バイヤーへ供給しています。製品選定からTDS資料提供、輸出書類作成まで一貫対応します。',
       companyLinkAbout: '会社紹介',
       companyLinkExport: '輸出のご案内',
       dowCaption: 'Dow 建築・構造用シリコーン専門販売および輸出',
@@ -303,7 +303,7 @@ export function getHomeCopy(lang: Lang, productCount: number, categoryCount: num
     };
   }
   return {
-    heroEyebrow: 'DOWSIL(다우실) 실리콘 공급 · 2018년 설립',
+    heroEyebrow: 'DOWSIL(다우실) 실리콘 공급',
     h1Main: 'DOWSIL(다우실) 구조용·내후성·내화 실리콘 실란트',
     h1Light: '한국건설트레이딩 (KCT)',
     heroDesc1: `한국건설트레이딩(KCT)은 Dow DOWSIL(다우실) 구조용·내후성·내화 실란트 ${productCount}종을 국내 B2B 공급 및 해외 수출합니다.`,
@@ -338,7 +338,7 @@ export function getHomeCopy(lang: Lang, productCount: number, categoryCount: num
     techOpen: '자료 보기',
     companyEyebrow: 'ABOUT KCT · DOW SILICONE SUPPLY',
     companyTitle: 'Dow 건축·구조용 실리콘 전문 판매 및 수출 기업',
-    companyDesc: '2018년 설립된 한국건설트레이딩(KCT)은 Dow DOWSIL(다우실) 건축용·구조용 실리콘을 국내 건설 현장과 해외 바이어에게 공급합니다. 제품 선정 상담, TDS 기술자료 제공, B2B 대량 납품과 수출 서류 대응까지 함께합니다.',
+    companyDesc: '서울에 있는 한국건설트레이딩(KCT)은 Dow DOWSIL(다우실) 건축용·구조용 실리콘을 국내 건설 현장과 해외 바이어에게 공급합니다. 제품 선정 상담, TDS 기술자료 제공, B2B 대량 납품과 수출 서류 대응까지 함께합니다.',
     companyLinkAbout: '회사소개 보기',
     companyLinkExport: '수출 안내 보기',
     dowCaption: 'Dow 건축·구조용 실리콘 전문 판매 및 글로벌 수출',

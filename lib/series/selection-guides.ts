@@ -64,8 +64,8 @@ export const PAGES: IPage[] = [
         'Domestic & Overseas Buying Channels',
         '국내·해외 구매 채널 비교',
         p(
-          'Choose the purchasing route that fits your order size and delivery destination. Korea Construction Trading (KCT, Business Reg. No. 371-07-03719, est. 2018) handles domestic wholesale, small-quantity retail, and international export of architectural and structural silicone sealants.',
-          '주문 수량과 납품 지역에 따라 적합한 구매 채널을 선택할 수 있습니다. 한국건설트레이딩(KCT, 사업자등록번호 371-07-03719, 2018년 설립)은 건축용·구조용 실리콘 실란트의 국내 소량·B2B 도매 공급과 해외 수출을 모두 지원합니다.',
+          'Choose the purchasing route that fits your order size and delivery destination. Korea Construction Trading (KCT, Business Reg. No. 371-07-03719) handles domestic wholesale, small-quantity retail, and international export of architectural and structural silicone sealants.',
+          '주문 수량과 납품 지역에 따라 적합한 구매 채널을 선택할 수 있습니다. 한국건설트레이딩(KCT, 사업자등록번호 371-07-03719)은 건축용·구조용 실리콘 실란트의 국내 소량·B2B 도매 공급과 해외 수출을 모두 지원합니다.',
         ),
         tbl(
           [

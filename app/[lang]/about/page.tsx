@@ -104,7 +104,6 @@ export default async function AboutPage({
           "@type": "Organization",
           "name": orgName,
           "legalName": COMPANY.nameEn,
-          "foundingDate": COMPANY.founded,
           "description": t.mission_desc,
           "email": COMPANY.email,
           "telephone": "+82-10-8939-0284",
@@ -117,7 +116,6 @@ export default async function AboutPage({
   const overview: [string, React.ReactNode][] = [
     [T('상호', 'Company', '商号'), <>{COMPANY.nameEn} / {COMPANY.nameKo}</>],
     [T('사업자등록번호', 'Business Reg. No.', '事業者登録番号'), COMPANY.bizNo],
-    [T('설립', 'Established', '設立'), T(`${COMPANY.founded}년`, COMPANY.founded, `${COMPANY.founded}年`)],
     [T('주요 사업', 'Business', '主要事業'), T('Dow(DOWSIL™) 건축용 실리콘 도매·유통 및 수출', 'Wholesale and export of Dow DOWSIL™ architectural silicones', 'Dow(DOWSIL™)建築用シリコーンの卸売・輸出')],
     [T('취급 제품', 'Products', '取扱製品'), T(`DOWSIL™ ${n}종 (실란트·프라이머)`, `${n} DOWSIL™ sealants and primers`, `DOWSIL™ ${n}種(シーラント・プライマー)`)],
     [T('주소', 'Address', '住所'), addr],

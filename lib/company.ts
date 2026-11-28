@@ -8,7 +8,6 @@ export const COMPANY = {
   nameKo: '한국건설트레이딩',
   nameEn: 'KOREA CONSTRUCTION TRADING',
   bizNo: '371-07-03719',
-  founded: '2018',
   email: 'sales@kconstrade.com',
 }
 
